@@ -1,0 +1,1363 @@
+{
+  "signUp": "Sign-Up",
+  "signUpDetail": "To start a game of your own",
+  "signIn": "Sign-In",
+  "login": "Login",
+  "logout": "Log out",
+  "checkInCheckOut": "Check In Check Out",
+  "backButton": "Back",
+  "nextButton": "Next",
+  "doneButton": "Done",
+  "cancelButton": "Cancel",
+  "saving" : "Saving..",
+  "saved": "Saved",
+  "save": "Save",
+  "saveAndFinish": "Save And Finish",
+  "search": "Search...",
+  "notProvided": "Not Provided",
+  "getStarted": "Get Started",
+  "view": "view",
+  "upload": "UPLOAD",
+  "remove": "remove",
+  "enable": "Enable",
+  "sendInvite": "Invite",
+  "create": "Create",
+  "add": "Add",
+  "days": "Day",
+  "week": "Week",
+  "per": "per",
+  "hintLink": "https://www.",
+  "editAll": "Edit All",
+  "edit": "Edit",
+  "closed": "Closed",
+
+
+  "loginDashboardTitle": "Login to CINCOUT Dashboard",
+  "loginDashboardEmailTitle": "Email",
+  "loginDashboardEmailField": "Email Address",
+  "loginDashboardEmailError": "Your email is not working",
+  "loginDashboardPassword": "Password",
+  "loginDashboardPasswordShort": "Short Password",
+  "loginDashboardCreateFacility": "Create your own facility or activity",
+  "loginDashboardPasswordReset": "Forgot your password?",
+
+  "loginForgotPasswordTitle": "Reset Your Password",
+  "loginForgotPasswordHelp": "'Tell us the email address linked to your account and we can send you a link to reset and update your old password'",
+  "loginForgotPasswordReset": "Send Reset Link",
+
+
+  "signUpDashboardTitle": "Create a CINCOUT Account",
+  "signUpDashboardName": "First & Last Name",
+  "signUpDashboardError": "please fill in",
+  "signUpDashboardNameHint": "Full Name",
+  "signUpDashboardEmail": "Contact Email",
+  "signUpDashboardPasswordConfirm": "Password Confirmation",
+  "signUpDashboardPasswordConfirmError": "passwords do not match",
+  "signUpDashboardPasswordConfirmError2": "please avoid special characters",
+  "signUpDashboardPasswordHelp": "Password must be at least 8 characters and have at least one number and one upper case letter.",
+  "signUpDashboardTerms": "You agree to the terms of use and acknowledge the privacy policy. Our Policies explain how we use your data to deliver, improve and promote our service. And more importantly, how you can exercise your right to control that use.",
+  "signUpDashboardTermsError": "please select the box to continue.",
+
+
+  "signUpGetStartedFacility": "Get Your Facility Started",
+  "signUpGetStartedActivity": "Get an Activity Started",
+  "signUpGetStartedSession": "Get In A Game",
+
+  "signUpGetStartedFacilitySub1": "Put your space on the map",
+  "signUpGetStartedFacilitySub2": "Make your facility available - including all your carefully crafted internal programs - camps, runs, training, and bookings...the list goes on...",
+  "signUpGetStartedFacilitySub3": "Build your community, collaborate with local partners, institutions, sponsors and communities getting their start, see what happens when you combine forces.",
+
+  "signUpGetStartedActivitySub1": "For all things sports, playing and keeping active - host with other players or friends from a public or private space that you and your friends have access to.",
+  "signUpGetStartedActivitySub2": "For specialist who want to exercise their expertise - spread your knowledge with an audience in a private or public space.",
+  "signUpGetStartedActivitySub3": "Host an activity with a group - you’ll be able to let your group know about the activity you have in mind - and choose a space to pair with your plans…",
+
+  "signUpGetStartedSessionSub1": "Perfect Practice Makes Perfect Players - Find Somewhere To Put The Time In",
+  "signUpGetStartedSessionSub2": "Is you in or is you in?",
+
+  "loginFailuresCancelled": "Cancelled",
+  "serverError": "Server error",
+
+  "loginEmailUseError": "Email already in use",
+  "loginInvalidComboError": "Invalid email and password combination",
+
+
+  "mainTitleHeading1": "Perfect Practice Makes Perfect Players - Find Somewhere To Put The Time In",
+  "mainTitleHeading2": "How's you free throw? Let's take it up a level.",
+  "subTitleHeading1": "Join Competitions, Train, Take Some Classes, or maybe you'd prefer a calm, cool, relaxing round of a Pick Me Up game",
+  "subTitleHeading2": "Start a 1v1 tennis match, or how about winner takes all?, Call out your neighbourhood rivals - show them what's up",
+
+  "sport": "Play a Sport",
+
+  "sportLocationSearch": "Where are you looking to play?",
+  "sportLocationSearchDetails": "Find and Join Activities Close By.",
+  "sportCheckInSearch": "Check In",
+  "sportCheckInSearchDetails": "When's a good time to join?",
+  "sportCheckOutSearch": "Check Out",
+  "sportCheckOutSearchDetails": "For How long?",
+  "sportPlayersCount": "How many are joining?",
+  "sportsPlayerCountDetails": "Players",
+
+
+  "classesCoaching": "Informal Class or Coaching",
+  "classesCoachingSearch": "What are you looking to improve?",
+  "classesCoachingSearchDetails1" : "I'm Looking for an Instructor",
+  "classesCoachingSearchDetails2": "I'm Looking for a Class to Join",
+  "classesCoachingSearchDetails3": "I'm Looking for a Coach",
+
+
+  "gatherings": "Group Activities",
+  "gatheringsLocationSearch": "Find a space to get together",
+  "gatheringsLocationSearchDetails": "Find somewhere to be active or relaxed together",
+  "gatheringsPlayersCount": "How Many will be joining?",
+  "gatheringsPlayerCountDetails": "Guests",
+
+  "experiences": "A Whole Experience",
+  "experiencesSearch": "Find something new to do",
+
+  "signUpPage1MainText1": "Let's Get This ****",
+  "signUpPage1ActivityTitle1": "Just Games or Matches",
+  "signUpPage1ActivityTitle2": "Informal Class or Coaching",
+  "signUpPage1ActivityTitle3": "A Small Group Gathering",
+  "signUpPage1ActivityTitle4": "A Whole Experience",
+
+  "signUpPage1ActivityDescription1": "For all things sports, playing and keeping active - host with other players or friends from a public or private space that you and your friends have access to.",
+  "signUpPage1ActivityDescription2": "For specialist who want to exercise their expertise - spread your knowledge with an audience in a private or public space.",
+  "signUpPage1ActivityDescription3": "Host an activity with a group - you’ll be able to let your group know about the activity you have in mind - and choose a space to pair with your plans…",
+  "signUpPage1ActivityDescription4": "Typically a unique activity that may happen in a public or private space - with the possibility of multiple stages, courses or destinations",
+
+
+  "calendarAvailabilitySettings": "Change Availability Settings",
+  "yourFacilityType": "Add Your Facility",
+  "yourActivityType": "Start Your Activity",
+  "yourActivityBooking": "Make Activity Bookings Available",
+
+  "activityTypeMiscellaneous": "Miscellaneous",
+  "activityTypeGameMatch": "Just Games or Matches",
+  "activityTypeGameMatchDes": "For all things sports, playing and keeping active - let renters host with other players or friends from a public or private space that you and your friends have access to. eg. winner takes all, pick me ups, tournaments..",
+  "activityTypeExperiences": "A Whole Experience",
+  "activityTypeExperiencesDes": "Typically a unique activity - with the possibility of letting renters host leagues with multiple stages, destinations or to simply use your space to host an event, pop-up shop with the option to sell merchandise or partnerships, or even a camp.",
+  "activityTypeClassesLessons": "Classes, Lessons or Coaching",
+  "activityTypeClassesLessonsDes": "For specialists who want to exercise their expertise by making their knowledge available in a private or public space. eg. wellness instructors, coaching a league, personal training",
+  "activityTypeAvailableDesc": "Each Activity added to your Facility will also allow you to let renters know about sponsorships, partnerships, incentives or collaborations that you as a facility are offering (to players, coaches/trainers, organizations and event planners) - based on a criteria that you define.",
+
+  "activityTypeRent": "To Rent",
+  "activityTypeInformalGame": "Informal Games",
+  "activityTypeRuns": "Teams/Runs",
+  "activityTeams": "Teams",
+  "activityTypeClasses": "Classes",
+  "activityTypeCoaches": "Coaches",
+  "activityTypeTeaching": "Teaching",
+  "activityTypeTrainingState": "Training",
+  "activityTypeCoachingState": "Coaching",
+  "activityTypeLeagues": "Leagues",
+  "activityTypeTournament": "Tournament",
+  "activityTypeEquipment": "Equipment",
+  "activityTypeEvent": "Events",
+  "activityTypeCamp": "Camp",
+  "activityTypeOneOnOne": "One On One",
+
+  "activityTypeRentDes": "By default every facility will make the option to rent available",
+  "activityTypeShortTerm": "Players can challenge the renter (and vice versa) by setting wages or anti's - you get to limit what types of wages are possible and not possible. (i.e - games that generate a large viewing may also offer the winning team free bookings by you the facility owner)",
+
+  "activityTypeInformalGameDes": "Make Informal pick up games available for renters so that a renter can open their slot to new or past players, the renter will be able to set the amount for new players who join their available slots, split costs or make their slots free",
+  "activityTypeRunsDes": "Give renters the option to setup runs or host a team based session, giving renters the ability to organize teams, confirm attendance, split costs, or make un-used slots available publicly with the option to generate invite codes/links",
+  "activityTypeTournamentDes": "Give renters the option to organize tournament sessions, broken up over the course of multiple bookings, renters can create, facilitate and monetize winner takes all matches based on teams/player slot availabilities managed by the renter, set limits on the type of prizes renters can set (money, clothing, BTC, free bookings, any etc.)",
+  "activityTypeOneOnOneDes": "Let renters host one on one matches - renters can split the cost between each other or up the anti (decided by the renter or challenger). Let both players play until one wins. You can limit the types of wages or prizes set by the renter",
+  "activityTypeCoachingDes": "Give Coaches who rent from you the option host coaching sessions, depending on the type of coach - you can require specific coaching affiliated types (like making your rentals available for coaches affiliated with schools only) or coaches who only train at a specific skill level etc. (pre-teens, adults etc.). This may make it easier to cater to the additional activities or programs you offer, by narrowing the ranges of groups who are using your space.",
+  "activityTypeTrainingDes": "Give Trainers who rent from you the option to host training sessions, you can limit trainers to private trainers only or trainers that deal with large groups",
+  "activityTypeTeachingDes": "Give Teachers or Instructors who rent from you the option to host classes, similar to coaches - teachers or instructors can rent out your space based on specific requirements like minimum attendances or restricting rentals to specific affiliates (i.e teachers sourced from organizations only, institutions, freelancers etc.)",
+
+  "activityTypeLongTerm": "Designate months/days/hours - partner with organizations depending on criteria (sponsorships, ad placements, donations, loans, grants, and do they meet all prerequisites?",
+  "activityTypeLeaguesDes": "Give renters, the option to setup their own leagues through an organization (private or professional) or recreationally (amongst friends, co-workers or colleagues), you'll be able to designate specific hours and dates for renters looking to create their own - you can set which leagues might qualify for any promotional opportunities - for example offering sponsorships, grants, ad placements etc. depending on what would a partnership look like? - set rewards for leagues       ",
+  "activityTypeCampDes": "Designate dates, months or hours for renters looking to host their camp at your facility",
+
+  "activityTypeLongTermBenefits": "Tips: You may also utilize trainers/camps/leagues as a good opportunity to inform new or past sponsors exactly how, when and who will be renting your facility - giving prospective investors, renters & players a clear snapshot of the types of expected use (i.e elite competitive camps vs. pre-school/intermediate juniors)  and frequency (especially useful for informing sponsors how you plan to utilize spaces designated for in person advertisements or brand partnerships)",
+
+  "activityCampOptionTitle": "",
+
+  "activityRequiredOrganizationVerification": "",
+  "activityRequiredContactDetails": "",
+  "activityAllowedLongTerm": "",
+  "activityAllowedBelowAge": "set an age limit",
+  "activityQuantityLimit": "",
+
+  "activityTypeBookedState": "Booked",
+  "activityTypeStartingState": "Starting",
+
+  "activitySettingsAvailable":  "Available",
+  "activitySettingsNotAvailable": "Not Available",
+  "activitySettingsBlockOutAll": "Block Out",
+  "activitySettingsBlockClearAll": "Clear",
+  "activitySettingsMaxAvailableDate": "The last month to book this activity is currently set to",
+  "activitySettingsRepeatMonthFor": "Repeat Current Month",
+  "activitySettingsRepeatNever": "Never",
+  "activitySettingsRepeatCount": "Count",
+  "activitySettingsRepeatUntilLast": "Until Last Available Month",
+  "activitySettingsUpdateLastDate1": "Change Last Date to Book",
+  "activitySettingsUpdateLastDate2": "Repeat Until",
+  "activitySettingsSave": "Save",
+  "activitySettingsApply": "Apply",
+
+  "activitySettingsHelper": "Select days you would like to make unavailable for booking by selecting each date",
+
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "December",
+
+  "creatorFormNavOptionNext": "Next",
+
+  "facilitiesSelectAll": "Select All",
+  "facilitiesSelect": "Select One",
+  "facilitiesSelectMulti": "Select as many as you'd like",
+
+  "facilitySingleMultiUse": "Single-Multi Use Sports Complex",
+  "facilitySingleMultiUseDescription": "Typically one or more activity or sport that can be played in either an indoor or outdoor space with one or more court, field, gym or field in a single facility",
+  "facilityUnique": "Unique Space",
+  "facilityUniqueDescription": "An unconventional facility that's not commonly known but can be compared to other outdoor or indoor spaces (laser tag...vr arcade..batting range)",
+  "facilityInstitution": "Institutions - University or School",
+  "facilityInstitutionDescription": "Usually have memberships for students or non-students or would like to make gyms that are unused outside or during school hours availble to students or non-students",
+  "facilityCourseTrack": "A Course or Track",
+  "facilityCourseTrackDescription": "For playing golf - this may also require transportation or equipment rentals with way finding (maps) sprinkled throughout the course",
+  "facilityLargeArena": "Large Arena Or Stadium",
+  "facilityLargeArenaDescription": "For practices, tournaments or competitions for large seating and communities with fans and competitive experiences",
+
+
+  "facilityTypeMainTitle": "We need to get a bit more specific",
+  "facilityType": "What type of space are you renting out?",
+  "facilityTypeCount": "How many {spaces}s do you got?",
+  "@facilityTypeCount": {
+    "placeholders": {
+      "spaces": {
+        "type": "String",
+        "example": "Courts"
+      }
+    }
+  },
+  "facilityTimeType": "Temporary or here to stay?",
+  "facilityTimeTypeDescription": "If you're setting up a space to rent out temporarily or if its a bit more permanent",
+
+  "facilityTemporary": "Temporary",
+  "facilityTemporaryTerm": "When is your facility going to be open and when will your last day be?",
+
+  "facilityLongTerm": "Long Term",
+
+  "facilityBasisType": "Which best describes your booking/rental opportunity?",
+  "facilityBasisOwner": "Making a space available as an owner",
+  "facilityBasisOwnerDescription": "You are a company, established business or an individual who would like to make their space available to rent",
+  "facilityBasisExistingRenter": "Making the space availible as an existing renter",
+  "facilityBasisExistingDescription": "You are an individual who is already a paying renter but cannot use the space or you are making the space available to others as a means of recouping losses",
+  "facilityBasisExistingError": "you may want to talk with the facility owner - and see if they want to make their facility available - you and the owner may end up saving a fair bit",
+
+  "spaceCourse": "Course",
+  "spaceField": "Field",
+  "spaceCourt": "Court",
+  "spaceGym": "Gym",
+  "spaceRink": "Rink",
+  "spaceDiamond": "Diamond",
+  "spaceYardLot": "Yard or Lot",
+  "spaceStudio": "Studio",
+  "spacePool": "Pool",
+  "spaceOther": "Other",
+
+
+  "facilitySportMainTitle": "What do you want others to know before renting your space?",
+  "facilitySportType": "What type of sport will renters be able to play?",
+
+  "facilitySportTypeDescription": "Pick the kind of sports renters can play",
+  "facilitySportHint": "Those who selected {sport} also select:",
+  "@facilitySportHint": {
+    "placeholders": {
+      "sport": {
+        "type": "String",
+        "example": "Soccer"
+      }
+    }
+  },
+
+  "facilitySportTypeSpaceOptions": "How much space can someone rent at a time",
+  "facilitySportTypeFull": "Full Size Only",
+  "facilitySportTypeHalfFull": "Both full size & half sizes",
+  "facilitySportTypeHalfOnly": "Half Only",
+
+  "facilitySportOccupancyTitle": "What occupancy/players at a time should renters keep in mind",
+  "facilitySportLimits": "No Limits",
+  "facilitySportOccupancyOption": "Occupants",
+
+  "facilitySportTypeSizeHalf": "For Full and Half sizes - someone can book slots where both Sides are available for booking, if one side is booked then Full Size booking will not be available.",
+  "facilitySportTypeSizeHalfLimits": "You can also make one half of your space unavailable if your space is split or not a complete full space",
+
+  "facilitySportCrowds": "Do you have space for crowds and guests to watch?",
+  "facilitySportsAllowed": "Allowed",
+  "facilitySportsNotAllowed": "Not Allowed",
+
+
+  "facilityLocationMainTitle": "Where can everyone find you?",
+  "facilityLocationUseCurrent": "Use Current Location",
+  "facilityLocationCountry": "Country/Region",
+  "facilityLocationCountryMissing": "select a country",
+  "facilityLocationStreet": "Street",
+  "facilityLocationStreetError": "please provide proper address format",
+  "facilityLocationCity": "City",
+  "facilityLocationCityError": "please provide a valid city",
+  "facilityProvince": "Province/State",
+  "facilityProvinceError": "please provide a valid province or state",
+  "facilityPostal": "Postal Code",
+  "facilityPostalError": "please provide a valid postal code.",
+  "facilityLocationBlankError": "please fill in.",
+
+  "facilityLocationSearch": "...Search Address",
+  "facilityLocationSaved": "Saved Locations",
+  "facilityLocationSearchHelp": "Must Select From Search*",
+  "facilityLocationError": "Can't get current location",
+  "facilityLocationErrorDescription": "Please make sure you enable GPS and try again",
+
+  "facilityLocationMainTitle2": "Is this the right place?",
+  "facilityLocationHeader": "When browsing - renters will be able to locate where you are based on the location of your pin.",
+  "facilityLocationEdit": "Edit",
+  "facilityLocationAdd": "Add",
+
+  "facilityConfirmation": "Location Confirmation",
+  "facilityConfirmDescription": "The renter and every member in their group will use this location to navigate and check in according to the address information you provide. Please make sure that the exact address of where you are located and marking on the map is accurate. After we have approved your location - you will find the details to make changes in your account and settings page - however, the address information cannot be modified.",
+  "facilityConfirmationAccept": "Look's Good",
+  "facilityConfirmationDeny": "Not Yet",
+
+  "facilityUnverified": "Getting Verified",
+  "facilityUnverifiedDescription": "We will reach out to verify that you are the facility organizer and Link this facility to your account.",
+
+  "facilityVerifiedYou": "Verified!",
+  "facilityVerifiedYouDescription": "You are already the verified facility organizer at this location",
+
+  "facilityVerifiedNotYou": "Already Verified",
+  "facilityVerifiedNotYouDes": "Someone else is the verified facility organizer at this location.",
+  "facilityVerifiedChanges": "Making changes to this facility on their behalf?",
+  "facilityVerifiedContact": "Contact this facility organizer?",
+
+  "facilityBackgroundMainTitle": "Have a name in mind?",
+  "facilityBackgroundMainTitle2": "Keep Going",
+  "facilityBackgroundFacilityTopHeader": "What Should Everyone Know?",
+  "facilityBackgroundFacilityDescription": "What would you like the name of your Rental to be?",
+  "facilityBackgroundDescription": "This is a good time to catch the eye of those looking to rent, tell them what's unique about your space",
+
+  "facilityBackgroundRentalDescription": "Give a quick description so renters can know about your vision.",
+  "facilityBackgroundTellMore": "Tell Them More",
+  "facilityBackgroundTellMoreDescription1": "Have anything to say about the area? (Optional)",
+  "facilityBackgroundTellMoreDescription2": "What about the community you're in or trying to build? (Optional)",
+
+  "facilityRuleMainTitle": "What should renters be aware of before hand?",
+  "facilityRuleDescription1": "Details renters need to know about your space.",
+  "facilityRuleSubDescription1": "We require that all prospective renters:",
+  "facilityRuleFirst": "1. Provide Name, Phone Number & E-mail",
+  "facilityRuleSecond": "2. Valid Payment Information",
+  "facilityRuleThird": "3. Enjoyable to Others",
+  "facilityRuleDescription2": "Details renters need to know advance",
+  "facilityRuleReviewAccept": "Review Before Accepting",
+  "facilityRulePermits": "Signed Permits or Waivers",
+  "facilityRuleDeposit": "Security Deposit",
+  "facilityRuleInsurance": "Proof of Insurance",
+  "facilityRuleKeysSecurity": "Keys & Security",
+  "facilityRuleForms": "Check In Form",
+  "facilityRuleVerification": "Required ID Verification",
+
+  "facilityRuleAdditional": "Feel free to add any additional or missing requirements you'd like to Renters to keep in mind",
+  "facilityRuleAdditionalSuggestion1": "Cleaning Instructions",
+  "facilityRuleAdditionalSuggestion2": "Dress Code",
+  "facilityRuleAdditionalSuggestion3": "Key Access and 24/7 Security",
+
+  "facilityRuleShowLess": "Show Less",
+  "facilityRuleCharacterCount": "Characters",
+
+  "facilityAvailabilityMainTitle": "Fill in dates",
+  "facilityAvailableWeekDays": "Which days of the week is your facility",
+  "facilityAvailableWeekDaysNot": "NOT",
+  "facilityAvailableWeekDaysOpen": "open",
+
+  "facilityAvailableMonday": "Monday",
+  "facilityAvailableTuesday": "Tuesday",
+  "facilityAvailableWednesday": "Wednesday",
+  "facilityAvailableThursday": "Thursday",
+  "facilityAvailableFriday": "Friday",
+  "facilityAvailableSaturday": "Saturday",
+  "facilityAvailableSunday": "Sunday",
+
+  "facilityAvailableHours": "Between which hours is the facility open?",
+  "facilityAvailableHoursDescription": "You will be able to select specefic days (based on the month) that your facility is not open or full specific days/weeks reserved for separate activities later on - make sure the time you select is after the time you open.",
+  "facilityAvailableHoursFrom": "From",
+  "facilityAvailableHoursTo": "To",
+  "facilityAvailableHoursBetween": "Between which hours can someone book?",
+  "facilityAvailableHoursBetweenDescription": "If you prefer to allow bookings strictly during hours When your facility is open or you can allow bookings at any time?",
+  "facilityAvailableHoursWhenOpen": "Only when open",
+  "facilityAvailableHoursAny": "Anytime of the day",
+
+  "facilityAvailableSlots": "Is there a time you'd like to limit each slot for?",
+  "facilityAvailableSlotsDescription": "Each Renter can book a total of:",
+  "facilityAvailableSlotMinutes": "minutes",
+  "facilityAvailableSlotHours": "hours",
+
+  "facilityAvailableSlotsMax": "Is there a maximum number of slots that can be booked by each renter?",
+  "facilityAvailableSlotsMaxDescription": "Number of slots per each renter:",
+
+  "facilityAvailableReviews": "Do you want to review each booking before they can be confirmed?",
+  "facilityAvailableReviewsManual": "Manually review bookings with slots higher than 5 or close to your set maximum",
+  "facilityAvailableReviewsNone": "No reviews needed",
+
+  "facilityAvailableBookingsDate": "When can bookings start?",
+  "facilityAvailableBookingsNowToSixMonths": "From now for the next 6 months",
+  "facilityAvailableBookingsNowToNextYear": "From now till next year",
+  "facilityAvailableBookingsDateDecide": "I'll decide",
+  "facilityAvailableBookingsDateBetween": "Between which dates are bookings available?",
+
+  "facilityAvailableBookingsStarting": "Starting",
+  "facilityAvailableBookingsEnding": "Ending",
+
+  "facilityAvailableBookingDefinition": "A Booking: Includes the total number of slots (defined by you). All bookings are limited to one per person.",
+  "facilityAvailableSlotsDefinition": "A Slot: Includes the selected date and time (during Operation Hours).",
+
+  "facilityAvailableCalendarMainTitle": "Let your team and renters know Exactly which dates are available - and When new dates are freed up",
+  "facilityAvailableCalendarHelp1": "Select days you would like to make un-available for booking by selecting each date",
+  "facilityAvailableCalendarHelp2": "For activities that you want to host at your facility you can create and reserve your time slot in the same way others will. (When a time slot is booked it will no longer be available for other Activities)",
+
+  "facilityCostingMainTitle": "Let renters know what it's worth to play",
+  "facilityCosting": "Costing",
+  "facilityCostingDescription": "Calculated based on estimates. This is a good opportunity to let teams understand how costing gets decided. By letting them know what is and isn’t included, you can give Everyone a pretty clear picture of what they’ll expect to receive after they’ve decided that they want in.",
+  "facilityCostingBase": "Set a Base Price",
+  "facilityCostingBaseDescription": "A 15% fee for all renters is added to the price that is listed by you.",
+  "facilityCostingFull": "Full Size",
+  "facilityCostingHalf": "Half Size",
+  "facilityCostingTimeSlot": "For a {time} minute slot",
+  "@facilityCostingTimeSlot": {
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "30"
+      }
+    }
+  },
+  "facilityCostingPerSlot": "Each",
+  "facilityCostingEstimate": "We estimate ${fee}.00 per slot",
+  "@facilityCostingEstimate": {
+    "placeholders": {
+      "fee": {
+        "type": "String",
+        "example": "30"
+      }
+    }
+  },
+  "facilityPaymentPlan": "Create a payment plan",
+  "facilityPaymentPlanDescription": "Recommended - this increases the chance of getting slots filled up",
+
+  "facilityPaymentNotNow": "Not at this time",
+  "facilityPaymentPerSlot": "Per Slot Payment Plan",
+
+  "facilityDiscount": "Discounts",
+  "facilityDiscountPerSlot": "Per booking discount based on slots",
+  "facilityBookingDiscount": "Booking Discount",
+  "facilityDiscountSlots": "Minimum Slots",
+  "facilityDiscountPercent": "Percentage",
+  "facilityDiscountPercentOff": "Off Per Slot",
+  "facilityDiscountSuggestion": "We suggest {percent} to apply for booking {slots} or more",
+  "@facilityDiscountSuggestion": {
+    "placeholders": {
+      "percent": {
+        "type": "String",
+        "example": "%0"
+      },
+      "slots": {
+        "type": "String",
+        "example": "5"
+      }
+    }
+  },
+  "facilityCancellations": "Cancellations",
+  "facilityCancellationDescription": "Set up cancellations by selecting the ones you would like to provide to renters, They will be able to choose from one of the selections you accepts as part of your cancellation policy. ",
+
+  "facilityCancellationNoRefund": "No Refund",
+  "facilityCancellationRefund": "Complete Refunds",
+  "facilityCancellationPartial": "Partial Refund",
+  "facilityCancellationSlots": "Slot Rescheduling",
+
+
+  "facilitySummaryMainTitle": "Recap",
+  "facilitySummarySlots": "Post your slot availabilities to get renters",
+  "facilitySummaryVerified": "Verified & registered slots will be secured automatically - no double bookings",
+  "facilitySummarySchedule": "Renters can send reminders, cancellations and split payments with everyone.",
+  "facilitySummaryFinished": "The Balls In Your Court",
+
+  "facilitySummaryVerifiedLocation": "This is a verified Facility - where games for Leagues can be hosted",
+  "facilitySummaryFacilityDescription": "Facility Description",
+  "facilitySummaryFacilityAvailable": "Bookings Available From:",
+  "facilitySummaryFacilityDetails": "Details to know in advance",
+  "facilitySummaryFacilityActivities": "Activities your rental supports",
+  "facilitySummaryFacilityPlayersCount": "Players Per Court",
+  "facilitySummaryFacilitySlotsBooking": "Slots Per Booking",
+  "facilitySummaryFacilitySlotsLeft": "Slots Left This Month",
+  "facilitySummaryFacilitySlotCost": "STARTING AT {price} PER SLOT",
+  "@facilitySummaryFacilitySlotCost": {
+    "placeholders": {
+      "price": {
+        "type": "String",
+        "example": "40"
+      }
+    }
+  },
+  "facilitySummaryFacilityPaymentPlan": "PAYMENT PLANS ARE AVAILABLE",
+
+  "facilitySummaryPost": "",
+  "facilitySummarySave": "After You Select save - You will be able to  ",
+
+  "facilityCreateFormNavFacilityTitle": "Making Your Facility",
+  "facilityCreateFormNavFacility1": "Choosing Your Place",
+  "facilityCreateFormNavFacility2": "What about the Space?",
+  "facilityCreateFormNavFacility3": "Are you here to stay?",
+
+  "facilityCreateFormNavSportTitle": "What Can They Play?",
+  "facilityCreateFormNavSport1": "Tell renters about sizes \nand limits",
+  "facilityCreateFormNavSport2": "Got spare room for fans?",
+
+  "facilityCreateFormNavLocationTitle": "Way Finding",
+  "facilityCreateFormNavLocation1": "Where Can Renters \nLocate You?",
+  "facilityCreateFormNavLocation2": "Just so everyone is sure",
+
+  "facilityCreateFormNavBackgroundTitle": "Get Into The Spotlight",
+  "facilityCreateFormNavBackground1": "What Sets Your \nPlace Apart?",
+  "facilityCreateFormNavBackground2": "Tell Them More",
+
+  "facilityCreateFormNavRulesTitle": "Your Facility Your Rules",
+  "facilityCreateFormNavRules1": "Keep in mind",
+  "facilityCreateFormNavRules2": "What Do Renters Need \nto Know?",
+  "facilityCreateFormNavRules3": "Add More",
+
+  "facilityCreatorFormNavAvailTitle": "Set Your Dates",
+  "facilityCreatorFormNavAvail1": "When Are You Open and \nReady for Rentals?",
+  "facilityCreatorFormNavAvail2": "Pick how you'd like to \nreceive Bookings",
+  "facilityCreatorFormNavAvail3": "Decide how Slots get \nconfirmed",
+  "facilityCreatorFormNavAvail4": "Choose Your Unavailable\nDates",
+
+  "facilityCreatorFormNavPriceTitle": "Build Out Your Pricing",
+  "facilityCreatorFormNavPrice1": "How We Handle Cost",
+  "facilityCreatorFormNavPrice2": "Decide On A Cost",
+  "facilityCreatorFormNavPrice3": "Setup a payment plan for renter",
+  "facilityCreatorFormNavPrice4": "Give renters something special",
+  "facilityCreatorFormNavPrice5": "Decide how refunds should \nbe handled",
+
+  "facilityCreatorFormSummaryTitle": "Finishing Touches",
+  "facilityCreatorFormSummary1": "Almost There",
+  "facilityCreatorFormSummary2": "Post",
+
+  "facilityBookingSlotCardSlots": "SLOTS LEFT THIS MONTH",
+  "facilityBookingSlotCardName": "Facility",
+
+
+  "activityCreateAndAdd": "Create and Add Below",
+
+  "activityCreatorFormNavTypeTitle": "Making Your Activity",
+  "activityCreatorFormNavTypeNavTitle1": "Sky's The Limit",
+  "activityCreatorFormNavTypeNavTitle2": "Just a bit more specific.",
+  "activityCreatorFormNavType1" : "What kind of Activity are you Starting?",
+  "activityCreatorFormNavType2": "Okay, Now Select an Activity",
+
+  "activityCreatorFormNavPresetTitle": "Before We Get Started",
+  "activityCreatorFormNavPresetSubTitle1": "A few quick questions",
+  "activityCreatorFormNavPreset1": "We Need a Bit More Details From You About this Activity.",
+  "activityCreatorFormNavPreset2": "Tell Them About Your Community",
+  "activityCreatorFormNavPreset3": "Build Your Team",
+
+  "activityCreatorFormNavLocation1": "Places You've Been Before",
+  "activityCreatorFormNavLocation1SubTitle": "Pick From Your Past Or Create Somewhere New",
+  "activityCreatorFormNavLocation2": "Tell Attendees Where They'll Need To Be",
+
+  "activityCreatorFormNavSpaceTypeTitle": "Setting Is Everything",
+  "activityCreatorFormNavSpaceTypeNavTitle1": "Space's the limit",
+  "activityCreatorFormNavSpaceTypeNavTitle2": "Details, Details, Details",
+  "activityCreatorFormNavSpaceType1": "What kind of Space Will You Need?",
+  "activityCreatorFormNavSpaceType2": "Get a Bit More Specific About the Activity.",
+
+  "activityCreatorFormNavAvailabilityTitle": "Make Your Schedule Your Way",
+  "activityCreatorFormNavAvailabilitySubTitle1": "It's your calendar",
+  "activityCreatorFormNavAvailabilitySubTitle2": "It's also your time",
+  "activityCreatorFormNavAvailabilitySubTitle3": "Why not give them some time to decide?",
+  "activityCreatorFormNavAvailabilitySubTitle4": "In case we missed something",
+  "activityCreatorFormNavAvailability1": "Make Your Activity as Simple as an Event to Last a Weekend or as Complex as a Recurring 2 Hour bi-weekly HIIT Training Class",
+  "activityCreatorFormNavAvailability2": "Sort Out The Hours That Work Best With Your Activity",
+  "activityCreatorFormNavAvailability3": "What Happens before things get started?",
+  "activityCreatorFormNavAvailability4": "How Does This Look?",
+
+  "activityCreatorFormNavBackgroundTitle": "Get Into the Limelight",
+  "activityCreatorFormNavBackground2": "Make Your Audience Know Why You're Unique",
+  "activityCreatorFormNavBackground3": "Tell Them More",
+  "activityCreatorFormNavBackground4": "They'll Want To Know All About Your Accolades",
+
+  "activityCreatorFormNavRequirementTitle": "Set Your Limits",
+  "activityCreatorFormNavRequirementSubTitle1": "Managing everyone's expectations",
+  "activityCreatorFormNavRequirementSubTitle2": "It's up to you",
+  "activityCreatorFormNavRequirementSubTitle3": "Anything that's on the house?",
+  "activityCreatorFormNavRequirementSubTitle4": "Setting up shop?",
+  "activityCreatorFormNavRequirement1": "What do You Think Your Audience Should Know Before Attending?",
+  "activityCreatorFormNavRequirement2": "Anything Else?",
+  "activityCreatorFormNavRequirement3": "What Shouldn't They Be Worried About?",
+  "activityCreatorFormNavRequirement4": "Should Attendee's be prepared to make a few purchases?",
+
+  "activityCreatorFormNavRulesTitle": "Set Your Rules",
+  "activityCreatorFormNavRulesSubTitle1": "Our Rules",
+  "activityCreatorFormNavRulesSubTitle2": "Your activity, your rules",
+  "activityCreatorFormNavRulesSubTitle3": "Put some pressure on",
+  "activityCreatorFormNavRulesSubTitle4": "Contribute amongst each other",
+  "activityCreatorFormNavRules1": "Keep In Mind",
+  "activityCreatorFormNavRules2" : "Tell Them What They'll Gain",
+  "activityCreatorFormNavRules3" : "Tell Them What's at Stake",
+  "activityCreatorFormNavRules4": "Raise & Set the Stakes",
+
+  "activityCreatorFormNavAttendanceTitle": "The Guest List",
+  "activityCreatorFormNavAttendanceSubTitle1": "Who's getting in?",
+  "activityCreatorFormNavAttendanceTicketSubTitle": "Handle through tickets",
+  "activityCreatorFormNavAttendancePassesSubTitle": "Handle through passes",
+  "activityCreatorFormNavAttendanceSubTitle3": "Any last changes?",
+  "activityCreatorFormNavAttendance1": "How Will You be Handling Attendances?",
+  "activityCreatorFormNavAttendanceNone": "Not Handled At This Time",
+  "activityCreatorFormNavAttendanceNoneDes": "Skip Handling Attendees by only setting an attendance limit",
+  "activityCreatorFormNavAttendanceTicket1": "Create Tickets",
+  "activityCreatorFormNavAttendanceTicketDes": "The Dates/Slots You have secured will be the days a ticket is valid. Decide on how a ticket can be used.",
+  "activityCreatorFormNavAttendancePasses1": "Create Passes",
+  "activityCreatorFormNavAttendancePassesDes": "The Dates/Slots You have secured will be the days a ticket is valid. Decide on how a Pass can be used.",
+  "activityCreatorFormNavAttendanceReview": "How does this look?",
+
+  "activityCreatorFormNavCostingTitle": "Build Out Your Pricing",
+
+  "activityCreatorFormNavCosting1" : "How We Handle Costing",
+  "activityCreatorFormNavCosting2": "Let Everyone Know What It'll Cost",
+  "activityCreatorFormNavCosting3": "Decide how refunds should be handled",
+
+  "activityPresetClassesMainTitle": "Will You be Coaching A New Team",
+  "activityPresetClassesNewTeam": "I have a team i'll be coaching",
+  "activityPresetClassesExistingTeam": "Hoping to build a team from scratch",
+
+  "activityPresetClassesWorkingType": "How Will You Be Working? (could be required)",
+  "activityPresetClassesWorkingAlone": "I'll be working alone",
+  "activityPresetClassesWorkingHelp": "I'll have some help",
+
+  "activityPresetClassesWorkingTypeTitle": "Will you be working with a third party?",
+  "activityPresetClassesWorkingTypeOrganization": "Organization",
+  "activityPresetClassesWorkingTypeInstitution": "Institution",
+  "activityPresetClassesWorkingTypeSchool": "School",
+  "activityPresetClassesWorkingTypeClub": "Club",
+  "activityPresetClassesWorkingTypeFreeLance": "Freelance",
+  "activityPresetClassesWorkingTypePrivateCompany": "Private Company",
+  "activityPresetClassesWorkingTypeProgram": "Program",
+
+  "activityPresetClassesWorkingTypeName": "What's the name of who you'll be working with",
+
+  "activityPresetClassesAcceptanceTitle": "How Many Players Are You Open To Accepting?",
+  "activityPresetClassesAcceptanceSubTitle": "Select an amount of players you'd like to cap at.",
+
+  "activityPresetClassesCoachTeamTitle": "How Many More Players Are You Open To Coaching?",
+  "activityPresetClassesCoachTeamSubTitle": "Select an amount of players you'd like to add - add more than the amount of players you have if you would like to make yourself available to new players looking for a coach.",
+  "activityPresetClassesCoachTeamNoNew": "No More Players",
+
+  "activityPresetClassesCoachingTitle": "Who Are You Coaching?",
+  "activityPresetClassesCoachingSubTitle": "Adding a new player will send them an automatic e-mail with details about practice and how they can get started contributing and playing with everyone. Empty slots can be private or open to the public for other new members looking for a coach or team to join.",
+  "activityCoachPlayerFormLastName": "Last Name",
+  "activityCoachPlayerFormFirstName": "First Name",
+  "activityCoachPlayerFormPosition": "Position",
+  "activityCoachPlayerFormEmail": "E-Mail",
+
+  "activityPresetGameTeamTitle": "How Many Teams Will be Playing?",
+  "activityPresetGameTeamSubTitle": "Number of Teams in Tournament? (minimum can be required)",
+
+  "activityPresetExperienceContactDetails": "Your Contact Details",
+  "activityPresetExperienceContactProfileTitle": "Your Profile",
+  "activityPresetExperienceContactProfilePhoto": "You Must Provide a Photo of Your Face",
+  "activityPresetExperienceOrganizationDetails": "Starting an Event Through an Organization?",
+  "activityPresetExperienceWithOrganization": "We Are",
+  "activityPresetExperienceNoOrganization": "No Organization yet (could be required)",
+  "activityPresetExperienceOrganizationName": "What's the Name of Your Organization?",
+
+  "activityLocationTeamTitle": "Where will They Meet?",
+  "activityLocationTeamSubTitle": "Organize where attendees will go before each activity begins - select the destination you've been given access to - or select from locations that we suggest. You can organize locations with dates or add new destinations in case of conflicts - everyone will be in the know.",
+
+  "activitySpaceTypeTitle": "What Type of Space Will you Need To Start Your Activity?",
+  "activitySportTypeTitle": "What Sport or Activity Will you be Doing?",
+  "activitySportTypeSubTitle": "Pick the kind of sport your league will play - we can do a bit of match making with your league with others.",
+
+  "activityAvailabilityDuration": "Duration?",
+  "activityAvailabilityPeriodTitle": "How Long Will Your Activity Go On?",
+  "activityAvailabilityPeriodSubTitle": "You'll be able to select dates depending on where you're planning to host your activity",
+  "activityAvailabilityPeriodDay": "One Day",
+  "activityAvailabilityPeriodWeekly": "One Week",
+  "activityAvailabilityPeriodBiWeekly": "Bi-Weekly",
+  "activityAvailabilityPeriodMonth": "One Month",
+  "activityAvailabilityPeriodSeason": "One Season",
+
+  "activityAvailabilityDateRanges": "Between Which Dates is the Activity Available",
+  "activityAvailabilityDateRangesRandom":"Our Schedule is a Bit Random",
+  "activityAvailabilityDateRangesRecurring":"This Activity will be Recurring",
+
+  "activityAvailabilityHoursAvailableReview": "Your Activity will Last: ",
+
+  "activityAvailabilityDateRandomNotAvailableTitle": "Select a Week and Decide Which Days your activity will not be running for that week",
+  "activityAvailabilityDateRecurringNotAvailableTitle": "Which Days of The Week is the Activity Running?",
+
+  "activityAvailabilityHoursAvailableTitle": "Between Which Hours is This Activity Running?",
+  "activityAvailabilityHoursChangingType": "Hours Change Throughout The Week",
+  "activityAvailabilityHoursFixedType": "Nope, They Stay The Same Each Day",
+
+  "activityAvailabilityHoursAll": "Open 24 Hours",
+  "activityAvailabilityHoursOpen": "Happening All Day",
+
+  "activityAvailabilityHoursTip": "Periods Can't Overlap",
+  "activityAvailabilityPeriodAdd": "Add Another Period",
+
+  "activityAvailabilitySessionsTitle": "How Do You Want to Handle Your Activity & Sessions",
+  "activityAvailabilitySessionsMultiType": "Multi-Day",
+  "activityAvailabilitySessionsMultiDays": "An activity that will happen for multiple days",
+  "activityAvailabilitySessionsMultiDaysHint": "(i.e courses, tournaments, training, camps)",
+  "activityAvailabilitySessionsRecurringType": "Recurring",
+  "activityAvailabilitySessionsRecurring": "The same recurring activity that will happen on multiple days",
+  "activityAvailabilitySessionsRecurringHint": "(i.e runs/teams matches, informal games, one on one)",
+
+  "activityAvailabilitySessionsMulti": "Did You want to split this Activity into Multiple Sessions?",
+  "activityAvailabilitySessionsMultiHint":"convenient for those training, or coaching multiple groups per day",
+
+  "activityAvailabilitySessionsAmount": "How Many Sessions or Matches will you be Making Available?",
+  "activityAvailabilitySessionsAmountDayBased": "Day Based",
+  "activityAvailabilitySessionsAmountDayBasedHint": "(Covers one Session per day, based on how long the activity will be running)",
+  "activityAvailabilitySessionsAmountTimeBased": "Time Based",
+  "activityAvailabilitySessionsAmountTimeBasedDescription": "Each Activity slot will last a total of:",
+  "activityAvailabilitySessionsAmountTimeBasedHint": "(Covers multiple Session per day)",
+  "activityAvailabilitySessions": "Session",
+  "activityAvailabilitySessionsMatches": "Matches",
+  "activityAvailabilitySessionsBreakdown": "You're Making {time} Sessions ({sessions} Per {period})",
+  "@activityAvailabilitySessionsBreakdown": {
+    "placeholders": {
+      "sessions": {
+        "type": "String",
+        "example": "8"
+      },
+      "time": {
+        "type": "String",
+        "example": "60 minute"
+      },
+      "period": {
+        "type": "String",
+        "example": "Day"
+      }
+    }
+  },
+
+  "activityAvailabilityBookingMultiDayBookingAcceptance": "How Many Days Before The Activity Start Will You Be Accepting Bookings?",
+  "activityAvailabilityBookingMultiDayBookingAcceptanceHint": "what is the time frame for purchasing tickets or passes?",
+  "activityAvailabilityBookingMultiDayBookingDays": "Before Activity Starts:",
+  "activityAvailabilityBookingMultiDayBookingDaysAdd": "Add Another Period",
+
+  "activityAvailabilityBookingRecurringPeriodTitle": "Between Which Hours Can Someone Book This Activity?",
+  "activityAvailabilityBookingRecurringPeriodSubTitle": "If you prefer to allow bookings strictly a week before the activity starts or a month in advance or the day or at any time.",
+  "activityAvailabilityBookingRecurringPeriodDayBefore": "The Day Before",
+  "activityAvailabilityBookingRecurringPeriodWeekBefore": "A Week Before",
+  "activityAvailabilityBookingRecurringPeriodMonthBefore": "A Month Before",
+  "activityAvailabilityBookingRecurringPeriodAnyTimeBefore": "Any Time Before",
+
+  "activityAvailabilityBookingReview": "Do You Want to Review Each Attendee Before They Can Be Confirmed?",
+  "activityAvailabilityBookingReviewManual": "Manually Review Each Attendee",
+  "activityAvailabilityBookingReviewNone": "No Reviews Needed",
+
+  "activityAvailabilityReviewClosed": "CLOSED",
+  "activityAvailabilitySpaceSelection": "Which Space Will You Be Using For This Activity?",
+
+  "activityBackgroundOrganization": "Starting {activity} through an Organization?",
+  "@activityBackgroundOrganization": {
+    "placeholders": {
+      "activity": {
+        "type": "String",
+        "example": "Experience"
+      }
+    }
+  },
+
+  "activityBackgroundTitle": "What would You Like The Title for Your Activity To Be?",
+  "activityBackgroundSubTitle": "This is a good time to give those looking to join a glimpse of what's to come, tell them what's unique about your idea",
+
+  "activityClassesBackgroundTitle2": "Tell Them Why Everyone Should Sign up to Your Classes",
+  "activityClassesBackgroundSubTitle2": "Make them confident in your skills and knowledge in the sport that you'll be guiding them in.",
+
+  "activityGameBackgroundTitle2": "What Can People Expect When They Join Your Game?",
+  "activityGameBackgroundSubTitle2": "Paint a quick picture for all prospective players who think they can handle your type of game.",
+
+  "activityExperienceBackgroundTitle2": "Give Everyone A Reason Not to Miss Out on This Experience",
+  "activityExperienceBackgroundSubTitle2": "Tell them why this experience is worth attending and why they really shouldn't miss the chance to be there.",
+
+  "activityBackgroundTitle3": "Tell Them More",
+  "activityBackgroundSubTitle3": "Give Them a Small Sample Of What's To Come (Optional).",
+
+  "activityClassesBackgroundTitle3": "What Are Your Goals & Objectives?",
+  "activityClassesBackgroundTitle4": "What Do You Like to See Towards The End of Your Class?",
+
+  "activityClassesBackgroundMoreTitle": "Let others know about your Past Experience, Accolades or Achievements",
+  "activityClassesBackgroundMoreYears": "Let others know about your number of Years of Experience",
+  "activityClassesBackgroundMoreYearTerm": "Years/Term",
+  "activityClassesBackgroundMoreYearsSub": "You can let players know that it will be useful if they are joining with past experience - if you're looking to skip certain basics or introductions and to take coaching right into the deep end.",
+  "activityClassesBackgroundMoreCertificate": "Let others know about any Certificates",
+  "activityClassesBackgroundMoreCertificateSub": "Name of Certificate",
+  "activityClassesBackgroundMoreType": "Type",
+  "activityClassesBackgroundMoreExperienceName": "Name of Experience/Achievement",
+
+  "activityClassBackgroundMoreTypeMasters": "Masters",
+  "activityClassBackgroundMoreTypeDoctorate": "Doctorate",
+  "activityClassBackgroundMoreTypeGraduate": "Graduate",
+  "activityClassBackgroundMoreTypeBachelor": "Bachelors",
+  "activityClassBackgroundMoreTypeSkilled": "Skilled",
+
+  "activityGameBackgroundTitle4": "How Can Joining Your Game Improve Or Help Players in the Future? - Give them a reason to take interest.",
+
+  "activityRequirementAgeTitle": "Will There be an Age Requirement?",
+  "activityFacilityRequirementAgeSubTitle": "The Facility requires that all {activity} be available for ages under 18 only.",
+  "@activityFacilityRequirementAgeSubTitle": {
+    "placeholders": {
+      "activity": {
+        "type": "String",
+        "example": "Experience"
+      }
+    }
+  },
+  "activityRequirementAgeSeventeenUnder": "Specifically for ages 17 and Under",
+  "activityRequirementPreferences": "What Would You Like Attendees to Know?",
+  "activityRequirementPreferencesGender": "Select A Preferred Option (if one applies)",
+  "activityRequirementPreferencesGenderMen": "Mens Only",
+  "activityRequirementPreferencesGenderWomen": "Women's Only",
+  "activityRequirementPreferencesGenderCoed": "Co-Ed",
+  "activityRequirementPreferencesGenderNone": "Not Important",
+
+  "activityRequirementPreferencesSkillsExpected": "What Style Should Everyone Expect?",
+  "activityRequirementPreferencesSkillsBeginner": "Beginner",
+  "activityRequirementPreferencesSkillsIntermediate": "Intermediate",
+  "activityRequirementPreferencesSkillsAdvanced": "Advanced",
+  "activityRequirementPreferencesSkillsProfessional": "Professional",
+  "activityRequirementPreferencesSkillsExpert": "Expert",
+  "activityRequirementPreferencesSkillsMaster": "Master",
+  "activityRequirementPreferencesAdditional": "Any Additional Requirements? (optional)",
+  "activityRequirementPreferencesExperienceTitle": "Do You Think Players Will Need Past Experience?",
+  "activityRequirementPreferencesExperienceNeeded": "Yes",
+  "activityRequirementPreferencesExperienceNone": "No Experience Required",
+  "activityRequirementPreferencesExperienceSubTitle": "You can let players know that it will be useful if they are joining with past experience - if you're looking to skip certain basics or introductions and to take coaching right into the deep end.",
+  "activityRequirementPreferencesExperienceYears": "Number of Years",
+
+  "activityRequirementsCoveredTitle": "Anything that will be covered?",
+  "activityRequirementsCoveredSubTitle": "Leave anything that will not be provided blank",
+
+  "activityRequirementsCoveredJerseyGear": "Jersey/Gear",
+  "activityRequirementsCoveredEquipment": "Equipment",
+  "activityFacilityRequirementsCoveredEquipment": "This Facility Supports {provider}",
+  "@activityFacilityRequirementsCoveredEquipment": {
+    "placeholders": {
+      "provider": {
+        "type": "String",
+        "example": "Equipment"
+      }
+    }
+  },
+  "activityRequirementsCoveredAnalyticsStandings": "Analytics & Standings",
+  "activityRequirementsCoveredOfficiator": "Officiator",
+  "activityRequirementEventPreferencesTitle": "What Would You Like Attendees to Know?",
+  "activityRequirementEventPreferencesVendors": "Do You Plan on Having one or Multiple Vendors or Merchants?",
+  "activityFacilityRequirementEventPreferences": "This Facility does not allow Vendors or Merchants",
+  "activityRequirementEventPreferencesNo": "No, Not For This Activity",
+  "activityRequirementEventPreferenceVendorsTitle": "Who's On Your List?",
+  "activityRequirementEventPreferenceVendorsSubTitle": "Add information about your vendors or merchants below - we will send them a few questions about what they'll be selling and add it to your activity. You'll have a nice list of all participating vendors and a tidy menu of what they'll be offering.",
+  "activityRequirementEventVendorAdd": "Add An Item",
+  "activityRequirementEventVendorName": "First & Last Name",
+  "activityRequirementEventVendorMerchantName": "Merchant/Vendor Socials",
+  "activityRequirementEventAlcoholTitle": "Do You Plan on Selling Alcohol for this Event?",
+  "activityRequirementEventFoodTitle": "Do You Plan on Selling Food or Drinks For this Event",
+  "activityRequirementEventFoodHint": "Soft Drinks, Chips",
+  "activityRequirementEventAgeSet": "Activities Under 18 cannot use these options.",
+  "activityFacilityRequirementEventAge": "This Facility Only Allows Activities for Ages under 18",
+  "activityFacilityRequirementEventProvided": "This Facility provides Alcohol for events.",
+  "activityFacilityRequirementEventNotAllowed": "This Facility Does Not Allow Alcohol Selling.",
+  "activityRequirementEventAlcohol": "Alcohol",
+  "activityRequirementEventFoodOrDrink": "Food or Drinks",
+  "activityRequirementEventSecurity": "Security",
+
+  "activityRulePreSubTitle": "We require that all prospective Attendee's:",
+  "activityRuleCustomDetailsTitle": "What Details Would you like to give players in advance?",
+  "activityRuleCustomDetailsSubTitle": "Only the details you choose to provide will be included - and only those who you accept will be able to see this information upon request.",
+  "activityRuleGameExpectationTitle": "What Else Can Players Expect?",
+  "activityRuleGameExpectationExample": "Medals, Awards...etc.",
+  "activityRuleGameExpectationSkillsTitle": "What Tier or Skill Will Attendees Reach With Your Activity",
+  "activityRuleGameExpectationCompetitionPools": "Put Up Anything You Got \nWhoever Wins Might Take It All",
+  "activityRuleGameExpectationCompetitionAdd": "Add An Item to Donate to The Pool",
+  "activityRuleGameExpectationCompetitionAddSub": "Donations work on an honor system format",
+  "activityRuleGameExpectationPoolItems": "Select an Item To Add",
+  "activityRuleGameExpectationPoolItemCrypto": "Crypto Currency",
+  "activityRuleGameExpectationPoolItemNFT": "NFT",
+  "activityRuleGameExpectationPoolItemCash": "Cash",
+  "activityRuleGameExpectationPoolItemItem": "Custom",
+  "activityRuleGameExpectationPoolItemCredit": "Credit",
+  "activityRuleGameExpectationPoolItemGift" : "Gift Items",
+  "activityRuleGameExpectationCompetitionContribute": "Allow External Contributions",
+
+  "activityAttendanceTypeTitle": "Attendees",
+  "activityAttendanceTypeTickets": "Tickets",
+  "activityAttendanceTypeTicketDescription": "The Date/Slots You've Secured will be the days a {attendance} is valid. Decide on how a ticket can be used.",
+  "@activityAttendanceTypeTicketDescription": {
+    "placeholders": {
+      "attendance": {
+        "type": "String",
+        "example": "Ticket"
+      }
+    }
+  },
+  "activityAttendanceTypePass": "Pass",
+  "activityAttendanceTypePasses": "Passes",
+
+  "activityAttendanceTypePassesGroups": "Can Passes Be Purchased For Single Attendee's or through a Group of Attendees?",
+  "activityAttendanceTypePassesGroupsNo": "No, Not For This Activity",
+  "activityAttendanceTypePassesGroupsMin": "Min Group Size:",
+  "activityAttendanceTypePassesGroupsMinHint": "Minimum Number of Attendee's in a Group",
+  "activityAttendanceTypePassesGroupsMax": "Max Group Size",
+  "activityAttendanceTypePassesGroupsMaxHint": "Maximum Number of Attendee's in a group",
+
+  "activityAttendanceTypeGenerate": "Generate",
+  "activityAttendanceTypeGenerateHint": "You can decide what a ticket is valid for. You can limit ticket validation by time - i.e a ticket might be valid for a limited number of hours or a number of sessions.",
+  "activityAttendanceTypeQuantityNone": "No Limit",
+  "activityAttendanceTypeQuantity": "Quantity",
+  "activityAttendanceTypeQuantityHint": "Maximum number of {attendance} of per {slot}",
+  "@activityAttendanceTypeQuantityHint" : {
+    "placeholders": {
+      "attendance": {
+        "type": "String",
+        "example": "Ticket"
+      },
+      "slot": {
+        "type": "String",
+        "example": "Session"
+      }
+    }
+  },
+  "activityAttendanceTypeReviewTitle": "You're Creating",
+  "activityAttendanceTypeReview": "What Attendee's Will See...",
+  "activityAttendanceTypeRemaining": "Remaining",
+
+  "activityPaymentTitle": "Let Everyone know what it'll Cost and what is at Stake.",
+  "activityPaymentRecurringDynamicTitle": "Will The Activity Price Change Throughout the Week?",
+  "activityPaymentRecurringStatic": "Prices will remain the same",
+  "activityPaymentRecurringDynamic": "Prices will change depending on time and day",
+
+  "activityPaymentRecurringDynamicChange": "Change Activity Price Based on Time of Day",
+
+  "activityPaymentRecurringDynamicChangeFee": "Ticket Fee",
+  "activityPaymentRecurringSingleTicket": "Set Fee For Single Tickets",
+  "activityPaymentRecurringSingleTicketTimeBased": "Fee For Time Based Ticket",
+  "activityPaymentRecurringSingleTicketDayBased": "Fee For Day Based Ticket",
+  "activityPaymentRecurringSingleTicketTimeBasedGroup": "Set Fee For Group Tickets",
+  "activityPaymentRecurringSingleTicketTimeBasedGroupHint": "Attendees in a group will have the option to split the fee amongst each other",
+
+  "activityPaymentRecurringAttendeeGroupMax": "Attendee max per group",
+  "activityPaymentRecurringAttendeeGroupMin": "Attendee min per group",
+
+  "activityPaymentRecurringSinglePassesTimeBased": "Set Fee For Single Passes",
+  "activityPaymentRecurringSinglePassesTimeBasedGroup": "Set Fee For Group Passes",
+
+  "activityPaymentMultiDayDynamicTitle": "Will The Price of an Activity Change Leading up to the Starting Date?",
+  "activityPaymentMultiDayIsDynamic": "Prices will change leading up to the start date",
+
+  "activityPaymentMultiDaySingleDayPass": "Set Fee For Single Pass",
+  "activityPaymentMultiDaySingleDayPassFee": "Pass Fee",
+  "activityPaymentMultiDaySingleDayBefore": "Before Activity Starts",
+  "activityPaymentMultiDaySingleDayGroupPass": "Set Fee For Group Pass",
+
+  "managerDashboardNavCurrent": "Current",
+  "managerDashboardNavAnalytics": "Analytics",
+  "managerDashboardNavCalendar": "Calendar",
+  "managerDashboardNavMenu": "Menu",
+  "managerMenuProfile": "Profile",
+  "managerMenuTitle": "Your Menu",
+  "managerMenuFacilities": "My Facilities",
+  "managerMenuActivities": "My Activities",
+  "managerMenuHistory": "Payment History",
+  "managerMenuCommunity": "Setup Your Community",
+  "managerMenuLocation": "Setup Your Location",
+  "managerMenuCollab": "Start Collaborating/Sponsors",
+  "menuNotifications": "Notifications",
+  "menuYourSessions": "Coming Up",
+  "menuAccountTitle": "Your Account",
+  "menuProfile": "Profile",
+  "menuAccount": "Account",
+  "menuCreateFacility": "Create Facility",
+  "menuCreateActivity": "Create Activity",
+  "menuDiscover": "Happening Now",
+  "menuHelp": "Help",
+  "menuSettings": "Settings",
+  "menuAppDownload": "Download the mobile app",
+  "currentEventsStartTitle1": "Start Renting Your Facility",
+  "currentEventsStartSubTitle1": "Bring your community together and start competing",
+  "currentEventsStartButton1": "Let's Go",
+  "currentEventInProgressFacilityTitle": "Finish Setting Up Your Facility",
+  "currentEventInProgressFacilityButton": "Complete Your Facility",
+  "currentEventStartTitle2": "Start Your Activity",
+  "currentEventStartSubTitle2": "Get competitions started",
+  "currentEventStartButton2": "Ready",
+  "currentEventInProgressActivityTitle": "Finish Setting Up Your Activity",
+  "currentEventInProgressActivityButton": "Complete Your Activity",
+  "currentEventsMain": "Current Events",
+  "currentEventsMainEmpty": "You Don't Have Any Facilities or Activities",
+  "currentEventsMainFacilities": "Facilities",
+  "currentEventsMainActivities": "Activities",
+  "currentEventsMainFuture": "Coming Up",
+  "currentEventsMainAllEvents": "All Events",
+  "currentEventsNewsUpdates": "News & Updates",
+  "currentEventsNewsUpdatesEmpty": "There are no Updates or News",
+  "currentEventsBottomNavBarSupport": "Support",
+  "bottomNavBarSupportHelp": "Help Centre",
+  "bottomNavBarSupportTerms": "Terms",
+  "bottomNavBarSupportGuide": "Guide & Resourcing",
+  "bottomNavBarSupportCancel": "Cancel",
+  "bottomNavBarCommunity": "Community",
+  "bottomNavBarCommunityConversation": "Conversations",
+  "bottomNavBarCommunityPrivacy": "Privacy",
+  "bottomNavBarCommunityJoin": "Join The Team",
+  "bottomNavBarAbout": "About",
+  "bottomNavBarAboutNews": "News & Updates",
+  "bottomNavBarAboutBackground": "The Whole Idea",
+  "bottomNavBarAboutBackGoals": "Future Goals",
+  "bottomNavBarTopics": "Topics",
+  "bottomNavBarTopicsStarted": "Getting Started",
+  "bottomNavBarTopicsFacility": "Your Facility",
+  "bottomNavBarTopicsMarketing": "Marketing & Promoting",
+  "bottomNavBarTopicsContent": "Content Creation",
+  "profileUserJoinedDate": "Joined:",
+  "profileUserNewLocation": "Add New Location",
+  "profileUserEditLocation": "Edit Locations",
+  "profileUserStandings": "Standings",
+  "profileUserEdit": "Edit Profile",
+  "profileUserReviews": "Reviews & Conversations",
+  "profileUserReviewsAll": "Review All",
+  "profileUserComtent": "Review Comtent",
+  "profileUserComtentAdd": "Add More",
+  "profileUserOverviewSlots": "Slots",
+  "profileUserOverviewRunning": "Running",
+  "profileUserOverviewClasses": "Classes",
+  "profileUserEmail": "E-Mail",
+  "profileUserSocials": "Socials",
+  "profileUserVerifiedProfile": "Verified Profile",
+  "profileUserNotVerifiedProfile": "Account Not Verified Yet",
+  "profileUserFacilityOccupants": "In Facility",
+  "profileUserPartnerships": "Partnerships & Collabs",
+  "profileUserComtentGenerated": "Comtent Generated",
+  "profileAccountPersonalTitle": "Personal Info",
+  "profileAccountPersonalSubTitle": "Provide personal info and key details about What you represent and how you want to be seen.",
+  "profileAccountLoginTitle": "Login Security",
+  "profileAccountLoginSubTitle": "Update your password and verify your credentials",
+  "profileAccountNotificationsTitle": "Notifications",
+  "profileAccountNotificationsSubTitle": "Choose how you would like notifications to be received.",
+  "profileAccountPaymentTitle": "Payment Options",
+  "profileAccountPaymentSubTitle": "Choose how you would like receive payments by selecting from available methods.",
+  "profileAccountDeactivating": "Deactivating Your Account?",
+  "profileAccountPersonalInfoTitle": "What Gets Shared?",
+  "profileAccountPersonalInfoSubTitle": "Personal Info about you is only released after a booking, rental, or activity has been confirmed. (i.e your contact info)",
+  "profileAccountGender": "Gender",
+  "profileAccountGenderMale": "Male",
+  "profileAccountGenderFemale": "Female",
+  "profileAccountGenderTrans": "Transgender",
+  "profileAccountGenderNo": "Prefer Not To Say",
+  "profileAccountBirthDate": "Date of Birth",
+  "profileAccountPhone": "Phone Number",
+  "profileAccountAddPhone": "Add Another Phone Number",
+  "profileAccountGovId": "Verify With Government ID",
+  "profileAccountGovIdAdd": "Add Photo",
+  "profileAccountAddress": "Address",
+  "profileAccountContact": "Emergency Contact",
+  "profileAccountChangePassword": "Change Password",
+  "profileAccountLoginPassword": "Current Password",
+  "profileAccountNewPassword": "New Password",
+  "profileAccountConfirmNewPassword": "Confirm New Password",
+  "profileAccountConfirmCurrentPassword": "Confirm Current Password",
+  "profileAccountLoginAuth": "2-Factor Authentication",
+  "profileAccountLoginVerifyEmail": "Verify With Your E-Mail Address",
+  "profileAccountLoginVerifiedEmail": "Your E-Mail is Verified",
+  "profileAccountSocialIG": "Instagram",
+  "profileAccountFacebook": "Facebook",
+  "profileAccountTwitter": "Twitter",
+  "profileAccountHistory": "History",
+  "profileAccountHistoryLogin": "Device Logins",
+  "profileAccountDeactivateNow": "Deactivate Your Account",
+  "profileEventsTitle": "Your Events",
+  "profileEventsEmpty": "You can create new events by starting your own Activity or by making your facility available to rent out - of course with your own internal activities or programming that will also appear here.",
+  "profileEventsFacilityTable": "Facility",
+  "profileEventsFacilityTableSpaces": "Spaces",
+  "profileEventsFacilityTableBooked": "Booked",
+  "profileEventsActivityTable": "Activity",
+  "profileEventsActivityTableSessions": "Sessions",
+  "profileEventsTableStarted": "Started",
+  "profileEventsTableStatus": "Status",
+  "profileEventsTableSetupFinish": "Finish Setup",
+  "profileEventsTableSetupComplete": "Complete",
+  "profileEventsTableEdit": "Edit",
+  "profileAccountMissingInfo": "Not Specified",
+  "profileAccountChange": "Change",
+  "profileAccountVerified": "Verified",
+  "profileAccountConnect": "Connect",
+  "profileAccountDisconnect": "Disconnect",
+  "profileAccountDeactivate": "Deactivate",
+  "profileAccountPayment": "Make Payments",
+  "profileAccountPaymentInvoices": "Invoices Received",
+  "profileAccountPaymentRefunds": "Refunds Made",
+  "profileAccountNotifications": "Receive Notifications",
+  "profileAccountNotificationsEmail": "E-Mail Notifications",
+  "profileAccountNotificationsNews": "News Related Updates",
+  "profileAccountNotificationsReviews": "New Reviews",
+  "profileLocationGetStartedNew": "Create a New Location",
+  "profileLocationGetStartedDescription": "Create New Locations that will be linked to your profile - once everything is verified it will be added to the CinCout compass. You can then use the location to start an activity, session or make it available to rent if it's somewhere you own...you get to decide whenever the time comes.",
+  "profileLocationGetStartedTemporaryPrivateIndoor": "Make the front door to your kitchen a new location to pick up this weeks batch of sweets",
+  "profileLocationGetStartedPublicOutdoor": "Make the perfect patch of soft scape in your local park the new yoga location for your calm serene mindfulness lessons",
+  "profileLocationGetStartedPrivateIndoor": "Make the warehouse you just finished turning into an indoor playscape ",
+  "profileLocationGetStartedPublicIndoor": "Make the basketball court in your local gym the new location for 5 v 5's, winner takes all",
+  "profileLocationGetStartedTemporaryPublicOutdoor": "Make this weeks location for camp a little bit more unique.",
+  "profileLocationGetStartedRoutePath": "Make that up hill only bike route through the city the next location for your training squad to tackle",
+  "profileLocationGetStartedStep1": "Select the type of location",
+  "profileLocationGetStartedStep2": "Add the address and make sure it hasn't been claimed yet",
+  "profileLocationGetStartedStep3": "Your Done. Wait to verify your location with your account",
+  "profileLocationTypeAccessTitle": "Is this location considered Private or Public?",
+  "profileLocationTypePrivate": "It'll be on Private Property",
+  "profileLocationTypePublic": "It'll be on Public Property",
+  "profileLocationTypePublicSub": "Parks or City Owned Property, including Community Centers or Beaches/water",
+  "profileLocationTypeTitle": "Select A Type of Location You're Looking to Create",
+  "profileLocationTypeIndoor": "Indoors",
+  "profileLocationTypeIndoorSub": "Add the address for a building or a property where you will have access to a space that's sheltered",
+  "profileLocationTypeOutdoor": "A Nice Area/Space Outside",
+  "profileLocationTypeOutdoorSub": "Add the address for a park space, spot on a beach, square etc.",
+  "profileLocationTypeMobile": "On The Move (mobile)",
+  "profileLocationTypeMobileSub": "Add and update the location for something on wheels or anything in motion - we'll make sure to keep it up to date",
+  "profileLocationTypePath": "Along a Set Path/Route With Multiple Stops",
+  "profileLocationTypePathSub": "draw out the path plan or region with all stops along the trail. Include the location of each point along the way.",
+  "profileLocationTypeOther": "Other",
+  "profileLocationTypeOtherSub": "Surprise us",
+  "profileFacilityLocation": "Facility Location",
+  "profileFacilityActivityOption": "Add Another Activity",
+  "profileFacilityAvailableSpaces": "Available Spaces",
+  "profileFacilitySlotTime": "Slot",
+  "profileFacilitySlotHalfTop": "Top Half",
+  "profileFacilitySlotHalfBottom": "Bottom Half",
+  "profileFacilitySlotFull": "Full",
+  "profileFacilitySlotSizesFullOnly": "This Space is only available for booking the entire Full space (not half).*",
+  "profileFacilitySlotSizesHalfOnly": "This Space is only available for booking half the full size (not the full space)*",
+  "profileFacilitySlotIntervalTimeSlot": "Time Slot",
+  "profileFacilitySlotIntervalHalfHour": "Half Hour",
+  "profileFacilitySlotIntervalHour": "One Hour",
+  "profileFacilitySlotDate": "Pick Your Slot By Selecting Any Available Date Above.",
+  "profileFacilitySlotBookingLocation": "Your booking will be located on the ",
+  "profileFacilitySlotBookingDate": "Reservation Date:",
+  "profileFacilitySlotBooking": "This is a {sizeType} Booking",
+  "@profileFacilitySlotBooking": {
+    "placeholders": {
+      "sizeType": {
+        "type": "String",
+        "example": "Half"
+      }
+    }
+  },
+  "profileFacilityCreateBooking": "Create Booking",
+  "profileFacilityCreateBookingInPerson": "Create In Person Booking",
+  "profileFacilityCreateBookingInPersonDes": "To Start a booking for someone in person follow these steps:",
+  "profileFacilityCreateBookingInPersonStep1": "Step 1: Get Them To Create An Account",
+  "profileFacilityCreateBookingInPersonStep2": "Step 2: Forward Them a link to Your Booking Calendar",
+  "profileFacilityCreateBookingInPersonStep3": "Step 3: Secure available slots with payment. Finished.",
+  "profileFacilityCreateBookingInInternal": "Create Booking For Internal Activity",
+  "profileFacilityCreateBookingInInternalDes": "To start a program or activity offered by the facility - this secures a (recurring or one time slot) time and day for bookings related to specific facility events/activities/programs...",
+  "profileFacilityCreateBookingImport": "Import Bookings",
+  "profileFacilityCreateBookingImportDes": "Import Bookings from other supported booking formats - this can also be done by adding selected booking items as imports or by sending ",
+  "profileFacilityCreateBookingImportOption1": "Option 1: Import from other supported booking formats (supports .xl list of calendar dates)",
+  "profileFacilityCreateBookingImportOption2": "Option 2: Selected Dates as imports - this can only be done once",
+  "profileFacilityCreateBookingImportOption3": "Option 3: Send a list of dates to be imported and we will update your calendar for you - this can be done once per facility",
+  "profileFacilityCreate": "CREATE",
+  "profileFacilityCreateSub": "What type of booking are you making?",
+  "profileFacilityAlmostFinished": "ALMOST FINISHED",
+  "profileFacilityAlmostFinishedSub": "Pick an activity that best matches your booking needs",
+  "profileFacilityCreateSave": "SAVE",
+  "profileFacilityCreateSaveSub": "Review or Edit Your Booking Above",
+  "profileFacilitySpacesInUse": "Spaces You Will Use: ",
+  "profileFacilitySDays": "Number of Days: ",
+  "profileFacilityHours": "1 Hour Slots: ",
+  "profileFacilityHalfHour": "1/2 Hour Slots: ",
+  "profileFacilityTotal": "Total Slots: ",
+  "profileFacilityActivity": "Activity Type: ",
+  "profileFacilityDetails": "Facility Details",
+  "profileFacilityDetailsAddActivities": "Add bookings Based on Activities",
+  "profileFacilityDetailsAvailableActivities": "Available Booking Options",
+  "profileFacilityDetailsPaymentAccount": "Payment Account",
+  "profileFacilityDetailsPaymentAccountDetail": "Add or Edit acceptable payment options",
+  "profileFacilityDetailsSetupPaymentAccount": "Setup Your Payment Account",
+  "profileFacilityDetailsSetupPaymentAccountDetail": "Verify Payment Details, you wont be able to accept bookings until a payment account has been made",
+  "profileFacilityDetailsAddCoOwners": "Add Co-Owners, Managers & Affiliates",
+  "profileFacilityDetailsAddCoOwnersDetail": "Do not worry about managing on your own, you can add additional co-owners with similar authorization set by you so that accepting bookings can be done while you are not there",
+  "profileFacilityDetailsDocumentSetup": "Setup Your Documents",
+  "profileFacilityEditAccount": "Edit Facility",
+  "profileFacilityAccount": "Facility Account",
+  "profileFacilitySettingsInfo": "Facility Info",
+  "profileFacilitySettingsInfoSubtitle": "Provide personal info and key details about What you represent and how you want to be seen.",
+  "profileFacilitySettingsNotification": "Notifications",
+  "profileFacilitySettingsNotificationSubTitle": "Choose how you would like notifications to be \nreceived.",
+  "profileFacilitySettingsPayment": "Payment Options",
+  "profileFacilitySettingsPaymentSubTitle": "Choose how you would like to receive payments and what payment options are accepted.",
+  "profileFacilitySettingsDocument": "Facility Documents",
+  "profileFacilitySettingsDocumentSubTitle": "Securely create, upload and edit important documents, permits, check in forms and accepted identification methods",
+  "profileFacilitySettingsName": "Facility Name",
+  "profileFacilitySettingsCoOwners": "Facility Co-Owners",
+  "profileFacilitySettingsCoOwnerDescription": "Search and add any additional or co-owners - they will have similar access to managing the facility as you do.",
+  "profileFacilitySettingsAddCoOwner": "Add Co-Owner",
+  "profileFacilitySettingsAffiliates": "Facility Affiliates",
+  "profileFacilitySettingsAffiliatesDescription": "Add any sponsors, partners or related facilities/communities as affiliated groups for collabs and outsourced support.",
+  "profileFacilitySettingsAddAffiliates": "Add Affiliates",
+  "profileFacilitySettingsStaff": "Facility Staff",
+  "profileFacilitySettingsStaffDescription": "Add Staff members - they wont have similar controls as co-owners but they will have access to a few managing controls decided by you.",
+  "profileFacilitySettingsAddStaff": "Add Staff Member",
+  "profileFacilitySettingsBookingTerm": "Bookings Available From",
+  "profileFacilitySettingsPrivate": "Make Private",
+  "profileFacilitySettingsPrivateSetPublic": "Set Facility to Public",
+  "profileFacilitySettingsPrivateSetPrivate": "Set Facility to Private",
+  "profileFacilitySettingsPrivateDescription": "Making your faciilty private will remove your facility from the facilities compass - you will still have controls to continue managing bookings and content",
+  "profileFacilitySettingsStatus": "Facility Status",
+  "profileFacilityStatusFinish": "Finish Setting Up",
+  "profileFacilityStatusProgress": "In Progress",
+  "profileFacilityStatusEnded": "Ended",
+  "profileFacilityStatusHold": "On Hold - Paused",
+  "profileFacilityStatus": "Coming Up",
+  "profileFacilityStatusCancel": "Cancelled",
+  "profileFacilitySettingsNotificationsMessage": "Messages Sent to Facility",
+  "profileFacilitySettingsNotificationsOpen": "When Facility is Close to Opening Day",
+  "profileFacilitySettingsNotificationsClose": "When Facility is Close to Closing Day",
+  "profileFacilitySettingsNotificationCapacity": "When Over Capacity Limit",
+  "profileFacilitySettingsNotificationAlert": "Facility Alerts",
+  "profileFacilitySettingsNotificationBooking": "New Bookings",
+  "profileFacilitySettingsNotificationCancel": "Booking Cancellations or Changes",
+  "profileFacilitySettingsPaymentCash": "Cash",
+  "profileFacilitySettingsPaymentDebitCredit": "Debit Credit",
+  "profileFacilitySettingsPaymentPaypal": "Paypal",
+  "profileFacilitySettingsPaymentGoogle": "Google Pay",
+  "profileFacilitySettingsPaymentApplePay": "Apple Pay",
+  "profileFacilitySettingsPaymentETransfer": "E-Transfers",
+  "profileFacilitySettingsPaymentEmail": "E-Transfer Email",
+  "profileFacilitySettingsPaymentStripeProfile": "Setup Facility Payment",
+  "profileFacilitySettingsPaymentStripe": "Create Payment Account",
+  "prifleFacilitySettingsPaymentStripeFinished": "Payment Account",
+  "profileFacilitySettingsPaymentRefund": "Refund History List",
+  "profileFacilitySettingsPaymentInvoices": "Invoice History List",
+  "profileFacilitySettingsDocuments": "Facility Documents",
+  "profileFacilitySettingsDocumentPermit": "Preview Permit Form",
+  "profileFacilitySettingsDocumentPermitDes": "Uploaded a permit form that you will require renters to sign before bookings can be completed",
+  "profileFacilitySettingsDocumentInsurance": "Preview Insurance Form",
+  "profileFacilitySettingsDocumentInsuranceDes": "Upload the insurance form that you will require renters to sign.",
+  "profileFacilitySettingsDocumentSecurityDepositAmount": "How much will the deposit be?",
+  "profileFacilitySettingsDocumentSecurityDepositForm": "Preview Security Deposit",
+  "profileFacilitySettingsDocumentSecurityCheckIn": "Create New Check-In Form",
+  "profileFacilitySettingsDocumentSecurity": "Security Code",
+  "profileFacilitySettingsDocumentSecurityDes": "For accessing after hours - this will only be available for verified renters after their booking is confirmed by you",
+  "profileFacilitySettingsDocumentId": "Possible ID Verifications",
+  "profileFacilitySettingsDocumentIdVerification": "Set the accepted identity types acceptable for renters - you may also allow verified CICO accounts as a safe and secure alternative.",
+  "profileFacilitySettingsDocumentPassport": "Passport",
+  "profileFacilitySettingsDocumentLicence": "Licence",
+  "profileFacilitySettingsDocumentHealth": "Health Card",
+  "profileFacilitySettingsDocumentCheckInForm": "Start a Check-In Form",
+  "profileFacilitySettingsDocumentCheckInFormLinkCreate": "Create Link",
+  "profileFacilitySettingsDocumentCheckInFormTitle": "Check-In Form Title",
+  "profileFacilitySettingsDocumentCheckInFormLinkTitle": "Link",
+  "profileFacilitySettingsDocumentCheckInFormPaste": "Paste Check-In Form Link",
+  "profileFacilitySettingsDocumentCheckInFormDes": "Paste and upload a check-in form into link below - we will present this form to each renter and their guests before their activity starts. After creating your form - paste the link below.",
+  "profileFacilitySettingsDocumentCheckInFormBooking": "Show Check-In Form for each Booker",
+  "profileFacilitySettingsDocumentCheckInFormEachVisit": "Show Check-In Form on each new visit (guests & verified visitors)",
+  "profileFacilitySettingsDocumentCheckInFormLastVisit": "Show Check-In Form on Last Visit or Session",
+  "profileFacilitySettingsDocumentCheckInFormActive": "Make Check-In Form Active",
+  "profileFacilityActivityBooking": "Activity Bookings",
+  "profileFacilityActivityBookingTip": "Tip: Leave blank if you prefer not to.",
+  "profileFacilityActivityBookingCampRequirement": "Make Your Facility Available for Camp Program Bookings",
+  "profileFacilityActivityBookingCampReqDes": "You can define specific verification requirements/requests from organizers. This will help ensure your booking expectations are met before a booking can be made - better improving the potential for collaboration and relationships between existing programs offered by your facility.",
+  "profileFacilityActivityBookingVerifications": "Require Verification Before Bookings are Made?",
+  "profileFacilityActivityBookingVerificationSub": "All {activity}s must be verified.",
+  "@profileFacilityActivityBookingVerificationSub": {
+    "placeholders": {
+      "activity": {
+        "type": "String",
+        "example": "Camp"
+      }
+    }
+  },
+  "profileFacilityActivityBookingContactDetails": "Require Contact Details?",
+  "profileFacilityActivityBookingContactDetailsSub": "Ensure all {activity} activities include specific contact details with their booking.",
+  "@profileFacilityActivityBookingContactDetailsSub": {
+    "placeholders": {
+      "activity": {
+        "type": "String",
+        "example": "Camp"
+      }
+    }
+  },
+  "profileFacilityActivityBookingLongTerm": "Allow Long Term Bookings (more than your current maximum bookings)?",
+  "profileFacilityActivityBookingLongTermSub": "Give the option to exceed your current booking limits.",
+  "profileFacilityActivityBookingAgeLimit": "Prevent Camps that are geared towards ages 18 and below",
+  "profileFacilityActivityBookingAgeLimitSub": "You can prevent youth/preteens from booking if your facility wants to gear itself towards a higher age group or demographic/programming.",
+  "profileFacilityActivityBookingPartnershipStart": "Partnership Opportunities?",
+  "profileFacilityActivityBookingPartnershipSub": "Let organizations know about any partnership opportunities or sponsorships that you might be offering (based on criteria set by you) - This is a great way to boost the facilities growth/awareness for your affiliated stakeholders/existing partners.",
+  "profileFacilityActivityBookingPartnershipProvide": "Provide Partnership Opportunities",
+  "profileFacilityActivityBookingPartnershipProvideSub": "Let Organizations know about any potential partnership opportunities you offer, giving them a reason to pick you over everyone else",
+  "profileFacilityActivityBookingPartnershipTitle": "Partnership Title",
+  "profileFacilityActivityBookingPartnershipDes": "Partnership Description",
+  "profileFacilityActivityBookingPartnershipTerms": "Partnership Terms",
+  "profileFacilityActivityBookingPartnershipTermsSub": "Paste a link of your terms - this will only be presented to organizations interested in partnering with you.",
+  "profileFacilityActivityBookingSponsorshipStart": "Sponsorship Opportunities?",
+  "profileFacilityActivityBookingSponsorshipStartSub": "Let organizations know about any partnership opportunities or sponsorships that you might be offering (based on criteria set by you) - This is a great way to boost the facilities growth/awareness for your affiliated stakeholders/existing partners.",
+  "profileFacilityActivityBookingSponsorshipProvide": "Provide Sponsorship Opportunities",
+  "profileFacilityActivityBookingSponsorshipProvideSub": "Let Organizations know about any of your sponsors",
+  "profileFacilityActivityBookingSponsor": "The Sponsor?",
+  "profileFacilityActivityBookingSponsorDes": "Sponsorship Description",
+  "profileFacilityActivityBookingAvailabilityStart": "Set Dates Aside For",
+  "profileFacilityActivityBookingAvailabilityStartSub": "Reserve specific dates based that work within your facilities calendar bookings - avoid overlapping activities that might not be best for your facility (i.e camps might happen depending on the season and may be more valuable in terms of guaranteed bookable hours) in this way, you can set dates aside and guarantee availability based on this activity.",
+  "profileFacilityActivityBookingAvailabilitySet": "Set Dates Aside?",
+  "profileFacilityActivityBookingAvailabilitySetSub": "Use the calendar to decide how you want to handle Booking Activity Availabilities.",
+  "profileFacilityActivityBookingAvailabilityAllDay": "Allow All Day Bookings",
+  "profileFacilityActivityBookingAvailabilityAllDaySub": "Some activities like events or camps might require bookings that might exceed your allowed slot selection per day.",
+  "profileFacilityActivityBookingAvailabilityStartDate": "Start Date",
+  "profileFacilityActivityBookingAvailabilityStartDateSub": "Your facility starts accepting bookings starting on {startDate} and ending on {endDate} - you can set a separate start date for bookings tied to this activity.",
+  "@profileFacilityActivityBookingAvailabilityStartDateSub": {
+    "placeholders": {
+      "startDate": {
+        "type": "String",
+        "example": "Jan 1"
+      },
+      "endDate": {
+        "type": "String",
+        "example": "Dec 1"
+      }
+    }
+  },
+  "profileFacilityActivityBookingAvailabilitySelect": "Select Dates Reserved For This Activity",
+  "profileFacilityActivityBookingAvailabilityOpen": "Availability for this Space currently starts on {startDate} and will end on {endDate}",
+  "@profileFacilityActivityBookingAvailabilityOpen": {
+    "placeholders": {
+      "startDate": {
+        "type": "String",
+        "example": "Jan 1"
+      },
+      "endDate": {
+        "type": "String",
+        "example": "Dec 1"
+      }
+    }
+  },
+  "profileFacilityActivityBookingAvailabilityReserve": "Reserve Dates",
+  "profileFacilityActivityBookingAvailabilityDefault": "By Default, your facility is set to un-available",
+  "trademarkCINCOUT": "© CINCOUT - all rights reserved {year}",
+  "@trademarkCINCOUT": {
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "2022"
+      }
+    }
+  }
+
+}
