@@ -8,6 +8,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
   factory ActivityBackgroundDto({
     required bool isAnOrganization,
     required String organizationName,
+    List<String>? activityProfileImages,
 
     required String activityTitle,
     required String activityDescription1,
@@ -25,6 +26,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
         isAnOrganization: background.isAnOrganization,
         organizationName: background.organizationName.value.fold((l) => '', (r) => r),
         activityTitle: background.activityTitle.value.fold((l) => '', (r) => r),
+        activityProfileImages: (background.activityProfileImages != null) ? background.activityProfileImages!.map((e) => e).toList() : null,
         activityDescription1: background.activityDescription1.value.fold((l) => '', (r) => r),
         activityDescription2: background.activityDescription2?.value.fold((l) => '', (r) => r),
         activityGoals: background.activityGoals?.map((e) => StringItemDto.fromDomain(e.value.fold((l) => '', (r) => r)).toJson()).toList(),
@@ -38,6 +40,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
         isAnOrganization: isAnOrganization,
         organizationName: FirstLastName(organizationName),
         activityTitle: BackgroundInfoTitle(activityTitle),
+        activityProfileImages: (activityProfileImages != null) ? activityProfileImages!.map((e) => e).toList() : null,
         activityDescription1: BackgroundInfoDescription(activityDescription1),
         activityDescription2: BackgroundInfoDescription(activityDescription2 ?? ''),
         activityGoals: (activityGoals != null) ? activityGoals?.map((e) => BackgroundInfoDescription(StringItemDto.fromJson(e).toDomain())).toList() : [],

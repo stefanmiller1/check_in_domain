@@ -27,6 +27,8 @@ dependencies:
   phone_form_field:
     git:
       url: https://github.com/stefanmiller1/phone_form_field.git
+  geoflutterfire:
+    git: https://github.com/stefanmiller1/GeoFlutterFire
   check_in_credentials:
     path: /Users/stefanmiller/AndroidStudioProjects/check_in_credentials
 

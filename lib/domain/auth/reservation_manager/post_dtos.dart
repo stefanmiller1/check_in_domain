@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:check_in_domain/check_in_domain.dart';
 import 'package:check_in_domain/domain/auth/reservation_manager/post.dart';
 import 'package:check_in_domain/domain/auth/reservation_manager/preview/preview_data_dtos.dart';
@@ -38,12 +36,16 @@ class PostDto with _$PostDto {
     Map<String, dynamic>? systemPost,
     Map<String, dynamic>? textPost,
     List<Map<String, dynamic>>? videoPost,
+    List<Map<String, dynamic>>? postLikes,
+    List<Map<String, dynamic>>? postBookmarks,
+    @ServerTimestampConverter() FieldValue? createdAtSTC,
+    @ServerTimestampConverter() FieldValue? updatedAtSTC,
   }) = _PostDto;
 
   factory PostDto.fromDomain(Post post) {
     return PostDto(
         authorId: post.authorId.getOrCrash(),
-        createdAt: (post.createdAt != null) ? post.createdAt.toString() : null,
+        createdAt: DateTime.now().toString(),
         id: post.id,
         metadata: post.metadata,
         remoteId: post.remoteId,
@@ -51,16 +53,20 @@ class PostDto with _$PostDto {
         reservationId: post.reservationId,
         showStatus: post.showStatus,
         isReported: post.isReported,
-        status: post.status.toString(),
+        status: (post.status != null) ? post.status.toString() : null,
         type: post.type.toString(),
         previewData: (post.previewData != null) ? PreviewDataDto.fromDomain(post.previewData!).toJson() : null,
-        updatedAt: (post.updatedAt != null) ? post.updatedAt.toString() : null,
+        updatedAt: DateTime.now().toString(),
         audioPost: (post.audioPost != null) ? AudioPostDto.fromDomain(post.audioPost!).toJson() : null,
         imagePost: (post.imagePost != null && (post.imagePost?.isNotEmpty ?? false)) ? post.imagePost!.map((e) => ImagePostDto.fromDomain(e).toJson()).toList() : null,
         systemPost: (post.systemPost != null) ? SystemPostDto.fromDomain(post.systemPost!).toJson() : null,
         textPost: (post.textPost != null) ? TextPostDto.fromDomain(post.textPost!).toJson() : null,
         videoPost: (post.videoPost != null && (post.videoPost?.isNotEmpty ?? false)) ? post.videoPost!.map((e) => VideoPostDto.fromDomain(e).toJson()).toList() : null,
-    );
+        postLikes: (post.postLikes != null && (post.postLikes?.isNotEmpty ?? false)) ? post.postLikes!.map((e) => StringItemDto.fromDomain(e.getOrCrash()).toJson()).toList() : null,
+        postBookmarks: (post.postBookmarks != null && (post.postBookmarks?.isNotEmpty ?? false)) ? post.postBookmarks!.map((e) => StringItemDto.fromDomain(e.getOrCrash()).toJson()).toList() : null,
+        createdAtSTC: FieldValue.serverTimestamp(),
+        updatedAtSTC: FieldValue.serverTimestamp()
+     );
   }
 
   Post toDomain() {
@@ -82,7 +88,9 @@ class PostDto with _$PostDto {
         imagePost: (imagePost != null && (imagePost?.isNotEmpty ?? false)) ? imagePost!.map((e) => ImagePostDto.fromJson(e).toDomain()).toList() : null,
         systemPost: (systemPost != null) ? SystemPostDto.fromJson(systemPost!).toDomain() : null,
         textPost: (textPost != null) ? TextPostDto.fromJson(textPost!).toDomain() : null,
-        videoPost: (videoPost != null && (videoPost?.isNotEmpty ?? false)) ? videoPost!.map((e) => VideoPostDto.fromJson(e).toDomain()).toList() : null
+        videoPost: (videoPost != null && (videoPost?.isNotEmpty ?? false)) ? videoPost!.map((e) => VideoPostDto.fromJson(e).toDomain()).toList() : null,
+        postLikes: (postLikes != null && (postLikes?.isNotEmpty ?? false)) ? postLikes!.map((e) => UniqueId.fromUniqueString(StringItemDto.fromJson(e).toDomain())).toList() : null,
+        postBookmarks: (postBookmarks != null && (postBookmarks?.isNotEmpty ?? false)) ? postBookmarks!.map((e) => UniqueId.fromUniqueString(StringItemDto.fromJson(e).toDomain())).toList() : null,
     );
   }
 

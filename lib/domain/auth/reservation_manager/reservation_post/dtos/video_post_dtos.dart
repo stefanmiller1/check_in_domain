@@ -16,6 +16,7 @@ class VideoPostDto with _$VideoPostDto {
     required String name,
     required num size,
     required String uri,
+    int? numberOfViews,
     Map<String, dynamic>? metaData,
   }) = _VideoPostDto;
 
@@ -27,6 +28,7 @@ class VideoPostDto with _$VideoPostDto {
       name: systemPost.name,
       size: systemPost.size,
       uri: systemPost.uri,
+      numberOfViews: systemPost.numberOfViews,
       metaData: systemPost.metaData,
     );
   }
@@ -38,6 +40,7 @@ class VideoPostDto with _$VideoPostDto {
       name: name,
       size: size,
       uri: uri,
+      numberOfViews: numberOfViews,
       metaData: metaData,
     );
   }

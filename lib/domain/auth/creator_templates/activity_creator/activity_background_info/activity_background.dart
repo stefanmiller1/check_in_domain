@@ -8,6 +8,7 @@ class ActivityBackground with _$ActivityBackground {
   factory ActivityBackground({
     required bool isAnOrganization,
     required FirstLastName organizationName,
+    List<String>? activityProfileImages,
 
     required BackgroundInfoTitle activityTitle,
     required BackgroundInfoDescription activityDescription1,

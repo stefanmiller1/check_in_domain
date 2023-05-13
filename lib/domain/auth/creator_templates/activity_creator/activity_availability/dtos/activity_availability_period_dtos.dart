@@ -8,6 +8,7 @@ class ActivityAvailabilityPeriodDto with _$ActivityAvailabilityPeriodDto {
     required String fromStarting,
     required String fromEnding,
     required bool isInviteOnly,
+    required bool isActive,
 
     String? durationType,
     String? sessionType,
@@ -41,6 +42,8 @@ class ActivityAvailabilityPeriodDto with _$ActivityAvailabilityPeriodDto {
       fromEnding: availabilityPeriod.fromEnding.toString(),
       isInviteOnly: availabilityPeriod.isInviteOnly,
 
+      isActive: availabilityPeriod.isActive,
+
       durationType: availabilityPeriod.durationType.toString(),
       sessionType: availabilityPeriod.sessionType.toString(),
 
@@ -70,6 +73,7 @@ class ActivityAvailabilityPeriodDto with _$ActivityAvailabilityPeriodDto {
         fromStarting: DateTime.parse(fromStarting),
         fromEnding: DateTime.parse(fromEnding),
         isInviteOnly: isInviteOnly,
+        isActive: isActive,
         durationType: getDurationType(durationType ?? ''),
         sessionType: getSessionType(sessionType ?? ''),
 

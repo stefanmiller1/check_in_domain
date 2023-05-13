@@ -19,6 +19,7 @@ class LocationModel with _$LocationModel {
     required bool isVerified,
     required bool isVerifiedAlready,
     required bool isCompleted,
+    GeoFirePoint? locationPosition,
     String? aptUnitNumber
   }) = _LocationModel;
 

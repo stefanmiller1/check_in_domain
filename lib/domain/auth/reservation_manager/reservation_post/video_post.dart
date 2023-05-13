@@ -13,6 +13,7 @@ class VideoPost with _$VideoPost {
     required String name,
     required num size,
     required String uri,
+    int? numberOfViews,
     Map<String, dynamic>? metaData,
   }) = _VideoPost;
 

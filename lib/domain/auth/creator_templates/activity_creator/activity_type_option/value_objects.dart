@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum ProfileActivityTypeOption {gameMatches, classesLessons, experiences, misc}
+enum ProfileActivityTypeOption {toRent, gameMatches, classesLessons, experiences, misc}
 enum ProfileActivityOption {league, teamsRuns, equipment, tournament, camp, coaching, teaching, training, events, informalGame, oneOnOne, toRent, toProtest, toShelter, toWorship, marketplace, toWork, toConvene, none}
 
 ProfileActivityTypeOption getActivityType(String type) {
@@ -100,51 +100,36 @@ String? getDescriptionForActivityOption(
 }
 
 String? getTitleForActivityOption(
-ProfileActivityOption type,
-{
-  required String? toRent,
-  required String? camp,
-  required String? events,
-  required String? league,
-  required String? teaching,
-  required String? training,
-  required String? teamsRun,
-  required String? equipment,
-  required String? tournament,
-  required String? coaching,
-  required String? informalGame,
-  required String? oneOnOne,
-}
-    ) {
+BuildContext context,
+ProfileActivityOption type) {
 
   switch (type) {
     case ProfileActivityOption.league:
-      return league;
+      return AppLocalizations.of(context)?.activityTypeLeagues ?? 'league';
     case ProfileActivityOption.teamsRuns:
-      return teamsRun;
+      return AppLocalizations.of(context)?.activityTypeRuns ?? 'teamsRun';
     case ProfileActivityOption.equipment:
-      return equipment;
+      return AppLocalizations.of(context)?.activityTypeEquipment ?? 'equipment';
     case ProfileActivityOption.tournament:
-      return tournament;
+      return AppLocalizations.of(context)?.activityTypeTournament ?? 'tournament';
     case ProfileActivityOption.camp:
-      return camp;
+      return AppLocalizations.of(context)?.activityTypeCamp ?? 'camp';
     case ProfileActivityOption.coaching:
-      return coaching;
+      return AppLocalizations.of(context)?.activityTypeCoachingState ?? 'coaching';
     case ProfileActivityOption.teaching:
-      return teaching;
+      return AppLocalizations.of(context)?.activityTypeTeaching ?? 'teaching';
     case ProfileActivityOption.training:
-      return training;
+      return AppLocalizations.of(context)?.activityTypeTrainingState ?? 'training';
     case ProfileActivityOption.events:
-      return events;
+      return AppLocalizations.of(context)?.activityTypeEvent ?? 'events';
     case ProfileActivityOption.informalGame:
-      return informalGame;
+      return AppLocalizations.of(context)?.activityTypeInformalGame ?? 'informalGame';
     case ProfileActivityOption.oneOnOne:
-      return oneOnOne;
+      return AppLocalizations.of(context)?.activityTypeOneOnOne ?? 'oneOnOne';
     case ProfileActivityOption.toRent:
-      return toRent;
-
+      return AppLocalizations.of(context)?.activityTypeRent;
     case ProfileActivityOption.toProtest:
-      // TODO: Handle this case.
+      return 'protest';
       break;
     case ProfileActivityOption.toWorship:
       // TODO: Handle this case.
@@ -166,6 +151,7 @@ ProfileActivityOption type,
 
 List<ActivityOption> getActivityTypeOptions(BuildContext context) {
   return [
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-g9g04909vrev'), title: AppLocalizations.of(context)?.activityTypeRent ?? 'Just For Renting', description: AppLocalizations.of(context)!.activityTypeRentDes, icon: Icons.house, activityType: ProfileActivityTypeOption.toRent, activity: ProfileActivityOption.toRent),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-g9g049093h9g'), title: AppLocalizations.of(context)!.activityTypeGameMatch, description: AppLocalizations.of(context)!.activityTypeGameMatchDes, icon: Icons.videogame_asset_rounded, activityType: ProfileActivityTypeOption.gameMatches, activity: ProfileActivityOption.none),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-5903ng902h80'), title: AppLocalizations.of(context)!.activityTypeClasses, description: AppLocalizations.of(context)!.activityTypeClassesLessonsDes, icon: Icons.sports, activityType: ProfileActivityTypeOption.classesLessons, activity: ProfileActivityOption.none),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6903gngoe942'), title: AppLocalizations.of(context)!.activityTypeExperiences, description: AppLocalizations.of(context)!.activityTypeExperiencesDes, icon: Icons.map, activityType: ProfileActivityTypeOption.experiences, activity: ProfileActivityOption.none),
@@ -175,7 +161,7 @@ List<ActivityOption> getActivityTypeOptions(BuildContext context) {
 
 List<ActivityOption> getActivityOptions(BuildContext? context) {
   return [
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-986gkuy968f3'), activity: ProfileActivityOption.toRent, icon: (context != null) ? Icons.vpn_key_rounded : null, activityType: ProfileActivityTypeOption.misc, iconPath: 'assets/icons_svg/search_explore/noun-property-agent-970402.svg'),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-986gkuy968f3'), activity: ProfileActivityOption.toRent, icon: (context != null) ? Icons.vpn_key_rounded : null, activityType: ProfileActivityTypeOption.toRent, iconPath: 'assets/icons_svg/search_explore/noun-property-agent-970402.svg'),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.camp, icon: (context != null) ? Icons.style : null, activityType: ProfileActivityTypeOption.experiences, iconPath: 'assets/icons_svg/search_explore/noun-camping-1245032.svg'),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-1289fnm049j0'), activity: ProfileActivityOption.events, icon: (context != null) ? Icons.connect_without_contact_rounded : null, activityType: ProfileActivityTypeOption.experiences, iconPath: 'assets/icons_svg/search_explore/noun-head-student-1926818.svg'),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.league, icon: (context != null) ? Icons.star_rate_outlined : null, activityType: ProfileActivityTypeOption.experiences, iconPath: 'assets/icons_svg/search_explore/noun-team-champion-968012.svg'),

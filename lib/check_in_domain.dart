@@ -2,8 +2,6 @@ library check_in_domain;
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:injectable/injectable.dart';
@@ -14,7 +12,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:phone_form_field/phone_form_field.dart';
 import 'package:check_in_credentials/check_in_credentials.dart';
 import 'package:intl/intl.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
 import 'dart:math';
+
 
 part 'domain/auth/creator_templates/activity_creator/activity_type_option/value_objects.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_type_option/activity_option.dart';
@@ -39,6 +39,7 @@ part 'domain/misc/location_service/value_objects.dart';
 part 'domain/misc/location_service/failures.dart';
 part 'domain/misc/location_service/value_validators.dart';
 part 'domain/misc/location_service/listing_location_dtos.dart';
+part 'domain/misc/location_service/location_helper.dart';
 part 'domain/misc/socials/socials_item.dart';
 part 'domain/misc/socials/socials_item_dto.dart';
 part 'domain/misc/rules_privacy/dtos/custom_rule_options_dtos/facility_custom_rules_dtos.dart';
@@ -59,6 +60,7 @@ part 'domain/misc/cost_options/cost_per_multi_day_setting_option.dart';
 part 'domain/misc/cost_options/cost_per_multi_day_setting_option_dtos.dart';
 part 'domain/misc/new_contact_option/new_contact_info.dart';
 part 'domain/misc/new_contact_option/new_contact_info_dtos.dart';
+part 'domain/misc/new_contact_option/value_objects.dart';
 
 part 'domain/misc/reservation_services/reservation_item/reservation_item.dart';
 part 'domain/misc/reservation_services/reservation_item/reservation_item_dtos.dart';
@@ -92,6 +94,7 @@ part 'domain/misc/document_form_services/security_code/security_code_item_dtos.d
 part 'domain/misc/document_form_services/security_deposit/security_deposit_form_item.dart';
 part 'domain/misc/document_form_services/security_deposit/security_deposit_form_item_dtos.dart';
 
+part 'domain/misc/search_explore_options/value_objects.dart';
 // part 'domain/auth/calendar/failures.dart';
 
 

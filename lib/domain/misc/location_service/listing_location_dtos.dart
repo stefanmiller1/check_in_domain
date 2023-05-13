@@ -7,6 +7,7 @@ class LocationModelDto with _$LocationModelDto {
   const factory LocationModelDto({
     required String ownerId,
     required String placeId,
+    Map<String, dynamic>? locationPosition,
     String? longLat,
     String? aptUnitNumber,
     required String locationType,
@@ -26,6 +27,7 @@ class LocationModelDto with _$LocationModelDto {
         locationType: listingLocation.locationType.toString(),
         placeId: listingLocation.placeId,
         longLat: listingLocation.longLat,
+        locationPosition: (listingLocation.locationPosition != null) ? listingLocation.locationPosition?.data : null,
         countryRegion: listingLocation.countryRegion,
         city: listingLocation.city.value.fold((l) => l.maybeMap(location: (e) => e.f?.maybeMap(invalidCity: (e) => e.failedValue, isEmpty: (e) => e.failedValue, orElse: () => '') ?? '', orElse: () => ''),
                 (r) => r),
@@ -45,12 +47,14 @@ class LocationModelDto with _$LocationModelDto {
 
 
   LocationModel toDomain() {
+
     return LocationModel(
       ownerId: ownerId,
       locationType: getLocationType(locationType),
       placeId: placeId,
       longLat: longLat ?? '',
       countryRegion: countryRegion,
+      locationPosition: (locationPosition != null) ? GeoFirePoint((locationPosition!['geopoint'] as GeoPoint).latitude, (locationPosition!['geopoint'] as GeoPoint).longitude) : null,
       city: FacilityLocationCity(city),
       provinceState: FacilityLocationStateProvince(provinceState, countryRegion),
       street: FacilityLocationStreet(street),

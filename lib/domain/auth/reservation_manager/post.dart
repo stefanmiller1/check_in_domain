@@ -4,6 +4,7 @@ import 'package:check_in_domain/domain/auth/reservation_manager/reservation_post
 import 'package:check_in_domain/domain/auth/reservation_manager/reservation_post/image_post.dart';
 import 'package:check_in_domain/domain/auth/reservation_manager/reservation_post/text_post.dart';
 import 'package:check_in_domain/domain/auth/reservation_manager/reservation_post/video_post.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'reservation_post/system_post.dart';
@@ -26,7 +27,8 @@ enum PostStatus {
   sent,
   error,
   seen,
-  sending
+  sending,
+  delivered
 }
 
 PostStatus getStatus(String type) {
@@ -72,6 +74,16 @@ class Post with _$Post {
     SystemPost? systemPost,
     TextPost? textPost,
     List<VideoPost>? videoPost,
+    List<UniqueId>? postLikes,
+    List<UniqueId>? postBookmarks,
   }) = _Post;
+
+  factory Post.empty() => Post(
+    authorId: UniqueId(),
+    id: '',
+    type: PostType.text,
+    createdAt: DateTime.now(),
+    updatedAt: DateTime.now(),
+  );
 
 }

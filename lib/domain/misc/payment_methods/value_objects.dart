@@ -29,11 +29,11 @@ double getTotalPriceDouble(List<ReservationSlotItem> allSlots, List<ReservationS
       final fee = priceSlot.fee.replaceAll(new RegExp(r'[^0-9]'),'').split('.').join('');
 
 
-      if (checkIsReservationIsCancelled(
+      if (isReservationBooked(
           currentRes: slot,
-          cancelledRes: cancelledSlots,
+          reservations: cancelledSlots,
           currentSlot: priceSlot,
-          cancelledSlot: retrieveCancelledSlot(cancelledSlots, slot))) {
+          reservationTimeSlots: retrieveReservationTimeSlots(cancelledSlots, slot))) {
 
       } else {
         feeCount += (double.parse(fee)/STRIPE_FEE_TO_CENTS);

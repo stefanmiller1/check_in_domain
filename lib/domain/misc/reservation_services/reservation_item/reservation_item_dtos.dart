@@ -19,8 +19,10 @@ class ReservationItemDto with _$ReservationItemDto {
     required List<Map<String, dynamic>> reservationSlotItem,
     List<Map<String, dynamic>>? cancelledSlotItem,
     String? refundId,
+    String? receipt_link,
     bool? isInternalProgram,
     required String dateCreated,
+    @ServerTimestampConverter() FieldValue? createdAtSTC,
   }) = _ReservationItemDto;
 
   factory ReservationItemDto.fromDomain(ReservationItem reservation) {
@@ -38,8 +40,10 @@ class ReservationItemDto with _$ReservationItemDto {
         reservationSlotItem: reservation.reservationSlotItem.map((e) => ReservationSlotItemDto.fromDomain(e).toJson()).toList(),
         cancelledSlotItem: (reservation.cancelledSlotItem != null) ? reservation.cancelledSlotItem!.map((e) => ReservationSlotItemDto.fromDomain(e).toJson()).toList() : null,
         refundId: reservation.refundId,
+        receipt_link: reservation.receipt_link,
         isInternalProgram: reservation.isInternalProgram,
         dateCreated: reservation.dateCreated.toString(),
+        createdAtSTC: FieldValue.serverTimestamp()
     );
   }
 
@@ -56,6 +60,7 @@ class ReservationItemDto with _$ReservationItemDto {
         reservationSlotItem: reservationSlotItem.map((e) => ReservationSlotItemDto.fromJson(e).toDomain()).toList(),
         dateCreated: DateTime.parse(dateCreated),
         refundId: refundId,
+        receipt_link: receipt_link,
         cancelledSlotItem: (cancelledSlotItem != null) ? cancelledSlotItem!.map((e) => ReservationSlotItemDto.fromJson(e).toDomain()).toList() : null,
         paymentStatus: PaymentStatusType.noStatus,
         isInternalProgram: isInternalProgram,
@@ -65,8 +70,8 @@ class ReservationItemDto with _$ReservationItemDto {
 
   factory ReservationItemDto.fromJson(Map<String, dynamic> json) => _$ReservationItemDtoFromJson(json);
 
-  factory ReservationItemDto.fromFireStore(DocumentSnapshot doc) {
-    return ReservationItemDto.fromJson(doc.data() as Map<String, dynamic>);
+  factory ReservationItemDto.fromFireStore(Map<String, dynamic> data) {
+    return ReservationItemDto.fromJson(data);
   }
 
 }

@@ -1,5 +1,6 @@
 part of check_in_domain;
 
+
 enum ActivityCreatorFormNavSection {selectActivityType, selectActivityPreset, selectLocationType, selectSpaceType, selectBookingDates, selectBackground, selectRequirements, selectRules, selectAttendance, selectPricing, viewSummary}
 enum ActivityCreatorType {facilityOwnerScheduleBased, facilityNonOwnerScheduleBased, nonFacilityScheduleBased}
 
@@ -38,4 +39,16 @@ class ActivityCreatorFormNav {
 
   ActivityCreatorFormNav(this.uid, this.creatorSectionNav, this.title, this.pageTitle, this.isInProgress, this.isLocked, {this.activityPreSetup, this.activityTypeNav, this.activityLocationTypeNav, this.activitySpaceTypeNav, this.activityAvailableDatesNav, this.activityBackgroundNav, this.activityRequirementsNav, this.activityRulesNav, this.activityAttendanceNav, this.activityPricingNav, this.activitySummaryNav});
 
+}
+
+List<UniqueId> getActivityFromSelectedReservation(List<ReservationSlotItem> reservationSlot) {
+  List<UniqueId> currentActivities = [];
+  
+  for (ReservationSlotItem slot in reservationSlot) {
+    if (!(currentActivities.contains(slot.selectedActivityType))) {
+      currentActivities.add(slot.selectedActivityType);
+    }
+  }
+
+  return currentActivities;
 }

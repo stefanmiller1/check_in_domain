@@ -10,6 +10,7 @@ class ActivityAvailabilityPeriod with _$ActivityAvailabilityPeriod {
     required DateTime fromStarting,
     required DateTime fromEnding,
     required bool isInviteOnly,
+    required bool isActive,
 
     DurationType? durationType,
     ActivitySessionType? sessionType,
@@ -41,6 +42,7 @@ class ActivityAvailabilityPeriod with _$ActivityAvailabilityPeriod {
       fromStarting: DateTime.now(),
       fromEnding: DateTime.now().add(Duration(days: 7)),
       durationType: DurationType.week,
+      isActive: false,
       hoursOpen: AvailabilityHoursSettingOption(
           dynamicHours: false,
           fixedHours: false,

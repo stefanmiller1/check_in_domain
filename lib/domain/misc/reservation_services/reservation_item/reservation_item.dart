@@ -5,7 +5,8 @@ class ReservationItem with _$ReservationItem {
   const ReservationItem._();
 
   /// TODO: (Difference between facility & activity) facilities have a limit of 1 activities have a slot limit based on number set by activity
-
+  /// facilities have reservation holders
+  /// activities have attendees
   const factory ReservationItem({
     required UniqueId reservationId,
     required UniqueId reservationOwnerId,
@@ -20,6 +21,7 @@ class ReservationItem with _$ReservationItem {
     required List<ReservationSlotItem> reservationSlotItem,
     List<ReservationSlotItem>? cancelledSlotItem,
     String? refundId,
+    String? receipt_link,
     bool? isInternalProgram,
     required DateTime dateCreated,
 }) = _ReservationItem;
@@ -36,6 +38,7 @@ class ReservationItem with _$ReservationItem {
       reservationState: ReservationSlotState.requested,
       paymentStatus: PaymentStatusType.noStatus,
       paymentIntentId: '',
+      reservationAffiliates: []
   );
 
 

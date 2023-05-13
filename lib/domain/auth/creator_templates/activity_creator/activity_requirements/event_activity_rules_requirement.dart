@@ -24,7 +24,7 @@ class EventActivityRulesRequirement with _$EventActivityRulesRequirement {
 
   factory EventActivityRulesRequirement.empty() => EventActivityRulesRequirement(
       isMerchantSupported: false,
-      listOfMerchants: [ContactDetails(playerId: UniqueId(), name: FirstLastName(''), emailAddress: EmailAddress(''))],
+      listOfMerchants: [ContactDetails(contactId: UniqueId(), name: FirstLastName(''), emailAddress: EmailAddress(''))],
       isAlcoholForSale: false,
       isFoodForSale: false,
       isAlcoholProvided: false,

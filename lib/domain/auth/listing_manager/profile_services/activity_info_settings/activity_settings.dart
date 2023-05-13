@@ -20,6 +20,7 @@ class ActivitySettings with _$ActivitySettings {
         FacilityActivityCreatorForm(
           activity: getActivityOptions(null)[0],
           reservedAvailability: ActivityReservedAvailability.empty())],
+      /// TODO: Is this necessary? check and keep or delete.
       activityBackground: ActivityBackground.empty()
     );
   }

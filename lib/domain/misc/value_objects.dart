@@ -35,27 +35,27 @@ Iterable<TimeOfDay> getTimes(TimeOfDay startTime, TimeOfDay endTime, Duration st
       (hour == endTime.hour && minute <= endTime.minute));
 }
 
-/// make text field currency format
-class CurrencyInputFormatter extends TextInputFormatter {
-
-  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
-
-    if(newValue.selection.baseOffset == 0){
-      print(true);
-      return newValue;
-    }
-
-    double value = double.parse(newValue.text);
-
-    final formatter = NumberFormat.simpleCurrency(locale: "en_US");
-
-    String newText = formatter.format(value/100);
-
-    return newValue.copyWith(
-        text: newText,
-        selection: new TextSelection.collapsed(offset: newText.length));
-  }
-}
+// /// make text field currency format
+// class CurrencyInputFormatter extends TextInputFormatter {
+//
+//   TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+//
+//     if(newValue.selection.baseOffset == 0){
+//       print(true);
+//       return newValue;
+//     }
+//
+//     double value = double.parse(newValue.text);
+//
+//     final formatter = NumberFormat.simpleCurrency(locale: "en_US");
+//
+//     String newText = formatter.format(value/100);
+//
+//     return newValue.copyWith(
+//         text: newText,
+//         selection: new TextSelection.collapsed(offset: newText.length));
+//   }
+// }
 
 extension DateTimeExtension on DateTime? {
 
