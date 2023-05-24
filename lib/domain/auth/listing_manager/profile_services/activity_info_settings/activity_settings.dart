@@ -9,7 +9,7 @@ class ActivitySettings with _$ActivitySettings {
     required String activityTitleLabel,
     required String activityDescription,
     required List<FacilityActivityCreatorForm> facilityActivityOptions,
-    required ActivityBackground activityBackground,
+    // required ActivityProfileService activityBackground,
   }) = _ActivitySettings;
 
   factory ActivitySettings.empty() {
@@ -18,10 +18,10 @@ class ActivitySettings with _$ActivitySettings {
       activityDescription: '',
       facilityActivityOptions: [
         FacilityActivityCreatorForm(
-          activity: getActivityOptions(null)[0],
+          activity: getActivityOptions()[0],
           reservedAvailability: ActivityReservedAvailability.empty())],
       /// TODO: Is this necessary? check and keep or delete.
-      activityBackground: ActivityBackground.empty()
+      // activityBackground: ActivityProfileService.empty()
     );
   }
 

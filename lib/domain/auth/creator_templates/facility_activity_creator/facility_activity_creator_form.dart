@@ -25,7 +25,7 @@ class FacilityActivityCreatorForm with _$FacilityActivityCreatorForm {
 
   factory FacilityActivityCreatorForm.empty() =>
       FacilityActivityCreatorForm(
-        activity: getActivityOptions(null)[0],
+        activity: getActivityOptions()[0],
         reservedAvailability: ActivityReservedAvailability.empty()
       );
 

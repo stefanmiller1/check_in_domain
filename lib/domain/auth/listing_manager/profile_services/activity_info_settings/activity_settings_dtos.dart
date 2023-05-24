@@ -9,7 +9,7 @@ class ActivitySettingsDto with _$ActivitySettingsDto {
     required String activityTitleLabel,
     required String activityDescription,
     required List<Map<String, dynamic>> facilityActivityOptions,
-    required Map<String, dynamic> activityBackground,
+    // required Map<String, dynamic> activityBackground,
   }) = _ActivitySettingsDto;
 
   factory ActivitySettingsDto.fromDomain(ActivitySettings settings) {
@@ -17,7 +17,7 @@ class ActivitySettingsDto with _$ActivitySettingsDto {
         activityTitleLabel: settings.activityTitleLabel,
         activityDescription: settings.activityDescription,
         facilityActivityOptions: settings.facilityActivityOptions.map((e) => FacilityActivityCreatorFormDto.fromDomain(e).toJson()).toList(),
-        activityBackground: ActivityBackgroundDto.fromDomain(settings.activityBackground).toJson()
+        // activityBackground: ActivityProfileServiceDto.fromDomain(settings.activityBackground).toJson()
     );
   }
 
@@ -26,7 +26,7 @@ class ActivitySettingsDto with _$ActivitySettingsDto {
         activityTitleLabel: activityTitleLabel,
         activityDescription: activityDescription,
         facilityActivityOptions: facilityActivityOptions.map((e) => FacilityActivityCreatorFormDto.fromJson(e).toDomain()).toList(),
-        activityBackground: ActivityBackgroundDto.fromJson(activityBackground).toDomain()
+        // activityBackground: ActivityProfileServiceDto.fromJson(activityBackground).toDomain()
     );
   }
 

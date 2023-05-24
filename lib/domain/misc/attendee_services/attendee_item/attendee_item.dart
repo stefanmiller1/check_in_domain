@@ -9,6 +9,7 @@ class AttendeeItem with _$AttendeeItem {
 
   const AttendeeItem._();
 
+  /// include attending slots/reservations
   const factory AttendeeItem({
     required UniqueId attendeeId,
     required UniqueId attendeeOwnerId,
@@ -18,10 +19,13 @@ class AttendeeItem with _$AttendeeItem {
     required AttendeeType attendeeType,
     required String paymentIntentId,
     ContactDetails? attendeeDetails,
+    ContactStatus? contactStatus,
     List<CheckInSetting>? checkInSetting,
     List<CustomRuleOption>? customFieldRuleSetting,
     String? refundId,
     String? receipt_link,
+    ClassesInstructorProfile? classesInstructorProfile,
+    EventMerchantVendorProfile? eventMerchantVendorProfile,
     required DateTime dateCreated,
 }) = _AttendeeItem;
 

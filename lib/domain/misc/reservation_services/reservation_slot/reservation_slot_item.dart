@@ -15,7 +15,7 @@ class ReservationSlotItem with _$ReservationSlotItem {
   }) = _ReservationSlotItem;
 
   factory ReservationSlotItem.empty() => ReservationSlotItem(
-      selectedActivityType: getActivityOptions(null)[0].activityId,
+      selectedActivityType: getActivityOptions()[0].activityId,
       selectedSpaceId: UniqueId(),
       selectedSportSpaceId: UniqueId(),
       selectedSideOption: '',

@@ -35,15 +35,10 @@ class ActivityCreatorFormNavDto with _$ActivityCreatorFormNavDto {
         pageTitle: nav.pageTitle,
         activityPreSetup: nav.activityPreSetup.toString(),
         activityTypeNav: nav.activityTypeNav.toString(),
-        activityLocationTypeNav: nav.activityLocationTypeNav.toString(),
-        activitySpaceTypeNav: nav.activitySpaceTypeNav.toString(),
-        activityAvailableDatesNav: nav.activityAvailableDatesNav.toString(),
         activityBackgroundNav: nav.activityBackgroundNav.toString(),
         activityRequirementsNav: nav.activityRequirementsNav.toString(),
         activityRulesNav: nav.activityRulesNav.toString(),
         activityAttendanceNav: nav.activityAttendanceNav.toString(),
-        activityPricingNav: nav.activityPricingNav.toString(),
-        activitySummaryNav: nav.activitySummaryNav.toString(),
     );
   }
 
@@ -55,17 +50,11 @@ class ActivityCreatorFormNavDto with _$ActivityCreatorFormNavDto {
         pageTitle ?? '',
         isInProgress,
         isLocked,
-        activityPreSetup: getActivityPreSetupNav(activityPreSetup),
         activityTypeNav: getActivityTypeNav(activityTypeNav),
-        activityLocationTypeNav: getActivityLocationNav(activityLocationTypeNav),
-        activitySpaceTypeNav: getActivitySpaceTypeNav(activitySpaceTypeNav),
-        activityAvailableDatesNav: getActivityAvailabilityTypeNav(activityAvailableDatesNav),
         activityBackgroundNav: getActivityBackgroundNav(activityBackgroundNav),
         activityRequirementsNav: getActivityRequirementsNav(activityRequirementsNav),
         activityRulesNav: getActivityRulesNav(activityRulesNav),
         activityAttendanceNav: getActivityAttendanceNav(activityAttendanceNav),
-        activityPricingNav: getActivityPricingNav(activityPricingNav),
-        activitySummaryNav: getActivityReviewNav(activitySummaryNav)
     );
   }
 

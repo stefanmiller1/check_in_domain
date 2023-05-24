@@ -14,17 +14,17 @@ import 'package:check_in_credentials/check_in_credentials.dart';
 import 'package:intl/intl.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'dart:math';
+import 'dart:typed_data';
 
-
-part 'domain/auth/creator_templates/activity_creator/activity_type_option/value_objects.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_type_option/activity_option.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_type_option/activity_option_dtos.dart';
+part 'domain/auth/activity_manager/activity_type_option/value_objects.dart';
+part 'domain/auth/activity_manager/activity_type_option/activity_option.dart';
+part 'domain/auth/activity_manager/activity_type_option/activity_option_dtos.dart';
 part 'domain/misc/provision_services/partnership_forms/partnership_provision_form.dart';
 part 'domain/misc/provision_services/partnership_forms/partnership_provision_form_dtos.dart';
 part 'domain/misc/provision_services/sponsorship_forms/sponsorship_provision_form.dart';
 part 'domain/misc/provision_services/sponsorship_forms/sponsorship_provision_form_dtos.dart';
 part 'domain/misc/calendar_service/calendar_helper_model.dart';
-
+part 'domain/misc/image_upload_uptions/image_uploader_object.dart';
 
 part 'injection.dart';
 
@@ -103,13 +103,18 @@ part 'domain/misc/search_explore_options/value_objects.dart';
 part 'domain/un_auth/news_services/news_updates.dart';
 part 'domain/un_auth/news_services/news_updates_dtos.dart';
 
-/// auth domain creator template services
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_attendance_option.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_attendance_option_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_passes_option.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_passes_option_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_ticket_option.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_attendances/activity_ticket_option_dtos.dart';
+/// auth domain activity manager services
+part 'domain/auth/activity_manager/attendance_services/activity_passes_option.dart';
+part 'domain/auth/activity_manager/attendance_services/activity_attendance_option.dart';
+part 'domain/auth/activity_manager/attendance_services/activity_attendance_option_dtos.dart';
+part 'domain/auth/activity_manager/attendance_services/activity_passes_option_dtos.dart';
+part 'domain/auth/activity_manager/attendance_services/activity_ticket_option.dart';
+part 'domain/auth/activity_manager/attendance_services/activity_ticket_option_dtos.dart';
+part 'domain/misc/attendee_services/events/event_merchant_vendor_profile.dart';
+part 'domain/misc/attendee_services/events/event_merchant_vendor_profile_dtos.dart';
+part 'domain/misc/attendee_services/classes/classes_instructor_profile.dart';
+part 'domain/misc/attendee_services/classes/classes_instructor_profile_dtos.dart';
+part 'domain/misc/attendee_services/failures.dart';
 
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_period.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_session_option.dart';
@@ -121,16 +126,26 @@ part 'domain/auth/creator_templates/activity_creator/activity_availability/dtos/
 part 'domain/auth/creator_templates/activity_creator/activity_availability/dtos/activity_classes_availability_dtos.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_availability/dtos/activity_game_availability_dtos.dart';
 
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/activity_background.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/classes_activity_background.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/value_objects.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/past_experience_options/experience_certificate_option.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/dtos/activity_background_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/dtos/activity_classes_background_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_background_info/dtos/past_experience_options_dtos/experience_certificate_option_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/dtos/past_experience_options_dtos/experience_certificate_option_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/dtos/activity_profile_service_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/past_experience_options/experience_certificate_option.dart';
+part 'domain/auth/activity_manager/profile_services/activity_profile_services.dart';
+part 'domain/auth/activity_manager/profile_services/activity_background/activity_background.dart';
+part 'domain/auth/activity_manager/profile_services/dtos/activity_background_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/value_objects.dart';
 
-part 'domain/auth/creator_templates/activity_creator/activity_cancellation/activity_cancellation.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_cancellation/activity_cancellation_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/activity_requirements/activity_event_requirement_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/activity_requirements/activity_requirements.dart';
+part 'domain/auth/activity_manager/profile_services/activity_requirements/activity_requirements_dtos.dart';
+part 'domain/auth/activity_manager/profile_services/activity_requirements/event_activity_rules_requirement.dart';
+
+part 'domain/auth/activity_manager/rules_services/experience_rules/experience_activity_rules.dart';
+
+part 'domain/auth/activity_manager/rules_services/game_rules/activity_game_rules_dtos.dart';
+part 'domain/auth/activity_manager/rules_services/game_rules/game_activity_rules.dart';
+part 'domain/auth/activity_manager/rules_services/activity_rules.dart';
+part 'domain/auth/activity_manager/rules_services/activity_rules_dtos.dart';
+part 'domain/auth/activity_manager/rules_services/value_objects.dart';
 
 part 'domain/auth/creator_templates/activity_creator/activity_cost/activity_cost.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_cost/activity_cost_dtos.dart';
@@ -138,24 +153,8 @@ part 'domain/auth/creator_templates/activity_creator/activity_cost/activity_cost
 part 'domain/auth/creator_templates/activity_creator/activity_form_nav/activity_form_nav_dtos.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_form_nav/value_objects.dart';
 
-part 'domain/auth/creator_templates/activity_creator/activity_requirements/activity_event_requirement_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_requirements/activity_requirements.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_requirements/activity_requirements_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_requirements/event_activity_rules_requirement.dart';
-
-part 'domain/auth/creator_templates/activity_creator/activity_rules/activity_game_rules_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_rules/activity_rules.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_rules/activity_rules_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_rules/experience_activity_rules.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_rules/game_activity_rules.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_rules/value_objects.dart';
-
-part 'domain/auth/creator_templates/activity_creator/activity_space_type/activity_space_type.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_space_type/activity_type_dtos.dart';
-//
-// part 'domain/auth/creator_templates/activity_creator/activity_type_option/activity_option_dtos.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_creator_form.dart';
-part 'domain/auth/creator_templates/activity_creator/activity_creator_form_dtos.dart';
+part 'domain/auth/activity_manager/activity_manager_form.dart';
+part 'domain/auth/activity_manager/activity_manager_form_dtos.dart';
 
 
 /// auth domain listing manager
@@ -199,7 +198,7 @@ part 'domain/auth/creator_templates/facility_activity_creator/game_activity_crea
 part 'domain/auth/creator_templates/facility_activity_creator/facility_activity_creator_form.dart';
 part 'domain/auth/creator_templates/facility_activity_creator/facility_activity_creator_form_dtos.dart';
 part 'domain/auth/creator_templates/activity_creator/value_objects.dart';
-part 'domain/auth/creator_templates/activity_creator/failures.dart';
+part 'domain/auth/activity_manager/failures.dart';
 
 part 'domain/auth/creator_templates/facility_creator/facility_sport_space_options/sport_options/failures.dart';
 part 'domain/auth/creator_templates/facility_creator/facility_sport_space_options/sport_options/space_option.dart';

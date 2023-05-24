@@ -14,4 +14,12 @@ class ContactDetails with _$ContactDetails {
     ContactStatus? contactStatus,
 }) = _ContactDetails;
 
+  factory ContactDetails.empty() {
+    return ContactDetails(
+        contactId: UniqueId(),
+        name: FirstLastName(''),
+        emailAddress: EmailAddress('')
+    );
+  }
+
 }

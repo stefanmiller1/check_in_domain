@@ -28,33 +28,33 @@ ActivityTypeNav getActivityTypeNav(String? type) {
 }
 
 
-ActivityLocationTypeNav getActivityLocationNav(String? type) {
-  for (ActivityLocationTypeNav item in ActivityLocationTypeNav.values) {
-    if (type == item.toString()) {
-      return item;
-    }
-  }
-  return ActivityLocationTypeNav.selectFromSavedAddresses;
-}
+// ActivityLocationTypeNav getActivityLocationNav(String? type) {
+//   for (ActivityLocationTypeNav item in ActivityLocationTypeNav.values) {
+//     if (type == item.toString()) {
+//       return item;
+//     }
+//   }
+//   return ActivityLocationTypeNav.selectFromSavedAddresses;
+// }
 
 
-ActivitySpaceTypeNav getActivitySpaceTypeNav(String? type) {
-  for (ActivitySpaceTypeNav item in ActivitySpaceTypeNav.values) {
-    if (type == item.toString()) {
-      return item;
-    }
-  }
-  return ActivitySpaceTypeNav.selectSpaceType;
-}
+// ActivitySpaceTypeNav getActivitySpaceTypeNav(String? type) {
+//   for (ActivitySpaceTypeNav item in ActivitySpaceTypeNav.values) {
+//     if (type == item.toString()) {
+//       return item;
+//     }
+//   }
+//   return ActivitySpaceTypeNav.selectSpaceType;
+// }
 
-ActivityAvailableDatesNav getActivityAvailabilityTypeNav(String? type) {
-  for (ActivityAvailableDatesNav item in ActivityAvailableDatesNav.values) {
-    if (type == item.toString()) {
-      return item;
-    }
-  }
-  return ActivityAvailableDatesNav.selectDurationType;
-}
+// ActivityAvailableDatesNav getActivityAvailabilityTypeNav(String? type) {
+//   for (ActivityAvailableDatesNav item in ActivityAvailableDatesNav.values) {
+//     if (type == item.toString()) {
+//       return item;
+//     }
+//   }
+//   return ActivityAvailableDatesNav.selectDurationType;
+// }
 
 ActivityBackgroundNav getActivityBackgroundNav(String? type) {
   for (ActivityBackgroundNav item in ActivityBackgroundNav.values) {
@@ -96,22 +96,22 @@ ActivityAttendanceNav getActivityAttendanceNav(String? type) {
 }
 
 
-ActivityPricingNav getActivityPricingNav(String? type) {
-  for (ActivityPricingNav item in ActivityPricingNav.values) {
-    if (type == item.toString()) {
-      return item;
-    }
-  }
-  return ActivityPricingNav.reviewCostingBreakdown;
-}
+// ActivityPricingNav getActivityPricingNav(String? type) {
+//   for (ActivityPricingNav item in ActivityPricingNav.values) {
+//     if (type == item.toString()) {
+//       return item;
+//     }
+//   }
+//   return ActivityPricingNav.reviewCostingBreakdown;
+// }
 
 
-ActivitySummaryNav getActivityReviewNav(String? type) {
-  for (ActivitySummaryNav item in ActivitySummaryNav.values) {
-    if (type == item.toString()) {
-      return item;
-    }
-  }
-  return ActivitySummaryNav.reviewActivity;
-}
+// ActivitySummaryNav getActivityReviewNav(String? type) {
+//   for (ActivitySummaryNav item in ActivitySummaryNav.values) {
+//     if (type == item.toString()) {
+//       return item;
+//     }
+//   }
+//   return ActivitySummaryNav.reviewActivity;
+// }
 
