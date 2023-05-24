@@ -1,0 +1,196 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+
+part of 'audio_post_dtos.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+AudioPostDto _$AudioPostDtoFromJson(Map<String, dynamic> json) {
+  return _AudioPostDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AudioPostDto {
+  num get size => throw _privateConstructorUsedError;
+  String get uri => throw _privateConstructorUsedError;
+  List<double>? get waveForm => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AudioPostDtoCopyWith<AudioPostDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AudioPostDtoCopyWith<$Res> {
+  factory $AudioPostDtoCopyWith(
+          AudioPostDto value, $Res Function(AudioPostDto) then) =
+      _$AudioPostDtoCopyWithImpl<$Res>;
+  $Res call({num size, String uri, List<double>? waveForm});
+}
+
+/// @nodoc
+class _$AudioPostDtoCopyWithImpl<$Res> implements $AudioPostDtoCopyWith<$Res> {
+  _$AudioPostDtoCopyWithImpl(this._value, this._then);
+
+  final AudioPostDto _value;
+  // ignore: unused_field
+  final $Res Function(AudioPostDto) _then;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? uri = freezed,
+    Object? waveForm = freezed,
+  }) {
+    return _then(_value.copyWith(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as num,
+      uri: uri == freezed
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      waveForm: waveForm == freezed
+          ? _value.waveForm
+          : waveForm // ignore: cast_nullable_to_non_nullable
+              as List<double>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_AudioPostDtoCopyWith<$Res>
+    implements $AudioPostDtoCopyWith<$Res> {
+  factory _$$_AudioPostDtoCopyWith(
+          _$_AudioPostDto value, $Res Function(_$_AudioPostDto) then) =
+      __$$_AudioPostDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({num size, String uri, List<double>? waveForm});
+}
+
+/// @nodoc
+class __$$_AudioPostDtoCopyWithImpl<$Res>
+    extends _$AudioPostDtoCopyWithImpl<$Res>
+    implements _$$_AudioPostDtoCopyWith<$Res> {
+  __$$_AudioPostDtoCopyWithImpl(
+      _$_AudioPostDto _value, $Res Function(_$_AudioPostDto) _then)
+      : super(_value, (v) => _then(v as _$_AudioPostDto));
+
+  @override
+  _$_AudioPostDto get _value => super._value as _$_AudioPostDto;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? uri = freezed,
+    Object? waveForm = freezed,
+  }) {
+    return _then(_$_AudioPostDto(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as num,
+      uri: uri == freezed
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      waveForm: waveForm == freezed
+          ? _value._waveForm
+          : waveForm // ignore: cast_nullable_to_non_nullable
+              as List<double>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AudioPostDto extends _AudioPostDto {
+  _$_AudioPostDto(
+      {required this.size, required this.uri, final List<double>? waveForm})
+      : _waveForm = waveForm,
+        super._();
+
+  factory _$_AudioPostDto.fromJson(Map<String, dynamic> json) =>
+      _$$_AudioPostDtoFromJson(json);
+
+  @override
+  final num size;
+  @override
+  final String uri;
+  final List<double>? _waveForm;
+  @override
+  List<double>? get waveForm {
+    final value = _waveForm;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'AudioPostDto(size: $size, uri: $uri, waveForm: $waveForm)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AudioPostDto &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.uri, uri) &&
+            const DeepCollectionEquality().equals(other._waveForm, _waveForm));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(uri),
+      const DeepCollectionEquality().hash(_waveForm));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AudioPostDtoCopyWith<_$_AudioPostDto> get copyWith =>
+      __$$_AudioPostDtoCopyWithImpl<_$_AudioPostDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AudioPostDtoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AudioPostDto extends AudioPostDto {
+  factory _AudioPostDto(
+      {required final num size,
+      required final String uri,
+      final List<double>? waveForm}) = _$_AudioPostDto;
+  _AudioPostDto._() : super._();
+
+  factory _AudioPostDto.fromJson(Map<String, dynamic> json) =
+      _$_AudioPostDto.fromJson;
+
+  @override
+  num get size;
+  @override
+  String get uri;
+  @override
+  List<double>? get waveForm;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AudioPostDtoCopyWith<_$_AudioPostDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
