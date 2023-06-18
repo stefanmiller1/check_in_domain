@@ -10,7 +10,9 @@ class CheckInSetting with _$CheckInSetting {
     required bool isBeforeResStart,
     required bool isAfterResStart,
     required TimeOfDay hoursUntil,
-    required List<UniqueId> listOfSpaceIds,
+    List<UniqueId>? listOfSpaceIds,
+    List<ReservationSlotItem>? listOfReservations,
+    AttendeeType? attendeeType,
     required List<StringBoolItem> listOfConfirmationItems
   }) = _CheckInSetting;
 

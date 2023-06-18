@@ -11,6 +11,7 @@ class ReservationSlotItem with _$ReservationSlotItem {
     UniqueId? selectedSportSpaceId,
     String? selectedSideOption,
     required DateTime selectedDate,
+    String? slotDescription,
     required List<ReservationTimeFeeSlotItem> selectedSlots,
   }) = _ReservationSlotItem;
 

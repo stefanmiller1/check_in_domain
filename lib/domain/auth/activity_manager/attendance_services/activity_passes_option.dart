@@ -11,6 +11,7 @@ class ActivityPassesOption with _$ActivityPassesOption {
     required int maximumGroupQuantity,
     required int passQuantity,
 
+    int? passesPrice,
     bool? recurringPassAllSession,
     int? recurringNumberOfSessions,
 }) = _ActivityPassesOption;

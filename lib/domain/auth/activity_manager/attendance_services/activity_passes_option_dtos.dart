@@ -11,6 +11,7 @@ class ActivityPassesOptionDto with _$ActivityPassesOptionDto {
     required int maximumGroupQuantity,
     required int passQuantity,
 
+    int? passesPrice,
     bool? recurringPassAllSession,
     int? recurringNumberOfSessions,
 }) = _ActivityPassesOptionDto;

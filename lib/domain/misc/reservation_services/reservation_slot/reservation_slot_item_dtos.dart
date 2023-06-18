@@ -10,6 +10,7 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
     required String selectedSpaceId,
     String? selectedSportSpaceId,
     String? selectedSideOption,
+    String? slotDescription,
     required String selectedDate,
     required List<Map<String, dynamic>> selectedSlots,
 }) = _ReservationSlotItemDto;
@@ -21,6 +22,7 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
         selectedSportSpaceId: (slot.selectedSportSpaceId != null) ? slot.selectedSportSpaceId!.getOrCrash() : null,
         selectedSideOption: (slot.selectedSideOption != null) ? slot.selectedSideOption : null,
         selectedDate: slot.selectedDate.toString(),
+        slotDescription: slot.slotDescription,
         selectedSlots: slot.selectedSlots.map((e) => StringDateRangeItemDto.fromDomain(e).toJson()).toList()
     );
   }
@@ -32,6 +34,7 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
       selectedSportSpaceId: (selectedSportSpaceId != null) ? UniqueId.fromUniqueString(selectedSportSpaceId!) : null,
       selectedSideOption: selectedSideOption,
       selectedDate: DateTime.parse(selectedDate),
+      slotDescription: slotDescription,
       selectedSlots: selectedSlots.map((e) => StringDateRangeItemDto.fromJson(e).toDomain()).toList()
     );
   }

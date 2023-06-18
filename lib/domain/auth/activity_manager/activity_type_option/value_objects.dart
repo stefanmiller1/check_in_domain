@@ -49,7 +49,7 @@ String? getTitleForActivityOption(
 BuildContext context,
 UniqueId activityId) {
 
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activityType : ProfileActivityOption.none;
+  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.none;
 
   switch (type) {
     case ProfileActivityOption.league:
@@ -75,7 +75,7 @@ UniqueId activityId) {
     case ProfileActivityOption.oneOnOne:
       return AppLocalizations.of(context)?.activityTypeOneOnOne ?? 'oneOnOne';
     case ProfileActivityOption.toRent:
-      return AppLocalizations.of(context)?.activityTypeRent;
+      return AppLocalizations.of(context)?.activityTypeRent ?? 'to Rent';
     case ProfileActivityOption.toProtest:
       return 'to protest';
     case ProfileActivityOption.toWorship:
@@ -88,6 +88,9 @@ UniqueId activityId) {
       // TODO: Handle this case.
       break;
     case ProfileActivityOption.toShelter:
+      // TODO: Handle this case.
+      break;
+    case ProfileActivityOption.toConvene:
       // TODO: Handle this case.
       break;
   }
@@ -109,7 +112,7 @@ String getIconPathForActivity(
   UniqueId activityId
 ) {
 
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activityType : ProfileActivityOption.league;
+  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.league;
 
 
   switch (type) {
@@ -162,7 +165,7 @@ IconData getIconDataForActivity(
     UniqueId activityId
     ) {
 
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activityType : ProfileActivityOption.league;
+  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.league;
 
   switch (type) {
     case ProfileActivityOption.league:
@@ -200,9 +203,9 @@ List<ActivityOption> getActivityOptions() {
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.camp, activityType: ProfileActivityTypeOption.experiences),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-1289fnm049j0'), activity: ProfileActivityOption.events, activityType: ProfileActivityTypeOption.experiences),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.league, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWork, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWorship, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWork, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWorship, activityType: ProfileActivityTypeOption.experiences),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6893hhi5940g'), activity: ProfileActivityOption.teaching, activityType: ProfileActivityTypeOption.classesLessons),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-692048fnji49'), activity: ProfileActivityOption.training, activityType: ProfileActivityTypeOption.classesLessons),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-787gjhjb898h'), activity: ProfileActivityOption.coaching, activityType: ProfileActivityTypeOption.classesLessons),

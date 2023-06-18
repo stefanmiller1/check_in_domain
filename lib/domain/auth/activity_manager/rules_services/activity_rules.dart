@@ -12,7 +12,7 @@ class ActivityRulesService with _$ActivityRulesService {
     required List<CheckInSetting> checkInSetting,
     required List<CustomRuleOption> customFieldRuleSetting,
     required CancellationSetting cancellationSettings,
-
+    required String currency,
     ListK<DetailCustomOption>? customRuleOption,
 
     /// for game based activities
@@ -25,10 +25,11 @@ class ActivityRulesService with _$ActivityRulesService {
   factory ActivityRulesService.empty() => ActivityRulesService(
     accessVisibilitySetting: AccessVisibilitySetting.empty(),
     ruleOption: ListK([]),
+    cancellationSettings: CancellationSetting.empty(),
     checkInSetting: [],
     customFieldRuleSetting: [],
     customRuleOption: ListK([DetailCustomOption(uid:UniqueId(), customDetail: '')]),
-    cancellationSettings: CancellationSetting.empty(),
+    currency: 'en_CA',
   );
 
 }

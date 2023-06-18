@@ -8,6 +8,7 @@ class DetailOption with _$DetailOption {
     required UniqueId uid,
     String? detail,
     bool? active,
+    RuleOptionType? ruleType,
   }) = _DetailOption;
 
 }

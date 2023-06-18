@@ -5628,6 +5628,7 @@ mixin _$DetailOption {
   UniqueId get uid => throw _privateConstructorUsedError;
   String? get detail => throw _privateConstructorUsedError;
   bool? get active => throw _privateConstructorUsedError;
+  RuleOptionType? get ruleType => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailOptionCopyWith<DetailOption> get copyWith =>
@@ -5639,7 +5640,8 @@ abstract class $DetailOptionCopyWith<$Res> {
   factory $DetailOptionCopyWith(
           DetailOption value, $Res Function(DetailOption) then) =
       _$DetailOptionCopyWithImpl<$Res>;
-  $Res call({UniqueId uid, String? detail, bool? active});
+  $Res call(
+      {UniqueId uid, String? detail, bool? active, RuleOptionType? ruleType});
 }
 
 /// @nodoc
@@ -5655,6 +5657,7 @@ class _$DetailOptionCopyWithImpl<$Res> implements $DetailOptionCopyWith<$Res> {
     Object? uid = freezed,
     Object? detail = freezed,
     Object? active = freezed,
+    Object? ruleType = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
@@ -5669,6 +5672,10 @@ class _$DetailOptionCopyWithImpl<$Res> implements $DetailOptionCopyWith<$Res> {
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
+      ruleType: ruleType == freezed
+          ? _value.ruleType
+          : ruleType // ignore: cast_nullable_to_non_nullable
+              as RuleOptionType?,
     ));
   }
 }
@@ -5680,7 +5687,8 @@ abstract class _$$_DetailOptionCopyWith<$Res>
           _$_DetailOption value, $Res Function(_$_DetailOption) then) =
       __$$_DetailOptionCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId uid, String? detail, bool? active});
+  $Res call(
+      {UniqueId uid, String? detail, bool? active, RuleOptionType? ruleType});
 }
 
 /// @nodoc
@@ -5699,6 +5707,7 @@ class __$$_DetailOptionCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? detail = freezed,
     Object? active = freezed,
+    Object? ruleType = freezed,
   }) {
     return _then(_$_DetailOption(
       uid: uid == freezed
@@ -5713,6 +5722,10 @@ class __$$_DetailOptionCopyWithImpl<$Res>
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
+      ruleType: ruleType == freezed
+          ? _value.ruleType
+          : ruleType // ignore: cast_nullable_to_non_nullable
+              as RuleOptionType?,
     ));
   }
 }
@@ -5720,7 +5733,8 @@ class __$$_DetailOptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DetailOption extends _DetailOption {
-  const _$_DetailOption({required this.uid, this.detail, this.active})
+  const _$_DetailOption(
+      {required this.uid, this.detail, this.active, this.ruleType})
       : super._();
 
   @override
@@ -5729,10 +5743,12 @@ class _$_DetailOption extends _DetailOption {
   final String? detail;
   @override
   final bool? active;
+  @override
+  final RuleOptionType? ruleType;
 
   @override
   String toString() {
-    return 'DetailOption(uid: $uid, detail: $detail, active: $active)';
+    return 'DetailOption(uid: $uid, detail: $detail, active: $active, ruleType: $ruleType)';
   }
 
   @override
@@ -5742,7 +5758,8 @@ class _$_DetailOption extends _DetailOption {
             other is _$_DetailOption &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.detail, detail) &&
-            const DeepCollectionEquality().equals(other.active, active));
+            const DeepCollectionEquality().equals(other.active, active) &&
+            const DeepCollectionEquality().equals(other.ruleType, ruleType));
   }
 
   @override
@@ -5750,7 +5767,8 @@ class _$_DetailOption extends _DetailOption {
       runtimeType,
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(detail),
-      const DeepCollectionEquality().hash(active));
+      const DeepCollectionEquality().hash(active),
+      const DeepCollectionEquality().hash(ruleType));
 
   @JsonKey(ignore: true)
   @override
@@ -5762,7 +5780,8 @@ abstract class _DetailOption extends DetailOption {
   const factory _DetailOption(
       {required final UniqueId uid,
       final String? detail,
-      final bool? active}) = _$_DetailOption;
+      final bool? active,
+      final RuleOptionType? ruleType}) = _$_DetailOption;
   const _DetailOption._() : super._();
 
   @override
@@ -5771,6 +5790,8 @@ abstract class _DetailOption extends DetailOption {
   String? get detail;
   @override
   bool? get active;
+  @override
+  RuleOptionType? get ruleType;
   @override
   @JsonKey(ignore: true)
   _$$_DetailOptionCopyWith<_$_DetailOption> get copyWith =>
@@ -11508,6 +11529,7 @@ mixin _$ReservationSlotItem {
   UniqueId? get selectedSportSpaceId => throw _privateConstructorUsedError;
   String? get selectedSideOption => throw _privateConstructorUsedError;
   DateTime get selectedDate => throw _privateConstructorUsedError;
+  String? get slotDescription => throw _privateConstructorUsedError;
   List<ReservationTimeFeeSlotItem> get selectedSlots =>
       throw _privateConstructorUsedError;
 
@@ -11527,6 +11549,7 @@ abstract class $ReservationSlotItemCopyWith<$Res> {
       UniqueId? selectedSportSpaceId,
       String? selectedSideOption,
       DateTime selectedDate,
+      String? slotDescription,
       List<ReservationTimeFeeSlotItem> selectedSlots});
 }
 
@@ -11546,6 +11569,7 @@ class _$ReservationSlotItemCopyWithImpl<$Res>
     Object? selectedSportSpaceId = freezed,
     Object? selectedSideOption = freezed,
     Object? selectedDate = freezed,
+    Object? slotDescription = freezed,
     Object? selectedSlots = freezed,
   }) {
     return _then(_value.copyWith(
@@ -11569,6 +11593,10 @@ class _$ReservationSlotItemCopyWithImpl<$Res>
           ? _value.selectedDate
           : selectedDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      slotDescription: slotDescription == freezed
+          ? _value.slotDescription
+          : slotDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
       selectedSlots: selectedSlots == freezed
           ? _value.selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
@@ -11590,6 +11618,7 @@ abstract class _$$_ReservationSlotItemCopyWith<$Res>
       UniqueId? selectedSportSpaceId,
       String? selectedSideOption,
       DateTime selectedDate,
+      String? slotDescription,
       List<ReservationTimeFeeSlotItem> selectedSlots});
 }
 
@@ -11611,6 +11640,7 @@ class __$$_ReservationSlotItemCopyWithImpl<$Res>
     Object? selectedSportSpaceId = freezed,
     Object? selectedSideOption = freezed,
     Object? selectedDate = freezed,
+    Object? slotDescription = freezed,
     Object? selectedSlots = freezed,
   }) {
     return _then(_$_ReservationSlotItem(
@@ -11634,6 +11664,10 @@ class __$$_ReservationSlotItemCopyWithImpl<$Res>
           ? _value.selectedDate
           : selectedDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      slotDescription: slotDescription == freezed
+          ? _value.slotDescription
+          : slotDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
       selectedSlots: selectedSlots == freezed
           ? _value._selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
@@ -11651,6 +11685,7 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
       this.selectedSportSpaceId,
       this.selectedSideOption,
       required this.selectedDate,
+      this.slotDescription,
       required final List<ReservationTimeFeeSlotItem> selectedSlots})
       : _selectedSlots = selectedSlots,
         super._();
@@ -11665,6 +11700,8 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
   final String? selectedSideOption;
   @override
   final DateTime selectedDate;
+  @override
+  final String? slotDescription;
   final List<ReservationTimeFeeSlotItem> _selectedSlots;
   @override
   List<ReservationTimeFeeSlotItem> get selectedSlots {
@@ -11674,7 +11711,7 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
 
   @override
   String toString() {
-    return 'ReservationSlotItem(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, selectedDate: $selectedDate, selectedSlots: $selectedSlots)';
+    return 'ReservationSlotItem(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, selectedDate: $selectedDate, slotDescription: $slotDescription, selectedSlots: $selectedSlots)';
   }
 
   @override
@@ -11693,6 +11730,8 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
             const DeepCollectionEquality()
                 .equals(other.selectedDate, selectedDate) &&
             const DeepCollectionEquality()
+                .equals(other.slotDescription, slotDescription) &&
+            const DeepCollectionEquality()
                 .equals(other._selectedSlots, _selectedSlots));
   }
 
@@ -11704,6 +11743,7 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
       const DeepCollectionEquality().hash(selectedSportSpaceId),
       const DeepCollectionEquality().hash(selectedSideOption),
       const DeepCollectionEquality().hash(selectedDate),
+      const DeepCollectionEquality().hash(slotDescription),
       const DeepCollectionEquality().hash(_selectedSlots));
 
   @JsonKey(ignore: true)
@@ -11720,6 +11760,7 @@ abstract class _ReservationSlotItem extends ReservationSlotItem {
           final UniqueId? selectedSportSpaceId,
           final String? selectedSideOption,
           required final DateTime selectedDate,
+          final String? slotDescription,
           required final List<ReservationTimeFeeSlotItem> selectedSlots}) =
       _$_ReservationSlotItem;
   _ReservationSlotItem._() : super._();
@@ -11734,6 +11775,8 @@ abstract class _ReservationSlotItem extends ReservationSlotItem {
   String? get selectedSideOption;
   @override
   DateTime get selectedDate;
+  @override
+  String? get slotDescription;
   @override
   List<ReservationTimeFeeSlotItem> get selectedSlots;
   @override
@@ -11894,6 +11937,7 @@ mixin _$ReservationSlotItemDto {
   String get selectedSpaceId => throw _privateConstructorUsedError;
   String? get selectedSportSpaceId => throw _privateConstructorUsedError;
   String? get selectedSideOption => throw _privateConstructorUsedError;
+  String? get slotDescription => throw _privateConstructorUsedError;
   String get selectedDate => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get selectedSlots =>
       throw _privateConstructorUsedError;
@@ -11914,6 +11958,7 @@ abstract class $ReservationSlotItemDtoCopyWith<$Res> {
       String selectedSpaceId,
       String? selectedSportSpaceId,
       String? selectedSideOption,
+      String? slotDescription,
       String selectedDate,
       List<Map<String, dynamic>> selectedSlots});
 }
@@ -11933,6 +11978,7 @@ class _$ReservationSlotItemDtoCopyWithImpl<$Res>
     Object? selectedSpaceId = freezed,
     Object? selectedSportSpaceId = freezed,
     Object? selectedSideOption = freezed,
+    Object? slotDescription = freezed,
     Object? selectedDate = freezed,
     Object? selectedSlots = freezed,
   }) {
@@ -11952,6 +11998,10 @@ class _$ReservationSlotItemDtoCopyWithImpl<$Res>
       selectedSideOption: selectedSideOption == freezed
           ? _value.selectedSideOption
           : selectedSideOption // ignore: cast_nullable_to_non_nullable
+              as String?,
+      slotDescription: slotDescription == freezed
+          ? _value.slotDescription
+          : slotDescription // ignore: cast_nullable_to_non_nullable
               as String?,
       selectedDate: selectedDate == freezed
           ? _value.selectedDate
@@ -11977,6 +12027,7 @@ abstract class _$$_ReservationSlotItemDtoCopyWith<$Res>
       String selectedSpaceId,
       String? selectedSportSpaceId,
       String? selectedSideOption,
+      String? slotDescription,
       String selectedDate,
       List<Map<String, dynamic>> selectedSlots});
 }
@@ -11999,6 +12050,7 @@ class __$$_ReservationSlotItemDtoCopyWithImpl<$Res>
     Object? selectedSpaceId = freezed,
     Object? selectedSportSpaceId = freezed,
     Object? selectedSideOption = freezed,
+    Object? slotDescription = freezed,
     Object? selectedDate = freezed,
     Object? selectedSlots = freezed,
   }) {
@@ -12018,6 +12070,10 @@ class __$$_ReservationSlotItemDtoCopyWithImpl<$Res>
       selectedSideOption: selectedSideOption == freezed
           ? _value.selectedSideOption
           : selectedSideOption // ignore: cast_nullable_to_non_nullable
+              as String?,
+      slotDescription: slotDescription == freezed
+          ? _value.slotDescription
+          : slotDescription // ignore: cast_nullable_to_non_nullable
               as String?,
       selectedDate: selectedDate == freezed
           ? _value.selectedDate
@@ -12039,6 +12095,7 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
       required this.selectedSpaceId,
       this.selectedSportSpaceId,
       this.selectedSideOption,
+      this.slotDescription,
       required this.selectedDate,
       required final List<Map<String, dynamic>> selectedSlots})
       : _selectedSlots = selectedSlots,
@@ -12056,6 +12113,8 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
   @override
   final String? selectedSideOption;
   @override
+  final String? slotDescription;
+  @override
   final String selectedDate;
   final List<Map<String, dynamic>> _selectedSlots;
   @override
@@ -12066,7 +12125,7 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
 
   @override
   String toString() {
-    return 'ReservationSlotItemDto(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, selectedDate: $selectedDate, selectedSlots: $selectedSlots)';
+    return 'ReservationSlotItemDto(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, slotDescription: $slotDescription, selectedDate: $selectedDate, selectedSlots: $selectedSlots)';
   }
 
   @override
@@ -12083,6 +12142,8 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
             const DeepCollectionEquality()
                 .equals(other.selectedSideOption, selectedSideOption) &&
             const DeepCollectionEquality()
+                .equals(other.slotDescription, slotDescription) &&
+            const DeepCollectionEquality()
                 .equals(other.selectedDate, selectedDate) &&
             const DeepCollectionEquality()
                 .equals(other._selectedSlots, _selectedSlots));
@@ -12096,6 +12157,7 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
       const DeepCollectionEquality().hash(selectedSpaceId),
       const DeepCollectionEquality().hash(selectedSportSpaceId),
       const DeepCollectionEquality().hash(selectedSideOption),
+      const DeepCollectionEquality().hash(slotDescription),
       const DeepCollectionEquality().hash(selectedDate),
       const DeepCollectionEquality().hash(_selectedSlots));
 
@@ -12119,6 +12181,7 @@ abstract class _ReservationSlotItemDto extends ReservationSlotItemDto {
           required final String selectedSpaceId,
           final String? selectedSportSpaceId,
           final String? selectedSideOption,
+          final String? slotDescription,
           required final String selectedDate,
           required final List<Map<String, dynamic>> selectedSlots}) =
       _$_ReservationSlotItemDto;
@@ -12135,6 +12198,8 @@ abstract class _ReservationSlotItemDto extends ReservationSlotItemDto {
   String? get selectedSportSpaceId;
   @override
   String? get selectedSideOption;
+  @override
+  String? get slotDescription;
   @override
   String get selectedDate;
   @override
@@ -19212,6 +19277,7 @@ mixin _$ActivityPassesOption {
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get passQuantity => throw _privateConstructorUsedError;
+  int? get passesPrice => throw _privateConstructorUsedError;
   bool? get recurringPassAllSession => throw _privateConstructorUsedError;
   int? get recurringNumberOfSessions => throw _privateConstructorUsedError;
 
@@ -19230,6 +19296,7 @@ abstract class $ActivityPassesOptionCopyWith<$Res> {
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int passQuantity,
+      int? passesPrice,
       bool? recurringPassAllSession,
       int? recurringNumberOfSessions});
 }
@@ -19249,6 +19316,7 @@ class _$ActivityPassesOptionCopyWithImpl<$Res>
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? passQuantity = freezed,
+    Object? passesPrice = freezed,
     Object? recurringPassAllSession = freezed,
     Object? recurringNumberOfSessions = freezed,
   }) {
@@ -19269,6 +19337,10 @@ class _$ActivityPassesOptionCopyWithImpl<$Res>
           ? _value.passQuantity
           : passQuantity // ignore: cast_nullable_to_non_nullable
               as int,
+      passesPrice: passesPrice == freezed
+          ? _value.passesPrice
+          : passesPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
       recurringPassAllSession: recurringPassAllSession == freezed
           ? _value.recurringPassAllSession
           : recurringPassAllSession // ignore: cast_nullable_to_non_nullable
@@ -19293,6 +19365,7 @@ abstract class _$$_ActivityPassesOptionCopyWith<$Res>
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int passQuantity,
+      int? passesPrice,
       bool? recurringPassAllSession,
       int? recurringNumberOfSessions});
 }
@@ -19314,6 +19387,7 @@ class __$$_ActivityPassesOptionCopyWithImpl<$Res>
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? passQuantity = freezed,
+    Object? passesPrice = freezed,
     Object? recurringPassAllSession = freezed,
     Object? recurringNumberOfSessions = freezed,
   }) {
@@ -19334,6 +19408,10 @@ class __$$_ActivityPassesOptionCopyWithImpl<$Res>
           ? _value.passQuantity
           : passQuantity // ignore: cast_nullable_to_non_nullable
               as int,
+      passesPrice: passesPrice == freezed
+          ? _value.passesPrice
+          : passesPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
       recurringPassAllSession: recurringPassAllSession == freezed
           ? _value.recurringPassAllSession
           : recurringPassAllSession // ignore: cast_nullable_to_non_nullable
@@ -19354,6 +19432,7 @@ class _$_ActivityPassesOption extends _ActivityPassesOption {
       required this.minimumGroupQuantity,
       required this.maximumGroupQuantity,
       required this.passQuantity,
+      this.passesPrice,
       this.recurringPassAllSession,
       this.recurringNumberOfSessions})
       : super._();
@@ -19367,13 +19446,15 @@ class _$_ActivityPassesOption extends _ActivityPassesOption {
   @override
   final int passQuantity;
   @override
+  final int? passesPrice;
+  @override
   final bool? recurringPassAllSession;
   @override
   final int? recurringNumberOfSessions;
 
   @override
   String toString() {
-    return 'ActivityPassesOption(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, passQuantity: $passQuantity, recurringPassAllSession: $recurringPassAllSession, recurringNumberOfSessions: $recurringNumberOfSessions)';
+    return 'ActivityPassesOption(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, passQuantity: $passQuantity, passesPrice: $passesPrice, recurringPassAllSession: $recurringPassAllSession, recurringNumberOfSessions: $recurringNumberOfSessions)';
   }
 
   @override
@@ -19389,6 +19470,8 @@ class _$_ActivityPassesOption extends _ActivityPassesOption {
                 .equals(other.maximumGroupQuantity, maximumGroupQuantity) &&
             const DeepCollectionEquality()
                 .equals(other.passQuantity, passQuantity) &&
+            const DeepCollectionEquality()
+                .equals(other.passesPrice, passesPrice) &&
             const DeepCollectionEquality().equals(
                 other.recurringPassAllSession, recurringPassAllSession) &&
             const DeepCollectionEquality().equals(
@@ -19402,6 +19485,7 @@ class _$_ActivityPassesOption extends _ActivityPassesOption {
       const DeepCollectionEquality().hash(minimumGroupQuantity),
       const DeepCollectionEquality().hash(maximumGroupQuantity),
       const DeepCollectionEquality().hash(passQuantity),
+      const DeepCollectionEquality().hash(passesPrice),
       const DeepCollectionEquality().hash(recurringPassAllSession),
       const DeepCollectionEquality().hash(recurringNumberOfSessions));
 
@@ -19418,6 +19502,7 @@ abstract class _ActivityPassesOption extends ActivityPassesOption {
       required final int minimumGroupQuantity,
       required final int maximumGroupQuantity,
       required final int passQuantity,
+      final int? passesPrice,
       final bool? recurringPassAllSession,
       final int? recurringNumberOfSessions}) = _$_ActivityPassesOption;
   const _ActivityPassesOption._() : super._();
@@ -19430,6 +19515,8 @@ abstract class _ActivityPassesOption extends ActivityPassesOption {
   int get maximumGroupQuantity;
   @override
   int get passQuantity;
+  @override
+  int? get passesPrice;
   @override
   bool? get recurringPassAllSession;
   @override
@@ -19446,11 +19533,15 @@ mixin _$ActivityAttendance {
   int? get attendanceLimit => throw _privateConstructorUsedError;
   bool? get isTicketBased => throw _privateConstructorUsedError;
   bool? get isPassBased => throw _privateConstructorUsedError;
+  bool? get isTicketFixed => throw _privateConstructorUsedError;
+  bool? get isPassesFixed => throw _privateConstructorUsedError;
   ActivityTicketOption? get defaultActivityTickets =>
       throw _privateConstructorUsedError;
   List<ActivityTicketOption>? get activityTickets =>
       throw _privateConstructorUsedError;
-  ActivityPassesOption? get activityPasses =>
+  ActivityPassesOption? get defaultActivityPass =>
+      throw _privateConstructorUsedError;
+  List<ActivityPassesOption>? get activityPasses =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -19468,12 +19559,15 @@ abstract class $ActivityAttendanceCopyWith<$Res> {
       int? attendanceLimit,
       bool? isTicketBased,
       bool? isPassBased,
+      bool? isTicketFixed,
+      bool? isPassesFixed,
       ActivityTicketOption? defaultActivityTickets,
       List<ActivityTicketOption>? activityTickets,
-      ActivityPassesOption? activityPasses});
+      ActivityPassesOption? defaultActivityPass,
+      List<ActivityPassesOption>? activityPasses});
 
   $ActivityTicketOptionCopyWith<$Res>? get defaultActivityTickets;
-  $ActivityPassesOptionCopyWith<$Res>? get activityPasses;
+  $ActivityPassesOptionCopyWith<$Res>? get defaultActivityPass;
 }
 
 /// @nodoc
@@ -19491,8 +19585,11 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
     Object? attendanceLimit = freezed,
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
+    Object? isTicketFixed = freezed,
+    Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? activityTickets = freezed,
+    Object? defaultActivityPass = freezed,
     Object? activityPasses = freezed,
   }) {
     return _then(_value.copyWith(
@@ -19512,6 +19609,14 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
           ? _value.isPassBased
           : isPassBased // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isTicketFixed: isTicketFixed == freezed
+          ? _value.isTicketFixed
+          : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isPassesFixed: isPassesFixed == freezed
+          ? _value.isPassesFixed
+          : isPassesFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
       defaultActivityTickets: defaultActivityTickets == freezed
           ? _value.defaultActivityTickets
           : defaultActivityTickets // ignore: cast_nullable_to_non_nullable
@@ -19520,10 +19625,14 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
           ? _value.activityTickets
           : activityTickets // ignore: cast_nullable_to_non_nullable
               as List<ActivityTicketOption>?,
+      defaultActivityPass: defaultActivityPass == freezed
+          ? _value.defaultActivityPass
+          : defaultActivityPass // ignore: cast_nullable_to_non_nullable
+              as ActivityPassesOption?,
       activityPasses: activityPasses == freezed
           ? _value.activityPasses
           : activityPasses // ignore: cast_nullable_to_non_nullable
-              as ActivityPassesOption?,
+              as List<ActivityPassesOption>?,
     ));
   }
 
@@ -19540,13 +19649,14 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
   }
 
   @override
-  $ActivityPassesOptionCopyWith<$Res>? get activityPasses {
-    if (_value.activityPasses == null) {
+  $ActivityPassesOptionCopyWith<$Res>? get defaultActivityPass {
+    if (_value.defaultActivityPass == null) {
       return null;
     }
 
-    return $ActivityPassesOptionCopyWith<$Res>(_value.activityPasses!, (value) {
-      return _then(_value.copyWith(activityPasses: value));
+    return $ActivityPassesOptionCopyWith<$Res>(_value.defaultActivityPass!,
+        (value) {
+      return _then(_value.copyWith(defaultActivityPass: value));
     });
   }
 }
@@ -19563,14 +19673,17 @@ abstract class _$$_ActivityAttendanceCopyWith<$Res>
       int? attendanceLimit,
       bool? isTicketBased,
       bool? isPassBased,
+      bool? isTicketFixed,
+      bool? isPassesFixed,
       ActivityTicketOption? defaultActivityTickets,
       List<ActivityTicketOption>? activityTickets,
-      ActivityPassesOption? activityPasses});
+      ActivityPassesOption? defaultActivityPass,
+      List<ActivityPassesOption>? activityPasses});
 
   @override
   $ActivityTicketOptionCopyWith<$Res>? get defaultActivityTickets;
   @override
-  $ActivityPassesOptionCopyWith<$Res>? get activityPasses;
+  $ActivityPassesOptionCopyWith<$Res>? get defaultActivityPass;
 }
 
 /// @nodoc
@@ -19590,8 +19703,11 @@ class __$$_ActivityAttendanceCopyWithImpl<$Res>
     Object? attendanceLimit = freezed,
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
+    Object? isTicketFixed = freezed,
+    Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? activityTickets = freezed,
+    Object? defaultActivityPass = freezed,
     Object? activityPasses = freezed,
   }) {
     return _then(_$_ActivityAttendance(
@@ -19611,6 +19727,14 @@ class __$$_ActivityAttendanceCopyWithImpl<$Res>
           ? _value.isPassBased
           : isPassBased // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isTicketFixed: isTicketFixed == freezed
+          ? _value.isTicketFixed
+          : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isPassesFixed: isPassesFixed == freezed
+          ? _value.isPassesFixed
+          : isPassesFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
       defaultActivityTickets: defaultActivityTickets == freezed
           ? _value.defaultActivityTickets
           : defaultActivityTickets // ignore: cast_nullable_to_non_nullable
@@ -19619,10 +19743,14 @@ class __$$_ActivityAttendanceCopyWithImpl<$Res>
           ? _value._activityTickets
           : activityTickets // ignore: cast_nullable_to_non_nullable
               as List<ActivityTicketOption>?,
-      activityPasses: activityPasses == freezed
-          ? _value.activityPasses
-          : activityPasses // ignore: cast_nullable_to_non_nullable
+      defaultActivityPass: defaultActivityPass == freezed
+          ? _value.defaultActivityPass
+          : defaultActivityPass // ignore: cast_nullable_to_non_nullable
               as ActivityPassesOption?,
+      activityPasses: activityPasses == freezed
+          ? _value._activityPasses
+          : activityPasses // ignore: cast_nullable_to_non_nullable
+              as List<ActivityPassesOption>?,
     ));
   }
 }
@@ -19635,10 +19763,14 @@ class _$_ActivityAttendance extends _ActivityAttendance {
       this.attendanceLimit,
       this.isTicketBased,
       this.isPassBased,
+      this.isTicketFixed,
+      this.isPassesFixed,
       this.defaultActivityTickets,
       final List<ActivityTicketOption>? activityTickets,
-      this.activityPasses})
+      this.defaultActivityPass,
+      final List<ActivityPassesOption>? activityPasses})
       : _activityTickets = activityTickets,
+        _activityPasses = activityPasses,
         super._();
 
   @override
@@ -19649,6 +19781,10 @@ class _$_ActivityAttendance extends _ActivityAttendance {
   final bool? isTicketBased;
   @override
   final bool? isPassBased;
+  @override
+  final bool? isTicketFixed;
+  @override
+  final bool? isPassesFixed;
   @override
   final ActivityTicketOption? defaultActivityTickets;
   final List<ActivityTicketOption>? _activityTickets;
@@ -19661,11 +19797,19 @@ class _$_ActivityAttendance extends _ActivityAttendance {
   }
 
   @override
-  final ActivityPassesOption? activityPasses;
+  final ActivityPassesOption? defaultActivityPass;
+  final List<ActivityPassesOption>? _activityPasses;
+  @override
+  List<ActivityPassesOption>? get activityPasses {
+    final value = _activityPasses;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'ActivityAttendance(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, defaultActivityTickets: $defaultActivityTickets, activityTickets: $activityTickets, activityPasses: $activityPasses)';
+    return 'ActivityAttendance(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, activityTickets: $activityTickets, defaultActivityPass: $defaultActivityPass, activityPasses: $activityPasses)';
   }
 
   @override
@@ -19682,11 +19826,17 @@ class _$_ActivityAttendance extends _ActivityAttendance {
             const DeepCollectionEquality()
                 .equals(other.isPassBased, isPassBased) &&
             const DeepCollectionEquality()
+                .equals(other.isTicketFixed, isTicketFixed) &&
+            const DeepCollectionEquality()
+                .equals(other.isPassesFixed, isPassesFixed) &&
+            const DeepCollectionEquality()
                 .equals(other.defaultActivityTickets, defaultActivityTickets) &&
             const DeepCollectionEquality()
                 .equals(other._activityTickets, _activityTickets) &&
             const DeepCollectionEquality()
-                .equals(other.activityPasses, activityPasses));
+                .equals(other.defaultActivityPass, defaultActivityPass) &&
+            const DeepCollectionEquality()
+                .equals(other._activityPasses, _activityPasses));
   }
 
   @override
@@ -19696,9 +19846,12 @@ class _$_ActivityAttendance extends _ActivityAttendance {
       const DeepCollectionEquality().hash(attendanceLimit),
       const DeepCollectionEquality().hash(isTicketBased),
       const DeepCollectionEquality().hash(isPassBased),
+      const DeepCollectionEquality().hash(isTicketFixed),
+      const DeepCollectionEquality().hash(isPassesFixed),
       const DeepCollectionEquality().hash(defaultActivityTickets),
       const DeepCollectionEquality().hash(_activityTickets),
-      const DeepCollectionEquality().hash(activityPasses));
+      const DeepCollectionEquality().hash(defaultActivityPass),
+      const DeepCollectionEquality().hash(_activityPasses));
 
   @JsonKey(ignore: true)
   @override
@@ -19709,13 +19862,17 @@ class _$_ActivityAttendance extends _ActivityAttendance {
 
 abstract class _ActivityAttendance extends ActivityAttendance {
   factory _ActivityAttendance(
-      {final bool? isLimitedAttendance,
-      final int? attendanceLimit,
-      final bool? isTicketBased,
-      final bool? isPassBased,
-      final ActivityTicketOption? defaultActivityTickets,
-      final List<ActivityTicketOption>? activityTickets,
-      final ActivityPassesOption? activityPasses}) = _$_ActivityAttendance;
+          {final bool? isLimitedAttendance,
+          final int? attendanceLimit,
+          final bool? isTicketBased,
+          final bool? isPassBased,
+          final bool? isTicketFixed,
+          final bool? isPassesFixed,
+          final ActivityTicketOption? defaultActivityTickets,
+          final List<ActivityTicketOption>? activityTickets,
+          final ActivityPassesOption? defaultActivityPass,
+          final List<ActivityPassesOption>? activityPasses}) =
+      _$_ActivityAttendance;
   _ActivityAttendance._() : super._();
 
   @override
@@ -19727,11 +19884,17 @@ abstract class _ActivityAttendance extends ActivityAttendance {
   @override
   bool? get isPassBased;
   @override
+  bool? get isTicketFixed;
+  @override
+  bool? get isPassesFixed;
+  @override
   ActivityTicketOption? get defaultActivityTickets;
   @override
   List<ActivityTicketOption>? get activityTickets;
   @override
-  ActivityPassesOption? get activityPasses;
+  ActivityPassesOption? get defaultActivityPass;
+  @override
+  List<ActivityPassesOption>? get activityPasses;
   @override
   @JsonKey(ignore: true)
   _$$_ActivityAttendanceCopyWith<_$_ActivityAttendance> get copyWith =>
@@ -19749,11 +19912,15 @@ mixin _$ActivityAttendanceDto {
   int? get attendanceLimit => throw _privateConstructorUsedError;
   bool? get isTicketBased => throw _privateConstructorUsedError;
   bool? get isPassBased => throw _privateConstructorUsedError;
+  bool? get isTicketFixed => throw _privateConstructorUsedError;
+  bool? get isPassesFixed => throw _privateConstructorUsedError;
   Map<String, dynamic>? get defaultActivityTickets =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic>? get activityPasses =>
+  Map<String, dynamic>? get defaultActivityPass =>
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get activityTickets =>
+      throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get activityPasses =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -19772,9 +19939,12 @@ abstract class $ActivityAttendanceDtoCopyWith<$Res> {
       int? attendanceLimit,
       bool? isTicketBased,
       bool? isPassBased,
+      bool? isTicketFixed,
+      bool? isPassesFixed,
       Map<String, dynamic>? defaultActivityTickets,
-      Map<String, dynamic>? activityPasses,
-      List<Map<String, dynamic>>? activityTickets});
+      Map<String, dynamic>? defaultActivityPass,
+      List<Map<String, dynamic>>? activityTickets,
+      List<Map<String, dynamic>>? activityPasses});
 }
 
 /// @nodoc
@@ -19792,9 +19962,12 @@ class _$ActivityAttendanceDtoCopyWithImpl<$Res>
     Object? attendanceLimit = freezed,
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
+    Object? isTicketFixed = freezed,
+    Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
-    Object? activityPasses = freezed,
+    Object? defaultActivityPass = freezed,
     Object? activityTickets = freezed,
+    Object? activityPasses = freezed,
   }) {
     return _then(_value.copyWith(
       isLimitedAttendance: isLimitedAttendance == freezed
@@ -19813,17 +19986,29 @@ class _$ActivityAttendanceDtoCopyWithImpl<$Res>
           ? _value.isPassBased
           : isPassBased // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isTicketFixed: isTicketFixed == freezed
+          ? _value.isTicketFixed
+          : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isPassesFixed: isPassesFixed == freezed
+          ? _value.isPassesFixed
+          : isPassesFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
       defaultActivityTickets: defaultActivityTickets == freezed
           ? _value.defaultActivityTickets
           : defaultActivityTickets // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      activityPasses: activityPasses == freezed
-          ? _value.activityPasses
-          : activityPasses // ignore: cast_nullable_to_non_nullable
+      defaultActivityPass: defaultActivityPass == freezed
+          ? _value.defaultActivityPass
+          : defaultActivityPass // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       activityTickets: activityTickets == freezed
           ? _value.activityTickets
           : activityTickets // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
+      activityPasses: activityPasses == freezed
+          ? _value.activityPasses
+          : activityPasses // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
     ));
   }
@@ -19841,9 +20026,12 @@ abstract class _$$_ActivityAttendanceDtoCopyWith<$Res>
       int? attendanceLimit,
       bool? isTicketBased,
       bool? isPassBased,
+      bool? isTicketFixed,
+      bool? isPassesFixed,
       Map<String, dynamic>? defaultActivityTickets,
-      Map<String, dynamic>? activityPasses,
-      List<Map<String, dynamic>>? activityTickets});
+      Map<String, dynamic>? defaultActivityPass,
+      List<Map<String, dynamic>>? activityTickets,
+      List<Map<String, dynamic>>? activityPasses});
 }
 
 /// @nodoc
@@ -19864,9 +20052,12 @@ class __$$_ActivityAttendanceDtoCopyWithImpl<$Res>
     Object? attendanceLimit = freezed,
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
+    Object? isTicketFixed = freezed,
+    Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
-    Object? activityPasses = freezed,
+    Object? defaultActivityPass = freezed,
     Object? activityTickets = freezed,
+    Object? activityPasses = freezed,
   }) {
     return _then(_$_ActivityAttendanceDto(
       isLimitedAttendance: isLimitedAttendance == freezed
@@ -19885,17 +20076,29 @@ class __$$_ActivityAttendanceDtoCopyWithImpl<$Res>
           ? _value.isPassBased
           : isPassBased // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isTicketFixed: isTicketFixed == freezed
+          ? _value.isTicketFixed
+          : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isPassesFixed: isPassesFixed == freezed
+          ? _value.isPassesFixed
+          : isPassesFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
       defaultActivityTickets: defaultActivityTickets == freezed
           ? _value._defaultActivityTickets
           : defaultActivityTickets // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      activityPasses: activityPasses == freezed
-          ? _value._activityPasses
-          : activityPasses // ignore: cast_nullable_to_non_nullable
+      defaultActivityPass: defaultActivityPass == freezed
+          ? _value._defaultActivityPass
+          : defaultActivityPass // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       activityTickets: activityTickets == freezed
           ? _value._activityTickets
           : activityTickets // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
+      activityPasses: activityPasses == freezed
+          ? _value._activityPasses
+          : activityPasses // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
     ));
   }
@@ -19909,12 +20112,16 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
       this.attendanceLimit,
       this.isTicketBased,
       this.isPassBased,
+      this.isTicketFixed,
+      this.isPassesFixed,
       final Map<String, dynamic>? defaultActivityTickets,
-      final Map<String, dynamic>? activityPasses,
-      final List<Map<String, dynamic>>? activityTickets})
+      final Map<String, dynamic>? defaultActivityPass,
+      final List<Map<String, dynamic>>? activityTickets,
+      final List<Map<String, dynamic>>? activityPasses})
       : _defaultActivityTickets = defaultActivityTickets,
-        _activityPasses = activityPasses,
+        _defaultActivityPass = defaultActivityPass,
         _activityTickets = activityTickets,
+        _activityPasses = activityPasses,
         super._();
 
   factory _$_ActivityAttendanceDto.fromJson(Map<String, dynamic> json) =>
@@ -19928,6 +20135,10 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
   final bool? isTicketBased;
   @override
   final bool? isPassBased;
+  @override
+  final bool? isTicketFixed;
+  @override
+  final bool? isPassesFixed;
   final Map<String, dynamic>? _defaultActivityTickets;
   @override
   Map<String, dynamic>? get defaultActivityTickets {
@@ -19937,10 +20148,10 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
     return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, dynamic>? _activityPasses;
+  final Map<String, dynamic>? _defaultActivityPass;
   @override
-  Map<String, dynamic>? get activityPasses {
-    final value = _activityPasses;
+  Map<String, dynamic>? get defaultActivityPass {
+    final value = _defaultActivityPass;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
@@ -19955,9 +20166,18 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<Map<String, dynamic>>? _activityPasses;
+  @override
+  List<Map<String, dynamic>>? get activityPasses {
+    final value = _activityPasses;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'ActivityAttendanceDto(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, defaultActivityTickets: $defaultActivityTickets, activityPasses: $activityPasses, activityTickets: $activityTickets)';
+    return 'ActivityAttendanceDto(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, defaultActivityPass: $defaultActivityPass, activityTickets: $activityTickets, activityPasses: $activityPasses)';
   }
 
   @override
@@ -19973,12 +20193,18 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
                 .equals(other.isTicketBased, isTicketBased) &&
             const DeepCollectionEquality()
                 .equals(other.isPassBased, isPassBased) &&
+            const DeepCollectionEquality()
+                .equals(other.isTicketFixed, isTicketFixed) &&
+            const DeepCollectionEquality()
+                .equals(other.isPassesFixed, isPassesFixed) &&
             const DeepCollectionEquality().equals(
                 other._defaultActivityTickets, _defaultActivityTickets) &&
             const DeepCollectionEquality()
-                .equals(other._activityPasses, _activityPasses) &&
+                .equals(other._defaultActivityPass, _defaultActivityPass) &&
             const DeepCollectionEquality()
-                .equals(other._activityTickets, _activityTickets));
+                .equals(other._activityTickets, _activityTickets) &&
+            const DeepCollectionEquality()
+                .equals(other._activityPasses, _activityPasses));
   }
 
   @JsonKey(ignore: true)
@@ -19989,9 +20215,12 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
       const DeepCollectionEquality().hash(attendanceLimit),
       const DeepCollectionEquality().hash(isTicketBased),
       const DeepCollectionEquality().hash(isPassBased),
+      const DeepCollectionEquality().hash(isTicketFixed),
+      const DeepCollectionEquality().hash(isPassesFixed),
       const DeepCollectionEquality().hash(_defaultActivityTickets),
-      const DeepCollectionEquality().hash(_activityPasses),
-      const DeepCollectionEquality().hash(_activityTickets));
+      const DeepCollectionEquality().hash(_defaultActivityPass),
+      const DeepCollectionEquality().hash(_activityTickets),
+      const DeepCollectionEquality().hash(_activityPasses));
 
   @JsonKey(ignore: true)
   @override
@@ -20013,9 +20242,12 @@ abstract class _ActivityAttendanceDto extends ActivityAttendanceDto {
           final int? attendanceLimit,
           final bool? isTicketBased,
           final bool? isPassBased,
+          final bool? isTicketFixed,
+          final bool? isPassesFixed,
           final Map<String, dynamic>? defaultActivityTickets,
-          final Map<String, dynamic>? activityPasses,
-          final List<Map<String, dynamic>>? activityTickets}) =
+          final Map<String, dynamic>? defaultActivityPass,
+          final List<Map<String, dynamic>>? activityTickets,
+          final List<Map<String, dynamic>>? activityPasses}) =
       _$_ActivityAttendanceDto;
   _ActivityAttendanceDto._() : super._();
 
@@ -20031,11 +20263,17 @@ abstract class _ActivityAttendanceDto extends ActivityAttendanceDto {
   @override
   bool? get isPassBased;
   @override
+  bool? get isTicketFixed;
+  @override
+  bool? get isPassesFixed;
+  @override
   Map<String, dynamic>? get defaultActivityTickets;
   @override
-  Map<String, dynamic>? get activityPasses;
+  Map<String, dynamic>? get defaultActivityPass;
   @override
   List<Map<String, dynamic>>? get activityTickets;
+  @override
+  List<Map<String, dynamic>>? get activityPasses;
   @override
   @JsonKey(ignore: true)
   _$$_ActivityAttendanceDtoCopyWith<_$_ActivityAttendanceDto> get copyWith =>
@@ -20053,6 +20291,7 @@ mixin _$ActivityPassesOptionDto {
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get passQuantity => throw _privateConstructorUsedError;
+  int? get passesPrice => throw _privateConstructorUsedError;
   bool? get recurringPassAllSession => throw _privateConstructorUsedError;
   int? get recurringNumberOfSessions => throw _privateConstructorUsedError;
 
@@ -20072,6 +20311,7 @@ abstract class $ActivityPassesOptionDtoCopyWith<$Res> {
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int passQuantity,
+      int? passesPrice,
       bool? recurringPassAllSession,
       int? recurringNumberOfSessions});
 }
@@ -20091,6 +20331,7 @@ class _$ActivityPassesOptionDtoCopyWithImpl<$Res>
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? passQuantity = freezed,
+    Object? passesPrice = freezed,
     Object? recurringPassAllSession = freezed,
     Object? recurringNumberOfSessions = freezed,
   }) {
@@ -20111,6 +20352,10 @@ class _$ActivityPassesOptionDtoCopyWithImpl<$Res>
           ? _value.passQuantity
           : passQuantity // ignore: cast_nullable_to_non_nullable
               as int,
+      passesPrice: passesPrice == freezed
+          ? _value.passesPrice
+          : passesPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
       recurringPassAllSession: recurringPassAllSession == freezed
           ? _value.recurringPassAllSession
           : recurringPassAllSession // ignore: cast_nullable_to_non_nullable
@@ -20135,6 +20380,7 @@ abstract class _$$_ActivityPassesOptionDtoCopyWith<$Res>
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int passQuantity,
+      int? passesPrice,
       bool? recurringPassAllSession,
       int? recurringNumberOfSessions});
 }
@@ -20157,6 +20403,7 @@ class __$$_ActivityPassesOptionDtoCopyWithImpl<$Res>
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? passQuantity = freezed,
+    Object? passesPrice = freezed,
     Object? recurringPassAllSession = freezed,
     Object? recurringNumberOfSessions = freezed,
   }) {
@@ -20177,6 +20424,10 @@ class __$$_ActivityPassesOptionDtoCopyWithImpl<$Res>
           ? _value.passQuantity
           : passQuantity // ignore: cast_nullable_to_non_nullable
               as int,
+      passesPrice: passesPrice == freezed
+          ? _value.passesPrice
+          : passesPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
       recurringPassAllSession: recurringPassAllSession == freezed
           ? _value.recurringPassAllSession
           : recurringPassAllSession // ignore: cast_nullable_to_non_nullable
@@ -20197,6 +20448,7 @@ class _$_ActivityPassesOptionDto extends _ActivityPassesOptionDto {
       required this.minimumGroupQuantity,
       required this.maximumGroupQuantity,
       required this.passQuantity,
+      this.passesPrice,
       this.recurringPassAllSession,
       this.recurringNumberOfSessions})
       : super._();
@@ -20213,13 +20465,15 @@ class _$_ActivityPassesOptionDto extends _ActivityPassesOptionDto {
   @override
   final int passQuantity;
   @override
+  final int? passesPrice;
+  @override
   final bool? recurringPassAllSession;
   @override
   final int? recurringNumberOfSessions;
 
   @override
   String toString() {
-    return 'ActivityPassesOptionDto(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, passQuantity: $passQuantity, recurringPassAllSession: $recurringPassAllSession, recurringNumberOfSessions: $recurringNumberOfSessions)';
+    return 'ActivityPassesOptionDto(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, passQuantity: $passQuantity, passesPrice: $passesPrice, recurringPassAllSession: $recurringPassAllSession, recurringNumberOfSessions: $recurringNumberOfSessions)';
   }
 
   @override
@@ -20235,6 +20489,8 @@ class _$_ActivityPassesOptionDto extends _ActivityPassesOptionDto {
                 .equals(other.maximumGroupQuantity, maximumGroupQuantity) &&
             const DeepCollectionEquality()
                 .equals(other.passQuantity, passQuantity) &&
+            const DeepCollectionEquality()
+                .equals(other.passesPrice, passesPrice) &&
             const DeepCollectionEquality().equals(
                 other.recurringPassAllSession, recurringPassAllSession) &&
             const DeepCollectionEquality().equals(
@@ -20249,6 +20505,7 @@ class _$_ActivityPassesOptionDto extends _ActivityPassesOptionDto {
       const DeepCollectionEquality().hash(minimumGroupQuantity),
       const DeepCollectionEquality().hash(maximumGroupQuantity),
       const DeepCollectionEquality().hash(passQuantity),
+      const DeepCollectionEquality().hash(passesPrice),
       const DeepCollectionEquality().hash(recurringPassAllSession),
       const DeepCollectionEquality().hash(recurringNumberOfSessions));
 
@@ -20273,6 +20530,7 @@ abstract class _ActivityPassesOptionDto extends ActivityPassesOptionDto {
       required final int minimumGroupQuantity,
       required final int maximumGroupQuantity,
       required final int passQuantity,
+      final int? passesPrice,
       final bool? recurringPassAllSession,
       final int? recurringNumberOfSessions}) = _$_ActivityPassesOptionDto;
   _ActivityPassesOptionDto._() : super._();
@@ -20289,6 +20547,8 @@ abstract class _ActivityPassesOptionDto extends ActivityPassesOptionDto {
   @override
   int get passQuantity;
   @override
+  int? get passesPrice;
+  @override
   bool? get recurringPassAllSession;
   @override
   int? get recurringNumberOfSessions;
@@ -20304,7 +20564,7 @@ mixin _$ActivityTicketOption {
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get ticketQuantity => throw _privateConstructorUsedError;
-  String? get ticketFee => throw _privateConstructorUsedError;
+  int? get ticketFee => throw _privateConstructorUsedError;
   ReservationSlotItem? get reservationSlot =>
       throw _privateConstructorUsedError;
 
@@ -20323,7 +20583,7 @@ abstract class $ActivityTicketOptionCopyWith<$Res> {
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
-      String? ticketFee,
+      int? ticketFee,
       ReservationSlotItem? reservationSlot});
 
   $ReservationSlotItemCopyWith<$Res>? get reservationSlot;
@@ -20367,7 +20627,7 @@ class _$ActivityTicketOptionCopyWithImpl<$Res>
       ticketFee: ticketFee == freezed
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
@@ -20399,7 +20659,7 @@ abstract class _$$_ActivityTicketOptionCopyWith<$Res>
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
-      String? ticketFee,
+      int? ticketFee,
       ReservationSlotItem? reservationSlot});
 
   @override
@@ -20446,7 +20706,7 @@ class __$$_ActivityTicketOptionCopyWithImpl<$Res>
       ticketFee: ticketFee == freezed
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
@@ -20476,7 +20736,7 @@ class _$_ActivityTicketOption extends _ActivityTicketOption {
   @override
   final int ticketQuantity;
   @override
-  final String? ticketFee;
+  final int? ticketFee;
   @override
   final ReservationSlotItem? reservationSlot;
 
@@ -20526,7 +20786,7 @@ abstract class _ActivityTicketOption extends ActivityTicketOption {
       required final int minimumGroupQuantity,
       required final int maximumGroupQuantity,
       required final int ticketQuantity,
-      final String? ticketFee,
+      final int? ticketFee,
       final ReservationSlotItem? reservationSlot}) = _$_ActivityTicketOption;
   _ActivityTicketOption._() : super._();
 
@@ -20539,7 +20799,7 @@ abstract class _ActivityTicketOption extends ActivityTicketOption {
   @override
   int get ticketQuantity;
   @override
-  String? get ticketFee;
+  int? get ticketFee;
   @override
   ReservationSlotItem? get reservationSlot;
   @override
@@ -20559,7 +20819,7 @@ mixin _$ActivityTicketOptionDto {
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get ticketQuantity => throw _privateConstructorUsedError;
-  String? get ticketFee => throw _privateConstructorUsedError;
+  int? get ticketFee => throw _privateConstructorUsedError;
   Map<String, dynamic>? get reservationSlot =>
       throw _privateConstructorUsedError;
 
@@ -20579,7 +20839,7 @@ abstract class $ActivityTicketOptionDtoCopyWith<$Res> {
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
-      String? ticketFee,
+      int? ticketFee,
       Map<String, dynamic>? reservationSlot});
 }
 
@@ -20621,7 +20881,7 @@ class _$ActivityTicketOptionDtoCopyWithImpl<$Res>
       ticketFee: ticketFee == freezed
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
@@ -20642,7 +20902,7 @@ abstract class _$$_ActivityTicketOptionDtoCopyWith<$Res>
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
-      String? ticketFee,
+      int? ticketFee,
       Map<String, dynamic>? reservationSlot});
 }
 
@@ -20687,7 +20947,7 @@ class __$$_ActivityTicketOptionDtoCopyWithImpl<$Res>
       ticketFee: ticketFee == freezed
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       reservationSlot: reservationSlot == freezed
           ? _value._reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
@@ -20721,7 +20981,7 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
   @override
   final int ticketQuantity;
   @override
-  final String? ticketFee;
+  final int? ticketFee;
   final Map<String, dynamic>? _reservationSlot;
   @override
   Map<String, dynamic>? get reservationSlot {
@@ -20786,7 +21046,7 @@ abstract class _ActivityTicketOptionDto extends ActivityTicketOptionDto {
           required final int minimumGroupQuantity,
           required final int maximumGroupQuantity,
           required final int ticketQuantity,
-          final String? ticketFee,
+          final int? ticketFee,
           final Map<String, dynamic>? reservationSlot}) =
       _$_ActivityTicketOptionDto;
   _ActivityTicketOptionDto._() : super._();
@@ -20803,7 +21063,7 @@ abstract class _ActivityTicketOptionDto extends ActivityTicketOptionDto {
   @override
   int get ticketQuantity;
   @override
-  String? get ticketFee;
+  int? get ticketFee;
   @override
   Map<String, dynamic>? get reservationSlot;
   @override
@@ -29265,6 +29525,7 @@ mixin _$ActivityRulesService {
       throw _privateConstructorUsedError;
   CancellationSetting get cancellationSettings =>
       throw _privateConstructorUsedError;
+  String get currency => throw _privateConstructorUsedError;
   ListK<DetailCustomOption>? get customRuleOption =>
       throw _privateConstructorUsedError;
 
@@ -29289,6 +29550,7 @@ abstract class $ActivityRulesServiceCopyWith<$Res> {
       List<CheckInSetting> checkInSetting,
       List<CustomRuleOption> customFieldRuleSetting,
       CancellationSetting cancellationSettings,
+      String currency,
       ListK<DetailCustomOption>? customRuleOption,
       List<SkillLevel>? skillLevelReached,
       GameActivityRules? gameActivityRules});
@@ -29314,6 +29576,7 @@ class _$ActivityRulesServiceCopyWithImpl<$Res>
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? cancellationSettings = freezed,
+    Object? currency = freezed,
     Object? customRuleOption = freezed,
     Object? skillLevelReached = freezed,
     Object? gameActivityRules = freezed,
@@ -29339,6 +29602,10 @@ class _$ActivityRulesServiceCopyWithImpl<$Res>
           ? _value.cancellationSettings
           : cancellationSettings // ignore: cast_nullable_to_non_nullable
               as CancellationSetting,
+      currency: currency == freezed
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
       customRuleOption: customRuleOption == freezed
           ? _value.customRuleOption
           : customRuleOption // ignore: cast_nullable_to_non_nullable
@@ -29395,6 +29662,7 @@ abstract class _$$_ActivityRulesServiceCopyWith<$Res>
       List<CheckInSetting> checkInSetting,
       List<CustomRuleOption> customFieldRuleSetting,
       CancellationSetting cancellationSettings,
+      String currency,
       ListK<DetailCustomOption>? customRuleOption,
       List<SkillLevel>? skillLevelReached,
       GameActivityRules? gameActivityRules});
@@ -29425,6 +29693,7 @@ class __$$_ActivityRulesServiceCopyWithImpl<$Res>
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? cancellationSettings = freezed,
+    Object? currency = freezed,
     Object? customRuleOption = freezed,
     Object? skillLevelReached = freezed,
     Object? gameActivityRules = freezed,
@@ -29450,6 +29719,10 @@ class __$$_ActivityRulesServiceCopyWithImpl<$Res>
           ? _value.cancellationSettings
           : cancellationSettings // ignore: cast_nullable_to_non_nullable
               as CancellationSetting,
+      currency: currency == freezed
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
       customRuleOption: customRuleOption == freezed
           ? _value.customRuleOption
           : customRuleOption // ignore: cast_nullable_to_non_nullable
@@ -29475,6 +29748,7 @@ class _$_ActivityRulesService extends _ActivityRulesService {
       required final List<CheckInSetting> checkInSetting,
       required final List<CustomRuleOption> customFieldRuleSetting,
       required this.cancellationSettings,
+      required this.currency,
       this.customRuleOption,
       final List<SkillLevel>? skillLevelReached,
       this.gameActivityRules})
@@ -29504,6 +29778,8 @@ class _$_ActivityRulesService extends _ActivityRulesService {
   @override
   final CancellationSetting cancellationSettings;
   @override
+  final String currency;
+  @override
   final ListK<DetailCustomOption>? customRuleOption;
 
   /// for game based activities
@@ -29523,7 +29799,7 @@ class _$_ActivityRulesService extends _ActivityRulesService {
 
   @override
   String toString() {
-    return 'ActivityRulesService(accessVisibilitySetting: $accessVisibilitySetting, ruleOption: $ruleOption, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, cancellationSettings: $cancellationSettings, customRuleOption: $customRuleOption, skillLevelReached: $skillLevelReached, gameActivityRules: $gameActivityRules)';
+    return 'ActivityRulesService(accessVisibilitySetting: $accessVisibilitySetting, ruleOption: $ruleOption, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, cancellationSettings: $cancellationSettings, currency: $currency, customRuleOption: $customRuleOption, skillLevelReached: $skillLevelReached, gameActivityRules: $gameActivityRules)';
   }
 
   @override
@@ -29541,6 +29817,7 @@ class _$_ActivityRulesService extends _ActivityRulesService {
                 other._customFieldRuleSetting, _customFieldRuleSetting) &&
             const DeepCollectionEquality()
                 .equals(other.cancellationSettings, cancellationSettings) &&
+            const DeepCollectionEquality().equals(other.currency, currency) &&
             const DeepCollectionEquality()
                 .equals(other.customRuleOption, customRuleOption) &&
             const DeepCollectionEquality()
@@ -29557,6 +29834,7 @@ class _$_ActivityRulesService extends _ActivityRulesService {
       const DeepCollectionEquality().hash(_checkInSetting),
       const DeepCollectionEquality().hash(_customFieldRuleSetting),
       const DeepCollectionEquality().hash(cancellationSettings),
+      const DeepCollectionEquality().hash(currency),
       const DeepCollectionEquality().hash(customRuleOption),
       const DeepCollectionEquality().hash(_skillLevelReached),
       const DeepCollectionEquality().hash(gameActivityRules));
@@ -29575,6 +29853,7 @@ abstract class _ActivityRulesService extends ActivityRulesService {
       required final List<CheckInSetting> checkInSetting,
       required final List<CustomRuleOption> customFieldRuleSetting,
       required final CancellationSetting cancellationSettings,
+      required final String currency,
       final ListK<DetailCustomOption>? customRuleOption,
       final List<SkillLevel>? skillLevelReached,
       final GameActivityRules? gameActivityRules}) = _$_ActivityRulesService;
@@ -29590,6 +29869,8 @@ abstract class _ActivityRulesService extends ActivityRulesService {
   List<CustomRuleOption> get customFieldRuleSetting;
   @override
   CancellationSetting get cancellationSettings;
+  @override
+  String get currency;
   @override
   ListK<DetailCustomOption>? get customRuleOption;
   @override
@@ -29621,6 +29902,7 @@ mixin _$ActivityRulesServiceDto {
       throw _privateConstructorUsedError;
   Map<String, dynamic> get cancellationSettings =>
       throw _privateConstructorUsedError;
+  String get currency => throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get customRuleOption =>
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get skillLevelReached =>
@@ -29645,6 +29927,7 @@ abstract class $ActivityRulesServiceDtoCopyWith<$Res> {
       List<Map<String, dynamic>> checkInSetting,
       List<Map<String, dynamic>> customFieldRuleSetting,
       Map<String, dynamic> cancellationSettings,
+      String currency,
       List<Map<String, dynamic>>? customRuleOption,
       List<Map<String, dynamic>>? skillLevelReached,
       Map<String, dynamic>? gameActivityRules});
@@ -29666,6 +29949,7 @@ class _$ActivityRulesServiceDtoCopyWithImpl<$Res>
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? cancellationSettings = freezed,
+    Object? currency = freezed,
     Object? customRuleOption = freezed,
     Object? skillLevelReached = freezed,
     Object? gameActivityRules = freezed,
@@ -29691,6 +29975,10 @@ class _$ActivityRulesServiceDtoCopyWithImpl<$Res>
           ? _value.cancellationSettings
           : cancellationSettings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      currency: currency == freezed
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
       customRuleOption: customRuleOption == freezed
           ? _value.customRuleOption
           : customRuleOption // ignore: cast_nullable_to_non_nullable
@@ -29720,6 +30008,7 @@ abstract class _$$_ActivityRulesServiceDtoCopyWith<$Res>
       List<Map<String, dynamic>> checkInSetting,
       List<Map<String, dynamic>> customFieldRuleSetting,
       Map<String, dynamic> cancellationSettings,
+      String currency,
       List<Map<String, dynamic>>? customRuleOption,
       List<Map<String, dynamic>>? skillLevelReached,
       Map<String, dynamic>? gameActivityRules});
@@ -29744,6 +30033,7 @@ class __$$_ActivityRulesServiceDtoCopyWithImpl<$Res>
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? cancellationSettings = freezed,
+    Object? currency = freezed,
     Object? customRuleOption = freezed,
     Object? skillLevelReached = freezed,
     Object? gameActivityRules = freezed,
@@ -29769,6 +30059,10 @@ class __$$_ActivityRulesServiceDtoCopyWithImpl<$Res>
           ? _value._cancellationSettings
           : cancellationSettings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      currency: currency == freezed
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
       customRuleOption: customRuleOption == freezed
           ? _value._customRuleOption
           : customRuleOption // ignore: cast_nullable_to_non_nullable
@@ -29794,6 +30088,7 @@ class _$_ActivityRulesServiceDto extends _ActivityRulesServiceDto {
       required final List<Map<String, dynamic>> checkInSetting,
       required final List<Map<String, dynamic>> customFieldRuleSetting,
       required final Map<String, dynamic> cancellationSettings,
+      required this.currency,
       final List<Map<String, dynamic>>? customRuleOption,
       final List<Map<String, dynamic>>? skillLevelReached,
       final Map<String, dynamic>? gameActivityRules})
@@ -29845,6 +30140,8 @@ class _$_ActivityRulesServiceDto extends _ActivityRulesServiceDto {
     return EqualUnmodifiableMapView(_cancellationSettings);
   }
 
+  @override
+  final String currency;
   final List<Map<String, dynamic>>? _customRuleOption;
   @override
   List<Map<String, dynamic>>? get customRuleOption {
@@ -29874,7 +30171,7 @@ class _$_ActivityRulesServiceDto extends _ActivityRulesServiceDto {
 
   @override
   String toString() {
-    return 'ActivityRulesServiceDto(accessVisibilitySetting: $accessVisibilitySetting, ruleOption: $ruleOption, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, cancellationSettings: $cancellationSettings, customRuleOption: $customRuleOption, skillLevelReached: $skillLevelReached, gameActivityRules: $gameActivityRules)';
+    return 'ActivityRulesServiceDto(accessVisibilitySetting: $accessVisibilitySetting, ruleOption: $ruleOption, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, cancellationSettings: $cancellationSettings, currency: $currency, customRuleOption: $customRuleOption, skillLevelReached: $skillLevelReached, gameActivityRules: $gameActivityRules)';
   }
 
   @override
@@ -29892,6 +30189,7 @@ class _$_ActivityRulesServiceDto extends _ActivityRulesServiceDto {
                 other._customFieldRuleSetting, _customFieldRuleSetting) &&
             const DeepCollectionEquality()
                 .equals(other._cancellationSettings, _cancellationSettings) &&
+            const DeepCollectionEquality().equals(other.currency, currency) &&
             const DeepCollectionEquality()
                 .equals(other._customRuleOption, _customRuleOption) &&
             const DeepCollectionEquality()
@@ -29909,6 +30207,7 @@ class _$_ActivityRulesServiceDto extends _ActivityRulesServiceDto {
       const DeepCollectionEquality().hash(_checkInSetting),
       const DeepCollectionEquality().hash(_customFieldRuleSetting),
       const DeepCollectionEquality().hash(_cancellationSettings),
+      const DeepCollectionEquality().hash(currency),
       const DeepCollectionEquality().hash(_customRuleOption),
       const DeepCollectionEquality().hash(_skillLevelReached),
       const DeepCollectionEquality().hash(_gameActivityRules));
@@ -29935,6 +30234,7 @@ abstract class _ActivityRulesServiceDto extends ActivityRulesServiceDto {
           required final List<Map<String, dynamic>> checkInSetting,
           required final List<Map<String, dynamic>> customFieldRuleSetting,
           required final Map<String, dynamic> cancellationSettings,
+          required final String currency,
           final List<Map<String, dynamic>>? customRuleOption,
           final List<Map<String, dynamic>>? skillLevelReached,
           final Map<String, dynamic>? gameActivityRules}) =
@@ -29954,6 +30254,8 @@ abstract class _ActivityRulesServiceDto extends ActivityRulesServiceDto {
   List<Map<String, dynamic>> get customFieldRuleSetting;
   @override
   Map<String, dynamic> get cancellationSettings;
+  @override
+  String get currency;
   @override
   List<Map<String, dynamic>>? get customRuleOption;
   @override
@@ -49957,7 +50259,10 @@ mixin _$CheckInSetting {
   bool get isBeforeResStart => throw _privateConstructorUsedError;
   bool get isAfterResStart => throw _privateConstructorUsedError;
   TimeOfDay get hoursUntil => throw _privateConstructorUsedError;
-  List<UniqueId> get listOfSpaceIds => throw _privateConstructorUsedError;
+  List<UniqueId>? get listOfSpaceIds => throw _privateConstructorUsedError;
+  List<ReservationSlotItem>? get listOfReservations =>
+      throw _privateConstructorUsedError;
+  AttendeeType? get attendeeType => throw _privateConstructorUsedError;
   List<StringBoolItem> get listOfConfirmationItems =>
       throw _privateConstructorUsedError;
 
@@ -49976,7 +50281,9 @@ abstract class $CheckInSettingCopyWith<$Res> {
       bool isBeforeResStart,
       bool isAfterResStart,
       TimeOfDay hoursUntil,
-      List<UniqueId> listOfSpaceIds,
+      List<UniqueId>? listOfSpaceIds,
+      List<ReservationSlotItem>? listOfReservations,
+      AttendeeType? attendeeType,
       List<StringBoolItem> listOfConfirmationItems});
 }
 
@@ -49996,6 +50303,8 @@ class _$CheckInSettingCopyWithImpl<$Res>
     Object? isAfterResStart = freezed,
     Object? hoursUntil = freezed,
     Object? listOfSpaceIds = freezed,
+    Object? listOfReservations = freezed,
+    Object? attendeeType = freezed,
     Object? listOfConfirmationItems = freezed,
   }) {
     return _then(_value.copyWith(
@@ -50018,7 +50327,15 @@ class _$CheckInSettingCopyWithImpl<$Res>
       listOfSpaceIds: listOfSpaceIds == freezed
           ? _value.listOfSpaceIds
           : listOfSpaceIds // ignore: cast_nullable_to_non_nullable
-              as List<UniqueId>,
+              as List<UniqueId>?,
+      listOfReservations: listOfReservations == freezed
+          ? _value.listOfReservations
+          : listOfReservations // ignore: cast_nullable_to_non_nullable
+              as List<ReservationSlotItem>?,
+      attendeeType: attendeeType == freezed
+          ? _value.attendeeType
+          : attendeeType // ignore: cast_nullable_to_non_nullable
+              as AttendeeType?,
       listOfConfirmationItems: listOfConfirmationItems == freezed
           ? _value.listOfConfirmationItems
           : listOfConfirmationItems // ignore: cast_nullable_to_non_nullable
@@ -50039,7 +50356,9 @@ abstract class _$$_CheckInSettingCopyWith<$Res>
       bool isBeforeResStart,
       bool isAfterResStart,
       TimeOfDay hoursUntil,
-      List<UniqueId> listOfSpaceIds,
+      List<UniqueId>? listOfSpaceIds,
+      List<ReservationSlotItem>? listOfReservations,
+      AttendeeType? attendeeType,
       List<StringBoolItem> listOfConfirmationItems});
 }
 
@@ -50061,6 +50380,8 @@ class __$$_CheckInSettingCopyWithImpl<$Res>
     Object? isAfterResStart = freezed,
     Object? hoursUntil = freezed,
     Object? listOfSpaceIds = freezed,
+    Object? listOfReservations = freezed,
+    Object? attendeeType = freezed,
     Object? listOfConfirmationItems = freezed,
   }) {
     return _then(_$_CheckInSetting(
@@ -50083,7 +50404,15 @@ class __$$_CheckInSettingCopyWithImpl<$Res>
       listOfSpaceIds: listOfSpaceIds == freezed
           ? _value._listOfSpaceIds
           : listOfSpaceIds // ignore: cast_nullable_to_non_nullable
-              as List<UniqueId>,
+              as List<UniqueId>?,
+      listOfReservations: listOfReservations == freezed
+          ? _value._listOfReservations
+          : listOfReservations // ignore: cast_nullable_to_non_nullable
+              as List<ReservationSlotItem>?,
+      attendeeType: attendeeType == freezed
+          ? _value.attendeeType
+          : attendeeType // ignore: cast_nullable_to_non_nullable
+              as AttendeeType?,
       listOfConfirmationItems: listOfConfirmationItems == freezed
           ? _value._listOfConfirmationItems
           : listOfConfirmationItems // ignore: cast_nullable_to_non_nullable
@@ -50100,9 +50429,12 @@ class _$_CheckInSetting extends _CheckInSetting {
       required this.isBeforeResStart,
       required this.isAfterResStart,
       required this.hoursUntil,
-      required final List<UniqueId> listOfSpaceIds,
+      final List<UniqueId>? listOfSpaceIds,
+      final List<ReservationSlotItem>? listOfReservations,
+      this.attendeeType,
       required final List<StringBoolItem> listOfConfirmationItems})
       : _listOfSpaceIds = listOfSpaceIds,
+        _listOfReservations = listOfReservations,
         _listOfConfirmationItems = listOfConfirmationItems,
         super._();
 
@@ -50114,13 +50446,26 @@ class _$_CheckInSetting extends _CheckInSetting {
   final bool isAfterResStart;
   @override
   final TimeOfDay hoursUntil;
-  final List<UniqueId> _listOfSpaceIds;
+  final List<UniqueId>? _listOfSpaceIds;
   @override
-  List<UniqueId> get listOfSpaceIds {
+  List<UniqueId>? get listOfSpaceIds {
+    final value = _listOfSpaceIds;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_listOfSpaceIds);
+    return EqualUnmodifiableListView(value);
   }
 
+  final List<ReservationSlotItem>? _listOfReservations;
+  @override
+  List<ReservationSlotItem>? get listOfReservations {
+    final value = _listOfReservations;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final AttendeeType? attendeeType;
   final List<StringBoolItem> _listOfConfirmationItems;
   @override
   List<StringBoolItem> get listOfConfirmationItems {
@@ -50130,7 +50475,7 @@ class _$_CheckInSetting extends _CheckInSetting {
 
   @override
   String toString() {
-    return 'CheckInSetting(hoursBefore: $hoursBefore, isBeforeResStart: $isBeforeResStart, isAfterResStart: $isAfterResStart, hoursUntil: $hoursUntil, listOfSpaceIds: $listOfSpaceIds, listOfConfirmationItems: $listOfConfirmationItems)';
+    return 'CheckInSetting(hoursBefore: $hoursBefore, isBeforeResStart: $isBeforeResStart, isAfterResStart: $isAfterResStart, hoursUntil: $hoursUntil, listOfSpaceIds: $listOfSpaceIds, listOfReservations: $listOfReservations, attendeeType: $attendeeType, listOfConfirmationItems: $listOfConfirmationItems)';
   }
 
   @override
@@ -50148,6 +50493,10 @@ class _$_CheckInSetting extends _CheckInSetting {
                 .equals(other.hoursUntil, hoursUntil) &&
             const DeepCollectionEquality()
                 .equals(other._listOfSpaceIds, _listOfSpaceIds) &&
+            const DeepCollectionEquality()
+                .equals(other._listOfReservations, _listOfReservations) &&
+            const DeepCollectionEquality()
+                .equals(other.attendeeType, attendeeType) &&
             const DeepCollectionEquality().equals(
                 other._listOfConfirmationItems, _listOfConfirmationItems));
   }
@@ -50160,6 +50509,8 @@ class _$_CheckInSetting extends _CheckInSetting {
       const DeepCollectionEquality().hash(isAfterResStart),
       const DeepCollectionEquality().hash(hoursUntil),
       const DeepCollectionEquality().hash(_listOfSpaceIds),
+      const DeepCollectionEquality().hash(_listOfReservations),
+      const DeepCollectionEquality().hash(attendeeType),
       const DeepCollectionEquality().hash(_listOfConfirmationItems));
 
   @JsonKey(ignore: true)
@@ -50174,7 +50525,9 @@ abstract class _CheckInSetting extends CheckInSetting {
           required final bool isBeforeResStart,
           required final bool isAfterResStart,
           required final TimeOfDay hoursUntil,
-          required final List<UniqueId> listOfSpaceIds,
+          final List<UniqueId>? listOfSpaceIds,
+          final List<ReservationSlotItem>? listOfReservations,
+          final AttendeeType? attendeeType,
           required final List<StringBoolItem> listOfConfirmationItems}) =
       _$_CheckInSetting;
   _CheckInSetting._() : super._();
@@ -50188,7 +50541,11 @@ abstract class _CheckInSetting extends CheckInSetting {
   @override
   TimeOfDay get hoursUntil;
   @override
-  List<UniqueId> get listOfSpaceIds;
+  List<UniqueId>? get listOfSpaceIds;
+  @override
+  List<ReservationSlotItem>? get listOfReservations;
+  @override
+  AttendeeType? get attendeeType;
   @override
   List<StringBoolItem> get listOfConfirmationItems;
   @override
@@ -50209,8 +50566,11 @@ mixin _$CheckInSettingsDto {
   bool get isAfterResStart => throw _privateConstructorUsedError;
   int get hoursUntil => throw _privateConstructorUsedError;
   int get minutesUntil => throw _privateConstructorUsedError;
-  List<Map<String, dynamic>> get listOfSpaceIds =>
+  List<Map<String, dynamic>>? get listOfSpaceIds =>
       throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get listOfReservations =>
+      throw _privateConstructorUsedError;
+  String? get attendeeType => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get listOfConfirmationItems =>
       throw _privateConstructorUsedError;
 
@@ -50232,7 +50592,9 @@ abstract class $CheckInSettingsDtoCopyWith<$Res> {
       bool isAfterResStart,
       int hoursUntil,
       int minutesUntil,
-      List<Map<String, dynamic>> listOfSpaceIds,
+      List<Map<String, dynamic>>? listOfSpaceIds,
+      List<Map<String, dynamic>>? listOfReservations,
+      String? attendeeType,
       List<Map<String, dynamic>> listOfConfirmationItems});
 }
 
@@ -50254,6 +50616,8 @@ class _$CheckInSettingsDtoCopyWithImpl<$Res>
     Object? hoursUntil = freezed,
     Object? minutesUntil = freezed,
     Object? listOfSpaceIds = freezed,
+    Object? listOfReservations = freezed,
+    Object? attendeeType = freezed,
     Object? listOfConfirmationItems = freezed,
   }) {
     return _then(_value.copyWith(
@@ -50284,7 +50648,15 @@ class _$CheckInSettingsDtoCopyWithImpl<$Res>
       listOfSpaceIds: listOfSpaceIds == freezed
           ? _value.listOfSpaceIds
           : listOfSpaceIds // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
+              as List<Map<String, dynamic>>?,
+      listOfReservations: listOfReservations == freezed
+          ? _value.listOfReservations
+          : listOfReservations // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
+      attendeeType: attendeeType == freezed
+          ? _value.attendeeType
+          : attendeeType // ignore: cast_nullable_to_non_nullable
+              as String?,
       listOfConfirmationItems: listOfConfirmationItems == freezed
           ? _value.listOfConfirmationItems
           : listOfConfirmationItems // ignore: cast_nullable_to_non_nullable
@@ -50307,7 +50679,9 @@ abstract class _$$_CheckInSettingsDtoCopyWith<$Res>
       bool isAfterResStart,
       int hoursUntil,
       int minutesUntil,
-      List<Map<String, dynamic>> listOfSpaceIds,
+      List<Map<String, dynamic>>? listOfSpaceIds,
+      List<Map<String, dynamic>>? listOfReservations,
+      String? attendeeType,
       List<Map<String, dynamic>> listOfConfirmationItems});
 }
 
@@ -50331,6 +50705,8 @@ class __$$_CheckInSettingsDtoCopyWithImpl<$Res>
     Object? hoursUntil = freezed,
     Object? minutesUntil = freezed,
     Object? listOfSpaceIds = freezed,
+    Object? listOfReservations = freezed,
+    Object? attendeeType = freezed,
     Object? listOfConfirmationItems = freezed,
   }) {
     return _then(_$_CheckInSettingsDto(
@@ -50361,7 +50737,15 @@ class __$$_CheckInSettingsDtoCopyWithImpl<$Res>
       listOfSpaceIds: listOfSpaceIds == freezed
           ? _value._listOfSpaceIds
           : listOfSpaceIds // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
+              as List<Map<String, dynamic>>?,
+      listOfReservations: listOfReservations == freezed
+          ? _value._listOfReservations
+          : listOfReservations // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
+      attendeeType: attendeeType == freezed
+          ? _value.attendeeType
+          : attendeeType // ignore: cast_nullable_to_non_nullable
+              as String?,
       listOfConfirmationItems: listOfConfirmationItems == freezed
           ? _value._listOfConfirmationItems
           : listOfConfirmationItems // ignore: cast_nullable_to_non_nullable
@@ -50380,9 +50764,12 @@ class _$_CheckInSettingsDto extends _CheckInSettingsDto {
       required this.isAfterResStart,
       required this.hoursUntil,
       required this.minutesUntil,
-      required final List<Map<String, dynamic>> listOfSpaceIds,
+      final List<Map<String, dynamic>>? listOfSpaceIds,
+      final List<Map<String, dynamic>>? listOfReservations,
+      this.attendeeType,
       required final List<Map<String, dynamic>> listOfConfirmationItems})
       : _listOfSpaceIds = listOfSpaceIds,
+        _listOfReservations = listOfReservations,
         _listOfConfirmationItems = listOfConfirmationItems,
         super._();
 
@@ -50401,13 +50788,26 @@ class _$_CheckInSettingsDto extends _CheckInSettingsDto {
   final int hoursUntil;
   @override
   final int minutesUntil;
-  final List<Map<String, dynamic>> _listOfSpaceIds;
+  final List<Map<String, dynamic>>? _listOfSpaceIds;
   @override
-  List<Map<String, dynamic>> get listOfSpaceIds {
+  List<Map<String, dynamic>>? get listOfSpaceIds {
+    final value = _listOfSpaceIds;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_listOfSpaceIds);
+    return EqualUnmodifiableListView(value);
   }
 
+  final List<Map<String, dynamic>>? _listOfReservations;
+  @override
+  List<Map<String, dynamic>>? get listOfReservations {
+    final value = _listOfReservations;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? attendeeType;
   final List<Map<String, dynamic>> _listOfConfirmationItems;
   @override
   List<Map<String, dynamic>> get listOfConfirmationItems {
@@ -50417,7 +50817,7 @@ class _$_CheckInSettingsDto extends _CheckInSettingsDto {
 
   @override
   String toString() {
-    return 'CheckInSettingsDto(hoursBefore: $hoursBefore, minutesBefore: $minutesBefore, isBeforeResStart: $isBeforeResStart, isAfterResStart: $isAfterResStart, hoursUntil: $hoursUntil, minutesUntil: $minutesUntil, listOfSpaceIds: $listOfSpaceIds, listOfConfirmationItems: $listOfConfirmationItems)';
+    return 'CheckInSettingsDto(hoursBefore: $hoursBefore, minutesBefore: $minutesBefore, isBeforeResStart: $isBeforeResStart, isAfterResStart: $isAfterResStart, hoursUntil: $hoursUntil, minutesUntil: $minutesUntil, listOfSpaceIds: $listOfSpaceIds, listOfReservations: $listOfReservations, attendeeType: $attendeeType, listOfConfirmationItems: $listOfConfirmationItems)';
   }
 
   @override
@@ -50439,6 +50839,10 @@ class _$_CheckInSettingsDto extends _CheckInSettingsDto {
                 .equals(other.minutesUntil, minutesUntil) &&
             const DeepCollectionEquality()
                 .equals(other._listOfSpaceIds, _listOfSpaceIds) &&
+            const DeepCollectionEquality()
+                .equals(other._listOfReservations, _listOfReservations) &&
+            const DeepCollectionEquality()
+                .equals(other.attendeeType, attendeeType) &&
             const DeepCollectionEquality().equals(
                 other._listOfConfirmationItems, _listOfConfirmationItems));
   }
@@ -50454,6 +50858,8 @@ class _$_CheckInSettingsDto extends _CheckInSettingsDto {
       const DeepCollectionEquality().hash(hoursUntil),
       const DeepCollectionEquality().hash(minutesUntil),
       const DeepCollectionEquality().hash(_listOfSpaceIds),
+      const DeepCollectionEquality().hash(_listOfReservations),
+      const DeepCollectionEquality().hash(attendeeType),
       const DeepCollectionEquality().hash(_listOfConfirmationItems));
 
   @JsonKey(ignore: true)
@@ -50478,7 +50884,9 @@ abstract class _CheckInSettingsDto extends CheckInSettingsDto {
           required final bool isAfterResStart,
           required final int hoursUntil,
           required final int minutesUntil,
-          required final List<Map<String, dynamic>> listOfSpaceIds,
+          final List<Map<String, dynamic>>? listOfSpaceIds,
+          final List<Map<String, dynamic>>? listOfReservations,
+          final String? attendeeType,
           required final List<Map<String, dynamic>> listOfConfirmationItems}) =
       _$_CheckInSettingsDto;
   _CheckInSettingsDto._() : super._();
@@ -50499,7 +50907,11 @@ abstract class _CheckInSettingsDto extends CheckInSettingsDto {
   @override
   int get minutesUntil;
   @override
-  List<Map<String, dynamic>> get listOfSpaceIds;
+  List<Map<String, dynamic>>? get listOfSpaceIds;
+  @override
+  List<Map<String, dynamic>>? get listOfReservations;
+  @override
+  String? get attendeeType;
   @override
   List<Map<String, dynamic>> get listOfConfirmationItems;
   @override

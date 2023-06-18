@@ -11,7 +11,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
     required List<Map<String,dynamic>> checkInSetting,
     required List<Map<String,dynamic>> customFieldRuleSetting,
     required Map<String,dynamic> cancellationSettings,
-
+    required String currency,
     List<Map<String,dynamic>> ? customRuleOption,
 
     List<Map<String,dynamic>> ? skillLevelReached,
@@ -25,6 +25,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
         customFieldRuleSetting: rules.customFieldRuleSetting.map((e) => CustomRuleOptionDto.fromDomain(e).toJson()).toList(),
         cancellationSettings: CancellationSettingDto.fromDomain(rules.cancellationSettings).toJson(),
         ruleOption: rules.ruleOption.value.fold((l) => [], (r) => r.map((e) => DetailOptionDto.fromDomain(e).toJson()).toList()),
+        currency: rules.currency,
         customRuleOption: rules.customRuleOption?.value.fold((l) => [], (r) => r.map((e) => DetailCustomRuleOptionDto.fromDomain(e).toJson()).toList()),
         skillLevelReached: rules.skillLevelReached?.map((e) => StringItemDto.fromDomain(e.toString()).toJson()).toList(),
         gameActivityRules: (rules.gameActivityRules != null) ? GameActivityRulesDto.fromDomain(rules.gameActivityRules!).toJson() : null,
@@ -39,6 +40,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
         cancellationSettings: CancellationSettingDto.fromJson(cancellationSettings).toDomain(),
         ruleOption: ListK(ruleOption.map((e) => DetailOptionDto.fromJson(e).toDomain()).toList()),
         customRuleOption: ListK(customRuleOption?.map((e) => DetailCustomRuleOptionDto.fromJson(e).toDomain()).toList() ?? []),
+        currency: currency,
         skillLevelReached: skillLevelReached?.map((e) => getSkillLevelType(StringItemDto.fromJson(e).toDomain())).toList(),
         gameActivityRules: (gameActivityRules != null) ? GameActivityRulesDto.fromJson(gameActivityRules!).toDomain() : null,
     );

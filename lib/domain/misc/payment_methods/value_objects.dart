@@ -5,6 +5,8 @@ enum PaymentStatusType {paid, unpaid, cancelled, noStatus, declined, insufficien
 /// get price with current region and currency
 String completeTotalPriceWithCurrency(double price, String currency) {
   var numberFormat = NumberFormat('#,##0.00', currency);
+  print('${price} PRICE');
+  print('${numberFormat.format(price/STRIPE_FEE_TO_CENTS)} FORMAT');
   return '${NumberFormat.simpleCurrency(locale: currency).currencySymbol}${numberFormat.format(price/STRIPE_FEE_TO_CENTS)} ${NumberFormat.simpleCurrency(locale: currency).currencyName ?? ''}';
 }
 

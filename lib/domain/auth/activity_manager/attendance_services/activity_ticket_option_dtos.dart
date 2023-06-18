@@ -10,7 +10,7 @@ class ActivityTicketOptionDto with _$ActivityTicketOptionDto {
     required int minimumGroupQuantity,
     required int maximumGroupQuantity,
     required int ticketQuantity,
-    String? ticketFee,
+    int? ticketFee,
     Map<String, dynamic>? reservationSlot,
 }) = _ActivityTicketOptionDto;
 
@@ -20,7 +20,8 @@ class ActivityTicketOptionDto with _$ActivityTicketOptionDto {
         minimumGroupQuantity: ticket.minimumGroupQuantity,
         maximumGroupQuantity: ticket.maximumGroupQuantity,
         ticketQuantity: ticket.ticketQuantity,
-
+        ticketFee: ticket.ticketFee,
+        reservationSlot: (ticket.reservationSlot != null) ? ReservationSlotItemDto.fromDomain(ticket.reservationSlot!).toJson() : null,
     );
   }
 
@@ -30,6 +31,8 @@ class ActivityTicketOptionDto with _$ActivityTicketOptionDto {
         minimumGroupQuantity: minimumGroupQuantity,
         maximumGroupQuantity: maximumGroupQuantity,
         ticketQuantity: ticketQuantity,
+        ticketFee: ticketFee,
+        reservationSlot: (reservationSlot != null) ? ReservationSlotItemDto.fromJson(reservationSlot!).toDomain() : null
     );
   }
 

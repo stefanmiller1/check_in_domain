@@ -11,11 +11,14 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
 
     bool? isTicketBased,
     bool? isPassBased,
+
+    bool? isTicketFixed,
+    bool? isPassesFixed,
     Map<String, dynamic>? defaultActivityTickets,
-    Map<String, dynamic>? activityPasses,
+    Map<String, dynamic>? defaultActivityPass,
 
     List<Map<String, dynamic>>? activityTickets,
-
+    List<Map<String, dynamic>>? activityPasses,
   }) = _ActivityAttendanceDto;
 
   factory ActivityAttendanceDto.fromDomain(ActivityAttendance attendance) {
@@ -24,9 +27,13 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
       attendanceLimit: attendance.attendanceLimit,
       isTicketBased: attendance.isTicketBased,
       isPassBased: attendance.isPassBased,
+      isTicketFixed: attendance.isTicketFixed,
+      isPassesFixed: attendance.isPassesFixed,
       defaultActivityTickets: (attendance.defaultActivityTickets != null) ? ActivityTicketOptionDto.fromDomain(attendance.defaultActivityTickets!).toJson() : null,
+      defaultActivityPass: (attendance.defaultActivityPass != null) ? ActivityPassesOptionDto.fromDomain(attendance.defaultActivityPass!).toJson() : null,
       activityTickets: (attendance.activityTickets != null) ? attendance.activityTickets!.map((e) => ActivityTicketOptionDto.fromDomain(e).toJson()).toList() : null,
-      activityPasses: (attendance.activityPasses != null) ? ActivityPassesOptionDto.fromDomain(attendance.activityPasses!).toJson() : null,
+      activityPasses: (attendance.activityPasses != null) ? attendance.activityPasses!.map((e) => ActivityPassesOptionDto.fromDomain(e).toJson()).toList() : null,
+
     );
   }
 
@@ -36,9 +43,12 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
       attendanceLimit: attendanceLimit,
       isTicketBased: isTicketBased,
       isPassBased: isPassBased,
+      isTicketFixed: isTicketFixed,
+      isPassesFixed: isPassesFixed,
       defaultActivityTickets: (defaultActivityTickets != null) ? ActivityTicketOptionDto.fromJson(defaultActivityTickets!).toDomain() : null,
+      defaultActivityPass: (activityPasses != null) ? ActivityPassesOptionDto.fromJson(defaultActivityPass!).toDomain() : null,
       activityTickets: (activityTickets != null) ? activityTickets!.map((e) => ActivityTicketOptionDto.fromJson(e).toDomain()).toList() : null,
-      activityPasses: (activityPasses != null) ? ActivityPassesOptionDto.fromJson(activityPasses!).toDomain() : null,
+      activityPasses: (activityPasses != null) ? activityPasses!.map((e) => ActivityPassesOptionDto.fromJson(e).toDomain()).toList() : null,
     );
   }
 

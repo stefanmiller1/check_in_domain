@@ -1,5 +1,4 @@
 import 'package:check_in_domain/check_in_domain.dart';
-import 'package:check_in_domain/domain/misc/attendee_services/value_object.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'attendee_item.freezed.dart';

@@ -1,3 +1,5 @@
+part of check_in_domain;
+
 enum AttendeeType {free, tickets, pass, instructor, vendor, partner, organization}
 
 AttendeeType getAttendeeType(String type) {

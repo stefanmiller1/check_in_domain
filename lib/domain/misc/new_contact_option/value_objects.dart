@@ -10,3 +10,14 @@ ContactStatus contactStatusType(String type) {
   }
   return ContactStatus.invited;
 }
+
+String getContactStatusName(ContactStatus type) {
+  switch (type) {
+    case ContactStatus.invited:
+      return 'Invited';
+    case ContactStatus.joined:
+      return 'Joined';
+    case ContactStatus.pending:
+      return 'Pending';
+  }
+}

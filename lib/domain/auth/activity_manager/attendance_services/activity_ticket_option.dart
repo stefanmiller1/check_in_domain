@@ -10,8 +10,17 @@ class ActivityTicketOption with _$ActivityTicketOption {
     required int minimumGroupQuantity,
     required int maximumGroupQuantity,
     required int ticketQuantity,
-    String? ticketFee,
+    int? ticketFee,
     ReservationSlotItem? reservationSlot,
   }) = _ActivityTicketOption;
+
+  factory ActivityTicketOption.empty() {
+    return ActivityTicketOption(
+        isAllowedGroupAttendance: false,
+        minimumGroupQuantity: 6,
+        maximumGroupQuantity: 12,
+        ticketQuantity: 20,
+    );
+  }
 
 }

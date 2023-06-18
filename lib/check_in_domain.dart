@@ -115,6 +115,7 @@ part 'domain/misc/attendee_services/events/event_merchant_vendor_profile_dtos.da
 part 'domain/misc/attendee_services/classes/classes_instructor_profile.dart';
 part 'domain/misc/attendee_services/classes/classes_instructor_profile_dtos.dart';
 part 'domain/misc/attendee_services/failures.dart';
+part 'domain/misc/attendee_services/value_object.dart';
 
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_period.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_session_option.dart';
