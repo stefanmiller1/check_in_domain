@@ -13,7 +13,9 @@ class ActivityAttendance with _$ActivityAttendance {
     bool? isPassBased,
 
     bool? isTicketFixed,
+    bool? isTicketPerSlotBased,
     bool? isPassesFixed,
+
     ActivityTicketOption? defaultActivityTickets,
     List<ActivityTicketOption>? activityTickets,
     ActivityPassesOption? defaultActivityPass,
@@ -24,6 +26,7 @@ class ActivityAttendance with _$ActivityAttendance {
   factory ActivityAttendance.empty() => ActivityAttendance(
     isTicketFixed: true,
     isPassesFixed: true,
+    isTicketPerSlotBased: false,
   );
 
 }

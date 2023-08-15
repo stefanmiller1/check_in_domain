@@ -19,12 +19,14 @@ mixin _$AttendeeItem {
   UniqueId get attendeeId => throw _privateConstructorUsedError;
   UniqueId get attendeeOwnerId => throw _privateConstructorUsedError;
   UniqueId get reservationId => throw _privateConstructorUsedError;
+  UniqueId? get instanceId => throw _privateConstructorUsedError;
   String get cost => throw _privateConstructorUsedError;
   PaymentStatusType get paymentStatus => throw _privateConstructorUsedError;
   AttendeeType get attendeeType => throw _privateConstructorUsedError;
   String get paymentIntentId => throw _privateConstructorUsedError;
   ContactDetails? get attendeeDetails => throw _privateConstructorUsedError;
   ContactStatus? get contactStatus => throw _privateConstructorUsedError;
+  List<TicketItem>? get ticketItems => throw _privateConstructorUsedError;
   List<CheckInSetting>? get checkInSetting =>
       throw _privateConstructorUsedError;
   List<CustomRuleOption>? get customFieldRuleSetting =>
@@ -51,12 +53,14 @@ abstract class $AttendeeItemCopyWith<$Res> {
       {UniqueId attendeeId,
       UniqueId attendeeOwnerId,
       UniqueId reservationId,
+      UniqueId? instanceId,
       String cost,
       PaymentStatusType paymentStatus,
       AttendeeType attendeeType,
       String paymentIntentId,
       ContactDetails? attendeeDetails,
       ContactStatus? contactStatus,
+      List<TicketItem>? ticketItems,
       List<CheckInSetting>? checkInSetting,
       List<CustomRuleOption>? customFieldRuleSetting,
       String? refundId,
@@ -83,12 +87,14 @@ class _$AttendeeItemCopyWithImpl<$Res> implements $AttendeeItemCopyWith<$Res> {
     Object? attendeeId = freezed,
     Object? attendeeOwnerId = freezed,
     Object? reservationId = freezed,
+    Object? instanceId = freezed,
     Object? cost = freezed,
     Object? paymentStatus = freezed,
     Object? attendeeType = freezed,
     Object? paymentIntentId = freezed,
     Object? attendeeDetails = freezed,
     Object? contactStatus = freezed,
+    Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? refundId = freezed,
@@ -110,6 +116,10 @@ class _$AttendeeItemCopyWithImpl<$Res> implements $AttendeeItemCopyWith<$Res> {
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      instanceId: instanceId == freezed
+          ? _value.instanceId
+          : instanceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
       cost: cost == freezed
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
@@ -134,6 +144,10 @@ class _$AttendeeItemCopyWithImpl<$Res> implements $AttendeeItemCopyWith<$Res> {
           ? _value.contactStatus
           : contactStatus // ignore: cast_nullable_to_non_nullable
               as ContactStatus?,
+      ticketItems: ticketItems == freezed
+          ? _value.ticketItems
+          : ticketItems // ignore: cast_nullable_to_non_nullable
+              as List<TicketItem>?,
       checkInSetting: checkInSetting == freezed
           ? _value.checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
@@ -212,12 +226,14 @@ abstract class _$$_AttendeeItemCopyWith<$Res>
       {UniqueId attendeeId,
       UniqueId attendeeOwnerId,
       UniqueId reservationId,
+      UniqueId? instanceId,
       String cost,
       PaymentStatusType paymentStatus,
       AttendeeType attendeeType,
       String paymentIntentId,
       ContactDetails? attendeeDetails,
       ContactStatus? contactStatus,
+      List<TicketItem>? ticketItems,
       List<CheckInSetting>? checkInSetting,
       List<CustomRuleOption>? customFieldRuleSetting,
       String? refundId,
@@ -250,12 +266,14 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
     Object? attendeeId = freezed,
     Object? attendeeOwnerId = freezed,
     Object? reservationId = freezed,
+    Object? instanceId = freezed,
     Object? cost = freezed,
     Object? paymentStatus = freezed,
     Object? attendeeType = freezed,
     Object? paymentIntentId = freezed,
     Object? attendeeDetails = freezed,
     Object? contactStatus = freezed,
+    Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? refundId = freezed,
@@ -277,6 +295,10 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      instanceId: instanceId == freezed
+          ? _value.instanceId
+          : instanceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
       cost: cost == freezed
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
@@ -301,6 +323,10 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
           ? _value.contactStatus
           : contactStatus // ignore: cast_nullable_to_non_nullable
               as ContactStatus?,
+      ticketItems: ticketItems == freezed
+          ? _value._ticketItems
+          : ticketItems // ignore: cast_nullable_to_non_nullable
+              as List<TicketItem>?,
       checkInSetting: checkInSetting == freezed
           ? _value._checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
@@ -340,12 +366,14 @@ class _$_AttendeeItem extends _AttendeeItem {
       {required this.attendeeId,
       required this.attendeeOwnerId,
       required this.reservationId,
+      this.instanceId,
       required this.cost,
       required this.paymentStatus,
       required this.attendeeType,
       required this.paymentIntentId,
       this.attendeeDetails,
       this.contactStatus,
+      final List<TicketItem>? ticketItems,
       final List<CheckInSetting>? checkInSetting,
       final List<CustomRuleOption>? customFieldRuleSetting,
       this.refundId,
@@ -353,7 +381,8 @@ class _$_AttendeeItem extends _AttendeeItem {
       this.classesInstructorProfile,
       this.eventMerchantVendorProfile,
       required this.dateCreated})
-      : _checkInSetting = checkInSetting,
+      : _ticketItems = ticketItems,
+        _checkInSetting = checkInSetting,
         _customFieldRuleSetting = customFieldRuleSetting,
         super._();
 
@@ -363,6 +392,8 @@ class _$_AttendeeItem extends _AttendeeItem {
   final UniqueId attendeeOwnerId;
   @override
   final UniqueId reservationId;
+  @override
+  final UniqueId? instanceId;
   @override
   final String cost;
   @override
@@ -375,6 +406,15 @@ class _$_AttendeeItem extends _AttendeeItem {
   final ContactDetails? attendeeDetails;
   @override
   final ContactStatus? contactStatus;
+  final List<TicketItem>? _ticketItems;
+  @override
+  List<TicketItem>? get ticketItems {
+    final value = _ticketItems;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<CheckInSetting>? _checkInSetting;
   @override
   List<CheckInSetting>? get checkInSetting {
@@ -406,7 +446,7 @@ class _$_AttendeeItem extends _AttendeeItem {
 
   @override
   String toString() {
-    return 'AttendeeItem(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, attendeeType: $attendeeType, paymentIntentId: $paymentIntentId, attendeeDetails: $attendeeDetails, contactStatus: $contactStatus, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, refundId: $refundId, receipt_link: $receipt_link, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, dateCreated: $dateCreated)';
+    return 'AttendeeItem(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, instanceId: $instanceId, cost: $cost, paymentStatus: $paymentStatus, attendeeType: $attendeeType, paymentIntentId: $paymentIntentId, attendeeDetails: $attendeeDetails, contactStatus: $contactStatus, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, refundId: $refundId, receipt_link: $receipt_link, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, dateCreated: $dateCreated)';
   }
 
   @override
@@ -420,6 +460,8 @@ class _$_AttendeeItem extends _AttendeeItem {
                 .equals(other.attendeeOwnerId, attendeeOwnerId) &&
             const DeepCollectionEquality()
                 .equals(other.reservationId, reservationId) &&
+            const DeepCollectionEquality()
+                .equals(other.instanceId, instanceId) &&
             const DeepCollectionEquality().equals(other.cost, cost) &&
             const DeepCollectionEquality()
                 .equals(other.paymentStatus, paymentStatus) &&
@@ -431,6 +473,8 @@ class _$_AttendeeItem extends _AttendeeItem {
                 .equals(other.attendeeDetails, attendeeDetails) &&
             const DeepCollectionEquality()
                 .equals(other.contactStatus, contactStatus) &&
+            const DeepCollectionEquality()
+                .equals(other._ticketItems, _ticketItems) &&
             const DeepCollectionEquality()
                 .equals(other._checkInSetting, _checkInSetting) &&
             const DeepCollectionEquality().equals(
@@ -452,12 +496,14 @@ class _$_AttendeeItem extends _AttendeeItem {
       const DeepCollectionEquality().hash(attendeeId),
       const DeepCollectionEquality().hash(attendeeOwnerId),
       const DeepCollectionEquality().hash(reservationId),
+      const DeepCollectionEquality().hash(instanceId),
       const DeepCollectionEquality().hash(cost),
       const DeepCollectionEquality().hash(paymentStatus),
       const DeepCollectionEquality().hash(attendeeType),
       const DeepCollectionEquality().hash(paymentIntentId),
       const DeepCollectionEquality().hash(attendeeDetails),
       const DeepCollectionEquality().hash(contactStatus),
+      const DeepCollectionEquality().hash(_ticketItems),
       const DeepCollectionEquality().hash(_checkInSetting),
       const DeepCollectionEquality().hash(_customFieldRuleSetting),
       const DeepCollectionEquality().hash(refundId),
@@ -477,12 +523,14 @@ abstract class _AttendeeItem extends AttendeeItem {
       {required final UniqueId attendeeId,
       required final UniqueId attendeeOwnerId,
       required final UniqueId reservationId,
+      final UniqueId? instanceId,
       required final String cost,
       required final PaymentStatusType paymentStatus,
       required final AttendeeType attendeeType,
       required final String paymentIntentId,
       final ContactDetails? attendeeDetails,
       final ContactStatus? contactStatus,
+      final List<TicketItem>? ticketItems,
       final List<CheckInSetting>? checkInSetting,
       final List<CustomRuleOption>? customFieldRuleSetting,
       final String? refundId,
@@ -499,6 +547,8 @@ abstract class _AttendeeItem extends AttendeeItem {
   @override
   UniqueId get reservationId;
   @override
+  UniqueId? get instanceId;
+  @override
   String get cost;
   @override
   PaymentStatusType get paymentStatus;
@@ -510,6 +560,8 @@ abstract class _AttendeeItem extends AttendeeItem {
   ContactDetails? get attendeeDetails;
   @override
   ContactStatus? get contactStatus;
+  @override
+  List<TicketItem>? get ticketItems;
   @override
   List<CheckInSetting>? get checkInSetting;
   @override

@@ -15,7 +15,11 @@ _$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
       paymentStatus: json['paymentStatus'] as String,
       paymentIntentId: json['paymentIntentId'] as String,
       attendeeType: json['attendeeType'] as String,
+      instanceId: json['instanceId'] as String?,
       attendeeDetails: json['attendeeDetails'] as Map<String, dynamic>?,
+      ticketItems: (json['ticketItems'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
       checkInSetting: (json['checkInSetting'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -42,7 +46,9 @@ Map<String, dynamic> _$$_AttendeeItemDtoToJson(_$_AttendeeItemDto instance) =>
       'paymentStatus': instance.paymentStatus,
       'paymentIntentId': instance.paymentIntentId,
       'attendeeType': instance.attendeeType,
+      'instanceId': instance.instanceId,
       'attendeeDetails': instance.attendeeDetails,
+      'ticketItems': instance.ticketItems,
       'checkInSetting': instance.checkInSetting,
       'customFieldRuleSetting': instance.customFieldRuleSetting,
       'classesInstructorProfile': instance.classesInstructorProfile,

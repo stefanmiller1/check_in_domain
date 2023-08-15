@@ -10,3 +10,7 @@ AttendeeType getAttendeeType(String type) {
   }
   return AttendeeType.free;
 }
+
+bool isTicketDateValid() {
+  return false;
+}

@@ -592,6 +592,7 @@ _$_ActivityAttendanceDto _$$_ActivityAttendanceDtoFromJson(
       isTicketBased: json['isTicketBased'] as bool?,
       isPassBased: json['isPassBased'] as bool?,
       isTicketFixed: json['isTicketFixed'] as bool?,
+      isTicketPerSlotBased: json['isTicketPerSlotBased'] as bool?,
       isPassesFixed: json['isPassesFixed'] as bool?,
       defaultActivityTickets:
           json['defaultActivityTickets'] as Map<String, dynamic>?,
@@ -612,6 +613,7 @@ Map<String, dynamic> _$$_ActivityAttendanceDtoToJson(
       'isTicketBased': instance.isTicketBased,
       'isPassBased': instance.isPassBased,
       'isTicketFixed': instance.isTicketFixed,
+      'isTicketPerSlotBased': instance.isTicketPerSlotBased,
       'isPassesFixed': instance.isPassesFixed,
       'defaultActivityTickets': instance.defaultActivityTickets,
       'defaultActivityPass': instance.defaultActivityPass,
@@ -646,23 +648,29 @@ Map<String, dynamic> _$$_ActivityPassesOptionDtoToJson(
 _$_ActivityTicketOptionDto _$$_ActivityTicketOptionDtoFromJson(
         Map<String, dynamic> json) =>
     _$_ActivityTicketOptionDto(
+      ticketId: json['ticketId'] as String,
       isAllowedGroupAttendance: json['isAllowedGroupAttendance'] as bool,
       minimumGroupQuantity: json['minimumGroupQuantity'] as int,
       maximumGroupQuantity: json['maximumGroupQuantity'] as int,
       ticketQuantity: json['ticketQuantity'] as int,
       ticketFee: json['ticketFee'] as int?,
+      ticketTitle: json['ticketTitle'] as String?,
       reservationSlot: json['reservationSlot'] as Map<String, dynamic>?,
+      reservationTimeSlot: json['reservationTimeSlot'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$_ActivityTicketOptionDtoToJson(
         _$_ActivityTicketOptionDto instance) =>
     <String, dynamic>{
+      'ticketId': instance.ticketId,
       'isAllowedGroupAttendance': instance.isAllowedGroupAttendance,
       'minimumGroupQuantity': instance.minimumGroupQuantity,
       'maximumGroupQuantity': instance.maximumGroupQuantity,
       'ticketQuantity': instance.ticketQuantity,
       'ticketFee': instance.ticketFee,
+      'ticketTitle': instance.ticketTitle,
       'reservationSlot': instance.reservationSlot,
+      'reservationTimeSlot': instance.reservationTimeSlot,
     };
 
 _$_EventMerchantVendorProfileDto _$$_EventMerchantVendorProfileDtoFromJson(
@@ -699,6 +707,36 @@ Map<String, dynamic> _$$_ClassesInstructorProfileDtoToJson(
       'experience': instance.experience,
       'certificates': instance.certificates,
       'numberOfYearsInExperience': instance.numberOfYearsInExperience,
+    };
+
+_$_TicketItemDto _$$_TicketItemDtoFromJson(Map<String, dynamic> json) =>
+    _$_TicketItemDto(
+      ticketId: json['ticketId'] as String,
+      selectedTicketId: json['selectedTicketId'] as String,
+      ticketOwner: json['ticketOwner'] as String,
+      selectedTicketFee: json['selectedTicketFee'] as int,
+      isOnHold: json['isOnHold'] as bool,
+      createdAt: json['createdAt'] as String,
+      expiresAt: json['expiresAt'] as int,
+      selectedTicketTitle: json['selectedTicketTitle'] as String?,
+      selectedReservationSlot:
+          json['selectedReservationSlot'] as Map<String, dynamic>?,
+      selectedReservationTimeSlot:
+          json['selectedReservationTimeSlot'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$_TicketItemDtoToJson(_$_TicketItemDto instance) =>
+    <String, dynamic>{
+      'ticketId': instance.ticketId,
+      'selectedTicketId': instance.selectedTicketId,
+      'ticketOwner': instance.ticketOwner,
+      'selectedTicketFee': instance.selectedTicketFee,
+      'isOnHold': instance.isOnHold,
+      'createdAt': instance.createdAt,
+      'expiresAt': instance.expiresAt,
+      'selectedTicketTitle': instance.selectedTicketTitle,
+      'selectedReservationSlot': instance.selectedReservationSlot,
+      'selectedReservationTimeSlot': instance.selectedReservationTimeSlot,
     };
 
 _$_ActivityAvailabilityPeriodDto _$$_ActivityAvailabilityPeriodDtoFromJson(

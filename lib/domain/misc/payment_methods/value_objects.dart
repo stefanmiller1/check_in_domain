@@ -5,23 +5,41 @@ enum PaymentStatusType {paid, unpaid, cancelled, noStatus, declined, insufficien
 /// get price with current region and currency
 String completeTotalPriceWithCurrency(double price, String currency) {
   var numberFormat = NumberFormat('#,##0.00', currency);
-  print('${price} PRICE');
-  print('${numberFormat.format(price/STRIPE_FEE_TO_CENTS)} FORMAT');
-  return '${NumberFormat.simpleCurrency(locale: currency).currencySymbol}${numberFormat.format(price/STRIPE_FEE_TO_CENTS)} ${NumberFormat.simpleCurrency(locale: currency).currencyName ?? ''}';
+  // print('${price} PRICE');
+  // print('${numberFormat.format(price/STRIPE_FEE_TO_CENTS)} FORMAT');
+  return '${NumberFormat.simpleCurrency(locale: currency).currencySymbol}${numberFormat.format(price)} ${NumberFormat.simpleCurrency(locale: currency).currencyName ?? ''}';
 }
 
 String completeTotalPriceWithOutCurrency(double price, String currency) {
   var numberFormat = NumberFormat('#,##0.00', currency);
-  return '${NumberFormat.simpleCurrency(locale: currency).currencySymbol}${numberFormat.format(price/STRIPE_FEE_TO_CENTS)}';
+  return '${NumberFormat.simpleCurrency(locale: currency).currencySymbol}${numberFormat.format(price)}';
 }
 
+String completeTotalPriceWithIntFormat(double price, String currency) {
+  var numberFormat = NumberFormat('#,##0.00', currency);
+  return numberFormat.format(price);
+}
 
 String totalPriceNumberOnly(double price) {
   return '$price';
 }
 
-/// retrieve number for base pricing fee
-double getTotalPriceDouble(List<ReservationSlotItem> allSlots, List<ReservationSlotItem> cancelledSlots) {
+/// retrieve number for base pricing fee from [] items.
+double getTicketTotalPriceDouble(List<TicketItem> allTickets) {
+
+  double feeCount = 0;
+
+  for (TicketItem ticket in allTickets) {
+    final fee = ticket.selectedTicketFee;
+
+    feeCount += (fee);
+  }
+
+  return feeCount;
+}
+
+/// retrieve number for base pricing fee from [ReservationSlotItem] items
+double getListingTotalPriceDouble(List<ReservationSlotItem> allSlots, List<ReservationSlotItem> cancelledSlots) {
 
   double feeCount = 0;
   double cancelledFeeCount = 0;

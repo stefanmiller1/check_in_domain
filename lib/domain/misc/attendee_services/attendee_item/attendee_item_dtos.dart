@@ -19,7 +19,9 @@ class AttendeeItemDto with _$AttendeeItemDto {
     required String paymentStatus,
     required String paymentIntentId,
     required String attendeeType,
+    String? instanceId,
     Map<String, dynamic>? attendeeDetails,
+    List<Map<String, dynamic>>? ticketItems,
     List<Map<String, dynamic>>? checkInSetting,
     List<Map<String, dynamic>>? customFieldRuleSetting,
     Map<String, dynamic>? classesInstructorProfile,
@@ -39,7 +41,9 @@ class AttendeeItemDto with _$AttendeeItemDto {
         paymentIntentId: attendeeItem.paymentIntentId,
         paymentStatus: attendeeItem.paymentStatus.toString(),
         attendeeType: attendeeItem.attendeeType.toString(),
+        instanceId: (attendeeItem.instanceId != null) ? attendeeItem.instanceId!.getOrCrash() : null,
         attendeeDetails: (attendeeItem.attendeeDetails != null) ? ContactDetailsDto.fromDomain(attendeeItem.attendeeDetails!).toJson() : null,
+        ticketItems: (attendeeItem.ticketItems != null) ? attendeeItem.ticketItems!.map((e) => TicketItemDto.fromDomain(e).toJson()).toList() : null,
         checkInSetting: (attendeeItem.checkInSetting != null) ? attendeeItem.checkInSetting!.map((e) => CheckInSettingsDto.fromDomain(e).toJson()).toList() : null,
         customFieldRuleSetting: (attendeeItem.customFieldRuleSetting != null) ? attendeeItem.customFieldRuleSetting!.map((e) => CustomRuleOptionDto.fromDomain(e).toJson()).toList() : null,
         classesInstructorProfile: (attendeeItem.classesInstructorProfile != null) ? ClassesInstructorProfileDto.fromDomain(attendeeItem.classesInstructorProfile!).toJson() : null,
@@ -47,7 +51,7 @@ class AttendeeItemDto with _$AttendeeItemDto {
         refundId: attendeeItem.refundId,
         receipt_link: attendeeItem.receipt_link,
         dateCreated: attendeeItem.dateCreated.toString(),
-        createdAtSTC: FieldValue.serverTimestamp()
+        createdAtSTC: FieldValue.serverTimestamp(),
     );
   }
 
@@ -59,8 +63,10 @@ class AttendeeItemDto with _$AttendeeItemDto {
         cost: cost,
         paymentStatus: PaymentStatusType.noStatus,
         attendeeType: getAttendeeType(attendeeType),
+        instanceId: (instanceId != null) ? UniqueId.fromUniqueString(instanceId!) : null,
         paymentIntentId: paymentIntentId,
         attendeeDetails: (attendeeDetails != null) ? ContactDetailsDto.fromJson(attendeeDetails!).toDomain() : null,
+        ticketItems: (ticketItems != null) ? ticketItems!.map((e) => TicketItemDto.fromJson(e).toDomain()).toList() : null,
         checkInSetting: (checkInSetting != null) ? checkInSetting!.map((e) => CheckInSettingsDto.fromJson(e).toDomain()).toList() : null,
         customFieldRuleSetting: (customFieldRuleSetting != null) ? customFieldRuleSetting!.map((e) => CustomRuleOptionDto.fromJson(e).toDomain()).toList() : null,
         classesInstructorProfile: (classesInstructorProfile != null) ? ClassesInstructorProfileDto.fromJson(classesInstructorProfile!).toDomain() : null,

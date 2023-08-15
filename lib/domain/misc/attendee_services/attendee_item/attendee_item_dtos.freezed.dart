@@ -27,7 +27,10 @@ mixin _$AttendeeItemDto {
   String get paymentStatus => throw _privateConstructorUsedError;
   String get paymentIntentId => throw _privateConstructorUsedError;
   String get attendeeType => throw _privateConstructorUsedError;
+  String? get instanceId => throw _privateConstructorUsedError;
   Map<String, dynamic>? get attendeeDetails =>
+      throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get ticketItems =>
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get checkInSetting =>
       throw _privateConstructorUsedError;
@@ -62,7 +65,9 @@ abstract class $AttendeeItemDtoCopyWith<$Res> {
       String paymentStatus,
       String paymentIntentId,
       String attendeeType,
+      String? instanceId,
       Map<String, dynamic>? attendeeDetails,
+      List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
       List<Map<String, dynamic>>? customFieldRuleSetting,
       Map<String, dynamic>? classesInstructorProfile,
@@ -91,7 +96,9 @@ class _$AttendeeItemDtoCopyWithImpl<$Res>
     Object? paymentStatus = freezed,
     Object? paymentIntentId = freezed,
     Object? attendeeType = freezed,
+    Object? instanceId = freezed,
     Object? attendeeDetails = freezed,
+    Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? classesInstructorProfile = freezed,
@@ -130,10 +137,18 @@ class _$AttendeeItemDtoCopyWithImpl<$Res>
           ? _value.attendeeType
           : attendeeType // ignore: cast_nullable_to_non_nullable
               as String,
+      instanceId: instanceId == freezed
+          ? _value.instanceId
+          : instanceId // ignore: cast_nullable_to_non_nullable
+              as String?,
       attendeeDetails: attendeeDetails == freezed
           ? _value.attendeeDetails
           : attendeeDetails // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      ticketItems: ticketItems == freezed
+          ? _value.ticketItems
+          : ticketItems // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       checkInSetting: checkInSetting == freezed
           ? _value.checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
@@ -185,7 +200,9 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
       String paymentStatus,
       String paymentIntentId,
       String attendeeType,
+      String? instanceId,
       Map<String, dynamic>? attendeeDetails,
+      List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
       List<Map<String, dynamic>>? customFieldRuleSetting,
       Map<String, dynamic>? classesInstructorProfile,
@@ -216,7 +233,9 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
     Object? paymentStatus = freezed,
     Object? paymentIntentId = freezed,
     Object? attendeeType = freezed,
+    Object? instanceId = freezed,
     Object? attendeeDetails = freezed,
+    Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
     Object? classesInstructorProfile = freezed,
@@ -255,10 +274,18 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
           ? _value.attendeeType
           : attendeeType // ignore: cast_nullable_to_non_nullable
               as String,
+      instanceId: instanceId == freezed
+          ? _value.instanceId
+          : instanceId // ignore: cast_nullable_to_non_nullable
+              as String?,
       attendeeDetails: attendeeDetails == freezed
           ? _value._attendeeDetails
           : attendeeDetails // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      ticketItems: ticketItems == freezed
+          ? _value._ticketItems
+          : ticketItems // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       checkInSetting: checkInSetting == freezed
           ? _value._checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
@@ -306,7 +333,9 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       required this.paymentStatus,
       required this.paymentIntentId,
       required this.attendeeType,
+      this.instanceId,
       final Map<String, dynamic>? attendeeDetails,
+      final List<Map<String, dynamic>>? ticketItems,
       final List<Map<String, dynamic>>? checkInSetting,
       final List<Map<String, dynamic>>? customFieldRuleSetting,
       final Map<String, dynamic>? classesInstructorProfile,
@@ -316,6 +345,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       required this.dateCreated,
       @ServerTimestampConverter() this.createdAtSTC})
       : _attendeeDetails = attendeeDetails,
+        _ticketItems = ticketItems,
         _checkInSetting = checkInSetting,
         _customFieldRuleSetting = customFieldRuleSetting,
         _classesInstructorProfile = classesInstructorProfile,
@@ -339,6 +369,8 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   final String paymentIntentId;
   @override
   final String attendeeType;
+  @override
+  final String? instanceId;
   final Map<String, dynamic>? _attendeeDetails;
   @override
   Map<String, dynamic>? get attendeeDetails {
@@ -346,6 +378,15 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
+  }
+
+  final List<Map<String, dynamic>>? _ticketItems;
+  @override
+  List<Map<String, dynamic>>? get ticketItems {
+    final value = _ticketItems;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   final List<Map<String, dynamic>>? _checkInSetting;
@@ -396,7 +437,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
 
   @override
   String toString() {
-    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, attendeeDetails: $attendeeDetails, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
+    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, instanceId: $instanceId, attendeeDetails: $attendeeDetails, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
   }
 
   @override
@@ -418,7 +459,11 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
             const DeepCollectionEquality()
                 .equals(other.attendeeType, attendeeType) &&
             const DeepCollectionEquality()
+                .equals(other.instanceId, instanceId) &&
+            const DeepCollectionEquality()
                 .equals(other._attendeeDetails, _attendeeDetails) &&
+            const DeepCollectionEquality()
+                .equals(other._ticketItems, _ticketItems) &&
             const DeepCollectionEquality()
                 .equals(other._checkInSetting, _checkInSetting) &&
             const DeepCollectionEquality().equals(
@@ -448,7 +493,9 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       const DeepCollectionEquality().hash(paymentStatus),
       const DeepCollectionEquality().hash(paymentIntentId),
       const DeepCollectionEquality().hash(attendeeType),
+      const DeepCollectionEquality().hash(instanceId),
       const DeepCollectionEquality().hash(_attendeeDetails),
+      const DeepCollectionEquality().hash(_ticketItems),
       const DeepCollectionEquality().hash(_checkInSetting),
       const DeepCollectionEquality().hash(_customFieldRuleSetting),
       const DeepCollectionEquality().hash(_classesInstructorProfile),
@@ -480,7 +527,9 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
           required final String paymentStatus,
           required final String paymentIntentId,
           required final String attendeeType,
+          final String? instanceId,
           final Map<String, dynamic>? attendeeDetails,
+          final List<Map<String, dynamic>>? ticketItems,
           final List<Map<String, dynamic>>? checkInSetting,
           final List<Map<String, dynamic>>? customFieldRuleSetting,
           final Map<String, dynamic>? classesInstructorProfile,
@@ -510,7 +559,11 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   @override
   String get attendeeType;
   @override
+  String? get instanceId;
+  @override
   Map<String, dynamic>? get attendeeDetails;
+  @override
+  List<Map<String, dynamic>>? get ticketItems;
   @override
   List<Map<String, dynamic>>? get checkInSetting;
   @override

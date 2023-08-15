@@ -15000,6 +15000,7 @@ mixin _$PaymentMethodValueFailure<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) =>
@@ -15010,6 +15011,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) =>
@@ -15020,6 +15022,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15031,6 +15034,8 @@ mixin _$PaymentMethodValueFailure<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15042,6 +15047,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15053,6 +15059,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15148,6 +15155,7 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15161,6 +15169,7 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15174,6 +15183,7 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15191,6 +15201,8 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15205,6 +15217,7 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15219,6 +15232,7 @@ class _$InvalidCVV<T> extends InvalidCVV<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15312,6 +15326,7 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15325,6 +15340,7 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15338,6 +15354,7 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15355,6 +15372,8 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15369,6 +15388,7 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15383,6 +15403,7 @@ class _$InvalidCreditDebit<T> extends InvalidCreditDebit<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15451,6 +15472,7 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15464,6 +15486,7 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15477,6 +15500,7 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15494,6 +15518,8 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15508,6 +15534,7 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15522,6 +15549,7 @@ class _$InsufficientFunds<T> extends InsufficientFunds<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15610,6 +15638,7 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15623,6 +15652,7 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15636,6 +15666,7 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15653,6 +15684,8 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15667,6 +15700,7 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15681,6 +15715,7 @@ class _$RequiresMoreAction<T> extends RequiresMoreAction<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15702,6 +15737,148 @@ abstract class RequiresMoreAction<T> extends PaymentMethodValueFailure<T> {
   @JsonKey(ignore: true)
   _$$RequiresMoreActionCopyWith<T, _$RequiresMoreAction<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OwnerDoesNotHaveAccountCopyWith<T, $Res> {
+  factory _$$OwnerDoesNotHaveAccountCopyWith(_$OwnerDoesNotHaveAccount<T> value,
+          $Res Function(_$OwnerDoesNotHaveAccount<T>) then) =
+      __$$OwnerDoesNotHaveAccountCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$OwnerDoesNotHaveAccountCopyWithImpl<T, $Res>
+    extends _$PaymentMethodValueFailureCopyWithImpl<T, $Res>
+    implements _$$OwnerDoesNotHaveAccountCopyWith<T, $Res> {
+  __$$OwnerDoesNotHaveAccountCopyWithImpl(_$OwnerDoesNotHaveAccount<T> _value,
+      $Res Function(_$OwnerDoesNotHaveAccount<T>) _then)
+      : super(_value, (v) => _then(v as _$OwnerDoesNotHaveAccount<T>));
+
+  @override
+  _$OwnerDoesNotHaveAccount<T> get _value =>
+      super._value as _$OwnerDoesNotHaveAccount<T>;
+}
+
+/// @nodoc
+
+class _$OwnerDoesNotHaveAccount<T> extends OwnerDoesNotHaveAccount<T> {
+  const _$OwnerDoesNotHaveAccount() : super._();
+
+  @override
+  String toString() {
+    return 'PaymentMethodValueFailure<$T>.ownerDoesNotHaveAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OwnerDoesNotHaveAccount<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failedValue) invalidCVV,
+    required TResult Function(String? failedValue) invalidCreditDebit,
+    required TResult Function() insufficientFunds,
+    required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
+    required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(String? failedValue) paymentServerError,
+  }) {
+    return ownerDoesNotHaveAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidCVV,
+    TResult Function(String? failedValue)? invalidCreditDebit,
+    TResult Function()? insufficientFunds,
+    TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
+    TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(String? failedValue)? paymentServerError,
+  }) {
+    return ownerDoesNotHaveAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidCVV,
+    TResult Function(String? failedValue)? invalidCreditDebit,
+    TResult Function()? insufficientFunds,
+    TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
+    TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(String? failedValue)? paymentServerError,
+    required TResult orElse(),
+  }) {
+    if (ownerDoesNotHaveAccount != null) {
+      return ownerDoesNotHaveAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidCVV<T> value) invalidCVV,
+    required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
+    required TResult Function(InsufficientFunds<T> value) insufficientFunds,
+    required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
+    required TResult Function(CouldNotRetrievePaymentMethod<T> value)
+        couldNotRetrievePaymentMethod,
+    required TResult Function(_PaymentServerError<T> value) paymentServerError,
+  }) {
+    return ownerDoesNotHaveAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidCVV<T> value)? invalidCVV,
+    TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
+    TResult Function(InsufficientFunds<T> value)? insufficientFunds,
+    TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
+    TResult Function(CouldNotRetrievePaymentMethod<T> value)?
+        couldNotRetrievePaymentMethod,
+    TResult Function(_PaymentServerError<T> value)? paymentServerError,
+  }) {
+    return ownerDoesNotHaveAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidCVV<T> value)? invalidCVV,
+    TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
+    TResult Function(InsufficientFunds<T> value)? insufficientFunds,
+    TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
+    TResult Function(CouldNotRetrievePaymentMethod<T> value)?
+        couldNotRetrievePaymentMethod,
+    TResult Function(_PaymentServerError<T> value)? paymentServerError,
+    required TResult orElse(),
+  }) {
+    if (ownerDoesNotHaveAccount != null) {
+      return ownerDoesNotHaveAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OwnerDoesNotHaveAccount<T> extends PaymentMethodValueFailure<T> {
+  const factory OwnerDoesNotHaveAccount() = _$OwnerDoesNotHaveAccount<T>;
+  const OwnerDoesNotHaveAccount._() : super._();
 }
 
 /// @nodoc
@@ -15754,6 +15931,7 @@ class _$CouldNotRetrievePaymentMethod<T>
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15767,6 +15945,7 @@ class _$CouldNotRetrievePaymentMethod<T>
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15780,6 +15959,7 @@ class _$CouldNotRetrievePaymentMethod<T>
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15797,6 +15977,8 @@ class _$CouldNotRetrievePaymentMethod<T>
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15811,6 +15993,7 @@ class _$CouldNotRetrievePaymentMethod<T>
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15825,6 +16008,7 @@ class _$CouldNotRetrievePaymentMethod<T>
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15916,6 +16100,7 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     required TResult Function(String? failedValue) invalidCreditDebit,
     required TResult Function() insufficientFunds,
     required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
@@ -15929,6 +16114,7 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
   }) {
@@ -15942,6 +16128,7 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     TResult Function(String? failedValue)? invalidCreditDebit,
     TResult Function()? insufficientFunds,
     TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
@@ -15959,6 +16146,8 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
     required TResult Function(InsufficientFunds<T> value) insufficientFunds,
     required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
@@ -15973,6 +16162,7 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -15987,6 +16177,7 @@ class _$_PaymentServerError<T> extends _PaymentServerError<T> {
     TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
     TResult Function(InsufficientFunds<T> value)? insufficientFunds,
     TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
@@ -19534,6 +19725,7 @@ mixin _$ActivityAttendance {
   bool? get isTicketBased => throw _privateConstructorUsedError;
   bool? get isPassBased => throw _privateConstructorUsedError;
   bool? get isTicketFixed => throw _privateConstructorUsedError;
+  bool? get isTicketPerSlotBased => throw _privateConstructorUsedError;
   bool? get isPassesFixed => throw _privateConstructorUsedError;
   ActivityTicketOption? get defaultActivityTickets =>
       throw _privateConstructorUsedError;
@@ -19560,6 +19752,7 @@ abstract class $ActivityAttendanceCopyWith<$Res> {
       bool? isTicketBased,
       bool? isPassBased,
       bool? isTicketFixed,
+      bool? isTicketPerSlotBased,
       bool? isPassesFixed,
       ActivityTicketOption? defaultActivityTickets,
       List<ActivityTicketOption>? activityTickets,
@@ -19586,6 +19779,7 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
     Object? isTicketFixed = freezed,
+    Object? isTicketPerSlotBased = freezed,
     Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? activityTickets = freezed,
@@ -19612,6 +19806,10 @@ class _$ActivityAttendanceCopyWithImpl<$Res>
       isTicketFixed: isTicketFixed == freezed
           ? _value.isTicketFixed
           : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isTicketPerSlotBased: isTicketPerSlotBased == freezed
+          ? _value.isTicketPerSlotBased
+          : isTicketPerSlotBased // ignore: cast_nullable_to_non_nullable
               as bool?,
       isPassesFixed: isPassesFixed == freezed
           ? _value.isPassesFixed
@@ -19674,6 +19872,7 @@ abstract class _$$_ActivityAttendanceCopyWith<$Res>
       bool? isTicketBased,
       bool? isPassBased,
       bool? isTicketFixed,
+      bool? isTicketPerSlotBased,
       bool? isPassesFixed,
       ActivityTicketOption? defaultActivityTickets,
       List<ActivityTicketOption>? activityTickets,
@@ -19704,6 +19903,7 @@ class __$$_ActivityAttendanceCopyWithImpl<$Res>
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
     Object? isTicketFixed = freezed,
+    Object? isTicketPerSlotBased = freezed,
     Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? activityTickets = freezed,
@@ -19730,6 +19930,10 @@ class __$$_ActivityAttendanceCopyWithImpl<$Res>
       isTicketFixed: isTicketFixed == freezed
           ? _value.isTicketFixed
           : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isTicketPerSlotBased: isTicketPerSlotBased == freezed
+          ? _value.isTicketPerSlotBased
+          : isTicketPerSlotBased // ignore: cast_nullable_to_non_nullable
               as bool?,
       isPassesFixed: isPassesFixed == freezed
           ? _value.isPassesFixed
@@ -19764,6 +19968,7 @@ class _$_ActivityAttendance extends _ActivityAttendance {
       this.isTicketBased,
       this.isPassBased,
       this.isTicketFixed,
+      this.isTicketPerSlotBased,
       this.isPassesFixed,
       this.defaultActivityTickets,
       final List<ActivityTicketOption>? activityTickets,
@@ -19783,6 +19988,8 @@ class _$_ActivityAttendance extends _ActivityAttendance {
   final bool? isPassBased;
   @override
   final bool? isTicketFixed;
+  @override
+  final bool? isTicketPerSlotBased;
   @override
   final bool? isPassesFixed;
   @override
@@ -19809,7 +20016,7 @@ class _$_ActivityAttendance extends _ActivityAttendance {
 
   @override
   String toString() {
-    return 'ActivityAttendance(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, activityTickets: $activityTickets, defaultActivityPass: $defaultActivityPass, activityPasses: $activityPasses)';
+    return 'ActivityAttendance(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isTicketPerSlotBased: $isTicketPerSlotBased, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, activityTickets: $activityTickets, defaultActivityPass: $defaultActivityPass, activityPasses: $activityPasses)';
   }
 
   @override
@@ -19827,6 +20034,8 @@ class _$_ActivityAttendance extends _ActivityAttendance {
                 .equals(other.isPassBased, isPassBased) &&
             const DeepCollectionEquality()
                 .equals(other.isTicketFixed, isTicketFixed) &&
+            const DeepCollectionEquality()
+                .equals(other.isTicketPerSlotBased, isTicketPerSlotBased) &&
             const DeepCollectionEquality()
                 .equals(other.isPassesFixed, isPassesFixed) &&
             const DeepCollectionEquality()
@@ -19847,6 +20056,7 @@ class _$_ActivityAttendance extends _ActivityAttendance {
       const DeepCollectionEquality().hash(isTicketBased),
       const DeepCollectionEquality().hash(isPassBased),
       const DeepCollectionEquality().hash(isTicketFixed),
+      const DeepCollectionEquality().hash(isTicketPerSlotBased),
       const DeepCollectionEquality().hash(isPassesFixed),
       const DeepCollectionEquality().hash(defaultActivityTickets),
       const DeepCollectionEquality().hash(_activityTickets),
@@ -19867,6 +20077,7 @@ abstract class _ActivityAttendance extends ActivityAttendance {
           final bool? isTicketBased,
           final bool? isPassBased,
           final bool? isTicketFixed,
+          final bool? isTicketPerSlotBased,
           final bool? isPassesFixed,
           final ActivityTicketOption? defaultActivityTickets,
           final List<ActivityTicketOption>? activityTickets,
@@ -19885,6 +20096,8 @@ abstract class _ActivityAttendance extends ActivityAttendance {
   bool? get isPassBased;
   @override
   bool? get isTicketFixed;
+  @override
+  bool? get isTicketPerSlotBased;
   @override
   bool? get isPassesFixed;
   @override
@@ -19913,6 +20126,7 @@ mixin _$ActivityAttendanceDto {
   bool? get isTicketBased => throw _privateConstructorUsedError;
   bool? get isPassBased => throw _privateConstructorUsedError;
   bool? get isTicketFixed => throw _privateConstructorUsedError;
+  bool? get isTicketPerSlotBased => throw _privateConstructorUsedError;
   bool? get isPassesFixed => throw _privateConstructorUsedError;
   Map<String, dynamic>? get defaultActivityTickets =>
       throw _privateConstructorUsedError;
@@ -19940,6 +20154,7 @@ abstract class $ActivityAttendanceDtoCopyWith<$Res> {
       bool? isTicketBased,
       bool? isPassBased,
       bool? isTicketFixed,
+      bool? isTicketPerSlotBased,
       bool? isPassesFixed,
       Map<String, dynamic>? defaultActivityTickets,
       Map<String, dynamic>? defaultActivityPass,
@@ -19963,6 +20178,7 @@ class _$ActivityAttendanceDtoCopyWithImpl<$Res>
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
     Object? isTicketFixed = freezed,
+    Object? isTicketPerSlotBased = freezed,
     Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? defaultActivityPass = freezed,
@@ -19989,6 +20205,10 @@ class _$ActivityAttendanceDtoCopyWithImpl<$Res>
       isTicketFixed: isTicketFixed == freezed
           ? _value.isTicketFixed
           : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isTicketPerSlotBased: isTicketPerSlotBased == freezed
+          ? _value.isTicketPerSlotBased
+          : isTicketPerSlotBased // ignore: cast_nullable_to_non_nullable
               as bool?,
       isPassesFixed: isPassesFixed == freezed
           ? _value.isPassesFixed
@@ -20027,6 +20247,7 @@ abstract class _$$_ActivityAttendanceDtoCopyWith<$Res>
       bool? isTicketBased,
       bool? isPassBased,
       bool? isTicketFixed,
+      bool? isTicketPerSlotBased,
       bool? isPassesFixed,
       Map<String, dynamic>? defaultActivityTickets,
       Map<String, dynamic>? defaultActivityPass,
@@ -20053,6 +20274,7 @@ class __$$_ActivityAttendanceDtoCopyWithImpl<$Res>
     Object? isTicketBased = freezed,
     Object? isPassBased = freezed,
     Object? isTicketFixed = freezed,
+    Object? isTicketPerSlotBased = freezed,
     Object? isPassesFixed = freezed,
     Object? defaultActivityTickets = freezed,
     Object? defaultActivityPass = freezed,
@@ -20079,6 +20301,10 @@ class __$$_ActivityAttendanceDtoCopyWithImpl<$Res>
       isTicketFixed: isTicketFixed == freezed
           ? _value.isTicketFixed
           : isTicketFixed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isTicketPerSlotBased: isTicketPerSlotBased == freezed
+          ? _value.isTicketPerSlotBased
+          : isTicketPerSlotBased // ignore: cast_nullable_to_non_nullable
               as bool?,
       isPassesFixed: isPassesFixed == freezed
           ? _value.isPassesFixed
@@ -20113,6 +20339,7 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
       this.isTicketBased,
       this.isPassBased,
       this.isTicketFixed,
+      this.isTicketPerSlotBased,
       this.isPassesFixed,
       final Map<String, dynamic>? defaultActivityTickets,
       final Map<String, dynamic>? defaultActivityPass,
@@ -20137,6 +20364,8 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
   final bool? isPassBased;
   @override
   final bool? isTicketFixed;
+  @override
+  final bool? isTicketPerSlotBased;
   @override
   final bool? isPassesFixed;
   final Map<String, dynamic>? _defaultActivityTickets;
@@ -20177,7 +20406,7 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
 
   @override
   String toString() {
-    return 'ActivityAttendanceDto(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, defaultActivityPass: $defaultActivityPass, activityTickets: $activityTickets, activityPasses: $activityPasses)';
+    return 'ActivityAttendanceDto(isLimitedAttendance: $isLimitedAttendance, attendanceLimit: $attendanceLimit, isTicketBased: $isTicketBased, isPassBased: $isPassBased, isTicketFixed: $isTicketFixed, isTicketPerSlotBased: $isTicketPerSlotBased, isPassesFixed: $isPassesFixed, defaultActivityTickets: $defaultActivityTickets, defaultActivityPass: $defaultActivityPass, activityTickets: $activityTickets, activityPasses: $activityPasses)';
   }
 
   @override
@@ -20195,6 +20424,8 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
                 .equals(other.isPassBased, isPassBased) &&
             const DeepCollectionEquality()
                 .equals(other.isTicketFixed, isTicketFixed) &&
+            const DeepCollectionEquality()
+                .equals(other.isTicketPerSlotBased, isTicketPerSlotBased) &&
             const DeepCollectionEquality()
                 .equals(other.isPassesFixed, isPassesFixed) &&
             const DeepCollectionEquality().equals(
@@ -20216,6 +20447,7 @@ class _$_ActivityAttendanceDto extends _ActivityAttendanceDto {
       const DeepCollectionEquality().hash(isTicketBased),
       const DeepCollectionEquality().hash(isPassBased),
       const DeepCollectionEquality().hash(isTicketFixed),
+      const DeepCollectionEquality().hash(isTicketPerSlotBased),
       const DeepCollectionEquality().hash(isPassesFixed),
       const DeepCollectionEquality().hash(_defaultActivityTickets),
       const DeepCollectionEquality().hash(_defaultActivityPass),
@@ -20243,6 +20475,7 @@ abstract class _ActivityAttendanceDto extends ActivityAttendanceDto {
           final bool? isTicketBased,
           final bool? isPassBased,
           final bool? isTicketFixed,
+          final bool? isTicketPerSlotBased,
           final bool? isPassesFixed,
           final Map<String, dynamic>? defaultActivityTickets,
           final Map<String, dynamic>? defaultActivityPass,
@@ -20264,6 +20497,8 @@ abstract class _ActivityAttendanceDto extends ActivityAttendanceDto {
   bool? get isPassBased;
   @override
   bool? get isTicketFixed;
+  @override
+  bool? get isTicketPerSlotBased;
   @override
   bool? get isPassesFixed;
   @override
@@ -20560,12 +20795,16 @@ abstract class _ActivityPassesOptionDto extends ActivityPassesOptionDto {
 
 /// @nodoc
 mixin _$ActivityTicketOption {
+  UniqueId get ticketId => throw _privateConstructorUsedError;
   bool get isAllowedGroupAttendance => throw _privateConstructorUsedError;
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get ticketQuantity => throw _privateConstructorUsedError;
   int? get ticketFee => throw _privateConstructorUsedError;
+  String? get ticketTitle => throw _privateConstructorUsedError;
   ReservationSlotItem? get reservationSlot =>
+      throw _privateConstructorUsedError;
+  ReservationTimeFeeSlotItem? get reservationTimeSlot =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -20579,14 +20818,18 @@ abstract class $ActivityTicketOptionCopyWith<$Res> {
           $Res Function(ActivityTicketOption) then) =
       _$ActivityTicketOptionCopyWithImpl<$Res>;
   $Res call(
-      {bool isAllowedGroupAttendance,
+      {UniqueId ticketId,
+      bool isAllowedGroupAttendance,
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
       int? ticketFee,
-      ReservationSlotItem? reservationSlot});
+      String? ticketTitle,
+      ReservationSlotItem? reservationSlot,
+      ReservationTimeFeeSlotItem? reservationTimeSlot});
 
   $ReservationSlotItemCopyWith<$Res>? get reservationSlot;
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get reservationTimeSlot;
 }
 
 /// @nodoc
@@ -20600,14 +20843,21 @@ class _$ActivityTicketOptionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? ticketId = freezed,
     Object? isAllowedGroupAttendance = freezed,
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? ticketQuantity = freezed,
     Object? ticketFee = freezed,
+    Object? ticketTitle = freezed,
     Object? reservationSlot = freezed,
+    Object? reservationTimeSlot = freezed,
   }) {
     return _then(_value.copyWith(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       isAllowedGroupAttendance: isAllowedGroupAttendance == freezed
           ? _value.isAllowedGroupAttendance
           : isAllowedGroupAttendance // ignore: cast_nullable_to_non_nullable
@@ -20628,10 +20878,18 @@ class _$ActivityTicketOptionCopyWithImpl<$Res>
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
               as int?,
+      ticketTitle: ticketTitle == freezed
+          ? _value.ticketTitle
+          : ticketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
               as ReservationSlotItem?,
+      reservationTimeSlot: reservationTimeSlot == freezed
+          ? _value.reservationTimeSlot
+          : reservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationTimeFeeSlotItem?,
     ));
   }
 
@@ -20645,6 +20903,18 @@ class _$ActivityTicketOptionCopyWithImpl<$Res>
       return _then(_value.copyWith(reservationSlot: value));
     });
   }
+
+  @override
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get reservationTimeSlot {
+    if (_value.reservationTimeSlot == null) {
+      return null;
+    }
+
+    return $ReservationTimeFeeSlotItemCopyWith<$Res>(
+        _value.reservationTimeSlot!, (value) {
+      return _then(_value.copyWith(reservationTimeSlot: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -20655,15 +20925,20 @@ abstract class _$$_ActivityTicketOptionCopyWith<$Res>
       __$$_ActivityTicketOptionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isAllowedGroupAttendance,
+      {UniqueId ticketId,
+      bool isAllowedGroupAttendance,
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
       int? ticketFee,
-      ReservationSlotItem? reservationSlot});
+      String? ticketTitle,
+      ReservationSlotItem? reservationSlot,
+      ReservationTimeFeeSlotItem? reservationTimeSlot});
 
   @override
   $ReservationSlotItemCopyWith<$Res>? get reservationSlot;
+  @override
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get reservationTimeSlot;
 }
 
 /// @nodoc
@@ -20679,14 +20954,21 @@ class __$$_ActivityTicketOptionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? ticketId = freezed,
     Object? isAllowedGroupAttendance = freezed,
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? ticketQuantity = freezed,
     Object? ticketFee = freezed,
+    Object? ticketTitle = freezed,
     Object? reservationSlot = freezed,
+    Object? reservationTimeSlot = freezed,
   }) {
     return _then(_$_ActivityTicketOption(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       isAllowedGroupAttendance: isAllowedGroupAttendance == freezed
           ? _value.isAllowedGroupAttendance
           : isAllowedGroupAttendance // ignore: cast_nullable_to_non_nullable
@@ -20707,10 +20989,18 @@ class __$$_ActivityTicketOptionCopyWithImpl<$Res>
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
               as int?,
+      ticketTitle: ticketTitle == freezed
+          ? _value.ticketTitle
+          : ticketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
               as ReservationSlotItem?,
+      reservationTimeSlot: reservationTimeSlot == freezed
+          ? _value.reservationTimeSlot
+          : reservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationTimeFeeSlotItem?,
     ));
   }
 }
@@ -20719,14 +21009,19 @@ class __$$_ActivityTicketOptionCopyWithImpl<$Res>
 
 class _$_ActivityTicketOption extends _ActivityTicketOption {
   _$_ActivityTicketOption(
-      {required this.isAllowedGroupAttendance,
+      {required this.ticketId,
+      required this.isAllowedGroupAttendance,
       required this.minimumGroupQuantity,
       required this.maximumGroupQuantity,
       required this.ticketQuantity,
       this.ticketFee,
-      this.reservationSlot})
+      this.ticketTitle,
+      this.reservationSlot,
+      this.reservationTimeSlot})
       : super._();
 
+  @override
+  final UniqueId ticketId;
   @override
   final bool isAllowedGroupAttendance;
   @override
@@ -20738,11 +21033,15 @@ class _$_ActivityTicketOption extends _ActivityTicketOption {
   @override
   final int? ticketFee;
   @override
+  final String? ticketTitle;
+  @override
   final ReservationSlotItem? reservationSlot;
+  @override
+  final ReservationTimeFeeSlotItem? reservationTimeSlot;
 
   @override
   String toString() {
-    return 'ActivityTicketOption(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, ticketQuantity: $ticketQuantity, ticketFee: $ticketFee, reservationSlot: $reservationSlot)';
+    return 'ActivityTicketOption(ticketId: $ticketId, isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, ticketQuantity: $ticketQuantity, ticketFee: $ticketFee, ticketTitle: $ticketTitle, reservationSlot: $reservationSlot, reservationTimeSlot: $reservationTimeSlot)';
   }
 
   @override
@@ -20750,6 +21049,7 @@ class _$_ActivityTicketOption extends _ActivityTicketOption {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ActivityTicketOption &&
+            const DeepCollectionEquality().equals(other.ticketId, ticketId) &&
             const DeepCollectionEquality().equals(
                 other.isAllowedGroupAttendance, isAllowedGroupAttendance) &&
             const DeepCollectionEquality()
@@ -20760,18 +21060,25 @@ class _$_ActivityTicketOption extends _ActivityTicketOption {
                 .equals(other.ticketQuantity, ticketQuantity) &&
             const DeepCollectionEquality().equals(other.ticketFee, ticketFee) &&
             const DeepCollectionEquality()
-                .equals(other.reservationSlot, reservationSlot));
+                .equals(other.ticketTitle, ticketTitle) &&
+            const DeepCollectionEquality()
+                .equals(other.reservationSlot, reservationSlot) &&
+            const DeepCollectionEquality()
+                .equals(other.reservationTimeSlot, reservationTimeSlot));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(ticketId),
       const DeepCollectionEquality().hash(isAllowedGroupAttendance),
       const DeepCollectionEquality().hash(minimumGroupQuantity),
       const DeepCollectionEquality().hash(maximumGroupQuantity),
       const DeepCollectionEquality().hash(ticketQuantity),
       const DeepCollectionEquality().hash(ticketFee),
-      const DeepCollectionEquality().hash(reservationSlot));
+      const DeepCollectionEquality().hash(ticketTitle),
+      const DeepCollectionEquality().hash(reservationSlot),
+      const DeepCollectionEquality().hash(reservationTimeSlot));
 
   @JsonKey(ignore: true)
   @override
@@ -20782,14 +21089,20 @@ class _$_ActivityTicketOption extends _ActivityTicketOption {
 
 abstract class _ActivityTicketOption extends ActivityTicketOption {
   factory _ActivityTicketOption(
-      {required final bool isAllowedGroupAttendance,
-      required final int minimumGroupQuantity,
-      required final int maximumGroupQuantity,
-      required final int ticketQuantity,
-      final int? ticketFee,
-      final ReservationSlotItem? reservationSlot}) = _$_ActivityTicketOption;
+          {required final UniqueId ticketId,
+          required final bool isAllowedGroupAttendance,
+          required final int minimumGroupQuantity,
+          required final int maximumGroupQuantity,
+          required final int ticketQuantity,
+          final int? ticketFee,
+          final String? ticketTitle,
+          final ReservationSlotItem? reservationSlot,
+          final ReservationTimeFeeSlotItem? reservationTimeSlot}) =
+      _$_ActivityTicketOption;
   _ActivityTicketOption._() : super._();
 
+  @override
+  UniqueId get ticketId;
   @override
   bool get isAllowedGroupAttendance;
   @override
@@ -20801,7 +21114,11 @@ abstract class _ActivityTicketOption extends ActivityTicketOption {
   @override
   int? get ticketFee;
   @override
+  String? get ticketTitle;
+  @override
   ReservationSlotItem? get reservationSlot;
+  @override
+  ReservationTimeFeeSlotItem? get reservationTimeSlot;
   @override
   @JsonKey(ignore: true)
   _$$_ActivityTicketOptionCopyWith<_$_ActivityTicketOption> get copyWith =>
@@ -20815,12 +21132,16 @@ ActivityTicketOptionDto _$ActivityTicketOptionDtoFromJson(
 
 /// @nodoc
 mixin _$ActivityTicketOptionDto {
+  String get ticketId => throw _privateConstructorUsedError;
   bool get isAllowedGroupAttendance => throw _privateConstructorUsedError;
   int get minimumGroupQuantity => throw _privateConstructorUsedError;
   int get maximumGroupQuantity => throw _privateConstructorUsedError;
   int get ticketQuantity => throw _privateConstructorUsedError;
   int? get ticketFee => throw _privateConstructorUsedError;
+  String? get ticketTitle => throw _privateConstructorUsedError;
   Map<String, dynamic>? get reservationSlot =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get reservationTimeSlot =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -20835,12 +21156,15 @@ abstract class $ActivityTicketOptionDtoCopyWith<$Res> {
           $Res Function(ActivityTicketOptionDto) then) =
       _$ActivityTicketOptionDtoCopyWithImpl<$Res>;
   $Res call(
-      {bool isAllowedGroupAttendance,
+      {String ticketId,
+      bool isAllowedGroupAttendance,
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
       int? ticketFee,
-      Map<String, dynamic>? reservationSlot});
+      String? ticketTitle,
+      Map<String, dynamic>? reservationSlot,
+      Map<String, dynamic>? reservationTimeSlot});
 }
 
 /// @nodoc
@@ -20854,14 +21178,21 @@ class _$ActivityTicketOptionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? ticketId = freezed,
     Object? isAllowedGroupAttendance = freezed,
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? ticketQuantity = freezed,
     Object? ticketFee = freezed,
+    Object? ticketTitle = freezed,
     Object? reservationSlot = freezed,
+    Object? reservationTimeSlot = freezed,
   }) {
     return _then(_value.copyWith(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String,
       isAllowedGroupAttendance: isAllowedGroupAttendance == freezed
           ? _value.isAllowedGroupAttendance
           : isAllowedGroupAttendance // ignore: cast_nullable_to_non_nullable
@@ -20882,9 +21213,17 @@ class _$ActivityTicketOptionDtoCopyWithImpl<$Res>
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
               as int?,
+      ticketTitle: ticketTitle == freezed
+          ? _value.ticketTitle
+          : ticketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       reservationSlot: reservationSlot == freezed
           ? _value.reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      reservationTimeSlot: reservationTimeSlot == freezed
+          ? _value.reservationTimeSlot
+          : reservationTimeSlot // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
@@ -20898,12 +21237,15 @@ abstract class _$$_ActivityTicketOptionDtoCopyWith<$Res>
       __$$_ActivityTicketOptionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isAllowedGroupAttendance,
+      {String ticketId,
+      bool isAllowedGroupAttendance,
       int minimumGroupQuantity,
       int maximumGroupQuantity,
       int ticketQuantity,
       int? ticketFee,
-      Map<String, dynamic>? reservationSlot});
+      String? ticketTitle,
+      Map<String, dynamic>? reservationSlot,
+      Map<String, dynamic>? reservationTimeSlot});
 }
 
 /// @nodoc
@@ -20920,14 +21262,21 @@ class __$$_ActivityTicketOptionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? ticketId = freezed,
     Object? isAllowedGroupAttendance = freezed,
     Object? minimumGroupQuantity = freezed,
     Object? maximumGroupQuantity = freezed,
     Object? ticketQuantity = freezed,
     Object? ticketFee = freezed,
+    Object? ticketTitle = freezed,
     Object? reservationSlot = freezed,
+    Object? reservationTimeSlot = freezed,
   }) {
     return _then(_$_ActivityTicketOptionDto(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String,
       isAllowedGroupAttendance: isAllowedGroupAttendance == freezed
           ? _value.isAllowedGroupAttendance
           : isAllowedGroupAttendance // ignore: cast_nullable_to_non_nullable
@@ -20948,9 +21297,17 @@ class __$$_ActivityTicketOptionDtoCopyWithImpl<$Res>
           ? _value.ticketFee
           : ticketFee // ignore: cast_nullable_to_non_nullable
               as int?,
+      ticketTitle: ticketTitle == freezed
+          ? _value.ticketTitle
+          : ticketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
       reservationSlot: reservationSlot == freezed
           ? _value._reservationSlot
           : reservationSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      reservationTimeSlot: reservationTimeSlot == freezed
+          ? _value._reservationTimeSlot
+          : reservationTimeSlot // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
@@ -20960,18 +21317,24 @@ class __$$_ActivityTicketOptionDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
   _$_ActivityTicketOptionDto(
-      {required this.isAllowedGroupAttendance,
+      {required this.ticketId,
+      required this.isAllowedGroupAttendance,
       required this.minimumGroupQuantity,
       required this.maximumGroupQuantity,
       required this.ticketQuantity,
       this.ticketFee,
-      final Map<String, dynamic>? reservationSlot})
+      this.ticketTitle,
+      final Map<String, dynamic>? reservationSlot,
+      final Map<String, dynamic>? reservationTimeSlot})
       : _reservationSlot = reservationSlot,
+        _reservationTimeSlot = reservationTimeSlot,
         super._();
 
   factory _$_ActivityTicketOptionDto.fromJson(Map<String, dynamic> json) =>
       _$$_ActivityTicketOptionDtoFromJson(json);
 
+  @override
+  final String ticketId;
   @override
   final bool isAllowedGroupAttendance;
   @override
@@ -20982,6 +21345,8 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
   final int ticketQuantity;
   @override
   final int? ticketFee;
+  @override
+  final String? ticketTitle;
   final Map<String, dynamic>? _reservationSlot;
   @override
   Map<String, dynamic>? get reservationSlot {
@@ -20991,9 +21356,18 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
     return EqualUnmodifiableMapView(value);
   }
 
+  final Map<String, dynamic>? _reservationTimeSlot;
+  @override
+  Map<String, dynamic>? get reservationTimeSlot {
+    final value = _reservationTimeSlot;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'ActivityTicketOptionDto(isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, ticketQuantity: $ticketQuantity, ticketFee: $ticketFee, reservationSlot: $reservationSlot)';
+    return 'ActivityTicketOptionDto(ticketId: $ticketId, isAllowedGroupAttendance: $isAllowedGroupAttendance, minimumGroupQuantity: $minimumGroupQuantity, maximumGroupQuantity: $maximumGroupQuantity, ticketQuantity: $ticketQuantity, ticketFee: $ticketFee, ticketTitle: $ticketTitle, reservationSlot: $reservationSlot, reservationTimeSlot: $reservationTimeSlot)';
   }
 
   @override
@@ -21001,6 +21375,7 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ActivityTicketOptionDto &&
+            const DeepCollectionEquality().equals(other.ticketId, ticketId) &&
             const DeepCollectionEquality().equals(
                 other.isAllowedGroupAttendance, isAllowedGroupAttendance) &&
             const DeepCollectionEquality()
@@ -21011,19 +21386,26 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
                 .equals(other.ticketQuantity, ticketQuantity) &&
             const DeepCollectionEquality().equals(other.ticketFee, ticketFee) &&
             const DeepCollectionEquality()
-                .equals(other._reservationSlot, _reservationSlot));
+                .equals(other.ticketTitle, ticketTitle) &&
+            const DeepCollectionEquality()
+                .equals(other._reservationSlot, _reservationSlot) &&
+            const DeepCollectionEquality()
+                .equals(other._reservationTimeSlot, _reservationTimeSlot));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(ticketId),
       const DeepCollectionEquality().hash(isAllowedGroupAttendance),
       const DeepCollectionEquality().hash(minimumGroupQuantity),
       const DeepCollectionEquality().hash(maximumGroupQuantity),
       const DeepCollectionEquality().hash(ticketQuantity),
       const DeepCollectionEquality().hash(ticketFee),
-      const DeepCollectionEquality().hash(_reservationSlot));
+      const DeepCollectionEquality().hash(ticketTitle),
+      const DeepCollectionEquality().hash(_reservationSlot),
+      const DeepCollectionEquality().hash(_reservationTimeSlot));
 
   @JsonKey(ignore: true)
   @override
@@ -21042,18 +21424,23 @@ class _$_ActivityTicketOptionDto extends _ActivityTicketOptionDto {
 
 abstract class _ActivityTicketOptionDto extends ActivityTicketOptionDto {
   factory _ActivityTicketOptionDto(
-          {required final bool isAllowedGroupAttendance,
+          {required final String ticketId,
+          required final bool isAllowedGroupAttendance,
           required final int minimumGroupQuantity,
           required final int maximumGroupQuantity,
           required final int ticketQuantity,
           final int? ticketFee,
-          final Map<String, dynamic>? reservationSlot}) =
+          final String? ticketTitle,
+          final Map<String, dynamic>? reservationSlot,
+          final Map<String, dynamic>? reservationTimeSlot}) =
       _$_ActivityTicketOptionDto;
   _ActivityTicketOptionDto._() : super._();
 
   factory _ActivityTicketOptionDto.fromJson(Map<String, dynamic> json) =
       _$_ActivityTicketOptionDto.fromJson;
 
+  @override
+  String get ticketId;
   @override
   bool get isAllowedGroupAttendance;
   @override
@@ -21065,7 +21452,11 @@ abstract class _ActivityTicketOptionDto extends ActivityTicketOptionDto {
   @override
   int? get ticketFee;
   @override
+  String? get ticketTitle;
+  @override
   Map<String, dynamic>? get reservationSlot;
+  @override
+  Map<String, dynamic>? get reservationTimeSlot;
   @override
   @JsonKey(ignore: true)
   _$$_ActivityTicketOptionDtoCopyWith<_$_ActivityTicketOptionDto>
@@ -21838,6 +22229,13 @@ mixin _$AttendeeFormFailure<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -21850,6 +22248,12 @@ mixin _$AttendeeFormFailure<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -21862,6 +22266,12 @@ mixin _$AttendeeFormFailure<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -21877,6 +22287,15 @@ mixin _$AttendeeFormFailure<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -21895,6 +22314,14 @@ mixin _$AttendeeFormFailure<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -21912,6 +22339,14 @@ mixin _$AttendeeFormFailure<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22013,6 +22448,13 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22028,6 +22470,12 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22043,6 +22491,12 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22064,6 +22518,15 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22085,6 +22548,14 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22105,6 +22576,14 @@ class _$AttendeeServerError<T> extends AttendeeServerError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22181,6 +22660,13 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22196,6 +22682,12 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22211,6 +22703,12 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22232,6 +22730,15 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22253,6 +22760,14 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22273,6 +22788,14 @@ class _$AttendeePermissionDenied<T> extends AttendeePermissionDenied<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22367,6 +22890,13 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22382,6 +22912,12 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22397,6 +22933,12 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22418,6 +22960,15 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22439,6 +22990,14 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22459,6 +23018,14 @@ class _$AttendeeFirebaseError<T> extends AttendeeFirebaseError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22486,6 +23053,1103 @@ abstract class AttendeeFirebaseError<T> extends AttendeeFormFailure<T> {
   @JsonKey(ignore: true)
   _$$AttendeeFirebaseErrorCopyWith<T, _$AttendeeFirebaseError<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AttendeeVendorCouldNotBeCreatedCopyWith<T, $Res> {
+  factory _$$AttendeeVendorCouldNotBeCreatedCopyWith(
+          _$AttendeeVendorCouldNotBeCreated<T> value,
+          $Res Function(_$AttendeeVendorCouldNotBeCreated<T>) then) =
+      __$$AttendeeVendorCouldNotBeCreatedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AttendeeVendorCouldNotBeCreatedCopyWithImpl<T, $Res>
+    extends _$AttendeeFormFailureCopyWithImpl<T, $Res>
+    implements _$$AttendeeVendorCouldNotBeCreatedCopyWith<T, $Res> {
+  __$$AttendeeVendorCouldNotBeCreatedCopyWithImpl(
+      _$AttendeeVendorCouldNotBeCreated<T> _value,
+      $Res Function(_$AttendeeVendorCouldNotBeCreated<T>) _then)
+      : super(_value, (v) => _then(v as _$AttendeeVendorCouldNotBeCreated<T>));
+
+  @override
+  _$AttendeeVendorCouldNotBeCreated<T> get _value =>
+      super._value as _$AttendeeVendorCouldNotBeCreated<T>;
+}
+
+/// @nodoc
+
+class _$AttendeeVendorCouldNotBeCreated<T>
+    extends AttendeeVendorCouldNotBeCreated<T> {
+  const _$AttendeeVendorCouldNotBeCreated() : super._();
+
+  @override
+  String toString() {
+    return 'AttendeeFormFailure<$T>.attendeeVendorCouldNotBeCreated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttendeeVendorCouldNotBeCreated<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failed) attendeeServerError,
+    required TResult Function() attendeePermissionDenied,
+    required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
+    required TResult Function() ticketsNoLongerAvailable,
+    required TResult Function() passesNoLongerAvailable,
+    required TResult Function() attendeePaymentResultError,
+    required TResult Function() attendeeWaitingForPaymentConfirmation,
+    required TResult Function() attendeePaymentMethodFailed,
+  }) {
+    return attendeeVendorCouldNotBeCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+  }) {
+    return attendeeVendorCouldNotBeCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeVendorCouldNotBeCreated != null) {
+      return attendeeVendorCouldNotBeCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AttendeeServerError<T> value) attendeeServerError,
+    required TResult Function(AttendeePermissionDenied<T> value)
+        attendeePermissionDenied,
+    required TResult Function(AttendeeFirebaseError<T> value)
+        attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
+    required TResult Function(TicketsNoLongerAvailable<T> value)
+        ticketsNoLongerAvailable,
+    required TResult Function(PassesNoLongerAvailable<T> value)
+        passesNoLongerAvailable,
+    required TResult Function(AttendeePaymentResultError<T> value)
+        attendeePaymentResultError,
+    required TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)
+        attendeeWaitingForPaymentConfirmation,
+    required TResult Function(AttendeePaymentMethodFailed<T> value)
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeVendorCouldNotBeCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeVendorCouldNotBeCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeVendorCouldNotBeCreated != null) {
+      return attendeeVendorCouldNotBeCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AttendeeVendorCouldNotBeCreated<T>
+    extends AttendeeFormFailure<T> {
+  const factory AttendeeVendorCouldNotBeCreated() =
+      _$AttendeeVendorCouldNotBeCreated<T>;
+  const AttendeeVendorCouldNotBeCreated._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AttendeePartnerCouldNotBeCreatedCopyWith<T, $Res> {
+  factory _$$AttendeePartnerCouldNotBeCreatedCopyWith(
+          _$AttendeePartnerCouldNotBeCreated<T> value,
+          $Res Function(_$AttendeePartnerCouldNotBeCreated<T>) then) =
+      __$$AttendeePartnerCouldNotBeCreatedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AttendeePartnerCouldNotBeCreatedCopyWithImpl<T, $Res>
+    extends _$AttendeeFormFailureCopyWithImpl<T, $Res>
+    implements _$$AttendeePartnerCouldNotBeCreatedCopyWith<T, $Res> {
+  __$$AttendeePartnerCouldNotBeCreatedCopyWithImpl(
+      _$AttendeePartnerCouldNotBeCreated<T> _value,
+      $Res Function(_$AttendeePartnerCouldNotBeCreated<T>) _then)
+      : super(_value, (v) => _then(v as _$AttendeePartnerCouldNotBeCreated<T>));
+
+  @override
+  _$AttendeePartnerCouldNotBeCreated<T> get _value =>
+      super._value as _$AttendeePartnerCouldNotBeCreated<T>;
+}
+
+/// @nodoc
+
+class _$AttendeePartnerCouldNotBeCreated<T>
+    extends AttendeePartnerCouldNotBeCreated<T> {
+  const _$AttendeePartnerCouldNotBeCreated() : super._();
+
+  @override
+  String toString() {
+    return 'AttendeeFormFailure<$T>.attendeePartnerCouldNotBeCreated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttendeePartnerCouldNotBeCreated<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failed) attendeeServerError,
+    required TResult Function() attendeePermissionDenied,
+    required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
+    required TResult Function() ticketsNoLongerAvailable,
+    required TResult Function() passesNoLongerAvailable,
+    required TResult Function() attendeePaymentResultError,
+    required TResult Function() attendeeWaitingForPaymentConfirmation,
+    required TResult Function() attendeePaymentMethodFailed,
+  }) {
+    return attendeePartnerCouldNotBeCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+  }) {
+    return attendeePartnerCouldNotBeCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeePartnerCouldNotBeCreated != null) {
+      return attendeePartnerCouldNotBeCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AttendeeServerError<T> value) attendeeServerError,
+    required TResult Function(AttendeePermissionDenied<T> value)
+        attendeePermissionDenied,
+    required TResult Function(AttendeeFirebaseError<T> value)
+        attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
+    required TResult Function(TicketsNoLongerAvailable<T> value)
+        ticketsNoLongerAvailable,
+    required TResult Function(PassesNoLongerAvailable<T> value)
+        passesNoLongerAvailable,
+    required TResult Function(AttendeePaymentResultError<T> value)
+        attendeePaymentResultError,
+    required TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)
+        attendeeWaitingForPaymentConfirmation,
+    required TResult Function(AttendeePaymentMethodFailed<T> value)
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeePartnerCouldNotBeCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeePartnerCouldNotBeCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeePartnerCouldNotBeCreated != null) {
+      return attendeePartnerCouldNotBeCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AttendeePartnerCouldNotBeCreated<T>
+    extends AttendeeFormFailure<T> {
+  const factory AttendeePartnerCouldNotBeCreated() =
+      _$AttendeePartnerCouldNotBeCreated<T>;
+  const AttendeePartnerCouldNotBeCreated._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AttendeeInstructorCouldNotBeCreatedCopyWith<T, $Res> {
+  factory _$$AttendeeInstructorCouldNotBeCreatedCopyWith(
+          _$AttendeeInstructorCouldNotBeCreated<T> value,
+          $Res Function(_$AttendeeInstructorCouldNotBeCreated<T>) then) =
+      __$$AttendeeInstructorCouldNotBeCreatedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AttendeeInstructorCouldNotBeCreatedCopyWithImpl<T, $Res>
+    extends _$AttendeeFormFailureCopyWithImpl<T, $Res>
+    implements _$$AttendeeInstructorCouldNotBeCreatedCopyWith<T, $Res> {
+  __$$AttendeeInstructorCouldNotBeCreatedCopyWithImpl(
+      _$AttendeeInstructorCouldNotBeCreated<T> _value,
+      $Res Function(_$AttendeeInstructorCouldNotBeCreated<T>) _then)
+      : super(_value,
+            (v) => _then(v as _$AttendeeInstructorCouldNotBeCreated<T>));
+
+  @override
+  _$AttendeeInstructorCouldNotBeCreated<T> get _value =>
+      super._value as _$AttendeeInstructorCouldNotBeCreated<T>;
+}
+
+/// @nodoc
+
+class _$AttendeeInstructorCouldNotBeCreated<T>
+    extends AttendeeInstructorCouldNotBeCreated<T> {
+  const _$AttendeeInstructorCouldNotBeCreated() : super._();
+
+  @override
+  String toString() {
+    return 'AttendeeFormFailure<$T>.attendeeInstructorCouldNotBeCreated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttendeeInstructorCouldNotBeCreated<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failed) attendeeServerError,
+    required TResult Function() attendeePermissionDenied,
+    required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
+    required TResult Function() ticketsNoLongerAvailable,
+    required TResult Function() passesNoLongerAvailable,
+    required TResult Function() attendeePaymentResultError,
+    required TResult Function() attendeeWaitingForPaymentConfirmation,
+    required TResult Function() attendeePaymentMethodFailed,
+  }) {
+    return attendeeInstructorCouldNotBeCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+  }) {
+    return attendeeInstructorCouldNotBeCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeInstructorCouldNotBeCreated != null) {
+      return attendeeInstructorCouldNotBeCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AttendeeServerError<T> value) attendeeServerError,
+    required TResult Function(AttendeePermissionDenied<T> value)
+        attendeePermissionDenied,
+    required TResult Function(AttendeeFirebaseError<T> value)
+        attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
+    required TResult Function(TicketsNoLongerAvailable<T> value)
+        ticketsNoLongerAvailable,
+    required TResult Function(PassesNoLongerAvailable<T> value)
+        passesNoLongerAvailable,
+    required TResult Function(AttendeePaymentResultError<T> value)
+        attendeePaymentResultError,
+    required TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)
+        attendeeWaitingForPaymentConfirmation,
+    required TResult Function(AttendeePaymentMethodFailed<T> value)
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeInstructorCouldNotBeCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeInstructorCouldNotBeCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeInstructorCouldNotBeCreated != null) {
+      return attendeeInstructorCouldNotBeCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AttendeeInstructorCouldNotBeCreated<T>
+    extends AttendeeFormFailure<T> {
+  const factory AttendeeInstructorCouldNotBeCreated() =
+      _$AttendeeInstructorCouldNotBeCreated<T>;
+  const AttendeeInstructorCouldNotBeCreated._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AttendeeLimitReachedCopyWith<T, $Res> {
+  factory _$$AttendeeLimitReachedCopyWith(_$AttendeeLimitReached<T> value,
+          $Res Function(_$AttendeeLimitReached<T>) then) =
+      __$$AttendeeLimitReachedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AttendeeLimitReachedCopyWithImpl<T, $Res>
+    extends _$AttendeeFormFailureCopyWithImpl<T, $Res>
+    implements _$$AttendeeLimitReachedCopyWith<T, $Res> {
+  __$$AttendeeLimitReachedCopyWithImpl(_$AttendeeLimitReached<T> _value,
+      $Res Function(_$AttendeeLimitReached<T>) _then)
+      : super(_value, (v) => _then(v as _$AttendeeLimitReached<T>));
+
+  @override
+  _$AttendeeLimitReached<T> get _value =>
+      super._value as _$AttendeeLimitReached<T>;
+}
+
+/// @nodoc
+
+class _$AttendeeLimitReached<T> extends AttendeeLimitReached<T> {
+  const _$AttendeeLimitReached() : super._();
+
+  @override
+  String toString() {
+    return 'AttendeeFormFailure<$T>.attendeeLimitReached()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttendeeLimitReached<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failed) attendeeServerError,
+    required TResult Function() attendeePermissionDenied,
+    required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
+    required TResult Function() ticketsNoLongerAvailable,
+    required TResult Function() passesNoLongerAvailable,
+    required TResult Function() attendeePaymentResultError,
+    required TResult Function() attendeeWaitingForPaymentConfirmation,
+    required TResult Function() attendeePaymentMethodFailed,
+  }) {
+    return attendeeLimitReached();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+  }) {
+    return attendeeLimitReached?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeLimitReached != null) {
+      return attendeeLimitReached();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AttendeeServerError<T> value) attendeeServerError,
+    required TResult Function(AttendeePermissionDenied<T> value)
+        attendeePermissionDenied,
+    required TResult Function(AttendeeFirebaseError<T> value)
+        attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
+    required TResult Function(TicketsNoLongerAvailable<T> value)
+        ticketsNoLongerAvailable,
+    required TResult Function(PassesNoLongerAvailable<T> value)
+        passesNoLongerAvailable,
+    required TResult Function(AttendeePaymentResultError<T> value)
+        attendeePaymentResultError,
+    required TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)
+        attendeeWaitingForPaymentConfirmation,
+    required TResult Function(AttendeePaymentMethodFailed<T> value)
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeLimitReached(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+  }) {
+    return attendeeLimitReached?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (attendeeLimitReached != null) {
+      return attendeeLimitReached(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AttendeeLimitReached<T> extends AttendeeFormFailure<T> {
+  const factory AttendeeLimitReached() = _$AttendeeLimitReached<T>;
+  const AttendeeLimitReached._() : super._();
+}
+
+/// @nodoc
+abstract class _$$TicketLimitReachedCopyWith<T, $Res> {
+  factory _$$TicketLimitReachedCopyWith(_$TicketLimitReached<T> value,
+          $Res Function(_$TicketLimitReached<T>) then) =
+      __$$TicketLimitReachedCopyWithImpl<T, $Res>;
+  $Res call({ActivityTicketOption? failedTicket, int? ticketsRemaining});
+
+  $ActivityTicketOptionCopyWith<$Res>? get failedTicket;
+}
+
+/// @nodoc
+class __$$TicketLimitReachedCopyWithImpl<T, $Res>
+    extends _$AttendeeFormFailureCopyWithImpl<T, $Res>
+    implements _$$TicketLimitReachedCopyWith<T, $Res> {
+  __$$TicketLimitReachedCopyWithImpl(_$TicketLimitReached<T> _value,
+      $Res Function(_$TicketLimitReached<T>) _then)
+      : super(_value, (v) => _then(v as _$TicketLimitReached<T>));
+
+  @override
+  _$TicketLimitReached<T> get _value => super._value as _$TicketLimitReached<T>;
+
+  @override
+  $Res call({
+    Object? failedTicket = freezed,
+    Object? ticketsRemaining = freezed,
+  }) {
+    return _then(_$TicketLimitReached<T>(
+      failedTicket == freezed
+          ? _value.failedTicket
+          : failedTicket // ignore: cast_nullable_to_non_nullable
+              as ActivityTicketOption?,
+      ticketsRemaining == freezed
+          ? _value.ticketsRemaining
+          : ticketsRemaining // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+
+  @override
+  $ActivityTicketOptionCopyWith<$Res>? get failedTicket {
+    if (_value.failedTicket == null) {
+      return null;
+    }
+
+    return $ActivityTicketOptionCopyWith<$Res>(_value.failedTicket!, (value) {
+      return _then(_value.copyWith(failedTicket: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TicketLimitReached<T> extends TicketLimitReached<T> {
+  const _$TicketLimitReached(this.failedTicket, this.ticketsRemaining)
+      : super._();
+
+  @override
+  final ActivityTicketOption? failedTicket;
+  @override
+  final int? ticketsRemaining;
+
+  @override
+  String toString() {
+    return 'AttendeeFormFailure<$T>.ticketLimitReached(failedTicket: $failedTicket, ticketsRemaining: $ticketsRemaining)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TicketLimitReached<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedTicket, failedTicket) &&
+            const DeepCollectionEquality()
+                .equals(other.ticketsRemaining, ticketsRemaining));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(failedTicket),
+      const DeepCollectionEquality().hash(ticketsRemaining));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$TicketLimitReachedCopyWith<T, _$TicketLimitReached<T>> get copyWith =>
+      __$$TicketLimitReachedCopyWithImpl<T, _$TicketLimitReached<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failed) attendeeServerError,
+    required TResult Function() attendeePermissionDenied,
+    required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
+    required TResult Function() ticketsNoLongerAvailable,
+    required TResult Function() passesNoLongerAvailable,
+    required TResult Function() attendeePaymentResultError,
+    required TResult Function() attendeeWaitingForPaymentConfirmation,
+    required TResult Function() attendeePaymentMethodFailed,
+  }) {
+    return ticketLimitReached(failedTicket, ticketsRemaining);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+  }) {
+    return ticketLimitReached?.call(failedTicket, ticketsRemaining);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failed)? attendeeServerError,
+    TResult Function()? attendeePermissionDenied,
+    TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
+    TResult Function()? ticketsNoLongerAvailable,
+    TResult Function()? passesNoLongerAvailable,
+    TResult Function()? attendeePaymentResultError,
+    TResult Function()? attendeeWaitingForPaymentConfirmation,
+    TResult Function()? attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (ticketLimitReached != null) {
+      return ticketLimitReached(failedTicket, ticketsRemaining);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AttendeeServerError<T> value) attendeeServerError,
+    required TResult Function(AttendeePermissionDenied<T> value)
+        attendeePermissionDenied,
+    required TResult Function(AttendeeFirebaseError<T> value)
+        attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
+    required TResult Function(TicketsNoLongerAvailable<T> value)
+        ticketsNoLongerAvailable,
+    required TResult Function(PassesNoLongerAvailable<T> value)
+        passesNoLongerAvailable,
+    required TResult Function(AttendeePaymentResultError<T> value)
+        attendeePaymentResultError,
+    required TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)
+        attendeeWaitingForPaymentConfirmation,
+    required TResult Function(AttendeePaymentMethodFailed<T> value)
+        attendeePaymentMethodFailed,
+  }) {
+    return ticketLimitReached(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+  }) {
+    return ticketLimitReached?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AttendeeServerError<T> value)? attendeeServerError,
+    TResult Function(AttendeePermissionDenied<T> value)?
+        attendeePermissionDenied,
+    TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
+    TResult Function(TicketsNoLongerAvailable<T> value)?
+        ticketsNoLongerAvailable,
+    TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
+    TResult Function(AttendeePaymentResultError<T> value)?
+        attendeePaymentResultError,
+    TResult Function(AttendeeWaitingForPaymentConfirmation<T> value)?
+        attendeeWaitingForPaymentConfirmation,
+    TResult Function(AttendeePaymentMethodFailed<T> value)?
+        attendeePaymentMethodFailed,
+    required TResult orElse(),
+  }) {
+    if (ticketLimitReached != null) {
+      return ticketLimitReached(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TicketLimitReached<T> extends AttendeeFormFailure<T> {
+  const factory TicketLimitReached(final ActivityTicketOption? failedTicket,
+      final int? ticketsRemaining) = _$TicketLimitReached<T>;
+  const TicketLimitReached._() : super._();
+
+  ActivityTicketOption? get failedTicket;
+  int? get ticketsRemaining;
+  @JsonKey(ignore: true)
+  _$$TicketLimitReachedCopyWith<T, _$TicketLimitReached<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -22535,6 +24199,13 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22550,6 +24221,12 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22565,6 +24242,12 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22586,6 +24269,15 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22607,6 +24299,14 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22627,6 +24327,14 @@ class _$TicketsNoLongerAvailable<T> extends TicketsNoLongerAvailable<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22696,6 +24404,13 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22711,6 +24426,12 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22726,6 +24447,12 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22747,6 +24474,15 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22768,6 +24504,14 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22788,6 +24532,14 @@ class _$PassesNoLongerAvailable<T> extends PassesNoLongerAvailable<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22859,6 +24611,13 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -22874,6 +24633,12 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22889,6 +24654,12 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -22910,6 +24681,15 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -22931,6 +24711,14 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -22951,6 +24739,14 @@ class _$AttendeePaymentResultError<T> extends AttendeePaymentResultError<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -23024,6 +24820,13 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -23039,6 +24842,12 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -23054,6 +24863,12 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -23075,6 +24890,15 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -23096,6 +24920,14 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -23116,6 +24948,14 @@ class _$AttendeeWaitingForPaymentConfirmation<T>
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -23189,6 +25029,13 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
     required TResult Function(String? failed) attendeeServerError,
     required TResult Function() attendeePermissionDenied,
     required TResult Function(String? failed) attendeeFirebaseError,
+    required TResult Function() attendeeVendorCouldNotBeCreated,
+    required TResult Function() attendeePartnerCouldNotBeCreated,
+    required TResult Function() attendeeInstructorCouldNotBeCreated,
+    required TResult Function() attendeeLimitReached,
+    required TResult Function(
+            ActivityTicketOption? failedTicket, int? ticketsRemaining)
+        ticketLimitReached,
     required TResult Function() ticketsNoLongerAvailable,
     required TResult Function() passesNoLongerAvailable,
     required TResult Function() attendeePaymentResultError,
@@ -23204,6 +25051,12 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -23219,6 +25072,12 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
     TResult Function(String? failed)? attendeeServerError,
     TResult Function()? attendeePermissionDenied,
     TResult Function(String? failed)? attendeeFirebaseError,
+    TResult Function()? attendeeVendorCouldNotBeCreated,
+    TResult Function()? attendeePartnerCouldNotBeCreated,
+    TResult Function()? attendeeInstructorCouldNotBeCreated,
+    TResult Function()? attendeeLimitReached,
+    TResult Function(ActivityTicketOption? failedTicket, int? ticketsRemaining)?
+        ticketLimitReached,
     TResult Function()? ticketsNoLongerAvailable,
     TResult Function()? passesNoLongerAvailable,
     TResult Function()? attendeePaymentResultError,
@@ -23240,6 +25099,15 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
         attendeePermissionDenied,
     required TResult Function(AttendeeFirebaseError<T> value)
         attendeeFirebaseError,
+    required TResult Function(AttendeeVendorCouldNotBeCreated<T> value)
+        attendeeVendorCouldNotBeCreated,
+    required TResult Function(AttendeePartnerCouldNotBeCreated<T> value)
+        attendeePartnerCouldNotBeCreated,
+    required TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)
+        attendeeInstructorCouldNotBeCreated,
+    required TResult Function(AttendeeLimitReached<T> value)
+        attendeeLimitReached,
+    required TResult Function(TicketLimitReached<T> value) ticketLimitReached,
     required TResult Function(TicketsNoLongerAvailable<T> value)
         ticketsNoLongerAvailable,
     required TResult Function(PassesNoLongerAvailable<T> value)
@@ -23261,6 +25129,14 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -23281,6 +25157,14 @@ class _$AttendeePaymentMethodFailed<T> extends AttendeePaymentMethodFailed<T> {
     TResult Function(AttendeePermissionDenied<T> value)?
         attendeePermissionDenied,
     TResult Function(AttendeeFirebaseError<T> value)? attendeeFirebaseError,
+    TResult Function(AttendeeVendorCouldNotBeCreated<T> value)?
+        attendeeVendorCouldNotBeCreated,
+    TResult Function(AttendeePartnerCouldNotBeCreated<T> value)?
+        attendeePartnerCouldNotBeCreated,
+    TResult Function(AttendeeInstructorCouldNotBeCreated<T> value)?
+        attendeeInstructorCouldNotBeCreated,
+    TResult Function(AttendeeLimitReached<T> value)? attendeeLimitReached,
+    TResult Function(TicketLimitReached<T> value)? ticketLimitReached,
     TResult Function(TicketsNoLongerAvailable<T> value)?
         ticketsNoLongerAvailable,
     TResult Function(PassesNoLongerAvailable<T> value)? passesNoLongerAvailable,
@@ -23303,6 +25187,712 @@ abstract class AttendeePaymentMethodFailed<T> extends AttendeeFormFailure<T> {
   const factory AttendeePaymentMethodFailed() =
       _$AttendeePaymentMethodFailed<T>;
   const AttendeePaymentMethodFailed._() : super._();
+}
+
+/// @nodoc
+mixin _$TicketItem {
+  UniqueId get ticketId => throw _privateConstructorUsedError;
+  UniqueId get selectedTicketId => throw _privateConstructorUsedError;
+  UniqueId get ticketOwner => throw _privateConstructorUsedError;
+  int get selectedTicketFee => throw _privateConstructorUsedError;
+  bool get isOnHold => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  int get expiresAt => throw _privateConstructorUsedError;
+  String? get selectedTicketTitle => throw _privateConstructorUsedError;
+  ReservationSlotItem? get selectedReservationSlot =>
+      throw _privateConstructorUsedError;
+  ReservationTimeFeeSlotItem? get selectedReservationTimeSlot =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TicketItemCopyWith<TicketItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TicketItemCopyWith<$Res> {
+  factory $TicketItemCopyWith(
+          TicketItem value, $Res Function(TicketItem) then) =
+      _$TicketItemCopyWithImpl<$Res>;
+  $Res call(
+      {UniqueId ticketId,
+      UniqueId selectedTicketId,
+      UniqueId ticketOwner,
+      int selectedTicketFee,
+      bool isOnHold,
+      DateTime createdAt,
+      int expiresAt,
+      String? selectedTicketTitle,
+      ReservationSlotItem? selectedReservationSlot,
+      ReservationTimeFeeSlotItem? selectedReservationTimeSlot});
+
+  $ReservationSlotItemCopyWith<$Res>? get selectedReservationSlot;
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get selectedReservationTimeSlot;
+}
+
+/// @nodoc
+class _$TicketItemCopyWithImpl<$Res> implements $TicketItemCopyWith<$Res> {
+  _$TicketItemCopyWithImpl(this._value, this._then);
+
+  final TicketItem _value;
+  // ignore: unused_field
+  final $Res Function(TicketItem) _then;
+
+  @override
+  $Res call({
+    Object? ticketId = freezed,
+    Object? selectedTicketId = freezed,
+    Object? ticketOwner = freezed,
+    Object? selectedTicketFee = freezed,
+    Object? isOnHold = freezed,
+    Object? createdAt = freezed,
+    Object? expiresAt = freezed,
+    Object? selectedTicketTitle = freezed,
+    Object? selectedReservationSlot = freezed,
+    Object? selectedReservationTimeSlot = freezed,
+  }) {
+    return _then(_value.copyWith(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      selectedTicketId: selectedTicketId == freezed
+          ? _value.selectedTicketId
+          : selectedTicketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      ticketOwner: ticketOwner == freezed
+          ? _value.ticketOwner
+          : ticketOwner // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      selectedTicketFee: selectedTicketFee == freezed
+          ? _value.selectedTicketFee
+          : selectedTicketFee // ignore: cast_nullable_to_non_nullable
+              as int,
+      isOnHold: isOnHold == freezed
+          ? _value.isOnHold
+          : isOnHold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresAt: expiresAt == freezed
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedTicketTitle: selectedTicketTitle == freezed
+          ? _value.selectedTicketTitle
+          : selectedTicketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedReservationSlot: selectedReservationSlot == freezed
+          ? _value.selectedReservationSlot
+          : selectedReservationSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationSlotItem?,
+      selectedReservationTimeSlot: selectedReservationTimeSlot == freezed
+          ? _value.selectedReservationTimeSlot
+          : selectedReservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationTimeFeeSlotItem?,
+    ));
+  }
+
+  @override
+  $ReservationSlotItemCopyWith<$Res>? get selectedReservationSlot {
+    if (_value.selectedReservationSlot == null) {
+      return null;
+    }
+
+    return $ReservationSlotItemCopyWith<$Res>(_value.selectedReservationSlot!,
+        (value) {
+      return _then(_value.copyWith(selectedReservationSlot: value));
+    });
+  }
+
+  @override
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get selectedReservationTimeSlot {
+    if (_value.selectedReservationTimeSlot == null) {
+      return null;
+    }
+
+    return $ReservationTimeFeeSlotItemCopyWith<$Res>(
+        _value.selectedReservationTimeSlot!, (value) {
+      return _then(_value.copyWith(selectedReservationTimeSlot: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_TicketItemCopyWith<$Res>
+    implements $TicketItemCopyWith<$Res> {
+  factory _$$_TicketItemCopyWith(
+          _$_TicketItem value, $Res Function(_$_TicketItem) then) =
+      __$$_TicketItemCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {UniqueId ticketId,
+      UniqueId selectedTicketId,
+      UniqueId ticketOwner,
+      int selectedTicketFee,
+      bool isOnHold,
+      DateTime createdAt,
+      int expiresAt,
+      String? selectedTicketTitle,
+      ReservationSlotItem? selectedReservationSlot,
+      ReservationTimeFeeSlotItem? selectedReservationTimeSlot});
+
+  @override
+  $ReservationSlotItemCopyWith<$Res>? get selectedReservationSlot;
+  @override
+  $ReservationTimeFeeSlotItemCopyWith<$Res>? get selectedReservationTimeSlot;
+}
+
+/// @nodoc
+class __$$_TicketItemCopyWithImpl<$Res> extends _$TicketItemCopyWithImpl<$Res>
+    implements _$$_TicketItemCopyWith<$Res> {
+  __$$_TicketItemCopyWithImpl(
+      _$_TicketItem _value, $Res Function(_$_TicketItem) _then)
+      : super(_value, (v) => _then(v as _$_TicketItem));
+
+  @override
+  _$_TicketItem get _value => super._value as _$_TicketItem;
+
+  @override
+  $Res call({
+    Object? ticketId = freezed,
+    Object? selectedTicketId = freezed,
+    Object? ticketOwner = freezed,
+    Object? selectedTicketFee = freezed,
+    Object? isOnHold = freezed,
+    Object? createdAt = freezed,
+    Object? expiresAt = freezed,
+    Object? selectedTicketTitle = freezed,
+    Object? selectedReservationSlot = freezed,
+    Object? selectedReservationTimeSlot = freezed,
+  }) {
+    return _then(_$_TicketItem(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      selectedTicketId: selectedTicketId == freezed
+          ? _value.selectedTicketId
+          : selectedTicketId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      ticketOwner: ticketOwner == freezed
+          ? _value.ticketOwner
+          : ticketOwner // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      selectedTicketFee: selectedTicketFee == freezed
+          ? _value.selectedTicketFee
+          : selectedTicketFee // ignore: cast_nullable_to_non_nullable
+              as int,
+      isOnHold: isOnHold == freezed
+          ? _value.isOnHold
+          : isOnHold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresAt: expiresAt == freezed
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedTicketTitle: selectedTicketTitle == freezed
+          ? _value.selectedTicketTitle
+          : selectedTicketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedReservationSlot: selectedReservationSlot == freezed
+          ? _value.selectedReservationSlot
+          : selectedReservationSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationSlotItem?,
+      selectedReservationTimeSlot: selectedReservationTimeSlot == freezed
+          ? _value.selectedReservationTimeSlot
+          : selectedReservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as ReservationTimeFeeSlotItem?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TicketItem extends _TicketItem {
+  _$_TicketItem(
+      {required this.ticketId,
+      required this.selectedTicketId,
+      required this.ticketOwner,
+      required this.selectedTicketFee,
+      required this.isOnHold,
+      required this.createdAt,
+      required this.expiresAt,
+      this.selectedTicketTitle,
+      this.selectedReservationSlot,
+      this.selectedReservationTimeSlot})
+      : super._();
+
+  @override
+  final UniqueId ticketId;
+  @override
+  final UniqueId selectedTicketId;
+  @override
+  final UniqueId ticketOwner;
+  @override
+  final int selectedTicketFee;
+  @override
+  final bool isOnHold;
+  @override
+  final DateTime createdAt;
+  @override
+  final int expiresAt;
+  @override
+  final String? selectedTicketTitle;
+  @override
+  final ReservationSlotItem? selectedReservationSlot;
+  @override
+  final ReservationTimeFeeSlotItem? selectedReservationTimeSlot;
+
+  @override
+  String toString() {
+    return 'TicketItem(ticketId: $ticketId, selectedTicketId: $selectedTicketId, ticketOwner: $ticketOwner, selectedTicketFee: $selectedTicketFee, isOnHold: $isOnHold, createdAt: $createdAt, expiresAt: $expiresAt, selectedTicketTitle: $selectedTicketTitle, selectedReservationSlot: $selectedReservationSlot, selectedReservationTimeSlot: $selectedReservationTimeSlot)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TicketItem &&
+            const DeepCollectionEquality().equals(other.ticketId, ticketId) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketId, selectedTicketId) &&
+            const DeepCollectionEquality()
+                .equals(other.ticketOwner, ticketOwner) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketFee, selectedTicketFee) &&
+            const DeepCollectionEquality().equals(other.isOnHold, isOnHold) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.expiresAt, expiresAt) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketTitle, selectedTicketTitle) &&
+            const DeepCollectionEquality().equals(
+                other.selectedReservationSlot, selectedReservationSlot) &&
+            const DeepCollectionEquality().equals(
+                other.selectedReservationTimeSlot,
+                selectedReservationTimeSlot));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(ticketId),
+      const DeepCollectionEquality().hash(selectedTicketId),
+      const DeepCollectionEquality().hash(ticketOwner),
+      const DeepCollectionEquality().hash(selectedTicketFee),
+      const DeepCollectionEquality().hash(isOnHold),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(expiresAt),
+      const DeepCollectionEquality().hash(selectedTicketTitle),
+      const DeepCollectionEquality().hash(selectedReservationSlot),
+      const DeepCollectionEquality().hash(selectedReservationTimeSlot));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_TicketItemCopyWith<_$_TicketItem> get copyWith =>
+      __$$_TicketItemCopyWithImpl<_$_TicketItem>(this, _$identity);
+}
+
+abstract class _TicketItem extends TicketItem {
+  factory _TicketItem(
+          {required final UniqueId ticketId,
+          required final UniqueId selectedTicketId,
+          required final UniqueId ticketOwner,
+          required final int selectedTicketFee,
+          required final bool isOnHold,
+          required final DateTime createdAt,
+          required final int expiresAt,
+          final String? selectedTicketTitle,
+          final ReservationSlotItem? selectedReservationSlot,
+          final ReservationTimeFeeSlotItem? selectedReservationTimeSlot}) =
+      _$_TicketItem;
+  _TicketItem._() : super._();
+
+  @override
+  UniqueId get ticketId;
+  @override
+  UniqueId get selectedTicketId;
+  @override
+  UniqueId get ticketOwner;
+  @override
+  int get selectedTicketFee;
+  @override
+  bool get isOnHold;
+  @override
+  DateTime get createdAt;
+  @override
+  int get expiresAt;
+  @override
+  String? get selectedTicketTitle;
+  @override
+  ReservationSlotItem? get selectedReservationSlot;
+  @override
+  ReservationTimeFeeSlotItem? get selectedReservationTimeSlot;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TicketItemCopyWith<_$_TicketItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TicketItemDto _$TicketItemDtoFromJson(Map<String, dynamic> json) {
+  return _TicketItemDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TicketItemDto {
+  String get ticketId => throw _privateConstructorUsedError;
+  String get selectedTicketId => throw _privateConstructorUsedError;
+  String get ticketOwner => throw _privateConstructorUsedError;
+  int get selectedTicketFee => throw _privateConstructorUsedError;
+  bool get isOnHold => throw _privateConstructorUsedError;
+  String get createdAt => throw _privateConstructorUsedError;
+  int get expiresAt => throw _privateConstructorUsedError;
+  String? get selectedTicketTitle => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get selectedReservationSlot =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get selectedReservationTimeSlot =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TicketItemDtoCopyWith<TicketItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TicketItemDtoCopyWith<$Res> {
+  factory $TicketItemDtoCopyWith(
+          TicketItemDto value, $Res Function(TicketItemDto) then) =
+      _$TicketItemDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String ticketId,
+      String selectedTicketId,
+      String ticketOwner,
+      int selectedTicketFee,
+      bool isOnHold,
+      String createdAt,
+      int expiresAt,
+      String? selectedTicketTitle,
+      Map<String, dynamic>? selectedReservationSlot,
+      Map<String, dynamic>? selectedReservationTimeSlot});
+}
+
+/// @nodoc
+class _$TicketItemDtoCopyWithImpl<$Res>
+    implements $TicketItemDtoCopyWith<$Res> {
+  _$TicketItemDtoCopyWithImpl(this._value, this._then);
+
+  final TicketItemDto _value;
+  // ignore: unused_field
+  final $Res Function(TicketItemDto) _then;
+
+  @override
+  $Res call({
+    Object? ticketId = freezed,
+    Object? selectedTicketId = freezed,
+    Object? ticketOwner = freezed,
+    Object? selectedTicketFee = freezed,
+    Object? isOnHold = freezed,
+    Object? createdAt = freezed,
+    Object? expiresAt = freezed,
+    Object? selectedTicketTitle = freezed,
+    Object? selectedReservationSlot = freezed,
+    Object? selectedReservationTimeSlot = freezed,
+  }) {
+    return _then(_value.copyWith(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedTicketId: selectedTicketId == freezed
+          ? _value.selectedTicketId
+          : selectedTicketId // ignore: cast_nullable_to_non_nullable
+              as String,
+      ticketOwner: ticketOwner == freezed
+          ? _value.ticketOwner
+          : ticketOwner // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedTicketFee: selectedTicketFee == freezed
+          ? _value.selectedTicketFee
+          : selectedTicketFee // ignore: cast_nullable_to_non_nullable
+              as int,
+      isOnHold: isOnHold == freezed
+          ? _value.isOnHold
+          : isOnHold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiresAt: expiresAt == freezed
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedTicketTitle: selectedTicketTitle == freezed
+          ? _value.selectedTicketTitle
+          : selectedTicketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedReservationSlot: selectedReservationSlot == freezed
+          ? _value.selectedReservationSlot
+          : selectedReservationSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      selectedReservationTimeSlot: selectedReservationTimeSlot == freezed
+          ? _value.selectedReservationTimeSlot
+          : selectedReservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_TicketItemDtoCopyWith<$Res>
+    implements $TicketItemDtoCopyWith<$Res> {
+  factory _$$_TicketItemDtoCopyWith(
+          _$_TicketItemDto value, $Res Function(_$_TicketItemDto) then) =
+      __$$_TicketItemDtoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String ticketId,
+      String selectedTicketId,
+      String ticketOwner,
+      int selectedTicketFee,
+      bool isOnHold,
+      String createdAt,
+      int expiresAt,
+      String? selectedTicketTitle,
+      Map<String, dynamic>? selectedReservationSlot,
+      Map<String, dynamic>? selectedReservationTimeSlot});
+}
+
+/// @nodoc
+class __$$_TicketItemDtoCopyWithImpl<$Res>
+    extends _$TicketItemDtoCopyWithImpl<$Res>
+    implements _$$_TicketItemDtoCopyWith<$Res> {
+  __$$_TicketItemDtoCopyWithImpl(
+      _$_TicketItemDto _value, $Res Function(_$_TicketItemDto) _then)
+      : super(_value, (v) => _then(v as _$_TicketItemDto));
+
+  @override
+  _$_TicketItemDto get _value => super._value as _$_TicketItemDto;
+
+  @override
+  $Res call({
+    Object? ticketId = freezed,
+    Object? selectedTicketId = freezed,
+    Object? ticketOwner = freezed,
+    Object? selectedTicketFee = freezed,
+    Object? isOnHold = freezed,
+    Object? createdAt = freezed,
+    Object? expiresAt = freezed,
+    Object? selectedTicketTitle = freezed,
+    Object? selectedReservationSlot = freezed,
+    Object? selectedReservationTimeSlot = freezed,
+  }) {
+    return _then(_$_TicketItemDto(
+      ticketId: ticketId == freezed
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedTicketId: selectedTicketId == freezed
+          ? _value.selectedTicketId
+          : selectedTicketId // ignore: cast_nullable_to_non_nullable
+              as String,
+      ticketOwner: ticketOwner == freezed
+          ? _value.ticketOwner
+          : ticketOwner // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedTicketFee: selectedTicketFee == freezed
+          ? _value.selectedTicketFee
+          : selectedTicketFee // ignore: cast_nullable_to_non_nullable
+              as int,
+      isOnHold: isOnHold == freezed
+          ? _value.isOnHold
+          : isOnHold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiresAt: expiresAt == freezed
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedTicketTitle: selectedTicketTitle == freezed
+          ? _value.selectedTicketTitle
+          : selectedTicketTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedReservationSlot: selectedReservationSlot == freezed
+          ? _value._selectedReservationSlot
+          : selectedReservationSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      selectedReservationTimeSlot: selectedReservationTimeSlot == freezed
+          ? _value._selectedReservationTimeSlot
+          : selectedReservationTimeSlot // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TicketItemDto extends _TicketItemDto {
+  _$_TicketItemDto(
+      {required this.ticketId,
+      required this.selectedTicketId,
+      required this.ticketOwner,
+      required this.selectedTicketFee,
+      required this.isOnHold,
+      required this.createdAt,
+      required this.expiresAt,
+      this.selectedTicketTitle,
+      final Map<String, dynamic>? selectedReservationSlot,
+      final Map<String, dynamic>? selectedReservationTimeSlot})
+      : _selectedReservationSlot = selectedReservationSlot,
+        _selectedReservationTimeSlot = selectedReservationTimeSlot,
+        super._();
+
+  factory _$_TicketItemDto.fromJson(Map<String, dynamic> json) =>
+      _$$_TicketItemDtoFromJson(json);
+
+  @override
+  final String ticketId;
+  @override
+  final String selectedTicketId;
+  @override
+  final String ticketOwner;
+  @override
+  final int selectedTicketFee;
+  @override
+  final bool isOnHold;
+  @override
+  final String createdAt;
+  @override
+  final int expiresAt;
+  @override
+  final String? selectedTicketTitle;
+  final Map<String, dynamic>? _selectedReservationSlot;
+  @override
+  Map<String, dynamic>? get selectedReservationSlot {
+    final value = _selectedReservationSlot;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _selectedReservationTimeSlot;
+  @override
+  Map<String, dynamic>? get selectedReservationTimeSlot {
+    final value = _selectedReservationTimeSlot;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'TicketItemDto(ticketId: $ticketId, selectedTicketId: $selectedTicketId, ticketOwner: $ticketOwner, selectedTicketFee: $selectedTicketFee, isOnHold: $isOnHold, createdAt: $createdAt, expiresAt: $expiresAt, selectedTicketTitle: $selectedTicketTitle, selectedReservationSlot: $selectedReservationSlot, selectedReservationTimeSlot: $selectedReservationTimeSlot)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TicketItemDto &&
+            const DeepCollectionEquality().equals(other.ticketId, ticketId) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketId, selectedTicketId) &&
+            const DeepCollectionEquality()
+                .equals(other.ticketOwner, ticketOwner) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketFee, selectedTicketFee) &&
+            const DeepCollectionEquality().equals(other.isOnHold, isOnHold) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.expiresAt, expiresAt) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTicketTitle, selectedTicketTitle) &&
+            const DeepCollectionEquality().equals(
+                other._selectedReservationSlot, _selectedReservationSlot) &&
+            const DeepCollectionEquality().equals(
+                other._selectedReservationTimeSlot,
+                _selectedReservationTimeSlot));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(ticketId),
+      const DeepCollectionEquality().hash(selectedTicketId),
+      const DeepCollectionEquality().hash(ticketOwner),
+      const DeepCollectionEquality().hash(selectedTicketFee),
+      const DeepCollectionEquality().hash(isOnHold),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(expiresAt),
+      const DeepCollectionEquality().hash(selectedTicketTitle),
+      const DeepCollectionEquality().hash(_selectedReservationSlot),
+      const DeepCollectionEquality().hash(_selectedReservationTimeSlot));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_TicketItemDtoCopyWith<_$_TicketItemDto> get copyWith =>
+      __$$_TicketItemDtoCopyWithImpl<_$_TicketItemDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TicketItemDtoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TicketItemDto extends TicketItemDto {
+  factory _TicketItemDto(
+          {required final String ticketId,
+          required final String selectedTicketId,
+          required final String ticketOwner,
+          required final int selectedTicketFee,
+          required final bool isOnHold,
+          required final String createdAt,
+          required final int expiresAt,
+          final String? selectedTicketTitle,
+          final Map<String, dynamic>? selectedReservationSlot,
+          final Map<String, dynamic>? selectedReservationTimeSlot}) =
+      _$_TicketItemDto;
+  _TicketItemDto._() : super._();
+
+  factory _TicketItemDto.fromJson(Map<String, dynamic> json) =
+      _$_TicketItemDto.fromJson;
+
+  @override
+  String get ticketId;
+  @override
+  String get selectedTicketId;
+  @override
+  String get ticketOwner;
+  @override
+  int get selectedTicketFee;
+  @override
+  bool get isOnHold;
+  @override
+  String get createdAt;
+  @override
+  int get expiresAt;
+  @override
+  String? get selectedTicketTitle;
+  @override
+  Map<String, dynamic>? get selectedReservationSlot;
+  @override
+  Map<String, dynamic>? get selectedReservationTimeSlot;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TicketItemDtoCopyWith<_$_TicketItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

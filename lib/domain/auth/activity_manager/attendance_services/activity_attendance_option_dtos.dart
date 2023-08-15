@@ -13,6 +13,8 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
     bool? isPassBased,
 
     bool? isTicketFixed,
+    bool? isTicketPerSlotBased,
+
     bool? isPassesFixed,
     Map<String, dynamic>? defaultActivityTickets,
     Map<String, dynamic>? defaultActivityPass,
@@ -28,12 +30,12 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
       isTicketBased: attendance.isTicketBased,
       isPassBased: attendance.isPassBased,
       isTicketFixed: attendance.isTicketFixed,
+      isTicketPerSlotBased: attendance.isTicketPerSlotBased,
       isPassesFixed: attendance.isPassesFixed,
       defaultActivityTickets: (attendance.defaultActivityTickets != null) ? ActivityTicketOptionDto.fromDomain(attendance.defaultActivityTickets!).toJson() : null,
       defaultActivityPass: (attendance.defaultActivityPass != null) ? ActivityPassesOptionDto.fromDomain(attendance.defaultActivityPass!).toJson() : null,
       activityTickets: (attendance.activityTickets != null) ? attendance.activityTickets!.map((e) => ActivityTicketOptionDto.fromDomain(e).toJson()).toList() : null,
       activityPasses: (attendance.activityPasses != null) ? attendance.activityPasses!.map((e) => ActivityPassesOptionDto.fromDomain(e).toJson()).toList() : null,
-
     );
   }
 
@@ -44,6 +46,7 @@ class ActivityAttendanceDto with _$ActivityAttendanceDto {
       isTicketBased: isTicketBased,
       isPassBased: isPassBased,
       isTicketFixed: isTicketFixed,
+      isTicketPerSlotBased: isTicketPerSlotBased,
       isPassesFixed: isPassesFixed,
       defaultActivityTickets: (defaultActivityTickets != null) ? ActivityTicketOptionDto.fromJson(defaultActivityTickets!).toDomain() : null,
       defaultActivityPass: (activityPasses != null) ? ActivityPassesOptionDto.fromJson(defaultActivityPass!).toDomain() : null,

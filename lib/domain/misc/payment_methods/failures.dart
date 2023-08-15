@@ -15,7 +15,7 @@ class PaymentMethodValueFailure<T> with _$PaymentMethodValueFailure<T> {
 
   const factory PaymentMethodValueFailure.insufficientFunds() = InsufficientFunds;
   const factory PaymentMethodValueFailure.requiresMoreAction(String? paymentIntent) = RequiresMoreAction<T>;
-
+  const factory PaymentMethodValueFailure.ownerDoesNotHaveAccount() = OwnerDoesNotHaveAccount;
 
   const factory PaymentMethodValueFailure.couldNotRetrievePaymentMethod() = CouldNotRetrievePaymentMethod;
 
