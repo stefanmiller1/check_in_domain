@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'preview_data.dart';
 
@@ -30,7 +30,8 @@ mixin _$PreviewData {
 abstract class $PreviewDataCopyWith<$Res> {
   factory $PreviewDataCopyWith(
           PreviewData value, $Res Function(PreviewData) then) =
-      _$PreviewDataCopyWithImpl<$Res>;
+      _$PreviewDataCopyWithImpl<$Res, PreviewData>;
+  @useResult
   $Res call(
       {String? description,
       PreviewDataImage? image,
@@ -41,13 +42,16 @@ abstract class $PreviewDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PreviewDataCopyWithImpl<$Res> implements $PreviewDataCopyWith<$Res> {
+class _$PreviewDataCopyWithImpl<$Res, $Val extends PreviewData>
+    implements $PreviewDataCopyWith<$Res> {
   _$PreviewDataCopyWithImpl(this._value, this._then);
 
-  final PreviewData _value;
   // ignore: unused_field
-  final $Res Function(PreviewData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? description = freezed,
@@ -56,33 +60,34 @@ class _$PreviewDataCopyWithImpl<$Res> implements $PreviewDataCopyWith<$Res> {
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as PreviewDataImage?,
-      link: link == freezed
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PreviewDataImageCopyWith<$Res>? get image {
     if (_value.image == null) {
       return null;
     }
 
     return $PreviewDataImageCopyWith<$Res>(_value.image!, (value) {
-      return _then(_value.copyWith(image: value));
+      return _then(_value.copyWith(image: value) as $Val);
     });
   }
 }
@@ -94,6 +99,7 @@ abstract class _$$_PreviewDataCopyWith<$Res>
           _$_PreviewData value, $Res Function(_$_PreviewData) then) =
       __$$_PreviewDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? description,
       PreviewDataImage? image,
@@ -105,15 +111,14 @@ abstract class _$$_PreviewDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PreviewDataCopyWithImpl<$Res> extends _$PreviewDataCopyWithImpl<$Res>
+class __$$_PreviewDataCopyWithImpl<$Res>
+    extends _$PreviewDataCopyWithImpl<$Res, _$_PreviewData>
     implements _$$_PreviewDataCopyWith<$Res> {
   __$$_PreviewDataCopyWithImpl(
       _$_PreviewData _value, $Res Function(_$_PreviewData) _then)
-      : super(_value, (v) => _then(v as _$_PreviewData));
+      : super(_value, _then);
 
-  @override
-  _$_PreviewData get _value => super._value as _$_PreviewData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? description = freezed,
@@ -122,19 +127,19 @@ class __$$_PreviewDataCopyWithImpl<$Res> extends _$PreviewDataCopyWithImpl<$Res>
     Object? title = freezed,
   }) {
     return _then(_$_PreviewData(
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as PreviewDataImage?,
-      link: link == freezed
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -167,23 +172,19 @@ class _$_PreviewData extends _PreviewData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PreviewData &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.title, title));
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(title));
+  int get hashCode => Object.hash(runtimeType, description, image, link, title);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PreviewDataCopyWith<_$_PreviewData> get copyWith =>
       __$$_PreviewDataCopyWithImpl<_$_PreviewData>(this, _$identity);
 }
@@ -225,39 +226,42 @@ mixin _$PreviewDataImage {
 abstract class $PreviewDataImageCopyWith<$Res> {
   factory $PreviewDataImageCopyWith(
           PreviewDataImage value, $Res Function(PreviewDataImage) then) =
-      _$PreviewDataImageCopyWithImpl<$Res>;
+      _$PreviewDataImageCopyWithImpl<$Res, PreviewDataImage>;
+  @useResult
   $Res call({String url, double height, double width});
 }
 
 /// @nodoc
-class _$PreviewDataImageCopyWithImpl<$Res>
+class _$PreviewDataImageCopyWithImpl<$Res, $Val extends PreviewDataImage>
     implements $PreviewDataImageCopyWith<$Res> {
   _$PreviewDataImageCopyWithImpl(this._value, this._then);
 
-  final PreviewDataImage _value;
   // ignore: unused_field
-  final $Res Function(PreviewDataImage) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? url = null,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -268,36 +272,35 @@ abstract class _$$_PreviewDataImageCopyWith<$Res>
           _$_PreviewDataImage value, $Res Function(_$_PreviewDataImage) then) =
       __$$_PreviewDataImageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String url, double height, double width});
 }
 
 /// @nodoc
 class __$$_PreviewDataImageCopyWithImpl<$Res>
-    extends _$PreviewDataImageCopyWithImpl<$Res>
+    extends _$PreviewDataImageCopyWithImpl<$Res, _$_PreviewDataImage>
     implements _$$_PreviewDataImageCopyWith<$Res> {
   __$$_PreviewDataImageCopyWithImpl(
       _$_PreviewDataImage _value, $Res Function(_$_PreviewDataImage) _then)
-      : super(_value, (v) => _then(v as _$_PreviewDataImage));
+      : super(_value, _then);
 
-  @override
-  _$_PreviewDataImage get _value => super._value as _$_PreviewDataImage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? url = null,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_$_PreviewDataImage(
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
@@ -329,20 +332,17 @@ class _$_PreviewDataImage extends _PreviewDataImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PreviewDataImage &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width));
+  int get hashCode => Object.hash(runtimeType, url, height, width);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PreviewDataImageCopyWith<_$_PreviewDataImage> get copyWith =>
       __$$_PreviewDataImageCopyWithImpl<_$_PreviewDataImage>(this, _$identity);
 }

@@ -30,6 +30,7 @@ class PostDto with _$PostDto {
     String? status,
     required String type,
     String? updatedAt,
+    int? likesCount,
     Map<String, dynamic>? previewData,
     Map<String, dynamic>? audioPost,
     List<Map<String, dynamic>>? imagePost,
@@ -57,6 +58,7 @@ class PostDto with _$PostDto {
         type: post.type.toString(),
         previewData: (post.previewData != null) ? PreviewDataDto.fromDomain(post.previewData!).toJson() : null,
         updatedAt: DateTime.now().toString(),
+        likesCount: post.likesCount,
         audioPost: (post.audioPost != null) ? AudioPostDto.fromDomain(post.audioPost!).toJson() : null,
         imagePost: (post.imagePost != null && (post.imagePost?.isNotEmpty ?? false)) ? post.imagePost!.map((e) => ImagePostDto.fromDomain(e).toJson()).toList() : null,
         systemPost: (post.systemPost != null) ? SystemPostDto.fromDomain(post.systemPost!).toJson() : null,
@@ -84,6 +86,7 @@ class PostDto with _$PostDto {
         type: getType(type),
         previewData: (previewData != null) ? PreviewDataDto.fromJson(previewData!).toDomain() : null,
         updatedAt: (updatedAt != null) ? DateTime.parse(updatedAt!) : null,
+        likesCount: likesCount,
         audioPost: (audioPost != null) ? AudioPostDto.fromJson(audioPost!).toDomain() : null,
         imagePost: (imagePost != null && (imagePost?.isNotEmpty ?? false)) ? imagePost!.map((e) => ImagePostDto.fromJson(e).toDomain()).toList() : null,
         systemPost: (systemPost != null) ? SystemPostDto.fromJson(systemPost!).toDomain() : null,
@@ -101,3 +104,5 @@ class PostDto with _$PostDto {
   }
 
 }
+
+

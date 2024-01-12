@@ -15,7 +15,9 @@ _$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
       paymentStatus: json['paymentStatus'] as String,
       paymentIntentId: json['paymentIntentId'] as String,
       attendeeType: json['attendeeType'] as String,
+      invitedFrom: json['invitedFrom'] as String?,
       instanceId: json['instanceId'] as String?,
+      contactStatus: json['contactStatus'] as String?,
       attendeeDetails: json['attendeeDetails'] as Map<String, dynamic>?,
       ticketItems: (json['ticketItems'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
@@ -32,6 +34,7 @@ _$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
           json['eventMerchantVendorProfile'] as Map<String, dynamic>?,
       refundId: json['refundId'] as String?,
       receipt_link: json['receipt_link'] as String?,
+      isInterested: json['isInterested'] as bool?,
       dateCreated: json['dateCreated'] as String,
       createdAtSTC:
           const ServerTimestampConverter().fromJson(json['createdAtSTC']),
@@ -46,7 +49,9 @@ Map<String, dynamic> _$$_AttendeeItemDtoToJson(_$_AttendeeItemDto instance) =>
       'paymentStatus': instance.paymentStatus,
       'paymentIntentId': instance.paymentIntentId,
       'attendeeType': instance.attendeeType,
+      'invitedFrom': instance.invitedFrom,
       'instanceId': instance.instanceId,
+      'contactStatus': instance.contactStatus,
       'attendeeDetails': instance.attendeeDetails,
       'ticketItems': instance.ticketItems,
       'checkInSetting': instance.checkInSetting,
@@ -55,6 +60,7 @@ Map<String, dynamic> _$$_AttendeeItemDtoToJson(_$_AttendeeItemDto instance) =>
       'eventMerchantVendorProfile': instance.eventMerchantVendorProfile,
       'refundId': instance.refundId,
       'receipt_link': instance.receipt_link,
+      'isInterested': instance.isInterested,
       'dateCreated': instance.dateCreated,
       'createdAtSTC':
           const ServerTimestampConverter().toJson(instance.createdAtSTC),

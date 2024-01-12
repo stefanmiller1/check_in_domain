@@ -15,6 +15,7 @@ import 'package:intl/intl.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'dart:math';
 import 'dart:typed_data';
+import 'domain/misc/attendee_services/attendee_item/attendee_item.dart';
 
 part 'domain/auth/activity_manager/activity_type_option/value_objects.dart';
 part 'domain/auth/activity_manager/activity_type_option/activity_option.dart';
@@ -25,6 +26,8 @@ part 'domain/misc/provision_services/sponsorship_forms/sponsorship_provision_for
 part 'domain/misc/provision_services/sponsorship_forms/sponsorship_provision_form_dtos.dart';
 part 'domain/misc/calendar_service/calendar_helper_model.dart';
 part 'domain/misc/image_upload_uptions/image_uploader_object.dart';
+part 'domain/misc/pk_pass_services/pk_pass_item.dart';
+part 'domain/misc/pk_pass_services/pk_pass_item_dtos.dart';
 
 part 'injection.dart';
 
@@ -64,6 +67,7 @@ part 'domain/misc/new_contact_option/value_objects.dart';
 
 part 'domain/misc/reservation_services/reservation_item/reservation_item.dart';
 part 'domain/misc/reservation_services/reservation_item/reservation_item_dtos.dart';
+part 'domain/misc/reservation_services/reservation_preview/reservation_preview.dart';
 part 'domain/misc/reservation_services/reservation_request/cancellation_request/reservation_cancellation_request.dart';
 part 'domain/misc/reservation_services/reservation_request/cancellation_request/reservation_cancellation_request_dtos.dart';
 part 'domain/misc/reservation_services/reservation_request/reservation_request_item.dart';
@@ -74,6 +78,7 @@ part 'domain/misc/reservation_services/reservation_slot/reservation_slot_item_dt
 part 'domain/misc/reservation_services/reservation_item/value_objects.dart';
 part 'domain/misc/reservation_services/value_objects.dart';
 part 'domain/misc/reservation_services/failures.dart';
+
 
 part 'domain/misc/payment_methods/value_objects.dart';
 part 'domain/misc/payment_methods/card_model/card_item.dart';
@@ -311,9 +316,11 @@ part 'domain/auth/profile_services/failures.dart';
 part 'domain/auth/profile_services/value_validators.dart';
 
 part 'domain/auth/auth_failure.dart';
-
+part 'domain/misc/invitation_services/value_objects.dart';
 
 part 'check_in_domain.freezed.dart';
 part 'check_in_domain.g.dart';
+
+
 
 

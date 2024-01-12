@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of check_in_domain;
+part of 'check_in_domain.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -53,6 +53,40 @@ Map<String, dynamic> _$$_SponsorshipProvisionDtoToJson(
       'sponsorshipDescription': instance.sponsorshipDescription,
       'sponsorshipAgreement': instance.sponsorshipAgreement,
       'sponsorshipCriteria': instance.sponsorshipCriteria,
+    };
+
+_$_PKPassItemDto _$$_PKPassItemDtoFromJson(Map<String, dynamic> json) =>
+    _$_PKPassItemDto(
+      qrText: json['qrText'] as String,
+      codeAlt: json['codeAlt'] as String,
+      header: json['header'] as Map<String, dynamic>,
+      primary: json['primary'] as Map<String, dynamic>,
+      secondary: (json['secondary'] as List<dynamic>)
+          .map((e) => e as Map<String, dynamic>)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_PKPassItemDtoToJson(_$_PKPassItemDto instance) =>
+    <String, dynamic>{
+      'qrText': instance.qrText,
+      'codeAlt': instance.codeAlt,
+      'header': instance.header,
+      'primary': instance.primary,
+      'secondary': instance.secondary,
+    };
+
+_$_FieldItemDto _$$_FieldItemDtoFromJson(Map<String, dynamic> json) =>
+    _$_FieldItemDto(
+      label: json['label'] as String,
+      value: json['value'] as String,
+      key: json['key'] as String?,
+    );
+
+Map<String, dynamic> _$$_FieldItemDtoToJson(_$_FieldItemDto instance) =>
+    <String, dynamic>{
+      'label': instance.label,
+      'value': instance.value,
+      'key': instance.key,
     };
 
 _$_StringItemDto _$$_StringItemDtoFromJson(Map<String, dynamic> json) =>
@@ -337,6 +371,10 @@ _$_ReservationItemDto _$$_ReservationItemDtoFromJson(
       cancelledSlotItem: (json['cancelledSlotItem'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
+      firstSlotTimestamp: json['firstSlotTimestamp'] as int?,
+      lastSlotTimestamp: json['lastSlotTimestamp'] as int?,
+      reservationReview: json['reservationReview'] as int?,
+      isPublic: json['isPublic'] as bool?,
       refundId: json['refundId'] as String?,
       receipt_link: json['receipt_link'] as String?,
       isInternalProgram: json['isInternalProgram'] as bool?,
@@ -360,6 +398,10 @@ Map<String, dynamic> _$$_ReservationItemDtoToJson(
       'checkInSettings': instance.checkInSettings,
       'reservationSlotItem': instance.reservationSlotItem,
       'cancelledSlotItem': instance.cancelledSlotItem,
+      'firstSlotTimestamp': instance.firstSlotTimestamp,
+      'lastSlotTimestamp': instance.lastSlotTimestamp,
+      'reservationReview': instance.reservationReview,
+      'isPublic': instance.isPublic,
       'refundId': instance.refundId,
       'receipt_link': instance.receipt_link,
       'isInternalProgram': instance.isInternalProgram,
@@ -718,6 +760,8 @@ _$_TicketItemDto _$$_TicketItemDtoFromJson(Map<String, dynamic> json) =>
       isOnHold: json['isOnHold'] as bool,
       createdAt: json['createdAt'] as String,
       expiresAt: json['expiresAt'] as int,
+      redeemed: json['redeemed'] as bool?,
+      redeemedAt: json['redeemedAt'] as String?,
       selectedTicketTitle: json['selectedTicketTitle'] as String?,
       selectedReservationSlot:
           json['selectedReservationSlot'] as Map<String, dynamic>?,
@@ -734,6 +778,8 @@ Map<String, dynamic> _$$_TicketItemDtoToJson(_$_TicketItemDto instance) =>
       'isOnHold': instance.isOnHold,
       'createdAt': instance.createdAt,
       'expiresAt': instance.expiresAt,
+      'redeemed': instance.redeemed,
+      'redeemedAt': instance.redeemedAt,
       'selectedTicketTitle': instance.selectedTicketTitle,
       'selectedReservationSlot': instance.selectedReservationSlot,
       'selectedReservationTimeSlot': instance.selectedReservationTimeSlot,
@@ -908,6 +954,7 @@ _$_ActivityBackgroundDto _$$_ActivityBackgroundDtoFromJson(
       activityDescription1: json['activityDescription1'] as String,
       activityDescription2: json['activityDescription2'] as String?,
       isPartnersInviteOnly: json['isPartnersInviteOnly'] as bool?,
+      isInstructorInviteOnly: json['isInstructorInviteOnly'] as bool?,
       activityGoals: (json['activityGoals'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -924,6 +971,7 @@ Map<String, dynamic> _$$_ActivityBackgroundDtoToJson(
       'activityDescription1': instance.activityDescription1,
       'activityDescription2': instance.activityDescription2,
       'isPartnersInviteOnly': instance.isPartnersInviteOnly,
+      'isInstructorInviteOnly': instance.isInstructorInviteOnly,
       'activityGoals': instance.activityGoals,
       'activityInterests': instance.activityInterests,
     };
@@ -933,6 +981,8 @@ _$_EventActivityRulesRequirementDto
         _$_EventActivityRulesRequirementDto(
           isMerchantSupported: json['isMerchantSupported'] as bool,
           isMerchantInviteOnly: json['isMerchantInviteOnly'] as bool,
+          merchantFee: json['merchantFee'] as int?,
+          merchantLimit: json['merchantLimit'] as int?,
           isAlcoholForSale: json['isAlcoholForSale'] as bool,
           isFoodForSale: json['isFoodForSale'] as bool,
           isAlcoholProvided: json['isAlcoholProvided'] as bool,
@@ -949,6 +999,8 @@ Map<String, dynamic> _$$_EventActivityRulesRequirementDtoToJson(
     <String, dynamic>{
       'isMerchantSupported': instance.isMerchantSupported,
       'isMerchantInviteOnly': instance.isMerchantInviteOnly,
+      'merchantFee': instance.merchantFee,
+      'merchantLimit': instance.merchantLimit,
       'isAlcoholForSale': instance.isAlcoholForSale,
       'isFoodForSale': instance.isFoodForSale,
       'isAlcoholProvided': instance.isAlcoholProvided,
@@ -1574,6 +1626,7 @@ _$_SpaceOptionSizeDetailDto _$$_SpaceOptionSizeDetailDtoFromJson(
         Map<String, dynamic> json) =>
     _$_SpaceOptionSizeDetailDto(
       spaceId: json['spaceId'] as String,
+      durationType: json['durationType'] as int?,
       spaceTitle: json['spaceTitle'] as String?,
       spaceDescription: json['spaceDescription'] as String?,
       photoUri: json['photoUri'] as String?,
@@ -1587,6 +1640,7 @@ Map<String, dynamic> _$$_SpaceOptionSizeDetailDtoToJson(
         _$_SpaceOptionSizeDetailDto instance) =>
     <String, dynamic>{
       'spaceId': instance.spaceId,
+      'durationType': instance.durationType,
       'spaceTitle': instance.spaceTitle,
       'spaceDescription': instance.spaceDescription,
       'photoUri': instance.photoUri,
@@ -1758,8 +1812,8 @@ _$_BackgroundInfoSettingsDto _$$_BackgroundInfoSettingsDtoFromJson(
         Map<String, dynamic> json) =>
     _$_BackgroundInfoSettingsDto(
       listingOwner: json['listingOwner'] as String,
-      startDate: json['startDate'] as String,
-      endDate: json['endDate'] as String,
+      startDate: json['startDate'] as int,
+      endDate: json['endDate'] as int,
       listingName: json['listingName'] as String,
       listingDescription: json['listingDescription'] as String,
       listingEmail: json['listingEmail'] as String,

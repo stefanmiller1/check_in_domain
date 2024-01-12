@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'image_post_dtos.dart';
 
@@ -37,7 +37,8 @@ mixin _$ImagePostDto {
 abstract class $ImagePostDtoCopyWith<$Res> {
   factory $ImagePostDtoCopyWith(
           ImagePostDto value, $Res Function(ImagePostDto) then) =
-      _$ImagePostDtoCopyWithImpl<$Res>;
+      _$ImagePostDtoCopyWithImpl<$Res, ImagePostDto>;
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -48,48 +49,51 @@ abstract class $ImagePostDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ImagePostDtoCopyWithImpl<$Res> implements $ImagePostDtoCopyWith<$Res> {
+class _$ImagePostDtoCopyWithImpl<$Res, $Val extends ImagePostDto>
+    implements $ImagePostDtoCopyWith<$Res> {
   _$ImagePostDtoCopyWithImpl(this._value, this._then);
 
-  final ImagePostDto _value;
   // ignore: unused_field
-  final $Res Function(ImagePostDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_ImagePostDtoCopyWith<$Res>
           _$_ImagePostDto value, $Res Function(_$_ImagePostDto) then) =
       __$$_ImagePostDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -111,46 +116,44 @@ abstract class _$$_ImagePostDtoCopyWith<$Res>
 
 /// @nodoc
 class __$$_ImagePostDtoCopyWithImpl<$Res>
-    extends _$ImagePostDtoCopyWithImpl<$Res>
+    extends _$ImagePostDtoCopyWithImpl<$Res, _$_ImagePostDto>
     implements _$$_ImagePostDtoCopyWith<$Res> {
   __$$_ImagePostDtoCopyWithImpl(
       _$_ImagePostDto _value, $Res Function(_$_ImagePostDto) _then)
-      : super(_value, (v) => _then(v as _$_ImagePostDto));
+      : super(_value, _then);
 
-  @override
-  _$_ImagePostDto get _value => super._value as _$_ImagePostDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? metaData = freezed,
   }) {
     return _then(_$_ImagePostDto(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
@@ -189,6 +192,7 @@ class _$_ImagePostDto extends _ImagePostDto {
   Map<String, dynamic>? get metaData {
     final value = _metaData;
     if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -203,27 +207,22 @@ class _$_ImagePostDto extends _ImagePostDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ImagePostDto &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.uri, uri) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(uri),
+  int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
       const DeepCollectionEquality().hash(_metaData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ImagePostDtoCopyWith<_$_ImagePostDto> get copyWith =>
       __$$_ImagePostDtoCopyWithImpl<_$_ImagePostDto>(this, _$identity);
 

@@ -1,5 +1,6 @@
 part of check_in_domain;
 
+
 @freezed
 class ReservationItemDto with _$ReservationItemDto {
 
@@ -18,6 +19,10 @@ class ReservationItemDto with _$ReservationItemDto {
     List<Map<String, dynamic>>? checkInSettings,
     required List<Map<String, dynamic>> reservationSlotItem,
     List<Map<String, dynamic>>? cancelledSlotItem,
+    int? firstSlotTimestamp,
+    int? lastSlotTimestamp,
+    int? reservationReview,
+    bool? isPublic,
     String? refundId,
     String? receipt_link,
     bool? isInternalProgram,
@@ -39,6 +44,9 @@ class ReservationItemDto with _$ReservationItemDto {
         reservationAffiliates: (reservation.reservationAffiliates != null) ? reservation.reservationAffiliates!.map((e) => ContactDetailsDto.fromDomain(e).toJson()).toList() : null,
         reservationSlotItem: reservation.reservationSlotItem.map((e) => ReservationSlotItemDto.fromDomain(e).toJson()).toList(),
         cancelledSlotItem: (reservation.cancelledSlotItem != null) ? reservation.cancelledSlotItem!.map((e) => ReservationSlotItemDto.fromDomain(e).toJson()).toList() : null,
+        firstSlotTimestamp: retrieveTimeStampForFirstTimeSlot(reservation.reservationSlotItem),
+        lastSlotTimestamp: retrieveTimeStampForLastTimeSlot(reservation.reservationSlotItem),
+        isPublic: reservation.isPublic,
         refundId: reservation.refundId,
         receipt_link: reservation.receipt_link,
         isInternalProgram: reservation.isInternalProgram,
@@ -58,6 +66,7 @@ class ReservationItemDto with _$ReservationItemDto {
         checkInSetting: (checkInSettings != null) ? checkInSettings!.map((e) => CheckInSettingsDto.fromJson(e).toDomain()).toList() : null,
         customFieldRuleSetting: (customRuleOptions != null) ? customRuleOptions!.map((e) => CustomRuleOptionDto.fromJson(e).toDomain()).toList() : null,
         reservationSlotItem: reservationSlotItem.map((e) => ReservationSlotItemDto.fromJson(e).toDomain()).toList(),
+        isPublic: isPublic,
         dateCreated: DateTime.parse(dateCreated),
         refundId: refundId,
         receipt_link: receipt_link,
@@ -75,3 +84,5 @@ class ReservationItemDto with _$ReservationItemDto {
   }
 
 }
+
+

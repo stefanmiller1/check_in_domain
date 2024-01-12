@@ -30,9 +30,9 @@ Either<ValueFailure<String>, String> validateFacilityText(String input, int maxL
   if (input.length > maxLength) {
     return left(ValueFailure.textInputTitleOrDetails(FacilityRulesBackgroundValueFailure.maxCharacterLength(
         max: maxLength, failedValue: input)));
-  } else {
-    return right(input);
   }
+
+  return right(input);
 
 }
 

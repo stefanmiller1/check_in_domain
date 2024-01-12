@@ -8,6 +8,8 @@ class EventActivityRulesRequirement with _$EventActivityRulesRequirement {
   factory EventActivityRulesRequirement({
 
     required bool isMerchantSupported,
+    int? merchantFee,
+    int? merchantLimit,
     required bool isMerchantInviteOnly,
 
     required bool isAlcoholForSale,

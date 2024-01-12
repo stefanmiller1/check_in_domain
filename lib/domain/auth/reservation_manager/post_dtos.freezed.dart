@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'post_dtos.dart';
 
@@ -32,6 +32,7 @@ mixin _$PostDto {
   String? get status => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String? get updatedAt => throw _privateConstructorUsedError;
+  int? get likesCount => throw _privateConstructorUsedError;
   Map<String, dynamic>? get previewData => throw _privateConstructorUsedError;
   Map<String, dynamic>? get audioPost => throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get imagePost =>
@@ -57,7 +58,8 @@ mixin _$PostDto {
 /// @nodoc
 abstract class $PostDtoCopyWith<$Res> {
   factory $PostDtoCopyWith(PostDto value, $Res Function(PostDto) then) =
-      _$PostDtoCopyWithImpl<$Res>;
+      _$PostDtoCopyWithImpl<$Res, PostDto>;
+  @useResult
   $Res call(
       {String authorId,
       String? createdAt,
@@ -71,6 +73,7 @@ abstract class $PostDtoCopyWith<$Res> {
       String? status,
       String type,
       String? updatedAt,
+      int? likesCount,
       Map<String, dynamic>? previewData,
       Map<String, dynamic>? audioPost,
       List<Map<String, dynamic>>? imagePost,
@@ -84,18 +87,21 @@ abstract class $PostDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostDtoCopyWithImpl<$Res> implements $PostDtoCopyWith<$Res> {
+class _$PostDtoCopyWithImpl<$Res, $Val extends PostDto>
+    implements $PostDtoCopyWith<$Res> {
   _$PostDtoCopyWithImpl(this._value, this._then);
 
-  final PostDto _value;
   // ignore: unused_field
-  final $Res Function(PostDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorId = freezed,
+    Object? authorId = null,
     Object? createdAt = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
     Object? remoteId = freezed,
     Object? repliedPost = freezed,
@@ -103,8 +109,9 @@ class _$PostDtoCopyWithImpl<$Res> implements $PostDtoCopyWith<$Res> {
     Object? showStatus = freezed,
     Object? isReported = freezed,
     Object? status = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? updatedAt = freezed,
+    Object? likesCount = freezed,
     Object? previewData = freezed,
     Object? audioPost = freezed,
     Object? imagePost = freezed,
@@ -117,95 +124,99 @@ class _$PostDtoCopyWithImpl<$Res> implements $PostDtoCopyWith<$Res> {
     Object? updatedAtSTC = freezed,
   }) {
     return _then(_value.copyWith(
-      authorId: authorId == freezed
+      authorId: null == authorId
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      remoteId: remoteId == freezed
+      remoteId: freezed == remoteId
           ? _value.remoteId
           : remoteId // ignore: cast_nullable_to_non_nullable
               as String?,
-      repliedPost: repliedPost == freezed
+      repliedPost: freezed == repliedPost
           ? _value.repliedPost
           : repliedPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      reservationId: reservationId == freezed
+      reservationId: freezed == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      showStatus: showStatus == freezed
+      showStatus: freezed == showStatus
           ? _value.showStatus
           : showStatus // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isReported: isReported == freezed
+      isReported: freezed == isReported
           ? _value.isReported
           : isReported // ignore: cast_nullable_to_non_nullable
               as bool?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      previewData: previewData == freezed
+      likesCount: freezed == likesCount
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      previewData: freezed == previewData
           ? _value.previewData
           : previewData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      audioPost: audioPost == freezed
+      audioPost: freezed == audioPost
           ? _value.audioPost
           : audioPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      imagePost: imagePost == freezed
+      imagePost: freezed == imagePost
           ? _value.imagePost
           : imagePost // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      systemPost: systemPost == freezed
+      systemPost: freezed == systemPost
           ? _value.systemPost
           : systemPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      textPost: textPost == freezed
+      textPost: freezed == textPost
           ? _value.textPost
           : textPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      videoPost: videoPost == freezed
+      videoPost: freezed == videoPost
           ? _value.videoPost
           : videoPost // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      postLikes: postLikes == freezed
+      postLikes: freezed == postLikes
           ? _value.postLikes
           : postLikes // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      postBookmarks: postBookmarks == freezed
+      postBookmarks: freezed == postBookmarks
           ? _value.postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      createdAtSTC: createdAtSTC == freezed
+      createdAtSTC: freezed == createdAtSTC
           ? _value.createdAtSTC
           : createdAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
-      updatedAtSTC: updatedAtSTC == freezed
+      updatedAtSTC: freezed == updatedAtSTC
           ? _value.updatedAtSTC
           : updatedAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -215,6 +226,7 @@ abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
           _$_PostDto value, $Res Function(_$_PostDto) then) =
       __$$_PostDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String authorId,
       String? createdAt,
@@ -228,6 +240,7 @@ abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
       String? status,
       String type,
       String? updatedAt,
+      int? likesCount,
       Map<String, dynamic>? previewData,
       Map<String, dynamic>? audioPost,
       List<Map<String, dynamic>>? imagePost,
@@ -241,19 +254,18 @@ abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PostDtoCopyWithImpl<$Res> extends _$PostDtoCopyWithImpl<$Res>
+class __$$_PostDtoCopyWithImpl<$Res>
+    extends _$PostDtoCopyWithImpl<$Res, _$_PostDto>
     implements _$$_PostDtoCopyWith<$Res> {
   __$$_PostDtoCopyWithImpl(_$_PostDto _value, $Res Function(_$_PostDto) _then)
-      : super(_value, (v) => _then(v as _$_PostDto));
+      : super(_value, _then);
 
-  @override
-  _$_PostDto get _value => super._value as _$_PostDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorId = freezed,
+    Object? authorId = null,
     Object? createdAt = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
     Object? remoteId = freezed,
     Object? repliedPost = freezed,
@@ -261,8 +273,9 @@ class __$$_PostDtoCopyWithImpl<$Res> extends _$PostDtoCopyWithImpl<$Res>
     Object? showStatus = freezed,
     Object? isReported = freezed,
     Object? status = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? updatedAt = freezed,
+    Object? likesCount = freezed,
     Object? previewData = freezed,
     Object? audioPost = freezed,
     Object? imagePost = freezed,
@@ -275,91 +288,95 @@ class __$$_PostDtoCopyWithImpl<$Res> extends _$PostDtoCopyWithImpl<$Res>
     Object? updatedAtSTC = freezed,
   }) {
     return _then(_$_PostDto(
-      authorId: authorId == freezed
+      authorId: null == authorId
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      remoteId: remoteId == freezed
+      remoteId: freezed == remoteId
           ? _value.remoteId
           : remoteId // ignore: cast_nullable_to_non_nullable
               as String?,
-      repliedPost: repliedPost == freezed
+      repliedPost: freezed == repliedPost
           ? _value._repliedPost
           : repliedPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      reservationId: reservationId == freezed
+      reservationId: freezed == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      showStatus: showStatus == freezed
+      showStatus: freezed == showStatus
           ? _value.showStatus
           : showStatus // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isReported: isReported == freezed
+      isReported: freezed == isReported
           ? _value.isReported
           : isReported // ignore: cast_nullable_to_non_nullable
               as bool?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      previewData: previewData == freezed
+      likesCount: freezed == likesCount
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      previewData: freezed == previewData
           ? _value._previewData
           : previewData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      audioPost: audioPost == freezed
+      audioPost: freezed == audioPost
           ? _value._audioPost
           : audioPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      imagePost: imagePost == freezed
+      imagePost: freezed == imagePost
           ? _value._imagePost
           : imagePost // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      systemPost: systemPost == freezed
+      systemPost: freezed == systemPost
           ? _value._systemPost
           : systemPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      textPost: textPost == freezed
+      textPost: freezed == textPost
           ? _value._textPost
           : textPost // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      videoPost: videoPost == freezed
+      videoPost: freezed == videoPost
           ? _value._videoPost
           : videoPost // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      postLikes: postLikes == freezed
+      postLikes: freezed == postLikes
           ? _value._postLikes
           : postLikes // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      postBookmarks: postBookmarks == freezed
+      postBookmarks: freezed == postBookmarks
           ? _value._postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      createdAtSTC: createdAtSTC == freezed
+      createdAtSTC: freezed == createdAtSTC
           ? _value.createdAtSTC
           : createdAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
-      updatedAtSTC: updatedAtSTC == freezed
+      updatedAtSTC: freezed == updatedAtSTC
           ? _value.updatedAtSTC
           : updatedAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
@@ -383,6 +400,7 @@ class _$_PostDto extends _PostDto {
       this.status,
       required this.type,
       this.updatedAt,
+      this.likesCount,
       final Map<String, dynamic>? previewData,
       final Map<String, dynamic>? audioPost,
       final List<Map<String, dynamic>>? imagePost,
@@ -419,6 +437,7 @@ class _$_PostDto extends _PostDto {
   Map<String, dynamic>? get metadata {
     final value = _metadata;
     if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -430,6 +449,7 @@ class _$_PostDto extends _PostDto {
   Map<String, dynamic>? get repliedPost {
     final value = _repliedPost;
     if (value == null) return null;
+    if (_repliedPost is EqualUnmodifiableMapView) return _repliedPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -446,11 +466,14 @@ class _$_PostDto extends _PostDto {
   final String type;
   @override
   final String? updatedAt;
+  @override
+  final int? likesCount;
   final Map<String, dynamic>? _previewData;
   @override
   Map<String, dynamic>? get previewData {
     final value = _previewData;
     if (value == null) return null;
+    if (_previewData is EqualUnmodifiableMapView) return _previewData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -460,6 +483,7 @@ class _$_PostDto extends _PostDto {
   Map<String, dynamic>? get audioPost {
     final value = _audioPost;
     if (value == null) return null;
+    if (_audioPost is EqualUnmodifiableMapView) return _audioPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -469,6 +493,7 @@ class _$_PostDto extends _PostDto {
   List<Map<String, dynamic>>? get imagePost {
     final value = _imagePost;
     if (value == null) return null;
+    if (_imagePost is EqualUnmodifiableListView) return _imagePost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -478,6 +503,7 @@ class _$_PostDto extends _PostDto {
   Map<String, dynamic>? get systemPost {
     final value = _systemPost;
     if (value == null) return null;
+    if (_systemPost is EqualUnmodifiableMapView) return _systemPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -487,6 +513,7 @@ class _$_PostDto extends _PostDto {
   Map<String, dynamic>? get textPost {
     final value = _textPost;
     if (value == null) return null;
+    if (_textPost is EqualUnmodifiableMapView) return _textPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -496,6 +523,7 @@ class _$_PostDto extends _PostDto {
   List<Map<String, dynamic>>? get videoPost {
     final value = _videoPost;
     if (value == null) return null;
+    if (_videoPost is EqualUnmodifiableListView) return _videoPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -505,6 +533,7 @@ class _$_PostDto extends _PostDto {
   List<Map<String, dynamic>>? get postLikes {
     final value = _postLikes;
     if (value == null) return null;
+    if (_postLikes is EqualUnmodifiableListView) return _postLikes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -514,6 +543,7 @@ class _$_PostDto extends _PostDto {
   List<Map<String, dynamic>>? get postBookmarks {
     final value = _postBookmarks;
     if (value == null) return null;
+    if (_postBookmarks is EqualUnmodifiableListView) return _postBookmarks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -527,7 +557,7 @@ class _$_PostDto extends _PostDto {
 
   @override
   String toString() {
-    return 'PostDto(authorId: $authorId, createdAt: $createdAt, id: $id, metadata: $metadata, remoteId: $remoteId, repliedPost: $repliedPost, reservationId: $reservationId, showStatus: $showStatus, isReported: $isReported, status: $status, type: $type, updatedAt: $updatedAt, previewData: $previewData, audioPost: $audioPost, imagePost: $imagePost, systemPost: $systemPost, textPost: $textPost, videoPost: $videoPost, postLikes: $postLikes, postBookmarks: $postBookmarks, createdAtSTC: $createdAtSTC, updatedAtSTC: $updatedAtSTC)';
+    return 'PostDto(authorId: $authorId, createdAt: $createdAt, id: $id, metadata: $metadata, remoteId: $remoteId, repliedPost: $repliedPost, reservationId: $reservationId, showStatus: $showStatus, isReported: $isReported, status: $status, type: $type, updatedAt: $updatedAt, likesCount: $likesCount, previewData: $previewData, audioPost: $audioPost, imagePost: $imagePost, systemPost: $systemPost, textPost: $textPost, videoPost: $videoPost, postLikes: $postLikes, postBookmarks: $postBookmarks, createdAtSTC: $createdAtSTC, updatedAtSTC: $updatedAtSTC)';
   }
 
   @override
@@ -535,22 +565,28 @@ class _$_PostDto extends _PostDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PostDto &&
-            const DeepCollectionEquality().equals(other.authorId, authorId) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            (identical(other.authorId, authorId) ||
+                other.authorId == authorId) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._metadata, _metadata) &&
-            const DeepCollectionEquality().equals(other.remoteId, remoteId) &&
+            (identical(other.remoteId, remoteId) ||
+                other.remoteId == remoteId) &&
             const DeepCollectionEquality()
                 .equals(other._repliedPost, _repliedPost) &&
-            const DeepCollectionEquality()
-                .equals(other.reservationId, reservationId) &&
-            const DeepCollectionEquality()
-                .equals(other.showStatus, showStatus) &&
-            const DeepCollectionEquality()
-                .equals(other.isReported, isReported) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            (identical(other.reservationId, reservationId) ||
+                other.reservationId == reservationId) &&
+            (identical(other.showStatus, showStatus) ||
+                other.showStatus == showStatus) &&
+            (identical(other.isReported, isReported) ||
+                other.isReported == isReported) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
             const DeepCollectionEquality()
                 .equals(other._previewData, _previewData) &&
             const DeepCollectionEquality()
@@ -566,28 +602,29 @@ class _$_PostDto extends _PostDto {
                 .equals(other._postLikes, _postLikes) &&
             const DeepCollectionEquality()
                 .equals(other._postBookmarks, _postBookmarks) &&
-            const DeepCollectionEquality()
-                .equals(other.createdAtSTC, createdAtSTC) &&
-            const DeepCollectionEquality()
-                .equals(other.updatedAtSTC, updatedAtSTC));
+            (identical(other.createdAtSTC, createdAtSTC) ||
+                other.createdAtSTC == createdAtSTC) &&
+            (identical(other.updatedAtSTC, updatedAtSTC) ||
+                other.updatedAtSTC == updatedAtSTC));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(authorId),
-        const DeepCollectionEquality().hash(createdAt),
-        const DeepCollectionEquality().hash(id),
+        authorId,
+        createdAt,
+        id,
         const DeepCollectionEquality().hash(_metadata),
-        const DeepCollectionEquality().hash(remoteId),
+        remoteId,
         const DeepCollectionEquality().hash(_repliedPost),
-        const DeepCollectionEquality().hash(reservationId),
-        const DeepCollectionEquality().hash(showStatus),
-        const DeepCollectionEquality().hash(isReported),
-        const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(updatedAt),
+        reservationId,
+        showStatus,
+        isReported,
+        status,
+        type,
+        updatedAt,
+        likesCount,
         const DeepCollectionEquality().hash(_previewData),
         const DeepCollectionEquality().hash(_audioPost),
         const DeepCollectionEquality().hash(_imagePost),
@@ -596,12 +633,13 @@ class _$_PostDto extends _PostDto {
         const DeepCollectionEquality().hash(_videoPost),
         const DeepCollectionEquality().hash(_postLikes),
         const DeepCollectionEquality().hash(_postBookmarks),
-        const DeepCollectionEquality().hash(createdAtSTC),
-        const DeepCollectionEquality().hash(updatedAtSTC)
+        createdAtSTC,
+        updatedAtSTC
       ]);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PostDtoCopyWith<_$_PostDto> get copyWith =>
       __$$_PostDtoCopyWithImpl<_$_PostDto>(this, _$identity);
 
@@ -627,6 +665,7 @@ abstract class _PostDto extends PostDto {
       final String? status,
       required final String type,
       final String? updatedAt,
+      final int? likesCount,
       final Map<String, dynamic>? previewData,
       final Map<String, dynamic>? audioPost,
       final List<Map<String, dynamic>>? imagePost,
@@ -665,6 +704,8 @@ abstract class _PostDto extends PostDto {
   String get type;
   @override
   String? get updatedAt;
+  @override
+  int? get likesCount;
   @override
   Map<String, dynamic>? get previewData;
   @override

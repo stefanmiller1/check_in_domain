@@ -42,6 +42,7 @@ List<SpaceOptionSizeDetail> getSpacesFromSelectedReservationSlot(BuildContext co
         if (!(currentSpaceDetail.map((e) => e.spaceId).contains(spaceDetail.value.spaceId))) {
         final details = SpaceOptionSizeDetail(
             spaceId: spaceDetail.value.spaceId,
+            durationType: spaceDetail.value.durationType,
             unavailableDates: spaceDetail.value.unavailableDates,
             spaceTitle: spaceDetail.value.spaceTitle ?? '${getSpaceTypeOptions(context)
                 .where((s) => s.uid == spaces.uid)

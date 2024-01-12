@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'audio_post_dtos.dart';
 
@@ -34,38 +34,42 @@ mixin _$AudioPostDto {
 abstract class $AudioPostDtoCopyWith<$Res> {
   factory $AudioPostDtoCopyWith(
           AudioPostDto value, $Res Function(AudioPostDto) then) =
-      _$AudioPostDtoCopyWithImpl<$Res>;
+      _$AudioPostDtoCopyWithImpl<$Res, AudioPostDto>;
+  @useResult
   $Res call({num size, String uri, List<double>? waveForm});
 }
 
 /// @nodoc
-class _$AudioPostDtoCopyWithImpl<$Res> implements $AudioPostDtoCopyWith<$Res> {
+class _$AudioPostDtoCopyWithImpl<$Res, $Val extends AudioPostDto>
+    implements $AudioPostDtoCopyWith<$Res> {
   _$AudioPostDtoCopyWithImpl(this._value, this._then);
 
-  final AudioPostDto _value;
   // ignore: unused_field
-  final $Res Function(AudioPostDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? size = null,
+    Object? uri = null,
     Object? waveForm = freezed,
   }) {
     return _then(_value.copyWith(
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      waveForm: waveForm == freezed
+      waveForm: freezed == waveForm
           ? _value.waveForm
           : waveForm // ignore: cast_nullable_to_non_nullable
               as List<double>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -76,36 +80,35 @@ abstract class _$$_AudioPostDtoCopyWith<$Res>
           _$_AudioPostDto value, $Res Function(_$_AudioPostDto) then) =
       __$$_AudioPostDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({num size, String uri, List<double>? waveForm});
 }
 
 /// @nodoc
 class __$$_AudioPostDtoCopyWithImpl<$Res>
-    extends _$AudioPostDtoCopyWithImpl<$Res>
+    extends _$AudioPostDtoCopyWithImpl<$Res, _$_AudioPostDto>
     implements _$$_AudioPostDtoCopyWith<$Res> {
   __$$_AudioPostDtoCopyWithImpl(
       _$_AudioPostDto _value, $Res Function(_$_AudioPostDto) _then)
-      : super(_value, (v) => _then(v as _$_AudioPostDto));
+      : super(_value, _then);
 
-  @override
-  _$_AudioPostDto get _value => super._value as _$_AudioPostDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? size = null,
+    Object? uri = null,
     Object? waveForm = freezed,
   }) {
     return _then(_$_AudioPostDto(
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      waveForm: waveForm == freezed
+      waveForm: freezed == waveForm
           ? _value._waveForm
           : waveForm // ignore: cast_nullable_to_non_nullable
               as List<double>?,
@@ -133,6 +136,7 @@ class _$_AudioPostDto extends _AudioPostDto {
   List<double>? get waveForm {
     final value = _waveForm;
     if (value == null) return null;
+    if (_waveForm is EqualUnmodifiableListView) return _waveForm;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -147,21 +151,19 @@ class _$_AudioPostDto extends _AudioPostDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AudioPostDto &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.uri, uri) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
             const DeepCollectionEquality().equals(other._waveForm, _waveForm));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(uri),
-      const DeepCollectionEquality().hash(_waveForm));
+      runtimeType, size, uri, const DeepCollectionEquality().hash(_waveForm));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AudioPostDtoCopyWith<_$_AudioPostDto> get copyWith =>
       __$$_AudioPostDtoCopyWithImpl<_$_AudioPostDto>(this, _$identity);
 

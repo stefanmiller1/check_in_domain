@@ -13,6 +13,8 @@ class TicketItemDto with _$TicketItemDto {
     required bool isOnHold,
     required String createdAt,
     required int expiresAt,
+    bool? redeemed,
+    String? redeemedAt,
     String? selectedTicketTitle,
     Map<String, dynamic>? selectedReservationSlot,
     Map<String, dynamic>? selectedReservationTimeSlot,
@@ -27,6 +29,8 @@ class TicketItemDto with _$TicketItemDto {
         isOnHold: ticket.isOnHold,
         createdAt: DateTime.now().toString(),
         expiresAt: DateTime.now().add(const Duration(minutes: 2)).millisecondsSinceEpoch,
+        redeemed: ticket.redeemed,
+        redeemedAt: (ticket.redeemedAt != null) ? ticket.redeemedAt.toString() : null,
         selectedTicketTitle: ticket.selectedTicketTitle,
         selectedReservationSlot: (ticket.selectedReservationSlot != null) ? ReservationSlotItemDto.fromDomain(ticket.selectedReservationSlot!).toJson() : null,
         selectedReservationTimeSlot: (ticket.selectedReservationTimeSlot != null) ? StringDateRangeItemDto.fromDomain(ticket.selectedReservationTimeSlot!).toJson() : null,
@@ -50,4 +54,7 @@ class TicketItemDto with _$TicketItemDto {
 
     factory TicketItemDto.fromJson(Map<String, dynamic> json) => _$TicketItemDtoFromJson(json);
 
+    factory TicketItemDto.fromFireStore(Map<String, dynamic> data) {
+      return TicketItemDto.fromJson(data);
+    }
 }

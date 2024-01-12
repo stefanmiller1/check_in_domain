@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'system_post_dtos.dart';
 
@@ -33,34 +33,37 @@ mixin _$SystemPostDto {
 abstract class $SystemPostDtoCopyWith<$Res> {
   factory $SystemPostDtoCopyWith(
           SystemPostDto value, $Res Function(SystemPostDto) then) =
-      _$SystemPostDtoCopyWithImpl<$Res>;
+      _$SystemPostDtoCopyWithImpl<$Res, SystemPostDto>;
+  @useResult
   $Res call({Map<String, dynamic>? metaData, String text});
 }
 
 /// @nodoc
-class _$SystemPostDtoCopyWithImpl<$Res>
+class _$SystemPostDtoCopyWithImpl<$Res, $Val extends SystemPostDto>
     implements $SystemPostDtoCopyWith<$Res> {
   _$SystemPostDtoCopyWithImpl(this._value, this._then);
 
-  final SystemPostDto _value;
   // ignore: unused_field
-  final $Res Function(SystemPostDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? metaData = freezed,
-    Object? text = freezed,
+    Object? text = null,
   }) {
     return _then(_value.copyWith(
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -71,31 +74,30 @@ abstract class _$$_SystemPostDtoCopyWith<$Res>
           _$_SystemPostDto value, $Res Function(_$_SystemPostDto) then) =
       __$$_SystemPostDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Map<String, dynamic>? metaData, String text});
 }
 
 /// @nodoc
 class __$$_SystemPostDtoCopyWithImpl<$Res>
-    extends _$SystemPostDtoCopyWithImpl<$Res>
+    extends _$SystemPostDtoCopyWithImpl<$Res, _$_SystemPostDto>
     implements _$$_SystemPostDtoCopyWith<$Res> {
   __$$_SystemPostDtoCopyWithImpl(
       _$_SystemPostDto _value, $Res Function(_$_SystemPostDto) _then)
-      : super(_value, (v) => _then(v as _$_SystemPostDto));
+      : super(_value, _then);
 
-  @override
-  _$_SystemPostDto get _value => super._value as _$_SystemPostDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? metaData = freezed,
-    Object? text = freezed,
+    Object? text = null,
   }) {
     return _then(_$_SystemPostDto(
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
@@ -118,6 +120,7 @@ class _$_SystemPostDto extends _SystemPostDto {
   Map<String, dynamic>? get metaData {
     final value = _metaData;
     if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -136,18 +139,17 @@ class _$_SystemPostDto extends _SystemPostDto {
         (other.runtimeType == runtimeType &&
             other is _$_SystemPostDto &&
             const DeepCollectionEquality().equals(other._metaData, _metaData) &&
-            const DeepCollectionEquality().equals(other.text, text));
+            (identical(other.text, text) || other.text == text));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_metaData),
-      const DeepCollectionEquality().hash(text));
+      runtimeType, const DeepCollectionEquality().hash(_metaData), text);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SystemPostDtoCopyWith<_$_SystemPostDto> get copyWith =>
       __$$_SystemPostDtoCopyWithImpl<_$_SystemPostDto>(this, _$identity);
 

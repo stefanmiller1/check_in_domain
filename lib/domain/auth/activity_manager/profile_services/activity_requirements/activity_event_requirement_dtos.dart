@@ -8,6 +8,8 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
   factory EventActivityRulesRequirementDto({
     required bool isMerchantSupported,
     required bool isMerchantInviteOnly,
+    int? merchantFee,
+    int? merchantLimit,
 
     required bool isAlcoholForSale,
     required bool isFoodForSale,
@@ -26,6 +28,8 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
     return EventActivityRulesRequirementDto(
         isMerchantSupported: requirement.isMerchantSupported,
         isMerchantInviteOnly: requirement.isMerchantInviteOnly,
+        merchantFee: (requirement.merchantFee != null) ? requirement.merchantFee : null,
+        merchantLimit: (requirement.merchantLimit != null) ? requirement.merchantLimit : null,
         isAlcoholForSale: requirement.isAlcoholForSale,
         isFoodForSale: requirement.isFoodForSale,
         isAlcoholProvided: requirement.isAlcoholProvided,
@@ -41,6 +45,8 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
     return EventActivityRulesRequirement(
         isMerchantSupported: isMerchantSupported,
         isMerchantInviteOnly: isMerchantInviteOnly,
+        merchantFee: (merchantFee != null) ? merchantFee : null,
+        merchantLimit: (merchantLimit != null) ? merchantLimit : null,
         isAlcoholForSale: isAlcoholForSale,
         isFoodForSale: isFoodForSale,
         isAlcoholProvided: isAlcoholProvided,

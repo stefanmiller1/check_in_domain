@@ -44,6 +44,7 @@ class SpaceOptionSizeDetail with _$SpaceOptionSizeDetail {
 
   const factory SpaceOptionSizeDetail({
         required UniqueId spaceId,
+        required int durationType,
         required List<DateTime> unavailableDates,
         String? spaceTitle,
         String? spaceDescription,
@@ -57,6 +58,7 @@ class SpaceOptionSizeDetail with _$SpaceOptionSizeDetail {
       SpaceOptionSizeDetail(
           spaceId: UniqueId(),
           unavailableDates: [],
+          durationType: 30,
           activitySettings: ActivitySettings.empty(),
           availabilityHoursSettings: AvailabilityHoursSettings.empty(),
       );

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'video_post.dart';
 
@@ -32,7 +32,8 @@ mixin _$VideoPost {
 /// @nodoc
 abstract class $VideoPostCopyWith<$Res> {
   factory $VideoPostCopyWith(VideoPost value, $Res Function(VideoPost) then) =
-      _$VideoPostCopyWithImpl<$Res>;
+      _$VideoPostCopyWithImpl<$Res, VideoPost>;
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -44,53 +45,56 @@ abstract class $VideoPostCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VideoPostCopyWithImpl<$Res> implements $VideoPostCopyWith<$Res> {
+class _$VideoPostCopyWithImpl<$Res, $Val extends VideoPost>
+    implements $VideoPostCopyWith<$Res> {
   _$VideoPostCopyWithImpl(this._value, this._then);
 
-  final VideoPost _value;
   // ignore: unused_field
-  final $Res Function(VideoPost) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? numberOfViews = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      numberOfViews: numberOfViews == freezed
+      numberOfViews: freezed == numberOfViews
           ? _value.numberOfViews
           : numberOfViews // ignore: cast_nullable_to_non_nullable
               as int?,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_VideoPostCopyWith<$Res> implements $VideoPostCopyWith<$Res> {
           _$_VideoPost value, $Res Function(_$_VideoPost) then) =
       __$$_VideoPostCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -111,51 +116,50 @@ abstract class _$$_VideoPostCopyWith<$Res> implements $VideoPostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_VideoPostCopyWithImpl<$Res> extends _$VideoPostCopyWithImpl<$Res>
+class __$$_VideoPostCopyWithImpl<$Res>
+    extends _$VideoPostCopyWithImpl<$Res, _$_VideoPost>
     implements _$$_VideoPostCopyWith<$Res> {
   __$$_VideoPostCopyWithImpl(
       _$_VideoPost _value, $Res Function(_$_VideoPost) _then)
-      : super(_value, (v) => _then(v as _$_VideoPost));
+      : super(_value, _then);
 
-  @override
-  _$_VideoPost get _value => super._value as _$_VideoPost;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? numberOfViews = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_$_VideoPost(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      numberOfViews: numberOfViews == freezed
+      numberOfViews: freezed == numberOfViews
           ? _value.numberOfViews
           : numberOfViews // ignore: cast_nullable_to_non_nullable
               as int?,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
@@ -194,6 +198,7 @@ class _$_VideoPost extends _VideoPost {
   Map<String, dynamic>? get metaData {
     final value = _metaData;
     if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -208,29 +213,23 @@ class _$_VideoPost extends _VideoPost {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_VideoPost &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.uri, uri) &&
-            const DeepCollectionEquality()
-                .equals(other.numberOfViews, numberOfViews) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.numberOfViews, numberOfViews) ||
+                other.numberOfViews == numberOfViews) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(uri),
-      const DeepCollectionEquality().hash(numberOfViews),
-      const DeepCollectionEquality().hash(_metaData));
+  int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
+      numberOfViews, const DeepCollectionEquality().hash(_metaData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_VideoPostCopyWith<_$_VideoPost> get copyWith =>
       __$$_VideoPostCopyWithImpl<_$_VideoPost>(this, _$identity);
 }

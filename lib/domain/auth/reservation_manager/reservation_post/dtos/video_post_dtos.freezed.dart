@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'video_post_dtos.dart';
 
@@ -38,7 +38,8 @@ mixin _$VideoPostDto {
 abstract class $VideoPostDtoCopyWith<$Res> {
   factory $VideoPostDtoCopyWith(
           VideoPostDto value, $Res Function(VideoPostDto) then) =
-      _$VideoPostDtoCopyWithImpl<$Res>;
+      _$VideoPostDtoCopyWithImpl<$Res, VideoPostDto>;
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -50,53 +51,56 @@ abstract class $VideoPostDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VideoPostDtoCopyWithImpl<$Res> implements $VideoPostDtoCopyWith<$Res> {
+class _$VideoPostDtoCopyWithImpl<$Res, $Val extends VideoPostDto>
+    implements $VideoPostDtoCopyWith<$Res> {
   _$VideoPostDtoCopyWithImpl(this._value, this._then);
 
-  final VideoPostDto _value;
   // ignore: unused_field
-  final $Res Function(VideoPostDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? numberOfViews = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      numberOfViews: numberOfViews == freezed
+      numberOfViews: freezed == numberOfViews
           ? _value.numberOfViews
           : numberOfViews // ignore: cast_nullable_to_non_nullable
               as int?,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -107,6 +111,7 @@ abstract class _$$_VideoPostDtoCopyWith<$Res>
           _$_VideoPostDto value, $Res Function(_$_VideoPostDto) then) =
       __$$_VideoPostDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {double? height,
       double? width,
@@ -119,51 +124,49 @@ abstract class _$$_VideoPostDtoCopyWith<$Res>
 
 /// @nodoc
 class __$$_VideoPostDtoCopyWithImpl<$Res>
-    extends _$VideoPostDtoCopyWithImpl<$Res>
+    extends _$VideoPostDtoCopyWithImpl<$Res, _$_VideoPostDto>
     implements _$$_VideoPostDtoCopyWith<$Res> {
   __$$_VideoPostDtoCopyWithImpl(
       _$_VideoPostDto _value, $Res Function(_$_VideoPostDto) _then)
-      : super(_value, (v) => _then(v as _$_VideoPostDto));
+      : super(_value, _then);
 
-  @override
-  _$_VideoPostDto get _value => super._value as _$_VideoPostDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
-    Object? name = freezed,
-    Object? size = freezed,
-    Object? uri = freezed,
+    Object? name = null,
+    Object? size = null,
+    Object? uri = null,
     Object? numberOfViews = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_$_VideoPostDto(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      size: size == freezed
+      size: null == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as num,
-      uri: uri == freezed
+      uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-      numberOfViews: numberOfViews == freezed
+      numberOfViews: freezed == numberOfViews
           ? _value.numberOfViews
           : numberOfViews // ignore: cast_nullable_to_non_nullable
               as int?,
-      metaData: metaData == freezed
+      metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
@@ -205,6 +208,7 @@ class _$_VideoPostDto extends _VideoPostDto {
   Map<String, dynamic>? get metaData {
     final value = _metaData;
     if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -219,30 +223,24 @@ class _$_VideoPostDto extends _VideoPostDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_VideoPostDto &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.uri, uri) &&
-            const DeepCollectionEquality()
-                .equals(other.numberOfViews, numberOfViews) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.numberOfViews, numberOfViews) ||
+                other.numberOfViews == numberOfViews) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(uri),
-      const DeepCollectionEquality().hash(numberOfViews),
-      const DeepCollectionEquality().hash(_metaData));
+  int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
+      numberOfViews, const DeepCollectionEquality().hash(_metaData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_VideoPostDtoCopyWith<_$_VideoPostDto> get copyWith =>
       __$$_VideoPostDtoCopyWithImpl<_$_VideoPostDto>(this, _$identity);
 

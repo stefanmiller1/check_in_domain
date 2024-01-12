@@ -1,7 +1,7 @@
 part of check_in_domain;
 
 enum ProfileActivityTypeOption {toRent, gameMatches, classesLessons, experiences, misc}
-enum ProfileActivityOption {league, teamsRuns, equipment, tournament, camp, coaching, teaching, training, events, informalGame, oneOnOne, toRent, toProtest, toShelter, toWorship, marketplace, toWork, toConvene, none}
+enum ProfileActivityOption {league, teamsRuns, equipment, tournament, camp, coaching, teaching, training, events, informalGame, oneOnOne, toRent, popUps, toProtest, toShelter, toWorship, marketplace, toWork, toConvene, none, }
 
 ProfileActivityTypeOption getActivityType(String type) {
   for (ProfileActivityTypeOption item in ProfileActivityTypeOption.values) {
@@ -84,6 +84,8 @@ UniqueId activityId) {
       return 'marketplace';
     case ProfileActivityOption.toWork:
       return 'to work';
+    case ProfileActivityOption.popUps:
+      return 'Pop Up';
     case ProfileActivityOption.none:
       // TODO: Handle this case.
       break;
@@ -146,8 +148,10 @@ String getIconPathForActivity(
       return '';
     case ProfileActivityOption.toWorship:
       return '';
+    case ProfileActivityOption.popUps:
+      return 'assets/icons_svg/search_explore/noun-event-planner-977765.svg';
     case ProfileActivityOption.marketplace:
-      return '';
+      return 'assets/icons_svg/search_explore/noun-hawker-977700.svg';
     case ProfileActivityOption.toWork:
       return '';
     case ProfileActivityOption.toConvene:
@@ -192,6 +196,8 @@ IconData getIconDataForActivity(
       return Icons.sports_kabaddi_rounded;
     case ProfileActivityOption.toRent:
       return Icons.vpn_key_rounded;
+    case ProfileActivityOption.marketplace:
+      return Icons.shopping_cart_rounded;
     default:
       return Icons.vpn_key_rounded;
   }
@@ -200,19 +206,21 @@ IconData getIconDataForActivity(
 List<ActivityOption> getActivityOptions() {
   return [
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-986gkuy968f3'), activity: ProfileActivityOption.toRent, activityType: ProfileActivityTypeOption.toRent),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.camp, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.camp, activityType: ProfileActivityTypeOption.experiences),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-1289fnm049j0'), activity: ProfileActivityOption.events, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.league, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.league, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-23f54joi3j9d'), activity: ProfileActivityOption.popUps, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fj9f834hhfh8'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWork, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWorship, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6893hhi5940g'), activity: ProfileActivityOption.teaching, activityType: ProfileActivityTypeOption.classesLessons),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-692048fnji49'), activity: ProfileActivityOption.training, activityType: ProfileActivityTypeOption.classesLessons),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-787gjhjb898h'), activity: ProfileActivityOption.coaching, activityType: ProfileActivityTypeOption.classesLessons),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6894j0293j09'), activity: ProfileActivityOption.informalGame, activityType: ProfileActivityTypeOption.gameMatches),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-960jgg84995h'), activity: ProfileActivityOption.oneOnOne, activityType: ProfileActivityTypeOption.gameMatches),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-82983oijg93n'), activity: ProfileActivityOption.teamsRuns, activityType: ProfileActivityTypeOption.gameMatches),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.tournament, activityType: ProfileActivityTypeOption.gameMatches),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6893hhi5940g'), activity: ProfileActivityOption.teaching, activityType: ProfileActivityTypeOption.classesLessons),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-692048fnji49'), activity: ProfileActivityOption.training, activityType: ProfileActivityTypeOption.classesLessons),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-787gjhjb898h'), activity: ProfileActivityOption.coaching, activityType: ProfileActivityTypeOption.classesLessons),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-6894j0293j09'), activity: ProfileActivityOption.informalGame, activityType: ProfileActivityTypeOption.gameMatches),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-960jgg84995h'), activity: ProfileActivityOption.oneOnOne, activityType: ProfileActivityTypeOption.gameMatches),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-82983oijg93n'), activity: ProfileActivityOption.teamsRuns, activityType: ProfileActivityTypeOption.gameMatches),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.tournament, activityType: ProfileActivityTypeOption.gameMatches),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-798gh9897h98'), activity: ProfileActivityOption.equipment, icon: (context != null) ? Icons.sports_basketball_outlined : null, activityType: ProfileActivityTypeOption.misc),
   ];
 }

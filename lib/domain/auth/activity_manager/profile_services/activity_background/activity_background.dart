@@ -11,6 +11,7 @@ class ActivityBackground with _$ActivityBackground {
     List<ImageUpload>? activityProfileImages,
 
     bool? isPartnersInviteOnly,
+    bool? isInstructorInviteOnly,
 
     /// classes/games profile
     BackgroundInfoDescription? activityDescription2,

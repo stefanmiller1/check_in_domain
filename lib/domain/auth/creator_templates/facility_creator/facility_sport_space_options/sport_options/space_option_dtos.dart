@@ -38,6 +38,7 @@ class SpaceOptionSizeDetailDto with _$SpaceOptionSizeDetailDto {
 
     const factory SpaceOptionSizeDetailDto({
       required String spaceId,
+      int? durationType,
       String? spaceTitle,
       String? spaceDescription,
       String? photoUri,
@@ -49,6 +50,7 @@ class SpaceOptionSizeDetailDto with _$SpaceOptionSizeDetailDto {
     factory SpaceOptionSizeDetailDto.fromDomain(SpaceOptionSizeDetail spaceOptionSize) {
       return SpaceOptionSizeDetailDto(
         spaceId: spaceOptionSize.spaceId.getOrCrash(),
+        durationType: spaceOptionSize.durationType,
         spaceTitle: spaceOptionSize.spaceTitle,
         spaceDescription: spaceOptionSize.spaceDescription,
         photoUri: spaceOptionSize.photoUri,
@@ -62,6 +64,7 @@ class SpaceOptionSizeDetailDto with _$SpaceOptionSizeDetailDto {
 
         return SpaceOptionSizeDetail(
           spaceId: UniqueId.fromUniqueString(spaceId),
+          durationType: durationType ?? 30,
           spaceTitle: spaceTitle,
           spaceDescription: spaceDescription,
           photoUri: photoUri,

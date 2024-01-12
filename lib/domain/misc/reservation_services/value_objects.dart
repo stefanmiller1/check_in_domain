@@ -63,3 +63,84 @@ List<ReservationTimeFeeSlotItem> retrieveReservationTimeSlots(List<ReservationSl
   return [];
 }
 
+
+extension ReservationSlotItemSorting on ReservationSlotItem {
+  DateTime get earliestSlotStartDate {
+    if (selectedSlots.isEmpty) {
+      // If no slots are selected, return a default value or handle accordingly.
+      return DateTime.now();
+    }
+    // Find the earliest start date among selected slots.
+    return selectedSlots
+        .map((slot) => slot.slotRange.start)
+        .reduce((minDate, currentDate) =>
+    currentDate.isBefore(minDate) ? currentDate : minDate);
+  }
+}
+
+int retrieveTimeStampForFirstTimeSlot(List<ReservationSlotItem> slotItems) {
+  List<ReservationSlotItem> newSlotItems = [];
+  newSlotItems.addAll(slotItems);
+  newSlotItems.sort((a,b) => a.earliestSlotStartDate.compareTo(b.earliestSlotStartDate));
+
+  /// check from which is there also the earliest time?
+
+  late ReservationSlotItem? earliestSlot = newSlotItems.isNotEmpty ? newSlotItems.first : null;
+
+  List<ReservationTimeFeeSlotItem> newTimeFeeItems = [];
+  newTimeFeeItems.addAll(earliestSlot?.selectedSlots ?? []);
+  newTimeFeeItems.sort((a,b) => a.slotRange.start.compareTo(b.slotRange.start));
+
+  late ReservationTimeFeeSlotItem? earliestTimeFee = newTimeFeeItems.isNotEmpty ? newTimeFeeItems.first : null;
+
+
+  return earliestTimeFee?.slotRange.start.millisecondsSinceEpoch ?? 0;
+}
+
+
+int retrieveTimeStampForLastTimeSlot(List<ReservationSlotItem> slotItems) {
+  List<ReservationSlotItem> newSlotItems = [];
+  newSlotItems.addAll(slotItems);
+  newSlotItems.sort((a,b) => b.earliestSlotStartDate.compareTo(a.earliestSlotStartDate));
+
+  late ReservationSlotItem? latestSlot = newSlotItems.isNotEmpty ? newSlotItems.first : null;
+
+  List<ReservationTimeFeeSlotItem> newTimeFeeItems = [];
+  newTimeFeeItems.addAll(latestSlot?.selectedSlots ?? []);
+  newTimeFeeItems.sort((a,b) => b.slotRange.end.compareTo(a.slotRange.end));
+
+  late ReservationTimeFeeSlotItem? latestTimeFee = newTimeFeeItems.isNotEmpty ? newTimeFeeItems.first : null;
+
+
+  return latestTimeFee?.slotRange.end.millisecondsSinceEpoch ?? 0;
+}
+
+
+int calculateSlotsWithinWeek(List<ReservationItem> reservations, int durationInMinutes, DateTime startTime, DateTime endTime) {
+  int totalSlots = 0;
+
+  for (var reservation in reservations) {
+    for (var slotItem in reservation.reservationSlotItem) {
+      for (var timeFeeSlotItem in slotItem.selectedSlots) {
+        int slotsInCurrentRange = calculateSlotsInRange(timeFeeSlotItem.slotRange, durationInMinutes, startTime, endTime);
+        totalSlots += slotsInCurrentRange;
+      }
+    }
+  }
+
+  return totalSlots;
+}
+
+int calculateSlotsInRange(DateTimeRange slotRange, int durationInMinutes, DateTime startTime, DateTime endTime) {
+  DateTime currentSlotStart = slotRange.start;
+  int slotsInCurrentRange = 0;
+
+  while (currentSlotStart.isBefore(endTime)) {
+    if (currentSlotStart.isAfter(startTime)) {
+      slotsInCurrentRange++;
+    }
+    currentSlotStart = currentSlotStart.add(Duration(minutes: durationInMinutes)); // Assuming 30-minute slots
+  }
+
+  return slotsInCurrentRange;
+}

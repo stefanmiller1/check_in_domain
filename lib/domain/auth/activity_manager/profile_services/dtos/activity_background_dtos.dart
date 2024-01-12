@@ -13,6 +13,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
     String? activityDescription2,
 
     bool? isPartnersInviteOnly,
+    bool? isInstructorInviteOnly,
 
     List<Map<String, dynamic>>? activityGoals,
     List<Map<String, dynamic>>? activityInterests,
@@ -25,6 +26,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
         activityTitle: background.activityTitle.value.fold((l) => '', (r) => r),
         activityProfileImages: (background.activityProfileImages != null) ? background.activityProfileImages!.map((e) => e.uriPath ?? '').toList() : null,
         isPartnersInviteOnly: background.isPartnersInviteOnly,
+        isInstructorInviteOnly: background.isInstructorInviteOnly,
         activityDescription1: background.activityDescription1.value.fold((l) => '', (r) => r),
         activityDescription2: background.activityDescription2?.value.fold((l) => '', (r) => r),
         activityGoals: background.activityGoals?.map((e) => StringItemDto.fromDomain(e.value.fold((l) => '', (r) => r)).toJson()).toList(),
@@ -37,6 +39,7 @@ class ActivityBackgroundDto with _$ActivityBackgroundDto {
         activityTitle: BackgroundInfoTitle(activityTitle),
         activityProfileImages: (activityProfileImages != null) ? activityProfileImages!.map((e) => ImageUpload(key: e, uriPath: e)).toList() : null,
         isPartnersInviteOnly: isPartnersInviteOnly,
+        isInstructorInviteOnly: isInstructorInviteOnly,
         activityDescription1: BackgroundInfoDescription(activityDescription1),
         activityDescription2: BackgroundInfoDescription(activityDescription2 ?? ''),
         activityGoals: (activityGoals != null) ? activityGoals?.map((e) => BackgroundInfoDescription(StringItemDto.fromJson(e).toDomain())).toList() : [],

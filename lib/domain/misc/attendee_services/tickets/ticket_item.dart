@@ -13,6 +13,8 @@ class TicketItem with _$TicketItem {
     required bool isOnHold,
     required DateTime createdAt,
     required int expiresAt,
+    bool? redeemed,
+    DateTime? redeemedAt,
     String? selectedTicketTitle,
     ReservationSlotItem? selectedReservationSlot,
     ReservationTimeFeeSlotItem? selectedReservationTimeSlot,

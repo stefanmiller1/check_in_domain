@@ -73,6 +73,7 @@ class Post with _$Post {
     List<ImagePost>? imagePost,
     SystemPost? systemPost,
     TextPost? textPost,
+    int? likesCount,
     List<VideoPost>? videoPost,
     List<UniqueId>? postLikes,
     List<UniqueId>? postBookmarks,

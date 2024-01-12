@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'post.dart';
 
@@ -33,6 +33,7 @@ mixin _$Post {
   List<ImagePost>? get imagePost => throw _privateConstructorUsedError;
   SystemPost? get systemPost => throw _privateConstructorUsedError;
   TextPost? get textPost => throw _privateConstructorUsedError;
+  int? get likesCount => throw _privateConstructorUsedError;
   List<VideoPost>? get videoPost => throw _privateConstructorUsedError;
   List<UniqueId>? get postLikes => throw _privateConstructorUsedError;
   List<UniqueId>? get postBookmarks => throw _privateConstructorUsedError;
@@ -44,7 +45,8 @@ mixin _$Post {
 /// @nodoc
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
-      _$PostCopyWithImpl<$Res>;
+      _$PostCopyWithImpl<$Res, Post>;
+  @useResult
   $Res call(
       {UniqueId authorId,
       DateTime? createdAt,
@@ -63,6 +65,7 @@ abstract class $PostCopyWith<$Res> {
       List<ImagePost>? imagePost,
       SystemPost? systemPost,
       TextPost? textPost,
+      int? likesCount,
       List<VideoPost>? videoPost,
       List<UniqueId>? postLikes,
       List<UniqueId>? postBookmarks});
@@ -75,18 +78,21 @@ abstract class $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
+class _$PostCopyWithImpl<$Res, $Val extends Post>
+    implements $PostCopyWith<$Res> {
   _$PostCopyWithImpl(this._value, this._then);
 
-  final Post _value;
   // ignore: unused_field
-  final $Res Function(Post) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorId = freezed,
+    Object? authorId = null,
     Object? createdAt = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
     Object? remoteId = freezed,
     Object? repliedPost = freezed,
@@ -94,153 +100,163 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
     Object? showStatus = freezed,
     Object? status = freezed,
     Object? isReported = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? updatedAt = freezed,
     Object? previewData = freezed,
     Object? audioPost = freezed,
     Object? imagePost = freezed,
     Object? systemPost = freezed,
     Object? textPost = freezed,
+    Object? likesCount = freezed,
     Object? videoPost = freezed,
     Object? postLikes = freezed,
     Object? postBookmarks = freezed,
   }) {
     return _then(_value.copyWith(
-      authorId: authorId == freezed
+      authorId: null == authorId
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      remoteId: remoteId == freezed
+      remoteId: freezed == remoteId
           ? _value.remoteId
           : remoteId // ignore: cast_nullable_to_non_nullable
               as String?,
-      repliedPost: repliedPost == freezed
+      repliedPost: freezed == repliedPost
           ? _value.repliedPost
           : repliedPost // ignore: cast_nullable_to_non_nullable
               as Post?,
-      reservationId: reservationId == freezed
+      reservationId: freezed == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      showStatus: showStatus == freezed
+      showStatus: freezed == showStatus
           ? _value.showStatus
           : showStatus // ignore: cast_nullable_to_non_nullable
               as bool?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as PostStatus?,
-      isReported: isReported == freezed
+      isReported: freezed == isReported
           ? _value.isReported
           : isReported // ignore: cast_nullable_to_non_nullable
               as bool?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PostType,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      previewData: previewData == freezed
+      previewData: freezed == previewData
           ? _value.previewData
           : previewData // ignore: cast_nullable_to_non_nullable
               as PreviewData?,
-      audioPost: audioPost == freezed
+      audioPost: freezed == audioPost
           ? _value.audioPost
           : audioPost // ignore: cast_nullable_to_non_nullable
               as AudioPost?,
-      imagePost: imagePost == freezed
+      imagePost: freezed == imagePost
           ? _value.imagePost
           : imagePost // ignore: cast_nullable_to_non_nullable
               as List<ImagePost>?,
-      systemPost: systemPost == freezed
+      systemPost: freezed == systemPost
           ? _value.systemPost
           : systemPost // ignore: cast_nullable_to_non_nullable
               as SystemPost?,
-      textPost: textPost == freezed
+      textPost: freezed == textPost
           ? _value.textPost
           : textPost // ignore: cast_nullable_to_non_nullable
               as TextPost?,
-      videoPost: videoPost == freezed
+      likesCount: freezed == likesCount
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      videoPost: freezed == videoPost
           ? _value.videoPost
           : videoPost // ignore: cast_nullable_to_non_nullable
               as List<VideoPost>?,
-      postLikes: postLikes == freezed
+      postLikes: freezed == postLikes
           ? _value.postLikes
           : postLikes // ignore: cast_nullable_to_non_nullable
               as List<UniqueId>?,
-      postBookmarks: postBookmarks == freezed
+      postBookmarks: freezed == postBookmarks
           ? _value.postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<UniqueId>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PostCopyWith<$Res>? get repliedPost {
     if (_value.repliedPost == null) {
       return null;
     }
 
     return $PostCopyWith<$Res>(_value.repliedPost!, (value) {
-      return _then(_value.copyWith(repliedPost: value));
+      return _then(_value.copyWith(repliedPost: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PreviewDataCopyWith<$Res>? get previewData {
     if (_value.previewData == null) {
       return null;
     }
 
     return $PreviewDataCopyWith<$Res>(_value.previewData!, (value) {
-      return _then(_value.copyWith(previewData: value));
+      return _then(_value.copyWith(previewData: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AudioPostCopyWith<$Res>? get audioPost {
     if (_value.audioPost == null) {
       return null;
     }
 
     return $AudioPostCopyWith<$Res>(_value.audioPost!, (value) {
-      return _then(_value.copyWith(audioPost: value));
+      return _then(_value.copyWith(audioPost: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SystemPostCopyWith<$Res>? get systemPost {
     if (_value.systemPost == null) {
       return null;
     }
 
     return $SystemPostCopyWith<$Res>(_value.systemPost!, (value) {
-      return _then(_value.copyWith(systemPost: value));
+      return _then(_value.copyWith(systemPost: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TextPostCopyWith<$Res>? get textPost {
     if (_value.textPost == null) {
       return null;
     }
 
     return $TextPostCopyWith<$Res>(_value.textPost!, (value) {
-      return _then(_value.copyWith(textPost: value));
+      return _then(_value.copyWith(textPost: value) as $Val);
     });
   }
 }
@@ -250,6 +266,7 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$$_PostCopyWith(_$_Post value, $Res Function(_$_Post) then) =
       __$$_PostCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UniqueId authorId,
       DateTime? createdAt,
@@ -268,6 +285,7 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
       List<ImagePost>? imagePost,
       SystemPost? systemPost,
       TextPost? textPost,
+      int? likesCount,
       List<VideoPost>? videoPost,
       List<UniqueId>? postLikes,
       List<UniqueId>? postBookmarks});
@@ -285,19 +303,17 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
+class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
     implements _$$_PostCopyWith<$Res> {
   __$$_PostCopyWithImpl(_$_Post _value, $Res Function(_$_Post) _then)
-      : super(_value, (v) => _then(v as _$_Post));
+      : super(_value, _then);
 
-  @override
-  _$_Post get _value => super._value as _$_Post;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorId = freezed,
+    Object? authorId = null,
     Object? createdAt = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
     Object? remoteId = freezed,
     Object? repliedPost = freezed,
@@ -305,95 +321,100 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
     Object? showStatus = freezed,
     Object? status = freezed,
     Object? isReported = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? updatedAt = freezed,
     Object? previewData = freezed,
     Object? audioPost = freezed,
     Object? imagePost = freezed,
     Object? systemPost = freezed,
     Object? textPost = freezed,
+    Object? likesCount = freezed,
     Object? videoPost = freezed,
     Object? postLikes = freezed,
     Object? postBookmarks = freezed,
   }) {
     return _then(_$_Post(
-      authorId: authorId == freezed
+      authorId: null == authorId
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      remoteId: remoteId == freezed
+      remoteId: freezed == remoteId
           ? _value.remoteId
           : remoteId // ignore: cast_nullable_to_non_nullable
               as String?,
-      repliedPost: repliedPost == freezed
+      repliedPost: freezed == repliedPost
           ? _value.repliedPost
           : repliedPost // ignore: cast_nullable_to_non_nullable
               as Post?,
-      reservationId: reservationId == freezed
+      reservationId: freezed == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      showStatus: showStatus == freezed
+      showStatus: freezed == showStatus
           ? _value.showStatus
           : showStatus // ignore: cast_nullable_to_non_nullable
               as bool?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as PostStatus?,
-      isReported: isReported == freezed
+      isReported: freezed == isReported
           ? _value.isReported
           : isReported // ignore: cast_nullable_to_non_nullable
               as bool?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PostType,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      previewData: previewData == freezed
+      previewData: freezed == previewData
           ? _value.previewData
           : previewData // ignore: cast_nullable_to_non_nullable
               as PreviewData?,
-      audioPost: audioPost == freezed
+      audioPost: freezed == audioPost
           ? _value.audioPost
           : audioPost // ignore: cast_nullable_to_non_nullable
               as AudioPost?,
-      imagePost: imagePost == freezed
+      imagePost: freezed == imagePost
           ? _value._imagePost
           : imagePost // ignore: cast_nullable_to_non_nullable
               as List<ImagePost>?,
-      systemPost: systemPost == freezed
+      systemPost: freezed == systemPost
           ? _value.systemPost
           : systemPost // ignore: cast_nullable_to_non_nullable
               as SystemPost?,
-      textPost: textPost == freezed
+      textPost: freezed == textPost
           ? _value.textPost
           : textPost // ignore: cast_nullable_to_non_nullable
               as TextPost?,
-      videoPost: videoPost == freezed
+      likesCount: freezed == likesCount
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      videoPost: freezed == videoPost
           ? _value._videoPost
           : videoPost // ignore: cast_nullable_to_non_nullable
               as List<VideoPost>?,
-      postLikes: postLikes == freezed
+      postLikes: freezed == postLikes
           ? _value._postLikes
           : postLikes // ignore: cast_nullable_to_non_nullable
               as List<UniqueId>?,
-      postBookmarks: postBookmarks == freezed
+      postBookmarks: freezed == postBookmarks
           ? _value._postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<UniqueId>?,
@@ -422,6 +443,7 @@ class _$_Post extends _Post {
       final List<ImagePost>? imagePost,
       this.systemPost,
       this.textPost,
+      this.likesCount,
       final List<VideoPost>? videoPost,
       final List<UniqueId>? postLikes,
       final List<UniqueId>? postBookmarks})
@@ -443,6 +465,7 @@ class _$_Post extends _Post {
   Map<String, dynamic>? get metadata {
     final value = _metadata;
     if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -472,6 +495,7 @@ class _$_Post extends _Post {
   List<ImagePost>? get imagePost {
     final value = _imagePost;
     if (value == null) return null;
+    if (_imagePost is EqualUnmodifiableListView) return _imagePost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -480,11 +504,14 @@ class _$_Post extends _Post {
   final SystemPost? systemPost;
   @override
   final TextPost? textPost;
+  @override
+  final int? likesCount;
   final List<VideoPost>? _videoPost;
   @override
   List<VideoPost>? get videoPost {
     final value = _videoPost;
     if (value == null) return null;
+    if (_videoPost is EqualUnmodifiableListView) return _videoPost;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -494,6 +521,7 @@ class _$_Post extends _Post {
   List<UniqueId>? get postLikes {
     final value = _postLikes;
     if (value == null) return null;
+    if (_postLikes is EqualUnmodifiableListView) return _postLikes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -503,13 +531,14 @@ class _$_Post extends _Post {
   List<UniqueId>? get postBookmarks {
     final value = _postBookmarks;
     if (value == null) return null;
+    if (_postBookmarks is EqualUnmodifiableListView) return _postBookmarks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'Post(authorId: $authorId, createdAt: $createdAt, id: $id, metadata: $metadata, remoteId: $remoteId, repliedPost: $repliedPost, reservationId: $reservationId, showStatus: $showStatus, status: $status, isReported: $isReported, type: $type, updatedAt: $updatedAt, previewData: $previewData, audioPost: $audioPost, imagePost: $imagePost, systemPost: $systemPost, textPost: $textPost, videoPost: $videoPost, postLikes: $postLikes, postBookmarks: $postBookmarks)';
+    return 'Post(authorId: $authorId, createdAt: $createdAt, id: $id, metadata: $metadata, remoteId: $remoteId, repliedPost: $repliedPost, reservationId: $reservationId, showStatus: $showStatus, status: $status, isReported: $isReported, type: $type, updatedAt: $updatedAt, previewData: $previewData, audioPost: $audioPost, imagePost: $imagePost, systemPost: $systemPost, textPost: $textPost, likesCount: $likesCount, videoPost: $videoPost, postLikes: $postLikes, postBookmarks: $postBookmarks)';
   }
 
   @override
@@ -517,30 +546,38 @@ class _$_Post extends _Post {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Post &&
-            const DeepCollectionEquality().equals(other.authorId, authorId) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            (identical(other.authorId, authorId) ||
+                other.authorId == authorId) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._metadata, _metadata) &&
-            const DeepCollectionEquality().equals(other.remoteId, remoteId) &&
-            const DeepCollectionEquality()
-                .equals(other.repliedPost, repliedPost) &&
-            const DeepCollectionEquality()
-                .equals(other.reservationId, reservationId) &&
-            const DeepCollectionEquality()
-                .equals(other.showStatus, showStatus) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.isReported, isReported) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.previewData, previewData) &&
-            const DeepCollectionEquality().equals(other.audioPost, audioPost) &&
+            (identical(other.remoteId, remoteId) ||
+                other.remoteId == remoteId) &&
+            (identical(other.repliedPost, repliedPost) ||
+                other.repliedPost == repliedPost) &&
+            (identical(other.reservationId, reservationId) ||
+                other.reservationId == reservationId) &&
+            (identical(other.showStatus, showStatus) ||
+                other.showStatus == showStatus) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isReported, isReported) ||
+                other.isReported == isReported) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.previewData, previewData) ||
+                other.previewData == previewData) &&
+            (identical(other.audioPost, audioPost) ||
+                other.audioPost == audioPost) &&
             const DeepCollectionEquality()
                 .equals(other._imagePost, _imagePost) &&
-            const DeepCollectionEquality()
-                .equals(other.systemPost, systemPost) &&
-            const DeepCollectionEquality().equals(other.textPost, textPost) &&
+            (identical(other.systemPost, systemPost) ||
+                other.systemPost == systemPost) &&
+            (identical(other.textPost, textPost) ||
+                other.textPost == textPost) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
             const DeepCollectionEquality()
                 .equals(other._videoPost, _videoPost) &&
             const DeepCollectionEquality()
@@ -552,23 +589,24 @@ class _$_Post extends _Post {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(authorId),
-        const DeepCollectionEquality().hash(createdAt),
-        const DeepCollectionEquality().hash(id),
+        authorId,
+        createdAt,
+        id,
         const DeepCollectionEquality().hash(_metadata),
-        const DeepCollectionEquality().hash(remoteId),
-        const DeepCollectionEquality().hash(repliedPost),
-        const DeepCollectionEquality().hash(reservationId),
-        const DeepCollectionEquality().hash(showStatus),
-        const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(isReported),
-        const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(updatedAt),
-        const DeepCollectionEquality().hash(previewData),
-        const DeepCollectionEquality().hash(audioPost),
+        remoteId,
+        repliedPost,
+        reservationId,
+        showStatus,
+        status,
+        isReported,
+        type,
+        updatedAt,
+        previewData,
+        audioPost,
         const DeepCollectionEquality().hash(_imagePost),
-        const DeepCollectionEquality().hash(systemPost),
-        const DeepCollectionEquality().hash(textPost),
+        systemPost,
+        textPost,
+        likesCount,
         const DeepCollectionEquality().hash(_videoPost),
         const DeepCollectionEquality().hash(_postLikes),
         const DeepCollectionEquality().hash(_postBookmarks)
@@ -576,6 +614,7 @@ class _$_Post extends _Post {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PostCopyWith<_$_Post> get copyWith =>
       __$$_PostCopyWithImpl<_$_Post>(this, _$identity);
 }
@@ -599,6 +638,7 @@ abstract class _Post extends Post {
       final List<ImagePost>? imagePost,
       final SystemPost? systemPost,
       final TextPost? textPost,
+      final int? likesCount,
       final List<VideoPost>? videoPost,
       final List<UniqueId>? postLikes,
       final List<UniqueId>? postBookmarks}) = _$_Post;
@@ -638,6 +678,8 @@ abstract class _Post extends Post {
   SystemPost? get systemPost;
   @override
   TextPost? get textPost;
+  @override
+  int? get likesCount;
   @override
   List<VideoPost>? get videoPost;
   @override

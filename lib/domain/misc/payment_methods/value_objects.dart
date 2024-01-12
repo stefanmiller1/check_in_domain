@@ -20,23 +20,17 @@ String completeTotalPriceWithIntFormat(double price, String currency) {
   return numberFormat.format(price);
 }
 
+String completeTotalPriceForCheckoutFormat(double price, String currency) {
+  var numberFormat = NumberFormat('###0.00', currency);
+  return numberFormat.format(price);
+}
+
+
 String totalPriceNumberOnly(double price) {
   return '$price';
 }
 
-/// retrieve number for base pricing fee from [] items.
-double getTicketTotalPriceDouble(List<TicketItem> allTickets) {
 
-  double feeCount = 0;
-
-  for (TicketItem ticket in allTickets) {
-    final fee = ticket.selectedTicketFee;
-
-    feeCount += (fee);
-  }
-
-  return feeCount;
-}
 
 /// retrieve number for base pricing fee from [ReservationSlotItem] items
 double getListingTotalPriceDouble(List<ReservationSlotItem> allSlots, List<ReservationSlotItem> cancelledSlots) {
@@ -46,8 +40,7 @@ double getListingTotalPriceDouble(List<ReservationSlotItem> allSlots, List<Reser
 
   for (ReservationSlotItem slot in allSlots) {
     for (ReservationTimeFeeSlotItem priceSlot in slot.selectedSlots) {
-      final fee = priceSlot.fee.replaceAll(new RegExp(r'[^0-9]'),'').split('.').join('');
-
+      final fee = NumberFormat().parse(priceSlot.fee.replaceAll(new RegExp(r'[^0-9]'),'').split('.').join('')).toDouble();
 
       if (isReservationBooked(
           currentRes: slot,
@@ -56,7 +49,7 @@ double getListingTotalPriceDouble(List<ReservationSlotItem> allSlots, List<Reser
           reservationTimeSlots: retrieveReservationTimeSlots(cancelledSlots, slot))) {
 
       } else {
-        feeCount += (double.parse(fee)/STRIPE_FEE_TO_CENTS);
+        feeCount += (fee~/STRIPE_FEE_TO_CENTS);
       }
     }
   }

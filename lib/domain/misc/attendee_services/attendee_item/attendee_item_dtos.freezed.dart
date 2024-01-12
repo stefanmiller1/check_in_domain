@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'attendee_item_dtos.dart';
 
@@ -27,7 +27,9 @@ mixin _$AttendeeItemDto {
   String get paymentStatus => throw _privateConstructorUsedError;
   String get paymentIntentId => throw _privateConstructorUsedError;
   String get attendeeType => throw _privateConstructorUsedError;
+  String? get invitedFrom => throw _privateConstructorUsedError;
   String? get instanceId => throw _privateConstructorUsedError;
+  String? get contactStatus => throw _privateConstructorUsedError;
   Map<String, dynamic>? get attendeeDetails =>
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get ticketItems =>
@@ -42,6 +44,7 @@ mixin _$AttendeeItemDto {
       throw _privateConstructorUsedError;
   String? get refundId => throw _privateConstructorUsedError;
   String? get receipt_link => throw _privateConstructorUsedError;
+  bool? get isInterested => throw _privateConstructorUsedError;
   String get dateCreated => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue? get createdAtSTC => throw _privateConstructorUsedError;
@@ -56,7 +59,8 @@ mixin _$AttendeeItemDto {
 abstract class $AttendeeItemDtoCopyWith<$Res> {
   factory $AttendeeItemDtoCopyWith(
           AttendeeItemDto value, $Res Function(AttendeeItemDto) then) =
-      _$AttendeeItemDtoCopyWithImpl<$Res>;
+      _$AttendeeItemDtoCopyWithImpl<$Res, AttendeeItemDto>;
+  @useResult
   $Res call(
       {String attendeeId,
       String attendeeOwnerId,
@@ -65,7 +69,9 @@ abstract class $AttendeeItemDtoCopyWith<$Res> {
       String paymentStatus,
       String paymentIntentId,
       String attendeeType,
+      String? invitedFrom,
       String? instanceId,
+      String? contactStatus,
       Map<String, dynamic>? attendeeDetails,
       List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
@@ -74,29 +80,34 @@ abstract class $AttendeeItemDtoCopyWith<$Res> {
       Map<String, dynamic>? eventMerchantVendorProfile,
       String? refundId,
       String? receipt_link,
+      bool? isInterested,
       String dateCreated,
       @ServerTimestampConverter() FieldValue? createdAtSTC});
 }
 
 /// @nodoc
-class _$AttendeeItemDtoCopyWithImpl<$Res>
+class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
     implements $AttendeeItemDtoCopyWith<$Res> {
   _$AttendeeItemDtoCopyWithImpl(this._value, this._then);
 
-  final AttendeeItemDto _value;
   // ignore: unused_field
-  final $Res Function(AttendeeItemDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? attendeeId = freezed,
-    Object? attendeeOwnerId = freezed,
-    Object? reservationId = freezed,
-    Object? cost = freezed,
-    Object? paymentStatus = freezed,
-    Object? paymentIntentId = freezed,
-    Object? attendeeType = freezed,
+    Object? attendeeId = null,
+    Object? attendeeOwnerId = null,
+    Object? reservationId = null,
+    Object? cost = null,
+    Object? paymentStatus = null,
+    Object? paymentIntentId = null,
+    Object? attendeeType = null,
+    Object? invitedFrom = freezed,
     Object? instanceId = freezed,
+    Object? contactStatus = freezed,
     Object? attendeeDetails = freezed,
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
@@ -105,83 +116,96 @@ class _$AttendeeItemDtoCopyWithImpl<$Res>
     Object? eventMerchantVendorProfile = freezed,
     Object? refundId = freezed,
     Object? receipt_link = freezed,
-    Object? dateCreated = freezed,
+    Object? isInterested = freezed,
+    Object? dateCreated = null,
     Object? createdAtSTC = freezed,
   }) {
     return _then(_value.copyWith(
-      attendeeId: attendeeId == freezed
+      attendeeId: null == attendeeId
           ? _value.attendeeId
           : attendeeId // ignore: cast_nullable_to_non_nullable
               as String,
-      attendeeOwnerId: attendeeOwnerId == freezed
+      attendeeOwnerId: null == attendeeOwnerId
           ? _value.attendeeOwnerId
           : attendeeOwnerId // ignore: cast_nullable_to_non_nullable
               as String,
-      reservationId: reservationId == freezed
+      reservationId: null == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String,
-      cost: cost == freezed
+      cost: null == cost
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: null == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentIntentId: paymentIntentId == freezed
+      paymentIntentId: null == paymentIntentId
           ? _value.paymentIntentId
           : paymentIntentId // ignore: cast_nullable_to_non_nullable
               as String,
-      attendeeType: attendeeType == freezed
+      attendeeType: null == attendeeType
           ? _value.attendeeType
           : attendeeType // ignore: cast_nullable_to_non_nullable
               as String,
-      instanceId: instanceId == freezed
+      invitedFrom: freezed == invitedFrom
+          ? _value.invitedFrom
+          : invitedFrom // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instanceId: freezed == instanceId
           ? _value.instanceId
           : instanceId // ignore: cast_nullable_to_non_nullable
               as String?,
-      attendeeDetails: attendeeDetails == freezed
+      contactStatus: freezed == contactStatus
+          ? _value.contactStatus
+          : contactStatus // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attendeeDetails: freezed == attendeeDetails
           ? _value.attendeeDetails
           : attendeeDetails // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      ticketItems: ticketItems == freezed
+      ticketItems: freezed == ticketItems
           ? _value.ticketItems
           : ticketItems // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      checkInSetting: checkInSetting == freezed
+      checkInSetting: freezed == checkInSetting
           ? _value.checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      customFieldRuleSetting: customFieldRuleSetting == freezed
+      customFieldRuleSetting: freezed == customFieldRuleSetting
           ? _value.customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      classesInstructorProfile: classesInstructorProfile == freezed
+      classesInstructorProfile: freezed == classesInstructorProfile
           ? _value.classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      eventMerchantVendorProfile: eventMerchantVendorProfile == freezed
+      eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
           ? _value.eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      refundId: refundId == freezed
+      refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
               as String?,
-      receipt_link: receipt_link == freezed
+      receipt_link: freezed == receipt_link
           ? _value.receipt_link
           : receipt_link // ignore: cast_nullable_to_non_nullable
               as String?,
-      dateCreated: dateCreated == freezed
+      isInterested: freezed == isInterested
+          ? _value.isInterested
+          : isInterested // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAtSTC: createdAtSTC == freezed
+      createdAtSTC: freezed == createdAtSTC
           ? _value.createdAtSTC
           : createdAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -192,6 +216,7 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
           _$_AttendeeItemDto value, $Res Function(_$_AttendeeItemDto) then) =
       __$$_AttendeeItemDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String attendeeId,
       String attendeeOwnerId,
@@ -200,7 +225,9 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
       String paymentStatus,
       String paymentIntentId,
       String attendeeType,
+      String? invitedFrom,
       String? instanceId,
+      String? contactStatus,
       Map<String, dynamic>? attendeeDetails,
       List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
@@ -209,31 +236,32 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
       Map<String, dynamic>? eventMerchantVendorProfile,
       String? refundId,
       String? receipt_link,
+      bool? isInterested,
       String dateCreated,
       @ServerTimestampConverter() FieldValue? createdAtSTC});
 }
 
 /// @nodoc
 class __$$_AttendeeItemDtoCopyWithImpl<$Res>
-    extends _$AttendeeItemDtoCopyWithImpl<$Res>
+    extends _$AttendeeItemDtoCopyWithImpl<$Res, _$_AttendeeItemDto>
     implements _$$_AttendeeItemDtoCopyWith<$Res> {
   __$$_AttendeeItemDtoCopyWithImpl(
       _$_AttendeeItemDto _value, $Res Function(_$_AttendeeItemDto) _then)
-      : super(_value, (v) => _then(v as _$_AttendeeItemDto));
+      : super(_value, _then);
 
-  @override
-  _$_AttendeeItemDto get _value => super._value as _$_AttendeeItemDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? attendeeId = freezed,
-    Object? attendeeOwnerId = freezed,
-    Object? reservationId = freezed,
-    Object? cost = freezed,
-    Object? paymentStatus = freezed,
-    Object? paymentIntentId = freezed,
-    Object? attendeeType = freezed,
+    Object? attendeeId = null,
+    Object? attendeeOwnerId = null,
+    Object? reservationId = null,
+    Object? cost = null,
+    Object? paymentStatus = null,
+    Object? paymentIntentId = null,
+    Object? attendeeType = null,
+    Object? invitedFrom = freezed,
     Object? instanceId = freezed,
+    Object? contactStatus = freezed,
     Object? attendeeDetails = freezed,
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
@@ -242,79 +270,92 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
     Object? eventMerchantVendorProfile = freezed,
     Object? refundId = freezed,
     Object? receipt_link = freezed,
-    Object? dateCreated = freezed,
+    Object? isInterested = freezed,
+    Object? dateCreated = null,
     Object? createdAtSTC = freezed,
   }) {
     return _then(_$_AttendeeItemDto(
-      attendeeId: attendeeId == freezed
+      attendeeId: null == attendeeId
           ? _value.attendeeId
           : attendeeId // ignore: cast_nullable_to_non_nullable
               as String,
-      attendeeOwnerId: attendeeOwnerId == freezed
+      attendeeOwnerId: null == attendeeOwnerId
           ? _value.attendeeOwnerId
           : attendeeOwnerId // ignore: cast_nullable_to_non_nullable
               as String,
-      reservationId: reservationId == freezed
+      reservationId: null == reservationId
           ? _value.reservationId
           : reservationId // ignore: cast_nullable_to_non_nullable
               as String,
-      cost: cost == freezed
+      cost: null == cost
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: null == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentIntentId: paymentIntentId == freezed
+      paymentIntentId: null == paymentIntentId
           ? _value.paymentIntentId
           : paymentIntentId // ignore: cast_nullable_to_non_nullable
               as String,
-      attendeeType: attendeeType == freezed
+      attendeeType: null == attendeeType
           ? _value.attendeeType
           : attendeeType // ignore: cast_nullable_to_non_nullable
               as String,
-      instanceId: instanceId == freezed
+      invitedFrom: freezed == invitedFrom
+          ? _value.invitedFrom
+          : invitedFrom // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instanceId: freezed == instanceId
           ? _value.instanceId
           : instanceId // ignore: cast_nullable_to_non_nullable
               as String?,
-      attendeeDetails: attendeeDetails == freezed
+      contactStatus: freezed == contactStatus
+          ? _value.contactStatus
+          : contactStatus // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attendeeDetails: freezed == attendeeDetails
           ? _value._attendeeDetails
           : attendeeDetails // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      ticketItems: ticketItems == freezed
+      ticketItems: freezed == ticketItems
           ? _value._ticketItems
           : ticketItems // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      checkInSetting: checkInSetting == freezed
+      checkInSetting: freezed == checkInSetting
           ? _value._checkInSetting
           : checkInSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      customFieldRuleSetting: customFieldRuleSetting == freezed
+      customFieldRuleSetting: freezed == customFieldRuleSetting
           ? _value._customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      classesInstructorProfile: classesInstructorProfile == freezed
+      classesInstructorProfile: freezed == classesInstructorProfile
           ? _value._classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      eventMerchantVendorProfile: eventMerchantVendorProfile == freezed
+      eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
           ? _value._eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      refundId: refundId == freezed
+      refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
               as String?,
-      receipt_link: receipt_link == freezed
+      receipt_link: freezed == receipt_link
           ? _value.receipt_link
           : receipt_link // ignore: cast_nullable_to_non_nullable
               as String?,
-      dateCreated: dateCreated == freezed
+      isInterested: freezed == isInterested
+          ? _value.isInterested
+          : isInterested // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAtSTC: createdAtSTC == freezed
+      createdAtSTC: freezed == createdAtSTC
           ? _value.createdAtSTC
           : createdAtSTC // ignore: cast_nullable_to_non_nullable
               as FieldValue?,
@@ -333,7 +374,9 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       required this.paymentStatus,
       required this.paymentIntentId,
       required this.attendeeType,
+      this.invitedFrom,
       this.instanceId,
+      this.contactStatus,
       final Map<String, dynamic>? attendeeDetails,
       final List<Map<String, dynamic>>? ticketItems,
       final List<Map<String, dynamic>>? checkInSetting,
@@ -342,6 +385,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       final Map<String, dynamic>? eventMerchantVendorProfile,
       this.refundId,
       this.receipt_link,
+      this.isInterested,
       required this.dateCreated,
       @ServerTimestampConverter() this.createdAtSTC})
       : _attendeeDetails = attendeeDetails,
@@ -370,12 +414,17 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   @override
   final String attendeeType;
   @override
+  final String? invitedFrom;
+  @override
   final String? instanceId;
+  @override
+  final String? contactStatus;
   final Map<String, dynamic>? _attendeeDetails;
   @override
   Map<String, dynamic>? get attendeeDetails {
     final value = _attendeeDetails;
     if (value == null) return null;
+    if (_attendeeDetails is EqualUnmodifiableMapView) return _attendeeDetails;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -385,6 +434,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   List<Map<String, dynamic>>? get ticketItems {
     final value = _ticketItems;
     if (value == null) return null;
+    if (_ticketItems is EqualUnmodifiableListView) return _ticketItems;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -394,6 +444,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   List<Map<String, dynamic>>? get checkInSetting {
     final value = _checkInSetting;
     if (value == null) return null;
+    if (_checkInSetting is EqualUnmodifiableListView) return _checkInSetting;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -403,6 +454,8 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   List<Map<String, dynamic>>? get customFieldRuleSetting {
     final value = _customFieldRuleSetting;
     if (value == null) return null;
+    if (_customFieldRuleSetting is EqualUnmodifiableListView)
+      return _customFieldRuleSetting;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -412,6 +465,8 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   Map<String, dynamic>? get classesInstructorProfile {
     final value = _classesInstructorProfile;
     if (value == null) return null;
+    if (_classesInstructorProfile is EqualUnmodifiableMapView)
+      return _classesInstructorProfile;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -421,6 +476,8 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   Map<String, dynamic>? get eventMerchantVendorProfile {
     final value = _eventMerchantVendorProfile;
     if (value == null) return null;
+    if (_eventMerchantVendorProfile is EqualUnmodifiableMapView)
+      return _eventMerchantVendorProfile;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -430,6 +487,8 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   @override
   final String? receipt_link;
   @override
+  final bool? isInterested;
+  @override
   final String dateCreated;
   @override
   @ServerTimestampConverter()
@@ -437,7 +496,7 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
 
   @override
   String toString() {
-    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, instanceId: $instanceId, attendeeDetails: $attendeeDetails, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
+    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, invitedFrom: $invitedFrom, instanceId: $instanceId, contactStatus: $contactStatus, attendeeDetails: $attendeeDetails, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, isInterested: $isInterested, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
   }
 
   @override
@@ -445,21 +504,25 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AttendeeItemDto &&
-            const DeepCollectionEquality()
-                .equals(other.attendeeId, attendeeId) &&
-            const DeepCollectionEquality()
-                .equals(other.attendeeOwnerId, attendeeOwnerId) &&
-            const DeepCollectionEquality()
-                .equals(other.reservationId, reservationId) &&
-            const DeepCollectionEquality().equals(other.cost, cost) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentStatus, paymentStatus) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentIntentId, paymentIntentId) &&
-            const DeepCollectionEquality()
-                .equals(other.attendeeType, attendeeType) &&
-            const DeepCollectionEquality()
-                .equals(other.instanceId, instanceId) &&
+            (identical(other.attendeeId, attendeeId) ||
+                other.attendeeId == attendeeId) &&
+            (identical(other.attendeeOwnerId, attendeeOwnerId) ||
+                other.attendeeOwnerId == attendeeOwnerId) &&
+            (identical(other.reservationId, reservationId) ||
+                other.reservationId == reservationId) &&
+            (identical(other.cost, cost) || other.cost == cost) &&
+            (identical(other.paymentStatus, paymentStatus) ||
+                other.paymentStatus == paymentStatus) &&
+            (identical(other.paymentIntentId, paymentIntentId) ||
+                other.paymentIntentId == paymentIntentId) &&
+            (identical(other.attendeeType, attendeeType) ||
+                other.attendeeType == attendeeType) &&
+            (identical(other.invitedFrom, invitedFrom) ||
+                other.invitedFrom == invitedFrom) &&
+            (identical(other.instanceId, instanceId) ||
+                other.instanceId == instanceId) &&
+            (identical(other.contactStatus, contactStatus) ||
+                other.contactStatus == contactStatus) &&
             const DeepCollectionEquality()
                 .equals(other._attendeeDetails, _attendeeDetails) &&
             const DeepCollectionEquality()
@@ -473,40 +536,48 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
             const DeepCollectionEquality().equals(
                 other._eventMerchantVendorProfile,
                 _eventMerchantVendorProfile) &&
-            const DeepCollectionEquality().equals(other.refundId, refundId) &&
-            const DeepCollectionEquality()
-                .equals(other.receipt_link, receipt_link) &&
-            const DeepCollectionEquality()
-                .equals(other.dateCreated, dateCreated) &&
-            const DeepCollectionEquality()
-                .equals(other.createdAtSTC, createdAtSTC));
+            (identical(other.refundId, refundId) ||
+                other.refundId == refundId) &&
+            (identical(other.receipt_link, receipt_link) ||
+                other.receipt_link == receipt_link) &&
+            (identical(other.isInterested, isInterested) ||
+                other.isInterested == isInterested) &&
+            (identical(other.dateCreated, dateCreated) ||
+                other.dateCreated == dateCreated) &&
+            (identical(other.createdAtSTC, createdAtSTC) ||
+                other.createdAtSTC == createdAtSTC));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(attendeeId),
-      const DeepCollectionEquality().hash(attendeeOwnerId),
-      const DeepCollectionEquality().hash(reservationId),
-      const DeepCollectionEquality().hash(cost),
-      const DeepCollectionEquality().hash(paymentStatus),
-      const DeepCollectionEquality().hash(paymentIntentId),
-      const DeepCollectionEquality().hash(attendeeType),
-      const DeepCollectionEquality().hash(instanceId),
-      const DeepCollectionEquality().hash(_attendeeDetails),
-      const DeepCollectionEquality().hash(_ticketItems),
-      const DeepCollectionEquality().hash(_checkInSetting),
-      const DeepCollectionEquality().hash(_customFieldRuleSetting),
-      const DeepCollectionEquality().hash(_classesInstructorProfile),
-      const DeepCollectionEquality().hash(_eventMerchantVendorProfile),
-      const DeepCollectionEquality().hash(refundId),
-      const DeepCollectionEquality().hash(receipt_link),
-      const DeepCollectionEquality().hash(dateCreated),
-      const DeepCollectionEquality().hash(createdAtSTC));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        attendeeId,
+        attendeeOwnerId,
+        reservationId,
+        cost,
+        paymentStatus,
+        paymentIntentId,
+        attendeeType,
+        invitedFrom,
+        instanceId,
+        contactStatus,
+        const DeepCollectionEquality().hash(_attendeeDetails),
+        const DeepCollectionEquality().hash(_ticketItems),
+        const DeepCollectionEquality().hash(_checkInSetting),
+        const DeepCollectionEquality().hash(_customFieldRuleSetting),
+        const DeepCollectionEquality().hash(_classesInstructorProfile),
+        const DeepCollectionEquality().hash(_eventMerchantVendorProfile),
+        refundId,
+        receipt_link,
+        isInterested,
+        dateCreated,
+        createdAtSTC
+      ]);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AttendeeItemDtoCopyWith<_$_AttendeeItemDto> get copyWith =>
       __$$_AttendeeItemDtoCopyWithImpl<_$_AttendeeItemDto>(this, _$identity);
 
@@ -527,7 +598,9 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
           required final String paymentStatus,
           required final String paymentIntentId,
           required final String attendeeType,
+          final String? invitedFrom,
           final String? instanceId,
+          final String? contactStatus,
           final Map<String, dynamic>? attendeeDetails,
           final List<Map<String, dynamic>>? ticketItems,
           final List<Map<String, dynamic>>? checkInSetting,
@@ -536,6 +609,7 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
           final Map<String, dynamic>? eventMerchantVendorProfile,
           final String? refundId,
           final String? receipt_link,
+          final bool? isInterested,
           required final String dateCreated,
           @ServerTimestampConverter() final FieldValue? createdAtSTC}) =
       _$_AttendeeItemDto;
@@ -559,7 +633,11 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   @override
   String get attendeeType;
   @override
+  String? get invitedFrom;
+  @override
   String? get instanceId;
+  @override
+  String? get contactStatus;
   @override
   Map<String, dynamic>? get attendeeDetails;
   @override
@@ -576,6 +654,8 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   String? get refundId;
   @override
   String? get receipt_link;
+  @override
+  bool? get isInterested;
   @override
   String get dateCreated;
   @override

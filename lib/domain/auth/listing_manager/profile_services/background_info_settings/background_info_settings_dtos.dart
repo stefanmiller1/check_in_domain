@@ -7,8 +7,8 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
 
   factory BackgroundInfoSettingsDto({
     required String listingOwner,
-    required String startDate,
-    required String endDate,
+    required int startDate,
+    required int endDate,
     required String listingName,
     required String listingDescription,
     required String listingEmail,
@@ -26,8 +26,8 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
   factory BackgroundInfoSettingsDto.fromDomain(BackgroundInfoSettings settings) {
     return BackgroundInfoSettingsDto(
         listingOwner: settings.listingOwner.getOrCrash(),
-        startDate: settings.startEndDate.start.toString(),
-        endDate: settings.startEndDate.end.toString(),
+        startDate: settings.startEndDate.start.millisecondsSinceEpoch,
+        endDate: settings.startEndDate.end.millisecondsSinceEpoch,
         listingName: settings.listingName.value.fold((l) => '', (r) => r),
         listingDescription: settings.listingDescription.value.fold((l) => '', (r) => r),
         listingEmail: settings.listingEmail.value.fold((l) => '', (r) => r),
@@ -46,7 +46,7 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
   BackgroundInfoSettings toDomain() {
     return BackgroundInfoSettings(
         listingOwner: UniqueId.fromUniqueString(listingOwner),
-        startEndDate: DateTimeRange(start: DateTime.parse(startDate), end: DateTime.parse(endDate)),
+        startEndDate: DateTimeRange(start: DateTime.fromMillisecondsSinceEpoch(startDate), end: DateTime.fromMillisecondsSinceEpoch(endDate)),
         listingName: FirstLastName(listingName),
         listingDescription: BackgroundInfoDescription(listingDescription),
         listingEmail: EmailAddress(listingEmail),

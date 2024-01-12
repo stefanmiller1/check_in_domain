@@ -39,6 +39,7 @@ class LocationModel with _$LocationModel {
     isVerified: false,
     isVerifiedAlready: false,
     isCompleted: false,
+    locationPosition: null
   );
 
   Option<ValueFailure<dynamic>> get failureOption =>
