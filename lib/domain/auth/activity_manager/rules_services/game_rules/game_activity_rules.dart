@@ -8,7 +8,8 @@ class GameActivityRules with _$GameActivityRules {
   factory GameActivityRules({
 
     List<DonationType>? allowedDonationTypes,
-    bool? isAllowedExternalContributions
+    bool? isAllowedExternalContributions,
+    String? postDonationLink
 
 }) = _GameActivityRules;
 

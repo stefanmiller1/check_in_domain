@@ -130,6 +130,7 @@ Map<String, dynamic> _$$_StringBoolItemsDtoToJson(
 _$_StringDateRangeItemDto _$$_StringDateRangeItemDtoFromJson(
         Map<String, dynamic> json) =>
     _$_StringDateRangeItemDto(
+      descriptionItem: json['descriptionItem'] as String?,
       stringItem: json['stringItem'] as String,
       dateStart: json['dateStart'] as String,
       dateEnd: json['dateEnd'] as String,
@@ -138,6 +139,7 @@ _$_StringDateRangeItemDto _$$_StringDateRangeItemDtoFromJson(
 Map<String, dynamic> _$$_StringDateRangeItemDtoToJson(
         _$_StringDateRangeItemDto instance) =>
     <String, dynamic>{
+      'descriptionItem': instance.descriptionItem,
       'stringItem': instance.stringItem,
       'dateStart': instance.dateStart,
       'dateEnd': instance.dateEnd,
@@ -215,6 +217,34 @@ Map<String, dynamic> _$$_DetailRuleOptionDtoToJson(
         _$_DetailRuleOptionDto instance) =>
     <String, dynamic>{
       'uid': instance.uid,
+    };
+
+_$_AccountNotificationItemDto _$$_AccountNotificationItemDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_AccountNotificationItemDto(
+      notificationId: json['notificationId'] as String,
+      isRead: json['isRead'] as bool,
+      receivedAtTimeStamp: json['receivedAtTimeStamp'] as int,
+      notificationType: json['notificationType'] as String,
+      openedAtTimeStamp: json['openedAtTimeStamp'] as int?,
+      sentFromId: json['sentFromId'] as String?,
+      postId: json['postId'] as String?,
+      reservationId: json['reservationId'] as String?,
+      listingId: json['listingId'] as String?,
+    );
+
+Map<String, dynamic> _$$_AccountNotificationItemDtoToJson(
+        _$_AccountNotificationItemDto instance) =>
+    <String, dynamic>{
+      'notificationId': instance.notificationId,
+      'isRead': instance.isRead,
+      'receivedAtTimeStamp': instance.receivedAtTimeStamp,
+      'notificationType': instance.notificationType,
+      'openedAtTimeStamp': instance.openedAtTimeStamp,
+      'sentFromId': instance.sentFromId,
+      'postId': instance.postId,
+      'reservationId': instance.reservationId,
+      'listingId': instance.listingId,
     };
 
 _$_AffiliationOptionDto _$$_AffiliationOptionDtoFromJson(
@@ -468,6 +498,9 @@ _$_ReservationSlotItemDto _$$_ReservationSlotItemDtoFromJson(
       selectedSlots: (json['selectedSlots'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
+      customSlots: (json['customSlots'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
     );
 
 Map<String, dynamic> _$$_ReservationSlotItemDtoToJson(
@@ -480,6 +513,7 @@ Map<String, dynamic> _$$_ReservationSlotItemDtoToJson(
       'slotDescription': instance.slotDescription,
       'selectedDate': instance.selectedDate,
       'selectedSlots': instance.selectedSlots,
+      'customSlots': instance.customSlots,
     };
 
 _$_CardItemDto _$$_CardItemDtoFromJson(Map<String, dynamic> json) =>
@@ -932,6 +966,10 @@ Map<String, dynamic> _$$_CertificateOptionDtoToJson(
 _$_ActivityProfileServiceDto _$$_ActivityProfileServiceDtoFromJson(
         Map<String, dynamic> json) =>
     _$_ActivityProfileServiceDto(
+      isActivityPost: json['isActivityPost'] as bool?,
+      postContactWebsite: json['postContactWebsite'] as String?,
+      postContactEmail: json['postContactEmail'] as String?,
+      postContactSocialInstagram: json['postContactSocialInstagram'] as String?,
       activityBackground: json['activityBackground'] as Map<String, dynamic>,
       activityRequirements:
           json['activityRequirements'] as Map<String, dynamic>,
@@ -940,6 +978,10 @@ _$_ActivityProfileServiceDto _$$_ActivityProfileServiceDtoFromJson(
 Map<String, dynamic> _$$_ActivityProfileServiceDtoToJson(
         _$_ActivityProfileServiceDto instance) =>
     <String, dynamic>{
+      'isActivityPost': instance.isActivityPost,
+      'postContactWebsite': instance.postContactWebsite,
+      'postContactEmail': instance.postContactEmail,
+      'postContactSocialInstagram': instance.postContactSocialInstagram,
       'activityBackground': instance.activityBackground,
       'activityRequirements': instance.activityRequirements,
     };
@@ -983,6 +1025,8 @@ _$_EventActivityRulesRequirementDto
           isMerchantInviteOnly: json['isMerchantInviteOnly'] as bool,
           merchantFee: json['merchantFee'] as int?,
           merchantLimit: json['merchantLimit'] as int?,
+          postMerchantApplicationLink:
+              json['postMerchantApplicationLink'] as String?,
           isAlcoholForSale: json['isAlcoholForSale'] as bool,
           isFoodForSale: json['isFoodForSale'] as bool,
           isAlcoholProvided: json['isAlcoholProvided'] as bool,
@@ -1001,6 +1045,7 @@ Map<String, dynamic> _$$_EventActivityRulesRequirementDtoToJson(
       'isMerchantInviteOnly': instance.isMerchantInviteOnly,
       'merchantFee': instance.merchantFee,
       'merchantLimit': instance.merchantLimit,
+      'postMerchantApplicationLink': instance.postMerchantApplicationLink,
       'isAlcoholForSale': instance.isAlcoholForSale,
       'isFoodForSale': instance.isFoodForSale,
       'isAlcoholProvided': instance.isAlcoholProvided,
@@ -1065,6 +1110,7 @@ _$_GameActivityRulesDto _$$_GameActivityRulesDtoFromJson(
           .toList(),
       isAllowedExternalContributions:
           json['isAllowedExternalContributions'] as bool?,
+      postDonationLink: json['postDonationLink'] as String?,
     );
 
 Map<String, dynamic> _$$_GameActivityRulesDtoToJson(
@@ -1072,6 +1118,7 @@ Map<String, dynamic> _$$_GameActivityRulesDtoToJson(
     <String, dynamic>{
       'allowedDonationTypes': instance.allowedDonationTypes,
       'isAllowedExternalContributions': instance.isAllowedExternalContributions,
+      'postDonationLink': instance.postDonationLink,
     };
 
 _$_ActivityRulesServiceDto _$$_ActivityRulesServiceDtoFromJson(
@@ -2380,4 +2427,28 @@ Map<String, dynamic> _$$_ProfileSessionDtoToJson(
       'isSession': instance.isSession,
       'serverTimeStamp':
           const ServerTimestampConverter().toJson(instance.serverTimeStamp),
+    };
+
+_$_CommunityProfileItemDto _$$_CommunityProfileItemDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_CommunityProfileItemDto(
+      communityId: json['communityId'] as String,
+      communityCreatedBy: json['communityCreatedBy'] as String,
+      communityName: json['communityName'] as String,
+      joinedDate: json['joinedDate'] as String,
+      photoUri: json['photoUri'] as String?,
+      instagram: json['instagram'] as String?,
+      website: json['website'] as String?,
+    );
+
+Map<String, dynamic> _$$_CommunityProfileItemDtoToJson(
+        _$_CommunityProfileItemDto instance) =>
+    <String, dynamic>{
+      'communityId': instance.communityId,
+      'communityCreatedBy': instance.communityCreatedBy,
+      'communityName': instance.communityName,
+      'joinedDate': instance.joinedDate,
+      'photoUri': instance.photoUri,
+      'instagram': instance.instagram,
+      'website': instance.website,
     };

@@ -10,6 +10,7 @@ class EventActivityRulesRequirement with _$EventActivityRulesRequirement {
     required bool isMerchantSupported,
     int? merchantFee,
     int? merchantLimit,
+    String? postMerchantApplicationLink,
     required bool isMerchantInviteOnly,
 
     required bool isAlcoholForSale,

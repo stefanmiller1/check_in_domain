@@ -3658,6 +3658,7 @@ StringDateRangeItemDto _$StringDateRangeItemDtoFromJson(
 
 /// @nodoc
 mixin _$StringDateRangeItemDto {
+  String? get descriptionItem => throw _privateConstructorUsedError;
   String get stringItem => throw _privateConstructorUsedError;
   String get dateStart => throw _privateConstructorUsedError;
   String get dateEnd => throw _privateConstructorUsedError;
@@ -3674,7 +3675,11 @@ abstract class $StringDateRangeItemDtoCopyWith<$Res> {
           $Res Function(StringDateRangeItemDto) then) =
       _$StringDateRangeItemDtoCopyWithImpl<$Res, StringDateRangeItemDto>;
   @useResult
-  $Res call({String stringItem, String dateStart, String dateEnd});
+  $Res call(
+      {String? descriptionItem,
+      String stringItem,
+      String dateStart,
+      String dateEnd});
 }
 
 /// @nodoc
@@ -3691,11 +3696,16 @@ class _$StringDateRangeItemDtoCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? descriptionItem = freezed,
     Object? stringItem = null,
     Object? dateStart = null,
     Object? dateEnd = null,
   }) {
     return _then(_value.copyWith(
+      descriptionItem: freezed == descriptionItem
+          ? _value.descriptionItem
+          : descriptionItem // ignore: cast_nullable_to_non_nullable
+              as String?,
       stringItem: null == stringItem
           ? _value.stringItem
           : stringItem // ignore: cast_nullable_to_non_nullable
@@ -3720,7 +3730,11 @@ abstract class _$$_StringDateRangeItemDtoCopyWith<$Res>
       __$$_StringDateRangeItemDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String stringItem, String dateStart, String dateEnd});
+  $Res call(
+      {String? descriptionItem,
+      String stringItem,
+      String dateStart,
+      String dateEnd});
 }
 
 /// @nodoc
@@ -3735,11 +3749,16 @@ class __$$_StringDateRangeItemDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? descriptionItem = freezed,
     Object? stringItem = null,
     Object? dateStart = null,
     Object? dateEnd = null,
   }) {
     return _then(_$_StringDateRangeItemDto(
+      descriptionItem: freezed == descriptionItem
+          ? _value.descriptionItem
+          : descriptionItem // ignore: cast_nullable_to_non_nullable
+              as String?,
       stringItem: null == stringItem
           ? _value.stringItem
           : stringItem // ignore: cast_nullable_to_non_nullable
@@ -3760,7 +3779,8 @@ class __$$_StringDateRangeItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
   _$_StringDateRangeItemDto(
-      {required this.stringItem,
+      {this.descriptionItem,
+      required this.stringItem,
       required this.dateStart,
       required this.dateEnd})
       : super._();
@@ -3768,6 +3788,8 @@ class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
   factory _$_StringDateRangeItemDto.fromJson(Map<String, dynamic> json) =>
       _$$_StringDateRangeItemDtoFromJson(json);
 
+  @override
+  final String? descriptionItem;
   @override
   final String stringItem;
   @override
@@ -3777,7 +3799,7 @@ class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
 
   @override
   String toString() {
-    return 'StringDateRangeItemDto(stringItem: $stringItem, dateStart: $dateStart, dateEnd: $dateEnd)';
+    return 'StringDateRangeItemDto(descriptionItem: $descriptionItem, stringItem: $stringItem, dateStart: $dateStart, dateEnd: $dateEnd)';
   }
 
   @override
@@ -3785,6 +3807,8 @@ class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StringDateRangeItemDto &&
+            (identical(other.descriptionItem, descriptionItem) ||
+                other.descriptionItem == descriptionItem) &&
             (identical(other.stringItem, stringItem) ||
                 other.stringItem == stringItem) &&
             (identical(other.dateStart, dateStart) ||
@@ -3794,7 +3818,8 @@ class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, stringItem, dateStart, dateEnd);
+  int get hashCode =>
+      Object.hash(runtimeType, descriptionItem, stringItem, dateStart, dateEnd);
 
   @JsonKey(ignore: true)
   @override
@@ -3813,7 +3838,8 @@ class _$_StringDateRangeItemDto extends _StringDateRangeItemDto {
 
 abstract class _StringDateRangeItemDto extends StringDateRangeItemDto {
   factory _StringDateRangeItemDto(
-      {required final String stringItem,
+      {final String? descriptionItem,
+      required final String stringItem,
       required final String dateStart,
       required final String dateEnd}) = _$_StringDateRangeItemDto;
   _StringDateRangeItemDto._() : super._();
@@ -3821,6 +3847,8 @@ abstract class _StringDateRangeItemDto extends StringDateRangeItemDto {
   factory _StringDateRangeItemDto.fromJson(Map<String, dynamic> json) =
       _$_StringDateRangeItemDto.fromJson;
 
+  @override
+  String? get descriptionItem;
   @override
   String get stringItem;
   @override
@@ -7457,6 +7485,856 @@ abstract class InvalidFacilityName<T>
   @JsonKey(ignore: true)
   _$$InvalidFacilityNameCopyWith<T, _$InvalidFacilityName<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AccountNotificationItem {
+  UniqueId get notificationId => throw _privateConstructorUsedError;
+  bool get isRead => throw _privateConstructorUsedError;
+  int get receivedAtTimeStamp => throw _privateConstructorUsedError;
+  AccountNotificationType get notificationType =>
+      throw _privateConstructorUsedError;
+  int? get openedAtTimeStamp => throw _privateConstructorUsedError;
+  UniqueId? get sentFromId => throw _privateConstructorUsedError;
+  UniqueId? get postId => throw _privateConstructorUsedError;
+  UniqueId? get reservationId => throw _privateConstructorUsedError;
+  UniqueId? get listingId => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AccountNotificationItemCopyWith<AccountNotificationItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AccountNotificationItemCopyWith<$Res> {
+  factory $AccountNotificationItemCopyWith(AccountNotificationItem value,
+          $Res Function(AccountNotificationItem) then) =
+      _$AccountNotificationItemCopyWithImpl<$Res, AccountNotificationItem>;
+  @useResult
+  $Res call(
+      {UniqueId notificationId,
+      bool isRead,
+      int receivedAtTimeStamp,
+      AccountNotificationType notificationType,
+      int? openedAtTimeStamp,
+      UniqueId? sentFromId,
+      UniqueId? postId,
+      UniqueId? reservationId,
+      UniqueId? listingId});
+}
+
+/// @nodoc
+class _$AccountNotificationItemCopyWithImpl<$Res,
+        $Val extends AccountNotificationItem>
+    implements $AccountNotificationItemCopyWith<$Res> {
+  _$AccountNotificationItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationId = null,
+    Object? isRead = null,
+    Object? receivedAtTimeStamp = null,
+    Object? notificationType = null,
+    Object? openedAtTimeStamp = freezed,
+    Object? sentFromId = freezed,
+    Object? postId = freezed,
+    Object? reservationId = freezed,
+    Object? listingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      notificationId: null == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isRead: null == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool,
+      receivedAtTimeStamp: null == receivedAtTimeStamp
+          ? _value.receivedAtTimeStamp
+          : receivedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as AccountNotificationType,
+      openedAtTimeStamp: freezed == openedAtTimeStamp
+          ? _value.openedAtTimeStamp
+          : openedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sentFromId: freezed == sentFromId
+          ? _value.sentFromId
+          : sentFromId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      postId: freezed == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      reservationId: freezed == reservationId
+          ? _value.reservationId
+          : reservationId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      listingId: freezed == listingId
+          ? _value.listingId
+          : listingId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AccountNotificationItemCopyWith<$Res>
+    implements $AccountNotificationItemCopyWith<$Res> {
+  factory _$$_AccountNotificationItemCopyWith(_$_AccountNotificationItem value,
+          $Res Function(_$_AccountNotificationItem) then) =
+      __$$_AccountNotificationItemCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {UniqueId notificationId,
+      bool isRead,
+      int receivedAtTimeStamp,
+      AccountNotificationType notificationType,
+      int? openedAtTimeStamp,
+      UniqueId? sentFromId,
+      UniqueId? postId,
+      UniqueId? reservationId,
+      UniqueId? listingId});
+}
+
+/// @nodoc
+class __$$_AccountNotificationItemCopyWithImpl<$Res>
+    extends _$AccountNotificationItemCopyWithImpl<$Res,
+        _$_AccountNotificationItem>
+    implements _$$_AccountNotificationItemCopyWith<$Res> {
+  __$$_AccountNotificationItemCopyWithImpl(_$_AccountNotificationItem _value,
+      $Res Function(_$_AccountNotificationItem) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationId = null,
+    Object? isRead = null,
+    Object? receivedAtTimeStamp = null,
+    Object? notificationType = null,
+    Object? openedAtTimeStamp = freezed,
+    Object? sentFromId = freezed,
+    Object? postId = freezed,
+    Object? reservationId = freezed,
+    Object? listingId = freezed,
+  }) {
+    return _then(_$_AccountNotificationItem(
+      notificationId: null == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      isRead: null == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool,
+      receivedAtTimeStamp: null == receivedAtTimeStamp
+          ? _value.receivedAtTimeStamp
+          : receivedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as AccountNotificationType,
+      openedAtTimeStamp: freezed == openedAtTimeStamp
+          ? _value.openedAtTimeStamp
+          : openedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sentFromId: freezed == sentFromId
+          ? _value.sentFromId
+          : sentFromId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      postId: freezed == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      reservationId: freezed == reservationId
+          ? _value.reservationId
+          : reservationId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      listingId: freezed == listingId
+          ? _value.listingId
+          : listingId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AccountNotificationItem extends _AccountNotificationItem {
+  const _$_AccountNotificationItem(
+      {required this.notificationId,
+      required this.isRead,
+      required this.receivedAtTimeStamp,
+      required this.notificationType,
+      this.openedAtTimeStamp,
+      this.sentFromId,
+      this.postId,
+      this.reservationId,
+      this.listingId})
+      : super._();
+
+  @override
+  final UniqueId notificationId;
+  @override
+  final bool isRead;
+  @override
+  final int receivedAtTimeStamp;
+  @override
+  final AccountNotificationType notificationType;
+  @override
+  final int? openedAtTimeStamp;
+  @override
+  final UniqueId? sentFromId;
+  @override
+  final UniqueId? postId;
+  @override
+  final UniqueId? reservationId;
+  @override
+  final UniqueId? listingId;
+
+  @override
+  String toString() {
+    return 'AccountNotificationItem(notificationId: $notificationId, isRead: $isRead, receivedAtTimeStamp: $receivedAtTimeStamp, notificationType: $notificationType, openedAtTimeStamp: $openedAtTimeStamp, sentFromId: $sentFromId, postId: $postId, reservationId: $reservationId, listingId: $listingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AccountNotificationItem &&
+            (identical(other.notificationId, notificationId) ||
+                other.notificationId == notificationId) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead) &&
+            (identical(other.receivedAtTimeStamp, receivedAtTimeStamp) ||
+                other.receivedAtTimeStamp == receivedAtTimeStamp) &&
+            (identical(other.notificationType, notificationType) ||
+                other.notificationType == notificationType) &&
+            (identical(other.openedAtTimeStamp, openedAtTimeStamp) ||
+                other.openedAtTimeStamp == openedAtTimeStamp) &&
+            (identical(other.sentFromId, sentFromId) ||
+                other.sentFromId == sentFromId) &&
+            (identical(other.postId, postId) || other.postId == postId) &&
+            (identical(other.reservationId, reservationId) ||
+                other.reservationId == reservationId) &&
+            (identical(other.listingId, listingId) ||
+                other.listingId == listingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      notificationId,
+      isRead,
+      receivedAtTimeStamp,
+      notificationType,
+      openedAtTimeStamp,
+      sentFromId,
+      postId,
+      reservationId,
+      listingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AccountNotificationItemCopyWith<_$_AccountNotificationItem>
+      get copyWith =>
+          __$$_AccountNotificationItemCopyWithImpl<_$_AccountNotificationItem>(
+              this, _$identity);
+}
+
+abstract class _AccountNotificationItem extends AccountNotificationItem {
+  const factory _AccountNotificationItem(
+      {required final UniqueId notificationId,
+      required final bool isRead,
+      required final int receivedAtTimeStamp,
+      required final AccountNotificationType notificationType,
+      final int? openedAtTimeStamp,
+      final UniqueId? sentFromId,
+      final UniqueId? postId,
+      final UniqueId? reservationId,
+      final UniqueId? listingId}) = _$_AccountNotificationItem;
+  const _AccountNotificationItem._() : super._();
+
+  @override
+  UniqueId get notificationId;
+  @override
+  bool get isRead;
+  @override
+  int get receivedAtTimeStamp;
+  @override
+  AccountNotificationType get notificationType;
+  @override
+  int? get openedAtTimeStamp;
+  @override
+  UniqueId? get sentFromId;
+  @override
+  UniqueId? get postId;
+  @override
+  UniqueId? get reservationId;
+  @override
+  UniqueId? get listingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AccountNotificationItemCopyWith<_$_AccountNotificationItem>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+AccountNotificationItemDto _$AccountNotificationItemDtoFromJson(
+    Map<String, dynamic> json) {
+  return _AccountNotificationItemDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AccountNotificationItemDto {
+  String get notificationId => throw _privateConstructorUsedError;
+  bool get isRead => throw _privateConstructorUsedError;
+  int get receivedAtTimeStamp => throw _privateConstructorUsedError;
+  String get notificationType => throw _privateConstructorUsedError;
+  int? get openedAtTimeStamp => throw _privateConstructorUsedError;
+  String? get sentFromId => throw _privateConstructorUsedError;
+  String? get postId => throw _privateConstructorUsedError;
+  String? get reservationId => throw _privateConstructorUsedError;
+  String? get listingId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AccountNotificationItemDtoCopyWith<AccountNotificationItemDto>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AccountNotificationItemDtoCopyWith<$Res> {
+  factory $AccountNotificationItemDtoCopyWith(AccountNotificationItemDto value,
+          $Res Function(AccountNotificationItemDto) then) =
+      _$AccountNotificationItemDtoCopyWithImpl<$Res,
+          AccountNotificationItemDto>;
+  @useResult
+  $Res call(
+      {String notificationId,
+      bool isRead,
+      int receivedAtTimeStamp,
+      String notificationType,
+      int? openedAtTimeStamp,
+      String? sentFromId,
+      String? postId,
+      String? reservationId,
+      String? listingId});
+}
+
+/// @nodoc
+class _$AccountNotificationItemDtoCopyWithImpl<$Res,
+        $Val extends AccountNotificationItemDto>
+    implements $AccountNotificationItemDtoCopyWith<$Res> {
+  _$AccountNotificationItemDtoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationId = null,
+    Object? isRead = null,
+    Object? receivedAtTimeStamp = null,
+    Object? notificationType = null,
+    Object? openedAtTimeStamp = freezed,
+    Object? sentFromId = freezed,
+    Object? postId = freezed,
+    Object? reservationId = freezed,
+    Object? listingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      notificationId: null == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isRead: null == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool,
+      receivedAtTimeStamp: null == receivedAtTimeStamp
+          ? _value.receivedAtTimeStamp
+          : receivedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as String,
+      openedAtTimeStamp: freezed == openedAtTimeStamp
+          ? _value.openedAtTimeStamp
+          : openedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sentFromId: freezed == sentFromId
+          ? _value.sentFromId
+          : sentFromId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postId: freezed == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reservationId: freezed == reservationId
+          ? _value.reservationId
+          : reservationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      listingId: freezed == listingId
+          ? _value.listingId
+          : listingId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AccountNotificationItemDtoCopyWith<$Res>
+    implements $AccountNotificationItemDtoCopyWith<$Res> {
+  factory _$$_AccountNotificationItemDtoCopyWith(
+          _$_AccountNotificationItemDto value,
+          $Res Function(_$_AccountNotificationItemDto) then) =
+      __$$_AccountNotificationItemDtoCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String notificationId,
+      bool isRead,
+      int receivedAtTimeStamp,
+      String notificationType,
+      int? openedAtTimeStamp,
+      String? sentFromId,
+      String? postId,
+      String? reservationId,
+      String? listingId});
+}
+
+/// @nodoc
+class __$$_AccountNotificationItemDtoCopyWithImpl<$Res>
+    extends _$AccountNotificationItemDtoCopyWithImpl<$Res,
+        _$_AccountNotificationItemDto>
+    implements _$$_AccountNotificationItemDtoCopyWith<$Res> {
+  __$$_AccountNotificationItemDtoCopyWithImpl(
+      _$_AccountNotificationItemDto _value,
+      $Res Function(_$_AccountNotificationItemDto) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationId = null,
+    Object? isRead = null,
+    Object? receivedAtTimeStamp = null,
+    Object? notificationType = null,
+    Object? openedAtTimeStamp = freezed,
+    Object? sentFromId = freezed,
+    Object? postId = freezed,
+    Object? reservationId = freezed,
+    Object? listingId = freezed,
+  }) {
+    return _then(_$_AccountNotificationItemDto(
+      notificationId: null == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      isRead: null == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool,
+      receivedAtTimeStamp: null == receivedAtTimeStamp
+          ? _value.receivedAtTimeStamp
+          : receivedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as String,
+      openedAtTimeStamp: freezed == openedAtTimeStamp
+          ? _value.openedAtTimeStamp
+          : openedAtTimeStamp // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sentFromId: freezed == sentFromId
+          ? _value.sentFromId
+          : sentFromId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postId: freezed == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reservationId: freezed == reservationId
+          ? _value.reservationId
+          : reservationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      listingId: freezed == listingId
+          ? _value.listingId
+          : listingId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AccountNotificationItemDto extends _AccountNotificationItemDto {
+  const _$_AccountNotificationItemDto(
+      {required this.notificationId,
+      required this.isRead,
+      required this.receivedAtTimeStamp,
+      required this.notificationType,
+      this.openedAtTimeStamp,
+      this.sentFromId,
+      this.postId,
+      this.reservationId,
+      this.listingId})
+      : super._();
+
+  factory _$_AccountNotificationItemDto.fromJson(Map<String, dynamic> json) =>
+      _$$_AccountNotificationItemDtoFromJson(json);
+
+  @override
+  final String notificationId;
+  @override
+  final bool isRead;
+  @override
+  final int receivedAtTimeStamp;
+  @override
+  final String notificationType;
+  @override
+  final int? openedAtTimeStamp;
+  @override
+  final String? sentFromId;
+  @override
+  final String? postId;
+  @override
+  final String? reservationId;
+  @override
+  final String? listingId;
+
+  @override
+  String toString() {
+    return 'AccountNotificationItemDto(notificationId: $notificationId, isRead: $isRead, receivedAtTimeStamp: $receivedAtTimeStamp, notificationType: $notificationType, openedAtTimeStamp: $openedAtTimeStamp, sentFromId: $sentFromId, postId: $postId, reservationId: $reservationId, listingId: $listingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AccountNotificationItemDto &&
+            (identical(other.notificationId, notificationId) ||
+                other.notificationId == notificationId) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead) &&
+            (identical(other.receivedAtTimeStamp, receivedAtTimeStamp) ||
+                other.receivedAtTimeStamp == receivedAtTimeStamp) &&
+            (identical(other.notificationType, notificationType) ||
+                other.notificationType == notificationType) &&
+            (identical(other.openedAtTimeStamp, openedAtTimeStamp) ||
+                other.openedAtTimeStamp == openedAtTimeStamp) &&
+            (identical(other.sentFromId, sentFromId) ||
+                other.sentFromId == sentFromId) &&
+            (identical(other.postId, postId) || other.postId == postId) &&
+            (identical(other.reservationId, reservationId) ||
+                other.reservationId == reservationId) &&
+            (identical(other.listingId, listingId) ||
+                other.listingId == listingId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      notificationId,
+      isRead,
+      receivedAtTimeStamp,
+      notificationType,
+      openedAtTimeStamp,
+      sentFromId,
+      postId,
+      reservationId,
+      listingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AccountNotificationItemDtoCopyWith<_$_AccountNotificationItemDto>
+      get copyWith => __$$_AccountNotificationItemDtoCopyWithImpl<
+          _$_AccountNotificationItemDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AccountNotificationItemDtoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AccountNotificationItemDto extends AccountNotificationItemDto {
+  const factory _AccountNotificationItemDto(
+      {required final String notificationId,
+      required final bool isRead,
+      required final int receivedAtTimeStamp,
+      required final String notificationType,
+      final int? openedAtTimeStamp,
+      final String? sentFromId,
+      final String? postId,
+      final String? reservationId,
+      final String? listingId}) = _$_AccountNotificationItemDto;
+  const _AccountNotificationItemDto._() : super._();
+
+  factory _AccountNotificationItemDto.fromJson(Map<String, dynamic> json) =
+      _$_AccountNotificationItemDto.fromJson;
+
+  @override
+  String get notificationId;
+  @override
+  bool get isRead;
+  @override
+  int get receivedAtTimeStamp;
+  @override
+  String get notificationType;
+  @override
+  int? get openedAtTimeStamp;
+  @override
+  String? get sentFromId;
+  @override
+  String? get postId;
+  @override
+  String? get reservationId;
+  @override
+  String? get listingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AccountNotificationItemDtoCopyWith<_$_AccountNotificationItemDto>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$NotificationValueFailure<T> {
+  String? get failedValue => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failedValue) notificationServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? failedValue)? notificationServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failedValue)? notificationServerError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NotificationServerError<T> value)
+        notificationServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotificationServerError<T> value)?
+        notificationServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotificationServerError<T> value)?
+        notificationServerError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NotificationValueFailureCopyWith<T, NotificationValueFailure<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotificationValueFailureCopyWith<T, $Res> {
+  factory $NotificationValueFailureCopyWith(NotificationValueFailure<T> value,
+          $Res Function(NotificationValueFailure<T>) then) =
+      _$NotificationValueFailureCopyWithImpl<T, $Res,
+          NotificationValueFailure<T>>;
+  @useResult
+  $Res call({String? failedValue});
+}
+
+/// @nodoc
+class _$NotificationValueFailureCopyWithImpl<T, $Res,
+        $Val extends NotificationValueFailure<T>>
+    implements $NotificationValueFailureCopyWith<T, $Res> {
+  _$NotificationValueFailureCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_NotificationServerErrorCopyWith<T, $Res>
+    implements $NotificationValueFailureCopyWith<T, $Res> {
+  factory _$$_NotificationServerErrorCopyWith(
+          _$_NotificationServerError<T> value,
+          $Res Function(_$_NotificationServerError<T>) then) =
+      __$$_NotificationServerErrorCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({String? failedValue});
+}
+
+/// @nodoc
+class __$$_NotificationServerErrorCopyWithImpl<T, $Res>
+    extends _$NotificationValueFailureCopyWithImpl<T, $Res,
+        _$_NotificationServerError<T>>
+    implements _$$_NotificationServerErrorCopyWith<T, $Res> {
+  __$$_NotificationServerErrorCopyWithImpl(_$_NotificationServerError<T> _value,
+      $Res Function(_$_NotificationServerError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$_NotificationServerError<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_NotificationServerError<T> extends _NotificationServerError<T> {
+  const _$_NotificationServerError({this.failedValue}) : super._();
+
+  @override
+  final String? failedValue;
+
+  @override
+  String toString() {
+    return 'NotificationValueFailure<$T>.notificationServerError(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NotificationServerError<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NotificationServerErrorCopyWith<T, _$_NotificationServerError<T>>
+      get copyWith => __$$_NotificationServerErrorCopyWithImpl<T,
+          _$_NotificationServerError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failedValue) notificationServerError,
+  }) {
+    return notificationServerError(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? failedValue)? notificationServerError,
+  }) {
+    return notificationServerError?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failedValue)? notificationServerError,
+    required TResult orElse(),
+  }) {
+    if (notificationServerError != null) {
+      return notificationServerError(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NotificationServerError<T> value)
+        notificationServerError,
+  }) {
+    return notificationServerError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotificationServerError<T> value)?
+        notificationServerError,
+  }) {
+    return notificationServerError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotificationServerError<T> value)?
+        notificationServerError,
+    required TResult orElse(),
+  }) {
+    if (notificationServerError != null) {
+      return notificationServerError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotificationServerError<T> extends NotificationValueFailure<T> {
+  const factory _NotificationServerError({final String? failedValue}) =
+      _$_NotificationServerError<T>;
+  const _NotificationServerError._() : super._();
+
+  @override
+  String? get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$_NotificationServerErrorCopyWith<T, _$_NotificationServerError<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -12926,6 +13804,8 @@ mixin _$ReservationSlotItem {
   String? get slotDescription => throw _privateConstructorUsedError;
   List<ReservationTimeFeeSlotItem> get selectedSlots =>
       throw _privateConstructorUsedError;
+  List<ReservationTimeFeeSlotItem>? get customSlots =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ReservationSlotItemCopyWith<ReservationSlotItem> get copyWith =>
@@ -12945,7 +13825,8 @@ abstract class $ReservationSlotItemCopyWith<$Res> {
       String? selectedSideOption,
       DateTime selectedDate,
       String? slotDescription,
-      List<ReservationTimeFeeSlotItem> selectedSlots});
+      List<ReservationTimeFeeSlotItem> selectedSlots,
+      List<ReservationTimeFeeSlotItem>? customSlots});
 }
 
 /// @nodoc
@@ -12968,6 +13849,7 @@ class _$ReservationSlotItemCopyWithImpl<$Res, $Val extends ReservationSlotItem>
     Object? selectedDate = null,
     Object? slotDescription = freezed,
     Object? selectedSlots = null,
+    Object? customSlots = freezed,
   }) {
     return _then(_value.copyWith(
       selectedActivityType: null == selectedActivityType
@@ -12998,6 +13880,10 @@ class _$ReservationSlotItemCopyWithImpl<$Res, $Val extends ReservationSlotItem>
           ? _value.selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
               as List<ReservationTimeFeeSlotItem>,
+      customSlots: freezed == customSlots
+          ? _value.customSlots
+          : customSlots // ignore: cast_nullable_to_non_nullable
+              as List<ReservationTimeFeeSlotItem>?,
     ) as $Val);
   }
 }
@@ -13017,7 +13903,8 @@ abstract class _$$_ReservationSlotItemCopyWith<$Res>
       String? selectedSideOption,
       DateTime selectedDate,
       String? slotDescription,
-      List<ReservationTimeFeeSlotItem> selectedSlots});
+      List<ReservationTimeFeeSlotItem> selectedSlots,
+      List<ReservationTimeFeeSlotItem>? customSlots});
 }
 
 /// @nodoc
@@ -13038,6 +13925,7 @@ class __$$_ReservationSlotItemCopyWithImpl<$Res>
     Object? selectedDate = null,
     Object? slotDescription = freezed,
     Object? selectedSlots = null,
+    Object? customSlots = freezed,
   }) {
     return _then(_$_ReservationSlotItem(
       selectedActivityType: null == selectedActivityType
@@ -13068,6 +13956,10 @@ class __$$_ReservationSlotItemCopyWithImpl<$Res>
           ? _value._selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
               as List<ReservationTimeFeeSlotItem>,
+      customSlots: freezed == customSlots
+          ? _value._customSlots
+          : customSlots // ignore: cast_nullable_to_non_nullable
+              as List<ReservationTimeFeeSlotItem>?,
     ));
   }
 }
@@ -13082,8 +13974,10 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
       this.selectedSideOption,
       required this.selectedDate,
       this.slotDescription,
-      required final List<ReservationTimeFeeSlotItem> selectedSlots})
+      required final List<ReservationTimeFeeSlotItem> selectedSlots,
+      final List<ReservationTimeFeeSlotItem>? customSlots})
       : _selectedSlots = selectedSlots,
+        _customSlots = customSlots,
         super._();
 
   @override
@@ -13106,9 +14000,19 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
     return EqualUnmodifiableListView(_selectedSlots);
   }
 
+  final List<ReservationTimeFeeSlotItem>? _customSlots;
+  @override
+  List<ReservationTimeFeeSlotItem>? get customSlots {
+    final value = _customSlots;
+    if (value == null) return null;
+    if (_customSlots is EqualUnmodifiableListView) return _customSlots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'ReservationSlotItem(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, selectedDate: $selectedDate, slotDescription: $slotDescription, selectedSlots: $selectedSlots)';
+    return 'ReservationSlotItem(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, selectedDate: $selectedDate, slotDescription: $slotDescription, selectedSlots: $selectedSlots, customSlots: $customSlots)';
   }
 
   @override
@@ -13129,7 +14033,9 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
             (identical(other.slotDescription, slotDescription) ||
                 other.slotDescription == slotDescription) &&
             const DeepCollectionEquality()
-                .equals(other._selectedSlots, _selectedSlots));
+                .equals(other._selectedSlots, _selectedSlots) &&
+            const DeepCollectionEquality()
+                .equals(other._customSlots, _customSlots));
   }
 
   @override
@@ -13141,7 +14047,8 @@ class _$_ReservationSlotItem extends _ReservationSlotItem {
       selectedSideOption,
       selectedDate,
       slotDescription,
-      const DeepCollectionEquality().hash(_selectedSlots));
+      const DeepCollectionEquality().hash(_selectedSlots),
+      const DeepCollectionEquality().hash(_customSlots));
 
   @JsonKey(ignore: true)
   @override
@@ -13159,7 +14066,8 @@ abstract class _ReservationSlotItem extends ReservationSlotItem {
           final String? selectedSideOption,
           required final DateTime selectedDate,
           final String? slotDescription,
-          required final List<ReservationTimeFeeSlotItem> selectedSlots}) =
+          required final List<ReservationTimeFeeSlotItem> selectedSlots,
+          final List<ReservationTimeFeeSlotItem>? customSlots}) =
       _$_ReservationSlotItem;
   _ReservationSlotItem._() : super._();
 
@@ -13178,6 +14086,8 @@ abstract class _ReservationSlotItem extends ReservationSlotItem {
   @override
   List<ReservationTimeFeeSlotItem> get selectedSlots;
   @override
+  List<ReservationTimeFeeSlotItem>? get customSlots;
+  @override
   @JsonKey(ignore: true)
   _$$_ReservationSlotItemCopyWith<_$_ReservationSlotItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -13187,6 +14097,7 @@ abstract class _ReservationSlotItem extends ReservationSlotItem {
 mixin _$ReservationTimeFeeSlotItem {
   String get fee => throw _privateConstructorUsedError;
   DateTimeRange get slotRange => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ReservationTimeFeeSlotItemCopyWith<ReservationTimeFeeSlotItem>
@@ -13200,7 +14111,7 @@ abstract class $ReservationTimeFeeSlotItemCopyWith<$Res> {
       _$ReservationTimeFeeSlotItemCopyWithImpl<$Res,
           ReservationTimeFeeSlotItem>;
   @useResult
-  $Res call({String fee, DateTimeRange slotRange});
+  $Res call({String fee, DateTimeRange slotRange, String? description});
 }
 
 /// @nodoc
@@ -13219,6 +14130,7 @@ class _$ReservationTimeFeeSlotItemCopyWithImpl<$Res,
   $Res call({
     Object? fee = null,
     Object? slotRange = null,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
       fee: null == fee
@@ -13229,6 +14141,10 @@ class _$ReservationTimeFeeSlotItemCopyWithImpl<$Res,
           ? _value.slotRange
           : slotRange // ignore: cast_nullable_to_non_nullable
               as DateTimeRange,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -13242,7 +14158,7 @@ abstract class _$$_ReservationTimeFeeSlotItemCopyWith<$Res>
       __$$_ReservationTimeFeeSlotItemCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String fee, DateTimeRange slotRange});
+  $Res call({String fee, DateTimeRange slotRange, String? description});
 }
 
 /// @nodoc
@@ -13260,6 +14176,7 @@ class __$$_ReservationTimeFeeSlotItemCopyWithImpl<$Res>
   $Res call({
     Object? fee = null,
     Object? slotRange = null,
+    Object? description = freezed,
   }) {
     return _then(_$_ReservationTimeFeeSlotItem(
       fee: null == fee
@@ -13270,6 +14187,10 @@ class __$$_ReservationTimeFeeSlotItemCopyWithImpl<$Res>
           ? _value.slotRange
           : slotRange // ignore: cast_nullable_to_non_nullable
               as DateTimeRange,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -13277,17 +14198,20 @@ class __$$_ReservationTimeFeeSlotItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ReservationTimeFeeSlotItem extends _ReservationTimeFeeSlotItem {
-  _$_ReservationTimeFeeSlotItem({required this.fee, required this.slotRange})
+  _$_ReservationTimeFeeSlotItem(
+      {required this.fee, required this.slotRange, this.description})
       : super._();
 
   @override
   final String fee;
   @override
   final DateTimeRange slotRange;
+  @override
+  final String? description;
 
   @override
   String toString() {
-    return 'ReservationTimeFeeSlotItem(fee: $fee, slotRange: $slotRange)';
+    return 'ReservationTimeFeeSlotItem(fee: $fee, slotRange: $slotRange, description: $description)';
   }
 
   @override
@@ -13297,11 +14221,13 @@ class _$_ReservationTimeFeeSlotItem extends _ReservationTimeFeeSlotItem {
             other is _$_ReservationTimeFeeSlotItem &&
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.slotRange, slotRange) ||
-                other.slotRange == slotRange));
+                other.slotRange == slotRange) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, fee, slotRange);
+  int get hashCode => Object.hash(runtimeType, fee, slotRange, description);
 
   @JsonKey(ignore: true)
   @override
@@ -13314,13 +14240,16 @@ class _$_ReservationTimeFeeSlotItem extends _ReservationTimeFeeSlotItem {
 abstract class _ReservationTimeFeeSlotItem extends ReservationTimeFeeSlotItem {
   factory _ReservationTimeFeeSlotItem(
       {required final String fee,
-      required final DateTimeRange slotRange}) = _$_ReservationTimeFeeSlotItem;
+      required final DateTimeRange slotRange,
+      final String? description}) = _$_ReservationTimeFeeSlotItem;
   _ReservationTimeFeeSlotItem._() : super._();
 
   @override
   String get fee;
   @override
   DateTimeRange get slotRange;
+  @override
+  String? get description;
   @override
   @JsonKey(ignore: true)
   _$$_ReservationTimeFeeSlotItemCopyWith<_$_ReservationTimeFeeSlotItem>
@@ -13342,6 +14271,8 @@ mixin _$ReservationSlotItemDto {
   String get selectedDate => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get selectedSlots =>
       throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get customSlots =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -13362,7 +14293,8 @@ abstract class $ReservationSlotItemDtoCopyWith<$Res> {
       String? selectedSideOption,
       String? slotDescription,
       String selectedDate,
-      List<Map<String, dynamic>> selectedSlots});
+      List<Map<String, dynamic>> selectedSlots,
+      List<Map<String, dynamic>>? customSlots});
 }
 
 /// @nodoc
@@ -13386,6 +14318,7 @@ class _$ReservationSlotItemDtoCopyWithImpl<$Res,
     Object? slotDescription = freezed,
     Object? selectedDate = null,
     Object? selectedSlots = null,
+    Object? customSlots = freezed,
   }) {
     return _then(_value.copyWith(
       selectedActivityType: null == selectedActivityType
@@ -13416,6 +14349,10 @@ class _$ReservationSlotItemDtoCopyWithImpl<$Res,
           ? _value.selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
+      customSlots: freezed == customSlots
+          ? _value.customSlots
+          : customSlots // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
     ) as $Val);
   }
 }
@@ -13435,7 +14372,8 @@ abstract class _$$_ReservationSlotItemDtoCopyWith<$Res>
       String? selectedSideOption,
       String? slotDescription,
       String selectedDate,
-      List<Map<String, dynamic>> selectedSlots});
+      List<Map<String, dynamic>> selectedSlots,
+      List<Map<String, dynamic>>? customSlots});
 }
 
 /// @nodoc
@@ -13457,6 +14395,7 @@ class __$$_ReservationSlotItemDtoCopyWithImpl<$Res>
     Object? slotDescription = freezed,
     Object? selectedDate = null,
     Object? selectedSlots = null,
+    Object? customSlots = freezed,
   }) {
     return _then(_$_ReservationSlotItemDto(
       selectedActivityType: null == selectedActivityType
@@ -13487,6 +14426,10 @@ class __$$_ReservationSlotItemDtoCopyWithImpl<$Res>
           ? _value._selectedSlots
           : selectedSlots // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
+      customSlots: freezed == customSlots
+          ? _value._customSlots
+          : customSlots // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
     ));
   }
 }
@@ -13501,8 +14444,10 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
       this.selectedSideOption,
       this.slotDescription,
       required this.selectedDate,
-      required final List<Map<String, dynamic>> selectedSlots})
+      required final List<Map<String, dynamic>> selectedSlots,
+      final List<Map<String, dynamic>>? customSlots})
       : _selectedSlots = selectedSlots,
+        _customSlots = customSlots,
         super._();
 
   factory _$_ReservationSlotItemDto.fromJson(Map<String, dynamic> json) =>
@@ -13528,9 +14473,19 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
     return EqualUnmodifiableListView(_selectedSlots);
   }
 
+  final List<Map<String, dynamic>>? _customSlots;
+  @override
+  List<Map<String, dynamic>>? get customSlots {
+    final value = _customSlots;
+    if (value == null) return null;
+    if (_customSlots is EqualUnmodifiableListView) return _customSlots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'ReservationSlotItemDto(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, slotDescription: $slotDescription, selectedDate: $selectedDate, selectedSlots: $selectedSlots)';
+    return 'ReservationSlotItemDto(selectedActivityType: $selectedActivityType, selectedSpaceId: $selectedSpaceId, selectedSportSpaceId: $selectedSportSpaceId, selectedSideOption: $selectedSideOption, slotDescription: $slotDescription, selectedDate: $selectedDate, selectedSlots: $selectedSlots, customSlots: $customSlots)';
   }
 
   @override
@@ -13551,7 +14506,9 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
             (identical(other.selectedDate, selectedDate) ||
                 other.selectedDate == selectedDate) &&
             const DeepCollectionEquality()
-                .equals(other._selectedSlots, _selectedSlots));
+                .equals(other._selectedSlots, _selectedSlots) &&
+            const DeepCollectionEquality()
+                .equals(other._customSlots, _customSlots));
   }
 
   @JsonKey(ignore: true)
@@ -13564,7 +14521,8 @@ class _$_ReservationSlotItemDto extends _ReservationSlotItemDto {
       selectedSideOption,
       slotDescription,
       selectedDate,
-      const DeepCollectionEquality().hash(_selectedSlots));
+      const DeepCollectionEquality().hash(_selectedSlots),
+      const DeepCollectionEquality().hash(_customSlots));
 
   @JsonKey(ignore: true)
   @override
@@ -13589,7 +14547,8 @@ abstract class _ReservationSlotItemDto extends ReservationSlotItemDto {
           final String? selectedSideOption,
           final String? slotDescription,
           required final String selectedDate,
-          required final List<Map<String, dynamic>> selectedSlots}) =
+          required final List<Map<String, dynamic>> selectedSlots,
+          final List<Map<String, dynamic>>? customSlots}) =
       _$_ReservationSlotItemDto;
   _ReservationSlotItemDto._() : super._();
 
@@ -13610,6 +14569,8 @@ abstract class _ReservationSlotItemDto extends ReservationSlotItemDto {
   String get selectedDate;
   @override
   List<Map<String, dynamic>> get selectedSlots;
+  @override
+  List<Map<String, dynamic>>? get customSlots;
   @override
   @JsonKey(ignore: true)
   _$$_ReservationSlotItemDtoCopyWith<_$_ReservationSlotItemDto> get copyWith =>
@@ -30448,6 +31409,11 @@ ActivityProfileServiceDto _$ActivityProfileServiceDtoFromJson(
 
 /// @nodoc
 mixin _$ActivityProfileServiceDto {
+  /// post only - hosted by
+  bool? get isActivityPost => throw _privateConstructorUsedError;
+  String? get postContactWebsite => throw _privateConstructorUsedError;
+  String? get postContactEmail => throw _privateConstructorUsedError;
+  String? get postContactSocialInstagram => throw _privateConstructorUsedError;
   Map<String, dynamic> get activityBackground =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> get activityRequirements =>
@@ -30466,7 +31432,11 @@ abstract class $ActivityProfileServiceDtoCopyWith<$Res> {
       _$ActivityProfileServiceDtoCopyWithImpl<$Res, ActivityProfileServiceDto>;
   @useResult
   $Res call(
-      {Map<String, dynamic> activityBackground,
+      {bool? isActivityPost,
+      String? postContactWebsite,
+      String? postContactEmail,
+      String? postContactSocialInstagram,
+      Map<String, dynamic> activityBackground,
       Map<String, dynamic> activityRequirements});
 }
 
@@ -30484,10 +31454,30 @@ class _$ActivityProfileServiceDtoCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isActivityPost = freezed,
+    Object? postContactWebsite = freezed,
+    Object? postContactEmail = freezed,
+    Object? postContactSocialInstagram = freezed,
     Object? activityBackground = null,
     Object? activityRequirements = null,
   }) {
     return _then(_value.copyWith(
+      isActivityPost: freezed == isActivityPost
+          ? _value.isActivityPost
+          : isActivityPost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      postContactWebsite: freezed == postContactWebsite
+          ? _value.postContactWebsite
+          : postContactWebsite // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactEmail: freezed == postContactEmail
+          ? _value.postContactEmail
+          : postContactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactSocialInstagram: freezed == postContactSocialInstagram
+          ? _value.postContactSocialInstagram
+          : postContactSocialInstagram // ignore: cast_nullable_to_non_nullable
+              as String?,
       activityBackground: null == activityBackground
           ? _value.activityBackground
           : activityBackground // ignore: cast_nullable_to_non_nullable
@@ -30510,7 +31500,11 @@ abstract class _$$_ActivityProfileServiceDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Map<String, dynamic> activityBackground,
+      {bool? isActivityPost,
+      String? postContactWebsite,
+      String? postContactEmail,
+      String? postContactSocialInstagram,
+      Map<String, dynamic> activityBackground,
       Map<String, dynamic> activityRequirements});
 }
 
@@ -30527,10 +31521,30 @@ class __$$_ActivityProfileServiceDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isActivityPost = freezed,
+    Object? postContactWebsite = freezed,
+    Object? postContactEmail = freezed,
+    Object? postContactSocialInstagram = freezed,
     Object? activityBackground = null,
     Object? activityRequirements = null,
   }) {
     return _then(_$_ActivityProfileServiceDto(
+      isActivityPost: freezed == isActivityPost
+          ? _value.isActivityPost
+          : isActivityPost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      postContactWebsite: freezed == postContactWebsite
+          ? _value.postContactWebsite
+          : postContactWebsite // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactEmail: freezed == postContactEmail
+          ? _value.postContactEmail
+          : postContactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactSocialInstagram: freezed == postContactSocialInstagram
+          ? _value.postContactSocialInstagram
+          : postContactSocialInstagram // ignore: cast_nullable_to_non_nullable
+              as String?,
       activityBackground: null == activityBackground
           ? _value._activityBackground
           : activityBackground // ignore: cast_nullable_to_non_nullable
@@ -30547,7 +31561,11 @@ class __$$_ActivityProfileServiceDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
   _$_ActivityProfileServiceDto(
-      {required final Map<String, dynamic> activityBackground,
+      {this.isActivityPost,
+      this.postContactWebsite,
+      this.postContactEmail,
+      this.postContactSocialInstagram,
+      required final Map<String, dynamic> activityBackground,
       required final Map<String, dynamic> activityRequirements})
       : _activityBackground = activityBackground,
         _activityRequirements = activityRequirements,
@@ -30556,6 +31574,15 @@ class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
   factory _$_ActivityProfileServiceDto.fromJson(Map<String, dynamic> json) =>
       _$$_ActivityProfileServiceDtoFromJson(json);
 
+  /// post only - hosted by
+  @override
+  final bool? isActivityPost;
+  @override
+  final String? postContactWebsite;
+  @override
+  final String? postContactEmail;
+  @override
+  final String? postContactSocialInstagram;
   final Map<String, dynamic> _activityBackground;
   @override
   Map<String, dynamic> get activityBackground {
@@ -30576,7 +31603,7 @@ class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
 
   @override
   String toString() {
-    return 'ActivityProfileServiceDto(activityBackground: $activityBackground, activityRequirements: $activityRequirements)';
+    return 'ActivityProfileServiceDto(isActivityPost: $isActivityPost, postContactWebsite: $postContactWebsite, postContactEmail: $postContactEmail, postContactSocialInstagram: $postContactSocialInstagram, activityBackground: $activityBackground, activityRequirements: $activityRequirements)';
   }
 
   @override
@@ -30584,6 +31611,16 @@ class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ActivityProfileServiceDto &&
+            (identical(other.isActivityPost, isActivityPost) ||
+                other.isActivityPost == isActivityPost) &&
+            (identical(other.postContactWebsite, postContactWebsite) ||
+                other.postContactWebsite == postContactWebsite) &&
+            (identical(other.postContactEmail, postContactEmail) ||
+                other.postContactEmail == postContactEmail) &&
+            (identical(other.postContactSocialInstagram,
+                    postContactSocialInstagram) ||
+                other.postContactSocialInstagram ==
+                    postContactSocialInstagram) &&
             const DeepCollectionEquality()
                 .equals(other._activityBackground, _activityBackground) &&
             const DeepCollectionEquality()
@@ -30594,6 +31631,10 @@ class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      isActivityPost,
+      postContactWebsite,
+      postContactEmail,
+      postContactSocialInstagram,
       const DeepCollectionEquality().hash(_activityBackground),
       const DeepCollectionEquality().hash(_activityRequirements));
 
@@ -30614,7 +31655,11 @@ class _$_ActivityProfileServiceDto extends _ActivityProfileServiceDto {
 
 abstract class _ActivityProfileServiceDto extends ActivityProfileServiceDto {
   factory _ActivityProfileServiceDto(
-          {required final Map<String, dynamic> activityBackground,
+          {final bool? isActivityPost,
+          final String? postContactWebsite,
+          final String? postContactEmail,
+          final String? postContactSocialInstagram,
+          required final Map<String, dynamic> activityBackground,
           required final Map<String, dynamic> activityRequirements}) =
       _$_ActivityProfileServiceDto;
   _ActivityProfileServiceDto._() : super._();
@@ -30622,6 +31667,16 @@ abstract class _ActivityProfileServiceDto extends ActivityProfileServiceDto {
   factory _ActivityProfileServiceDto.fromJson(Map<String, dynamic> json) =
       _$_ActivityProfileServiceDto.fromJson;
 
+  @override
+
+  /// post only - hosted by
+  bool? get isActivityPost;
+  @override
+  String? get postContactWebsite;
+  @override
+  String? get postContactEmail;
+  @override
+  String? get postContactSocialInstagram;
   @override
   Map<String, dynamic> get activityBackground;
   @override
@@ -30943,6 +31998,11 @@ abstract class _CertificateOption extends CertificateOption {
 
 /// @nodoc
 mixin _$ActivityProfileService {
+  /// post only - hosted by
+  bool? get isActivityPost => throw _privateConstructorUsedError;
+  String? get postContactWebsite => throw _privateConstructorUsedError;
+  String? get postContactEmail => throw _privateConstructorUsedError;
+  String? get postContactSocialInstagram => throw _privateConstructorUsedError;
   ActivityBackground get activityBackground =>
       throw _privateConstructorUsedError;
   ActivityRequirement get activityRequirements =>
@@ -30960,7 +32020,11 @@ abstract class $ActivityProfileServiceCopyWith<$Res> {
       _$ActivityProfileServiceCopyWithImpl<$Res, ActivityProfileService>;
   @useResult
   $Res call(
-      {ActivityBackground activityBackground,
+      {bool? isActivityPost,
+      String? postContactWebsite,
+      String? postContactEmail,
+      String? postContactSocialInstagram,
+      ActivityBackground activityBackground,
       ActivityRequirement activityRequirements});
 
   $ActivityBackgroundCopyWith<$Res> get activityBackground;
@@ -30981,10 +32045,30 @@ class _$ActivityProfileServiceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isActivityPost = freezed,
+    Object? postContactWebsite = freezed,
+    Object? postContactEmail = freezed,
+    Object? postContactSocialInstagram = freezed,
     Object? activityBackground = null,
     Object? activityRequirements = null,
   }) {
     return _then(_value.copyWith(
+      isActivityPost: freezed == isActivityPost
+          ? _value.isActivityPost
+          : isActivityPost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      postContactWebsite: freezed == postContactWebsite
+          ? _value.postContactWebsite
+          : postContactWebsite // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactEmail: freezed == postContactEmail
+          ? _value.postContactEmail
+          : postContactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactSocialInstagram: freezed == postContactSocialInstagram
+          ? _value.postContactSocialInstagram
+          : postContactSocialInstagram // ignore: cast_nullable_to_non_nullable
+              as String?,
       activityBackground: null == activityBackground
           ? _value.activityBackground
           : activityBackground // ignore: cast_nullable_to_non_nullable
@@ -31024,7 +32108,11 @@ abstract class _$$_ActivityProfileServiceCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ActivityBackground activityBackground,
+      {bool? isActivityPost,
+      String? postContactWebsite,
+      String? postContactEmail,
+      String? postContactSocialInstagram,
+      ActivityBackground activityBackground,
       ActivityRequirement activityRequirements});
 
   @override
@@ -31045,10 +32133,30 @@ class __$$_ActivityProfileServiceCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isActivityPost = freezed,
+    Object? postContactWebsite = freezed,
+    Object? postContactEmail = freezed,
+    Object? postContactSocialInstagram = freezed,
     Object? activityBackground = null,
     Object? activityRequirements = null,
   }) {
     return _then(_$_ActivityProfileService(
+      isActivityPost: freezed == isActivityPost
+          ? _value.isActivityPost
+          : isActivityPost // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      postContactWebsite: freezed == postContactWebsite
+          ? _value.postContactWebsite
+          : postContactWebsite // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactEmail: freezed == postContactEmail
+          ? _value.postContactEmail
+          : postContactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postContactSocialInstagram: freezed == postContactSocialInstagram
+          ? _value.postContactSocialInstagram
+          : postContactSocialInstagram // ignore: cast_nullable_to_non_nullable
+              as String?,
       activityBackground: null == activityBackground
           ? _value.activityBackground
           : activityBackground // ignore: cast_nullable_to_non_nullable
@@ -31065,9 +32173,23 @@ class __$$_ActivityProfileServiceCopyWithImpl<$Res>
 
 class _$_ActivityProfileService extends _ActivityProfileService {
   _$_ActivityProfileService(
-      {required this.activityBackground, required this.activityRequirements})
+      {this.isActivityPost,
+      this.postContactWebsite,
+      this.postContactEmail,
+      this.postContactSocialInstagram,
+      required this.activityBackground,
+      required this.activityRequirements})
       : super._();
 
+  /// post only - hosted by
+  @override
+  final bool? isActivityPost;
+  @override
+  final String? postContactWebsite;
+  @override
+  final String? postContactEmail;
+  @override
+  final String? postContactSocialInstagram;
   @override
   final ActivityBackground activityBackground;
   @override
@@ -31075,7 +32197,7 @@ class _$_ActivityProfileService extends _ActivityProfileService {
 
   @override
   String toString() {
-    return 'ActivityProfileService(activityBackground: $activityBackground, activityRequirements: $activityRequirements)';
+    return 'ActivityProfileService(isActivityPost: $isActivityPost, postContactWebsite: $postContactWebsite, postContactEmail: $postContactEmail, postContactSocialInstagram: $postContactSocialInstagram, activityBackground: $activityBackground, activityRequirements: $activityRequirements)';
   }
 
   @override
@@ -31083,6 +32205,16 @@ class _$_ActivityProfileService extends _ActivityProfileService {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ActivityProfileService &&
+            (identical(other.isActivityPost, isActivityPost) ||
+                other.isActivityPost == isActivityPost) &&
+            (identical(other.postContactWebsite, postContactWebsite) ||
+                other.postContactWebsite == postContactWebsite) &&
+            (identical(other.postContactEmail, postContactEmail) ||
+                other.postContactEmail == postContactEmail) &&
+            (identical(other.postContactSocialInstagram,
+                    postContactSocialInstagram) ||
+                other.postContactSocialInstagram ==
+                    postContactSocialInstagram) &&
             (identical(other.activityBackground, activityBackground) ||
                 other.activityBackground == activityBackground) &&
             (identical(other.activityRequirements, activityRequirements) ||
@@ -31090,8 +32222,14 @@ class _$_ActivityProfileService extends _ActivityProfileService {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, activityBackground, activityRequirements);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isActivityPost,
+      postContactWebsite,
+      postContactEmail,
+      postContactSocialInstagram,
+      activityBackground,
+      activityRequirements);
 
   @JsonKey(ignore: true)
   @override
@@ -31103,11 +32241,25 @@ class _$_ActivityProfileService extends _ActivityProfileService {
 
 abstract class _ActivityProfileService extends ActivityProfileService {
   factory _ActivityProfileService(
-          {required final ActivityBackground activityBackground,
+          {final bool? isActivityPost,
+          final String? postContactWebsite,
+          final String? postContactEmail,
+          final String? postContactSocialInstagram,
+          required final ActivityBackground activityBackground,
           required final ActivityRequirement activityRequirements}) =
       _$_ActivityProfileService;
   _ActivityProfileService._() : super._();
 
+  @override
+
+  /// post only - hosted by
+  bool? get isActivityPost;
+  @override
+  String? get postContactWebsite;
+  @override
+  String? get postContactEmail;
+  @override
+  String? get postContactSocialInstagram;
   @override
   ActivityBackground get activityBackground;
   @override
@@ -31783,6 +32935,7 @@ mixin _$EventActivityRulesRequirementDto {
   bool get isMerchantInviteOnly => throw _privateConstructorUsedError;
   int? get merchantFee => throw _privateConstructorUsedError;
   int? get merchantLimit => throw _privateConstructorUsedError;
+  String? get postMerchantApplicationLink => throw _privateConstructorUsedError;
   bool get isAlcoholForSale => throw _privateConstructorUsedError;
   bool get isFoodForSale => throw _privateConstructorUsedError;
   bool get isAlcoholProvided => throw _privateConstructorUsedError;
@@ -31811,6 +32964,7 @@ abstract class $EventActivityRulesRequirementDtoCopyWith<$Res> {
       bool isMerchantInviteOnly,
       int? merchantFee,
       int? merchantLimit,
+      String? postMerchantApplicationLink,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -31839,6 +32993,7 @@ class _$EventActivityRulesRequirementDtoCopyWithImpl<$Res,
     Object? isMerchantInviteOnly = null,
     Object? merchantFee = freezed,
     Object? merchantLimit = freezed,
+    Object? postMerchantApplicationLink = freezed,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -31865,6 +33020,10 @@ class _$EventActivityRulesRequirementDtoCopyWithImpl<$Res,
           ? _value.merchantLimit
           : merchantLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      postMerchantApplicationLink: freezed == postMerchantApplicationLink
+          ? _value.postMerchantApplicationLink
+          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
           : isAlcoholForSale // ignore: cast_nullable_to_non_nullable
@@ -31915,6 +33074,7 @@ abstract class _$$_EventActivityRulesRequirementDtoCopyWith<$Res>
       bool isMerchantInviteOnly,
       int? merchantFee,
       int? merchantLimit,
+      String? postMerchantApplicationLink,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -31942,6 +33102,7 @@ class __$$_EventActivityRulesRequirementDtoCopyWithImpl<$Res>
     Object? isMerchantInviteOnly = null,
     Object? merchantFee = freezed,
     Object? merchantLimit = freezed,
+    Object? postMerchantApplicationLink = freezed,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -31968,6 +33129,10 @@ class __$$_EventActivityRulesRequirementDtoCopyWithImpl<$Res>
           ? _value.merchantLimit
           : merchantLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      postMerchantApplicationLink: freezed == postMerchantApplicationLink
+          ? _value.postMerchantApplicationLink
+          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
           : isAlcoholForSale // ignore: cast_nullable_to_non_nullable
@@ -32013,6 +33178,7 @@ class _$_EventActivityRulesRequirementDto
       required this.isMerchantInviteOnly,
       this.merchantFee,
       this.merchantLimit,
+      this.postMerchantApplicationLink,
       required this.isAlcoholForSale,
       required this.isFoodForSale,
       required this.isAlcoholProvided,
@@ -32036,6 +33202,8 @@ class _$_EventActivityRulesRequirementDto
   @override
   final int? merchantLimit;
   @override
+  final String? postMerchantApplicationLink;
+  @override
   final bool isAlcoholForSale;
   @override
   final bool isFoodForSale;
@@ -32054,7 +33222,7 @@ class _$_EventActivityRulesRequirementDto
 
   @override
   String toString() {
-    return 'EventActivityRulesRequirementDto(isMerchantSupported: $isMerchantSupported, isMerchantInviteOnly: $isMerchantInviteOnly, merchantFee: $merchantFee, merchantLimit: $merchantLimit, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
+    return 'EventActivityRulesRequirementDto(isMerchantSupported: $isMerchantSupported, isMerchantInviteOnly: $isMerchantInviteOnly, merchantFee: $merchantFee, merchantLimit: $merchantLimit, postMerchantApplicationLink: $postMerchantApplicationLink, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
   }
 
   @override
@@ -32070,6 +33238,10 @@ class _$_EventActivityRulesRequirementDto
                 other.merchantFee == merchantFee) &&
             (identical(other.merchantLimit, merchantLimit) ||
                 other.merchantLimit == merchantLimit) &&
+            (identical(other.postMerchantApplicationLink,
+                    postMerchantApplicationLink) ||
+                other.postMerchantApplicationLink ==
+                    postMerchantApplicationLink) &&
             (identical(other.isAlcoholForSale, isAlcoholForSale) ||
                 other.isAlcoholForSale == isAlcoholForSale) &&
             (identical(other.isFoodForSale, isFoodForSale) ||
@@ -32099,6 +33271,7 @@ class _$_EventActivityRulesRequirementDto
       isMerchantInviteOnly,
       merchantFee,
       merchantLimit,
+      postMerchantApplicationLink,
       isAlcoholForSale,
       isFoodForSale,
       isAlcoholProvided,
@@ -32131,6 +33304,7 @@ abstract class _EventActivityRulesRequirementDto
           required final bool isMerchantInviteOnly,
           final int? merchantFee,
           final int? merchantLimit,
+          final String? postMerchantApplicationLink,
           required final bool isAlcoholForSale,
           required final bool isFoodForSale,
           required final bool isAlcoholProvided,
@@ -32153,6 +33327,8 @@ abstract class _EventActivityRulesRequirementDto
   int? get merchantFee;
   @override
   int? get merchantLimit;
+  @override
+  String? get postMerchantApplicationLink;
   @override
   bool get isAlcoholForSale;
   @override
@@ -33140,6 +34316,7 @@ mixin _$EventActivityRulesRequirement {
   bool get isMerchantSupported => throw _privateConstructorUsedError;
   int? get merchantFee => throw _privateConstructorUsedError;
   int? get merchantLimit => throw _privateConstructorUsedError;
+  String? get postMerchantApplicationLink => throw _privateConstructorUsedError;
   bool get isMerchantInviteOnly => throw _privateConstructorUsedError;
   bool get isAlcoholForSale => throw _privateConstructorUsedError;
   bool get isFoodForSale => throw _privateConstructorUsedError;
@@ -33167,6 +34344,7 @@ abstract class $EventActivityRulesRequirementCopyWith<$Res> {
       {bool isMerchantSupported,
       int? merchantFee,
       int? merchantLimit,
+      String? postMerchantApplicationLink,
       bool isMerchantInviteOnly,
       bool isAlcoholForSale,
       bool isFoodForSale,
@@ -33195,6 +34373,7 @@ class _$EventActivityRulesRequirementCopyWithImpl<$Res,
     Object? isMerchantSupported = null,
     Object? merchantFee = freezed,
     Object? merchantLimit = freezed,
+    Object? postMerchantApplicationLink = freezed,
     Object? isMerchantInviteOnly = null,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
@@ -33218,6 +34397,10 @@ class _$EventActivityRulesRequirementCopyWithImpl<$Res,
           ? _value.merchantLimit
           : merchantLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      postMerchantApplicationLink: freezed == postMerchantApplicationLink
+          ? _value.postMerchantApplicationLink
+          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       isMerchantInviteOnly: null == isMerchantInviteOnly
           ? _value.isMerchantInviteOnly
           : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
@@ -33271,6 +34454,7 @@ abstract class _$$_EventActivityRulesRequirementCopyWith<$Res>
       {bool isMerchantSupported,
       int? merchantFee,
       int? merchantLimit,
+      String? postMerchantApplicationLink,
       bool isMerchantInviteOnly,
       bool isAlcoholForSale,
       bool isFoodForSale,
@@ -33298,6 +34482,7 @@ class __$$_EventActivityRulesRequirementCopyWithImpl<$Res>
     Object? isMerchantSupported = null,
     Object? merchantFee = freezed,
     Object? merchantLimit = freezed,
+    Object? postMerchantApplicationLink = freezed,
     Object? isMerchantInviteOnly = null,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
@@ -33321,6 +34506,10 @@ class __$$_EventActivityRulesRequirementCopyWithImpl<$Res>
           ? _value.merchantLimit
           : merchantLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      postMerchantApplicationLink: freezed == postMerchantApplicationLink
+          ? _value.postMerchantApplicationLink
+          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       isMerchantInviteOnly: null == isMerchantInviteOnly
           ? _value.isMerchantInviteOnly
           : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
@@ -33368,6 +34557,7 @@ class _$_EventActivityRulesRequirement extends _EventActivityRulesRequirement {
       {required this.isMerchantSupported,
       this.merchantFee,
       this.merchantLimit,
+      this.postMerchantApplicationLink,
       required this.isMerchantInviteOnly,
       required this.isAlcoholForSale,
       required this.isFoodForSale,
@@ -33385,6 +34575,8 @@ class _$_EventActivityRulesRequirement extends _EventActivityRulesRequirement {
   final int? merchantFee;
   @override
   final int? merchantLimit;
+  @override
+  final String? postMerchantApplicationLink;
   @override
   final bool isMerchantInviteOnly;
   @override
@@ -33406,7 +34598,7 @@ class _$_EventActivityRulesRequirement extends _EventActivityRulesRequirement {
 
   @override
   String toString() {
-    return 'EventActivityRulesRequirement(isMerchantSupported: $isMerchantSupported, merchantFee: $merchantFee, merchantLimit: $merchantLimit, isMerchantInviteOnly: $isMerchantInviteOnly, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
+    return 'EventActivityRulesRequirement(isMerchantSupported: $isMerchantSupported, merchantFee: $merchantFee, merchantLimit: $merchantLimit, postMerchantApplicationLink: $postMerchantApplicationLink, isMerchantInviteOnly: $isMerchantInviteOnly, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
   }
 
   @override
@@ -33420,6 +34612,10 @@ class _$_EventActivityRulesRequirement extends _EventActivityRulesRequirement {
                 other.merchantFee == merchantFee) &&
             (identical(other.merchantLimit, merchantLimit) ||
                 other.merchantLimit == merchantLimit) &&
+            (identical(other.postMerchantApplicationLink,
+                    postMerchantApplicationLink) ||
+                other.postMerchantApplicationLink ==
+                    postMerchantApplicationLink) &&
             (identical(other.isMerchantInviteOnly, isMerchantInviteOnly) ||
                 other.isMerchantInviteOnly == isMerchantInviteOnly) &&
             (identical(other.isAlcoholForSale, isAlcoholForSale) ||
@@ -33449,6 +34645,7 @@ class _$_EventActivityRulesRequirement extends _EventActivityRulesRequirement {
       isMerchantSupported,
       merchantFee,
       merchantLimit,
+      postMerchantApplicationLink,
       isMerchantInviteOnly,
       isAlcoholForSale,
       isFoodForSale,
@@ -33473,6 +34670,7 @@ abstract class _EventActivityRulesRequirement
           {required final bool isMerchantSupported,
           final int? merchantFee,
           final int? merchantLimit,
+          final String? postMerchantApplicationLink,
           required final bool isMerchantInviteOnly,
           required final bool isAlcoholForSale,
           required final bool isFoodForSale,
@@ -33491,6 +34689,8 @@ abstract class _EventActivityRulesRequirement
   int? get merchantFee;
   @override
   int? get merchantLimit;
+  @override
+  String? get postMerchantApplicationLink;
   @override
   bool get isMerchantInviteOnly;
   @override
@@ -33660,6 +34860,7 @@ mixin _$GameActivityRulesDto {
       throw _privateConstructorUsedError;
   bool? get isAllowedExternalContributions =>
       throw _privateConstructorUsedError;
+  String? get postDonationLink => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33675,7 +34876,8 @@ abstract class $GameActivityRulesDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {List<Map<String, dynamic>>? allowedDonationTypes,
-      bool? isAllowedExternalContributions});
+      bool? isAllowedExternalContributions,
+      String? postDonationLink});
 }
 
 /// @nodoc
@@ -33694,6 +34896,7 @@ class _$GameActivityRulesDtoCopyWithImpl<$Res,
   $Res call({
     Object? allowedDonationTypes = freezed,
     Object? isAllowedExternalContributions = freezed,
+    Object? postDonationLink = freezed,
   }) {
     return _then(_value.copyWith(
       allowedDonationTypes: freezed == allowedDonationTypes
@@ -33704,6 +34907,10 @@ class _$GameActivityRulesDtoCopyWithImpl<$Res,
           ? _value.isAllowedExternalContributions
           : isAllowedExternalContributions // ignore: cast_nullable_to_non_nullable
               as bool?,
+      postDonationLink: freezed == postDonationLink
+          ? _value.postDonationLink
+          : postDonationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -33718,7 +34925,8 @@ abstract class _$$_GameActivityRulesDtoCopyWith<$Res>
   @useResult
   $Res call(
       {List<Map<String, dynamic>>? allowedDonationTypes,
-      bool? isAllowedExternalContributions});
+      bool? isAllowedExternalContributions,
+      String? postDonationLink});
 }
 
 /// @nodoc
@@ -33734,6 +34942,7 @@ class __$$_GameActivityRulesDtoCopyWithImpl<$Res>
   $Res call({
     Object? allowedDonationTypes = freezed,
     Object? isAllowedExternalContributions = freezed,
+    Object? postDonationLink = freezed,
   }) {
     return _then(_$_GameActivityRulesDto(
       allowedDonationTypes: freezed == allowedDonationTypes
@@ -33744,6 +34953,10 @@ class __$$_GameActivityRulesDtoCopyWithImpl<$Res>
           ? _value.isAllowedExternalContributions
           : isAllowedExternalContributions // ignore: cast_nullable_to_non_nullable
               as bool?,
+      postDonationLink: freezed == postDonationLink
+          ? _value.postDonationLink
+          : postDonationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -33753,7 +34966,8 @@ class __$$_GameActivityRulesDtoCopyWithImpl<$Res>
 class _$_GameActivityRulesDto extends _GameActivityRulesDto {
   _$_GameActivityRulesDto(
       {final List<Map<String, dynamic>>? allowedDonationTypes,
-      this.isAllowedExternalContributions})
+      this.isAllowedExternalContributions,
+      this.postDonationLink})
       : _allowedDonationTypes = allowedDonationTypes,
         super._();
 
@@ -33773,10 +34987,12 @@ class _$_GameActivityRulesDto extends _GameActivityRulesDto {
 
   @override
   final bool? isAllowedExternalContributions;
+  @override
+  final String? postDonationLink;
 
   @override
   String toString() {
-    return 'GameActivityRulesDto(allowedDonationTypes: $allowedDonationTypes, isAllowedExternalContributions: $isAllowedExternalContributions)';
+    return 'GameActivityRulesDto(allowedDonationTypes: $allowedDonationTypes, isAllowedExternalContributions: $isAllowedExternalContributions, postDonationLink: $postDonationLink)';
   }
 
   @override
@@ -33789,7 +35005,9 @@ class _$_GameActivityRulesDto extends _GameActivityRulesDto {
             (identical(other.isAllowedExternalContributions,
                     isAllowedExternalContributions) ||
                 other.isAllowedExternalContributions ==
-                    isAllowedExternalContributions));
+                    isAllowedExternalContributions) &&
+            (identical(other.postDonationLink, postDonationLink) ||
+                other.postDonationLink == postDonationLink));
   }
 
   @JsonKey(ignore: true)
@@ -33797,7 +35015,8 @@ class _$_GameActivityRulesDto extends _GameActivityRulesDto {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_allowedDonationTypes),
-      isAllowedExternalContributions);
+      isAllowedExternalContributions,
+      postDonationLink);
 
   @JsonKey(ignore: true)
   @override
@@ -33817,7 +35036,8 @@ class _$_GameActivityRulesDto extends _GameActivityRulesDto {
 abstract class _GameActivityRulesDto extends GameActivityRulesDto {
   factory _GameActivityRulesDto(
       {final List<Map<String, dynamic>>? allowedDonationTypes,
-      final bool? isAllowedExternalContributions}) = _$_GameActivityRulesDto;
+      final bool? isAllowedExternalContributions,
+      final String? postDonationLink}) = _$_GameActivityRulesDto;
   _GameActivityRulesDto._() : super._();
 
   factory _GameActivityRulesDto.fromJson(Map<String, dynamic> json) =
@@ -33827,6 +35047,8 @@ abstract class _GameActivityRulesDto extends GameActivityRulesDto {
   List<Map<String, dynamic>>? get allowedDonationTypes;
   @override
   bool? get isAllowedExternalContributions;
+  @override
+  String? get postDonationLink;
   @override
   @JsonKey(ignore: true)
   _$$_GameActivityRulesDtoCopyWith<_$_GameActivityRulesDto> get copyWith =>
@@ -33839,6 +35061,7 @@ mixin _$GameActivityRules {
       throw _privateConstructorUsedError;
   bool? get isAllowedExternalContributions =>
       throw _privateConstructorUsedError;
+  String? get postDonationLink => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GameActivityRulesCopyWith<GameActivityRules> get copyWith =>
@@ -33853,7 +35076,8 @@ abstract class $GameActivityRulesCopyWith<$Res> {
   @useResult
   $Res call(
       {List<DonationType>? allowedDonationTypes,
-      bool? isAllowedExternalContributions});
+      bool? isAllowedExternalContributions,
+      String? postDonationLink});
 }
 
 /// @nodoc
@@ -33871,6 +35095,7 @@ class _$GameActivityRulesCopyWithImpl<$Res, $Val extends GameActivityRules>
   $Res call({
     Object? allowedDonationTypes = freezed,
     Object? isAllowedExternalContributions = freezed,
+    Object? postDonationLink = freezed,
   }) {
     return _then(_value.copyWith(
       allowedDonationTypes: freezed == allowedDonationTypes
@@ -33881,6 +35106,10 @@ class _$GameActivityRulesCopyWithImpl<$Res, $Val extends GameActivityRules>
           ? _value.isAllowedExternalContributions
           : isAllowedExternalContributions // ignore: cast_nullable_to_non_nullable
               as bool?,
+      postDonationLink: freezed == postDonationLink
+          ? _value.postDonationLink
+          : postDonationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -33895,7 +35124,8 @@ abstract class _$$_GameActivityRulesCopyWith<$Res>
   @useResult
   $Res call(
       {List<DonationType>? allowedDonationTypes,
-      bool? isAllowedExternalContributions});
+      bool? isAllowedExternalContributions,
+      String? postDonationLink});
 }
 
 /// @nodoc
@@ -33911,6 +35141,7 @@ class __$$_GameActivityRulesCopyWithImpl<$Res>
   $Res call({
     Object? allowedDonationTypes = freezed,
     Object? isAllowedExternalContributions = freezed,
+    Object? postDonationLink = freezed,
   }) {
     return _then(_$_GameActivityRules(
       allowedDonationTypes: freezed == allowedDonationTypes
@@ -33921,6 +35152,10 @@ class __$$_GameActivityRulesCopyWithImpl<$Res>
           ? _value.isAllowedExternalContributions
           : isAllowedExternalContributions // ignore: cast_nullable_to_non_nullable
               as bool?,
+      postDonationLink: freezed == postDonationLink
+          ? _value.postDonationLink
+          : postDonationLink // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -33930,7 +35165,8 @@ class __$$_GameActivityRulesCopyWithImpl<$Res>
 class _$_GameActivityRules extends _GameActivityRules {
   _$_GameActivityRules(
       {final List<DonationType>? allowedDonationTypes,
-      this.isAllowedExternalContributions})
+      this.isAllowedExternalContributions,
+      this.postDonationLink})
       : _allowedDonationTypes = allowedDonationTypes,
         super._();
 
@@ -33947,10 +35183,12 @@ class _$_GameActivityRules extends _GameActivityRules {
 
   @override
   final bool? isAllowedExternalContributions;
+  @override
+  final String? postDonationLink;
 
   @override
   String toString() {
-    return 'GameActivityRules(allowedDonationTypes: $allowedDonationTypes, isAllowedExternalContributions: $isAllowedExternalContributions)';
+    return 'GameActivityRules(allowedDonationTypes: $allowedDonationTypes, isAllowedExternalContributions: $isAllowedExternalContributions, postDonationLink: $postDonationLink)';
   }
 
   @override
@@ -33963,14 +35201,17 @@ class _$_GameActivityRules extends _GameActivityRules {
             (identical(other.isAllowedExternalContributions,
                     isAllowedExternalContributions) ||
                 other.isAllowedExternalContributions ==
-                    isAllowedExternalContributions));
+                    isAllowedExternalContributions) &&
+            (identical(other.postDonationLink, postDonationLink) ||
+                other.postDonationLink == postDonationLink));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_allowedDonationTypes),
-      isAllowedExternalContributions);
+      isAllowedExternalContributions,
+      postDonationLink);
 
   @JsonKey(ignore: true)
   @override
@@ -33983,13 +35224,16 @@ class _$_GameActivityRules extends _GameActivityRules {
 abstract class _GameActivityRules extends GameActivityRules {
   factory _GameActivityRules(
       {final List<DonationType>? allowedDonationTypes,
-      final bool? isAllowedExternalContributions}) = _$_GameActivityRules;
+      final bool? isAllowedExternalContributions,
+      final String? postDonationLink}) = _$_GameActivityRules;
   _GameActivityRules._() : super._();
 
   @override
   List<DonationType>? get allowedDonationTypes;
   @override
   bool? get isAllowedExternalContributions;
+  @override
+  String? get postDonationLink;
   @override
   @JsonKey(ignore: true)
   _$$_GameActivityRulesCopyWith<_$_GameActivityRules> get copyWith =>
@@ -67267,6 +68511,994 @@ abstract class ShortPassword<T> extends ProfileValueFailure<T> {
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$CommunityProfileItem {
+  UniqueId get communityId => throw _privateConstructorUsedError;
+  UniqueId get communityCreatedBy => throw _privateConstructorUsedError;
+  FirstLastName get communityName => throw _privateConstructorUsedError;
+  DateTime get joinedDate => throw _privateConstructorUsedError;
+  String? get photoUri => throw _privateConstructorUsedError;
+  Image? get profileImage => throw _privateConstructorUsedError;
+  String? get instagram => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CommunityProfileItemCopyWith<CommunityProfileItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommunityProfileItemCopyWith<$Res> {
+  factory $CommunityProfileItemCopyWith(CommunityProfileItem value,
+          $Res Function(CommunityProfileItem) then) =
+      _$CommunityProfileItemCopyWithImpl<$Res, CommunityProfileItem>;
+  @useResult
+  $Res call(
+      {UniqueId communityId,
+      UniqueId communityCreatedBy,
+      FirstLastName communityName,
+      DateTime joinedDate,
+      String? photoUri,
+      Image? profileImage,
+      String? instagram,
+      String? website});
+}
+
+/// @nodoc
+class _$CommunityProfileItemCopyWithImpl<$Res,
+        $Val extends CommunityProfileItem>
+    implements $CommunityProfileItemCopyWith<$Res> {
+  _$CommunityProfileItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? communityCreatedBy = null,
+    Object? communityName = null,
+    Object? joinedDate = null,
+    Object? photoUri = freezed,
+    Object? profileImage = freezed,
+    Object? instagram = freezed,
+    Object? website = freezed,
+  }) {
+    return _then(_value.copyWith(
+      communityId: null == communityId
+          ? _value.communityId
+          : communityId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      communityCreatedBy: null == communityCreatedBy
+          ? _value.communityCreatedBy
+          : communityCreatedBy // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      communityName: null == communityName
+          ? _value.communityName
+          : communityName // ignore: cast_nullable_to_non_nullable
+              as FirstLastName,
+      joinedDate: null == joinedDate
+          ? _value.joinedDate
+          : joinedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      photoUri: freezed == photoUri
+          ? _value.photoUri
+          : photoUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      profileImage: freezed == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
+              as Image?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_CommunityProfileItemCopyWith<$Res>
+    implements $CommunityProfileItemCopyWith<$Res> {
+  factory _$$_CommunityProfileItemCopyWith(_$_CommunityProfileItem value,
+          $Res Function(_$_CommunityProfileItem) then) =
+      __$$_CommunityProfileItemCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {UniqueId communityId,
+      UniqueId communityCreatedBy,
+      FirstLastName communityName,
+      DateTime joinedDate,
+      String? photoUri,
+      Image? profileImage,
+      String? instagram,
+      String? website});
+}
+
+/// @nodoc
+class __$$_CommunityProfileItemCopyWithImpl<$Res>
+    extends _$CommunityProfileItemCopyWithImpl<$Res, _$_CommunityProfileItem>
+    implements _$$_CommunityProfileItemCopyWith<$Res> {
+  __$$_CommunityProfileItemCopyWithImpl(_$_CommunityProfileItem _value,
+      $Res Function(_$_CommunityProfileItem) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? communityCreatedBy = null,
+    Object? communityName = null,
+    Object? joinedDate = null,
+    Object? photoUri = freezed,
+    Object? profileImage = freezed,
+    Object? instagram = freezed,
+    Object? website = freezed,
+  }) {
+    return _then(_$_CommunityProfileItem(
+      communityId: null == communityId
+          ? _value.communityId
+          : communityId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      communityCreatedBy: null == communityCreatedBy
+          ? _value.communityCreatedBy
+          : communityCreatedBy // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      communityName: null == communityName
+          ? _value.communityName
+          : communityName // ignore: cast_nullable_to_non_nullable
+              as FirstLastName,
+      joinedDate: null == joinedDate
+          ? _value.joinedDate
+          : joinedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      photoUri: freezed == photoUri
+          ? _value.photoUri
+          : photoUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      profileImage: freezed == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
+              as Image?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CommunityProfileItem implements _CommunityProfileItem {
+  const _$_CommunityProfileItem(
+      {required this.communityId,
+      required this.communityCreatedBy,
+      required this.communityName,
+      required this.joinedDate,
+      this.photoUri,
+      this.profileImage,
+      this.instagram,
+      this.website});
+
+  @override
+  final UniqueId communityId;
+  @override
+  final UniqueId communityCreatedBy;
+  @override
+  final FirstLastName communityName;
+  @override
+  final DateTime joinedDate;
+  @override
+  final String? photoUri;
+  @override
+  final Image? profileImage;
+  @override
+  final String? instagram;
+  @override
+  final String? website;
+
+  @override
+  String toString() {
+    return 'CommunityProfileItem(communityId: $communityId, communityCreatedBy: $communityCreatedBy, communityName: $communityName, joinedDate: $joinedDate, photoUri: $photoUri, profileImage: $profileImage, instagram: $instagram, website: $website)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommunityProfileItem &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.communityCreatedBy, communityCreatedBy) ||
+                other.communityCreatedBy == communityCreatedBy) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName) &&
+            (identical(other.joinedDate, joinedDate) ||
+                other.joinedDate == joinedDate) &&
+            (identical(other.photoUri, photoUri) ||
+                other.photoUri == photoUri) &&
+            (identical(other.profileImage, profileImage) ||
+                other.profileImage == profileImage) &&
+            (identical(other.instagram, instagram) ||
+                other.instagram == instagram) &&
+            (identical(other.website, website) || other.website == website));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, communityId, communityCreatedBy,
+      communityName, joinedDate, photoUri, profileImage, instagram, website);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CommunityProfileItemCopyWith<_$_CommunityProfileItem> get copyWith =>
+      __$$_CommunityProfileItemCopyWithImpl<_$_CommunityProfileItem>(
+          this, _$identity);
+}
+
+abstract class _CommunityProfileItem implements CommunityProfileItem {
+  const factory _CommunityProfileItem(
+      {required final UniqueId communityId,
+      required final UniqueId communityCreatedBy,
+      required final FirstLastName communityName,
+      required final DateTime joinedDate,
+      final String? photoUri,
+      final Image? profileImage,
+      final String? instagram,
+      final String? website}) = _$_CommunityProfileItem;
+
+  @override
+  UniqueId get communityId;
+  @override
+  UniqueId get communityCreatedBy;
+  @override
+  FirstLastName get communityName;
+  @override
+  DateTime get joinedDate;
+  @override
+  String? get photoUri;
+  @override
+  Image? get profileImage;
+  @override
+  String? get instagram;
+  @override
+  String? get website;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CommunityProfileItemCopyWith<_$_CommunityProfileItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CommunityProfileItemDto _$CommunityProfileItemDtoFromJson(
+    Map<String, dynamic> json) {
+  return _CommunityProfileItemDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommunityProfileItemDto {
+  String get communityId => throw _privateConstructorUsedError;
+  String get communityCreatedBy => throw _privateConstructorUsedError;
+  String get communityName => throw _privateConstructorUsedError;
+  String get joinedDate => throw _privateConstructorUsedError;
+  String? get photoUri => throw _privateConstructorUsedError;
+  String? get instagram => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CommunityProfileItemDtoCopyWith<CommunityProfileItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommunityProfileItemDtoCopyWith<$Res> {
+  factory $CommunityProfileItemDtoCopyWith(CommunityProfileItemDto value,
+          $Res Function(CommunityProfileItemDto) then) =
+      _$CommunityProfileItemDtoCopyWithImpl<$Res, CommunityProfileItemDto>;
+  @useResult
+  $Res call(
+      {String communityId,
+      String communityCreatedBy,
+      String communityName,
+      String joinedDate,
+      String? photoUri,
+      String? instagram,
+      String? website});
+}
+
+/// @nodoc
+class _$CommunityProfileItemDtoCopyWithImpl<$Res,
+        $Val extends CommunityProfileItemDto>
+    implements $CommunityProfileItemDtoCopyWith<$Res> {
+  _$CommunityProfileItemDtoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? communityCreatedBy = null,
+    Object? communityName = null,
+    Object? joinedDate = null,
+    Object? photoUri = freezed,
+    Object? instagram = freezed,
+    Object? website = freezed,
+  }) {
+    return _then(_value.copyWith(
+      communityId: null == communityId
+          ? _value.communityId
+          : communityId // ignore: cast_nullable_to_non_nullable
+              as String,
+      communityCreatedBy: null == communityCreatedBy
+          ? _value.communityCreatedBy
+          : communityCreatedBy // ignore: cast_nullable_to_non_nullable
+              as String,
+      communityName: null == communityName
+          ? _value.communityName
+          : communityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      joinedDate: null == joinedDate
+          ? _value.joinedDate
+          : joinedDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUri: freezed == photoUri
+          ? _value.photoUri
+          : photoUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_CommunityProfileItemDtoCopyWith<$Res>
+    implements $CommunityProfileItemDtoCopyWith<$Res> {
+  factory _$$_CommunityProfileItemDtoCopyWith(_$_CommunityProfileItemDto value,
+          $Res Function(_$_CommunityProfileItemDto) then) =
+      __$$_CommunityProfileItemDtoCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String communityId,
+      String communityCreatedBy,
+      String communityName,
+      String joinedDate,
+      String? photoUri,
+      String? instagram,
+      String? website});
+}
+
+/// @nodoc
+class __$$_CommunityProfileItemDtoCopyWithImpl<$Res>
+    extends _$CommunityProfileItemDtoCopyWithImpl<$Res,
+        _$_CommunityProfileItemDto>
+    implements _$$_CommunityProfileItemDtoCopyWith<$Res> {
+  __$$_CommunityProfileItemDtoCopyWithImpl(_$_CommunityProfileItemDto _value,
+      $Res Function(_$_CommunityProfileItemDto) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? communityCreatedBy = null,
+    Object? communityName = null,
+    Object? joinedDate = null,
+    Object? photoUri = freezed,
+    Object? instagram = freezed,
+    Object? website = freezed,
+  }) {
+    return _then(_$_CommunityProfileItemDto(
+      communityId: null == communityId
+          ? _value.communityId
+          : communityId // ignore: cast_nullable_to_non_nullable
+              as String,
+      communityCreatedBy: null == communityCreatedBy
+          ? _value.communityCreatedBy
+          : communityCreatedBy // ignore: cast_nullable_to_non_nullable
+              as String,
+      communityName: null == communityName
+          ? _value.communityName
+          : communityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      joinedDate: null == joinedDate
+          ? _value.joinedDate
+          : joinedDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUri: freezed == photoUri
+          ? _value.photoUri
+          : photoUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_CommunityProfileItemDto extends _CommunityProfileItemDto {
+  const _$_CommunityProfileItemDto(
+      {required this.communityId,
+      required this.communityCreatedBy,
+      required this.communityName,
+      required this.joinedDate,
+      this.photoUri,
+      this.instagram,
+      this.website})
+      : super._();
+
+  factory _$_CommunityProfileItemDto.fromJson(Map<String, dynamic> json) =>
+      _$$_CommunityProfileItemDtoFromJson(json);
+
+  @override
+  final String communityId;
+  @override
+  final String communityCreatedBy;
+  @override
+  final String communityName;
+  @override
+  final String joinedDate;
+  @override
+  final String? photoUri;
+  @override
+  final String? instagram;
+  @override
+  final String? website;
+
+  @override
+  String toString() {
+    return 'CommunityProfileItemDto(communityId: $communityId, communityCreatedBy: $communityCreatedBy, communityName: $communityName, joinedDate: $joinedDate, photoUri: $photoUri, instagram: $instagram, website: $website)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommunityProfileItemDto &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.communityCreatedBy, communityCreatedBy) ||
+                other.communityCreatedBy == communityCreatedBy) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName) &&
+            (identical(other.joinedDate, joinedDate) ||
+                other.joinedDate == joinedDate) &&
+            (identical(other.photoUri, photoUri) ||
+                other.photoUri == photoUri) &&
+            (identical(other.instagram, instagram) ||
+                other.instagram == instagram) &&
+            (identical(other.website, website) || other.website == website));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, communityId, communityCreatedBy,
+      communityName, joinedDate, photoUri, instagram, website);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CommunityProfileItemDtoCopyWith<_$_CommunityProfileItemDto>
+      get copyWith =>
+          __$$_CommunityProfileItemDtoCopyWithImpl<_$_CommunityProfileItemDto>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CommunityProfileItemDtoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CommunityProfileItemDto extends CommunityProfileItemDto {
+  const factory _CommunityProfileItemDto(
+      {required final String communityId,
+      required final String communityCreatedBy,
+      required final String communityName,
+      required final String joinedDate,
+      final String? photoUri,
+      final String? instagram,
+      final String? website}) = _$_CommunityProfileItemDto;
+  const _CommunityProfileItemDto._() : super._();
+
+  factory _CommunityProfileItemDto.fromJson(Map<String, dynamic> json) =
+      _$_CommunityProfileItemDto.fromJson;
+
+  @override
+  String get communityId;
+  @override
+  String get communityCreatedBy;
+  @override
+  String get communityName;
+  @override
+  String get joinedDate;
+  @override
+  String? get photoUri;
+  @override
+  String? get instagram;
+  @override
+  String? get website;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CommunityProfileItemDtoCopyWith<_$_CommunityProfileItemDto>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$CommunityProfileFailure<T> {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() unexpected,
+    required TResult Function(String? serverResponse) communityServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? permissionDenied,
+    TResult? Function()? unexpected,
+    TResult? Function(String? serverResponse)? communityServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? unexpected,
+    TResult Function(String? serverResponse)? communityServerError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommunityPermissionDenied<T> value)
+        permissionDenied,
+    required TResult Function(_CommunityUnexpected<T> value) unexpected,
+    required TResult Function(_CommunityServerError<T> value)
+        communityServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult? Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult? Function(_CommunityServerError<T> value)? communityServerError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult Function(_CommunityServerError<T> value)? communityServerError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommunityProfileFailureCopyWith<T, $Res> {
+  factory $CommunityProfileFailureCopyWith(CommunityProfileFailure<T> value,
+          $Res Function(CommunityProfileFailure<T>) then) =
+      _$CommunityProfileFailureCopyWithImpl<T, $Res,
+          CommunityProfileFailure<T>>;
+}
+
+/// @nodoc
+class _$CommunityProfileFailureCopyWithImpl<T, $Res,
+        $Val extends CommunityProfileFailure<T>>
+    implements $CommunityProfileFailureCopyWith<T, $Res> {
+  _$CommunityProfileFailureCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_CommunityPermissionDeniedCopyWith<T, $Res> {
+  factory _$$_CommunityPermissionDeniedCopyWith(
+          _$_CommunityPermissionDenied<T> value,
+          $Res Function(_$_CommunityPermissionDenied<T>) then) =
+      __$$_CommunityPermissionDeniedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$_CommunityPermissionDeniedCopyWithImpl<T, $Res>
+    extends _$CommunityProfileFailureCopyWithImpl<T, $Res,
+        _$_CommunityPermissionDenied<T>>
+    implements _$$_CommunityPermissionDeniedCopyWith<T, $Res> {
+  __$$_CommunityPermissionDeniedCopyWithImpl(
+      _$_CommunityPermissionDenied<T> _value,
+      $Res Function(_$_CommunityPermissionDenied<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_CommunityPermissionDenied<T> implements _CommunityPermissionDenied<T> {
+  const _$_CommunityPermissionDenied();
+
+  @override
+  String toString() {
+    return 'CommunityProfileFailure<$T>.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommunityPermissionDenied<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() unexpected,
+    required TResult Function(String? serverResponse) communityServerError,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? permissionDenied,
+    TResult? Function()? unexpected,
+    TResult? Function(String? serverResponse)? communityServerError,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? unexpected,
+    TResult Function(String? serverResponse)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommunityPermissionDenied<T> value)
+        permissionDenied,
+    required TResult Function(_CommunityUnexpected<T> value) unexpected,
+    required TResult Function(_CommunityServerError<T> value)
+        communityServerError,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult? Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult? Function(_CommunityServerError<T> value)? communityServerError,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult Function(_CommunityServerError<T> value)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CommunityPermissionDenied<T>
+    implements CommunityProfileFailure<T> {
+  const factory _CommunityPermissionDenied() = _$_CommunityPermissionDenied<T>;
+}
+
+/// @nodoc
+abstract class _$$_CommunityUnexpectedCopyWith<T, $Res> {
+  factory _$$_CommunityUnexpectedCopyWith(_$_CommunityUnexpected<T> value,
+          $Res Function(_$_CommunityUnexpected<T>) then) =
+      __$$_CommunityUnexpectedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$_CommunityUnexpectedCopyWithImpl<T, $Res>
+    extends _$CommunityProfileFailureCopyWithImpl<T, $Res,
+        _$_CommunityUnexpected<T>>
+    implements _$$_CommunityUnexpectedCopyWith<T, $Res> {
+  __$$_CommunityUnexpectedCopyWithImpl(_$_CommunityUnexpected<T> _value,
+      $Res Function(_$_CommunityUnexpected<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_CommunityUnexpected<T> implements _CommunityUnexpected<T> {
+  const _$_CommunityUnexpected();
+
+  @override
+  String toString() {
+    return 'CommunityProfileFailure<$T>.unexpected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommunityUnexpected<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() unexpected,
+    required TResult Function(String? serverResponse) communityServerError,
+  }) {
+    return unexpected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? permissionDenied,
+    TResult? Function()? unexpected,
+    TResult? Function(String? serverResponse)? communityServerError,
+  }) {
+    return unexpected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? unexpected,
+    TResult Function(String? serverResponse)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (unexpected != null) {
+      return unexpected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommunityPermissionDenied<T> value)
+        permissionDenied,
+    required TResult Function(_CommunityUnexpected<T> value) unexpected,
+    required TResult Function(_CommunityServerError<T> value)
+        communityServerError,
+  }) {
+    return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult? Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult? Function(_CommunityServerError<T> value)? communityServerError,
+  }) {
+    return unexpected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult Function(_CommunityServerError<T> value)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (unexpected != null) {
+      return unexpected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CommunityUnexpected<T> implements CommunityProfileFailure<T> {
+  const factory _CommunityUnexpected() = _$_CommunityUnexpected<T>;
+}
+
+/// @nodoc
+abstract class _$$_CommunityServerErrorCopyWith<T, $Res> {
+  factory _$$_CommunityServerErrorCopyWith(_$_CommunityServerError<T> value,
+          $Res Function(_$_CommunityServerError<T>) then) =
+      __$$_CommunityServerErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String? serverResponse});
+}
+
+/// @nodoc
+class __$$_CommunityServerErrorCopyWithImpl<T, $Res>
+    extends _$CommunityProfileFailureCopyWithImpl<T, $Res,
+        _$_CommunityServerError<T>>
+    implements _$$_CommunityServerErrorCopyWith<T, $Res> {
+  __$$_CommunityServerErrorCopyWithImpl(_$_CommunityServerError<T> _value,
+      $Res Function(_$_CommunityServerError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serverResponse = freezed,
+  }) {
+    return _then(_$_CommunityServerError<T>(
+      serverResponse: freezed == serverResponse
+          ? _value.serverResponse
+          : serverResponse // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CommunityServerError<T> implements _CommunityServerError<T> {
+  const _$_CommunityServerError({this.serverResponse});
+
+  @override
+  final String? serverResponse;
+
+  @override
+  String toString() {
+    return 'CommunityProfileFailure<$T>.communityServerError(serverResponse: $serverResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommunityServerError<T> &&
+            (identical(other.serverResponse, serverResponse) ||
+                other.serverResponse == serverResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, serverResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CommunityServerErrorCopyWith<T, _$_CommunityServerError<T>>
+      get copyWith =>
+          __$$_CommunityServerErrorCopyWithImpl<T, _$_CommunityServerError<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() unexpected,
+    required TResult Function(String? serverResponse) communityServerError,
+  }) {
+    return communityServerError(serverResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? permissionDenied,
+    TResult? Function()? unexpected,
+    TResult? Function(String? serverResponse)? communityServerError,
+  }) {
+    return communityServerError?.call(serverResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? unexpected,
+    TResult Function(String? serverResponse)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (communityServerError != null) {
+      return communityServerError(serverResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommunityPermissionDenied<T> value)
+        permissionDenied,
+    required TResult Function(_CommunityUnexpected<T> value) unexpected,
+    required TResult Function(_CommunityServerError<T> value)
+        communityServerError,
+  }) {
+    return communityServerError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult? Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult? Function(_CommunityServerError<T> value)? communityServerError,
+  }) {
+    return communityServerError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommunityPermissionDenied<T> value)? permissionDenied,
+    TResult Function(_CommunityUnexpected<T> value)? unexpected,
+    TResult Function(_CommunityServerError<T> value)? communityServerError,
+    required TResult orElse(),
+  }) {
+    if (communityServerError != null) {
+      return communityServerError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CommunityServerError<T> implements CommunityProfileFailure<T> {
+  const factory _CommunityServerError({final String? serverResponse}) =
+      _$_CommunityServerError<T>;
+
+  String? get serverResponse;
+  @JsonKey(ignore: true)
+  _$$_CommunityServerErrorCopyWith<T, _$_CommunityServerError<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -7,13 +7,15 @@ class GameActivityRulesDto with _$GameActivityRulesDto {
 
   factory GameActivityRulesDto({
     List<Map<String, dynamic>>? allowedDonationTypes,
-    bool? isAllowedExternalContributions
+    bool? isAllowedExternalContributions,
+    String? postDonationLink,
 }) = _GameActivityRulesDto;
 
   factory GameActivityRulesDto.fromDomain(GameActivityRules rules) {
     return GameActivityRulesDto(
       allowedDonationTypes: rules.allowedDonationTypes?.map((e) => StringItemDto.fromDomain(e.toString()).toJson()).toList(),
-      isAllowedExternalContributions: rules.isAllowedExternalContributions
+      isAllowedExternalContributions: (rules.isAllowedExternalContributions != null) ? rules.isAllowedExternalContributions : null,
+      postDonationLink: (rules.postDonationLink != null) ? rules.postDonationLink : null,
     );
   }
 
@@ -21,6 +23,7 @@ class GameActivityRulesDto with _$GameActivityRulesDto {
     return GameActivityRules(
         allowedDonationTypes: allowedDonationTypes?.map((e) => getDonationType(StringItemDto.fromJson(e).toDomain())).toList(),
         isAllowedExternalContributions: isAllowedExternalContributions,
+        postDonationLink: postDonationLink,
     );
   }
 

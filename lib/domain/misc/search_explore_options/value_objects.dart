@@ -9,7 +9,7 @@ enum SearchExploreType {facility, activity, post, profile, community, ad}
 
 DashboardMarker getDashboardMarker(String? type) {
   for (DashboardMarker item in DashboardMarker.values) {
-    if (type == item.toString()) {
+    if (type == item.name.toString()) {
       return item;
     }
   }

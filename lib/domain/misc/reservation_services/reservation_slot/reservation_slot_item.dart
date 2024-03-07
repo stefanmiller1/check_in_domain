@@ -13,6 +13,7 @@ class ReservationSlotItem with _$ReservationSlotItem {
     required DateTime selectedDate,
     String? slotDescription,
     required List<ReservationTimeFeeSlotItem> selectedSlots,
+    List<ReservationTimeFeeSlotItem>? customSlots,
   }) = _ReservationSlotItem;
 
   factory ReservationSlotItem.empty() => ReservationSlotItem(
@@ -23,7 +24,6 @@ class ReservationSlotItem with _$ReservationSlotItem {
       selectedDate: DateTime.now(),
       selectedSlots: []
   );
-
 }
 
 
@@ -34,7 +34,8 @@ class ReservationTimeFeeSlotItem with _$ReservationTimeFeeSlotItem {
 
   factory ReservationTimeFeeSlotItem({
     required String fee,
-    required DateTimeRange slotRange
+    required DateTimeRange slotRange,
+    String? description,
   }) = _ReservationTimeFeeSlotItem;
 
 }

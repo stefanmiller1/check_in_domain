@@ -144,3 +144,10 @@ int calculateSlotsInRange(DateTimeRange slotRange, int durationInMinutes, DateTi
 
   return slotsInCurrentRange;
 }
+
+bool isFullDaySlot(ReservationTimeFeeSlotItem slotItem) {
+  if (slotItem.slotRange.duration.inHours == 24 || slotItem.slotRange.duration.inHours == 23) {
+    return true;
+  }
+  return false;
+}

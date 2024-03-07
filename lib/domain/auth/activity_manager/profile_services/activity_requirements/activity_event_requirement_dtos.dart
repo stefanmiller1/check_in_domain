@@ -10,6 +10,7 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
     required bool isMerchantInviteOnly,
     int? merchantFee,
     int? merchantLimit,
+    String? postMerchantApplicationLink,
 
     required bool isAlcoholForSale,
     required bool isFoodForSale,
@@ -30,6 +31,7 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
         isMerchantInviteOnly: requirement.isMerchantInviteOnly,
         merchantFee: (requirement.merchantFee != null) ? requirement.merchantFee : null,
         merchantLimit: (requirement.merchantLimit != null) ? requirement.merchantLimit : null,
+        postMerchantApplicationLink: (requirement.postMerchantApplicationLink != null) ? requirement.postMerchantApplicationLink : null,
         isAlcoholForSale: requirement.isAlcoholForSale,
         isFoodForSale: requirement.isFoodForSale,
         isAlcoholProvided: requirement.isAlcoholProvided,
@@ -47,6 +49,7 @@ class EventActivityRulesRequirementDto with _$EventActivityRulesRequirementDto {
         isMerchantInviteOnly: isMerchantInviteOnly,
         merchantFee: (merchantFee != null) ? merchantFee : null,
         merchantLimit: (merchantLimit != null) ? merchantLimit : null,
+        postMerchantApplicationLink: (postMerchantApplicationLink != null) ? postMerchantApplicationLink : null,
         isAlcoholForSale: isAlcoholForSale,
         isFoodForSale: isFoodForSale,
         isAlcoholProvided: isAlcoholProvided,

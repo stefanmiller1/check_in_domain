@@ -2,7 +2,7 @@ part of check_in_domain;
 
 Either<ValueFailure<String>, String> validateName(String input) {
 
-  const nameRegex = r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]';
+  const nameRegex = r'[!@#<>?":_`~;[\]\\|=+)(*&^%]';
   if (!RegExp(nameRegex).hasMatch(input)) {
     return right(input.capitalize());
   } else {

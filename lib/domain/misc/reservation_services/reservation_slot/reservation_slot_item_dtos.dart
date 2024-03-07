@@ -13,6 +13,7 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
     String? slotDescription,
     required String selectedDate,
     required List<Map<String, dynamic>> selectedSlots,
+    List<Map<String, dynamic>>? customSlots,
 }) = _ReservationSlotItemDto;
 
   factory ReservationSlotItemDto.fromDomain(ReservationSlotItem slot) {
@@ -23,7 +24,8 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
         selectedSideOption: (slot.selectedSideOption != null) ? slot.selectedSideOption : null,
         selectedDate: slot.selectedDate.toString(),
         slotDescription: slot.slotDescription,
-        selectedSlots: slot.selectedSlots.map((e) => StringDateRangeItemDto.fromDomain(e).toJson()).toList()
+        selectedSlots: slot.selectedSlots.map((e) => StringDateRangeItemDto.fromDomain(e).toJson()).toList(),
+        customSlots: (slot.customSlots != null) ? slot.customSlots!.map((e) => StringDateRangeItemDto.fromDomain(e).toJson()).toList() : null,
     );
   }
 
@@ -35,12 +37,14 @@ class ReservationSlotItemDto with _$ReservationSlotItemDto {
       selectedSideOption: selectedSideOption,
       selectedDate: DateTime.parse(selectedDate),
       slotDescription: slotDescription,
-      selectedSlots: selectedSlots.map((e) => StringDateRangeItemDto.fromJson(e).toDomain()).toList()
+      selectedSlots: selectedSlots.map((e) => StringDateRangeItemDto.fromJson(e).toDomain()).toList(),
+      customSlots: (customSlots != null) ? customSlots!.map((e) => StringDateRangeItemDto.fromJson(e).toDomain()).toList() : null,
     );
   }
 
   factory ReservationSlotItemDto.fromJson(Map<String, dynamic> json) => _$ReservationSlotItemDtoFromJson(json);
 
 }
+
 
 

@@ -5,7 +5,6 @@ publish_to: none
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -44,7 +43,8 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+dependency_overrides:
+  watcher: ^1.1.0
 
 # The following section is specific to Flutter packages.
 flutter:

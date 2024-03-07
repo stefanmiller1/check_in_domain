@@ -84,6 +84,7 @@ class StringDateRangeItemDto with _$StringDateRangeItemDto {
   const StringDateRangeItemDto._();
 
   factory StringDateRangeItemDto({
+    String? descriptionItem,
     required String stringItem,
     required String dateStart,
     required String dateEnd,
@@ -91,6 +92,7 @@ class StringDateRangeItemDto with _$StringDateRangeItemDto {
 
   factory StringDateRangeItemDto.fromDomain(ReservationTimeFeeSlotItem items) {
     return StringDateRangeItemDto(
+      descriptionItem: items.description,
       stringItem: items.fee,
       dateStart: items.slotRange.start.toString(),
       dateEnd: items.slotRange.end.toString(),
@@ -99,6 +101,7 @@ class StringDateRangeItemDto with _$StringDateRangeItemDto {
 
   ReservationTimeFeeSlotItem toDomain() {
     return ReservationTimeFeeSlotItem(
+        description: descriptionItem,
         fee: stringItem,
         slotRange: DateTimeRange(start: DateTime.parse(dateStart), end: DateTime.parse(dateEnd))
     );

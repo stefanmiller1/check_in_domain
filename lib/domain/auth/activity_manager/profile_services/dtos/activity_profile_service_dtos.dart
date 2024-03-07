@@ -6,6 +6,12 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
   const ActivityProfileServiceDto._();
 
   factory ActivityProfileServiceDto({
+    /// post only - hosted by
+    bool? isActivityPost,
+    String? postContactWebsite,
+    String? postContactEmail,
+    String? postContactSocialInstagram,
+
     required Map<String, dynamic> activityBackground,
     required Map<String, dynamic> activityRequirements,
 }) = _ActivityProfileServiceDto;
@@ -13,6 +19,10 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
 
   factory ActivityProfileServiceDto.fromDomain(ActivityProfileService profile) {
     return ActivityProfileServiceDto(
+        isActivityPost: (profile.isActivityPost != null) ? profile.isActivityPost : null,
+        postContactWebsite: (profile.postContactWebsite != null) ? profile.postContactWebsite : null,
+        postContactEmail: (profile.postContactEmail != null) ? profile.postContactEmail : null,
+        postContactSocialInstagram: (profile.postContactSocialInstagram != null) ? profile.postContactSocialInstagram : null,
         activityBackground: ActivityBackgroundDto.fromDomain(profile.activityBackground).toJson(),
         activityRequirements: ActivityRequirementDto.fromDomain(profile.activityRequirements).toJson()
     );
@@ -20,6 +30,10 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
 
   ActivityProfileService toDomain() {
     return ActivityProfileService(
+        isActivityPost: (isActivityPost != null) ? isActivityPost : null,
+        postContactWebsite: (postContactWebsite != null) ? postContactWebsite : null,
+        postContactEmail: (postContactEmail != null) ? postContactEmail : null,
+        postContactSocialInstagram: (postContactSocialInstagram != null) ? postContactSocialInstagram : null,
         activityBackground: ActivityBackgroundDto.fromJson(activityBackground).toDomain(),
         activityRequirements: ActivityRequirementDto.fromJson(activityRequirements).toDomain()
     );

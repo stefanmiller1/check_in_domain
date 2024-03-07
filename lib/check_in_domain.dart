@@ -52,6 +52,11 @@ part 'domain/misc/rules_privacy/failures.dart';
 part 'domain/misc/rules_privacy/value_objects.dart';
 part 'domain/misc/language_service/language_service.dart';
 
+part 'domain/misc/notification_services/value_objects.dart';
+part 'domain/misc/notification_services/account_notification/account_notification_item.dart';
+part 'domain/misc/notification_services/account_notification/account_notification_item_dtos.dart';
+part 'domain/misc/notification_services/failure.dart';
+
 part 'domain/misc/affiliation_options/affiliation_type.dart';
 part 'domain/misc/affiliation_options/afilliation_type_dtos.dart';
 part 'domain/misc/affiliation_options/value_objects.dart';
@@ -107,6 +112,7 @@ part 'domain/misc/search_explore_options/value_objects.dart';
 ///
 part 'domain/un_auth/news_services/news_updates.dart';
 part 'domain/un_auth/news_services/news_updates_dtos.dart';
+part 'domain/un_auth/news_services/login_services.dart';
 
 /// auth domain activity manager services
 part 'domain/auth/activity_manager/attendance_services/activity_passes_option.dart';
@@ -314,6 +320,10 @@ part 'domain/auth/profile_services/sessions/value_objects.dart';
 
 part 'domain/auth/profile_services/failures.dart';
 part 'domain/auth/profile_services/value_validators.dart';
+
+part 'domain/auth/community_manager/profile/community_profile_item.dart';
+part 'domain/auth/community_manager/profile/community_profile_item_dto.dart';
+part 'domain/auth/community_manager/profile/failures.dart';
 
 part 'domain/auth/auth_failure.dart';
 part 'domain/misc/invitation_services/value_objects.dart';

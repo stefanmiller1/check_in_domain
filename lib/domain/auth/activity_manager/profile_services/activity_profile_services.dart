@@ -6,6 +6,12 @@ class ActivityProfileService with _$ActivityProfileService {
   const ActivityProfileService._();
 
   factory ActivityProfileService({
+    /// post only - hosted by
+    bool? isActivityPost,
+    String? postContactWebsite,
+    String? postContactEmail,
+    String? postContactSocialInstagram,
+
     required ActivityBackground activityBackground,
     required ActivityRequirement activityRequirements,
   }) = _ActivityProfileService;
