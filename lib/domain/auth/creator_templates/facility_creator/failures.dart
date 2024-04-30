@@ -9,7 +9,7 @@ class FacilityFormFailure<T> with _$FacilityFormFailure<T> {
   const factory FacilityFormFailure.locationNotFound() = _LocationNotFound;
   const factory FacilityFormFailure.locationAlreadyVerified() = _LocationAlreadyVerified;
   const factory FacilityFormFailure.facilityServerError({String? serverResponse}) = _FacilityServerError<T>;
-  const factory FacilityFormFailure.cancelledByUser() = _CancelledByUser;
+  const factory FacilityFormFailure.cancelledByUser() = _FacilityCancelledByUser;
   const factory FacilityFormFailure.unexpected() = _Unexpected;
 
 }

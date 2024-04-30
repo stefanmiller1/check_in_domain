@@ -4,7 +4,5 @@ final GetIt getIt = GetIt.instance;
 
 const String prodEnv = Environment.prod;
 
-@injectableInit
-void configureInjection(String env) {
-  $initGetIt(getIt, environment: env);
-}
+@InjectableInit(preferRelativeImports: false)
+void setup() => getIt.init();

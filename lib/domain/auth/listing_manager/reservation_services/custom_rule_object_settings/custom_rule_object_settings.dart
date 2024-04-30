@@ -10,10 +10,11 @@ class CustomRuleOption with _$CustomRuleOption {
     required String customRuleTitleLabel,
     CustomRuleObjectType? customRuleType,
     LabelTextRuleOption? labelTextRuleOption,
-    SelectionLabelOption? selectionLabelOption,
+    List<SelectionLabelOption>? selectionLabelOption,
     NumberLimitRuleOption? numberLimitRuleOption,
-    CheckBoxRuleOption? checkBoxRuleOption,
+    List<CheckBoxRuleOption>? checkBoxRuleOption,
     CustomRuleOptionDetail? customRuleOptionDetail,
+    List<DocumentFormOption>? customDocumentOptions,
   }) = _CustomRuleOption;
 }
 
@@ -38,6 +39,8 @@ class LabelTextRuleOption with _$LabelTextRuleOption {
 
   factory LabelTextRuleOption({
     required String titleLabel,
+    String? customLink,
+    bool? isLinkLabel,
   }) = _LabelTextRuleOption;
 }
 
@@ -90,7 +93,26 @@ class CheckBoxRuleOption with _$CheckBoxRuleOption {
 
 }
 
-//
+
+@freezed
+class DocumentFormOption with _$DocumentFormOption {
+
+  const DocumentFormOption._();
+
+  const factory DocumentFormOption({
+    required ImageUpload documentForm,
+    bool? isRequiredOption,
+  }) = _DocumentFormOption;
+
+
+  factory DocumentFormOption.empty() {
+    return DocumentFormOption(
+        documentForm: ImageUpload(key: UniqueId().getOrCrash()),
+        isRequiredOption: false);
+  }
+}
+
+
 // @freezed
 // class CheckBoxRule with _$CheckBoxRule {
 //

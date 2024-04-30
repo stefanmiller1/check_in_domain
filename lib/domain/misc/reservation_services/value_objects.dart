@@ -151,3 +151,132 @@ bool isFullDaySlot(ReservationTimeFeeSlotItem slotItem) {
   }
   return false;
 }
+
+
+List<ReservationPreviewer> filterFromNowToEndOfWeek(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+  DateTime endOfWeek = DateTime(now.year, now.month, now.day + 7 - now.weekday, 23, 59, 59);
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isAfter(now) && slotItem.selectedDate.isBefore(endOfWeek)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+List<ReservationPreviewer> filterFromNowToEndOfMonth(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+  DateTime endOfMonth = DateTime(now.year, now.month + 1, 0, 23, 59, 59);
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isAfter(now) && slotItem.selectedDate.isBefore(endOfMonth)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+List<ReservationPreviewer> filterFromNowToEndOfYear(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+  DateTime endOfYear = DateTime(now.year, 12, 31, 23, 59, 59);
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isAfter(now) && slotItem.selectedDate.isBefore(endOfYear)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+List<ReservationPreviewer> filterAllBeforeNow(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isBefore(now)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+List<ReservationPreviewer> filterBeforeNowTillStartOfMonth(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+  DateTime startOfMonth = DateTime(now.year, now.month, 1);
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isBefore(now) && slotItem.selectedDate.isAfter(startOfMonth)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+List<ReservationPreviewer> filterBeforeNowTillStartOfYear(List<ReservationPreviewer> reservations) {
+  DateTime now = DateTime.now();
+  DateTime startOfYear = DateTime(now.year, 1, 1);
+
+  return reservations.where((reservation) {
+    for (var slotItem in reservation.reservation?.reservationSlotItem ?? []) {
+      if (slotItem.selectedDate.isBefore(now) && slotItem.selectedDate.isAfter(startOfYear)) {
+        return true;
+      }
+    }
+    return false;
+  }).toList();
+}
+
+// List<ReservationTimeFeeSlotItem> groupConsecutiveSlotsByDay(List<ReservationTimeFeeSlotItem> slots) {
+//
+// }
+
+List<ReservationTimeFeeSlotItem> groupConsecutiveSlots(List<ReservationTimeFeeSlotItem> slots) {
+  if (slots.isEmpty) return [];
+  final List<ReservationTimeFeeSlotItem> slotsToGroup = [];
+  slotsToGroup.addAll(slots);
+
+  // Sort slots based on their start times
+  slotsToGroup.sort((a, b) => a.slotRange.start.compareTo(b.slotRange.start));
+
+  List<ReservationTimeFeeSlotItem> groupedSlots = [];
+  DateTimeRange currentRange = slotsToGroup.first.slotRange;
+
+  for (int i = 1; i < slotsToGroup.length; i++) {
+    ReservationTimeFeeSlotItem currentSlot = slotsToGroup[i];
+
+    // Check if the current slot is consecutive with the current range
+    if (currentSlot.slotRange.start.difference(currentRange.end).inMinutes <= 0) {
+      // Extend the current range's end time if the current slot is consecutive
+      currentRange = DateTimeRange(
+        start: currentRange.start,
+        end: currentSlot.slotRange.end,
+      );
+    } else {
+      // Non-consecutive slot, add the current range to the grouped slots list
+      groupedSlots.add(ReservationTimeFeeSlotItem(
+        fee: slotsToGroup[i - 1].fee,
+        slotRange: currentRange,
+      ));
+      // Start a new range with the current slot
+      currentRange = currentSlot.slotRange;
+    }
+  }
+
+  // Add the last range
+  groupedSlots.add(ReservationTimeFeeSlotItem(
+    fee: slots.last.fee,
+    slotRange: currentRange,
+  ));
+
+  return groupedSlots;
+}

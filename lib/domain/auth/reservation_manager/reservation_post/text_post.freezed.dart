@@ -12,7 +12,7 @@ part of 'text_post.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TextPost {
@@ -62,21 +62,22 @@ class _$TextPostCopyWithImpl<$Res, $Val extends TextPost>
 }
 
 /// @nodoc
-abstract class _$$_TextPostCopyWith<$Res> implements $TextPostCopyWith<$Res> {
-  factory _$$_TextPostCopyWith(
-          _$_TextPost value, $Res Function(_$_TextPost) then) =
-      __$$_TextPostCopyWithImpl<$Res>;
+abstract class _$$TextPostImplCopyWith<$Res>
+    implements $TextPostCopyWith<$Res> {
+  factory _$$TextPostImplCopyWith(
+          _$TextPostImpl value, $Res Function(_$TextPostImpl) then) =
+      __$$TextPostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
-class __$$_TextPostCopyWithImpl<$Res>
-    extends _$TextPostCopyWithImpl<$Res, _$_TextPost>
-    implements _$$_TextPostCopyWith<$Res> {
-  __$$_TextPostCopyWithImpl(
-      _$_TextPost _value, $Res Function(_$_TextPost) _then)
+class __$$TextPostImplCopyWithImpl<$Res>
+    extends _$TextPostCopyWithImpl<$Res, _$TextPostImpl>
+    implements _$$TextPostImplCopyWith<$Res> {
+  __$$TextPostImplCopyWithImpl(
+      _$TextPostImpl _value, $Res Function(_$TextPostImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +86,7 @@ class __$$_TextPostCopyWithImpl<$Res>
     Object? text = null,
     Object? metaData = freezed,
   }) {
-    return _then(_$_TextPost(
+    return _then(_$TextPostImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -100,8 +101,8 @@ class __$$_TextPostCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TextPost extends _TextPost {
-  _$_TextPost({required this.text, final Map<String, dynamic>? metaData})
+class _$TextPostImpl extends _TextPost {
+  _$TextPostImpl({required this.text, final Map<String, dynamic>? metaData})
       : _metaData = metaData,
         super._();
 
@@ -123,10 +124,10 @@ class _$_TextPost extends _TextPost {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TextPost &&
+            other is _$TextPostImpl &&
             (identical(other.text, text) || other.text == text) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
@@ -138,14 +139,14 @@ class _$_TextPost extends _TextPost {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TextPostCopyWith<_$_TextPost> get copyWith =>
-      __$$_TextPostCopyWithImpl<_$_TextPost>(this, _$identity);
+  _$$TextPostImplCopyWith<_$TextPostImpl> get copyWith =>
+      __$$TextPostImplCopyWithImpl<_$TextPostImpl>(this, _$identity);
 }
 
 abstract class _TextPost extends TextPost {
   factory _TextPost(
       {required final String text,
-      final Map<String, dynamic>? metaData}) = _$_TextPost;
+      final Map<String, dynamic>? metaData}) = _$TextPostImpl;
   _TextPost._() : super._();
 
   @override
@@ -154,6 +155,6 @@ abstract class _TextPost extends TextPost {
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$_TextPostCopyWith<_$_TextPost> get copyWith =>
+  _$$TextPostImplCopyWith<_$TextPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

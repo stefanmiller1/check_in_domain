@@ -11,7 +11,7 @@ class FacilityRulesBackgroundValueFailure<T> with _$FacilityRulesBackgroundValue
 
   const factory FacilityRulesBackgroundValueFailure.isEmpty({
     String? failedValue
-  }) = _IsEmpty<T>;
+  }) = _IsEmptyRules<T>;
 
   const factory FacilityRulesBackgroundValueFailure.invalidFacilityName({
     String? failedValue

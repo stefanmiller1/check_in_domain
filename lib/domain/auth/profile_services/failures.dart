@@ -32,4 +32,8 @@ class ProfileValueFailure<T> with _$ProfileValueFailure<T> {
     String? failedValue,
   }) = ShortPassword<T>;
 
+  const factory ProfileValueFailure.profileServerError({
+    String? serverResponse,
+}) = _ProfileValueFailure<T>;
+
 }

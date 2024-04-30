@@ -12,7 +12,7 @@ part of 'system_post_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SystemPostDto _$SystemPostDtoFromJson(Map<String, dynamic> json) {
   return _SystemPostDto.fromJson(json);
@@ -68,22 +68,22 @@ class _$SystemPostDtoCopyWithImpl<$Res, $Val extends SystemPostDto>
 }
 
 /// @nodoc
-abstract class _$$_SystemPostDtoCopyWith<$Res>
+abstract class _$$SystemPostDtoImplCopyWith<$Res>
     implements $SystemPostDtoCopyWith<$Res> {
-  factory _$$_SystemPostDtoCopyWith(
-          _$_SystemPostDto value, $Res Function(_$_SystemPostDto) then) =
-      __$$_SystemPostDtoCopyWithImpl<$Res>;
+  factory _$$SystemPostDtoImplCopyWith(
+          _$SystemPostDtoImpl value, $Res Function(_$SystemPostDtoImpl) then) =
+      __$$SystemPostDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Map<String, dynamic>? metaData, String text});
 }
 
 /// @nodoc
-class __$$_SystemPostDtoCopyWithImpl<$Res>
-    extends _$SystemPostDtoCopyWithImpl<$Res, _$_SystemPostDto>
-    implements _$$_SystemPostDtoCopyWith<$Res> {
-  __$$_SystemPostDtoCopyWithImpl(
-      _$_SystemPostDto _value, $Res Function(_$_SystemPostDto) _then)
+class __$$SystemPostDtoImplCopyWithImpl<$Res>
+    extends _$SystemPostDtoCopyWithImpl<$Res, _$SystemPostDtoImpl>
+    implements _$$SystemPostDtoImplCopyWith<$Res> {
+  __$$SystemPostDtoImplCopyWithImpl(
+      _$SystemPostDtoImpl _value, $Res Function(_$SystemPostDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_SystemPostDtoCopyWithImpl<$Res>
     Object? metaData = freezed,
     Object? text = null,
   }) {
-    return _then(_$_SystemPostDto(
+    return _then(_$SystemPostDtoImpl(
       metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,14 @@ class __$$_SystemPostDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SystemPostDto extends _SystemPostDto {
-  _$_SystemPostDto({final Map<String, dynamic>? metaData, required this.text})
+class _$SystemPostDtoImpl extends _SystemPostDto {
+  _$SystemPostDtoImpl(
+      {final Map<String, dynamic>? metaData, required this.text})
       : _metaData = metaData,
         super._();
 
-  factory _$_SystemPostDto.fromJson(Map<String, dynamic> json) =>
-      _$$_SystemPostDtoFromJson(json);
+  factory _$SystemPostDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SystemPostDtoImplFromJson(json);
 
   final Map<String, dynamic>? _metaData;
   @override
@@ -134,10 +135,10 @@ class _$_SystemPostDto extends _SystemPostDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SystemPostDto &&
+            other is _$SystemPostDtoImpl &&
             const DeepCollectionEquality().equals(other._metaData, _metaData) &&
             (identical(other.text, text) || other.text == text));
   }
@@ -150,12 +151,12 @@ class _$_SystemPostDto extends _SystemPostDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SystemPostDtoCopyWith<_$_SystemPostDto> get copyWith =>
-      __$$_SystemPostDtoCopyWithImpl<_$_SystemPostDto>(this, _$identity);
+  _$$SystemPostDtoImplCopyWith<_$SystemPostDtoImpl> get copyWith =>
+      __$$SystemPostDtoImplCopyWithImpl<_$SystemPostDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SystemPostDtoToJson(
+    return _$$SystemPostDtoImplToJson(
       this,
     );
   }
@@ -164,11 +165,11 @@ class _$_SystemPostDto extends _SystemPostDto {
 abstract class _SystemPostDto extends SystemPostDto {
   factory _SystemPostDto(
       {final Map<String, dynamic>? metaData,
-      required final String text}) = _$_SystemPostDto;
+      required final String text}) = _$SystemPostDtoImpl;
   _SystemPostDto._() : super._();
 
   factory _SystemPostDto.fromJson(Map<String, dynamic> json) =
-      _$_SystemPostDto.fromJson;
+      _$SystemPostDtoImpl.fromJson;
 
   @override
   Map<String, dynamic>? get metaData;
@@ -176,6 +177,6 @@ abstract class _SystemPostDto extends SystemPostDto {
   String get text;
   @override
   @JsonKey(ignore: true)
-  _$$_SystemPostDtoCopyWith<_$_SystemPostDto> get copyWith =>
+  _$$SystemPostDtoImplCopyWith<_$SystemPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

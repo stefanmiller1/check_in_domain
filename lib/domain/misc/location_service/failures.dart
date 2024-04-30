@@ -26,7 +26,7 @@ class LocationValueFailure<T> with _$LocationValueFailure<T> {
 
   factory LocationValueFailure.isEmpty({
     String? failedValue
-  }) = IsEmpty<T>;
+  }) = IsEmptyLocation<T>;
 
   const factory LocationValueFailure.missingCountry({
     String? failedValue

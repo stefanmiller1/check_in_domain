@@ -10,10 +10,11 @@ class CustomRuleOptionDto with _$CustomRuleOptionDto {
     required String customRuleTitleLabel,
     String? customRuleType,
     Map<String, dynamic>? labelTextRuleOption,
-    Map<String, dynamic>? selectionLabelOption,
+    List<Map<String, dynamic>>? selectionLabelOption,
     List<Map<String, dynamic>>? numberLimitRuleOption,
-    Map<String, dynamic>? checkBoxRuleOption,
+    List<Map<String, dynamic>>? checkBoxRuleOption,
     Map<String, dynamic>? customRuleOptionDetail,
+    List<Map<String, dynamic>>? customDocumentOptions,
   }) = _CustomRuleOptionDto;
 
   factory CustomRuleOptionDto.fromDomain(CustomRuleOption rule) {
@@ -21,11 +22,12 @@ class CustomRuleOptionDto with _$CustomRuleOptionDto {
         ruleId: rule.ruleId.toString(),
         customRuleTitleLabel: rule.customRuleTitleLabel,
         customRuleType: (rule.customRuleType != null) ? rule.customRuleType!.toString() : null,
-        labelTextRuleOption: (rule.labelTextRuleOption != null) ? StringItemDto.fromDomain(rule.labelTextRuleOption!.titleLabel).toJson() : null,
-        selectionLabelOption: (rule.selectionLabelOption != null) ? SelectionLabelOptionDto.fromDomain(rule.selectionLabelOption!).toJson() : null,
+        labelTextRuleOption: (rule.labelTextRuleOption != null) ? LabelTextRuleOptionDto.fromDomain(rule.labelTextRuleOption!).toJson() : null,
+        selectionLabelOption: (rule.selectionLabelOption != null) ? rule.selectionLabelOption!.map((e) => SelectionLabelOptionDto.fromDomain(e).toJson()).toList() : null,
         numberLimitRuleOption: (rule.numberLimitRuleOption != null && rule.numberLimitRuleOption!.numberLimit != null && rule.numberLimitRuleOption!.numberLimit!.isNotEmpty) ? rule.numberLimitRuleOption!.numberLimit!.map((e) => NumberLimitRuleDto.fromDomain(e).toJson()).toList() : null,
-        checkBoxRuleOption: (rule.checkBoxRuleOption != null) ? CheckBoxRuleOptionDto.fromDomain(rule.checkBoxRuleOption!).toJson() : null,
+        checkBoxRuleOption: (rule.checkBoxRuleOption != null) ? rule.checkBoxRuleOption!.map((e) => CheckBoxRuleOptionDto.fromDomain(e).toJson()).toList() : null,
         customRuleOptionDetail: (rule.customRuleOptionDetail != null) ? CustomRuleOptionDetailDto.fromDomain(rule.customRuleOptionDetail!).toJson() : null,
+        customDocumentOptions: (rule.customDocumentOptions != null) ? rule.customDocumentOptions!.map((e) => DocumentFormOptionDto.fromDomain(e).toJson()).toList() : null
     );
   }
 
@@ -35,11 +37,12 @@ class CustomRuleOptionDto with _$CustomRuleOptionDto {
         ruleId: UniqueId.fromUniqueString(ruleId),
         customRuleTitleLabel: customRuleTitleLabel,
         customRuleType: getCustomRuleType(customRuleType),
-        labelTextRuleOption: (labelTextRuleOption != null) ? LabelTextRuleOption(titleLabel: StringItemDto.fromJson(labelTextRuleOption!).toDomain()) : null,
-        selectionLabelOption: (selectionLabelOption != null) ? SelectionLabelOptionDto.fromJson(selectionLabelOption!).toDomain() : null,
+        labelTextRuleOption: (labelTextRuleOption != null) ? LabelTextRuleOptionDto.fromJson(labelTextRuleOption!).toDomain() : null,
+        selectionLabelOption: (selectionLabelOption != null) ? selectionLabelOption!.map((e) => SelectionLabelOptionDto.fromJson(e).toDomain()).toList() : null,
         numberLimitRuleOption: (numberLimitRuleOption != null) ? NumberLimitRuleOption(numberLimit: numberLimitRuleOption!.map((e) => NumberLimitRuleDto.fromJson(e).toDomain()).toList()) : null,
-        checkBoxRuleOption: (checkBoxRuleOption != null) ? CheckBoxRuleOptionDto.fromJson(checkBoxRuleOption!).toDomain() : null,
+        checkBoxRuleOption: (checkBoxRuleOption != null) ? checkBoxRuleOption!.map((e) => CheckBoxRuleOptionDto.fromJson(e).toDomain()).toList() : null,
         customRuleOptionDetail: (customRuleOptionDetail != null) ? CustomRuleOptionDetailDto.fromJson(customRuleOptionDetail!).toDomain() : null,
+        customDocumentOptions: (customDocumentOptions != null) ? customDocumentOptions!.map((e) => DocumentFormOptionDto.fromJson(e).toDomain()).toList() : null
     );
   }
 
@@ -76,6 +79,38 @@ class CustomRuleOptionDetailDto with _$CustomRuleOptionDetailDto {
   }
 
   factory CustomRuleOptionDetailDto.fromJson(Map<String, dynamic> json) => _$CustomRuleOptionDetailDtoFromJson(json);
+
+}
+
+@freezed
+class LabelTextRuleOptionDto with _$LabelTextRuleOptionDto {
+
+  const LabelTextRuleOptionDto._();
+
+  factory LabelTextRuleOptionDto({
+    required String titleLabel,
+    String? customLink,
+    bool? isLinkLabel,
+  }) = _LabelTextRuleOptionDto;
+
+  factory LabelTextRuleOptionDto.fromDomain(LabelTextRuleOption option) {
+    return LabelTextRuleOptionDto(
+      titleLabel: option.titleLabel,
+      customLink: option.customLink,
+      isLinkLabel: option.isLinkLabel
+    );
+  }
+
+  LabelTextRuleOption toDomain() {
+      return LabelTextRuleOption(
+          titleLabel: titleLabel,
+          customLink: customLink,
+          isLinkLabel: isLinkLabel
+      );
+  }
+
+  factory LabelTextRuleOptionDto.fromJson(Map<String, dynamic> json) => _$LabelTextRuleOptionDtoFromJson(json);
+
 
 }
 
@@ -166,5 +201,35 @@ class CheckBoxRuleOptionDto with _$CheckBoxRuleOptionDto {
   }
 
   factory CheckBoxRuleOptionDto.fromJson(Map<String, dynamic> json) => _$CheckBoxRuleOptionDtoFromJson(json);
+
+}
+
+
+@freezed
+class DocumentFormOptionDto with _$DocumentFormOptionDto {
+
+  const DocumentFormOptionDto._();
+
+  const factory DocumentFormOptionDto({
+    required String uriLink,
+    bool? isRequiredOption,
+  }) = _DocumentFormOptionDto;
+
+  factory DocumentFormOptionDto.fromDomain(DocumentFormOption option) {
+    return DocumentFormOptionDto(
+      uriLink: option.documentForm.uriPath!,
+      isRequiredOption: option.isRequiredOption
+    );
+  }
+
+  DocumentFormOption toDomain() {
+    return DocumentFormOption(
+      documentForm: ImageUpload(key: uriLink, uriPath: uriLink),
+      isRequiredOption: isRequiredOption,
+    );
+  }
+
+  factory DocumentFormOptionDto.fromJson(Map<String, dynamic> json) => _$DocumentFormOptionDtoFromJson(json);
+
 
 }

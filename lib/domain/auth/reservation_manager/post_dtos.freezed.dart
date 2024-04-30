@@ -12,7 +12,7 @@ part of 'post_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PostDto _$PostDtoFromJson(Map<String, dynamic> json) {
   return _PostDto.fromJson(json);
@@ -221,10 +221,10 @@ class _$PostDtoCopyWithImpl<$Res, $Val extends PostDto>
 }
 
 /// @nodoc
-abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
-  factory _$$_PostDtoCopyWith(
-          _$_PostDto value, $Res Function(_$_PostDto) then) =
-      __$$_PostDtoCopyWithImpl<$Res>;
+abstract class _$$PostDtoImplCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
+  factory _$$PostDtoImplCopyWith(
+          _$PostDtoImpl value, $Res Function(_$PostDtoImpl) then) =
+      __$$PostDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -254,10 +254,11 @@ abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PostDtoCopyWithImpl<$Res>
-    extends _$PostDtoCopyWithImpl<$Res, _$_PostDto>
-    implements _$$_PostDtoCopyWith<$Res> {
-  __$$_PostDtoCopyWithImpl(_$_PostDto _value, $Res Function(_$_PostDto) _then)
+class __$$PostDtoImplCopyWithImpl<$Res>
+    extends _$PostDtoCopyWithImpl<$Res, _$PostDtoImpl>
+    implements _$$PostDtoImplCopyWith<$Res> {
+  __$$PostDtoImplCopyWithImpl(
+      _$PostDtoImpl _value, $Res Function(_$PostDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -287,7 +288,7 @@ class __$$_PostDtoCopyWithImpl<$Res>
     Object? createdAtSTC = freezed,
     Object? updatedAtSTC = freezed,
   }) {
-    return _then(_$_PostDto(
+    return _then(_$PostDtoImpl(
       authorId: null == authorId
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
@@ -386,8 +387,8 @@ class __$$_PostDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PostDto extends _PostDto {
-  _$_PostDto(
+class _$PostDtoImpl extends _PostDto {
+  _$PostDtoImpl(
       {required this.authorId,
       this.createdAt,
       required this.id,
@@ -423,8 +424,8 @@ class _$_PostDto extends _PostDto {
         _postBookmarks = postBookmarks,
         super._();
 
-  factory _$_PostDto.fromJson(Map<String, dynamic> json) =>
-      _$$_PostDtoFromJson(json);
+  factory _$PostDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostDtoImplFromJson(json);
 
   @override
   final String authorId;
@@ -561,10 +562,10 @@ class _$_PostDto extends _PostDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PostDto &&
+            other is _$PostDtoImpl &&
             (identical(other.authorId, authorId) ||
                 other.authorId == authorId) &&
             (identical(other.createdAt, createdAt) ||
@@ -640,12 +641,12 @@ class _$_PostDto extends _PostDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PostDtoCopyWith<_$_PostDto> get copyWith =>
-      __$$_PostDtoCopyWithImpl<_$_PostDto>(this, _$identity);
+  _$$PostDtoImplCopyWith<_$PostDtoImpl> get copyWith =>
+      __$$PostDtoImplCopyWithImpl<_$PostDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PostDtoToJson(
+    return _$$PostDtoImplToJson(
       this,
     );
   }
@@ -653,32 +654,33 @@ class _$_PostDto extends _PostDto {
 
 abstract class _PostDto extends PostDto {
   factory _PostDto(
-      {required final String authorId,
-      final String? createdAt,
-      required final String id,
-      final Map<String, dynamic>? metadata,
-      final String? remoteId,
-      final Map<String, dynamic>? repliedPost,
-      final String? reservationId,
-      final bool? showStatus,
-      final bool? isReported,
-      final String? status,
-      required final String type,
-      final String? updatedAt,
-      final int? likesCount,
-      final Map<String, dynamic>? previewData,
-      final Map<String, dynamic>? audioPost,
-      final List<Map<String, dynamic>>? imagePost,
-      final Map<String, dynamic>? systemPost,
-      final Map<String, dynamic>? textPost,
-      final List<Map<String, dynamic>>? videoPost,
-      final List<Map<String, dynamic>>? postLikes,
-      final List<Map<String, dynamic>>? postBookmarks,
-      @ServerTimestampConverter() final FieldValue? createdAtSTC,
-      @ServerTimestampConverter() final FieldValue? updatedAtSTC}) = _$_PostDto;
+          {required final String authorId,
+          final String? createdAt,
+          required final String id,
+          final Map<String, dynamic>? metadata,
+          final String? remoteId,
+          final Map<String, dynamic>? repliedPost,
+          final String? reservationId,
+          final bool? showStatus,
+          final bool? isReported,
+          final String? status,
+          required final String type,
+          final String? updatedAt,
+          final int? likesCount,
+          final Map<String, dynamic>? previewData,
+          final Map<String, dynamic>? audioPost,
+          final List<Map<String, dynamic>>? imagePost,
+          final Map<String, dynamic>? systemPost,
+          final Map<String, dynamic>? textPost,
+          final List<Map<String, dynamic>>? videoPost,
+          final List<Map<String, dynamic>>? postLikes,
+          final List<Map<String, dynamic>>? postBookmarks,
+          @ServerTimestampConverter() final FieldValue? createdAtSTC,
+          @ServerTimestampConverter() final FieldValue? updatedAtSTC}) =
+      _$PostDtoImpl;
   _PostDto._() : super._();
 
-  factory _PostDto.fromJson(Map<String, dynamic> json) = _$_PostDto.fromJson;
+  factory _PostDto.fromJson(Map<String, dynamic> json) = _$PostDtoImpl.fromJson;
 
   @override
   String get authorId;
@@ -730,6 +732,6 @@ abstract class _PostDto extends PostDto {
   FieldValue? get updatedAtSTC;
   @override
   @JsonKey(ignore: true)
-  _$$_PostDtoCopyWith<_$_PostDto> get copyWith =>
+  _$$PostDtoImplCopyWith<_$PostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

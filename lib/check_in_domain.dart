@@ -16,6 +16,13 @@ import 'package:geoflutterfire/geoflutterfire.dart';
 import 'dart:math';
 import 'dart:typed_data';
 import 'domain/misc/attendee_services/attendee_item/attendee_item.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/custom_availability/mv_custom_availability.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/custom_availability/mv_custom_availability_dto.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/booth_payments/mv_booth_payments.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/booth_payments/mv_booth_payments_dto.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_custom_option_dto.dart';
+import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_custom_options.dart';
+
 
 part 'domain/auth/activity_manager/activity_type_option/value_objects.dart';
 part 'domain/auth/activity_manager/activity_type_option/activity_option.dart';
@@ -121,14 +128,21 @@ part 'domain/auth/activity_manager/attendance_services/activity_attendance_optio
 part 'domain/auth/activity_manager/attendance_services/activity_passes_option_dtos.dart';
 part 'domain/auth/activity_manager/attendance_services/activity_ticket_option.dart';
 part 'domain/auth/activity_manager/attendance_services/activity_ticket_option_dtos.dart';
-part 'domain/misc/attendee_services/events/event_merchant_vendor_profile.dart';
-part 'domain/misc/attendee_services/events/event_merchant_vendor_profile_dtos.dart';
-part 'domain/misc/attendee_services/classes/classes_instructor_profile.dart';
-part 'domain/misc/attendee_services/classes/classes_instructor_profile_dtos.dart';
+part 'domain/misc/attendee_services/profile/merchant_vendor/event_merchant_vendor_profile.dart';
+part 'domain/misc/attendee_services/profile/merchant_vendor/event_merchant_vendor_profile_dtos.dart';
+part 'domain/misc/attendee_services/form/failure.dart';
+part 'domain/misc/attendee_services/profile/merchant_vendor/value_objects.dart';
+part 'domain/misc/attendee_services/profile/classes/classes_instructor_profile.dart';
+part 'domain/misc/attendee_services/profile/classes/classes_instructor_profile_dtos.dart';
 part 'domain/misc/attendee_services/failures.dart';
 part 'domain/misc/attendee_services/value_object.dart';
-part 'domain/misc/attendee_services/tickets/ticket_item.dart';
-part 'domain/misc/attendee_services/tickets/ticket_item_dtos.dart';
+part 'domain/misc/attendee_services/profile/tickets/ticket_item.dart';
+part 'domain/misc/attendee_services/profile/tickets/ticket_item_dtos.dart';
+part 'domain/misc/attendee_services/form/merchant_vendor/vendor_merchant_form.dart';
+part 'domain/misc/attendee_services/form/merchant_vendor/vendor_merchant_form_dto.dart';
+part 'domain/misc/attendee_services/form/merchant_vendor/value_object.dart';
+
+part 'domain/misc/url_service/value_object.dart';
 
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_period.dart';
 part 'domain/auth/creator_templates/activity_creator/activity_availability/activity_availability_session_option.dart';
@@ -297,7 +311,7 @@ part 'domain/auth/listing_manager/value_objects.dart';
 /// auth domain profile services package
 part 'domain/auth/profile_services/documents/valid_photo_id/profile_photo_id_item.dart';
 part 'domain/auth/profile_services/documents/valid_photo_id/valid_photo_id_dtos.dart';
-
+part 'domain/auth/profile_services/value_objects.dart';
 
 part 'domain/auth/profile_services/profile/login_security_settings/login_history/profile_login_history.dart';
 part 'domain/auth/profile_services/profile/login_security_settings/login_history/profile_login_history_item_dtos.dart';
@@ -321,9 +335,8 @@ part 'domain/auth/profile_services/sessions/value_objects.dart';
 part 'domain/auth/profile_services/failures.dart';
 part 'domain/auth/profile_services/value_validators.dart';
 
-part 'domain/auth/community_manager/profile/community_profile_item.dart';
-part 'domain/auth/community_manager/profile/community_profile_item_dto.dart';
-part 'domain/auth/community_manager/profile/failures.dart';
+part 'domain/auth/circle_manager/profile/circle_profile_item.dart';
+part 'domain/auth/circle_manager/profile/circle_profile_item_dto.dart';
 
 part 'domain/auth/auth_failure.dart';
 part 'domain/misc/invitation_services/value_objects.dart';

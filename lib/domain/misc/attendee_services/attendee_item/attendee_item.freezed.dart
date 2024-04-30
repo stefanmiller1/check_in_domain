@@ -12,7 +12,7 @@ part of 'attendee_item.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AttendeeItem {
@@ -32,12 +32,12 @@ mixin _$AttendeeItem {
       throw _privateConstructorUsedError;
   List<CustomRuleOption>? get customFieldRuleSetting =>
       throw _privateConstructorUsedError;
+  VendorMerchantForm? get vendorForm => throw _privateConstructorUsedError;
   String? get refundId => throw _privateConstructorUsedError;
   String? get receipt_link => throw _privateConstructorUsedError;
   bool? get isInterested => throw _privateConstructorUsedError;
-  ClassesInstructorProfile? get classesInstructorProfile =>
-      throw _privateConstructorUsedError;
-  EventMerchantVendorProfile? get eventMerchantVendorProfile =>
+  UniqueId? get classesInstructorProfile => throw _privateConstructorUsedError;
+  UniqueId? get eventMerchantVendorProfile =>
       throw _privateConstructorUsedError;
   DateTime get dateCreated => throw _privateConstructorUsedError;
 
@@ -67,16 +67,16 @@ abstract class $AttendeeItemCopyWith<$Res> {
       List<TicketItem>? ticketItems,
       List<CheckInSetting>? checkInSetting,
       List<CustomRuleOption>? customFieldRuleSetting,
+      VendorMerchantForm? vendorForm,
       String? refundId,
       String? receipt_link,
       bool? isInterested,
-      ClassesInstructorProfile? classesInstructorProfile,
-      EventMerchantVendorProfile? eventMerchantVendorProfile,
+      UniqueId? classesInstructorProfile,
+      UniqueId? eventMerchantVendorProfile,
       DateTime dateCreated});
 
   $ContactDetailsCopyWith<$Res>? get attendeeDetails;
-  $ClassesInstructorProfileCopyWith<$Res>? get classesInstructorProfile;
-  $EventMerchantVendorProfileCopyWith<$Res>? get eventMerchantVendorProfile;
+  $VendorMerchantFormCopyWith<$Res>? get vendorForm;
 }
 
 /// @nodoc
@@ -106,6 +106,7 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
+    Object? vendorForm = freezed,
     Object? refundId = freezed,
     Object? receipt_link = freezed,
     Object? isInterested = freezed,
@@ -170,6 +171,10 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
           ? _value.customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<CustomRuleOption>?,
+      vendorForm: freezed == vendorForm
+          ? _value.vendorForm
+          : vendorForm // ignore: cast_nullable_to_non_nullable
+              as VendorMerchantForm?,
       refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
@@ -185,11 +190,11 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
       classesInstructorProfile: freezed == classesInstructorProfile
           ? _value.classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
-              as ClassesInstructorProfile?,
+              as UniqueId?,
       eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
           ? _value.eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
-              as EventMerchantVendorProfile?,
+              as UniqueId?,
       dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -211,37 +216,23 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
 
   @override
   @pragma('vm:prefer-inline')
-  $ClassesInstructorProfileCopyWith<$Res>? get classesInstructorProfile {
-    if (_value.classesInstructorProfile == null) {
+  $VendorMerchantFormCopyWith<$Res>? get vendorForm {
+    if (_value.vendorForm == null) {
       return null;
     }
 
-    return $ClassesInstructorProfileCopyWith<$Res>(
-        _value.classesInstructorProfile!, (value) {
-      return _then(_value.copyWith(classesInstructorProfile: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EventMerchantVendorProfileCopyWith<$Res>? get eventMerchantVendorProfile {
-    if (_value.eventMerchantVendorProfile == null) {
-      return null;
-    }
-
-    return $EventMerchantVendorProfileCopyWith<$Res>(
-        _value.eventMerchantVendorProfile!, (value) {
-      return _then(_value.copyWith(eventMerchantVendorProfile: value) as $Val);
+    return $VendorMerchantFormCopyWith<$Res>(_value.vendorForm!, (value) {
+      return _then(_value.copyWith(vendorForm: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_AttendeeItemCopyWith<$Res>
+abstract class _$$AttendeeItemImplCopyWith<$Res>
     implements $AttendeeItemCopyWith<$Res> {
-  factory _$$_AttendeeItemCopyWith(
-          _$_AttendeeItem value, $Res Function(_$_AttendeeItem) then) =
-      __$$_AttendeeItemCopyWithImpl<$Res>;
+  factory _$$AttendeeItemImplCopyWith(
+          _$AttendeeItemImpl value, $Res Function(_$AttendeeItemImpl) then) =
+      __$$AttendeeItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -259,27 +250,26 @@ abstract class _$$_AttendeeItemCopyWith<$Res>
       List<TicketItem>? ticketItems,
       List<CheckInSetting>? checkInSetting,
       List<CustomRuleOption>? customFieldRuleSetting,
+      VendorMerchantForm? vendorForm,
       String? refundId,
       String? receipt_link,
       bool? isInterested,
-      ClassesInstructorProfile? classesInstructorProfile,
-      EventMerchantVendorProfile? eventMerchantVendorProfile,
+      UniqueId? classesInstructorProfile,
+      UniqueId? eventMerchantVendorProfile,
       DateTime dateCreated});
 
   @override
   $ContactDetailsCopyWith<$Res>? get attendeeDetails;
   @override
-  $ClassesInstructorProfileCopyWith<$Res>? get classesInstructorProfile;
-  @override
-  $EventMerchantVendorProfileCopyWith<$Res>? get eventMerchantVendorProfile;
+  $VendorMerchantFormCopyWith<$Res>? get vendorForm;
 }
 
 /// @nodoc
-class __$$_AttendeeItemCopyWithImpl<$Res>
-    extends _$AttendeeItemCopyWithImpl<$Res, _$_AttendeeItem>
-    implements _$$_AttendeeItemCopyWith<$Res> {
-  __$$_AttendeeItemCopyWithImpl(
-      _$_AttendeeItem _value, $Res Function(_$_AttendeeItem) _then)
+class __$$AttendeeItemImplCopyWithImpl<$Res>
+    extends _$AttendeeItemCopyWithImpl<$Res, _$AttendeeItemImpl>
+    implements _$$AttendeeItemImplCopyWith<$Res> {
+  __$$AttendeeItemImplCopyWithImpl(
+      _$AttendeeItemImpl _value, $Res Function(_$AttendeeItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -299,6 +289,7 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
+    Object? vendorForm = freezed,
     Object? refundId = freezed,
     Object? receipt_link = freezed,
     Object? isInterested = freezed,
@@ -306,7 +297,7 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
     Object? eventMerchantVendorProfile = freezed,
     Object? dateCreated = null,
   }) {
-    return _then(_$_AttendeeItem(
+    return _then(_$AttendeeItemImpl(
       attendeeId: null == attendeeId
           ? _value.attendeeId
           : attendeeId // ignore: cast_nullable_to_non_nullable
@@ -363,6 +354,10 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
           ? _value._customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<CustomRuleOption>?,
+      vendorForm: freezed == vendorForm
+          ? _value.vendorForm
+          : vendorForm // ignore: cast_nullable_to_non_nullable
+              as VendorMerchantForm?,
       refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
@@ -378,11 +373,11 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
       classesInstructorProfile: freezed == classesInstructorProfile
           ? _value.classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
-              as ClassesInstructorProfile?,
+              as UniqueId?,
       eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
           ? _value.eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
-              as EventMerchantVendorProfile?,
+              as UniqueId?,
       dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -393,8 +388,8 @@ class __$$_AttendeeItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AttendeeItem extends _AttendeeItem {
-  const _$_AttendeeItem(
+class _$AttendeeItemImpl extends _AttendeeItem {
+  const _$AttendeeItemImpl(
       {required this.attendeeId,
       required this.attendeeOwnerId,
       required this.reservationId,
@@ -409,6 +404,7 @@ class _$_AttendeeItem extends _AttendeeItem {
       final List<TicketItem>? ticketItems,
       final List<CheckInSetting>? checkInSetting,
       final List<CustomRuleOption>? customFieldRuleSetting,
+      this.vendorForm,
       this.refundId,
       this.receipt_link,
       this.isInterested,
@@ -474,28 +470,30 @@ class _$_AttendeeItem extends _AttendeeItem {
   }
 
   @override
+  final VendorMerchantForm? vendorForm;
+  @override
   final String? refundId;
   @override
   final String? receipt_link;
   @override
   final bool? isInterested;
   @override
-  final ClassesInstructorProfile? classesInstructorProfile;
+  final UniqueId? classesInstructorProfile;
   @override
-  final EventMerchantVendorProfile? eventMerchantVendorProfile;
+  final UniqueId? eventMerchantVendorProfile;
   @override
   final DateTime dateCreated;
 
   @override
   String toString() {
-    return 'AttendeeItem(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, instanceId: $instanceId, cost: $cost, paymentStatus: $paymentStatus, attendeeType: $attendeeType, paymentIntentId: $paymentIntentId, invitedFrom: $invitedFrom, attendeeDetails: $attendeeDetails, contactStatus: $contactStatus, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, refundId: $refundId, receipt_link: $receipt_link, isInterested: $isInterested, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, dateCreated: $dateCreated)';
+    return 'AttendeeItem(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, instanceId: $instanceId, cost: $cost, paymentStatus: $paymentStatus, attendeeType: $attendeeType, paymentIntentId: $paymentIntentId, invitedFrom: $invitedFrom, attendeeDetails: $attendeeDetails, contactStatus: $contactStatus, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, vendorForm: $vendorForm, refundId: $refundId, receipt_link: $receipt_link, isInterested: $isInterested, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, dateCreated: $dateCreated)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AttendeeItem &&
+            other is _$AttendeeItemImpl &&
             (identical(other.attendeeId, attendeeId) ||
                 other.attendeeId == attendeeId) &&
             (identical(other.attendeeOwnerId, attendeeOwnerId) ||
@@ -523,6 +521,8 @@ class _$_AttendeeItem extends _AttendeeItem {
                 .equals(other._checkInSetting, _checkInSetting) &&
             const DeepCollectionEquality().equals(
                 other._customFieldRuleSetting, _customFieldRuleSetting) &&
+            (identical(other.vendorForm, vendorForm) ||
+                other.vendorForm == vendorForm) &&
             (identical(other.refundId, refundId) ||
                 other.refundId == refundId) &&
             (identical(other.receipt_link, receipt_link) ||
@@ -557,6 +557,7 @@ class _$_AttendeeItem extends _AttendeeItem {
         const DeepCollectionEquality().hash(_ticketItems),
         const DeepCollectionEquality().hash(_checkInSetting),
         const DeepCollectionEquality().hash(_customFieldRuleSetting),
+        vendorForm,
         refundId,
         receipt_link,
         isInterested,
@@ -568,8 +569,8 @@ class _$_AttendeeItem extends _AttendeeItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AttendeeItemCopyWith<_$_AttendeeItem> get copyWith =>
-      __$$_AttendeeItemCopyWithImpl<_$_AttendeeItem>(this, _$identity);
+  _$$AttendeeItemImplCopyWith<_$AttendeeItemImpl> get copyWith =>
+      __$$AttendeeItemImplCopyWithImpl<_$AttendeeItemImpl>(this, _$identity);
 }
 
 abstract class _AttendeeItem extends AttendeeItem {
@@ -588,12 +589,13 @@ abstract class _AttendeeItem extends AttendeeItem {
       final List<TicketItem>? ticketItems,
       final List<CheckInSetting>? checkInSetting,
       final List<CustomRuleOption>? customFieldRuleSetting,
+      final VendorMerchantForm? vendorForm,
       final String? refundId,
       final String? receipt_link,
       final bool? isInterested,
-      final ClassesInstructorProfile? classesInstructorProfile,
-      final EventMerchantVendorProfile? eventMerchantVendorProfile,
-      required final DateTime dateCreated}) = _$_AttendeeItem;
+      final UniqueId? classesInstructorProfile,
+      final UniqueId? eventMerchantVendorProfile,
+      required final DateTime dateCreated}) = _$AttendeeItemImpl;
   const _AttendeeItem._() : super._();
 
   @override
@@ -625,19 +627,21 @@ abstract class _AttendeeItem extends AttendeeItem {
   @override
   List<CustomRuleOption>? get customFieldRuleSetting;
   @override
+  VendorMerchantForm? get vendorForm;
+  @override
   String? get refundId;
   @override
   String? get receipt_link;
   @override
   bool? get isInterested;
   @override
-  ClassesInstructorProfile? get classesInstructorProfile;
+  UniqueId? get classesInstructorProfile;
   @override
-  EventMerchantVendorProfile? get eventMerchantVendorProfile;
+  UniqueId? get eventMerchantVendorProfile;
   @override
   DateTime get dateCreated;
   @override
   @JsonKey(ignore: true)
-  _$$_AttendeeItemCopyWith<_$_AttendeeItem> get copyWith =>
+  _$$AttendeeItemImplCopyWith<_$AttendeeItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

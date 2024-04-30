@@ -29,3 +29,5 @@ String getCertificateName(BuildContext context, CertificateType type) {
       return AppLocalizations.of(context)!.activityRequirementPreferencesSkillsProfessional;
   }
 }
+
+bool activitySetupComplete(ActivityManagerForm activityForm) => (activityForm.profileService.activityBackground.activityProfileImages != null && activityForm.profileService.activityBackground.activityProfileImages?.isNotEmpty == true && activityForm.profileService.activityBackground.activityTitle.isValid() && activityForm.profileService.activityBackground.activityDescription1.isValid());

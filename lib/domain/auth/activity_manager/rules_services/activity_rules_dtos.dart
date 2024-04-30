@@ -13,6 +13,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
     required Map<String,dynamic> cancellationSettings,
     required String currency,
     List<Map<String,dynamic>> ? customRuleOption,
+    List<Map<String, dynamic>>? vendorMerchantForms,
 
     List<Map<String,dynamic>> ? skillLevelReached,
     Map<String,dynamic>? gameActivityRules,
@@ -27,6 +28,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
         ruleOption: rules.ruleOption.value.fold((l) => [], (r) => r.map((e) => DetailOptionDto.fromDomain(e).toJson()).toList()),
         currency: rules.currency,
         customRuleOption: rules.customRuleOption?.value.fold((l) => [], (r) => r.map((e) => DetailCustomRuleOptionDto.fromDomain(e).toJson()).toList()),
+        vendorMerchantForms: (rules.vendorMerchantForms != null) ? rules.vendorMerchantForms!.map((e) => VendorMerchantFormDto.fromDomain(e).toJson()).toList() : null,
         skillLevelReached: rules.skillLevelReached?.map((e) => StringItemDto.fromDomain(e.toString()).toJson()).toList(),
         gameActivityRules: (rules.gameActivityRules != null) ? GameActivityRulesDto.fromDomain(rules.gameActivityRules!).toJson() : null,
     );
@@ -40,6 +42,7 @@ class ActivityRulesServiceDto with _$ActivityRulesServiceDto {
         cancellationSettings: CancellationSettingDto.fromJson(cancellationSettings).toDomain(),
         ruleOption: ListK(ruleOption.map((e) => DetailOptionDto.fromJson(e).toDomain()).toList()),
         customRuleOption: ListK(customRuleOption?.map((e) => DetailCustomRuleOptionDto.fromJson(e).toDomain()).toList() ?? []),
+        vendorMerchantForms: (vendorMerchantForms != null) ? vendorMerchantForms!.map((e) => VendorMerchantFormDto.fromJson(e).toDomain()).toList() : null,
         currency: currency,
         skillLevelReached: skillLevelReached?.map((e) => getSkillLevelType(StringItemDto.fromJson(e).toDomain())).toList(),
         gameActivityRules: (gameActivityRules != null) ? GameActivityRulesDto.fromJson(gameActivityRules!).toDomain() : null,

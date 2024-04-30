@@ -6,8 +6,9 @@ part of 'attendee_item_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
-    _$_AttendeeItemDto(
+_$AttendeeItemDtoImpl _$$AttendeeItemDtoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AttendeeItemDtoImpl(
       attendeeId: json['attendeeId'] as String,
       attendeeOwnerId: json['attendeeOwnerId'] as String,
       reservationId: json['reservationId'] as String,
@@ -28,10 +29,9 @@ _$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
       customFieldRuleSetting: (json['customFieldRuleSetting'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
-      classesInstructorProfile:
-          json['classesInstructorProfile'] as Map<String, dynamic>?,
-      eventMerchantVendorProfile:
-          json['eventMerchantVendorProfile'] as Map<String, dynamic>?,
+      vendorForm: json['vendorForm'] as Map<String, dynamic>?,
+      classesInstructorProfile: json['classesInstructorProfile'] as String?,
+      eventMerchantVendorProfile: json['eventMerchantVendorProfile'] as String?,
       refundId: json['refundId'] as String?,
       receipt_link: json['receipt_link'] as String?,
       isInterested: json['isInterested'] as bool?,
@@ -40,7 +40,8 @@ _$_AttendeeItemDto _$$_AttendeeItemDtoFromJson(Map<String, dynamic> json) =>
           const ServerTimestampConverter().fromJson(json['createdAtSTC']),
     );
 
-Map<String, dynamic> _$$_AttendeeItemDtoToJson(_$_AttendeeItemDto instance) =>
+Map<String, dynamic> _$$AttendeeItemDtoImplToJson(
+        _$AttendeeItemDtoImpl instance) =>
     <String, dynamic>{
       'attendeeId': instance.attendeeId,
       'attendeeOwnerId': instance.attendeeOwnerId,
@@ -56,6 +57,7 @@ Map<String, dynamic> _$$_AttendeeItemDtoToJson(_$_AttendeeItemDto instance) =>
       'ticketItems': instance.ticketItems,
       'checkInSetting': instance.checkInSetting,
       'customFieldRuleSetting': instance.customFieldRuleSetting,
+      'vendorForm': instance.vendorForm,
       'classesInstructorProfile': instance.classesInstructorProfile,
       'eventMerchantVendorProfile': instance.eventMerchantVendorProfile,
       'refundId': instance.refundId,

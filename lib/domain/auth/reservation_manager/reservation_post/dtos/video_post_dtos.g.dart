@@ -6,8 +6,8 @@ part of 'video_post_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VideoPostDto _$$_VideoPostDtoFromJson(Map<String, dynamic> json) =>
-    _$_VideoPostDto(
+_$VideoPostDtoImpl _$$VideoPostDtoImplFromJson(Map<String, dynamic> json) =>
+    _$VideoPostDtoImpl(
       height: (json['height'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       name: json['name'] as String,
@@ -17,7 +17,7 @@ _$_VideoPostDto _$$_VideoPostDtoFromJson(Map<String, dynamic> json) =>
       metaData: json['metaData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$_VideoPostDtoToJson(_$_VideoPostDto instance) =>
+Map<String, dynamic> _$$VideoPostDtoImplToJson(_$VideoPostDtoImpl instance) =>
     <String, dynamic>{
       'height': instance.height,
       'width': instance.width,

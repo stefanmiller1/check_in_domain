@@ -12,7 +12,7 @@ part of 'image_post.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ImagePost {
@@ -92,10 +92,11 @@ class _$ImagePostCopyWithImpl<$Res, $Val extends ImagePost>
 }
 
 /// @nodoc
-abstract class _$$_ImagePostCopyWith<$Res> implements $ImagePostCopyWith<$Res> {
-  factory _$$_ImagePostCopyWith(
-          _$_ImagePost value, $Res Function(_$_ImagePost) then) =
-      __$$_ImagePostCopyWithImpl<$Res>;
+abstract class _$$ImagePostImplCopyWith<$Res>
+    implements $ImagePostCopyWith<$Res> {
+  factory _$$ImagePostImplCopyWith(
+          _$ImagePostImpl value, $Res Function(_$ImagePostImpl) then) =
+      __$$ImagePostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +109,11 @@ abstract class _$$_ImagePostCopyWith<$Res> implements $ImagePostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ImagePostCopyWithImpl<$Res>
-    extends _$ImagePostCopyWithImpl<$Res, _$_ImagePost>
-    implements _$$_ImagePostCopyWith<$Res> {
-  __$$_ImagePostCopyWithImpl(
-      _$_ImagePost _value, $Res Function(_$_ImagePost) _then)
+class __$$ImagePostImplCopyWithImpl<$Res>
+    extends _$ImagePostCopyWithImpl<$Res, _$ImagePostImpl>
+    implements _$$ImagePostImplCopyWith<$Res> {
+  __$$ImagePostImplCopyWithImpl(
+      _$ImagePostImpl _value, $Res Function(_$ImagePostImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +126,7 @@ class __$$_ImagePostCopyWithImpl<$Res>
     Object? uri = null,
     Object? metaData = freezed,
   }) {
-    return _then(_$_ImagePost(
+    return _then(_$ImagePostImpl(
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -156,8 +157,8 @@ class __$$_ImagePostCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ImagePost extends _ImagePost {
-  _$_ImagePost(
+class _$ImagePostImpl extends _ImagePost {
+  _$ImagePostImpl(
       {this.height,
       this.width,
       required this.name,
@@ -193,10 +194,10 @@ class _$_ImagePost extends _ImagePost {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImagePost &&
+            other is _$ImagePostImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.name, name) || other.name == name) &&
@@ -212,8 +213,8 @@ class _$_ImagePost extends _ImagePost {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImagePostCopyWith<_$_ImagePost> get copyWith =>
-      __$$_ImagePostCopyWithImpl<_$_ImagePost>(this, _$identity);
+  _$$ImagePostImplCopyWith<_$ImagePostImpl> get copyWith =>
+      __$$ImagePostImplCopyWithImpl<_$ImagePostImpl>(this, _$identity);
 }
 
 abstract class _ImagePost extends ImagePost {
@@ -223,7 +224,7 @@ abstract class _ImagePost extends ImagePost {
       required final String name,
       required final num size,
       required final String uri,
-      final Map<String, dynamic>? metaData}) = _$_ImagePost;
+      final Map<String, dynamic>? metaData}) = _$ImagePostImpl;
   _ImagePost._() : super._();
 
   @override
@@ -240,6 +241,6 @@ abstract class _ImagePost extends ImagePost {
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$_ImagePostCopyWith<_$_ImagePost> get copyWith =>
+  _$$ImagePostImplCopyWith<_$ImagePostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

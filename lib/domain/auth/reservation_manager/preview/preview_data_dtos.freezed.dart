@@ -12,7 +12,7 @@ part of 'preview_data_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PreviewDataDto _$PreviewDataDtoFromJson(Map<String, dynamic> json) {
   return _PreviewDataDto.fromJson(json);
@@ -84,11 +84,11 @@ class _$PreviewDataDtoCopyWithImpl<$Res, $Val extends PreviewDataDto>
 }
 
 /// @nodoc
-abstract class _$$_PreviewDataDtoCopyWith<$Res>
+abstract class _$$PreviewDataDtoImplCopyWith<$Res>
     implements $PreviewDataDtoCopyWith<$Res> {
-  factory _$$_PreviewDataDtoCopyWith(
-          _$_PreviewDataDto value, $Res Function(_$_PreviewDataDto) then) =
-      __$$_PreviewDataDtoCopyWithImpl<$Res>;
+  factory _$$PreviewDataDtoImplCopyWith(_$PreviewDataDtoImpl value,
+          $Res Function(_$PreviewDataDtoImpl) then) =
+      __$$PreviewDataDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -99,11 +99,11 @@ abstract class _$$_PreviewDataDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PreviewDataDtoCopyWithImpl<$Res>
-    extends _$PreviewDataDtoCopyWithImpl<$Res, _$_PreviewDataDto>
-    implements _$$_PreviewDataDtoCopyWith<$Res> {
-  __$$_PreviewDataDtoCopyWithImpl(
-      _$_PreviewDataDto _value, $Res Function(_$_PreviewDataDto) _then)
+class __$$PreviewDataDtoImplCopyWithImpl<$Res>
+    extends _$PreviewDataDtoCopyWithImpl<$Res, _$PreviewDataDtoImpl>
+    implements _$$PreviewDataDtoImplCopyWith<$Res> {
+  __$$PreviewDataDtoImplCopyWithImpl(
+      _$PreviewDataDtoImpl _value, $Res Function(_$PreviewDataDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +114,7 @@ class __$$_PreviewDataDtoCopyWithImpl<$Res>
     Object? link = freezed,
     Object? title = freezed,
   }) {
-    return _then(_$_PreviewDataDto(
+    return _then(_$PreviewDataDtoImpl(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -137,8 +137,8 @@ class __$$_PreviewDataDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PreviewDataDto extends _PreviewDataDto {
-  _$_PreviewDataDto(
+class _$PreviewDataDtoImpl extends _PreviewDataDto {
+  _$PreviewDataDtoImpl(
       {this.description,
       final Map<String, dynamic>? image,
       this.link,
@@ -146,8 +146,8 @@ class _$_PreviewDataDto extends _PreviewDataDto {
       : _image = image,
         super._();
 
-  factory _$_PreviewDataDto.fromJson(Map<String, dynamic> json) =>
-      _$$_PreviewDataDtoFromJson(json);
+  factory _$PreviewDataDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PreviewDataDtoImplFromJson(json);
 
   @override
   final String? description;
@@ -172,10 +172,10 @@ class _$_PreviewDataDto extends _PreviewDataDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PreviewDataDto &&
+            other is _$PreviewDataDtoImpl &&
             (identical(other.description, description) ||
                 other.description == description) &&
             const DeepCollectionEquality().equals(other._image, _image) &&
@@ -191,12 +191,13 @@ class _$_PreviewDataDto extends _PreviewDataDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PreviewDataDtoCopyWith<_$_PreviewDataDto> get copyWith =>
-      __$$_PreviewDataDtoCopyWithImpl<_$_PreviewDataDto>(this, _$identity);
+  _$$PreviewDataDtoImplCopyWith<_$PreviewDataDtoImpl> get copyWith =>
+      __$$PreviewDataDtoImplCopyWithImpl<_$PreviewDataDtoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PreviewDataDtoToJson(
+    return _$$PreviewDataDtoImplToJson(
       this,
     );
   }
@@ -207,11 +208,11 @@ abstract class _PreviewDataDto extends PreviewDataDto {
       {final String? description,
       final Map<String, dynamic>? image,
       final String? link,
-      final String? title}) = _$_PreviewDataDto;
+      final String? title}) = _$PreviewDataDtoImpl;
   _PreviewDataDto._() : super._();
 
   factory _PreviewDataDto.fromJson(Map<String, dynamic> json) =
-      _$_PreviewDataDto.fromJson;
+      _$PreviewDataDtoImpl.fromJson;
 
   @override
   String? get description;
@@ -223,7 +224,7 @@ abstract class _PreviewDataDto extends PreviewDataDto {
   String? get title;
   @override
   @JsonKey(ignore: true)
-  _$$_PreviewDataDtoCopyWith<_$_PreviewDataDto> get copyWith =>
+  _$$PreviewDataDtoImplCopyWith<_$PreviewDataDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -287,22 +288,22 @@ class _$PreviewDataImageDtoCopyWithImpl<$Res, $Val extends PreviewDataImageDto>
 }
 
 /// @nodoc
-abstract class _$$_PreviewDataImageDtoCopyWith<$Res>
+abstract class _$$PreviewDataImageDtoImplCopyWith<$Res>
     implements $PreviewDataImageDtoCopyWith<$Res> {
-  factory _$$_PreviewDataImageDtoCopyWith(_$_PreviewDataImageDto value,
-          $Res Function(_$_PreviewDataImageDto) then) =
-      __$$_PreviewDataImageDtoCopyWithImpl<$Res>;
+  factory _$$PreviewDataImageDtoImplCopyWith(_$PreviewDataImageDtoImpl value,
+          $Res Function(_$PreviewDataImageDtoImpl) then) =
+      __$$PreviewDataImageDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String url, double height, double width});
 }
 
 /// @nodoc
-class __$$_PreviewDataImageDtoCopyWithImpl<$Res>
-    extends _$PreviewDataImageDtoCopyWithImpl<$Res, _$_PreviewDataImageDto>
-    implements _$$_PreviewDataImageDtoCopyWith<$Res> {
-  __$$_PreviewDataImageDtoCopyWithImpl(_$_PreviewDataImageDto _value,
-      $Res Function(_$_PreviewDataImageDto) _then)
+class __$$PreviewDataImageDtoImplCopyWithImpl<$Res>
+    extends _$PreviewDataImageDtoCopyWithImpl<$Res, _$PreviewDataImageDtoImpl>
+    implements _$$PreviewDataImageDtoImplCopyWith<$Res> {
+  __$$PreviewDataImageDtoImplCopyWithImpl(_$PreviewDataImageDtoImpl _value,
+      $Res Function(_$PreviewDataImageDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -312,7 +313,7 @@ class __$$_PreviewDataImageDtoCopyWithImpl<$Res>
     Object? height = null,
     Object? width = null,
   }) {
-    return _then(_$_PreviewDataImageDto(
+    return _then(_$PreviewDataImageDtoImpl(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -331,13 +332,13 @@ class __$$_PreviewDataImageDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PreviewDataImageDto extends _PreviewDataImageDto {
-  _$_PreviewDataImageDto(
+class _$PreviewDataImageDtoImpl extends _PreviewDataImageDto {
+  _$PreviewDataImageDtoImpl(
       {required this.url, required this.height, required this.width})
       : super._();
 
-  factory _$_PreviewDataImageDto.fromJson(Map<String, dynamic> json) =>
-      _$$_PreviewDataImageDtoFromJson(json);
+  factory _$PreviewDataImageDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PreviewDataImageDtoImplFromJson(json);
 
   @override
   final String url;
@@ -352,10 +353,10 @@ class _$_PreviewDataImageDto extends _PreviewDataImageDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PreviewDataImageDto &&
+            other is _$PreviewDataImageDtoImpl &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width));
@@ -368,13 +369,13 @@ class _$_PreviewDataImageDto extends _PreviewDataImageDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PreviewDataImageDtoCopyWith<_$_PreviewDataImageDto> get copyWith =>
-      __$$_PreviewDataImageDtoCopyWithImpl<_$_PreviewDataImageDto>(
+  _$$PreviewDataImageDtoImplCopyWith<_$PreviewDataImageDtoImpl> get copyWith =>
+      __$$PreviewDataImageDtoImplCopyWithImpl<_$PreviewDataImageDtoImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PreviewDataImageDtoToJson(
+    return _$$PreviewDataImageDtoImplToJson(
       this,
     );
   }
@@ -384,11 +385,11 @@ abstract class _PreviewDataImageDto extends PreviewDataImageDto {
   factory _PreviewDataImageDto(
       {required final String url,
       required final double height,
-      required final double width}) = _$_PreviewDataImageDto;
+      required final double width}) = _$PreviewDataImageDtoImpl;
   _PreviewDataImageDto._() : super._();
 
   factory _PreviewDataImageDto.fromJson(Map<String, dynamic> json) =
-      _$_PreviewDataImageDto.fromJson;
+      _$PreviewDataImageDtoImpl.fromJson;
 
   @override
   String get url;
@@ -398,6 +399,6 @@ abstract class _PreviewDataImageDto extends PreviewDataImageDto {
   double get width;
   @override
   @JsonKey(ignore: true)
-  _$$_PreviewDataImageDtoCopyWith<_$_PreviewDataImageDto> get copyWith =>
+  _$$PreviewDataImageDtoImplCopyWith<_$PreviewDataImageDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

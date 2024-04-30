@@ -12,7 +12,7 @@ part of 'preview_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PreviewData {
@@ -93,11 +93,11 @@ class _$PreviewDataCopyWithImpl<$Res, $Val extends PreviewData>
 }
 
 /// @nodoc
-abstract class _$$_PreviewDataCopyWith<$Res>
+abstract class _$$PreviewDataImplCopyWith<$Res>
     implements $PreviewDataCopyWith<$Res> {
-  factory _$$_PreviewDataCopyWith(
-          _$_PreviewData value, $Res Function(_$_PreviewData) then) =
-      __$$_PreviewDataCopyWithImpl<$Res>;
+  factory _$$PreviewDataImplCopyWith(
+          _$PreviewDataImpl value, $Res Function(_$PreviewDataImpl) then) =
+      __$$PreviewDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -111,11 +111,11 @@ abstract class _$$_PreviewDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PreviewDataCopyWithImpl<$Res>
-    extends _$PreviewDataCopyWithImpl<$Res, _$_PreviewData>
-    implements _$$_PreviewDataCopyWith<$Res> {
-  __$$_PreviewDataCopyWithImpl(
-      _$_PreviewData _value, $Res Function(_$_PreviewData) _then)
+class __$$PreviewDataImplCopyWithImpl<$Res>
+    extends _$PreviewDataCopyWithImpl<$Res, _$PreviewDataImpl>
+    implements _$$PreviewDataImplCopyWith<$Res> {
+  __$$PreviewDataImplCopyWithImpl(
+      _$PreviewDataImpl _value, $Res Function(_$PreviewDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +126,7 @@ class __$$_PreviewDataCopyWithImpl<$Res>
     Object? link = freezed,
     Object? title = freezed,
   }) {
-    return _then(_$_PreviewData(
+    return _then(_$PreviewDataImpl(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -149,8 +149,8 @@ class __$$_PreviewDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PreviewData extends _PreviewData {
-  _$_PreviewData({this.description, this.image, this.link, this.title})
+class _$PreviewDataImpl extends _PreviewData {
+  _$PreviewDataImpl({this.description, this.image, this.link, this.title})
       : super._();
 
   @override
@@ -168,10 +168,10 @@ class _$_PreviewData extends _PreviewData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PreviewData &&
+            other is _$PreviewDataImpl &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.image, image) || other.image == image) &&
@@ -185,8 +185,8 @@ class _$_PreviewData extends _PreviewData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PreviewDataCopyWith<_$_PreviewData> get copyWith =>
-      __$$_PreviewDataCopyWithImpl<_$_PreviewData>(this, _$identity);
+  _$$PreviewDataImplCopyWith<_$PreviewDataImpl> get copyWith =>
+      __$$PreviewDataImplCopyWithImpl<_$PreviewDataImpl>(this, _$identity);
 }
 
 abstract class _PreviewData extends PreviewData {
@@ -194,7 +194,7 @@ abstract class _PreviewData extends PreviewData {
       {final String? description,
       final PreviewDataImage? image,
       final String? link,
-      final String? title}) = _$_PreviewData;
+      final String? title}) = _$PreviewDataImpl;
   _PreviewData._() : super._();
 
   @override
@@ -207,7 +207,7 @@ abstract class _PreviewData extends PreviewData {
   String? get title;
   @override
   @JsonKey(ignore: true)
-  _$$_PreviewDataCopyWith<_$_PreviewData> get copyWith =>
+  _$$PreviewDataImplCopyWith<_$PreviewDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -266,22 +266,22 @@ class _$PreviewDataImageCopyWithImpl<$Res, $Val extends PreviewDataImage>
 }
 
 /// @nodoc
-abstract class _$$_PreviewDataImageCopyWith<$Res>
+abstract class _$$PreviewDataImageImplCopyWith<$Res>
     implements $PreviewDataImageCopyWith<$Res> {
-  factory _$$_PreviewDataImageCopyWith(
-          _$_PreviewDataImage value, $Res Function(_$_PreviewDataImage) then) =
-      __$$_PreviewDataImageCopyWithImpl<$Res>;
+  factory _$$PreviewDataImageImplCopyWith(_$PreviewDataImageImpl value,
+          $Res Function(_$PreviewDataImageImpl) then) =
+      __$$PreviewDataImageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String url, double height, double width});
 }
 
 /// @nodoc
-class __$$_PreviewDataImageCopyWithImpl<$Res>
-    extends _$PreviewDataImageCopyWithImpl<$Res, _$_PreviewDataImage>
-    implements _$$_PreviewDataImageCopyWith<$Res> {
-  __$$_PreviewDataImageCopyWithImpl(
-      _$_PreviewDataImage _value, $Res Function(_$_PreviewDataImage) _then)
+class __$$PreviewDataImageImplCopyWithImpl<$Res>
+    extends _$PreviewDataImageCopyWithImpl<$Res, _$PreviewDataImageImpl>
+    implements _$$PreviewDataImageImplCopyWith<$Res> {
+  __$$PreviewDataImageImplCopyWithImpl(_$PreviewDataImageImpl _value,
+      $Res Function(_$PreviewDataImageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -291,7 +291,7 @@ class __$$_PreviewDataImageCopyWithImpl<$Res>
     Object? height = null,
     Object? width = null,
   }) {
-    return _then(_$_PreviewDataImage(
+    return _then(_$PreviewDataImageImpl(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -310,8 +310,8 @@ class __$$_PreviewDataImageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PreviewDataImage extends _PreviewDataImage {
-  _$_PreviewDataImage(
+class _$PreviewDataImageImpl extends _PreviewDataImage {
+  _$PreviewDataImageImpl(
       {required this.url, required this.height, required this.width})
       : super._();
 
@@ -328,10 +328,10 @@ class _$_PreviewDataImage extends _PreviewDataImage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PreviewDataImage &&
+            other is _$PreviewDataImageImpl &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width));
@@ -343,15 +343,16 @@ class _$_PreviewDataImage extends _PreviewDataImage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PreviewDataImageCopyWith<_$_PreviewDataImage> get copyWith =>
-      __$$_PreviewDataImageCopyWithImpl<_$_PreviewDataImage>(this, _$identity);
+  _$$PreviewDataImageImplCopyWith<_$PreviewDataImageImpl> get copyWith =>
+      __$$PreviewDataImageImplCopyWithImpl<_$PreviewDataImageImpl>(
+          this, _$identity);
 }
 
 abstract class _PreviewDataImage extends PreviewDataImage {
   factory _PreviewDataImage(
       {required final String url,
       required final double height,
-      required final double width}) = _$_PreviewDataImage;
+      required final double width}) = _$PreviewDataImageImpl;
   _PreviewDataImage._() : super._();
 
   @override
@@ -362,6 +363,6 @@ abstract class _PreviewDataImage extends PreviewDataImage {
   double get width;
   @override
   @JsonKey(ignore: true)
-  _$$_PreviewDataImageCopyWith<_$_PreviewDataImage> get copyWith =>
+  _$$PreviewDataImageImplCopyWith<_$PreviewDataImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,7 +6,8 @@ part of 'post_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PostDto _$$_PostDtoFromJson(Map<String, dynamic> json) => _$_PostDto(
+_$PostDtoImpl _$$PostDtoImplFromJson(Map<String, dynamic> json) =>
+    _$PostDtoImpl(
       authorId: json['authorId'] as String,
       createdAt: json['createdAt'] as String?,
       id: json['id'] as String,
@@ -42,7 +43,7 @@ _$_PostDto _$$_PostDtoFromJson(Map<String, dynamic> json) => _$_PostDto(
           const ServerTimestampConverter().fromJson(json['updatedAtSTC']),
     );
 
-Map<String, dynamic> _$$_PostDtoToJson(_$_PostDto instance) =>
+Map<String, dynamic> _$$PostDtoImplToJson(_$PostDtoImpl instance) =>
     <String, dynamic>{
       'authorId': instance.authorId,
       'createdAt': instance.createdAt,

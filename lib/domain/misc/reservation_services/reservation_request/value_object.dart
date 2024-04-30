@@ -66,3 +66,15 @@ List<ReservationSlotItem> invalidReservationItems(List<ReservationSlotItem> rese
 
   return newResSlot;
 }
+
+
+DateTime? upcomingDateOrFinished(ReservationItem reservation) {
+  return reservation.reservationSlotItem.map((e) => e.selectedDate).where((element) => element.isAfter(DateTime.now())).isNotEmpty ? reservation.reservationSlotItem.map((e) => e.selectedDate).where((element) => element.isAfter(DateTime.now())).first : reservation.reservationSlotItem.map((e) => e.selectedDate).where((element) => element.isBefore(DateTime.now())).isNotEmpty ? reservation.reservationSlotItem.map((e) => e.selectedDate).where((element) => element.isBefore(DateTime.now())).first : null;
+}
+
+bool currentDateIsReservationDate(DateTime? nextDate) {
+  if (nextDate?.year == DateTime.now().year && nextDate?.month == DateTime.now().month && nextDate?.day == DateTime.now().day) {
+    return true;
+  }
+  return false;
+}

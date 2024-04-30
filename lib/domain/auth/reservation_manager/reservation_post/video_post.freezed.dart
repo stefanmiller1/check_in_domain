@@ -12,7 +12,7 @@ part of 'video_post.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$VideoPost {
@@ -99,10 +99,11 @@ class _$VideoPostCopyWithImpl<$Res, $Val extends VideoPost>
 }
 
 /// @nodoc
-abstract class _$$_VideoPostCopyWith<$Res> implements $VideoPostCopyWith<$Res> {
-  factory _$$_VideoPostCopyWith(
-          _$_VideoPost value, $Res Function(_$_VideoPost) then) =
-      __$$_VideoPostCopyWithImpl<$Res>;
+abstract class _$$VideoPostImplCopyWith<$Res>
+    implements $VideoPostCopyWith<$Res> {
+  factory _$$VideoPostImplCopyWith(
+          _$VideoPostImpl value, $Res Function(_$VideoPostImpl) then) =
+      __$$VideoPostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -116,11 +117,11 @@ abstract class _$$_VideoPostCopyWith<$Res> implements $VideoPostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_VideoPostCopyWithImpl<$Res>
-    extends _$VideoPostCopyWithImpl<$Res, _$_VideoPost>
-    implements _$$_VideoPostCopyWith<$Res> {
-  __$$_VideoPostCopyWithImpl(
-      _$_VideoPost _value, $Res Function(_$_VideoPost) _then)
+class __$$VideoPostImplCopyWithImpl<$Res>
+    extends _$VideoPostCopyWithImpl<$Res, _$VideoPostImpl>
+    implements _$$VideoPostImplCopyWith<$Res> {
+  __$$VideoPostImplCopyWithImpl(
+      _$VideoPostImpl _value, $Res Function(_$VideoPostImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +135,7 @@ class __$$_VideoPostCopyWithImpl<$Res>
     Object? numberOfViews = freezed,
     Object? metaData = freezed,
   }) {
-    return _then(_$_VideoPost(
+    return _then(_$VideoPostImpl(
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -169,8 +170,8 @@ class __$$_VideoPostCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_VideoPost extends _VideoPost {
-  _$_VideoPost(
+class _$VideoPostImpl extends _VideoPost {
+  _$VideoPostImpl(
       {this.height,
       this.width,
       required this.name,
@@ -209,10 +210,10 @@ class _$_VideoPost extends _VideoPost {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VideoPost &&
+            other is _$VideoPostImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.name, name) || other.name == name) &&
@@ -230,8 +231,8 @@ class _$_VideoPost extends _VideoPost {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VideoPostCopyWith<_$_VideoPost> get copyWith =>
-      __$$_VideoPostCopyWithImpl<_$_VideoPost>(this, _$identity);
+  _$$VideoPostImplCopyWith<_$VideoPostImpl> get copyWith =>
+      __$$VideoPostImplCopyWithImpl<_$VideoPostImpl>(this, _$identity);
 }
 
 abstract class _VideoPost extends VideoPost {
@@ -242,7 +243,7 @@ abstract class _VideoPost extends VideoPost {
       required final num size,
       required final String uri,
       final int? numberOfViews,
-      final Map<String, dynamic>? metaData}) = _$_VideoPost;
+      final Map<String, dynamic>? metaData}) = _$VideoPostImpl;
   _VideoPost._() : super._();
 
   @override
@@ -261,6 +262,6 @@ abstract class _VideoPost extends VideoPost {
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$_VideoPostCopyWith<_$_VideoPost> get copyWith =>
+  _$$VideoPostImplCopyWith<_$VideoPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

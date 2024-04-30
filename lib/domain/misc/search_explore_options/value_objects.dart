@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum DashboardMarker {home, reservations, chat, profile, settings, resCurrent, resProfile, resAttendees, resTicket, resAttendeeTicket, resSettings}
+enum DashboardMarker {home, reservations, chat, profile, settings, resCurrent, resProfile, resAttendees, resTicket, resVendorForms, resAttendeeTicket, resSettings}
 enum SearchListingType {facilities, activities}
 enum SearchOption {exploreNew, yourCommunities}
 
@@ -34,6 +34,8 @@ String getDashboardMarkerTitle(DashboardMarker marker) {
       return 'Reservation Attendees';
     case DashboardMarker.resTicket:
       return 'Reservation Tickets';
+    case DashboardMarker.resVendorForms:
+      return 'Vendor Forms';
     case DashboardMarker.resAttendeeTicket:
       return 'Reservation Attendee Tickets';
     case DashboardMarker.resSettings:

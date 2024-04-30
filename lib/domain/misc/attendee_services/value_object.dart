@@ -11,6 +11,29 @@ AttendeeType getAttendeeType(String type) {
   return AttendeeType.free;
 }
 
+String getAttendeeTitle(AttendeeType type) {
+  switch (type) {
+
+    case AttendeeType.free:
+      return 'Attending';
+    case AttendeeType.tickets:
+      return 'Ticket Holders';
+    case AttendeeType.pass:
+      return 'Pass Holders';
+    case AttendeeType.instructor:
+      return 'Instructors';
+    case AttendeeType.vendor:
+      return 'Vendors';
+    case AttendeeType.partner:
+      return 'Partners';
+    case AttendeeType.organization:
+      return 'Organizations/Partners';
+    case AttendeeType.interested:
+      return 'Interested';
+  }
+  return 'Attending';
+}
+
 bool isTicketDateValid() {
   return false;
 }

@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum RuleOptionType {permits, waivers, contracts, provideName, validPaymentInfo, enjoyable, loudMusic, indoorShoesOnly, interiorModifications, }
+enum RuleOptionType {permits, waivers, contracts, provideName, validPaymentInfo, enjoyable, loudMusic, indoorShoesOnly, interiorModifications}
 
 /// list of need to know details
 class DetailTypeList extends ValueObject<DetailOption> {

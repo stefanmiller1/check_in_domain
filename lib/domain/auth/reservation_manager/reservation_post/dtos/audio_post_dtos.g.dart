@@ -6,8 +6,8 @@ part of 'audio_post_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AudioPostDto _$$_AudioPostDtoFromJson(Map<String, dynamic> json) =>
-    _$_AudioPostDto(
+_$AudioPostDtoImpl _$$AudioPostDtoImplFromJson(Map<String, dynamic> json) =>
+    _$AudioPostDtoImpl(
       size: json['size'] as num,
       uri: json['uri'] as String,
       waveForm: (json['waveForm'] as List<dynamic>?)
@@ -15,7 +15,7 @@ _$_AudioPostDto _$$_AudioPostDtoFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_AudioPostDtoToJson(_$_AudioPostDto instance) =>
+Map<String, dynamic> _$$AudioPostDtoImplToJson(_$AudioPostDtoImpl instance) =>
     <String, dynamic>{
       'size': instance.size,
       'uri': instance.uri,

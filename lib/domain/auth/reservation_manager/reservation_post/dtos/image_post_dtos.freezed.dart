@@ -12,7 +12,7 @@ part of 'image_post_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ImagePostDto _$ImagePostDtoFromJson(Map<String, dynamic> json) {
   return _ImagePostDto.fromJson(json);
@@ -98,11 +98,11 @@ class _$ImagePostDtoCopyWithImpl<$Res, $Val extends ImagePostDto>
 }
 
 /// @nodoc
-abstract class _$$_ImagePostDtoCopyWith<$Res>
+abstract class _$$ImagePostDtoImplCopyWith<$Res>
     implements $ImagePostDtoCopyWith<$Res> {
-  factory _$$_ImagePostDtoCopyWith(
-          _$_ImagePostDto value, $Res Function(_$_ImagePostDto) then) =
-      __$$_ImagePostDtoCopyWithImpl<$Res>;
+  factory _$$ImagePostDtoImplCopyWith(
+          _$ImagePostDtoImpl value, $Res Function(_$ImagePostDtoImpl) then) =
+      __$$ImagePostDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$_ImagePostDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ImagePostDtoCopyWithImpl<$Res>
-    extends _$ImagePostDtoCopyWithImpl<$Res, _$_ImagePostDto>
-    implements _$$_ImagePostDtoCopyWith<$Res> {
-  __$$_ImagePostDtoCopyWithImpl(
-      _$_ImagePostDto _value, $Res Function(_$_ImagePostDto) _then)
+class __$$ImagePostDtoImplCopyWithImpl<$Res>
+    extends _$ImagePostDtoCopyWithImpl<$Res, _$ImagePostDtoImpl>
+    implements _$$ImagePostDtoImplCopyWith<$Res> {
+  __$$ImagePostDtoImplCopyWithImpl(
+      _$ImagePostDtoImpl _value, $Res Function(_$ImagePostDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$_ImagePostDtoCopyWithImpl<$Res>
     Object? uri = null,
     Object? metaData = freezed,
   }) {
-    return _then(_$_ImagePostDto(
+    return _then(_$ImagePostDtoImpl(
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$_ImagePostDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ImagePostDto extends _ImagePostDto {
-  _$_ImagePostDto(
+class _$ImagePostDtoImpl extends _ImagePostDto {
+  _$ImagePostDtoImpl(
       {this.height,
       this.width,
       required this.name,
@@ -174,8 +174,8 @@ class _$_ImagePostDto extends _ImagePostDto {
       : _metaData = metaData,
         super._();
 
-  factory _$_ImagePostDto.fromJson(Map<String, dynamic> json) =>
-      _$$_ImagePostDtoFromJson(json);
+  factory _$ImagePostDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ImagePostDtoImplFromJson(json);
 
   @override
   final double? height;
@@ -203,10 +203,10 @@ class _$_ImagePostDto extends _ImagePostDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImagePostDto &&
+            other is _$ImagePostDtoImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.name, name) || other.name == name) &&
@@ -223,12 +223,12 @@ class _$_ImagePostDto extends _ImagePostDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImagePostDtoCopyWith<_$_ImagePostDto> get copyWith =>
-      __$$_ImagePostDtoCopyWithImpl<_$_ImagePostDto>(this, _$identity);
+  _$$ImagePostDtoImplCopyWith<_$ImagePostDtoImpl> get copyWith =>
+      __$$ImagePostDtoImplCopyWithImpl<_$ImagePostDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImagePostDtoToJson(
+    return _$$ImagePostDtoImplToJson(
       this,
     );
   }
@@ -241,11 +241,11 @@ abstract class _ImagePostDto extends ImagePostDto {
       required final String name,
       required final num size,
       required final String uri,
-      final Map<String, dynamic>? metaData}) = _$_ImagePostDto;
+      final Map<String, dynamic>? metaData}) = _$ImagePostDtoImpl;
   _ImagePostDto._() : super._();
 
   factory _ImagePostDto.fromJson(Map<String, dynamic> json) =
-      _$_ImagePostDto.fromJson;
+      _$ImagePostDtoImpl.fromJson;
 
   @override
   double? get height;
@@ -261,6 +261,6 @@ abstract class _ImagePostDto extends ImagePostDto {
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$_ImagePostDtoCopyWith<_$_ImagePostDto> get copyWith =>
+  _$$ImagePostDtoImplCopyWith<_$ImagePostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

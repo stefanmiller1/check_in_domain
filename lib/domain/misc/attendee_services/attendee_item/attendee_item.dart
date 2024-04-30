@@ -24,11 +24,12 @@ class AttendeeItem with _$AttendeeItem {
     List<TicketItem>? ticketItems,
     List<CheckInSetting>? checkInSetting,
     List<CustomRuleOption>? customFieldRuleSetting,
+    VendorMerchantForm? vendorForm,
     String? refundId,
     String? receipt_link,
     bool? isInterested,
-    ClassesInstructorProfile? classesInstructorProfile,
-    EventMerchantVendorProfile? eventMerchantVendorProfile,
+    UniqueId? classesInstructorProfile,
+    UniqueId? eventMerchantVendorProfile,
     required DateTime dateCreated,
 }) = _AttendeeItem;
 

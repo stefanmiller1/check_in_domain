@@ -6,8 +6,8 @@ part of 'image_post_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ImagePostDto _$$_ImagePostDtoFromJson(Map<String, dynamic> json) =>
-    _$_ImagePostDto(
+_$ImagePostDtoImpl _$$ImagePostDtoImplFromJson(Map<String, dynamic> json) =>
+    _$ImagePostDtoImpl(
       height: (json['height'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       name: json['name'] as String,
@@ -16,7 +16,7 @@ _$_ImagePostDto _$$_ImagePostDtoFromJson(Map<String, dynamic> json) =>
       metaData: json['metaData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$_ImagePostDtoToJson(_$_ImagePostDto instance) =>
+Map<String, dynamic> _$$ImagePostDtoImplToJson(_$ImagePostDtoImpl instance) =>
     <String, dynamic>{
       'height': instance.height,
       'width': instance.width,

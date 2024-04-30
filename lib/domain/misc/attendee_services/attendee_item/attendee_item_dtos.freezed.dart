@@ -12,7 +12,7 @@ part of 'attendee_item_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AttendeeItemDto _$AttendeeItemDtoFromJson(Map<String, dynamic> json) {
   return _AttendeeItemDto.fromJson(json);
@@ -38,10 +38,9 @@ mixin _$AttendeeItemDto {
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get customFieldRuleSetting =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic>? get classesInstructorProfile =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get eventMerchantVendorProfile =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get vendorForm => throw _privateConstructorUsedError;
+  String? get classesInstructorProfile => throw _privateConstructorUsedError;
+  String? get eventMerchantVendorProfile => throw _privateConstructorUsedError;
   String? get refundId => throw _privateConstructorUsedError;
   String? get receipt_link => throw _privateConstructorUsedError;
   bool? get isInterested => throw _privateConstructorUsedError;
@@ -76,8 +75,9 @@ abstract class $AttendeeItemDtoCopyWith<$Res> {
       List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
       List<Map<String, dynamic>>? customFieldRuleSetting,
-      Map<String, dynamic>? classesInstructorProfile,
-      Map<String, dynamic>? eventMerchantVendorProfile,
+      Map<String, dynamic>? vendorForm,
+      String? classesInstructorProfile,
+      String? eventMerchantVendorProfile,
       String? refundId,
       String? receipt_link,
       bool? isInterested,
@@ -112,6 +112,7 @@ class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
+    Object? vendorForm = freezed,
     Object? classesInstructorProfile = freezed,
     Object? eventMerchantVendorProfile = freezed,
     Object? refundId = freezed,
@@ -177,14 +178,18 @@ class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
           ? _value.customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
+      vendorForm: freezed == vendorForm
+          ? _value.vendorForm
+          : vendorForm // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       classesInstructorProfile: freezed == classesInstructorProfile
           ? _value.classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
           ? _value.eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
@@ -210,11 +215,11 @@ class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
 }
 
 /// @nodoc
-abstract class _$$_AttendeeItemDtoCopyWith<$Res>
+abstract class _$$AttendeeItemDtoImplCopyWith<$Res>
     implements $AttendeeItemDtoCopyWith<$Res> {
-  factory _$$_AttendeeItemDtoCopyWith(
-          _$_AttendeeItemDto value, $Res Function(_$_AttendeeItemDto) then) =
-      __$$_AttendeeItemDtoCopyWithImpl<$Res>;
+  factory _$$AttendeeItemDtoImplCopyWith(_$AttendeeItemDtoImpl value,
+          $Res Function(_$AttendeeItemDtoImpl) then) =
+      __$$AttendeeItemDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -232,8 +237,9 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
       List<Map<String, dynamic>>? ticketItems,
       List<Map<String, dynamic>>? checkInSetting,
       List<Map<String, dynamic>>? customFieldRuleSetting,
-      Map<String, dynamic>? classesInstructorProfile,
-      Map<String, dynamic>? eventMerchantVendorProfile,
+      Map<String, dynamic>? vendorForm,
+      String? classesInstructorProfile,
+      String? eventMerchantVendorProfile,
       String? refundId,
       String? receipt_link,
       bool? isInterested,
@@ -242,11 +248,11 @@ abstract class _$$_AttendeeItemDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AttendeeItemDtoCopyWithImpl<$Res>
-    extends _$AttendeeItemDtoCopyWithImpl<$Res, _$_AttendeeItemDto>
-    implements _$$_AttendeeItemDtoCopyWith<$Res> {
-  __$$_AttendeeItemDtoCopyWithImpl(
-      _$_AttendeeItemDto _value, $Res Function(_$_AttendeeItemDto) _then)
+class __$$AttendeeItemDtoImplCopyWithImpl<$Res>
+    extends _$AttendeeItemDtoCopyWithImpl<$Res, _$AttendeeItemDtoImpl>
+    implements _$$AttendeeItemDtoImplCopyWith<$Res> {
+  __$$AttendeeItemDtoImplCopyWithImpl(
+      _$AttendeeItemDtoImpl _value, $Res Function(_$AttendeeItemDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -266,6 +272,7 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
     Object? ticketItems = freezed,
     Object? checkInSetting = freezed,
     Object? customFieldRuleSetting = freezed,
+    Object? vendorForm = freezed,
     Object? classesInstructorProfile = freezed,
     Object? eventMerchantVendorProfile = freezed,
     Object? refundId = freezed,
@@ -274,7 +281,7 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
     Object? dateCreated = null,
     Object? createdAtSTC = freezed,
   }) {
-    return _then(_$_AttendeeItemDto(
+    return _then(_$AttendeeItemDtoImpl(
       attendeeId: null == attendeeId
           ? _value.attendeeId
           : attendeeId // ignore: cast_nullable_to_non_nullable
@@ -331,14 +338,18 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
           ? _value._customFieldRuleSetting
           : customFieldRuleSetting // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
+      vendorForm: freezed == vendorForm
+          ? _value._vendorForm
+          : vendorForm // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       classesInstructorProfile: freezed == classesInstructorProfile
-          ? _value._classesInstructorProfile
+          ? _value.classesInstructorProfile
           : classesInstructorProfile // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       eventMerchantVendorProfile: freezed == eventMerchantVendorProfile
-          ? _value._eventMerchantVendorProfile
+          ? _value.eventMerchantVendorProfile
           : eventMerchantVendorProfile // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       refundId: freezed == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
@@ -365,8 +376,8 @@ class __$$_AttendeeItemDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AttendeeItemDto extends _AttendeeItemDto {
-  _$_AttendeeItemDto(
+class _$AttendeeItemDtoImpl extends _AttendeeItemDto {
+  _$AttendeeItemDtoImpl(
       {required this.attendeeId,
       required this.attendeeOwnerId,
       required this.reservationId,
@@ -381,8 +392,9 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
       final List<Map<String, dynamic>>? ticketItems,
       final List<Map<String, dynamic>>? checkInSetting,
       final List<Map<String, dynamic>>? customFieldRuleSetting,
-      final Map<String, dynamic>? classesInstructorProfile,
-      final Map<String, dynamic>? eventMerchantVendorProfile,
+      final Map<String, dynamic>? vendorForm,
+      this.classesInstructorProfile,
+      this.eventMerchantVendorProfile,
       this.refundId,
       this.receipt_link,
       this.isInterested,
@@ -392,12 +404,11 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
         _ticketItems = ticketItems,
         _checkInSetting = checkInSetting,
         _customFieldRuleSetting = customFieldRuleSetting,
-        _classesInstructorProfile = classesInstructorProfile,
-        _eventMerchantVendorProfile = eventMerchantVendorProfile,
+        _vendorForm = vendorForm,
         super._();
 
-  factory _$_AttendeeItemDto.fromJson(Map<String, dynamic> json) =>
-      _$$_AttendeeItemDtoFromJson(json);
+  factory _$AttendeeItemDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttendeeItemDtoImplFromJson(json);
 
   @override
   final String attendeeId;
@@ -460,28 +471,20 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
     return EqualUnmodifiableListView(value);
   }
 
-  final Map<String, dynamic>? _classesInstructorProfile;
+  final Map<String, dynamic>? _vendorForm;
   @override
-  Map<String, dynamic>? get classesInstructorProfile {
-    final value = _classesInstructorProfile;
+  Map<String, dynamic>? get vendorForm {
+    final value = _vendorForm;
     if (value == null) return null;
-    if (_classesInstructorProfile is EqualUnmodifiableMapView)
-      return _classesInstructorProfile;
+    if (_vendorForm is EqualUnmodifiableMapView) return _vendorForm;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, dynamic>? _eventMerchantVendorProfile;
   @override
-  Map<String, dynamic>? get eventMerchantVendorProfile {
-    final value = _eventMerchantVendorProfile;
-    if (value == null) return null;
-    if (_eventMerchantVendorProfile is EqualUnmodifiableMapView)
-      return _eventMerchantVendorProfile;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  final String? classesInstructorProfile;
+  @override
+  final String? eventMerchantVendorProfile;
   @override
   final String? refundId;
   @override
@@ -496,14 +499,14 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
 
   @override
   String toString() {
-    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, invitedFrom: $invitedFrom, instanceId: $instanceId, contactStatus: $contactStatus, attendeeDetails: $attendeeDetails, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, isInterested: $isInterested, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
+    return 'AttendeeItemDto(attendeeId: $attendeeId, attendeeOwnerId: $attendeeOwnerId, reservationId: $reservationId, cost: $cost, paymentStatus: $paymentStatus, paymentIntentId: $paymentIntentId, attendeeType: $attendeeType, invitedFrom: $invitedFrom, instanceId: $instanceId, contactStatus: $contactStatus, attendeeDetails: $attendeeDetails, ticketItems: $ticketItems, checkInSetting: $checkInSetting, customFieldRuleSetting: $customFieldRuleSetting, vendorForm: $vendorForm, classesInstructorProfile: $classesInstructorProfile, eventMerchantVendorProfile: $eventMerchantVendorProfile, refundId: $refundId, receipt_link: $receipt_link, isInterested: $isInterested, dateCreated: $dateCreated, createdAtSTC: $createdAtSTC)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AttendeeItemDto &&
+            other is _$AttendeeItemDtoImpl &&
             (identical(other.attendeeId, attendeeId) ||
                 other.attendeeId == attendeeId) &&
             (identical(other.attendeeOwnerId, attendeeOwnerId) ||
@@ -531,11 +534,15 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
                 .equals(other._checkInSetting, _checkInSetting) &&
             const DeepCollectionEquality().equals(
                 other._customFieldRuleSetting, _customFieldRuleSetting) &&
-            const DeepCollectionEquality().equals(
-                other._classesInstructorProfile, _classesInstructorProfile) &&
-            const DeepCollectionEquality().equals(
-                other._eventMerchantVendorProfile,
-                _eventMerchantVendorProfile) &&
+            const DeepCollectionEquality()
+                .equals(other._vendorForm, _vendorForm) &&
+            (identical(
+                    other.classesInstructorProfile, classesInstructorProfile) ||
+                other.classesInstructorProfile == classesInstructorProfile) &&
+            (identical(other.eventMerchantVendorProfile,
+                    eventMerchantVendorProfile) ||
+                other.eventMerchantVendorProfile ==
+                    eventMerchantVendorProfile) &&
             (identical(other.refundId, refundId) ||
                 other.refundId == refundId) &&
             (identical(other.receipt_link, receipt_link) ||
@@ -566,8 +573,9 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
         const DeepCollectionEquality().hash(_ticketItems),
         const DeepCollectionEquality().hash(_checkInSetting),
         const DeepCollectionEquality().hash(_customFieldRuleSetting),
-        const DeepCollectionEquality().hash(_classesInstructorProfile),
-        const DeepCollectionEquality().hash(_eventMerchantVendorProfile),
+        const DeepCollectionEquality().hash(_vendorForm),
+        classesInstructorProfile,
+        eventMerchantVendorProfile,
         refundId,
         receipt_link,
         isInterested,
@@ -578,12 +586,13 @@ class _$_AttendeeItemDto extends _AttendeeItemDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AttendeeItemDtoCopyWith<_$_AttendeeItemDto> get copyWith =>
-      __$$_AttendeeItemDtoCopyWithImpl<_$_AttendeeItemDto>(this, _$identity);
+  _$$AttendeeItemDtoImplCopyWith<_$AttendeeItemDtoImpl> get copyWith =>
+      __$$AttendeeItemDtoImplCopyWithImpl<_$AttendeeItemDtoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AttendeeItemDtoToJson(
+    return _$$AttendeeItemDtoImplToJson(
       this,
     );
   }
@@ -605,18 +614,19 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
           final List<Map<String, dynamic>>? ticketItems,
           final List<Map<String, dynamic>>? checkInSetting,
           final List<Map<String, dynamic>>? customFieldRuleSetting,
-          final Map<String, dynamic>? classesInstructorProfile,
-          final Map<String, dynamic>? eventMerchantVendorProfile,
+          final Map<String, dynamic>? vendorForm,
+          final String? classesInstructorProfile,
+          final String? eventMerchantVendorProfile,
           final String? refundId,
           final String? receipt_link,
           final bool? isInterested,
           required final String dateCreated,
           @ServerTimestampConverter() final FieldValue? createdAtSTC}) =
-      _$_AttendeeItemDto;
+      _$AttendeeItemDtoImpl;
   _AttendeeItemDto._() : super._();
 
   factory _AttendeeItemDto.fromJson(Map<String, dynamic> json) =
-      _$_AttendeeItemDto.fromJson;
+      _$AttendeeItemDtoImpl.fromJson;
 
   @override
   String get attendeeId;
@@ -647,9 +657,11 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   @override
   List<Map<String, dynamic>>? get customFieldRuleSetting;
   @override
-  Map<String, dynamic>? get classesInstructorProfile;
+  Map<String, dynamic>? get vendorForm;
   @override
-  Map<String, dynamic>? get eventMerchantVendorProfile;
+  String? get classesInstructorProfile;
+  @override
+  String? get eventMerchantVendorProfile;
   @override
   String? get refundId;
   @override
@@ -663,6 +675,6 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   FieldValue? get createdAtSTC;
   @override
   @JsonKey(ignore: true)
-  _$$_AttendeeItemDtoCopyWith<_$_AttendeeItemDto> get copyWith =>
+  _$$AttendeeItemDtoImplCopyWith<_$AttendeeItemDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'system_post.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SystemPost {
@@ -63,22 +63,22 @@ class _$SystemPostCopyWithImpl<$Res, $Val extends SystemPost>
 }
 
 /// @nodoc
-abstract class _$$_SystemPostCopyWith<$Res>
+abstract class _$$SystemPostImplCopyWith<$Res>
     implements $SystemPostCopyWith<$Res> {
-  factory _$$_SystemPostCopyWith(
-          _$_SystemPost value, $Res Function(_$_SystemPost) then) =
-      __$$_SystemPostCopyWithImpl<$Res>;
+  factory _$$SystemPostImplCopyWith(
+          _$SystemPostImpl value, $Res Function(_$SystemPostImpl) then) =
+      __$$SystemPostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
-class __$$_SystemPostCopyWithImpl<$Res>
-    extends _$SystemPostCopyWithImpl<$Res, _$_SystemPost>
-    implements _$$_SystemPostCopyWith<$Res> {
-  __$$_SystemPostCopyWithImpl(
-      _$_SystemPost _value, $Res Function(_$_SystemPost) _then)
+class __$$SystemPostImplCopyWithImpl<$Res>
+    extends _$SystemPostCopyWithImpl<$Res, _$SystemPostImpl>
+    implements _$$SystemPostImplCopyWith<$Res> {
+  __$$SystemPostImplCopyWithImpl(
+      _$SystemPostImpl _value, $Res Function(_$SystemPostImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_SystemPostCopyWithImpl<$Res>
     Object? text = null,
     Object? metaData = freezed,
   }) {
-    return _then(_$_SystemPost(
+    return _then(_$SystemPostImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_SystemPostCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SystemPost extends _SystemPost {
-  _$_SystemPost({required this.text, final Map<String, dynamic>? metaData})
+class _$SystemPostImpl extends _SystemPost {
+  _$SystemPostImpl({required this.text, final Map<String, dynamic>? metaData})
       : _metaData = metaData,
         super._();
 
@@ -125,10 +125,10 @@ class _$_SystemPost extends _SystemPost {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SystemPost &&
+            other is _$SystemPostImpl &&
             (identical(other.text, text) || other.text == text) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
@@ -140,14 +140,14 @@ class _$_SystemPost extends _SystemPost {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SystemPostCopyWith<_$_SystemPost> get copyWith =>
-      __$$_SystemPostCopyWithImpl<_$_SystemPost>(this, _$identity);
+  _$$SystemPostImplCopyWith<_$SystemPostImpl> get copyWith =>
+      __$$SystemPostImplCopyWithImpl<_$SystemPostImpl>(this, _$identity);
 }
 
 abstract class _SystemPost extends SystemPost {
   factory _SystemPost(
       {required final String text,
-      final Map<String, dynamic>? metaData}) = _$_SystemPost;
+      final Map<String, dynamic>? metaData}) = _$SystemPostImpl;
   _SystemPost._() : super._();
 
   @override
@@ -156,6 +156,6 @@ abstract class _SystemPost extends SystemPost {
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$_SystemPostCopyWith<_$_SystemPost> get copyWith =>
+  _$$SystemPostImplCopyWith<_$SystemPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -26,6 +26,7 @@ class ReservationItemDto with _$ReservationItemDto {
     String? refundId,
     String? receipt_link,
     bool? isInternalProgram,
+    bool? isActivity,
     required String dateCreated,
     @ServerTimestampConverter() FieldValue? createdAtSTC,
   }) = _ReservationItemDto;
@@ -50,6 +51,7 @@ class ReservationItemDto with _$ReservationItemDto {
         refundId: reservation.refundId,
         receipt_link: reservation.receipt_link,
         isInternalProgram: reservation.isInternalProgram,
+        isActivity: reservation.isActivity,
         dateCreated: reservation.dateCreated.toString(),
         createdAtSTC: FieldValue.serverTimestamp()
     );
@@ -73,6 +75,7 @@ class ReservationItemDto with _$ReservationItemDto {
         cancelledSlotItem: (cancelledSlotItem != null) ? cancelledSlotItem!.map((e) => ReservationSlotItemDto.fromJson(e).toDomain()).toList() : null,
         paymentStatus: PaymentStatusType.noStatus,
         isInternalProgram: isInternalProgram,
+        isActivity: isActivity,
         paymentIntentId: paymentIntentId,
     );
   }

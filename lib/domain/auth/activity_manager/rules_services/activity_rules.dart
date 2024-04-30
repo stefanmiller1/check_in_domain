@@ -14,7 +14,7 @@ class ActivityRulesService with _$ActivityRulesService {
     required CancellationSetting cancellationSettings,
     required String currency,
     ListK<DetailCustomOption>? customRuleOption,
-
+    List<VendorMerchantForm>? vendorMerchantForms,
     /// for game based activities
     List<SkillLevel>? skillLevelReached,
     GameActivityRules? gameActivityRules,

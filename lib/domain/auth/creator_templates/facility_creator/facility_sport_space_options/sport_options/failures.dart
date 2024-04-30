@@ -7,5 +7,5 @@ class FacilitySportValueFailure<T> with _$FacilitySportValueFailure<T> {
   const factory FacilitySportValueFailure.maxListLength({
     int? max,
     T? failedValue
-  }) = _MaxListLength;
+  }) = _FacilitySportMaxListLength;
 }

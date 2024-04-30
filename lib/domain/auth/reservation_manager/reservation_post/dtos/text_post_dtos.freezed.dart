@@ -12,7 +12,7 @@ part of 'text_post_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TextPostDto _$TextPostDtoFromJson(Map<String, dynamic> json) {
   return _TextPostDto.fromJson(json);
@@ -68,22 +68,22 @@ class _$TextPostDtoCopyWithImpl<$Res, $Val extends TextPostDto>
 }
 
 /// @nodoc
-abstract class _$$_TextPostDtoCopyWith<$Res>
+abstract class _$$TextPostDtoImplCopyWith<$Res>
     implements $TextPostDtoCopyWith<$Res> {
-  factory _$$_TextPostDtoCopyWith(
-          _$_TextPostDto value, $Res Function(_$_TextPostDto) then) =
-      __$$_TextPostDtoCopyWithImpl<$Res>;
+  factory _$$TextPostDtoImplCopyWith(
+          _$TextPostDtoImpl value, $Res Function(_$TextPostDtoImpl) then) =
+      __$$TextPostDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Map<String, dynamic>? metaData, String text});
 }
 
 /// @nodoc
-class __$$_TextPostDtoCopyWithImpl<$Res>
-    extends _$TextPostDtoCopyWithImpl<$Res, _$_TextPostDto>
-    implements _$$_TextPostDtoCopyWith<$Res> {
-  __$$_TextPostDtoCopyWithImpl(
-      _$_TextPostDto _value, $Res Function(_$_TextPostDto) _then)
+class __$$TextPostDtoImplCopyWithImpl<$Res>
+    extends _$TextPostDtoCopyWithImpl<$Res, _$TextPostDtoImpl>
+    implements _$$TextPostDtoImplCopyWith<$Res> {
+  __$$TextPostDtoImplCopyWithImpl(
+      _$TextPostDtoImpl _value, $Res Function(_$TextPostDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_TextPostDtoCopyWithImpl<$Res>
     Object? metaData = freezed,
     Object? text = null,
   }) {
-    return _then(_$_TextPostDto(
+    return _then(_$TextPostDtoImpl(
       metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_TextPostDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TextPostDto extends _TextPostDto {
-  _$_TextPostDto({final Map<String, dynamic>? metaData, required this.text})
+class _$TextPostDtoImpl extends _TextPostDto {
+  _$TextPostDtoImpl({final Map<String, dynamic>? metaData, required this.text})
       : _metaData = metaData,
         super._();
 
-  factory _$_TextPostDto.fromJson(Map<String, dynamic> json) =>
-      _$$_TextPostDtoFromJson(json);
+  factory _$TextPostDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TextPostDtoImplFromJson(json);
 
   final Map<String, dynamic>? _metaData;
   @override
@@ -134,10 +134,10 @@ class _$_TextPostDto extends _TextPostDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TextPostDto &&
+            other is _$TextPostDtoImpl &&
             const DeepCollectionEquality().equals(other._metaData, _metaData) &&
             (identical(other.text, text) || other.text == text));
   }
@@ -150,12 +150,12 @@ class _$_TextPostDto extends _TextPostDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TextPostDtoCopyWith<_$_TextPostDto> get copyWith =>
-      __$$_TextPostDtoCopyWithImpl<_$_TextPostDto>(this, _$identity);
+  _$$TextPostDtoImplCopyWith<_$TextPostDtoImpl> get copyWith =>
+      __$$TextPostDtoImplCopyWithImpl<_$TextPostDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TextPostDtoToJson(
+    return _$$TextPostDtoImplToJson(
       this,
     );
   }
@@ -164,11 +164,11 @@ class _$_TextPostDto extends _TextPostDto {
 abstract class _TextPostDto extends TextPostDto {
   factory _TextPostDto(
       {final Map<String, dynamic>? metaData,
-      required final String text}) = _$_TextPostDto;
+      required final String text}) = _$TextPostDtoImpl;
   _TextPostDto._() : super._();
 
   factory _TextPostDto.fromJson(Map<String, dynamic> json) =
-      _$_TextPostDto.fromJson;
+      _$TextPostDtoImpl.fromJson;
 
   @override
   Map<String, dynamic>? get metaData;
@@ -176,6 +176,6 @@ abstract class _TextPostDto extends TextPostDto {
   String get text;
   @override
   @JsonKey(ignore: true)
-  _$$_TextPostDtoCopyWith<_$_TextPostDto> get copyWith =>
+  _$$TextPostDtoImplCopyWith<_$TextPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

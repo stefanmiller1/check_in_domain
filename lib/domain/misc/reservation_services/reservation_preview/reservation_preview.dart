@@ -13,11 +13,11 @@ class ReservationPreviewer with _$ReservationPreviewer {
     int? attendeesCount,
     int? reservationCount,
     List<ReservationItem>? reservations,
+    AttendeeItem? attendingItem,
     List<AttendeeItem>? attendees,
   }) = _ReservationPreviewer;
 
   factory ReservationPreviewer.empty() => ReservationPreviewer(
     previewWeight: 0,
   );
-
 }

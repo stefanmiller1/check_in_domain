@@ -25,6 +25,7 @@ class ReservationItem with _$ReservationItem {
     String? refundId,
     String? receipt_link,
     bool? isInternalProgram,
+    bool? isActivity,
     required DateTime dateCreated,
 }) = _ReservationItem;
 
