@@ -16,17 +16,20 @@ dependencies:
     sdk: flutter
   injectable: ^2.3.2
   get_it: ^7.2.0
+  pdf: 3.11.1
+  excel: ^4.0.3
   flutter_bloc: ^7.3.0
-  firebase_auth: ^4.17.7
-  firebase_core: ^2.26.0
-  firebase_storage: ^11.0.3
-  firebase_dynamic_links: ^5.4.16
-  cloud_firestore: ^4.3.1
-  cloud_functions: ^4.0.3
+  firebase_auth: ^5.1.0
+  firebase_core: ^3.1.0
+  firebase_storage: ^12.0.1
+  cloud_firestore: ^5.0.1
+  cloud_functions: ^5.0.1
   phone_form_field:
     path: /Users/stefanmiller/AndroidStudioProjects/phone_form_field
   geoflutterfire:
-    git: https://github.com/stefanmiller1/GeoFlutterFire
+    git:
+      url: https://github.com/stefanmiller1/GeoFlutterFire.git
+      ref: master
   check_in_credentials:
     path: /Users/stefanmiller/AndroidStudioProjects/check_in_credentials
 

@@ -1,7 +1,7 @@
 part of check_in_domain;
 
 enum FormStatus {published, closed, inProgress}
-enum AvailabilityStatus {denied, inProgress, requested, accepted, confirmed}
+enum AvailabilityStatus {denied, inProgress, requested, refunded, confirmed, cancelled}
 
 FormStatus getFormStatus(String type) {
   for (FormStatus item in FormStatus.values) {
@@ -24,7 +24,7 @@ AvailabilityStatus getAvailabilityStatus(String type) {
 List<MVCustomOption> predefinedCustomOptions(BuildContext context) {
   return [
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-gykug7878f67'), customRuleTitleLabel: 'Upload Document', labelTextRuleOption: LabelTextRuleOption(titleLabel: 'All uploaded documents will be a requirement.', isLinkLabel: false), customDocumentOptions: []), isActive: true),
-    MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-joij90hh7hii'), customRuleTitleLabel: 'Custom List', selectionLabelOption: []), isActive: true),
+    MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-joij90hh7hii'), customRuleTitleLabel: 'Custom List - Coming Soon', selectionLabelOption: []), isActive: true),
   ];
 }
 
@@ -77,10 +77,33 @@ IconData getIconForCustomOptions(String customId) {
   return Icons.add;
 }
 
-int totalFeeFromAllApplicants(List<VendorMerchantForm> forms) {
+bool activityRequiresVendorFee(VendorMerchantForm? vendorForm) => vendorForm?.boothPaymentOptions?.any((booth) => booth.fee != null && booth.fee! > 0) ?? false;
+bool vendorNoLongerEligible(List<MVBoothPayments> attending) => attending.where((element) => element.status == AvailabilityStatus.requested).isEmpty && attending.where((element) => element.status == AvailabilityStatus.confirmed).isEmpty;
+
+int getTotalBasedOnListOfInt(List<int?> amounts) {
+  int total = 0;
+  for (int? amount in amounts) {
+    if (amount != null) {
+      total += amount;
+    }
+  }
+  return total;
+}
+
+double getTotalBasedOnListOfDouble(List<double> amounts) {
+  double total = 0;
+  for (double? amount in amounts) {
+    if (amount != null) {
+      total += amount;
+    }
+  }
+  return total;
+}
+
+int totalFeeFromAllApplicants(List<VendorMerchantForm?> forms) {
   int total = 0;
   for (var form in forms) {
-    for (MVBoothPayments payment in form.boothPaymentOptions ?? []) {
+    for (MVBoothPayments payment in form?.boothPaymentOptions?.where((element) => element.status == AvailabilityStatus.confirmed).toList() ?? []) {
         if (payment.fee != null) {
           total += payment.fee!;
       }
@@ -88,6 +111,7 @@ int totalFeeFromAllApplicants(List<VendorMerchantForm> forms) {
   }
   return total;
 }
+
 
 int attendeeVendorFee(List<MVBoothPayments> payments) {
   int total = 0;
@@ -97,6 +121,35 @@ int attendeeVendorFee(List<MVBoothPayments> payments) {
       total += payment.fee!;
     }
   }
+  return total;
+}
+
+int getNumberOfConfirmedSlots(List<List<MVBoothPayments>> payments) {
+  int total = 0;
+
+  for (var paymentList in payments) {
+    for (MVBoothPayments paymentList in paymentList) {
+        if (paymentList.status == AvailabilityStatus.confirmed) {
+          total++;
+      }
+    }
+  }
+
+  return total;
+}
+
+
+int getTotalPotentialEarnings(List<List<MVBoothPayments>> payments) {
+  int total = 0;
+
+  for (var paymentList in payments) {
+    for (MVBoothPayments paymentList in paymentList) {
+      if (paymentList.fee != null) {
+        total += paymentList.fee!;
+      }
+    }
+  }
+
   return total;
 }
 
@@ -137,8 +190,33 @@ bool isDisclaimerOptionValid(VendorMerchantForm form) {
 
 bool isVendorFormValid(VendorMerchantForm? form, ReservationItem? resReference) {
 
-  if (form != null && isWelcomeValid(form) && isAvailabilityValid(form, resReference) && isDisclaimerOptionValid(form)) {
+  if (form != null && isWelcomeValid(form) && isAvailabilityValid(form, resReference) && isDisclaimerOptionValid(form) && form.formStatus != FormStatus.closed) {
     return true;
   }
   return false;
+}
+
+bool isDocumentsOptionValid(VendorMerchantForm form) {
+  if (form.customOptions?.isNotEmpty == true) {
+    if (form.customOptions?.map((e) => e.customRuleOption?.ruleId.getOrCrash()).contains('6e24dae0-96dd-11eb-babc-gykug7878f67') == true) {
+      if (form.customOptions?.where((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67').isNotEmpty == true) {
+        return form.customOptions?.firstWhere((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67').customRuleOption?.customDocumentOptions?.isNotEmpty == true;
+      }
+    }
+  }
+  return false;
+}
+
+List<DocumentFormOption>? getDocumentsList(VendorMerchantForm? form) {
+  if (form?.customOptions?.where((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67').isNotEmpty == true) {
+    return form?.customOptions?.firstWhere((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67').customRuleOption?.customDocumentOptions;
+  }
+  return null;
+}
+
+MVCustomOption? getDocumentRuleOption(VendorMerchantForm? form) {
+  if (form?.customOptions?.where((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67').isNotEmpty == true) {
+    return form?.customOptions?.firstWhere((element) => (element.customRuleOption != null) && element.customRuleOption!.ruleId.getOrCrash() == '6e24dae0-96dd-11eb-babc-gykug7878f67');
+  }
+  return null;
 }

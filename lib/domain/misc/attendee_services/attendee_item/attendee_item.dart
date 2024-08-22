@@ -45,3 +45,4 @@ class AttendeeItem with _$AttendeeItem {
   );
 
 }
+

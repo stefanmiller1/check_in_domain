@@ -57,3 +57,8 @@ String getSkillTypeName(BuildContext context, SkillLevel type) {
       return AppLocalizations.of(context)!.activityRequirementPreferencesSkillsMaster;
   }
 }
+
+
+bool getHasPublishedVendorForms(List<VendorMerchantForm> vendorForms) {
+  return vendorForms.any((form) => form.formStatus == FormStatus.published);
+}

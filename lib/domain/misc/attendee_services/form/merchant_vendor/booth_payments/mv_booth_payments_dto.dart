@@ -13,6 +13,7 @@ class MVBoothPaymentsDto with _$MVBoothPaymentsDto {
 
   const factory MVBoothPaymentsDto({
     required String uid,
+    String? selectedId,
     String? availabilityId,
     String? boothTitle,
     List<Map<String, dynamic>>? unavailableBoothDates,
@@ -21,12 +22,15 @@ class MVBoothPaymentsDto with _$MVBoothPaymentsDto {
     bool? waitListOffered,
     int? fee,
     bool? refundAvailable,
-    String? status
+    String? status,
+    Map<String, dynamic>? stripePaymentIntent,
+    Map<String, dynamic>? stripeRefund,
   }) = _MVBoothPaymentsDto;
 
   factory MVBoothPaymentsDto.fromDomain(MVBoothPayments boothOption) {
     return MVBoothPaymentsDto(
       uid: boothOption.uid.getOrCrash(),
+      selectedId: (boothOption.selectedId != null) ? boothOption.selectedId!.getOrCrash() : null,
       availabilityId: (boothOption.availabilityId != null) ? boothOption.availabilityId!.getOrCrash() : null,
       boothTitle: boothOption.boothTitle,
       unavailableBoothDates: (boothOption.unavailableBoothDates != null) ? boothOption.unavailableBoothDates!.map((e) => MCCustomAvailabilityDto.fromDomain(e).toJson()).toList() : null,
@@ -36,12 +40,15 @@ class MVBoothPaymentsDto with _$MVBoothPaymentsDto {
       fee: boothOption.fee,
       refundAvailable: boothOption.refundAvailable,
       status: (boothOption.status != null) ? boothOption.status.toString() : null,
+      stripePaymentIntent: (boothOption.stripePaymentIntent != null) ? PaymentIntentDto.fromDomain(boothOption.stripePaymentIntent!).toJson() : null,
+      stripeRefund: (boothOption.stripeRefund != null) ? StripeRefundModelDto.fromDomain(boothOption.stripeRefund!).toJson() : null
     );
   }
 
   MVBoothPayments toDomain() {
     return MVBoothPayments(
         uid: UniqueId.fromUniqueString(uid),
+        selectedId: (selectedId != null) ? UniqueId.fromUniqueString(selectedId!) : null,
         availabilityId: (availabilityId != null) ? UniqueId.fromUniqueString(availabilityId!) : null,
         boothTitle: boothTitle,
         unavailableBoothDates: (unavailableBoothDates != null) ? unavailableBoothDates!.map((e) => MCCustomAvailabilityDto.fromJson(e).toDomain()).toList() : null,
@@ -50,7 +57,9 @@ class MVBoothPaymentsDto with _$MVBoothPaymentsDto {
         waitListOffered: waitListOffered,
         fee: fee,
         refundAvailable: refundAvailable,
-        status: (status != null) ? getAvailabilityStatus(status!) : null
+        status: (status != null) ? getAvailabilityStatus(status!) : null,
+        stripePaymentIntent: (stripePaymentIntent != null) ? PaymentIntentDto.fromJson(stripePaymentIntent!).toDomain() : null,
+        stripeRefund: (stripeRefund != null) ? StripeRefundModelDto.fromJson(stripeRefund!).toDomain() : null,
     );
   }
 

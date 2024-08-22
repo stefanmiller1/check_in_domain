@@ -11,6 +11,7 @@ class MVBoothPayments with _$MVBoothPayments {
 
   const factory MVBoothPayments({
     required UniqueId uid,
+    UniqueId? selectedId,
     UniqueId? availabilityId,
     String? boothTitle,
     List<MCCustomAvailability>? unavailableBoothDates,
@@ -20,6 +21,8 @@ class MVBoothPayments with _$MVBoothPayments {
     int? fee,
     bool? refundAvailable,
     AvailabilityStatus? status,
+    PaymentIntent? stripePaymentIntent,
+    StripeRefundModel? stripeRefund,
   }) = _MVBoothPayments;
 
 }

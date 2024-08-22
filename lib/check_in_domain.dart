@@ -22,7 +22,9 @@ import 'domain/misc/attendee_services/form/merchant_vendor/booth_payments/mv_boo
 import 'domain/misc/attendee_services/form/merchant_vendor/booth_payments/mv_booth_payments_dto.dart';
 import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_custom_option_dto.dart';
 import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_custom_options.dart';
-
+import 'domain/misc/stripe/business_address_service/stripe_business_address.dart';
+import 'domain/misc/stripe/tax_calculation/stripe_tax_calculation.dart';
+import 'domain/misc/stripe/tax_calculation/stripe_tax_calculation_dto.dart';
 
 part 'domain/auth/activity_manager/activity_type_option/value_objects.dart';
 part 'domain/auth/activity_manager/activity_type_option/activity_option.dart';
@@ -99,6 +101,8 @@ part 'domain/misc/payment_methods/failures.dart';
 part 'domain/misc/payment_methods/payment_intent/payment_intent_model.dart';
 part 'domain/misc/payment_methods/payment_intent/payment_intent_model_dto.dart';
 part 'domain/misc/payment_methods/payout_model/payout_model.dart';
+part 'domain/misc/payment_methods/refund_model/stripe_refund_model.dart';
+part 'domain/misc/payment_methods/refund_model/stripe_refund_model_dto.dart';
 
 part 'domain/misc/document_form_services/check_in_form/check_in_form_item.dart';
 part 'domain/misc/document_form_services/check_in_form/check_in_form_item_dtos.dart';

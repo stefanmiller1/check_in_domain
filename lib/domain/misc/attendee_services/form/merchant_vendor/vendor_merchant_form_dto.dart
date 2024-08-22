@@ -23,7 +23,7 @@ class VendorMerchantFormDto with _$VendorMerchantFormDto {
   factory VendorMerchantFormDto.fromDomain(VendorMerchantForm form) {
     return VendorMerchantFormDto(
         formId: form.formId.getOrCrash(),
-        lastOpenedAt: DateTime.now().millisecondsSinceEpoch,
+        lastOpenedAt: form.lastOpenedAt,
         formTitle: form.formTitle,
         welcomeMessage: form.welcomeMessage,
         openCloseStart: (form.openCloseDates != null) ? form.openCloseDates!.start.toString() : null,

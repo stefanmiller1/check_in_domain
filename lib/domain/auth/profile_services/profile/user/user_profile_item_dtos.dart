@@ -21,6 +21,7 @@ class UserProfileItemDto with _$UserProfileItemDto {
     required bool isPhoneAuth,
     required String joinedDate,
     bool? isVerified,
+    bool? hasSignedIn,
     String? identificationState,
     String? photoIdUri,
     String? photoSelfieUri,
@@ -52,6 +53,7 @@ class UserProfileItemDto with _$UserProfileItemDto {
           isEmailAuth: profile.isEmailAuth,
           isPhoneAuth: profile.isPhoneAuth,
           isVerified: profile.isVerified,
+          hasSignedIn: profile.hasSignedIn,
           identificationState: profile.identificationState.toString(),
           joinedDate: profile.joinedDate.toString(),
           stripeAccountId: profile.stripeAccountId,
@@ -65,7 +67,7 @@ class UserProfileItemDto with _$UserProfileItemDto {
       );
 
   UserProfileModel toDomain() => UserProfileModel(
-      userId: UniqueId.fromUniqueString(uid!),
+      userId: (uid == null) ? UniqueId() : UniqueId.fromUniqueString(uid!),
       legalName: FirstLastName(legalName),
       legalSurname: FirstLastName(legalSurname),
       age: (age != null) ? Age(age) : null,
@@ -81,6 +83,7 @@ class UserProfileItemDto with _$UserProfileItemDto {
       isEmailAuth: isEmailAuth,
       isPhoneAuth: isPhoneAuth,
       isVerified: isVerified,
+      hasSignedIn: hasSignedIn,
       identificationState: (identificationState != null) ? getPhotoIdentificationType(identificationState!) : PhotoIdentificationState.noRequest,
       profileImage: (photoUri != null) ? Image.network(photoUri!) : null,
       stripeAccountId: stripeAccountId,
@@ -96,8 +99,6 @@ class UserProfileItemDto with _$UserProfileItemDto {
   factory UserProfileItemDto.fromFireStore(DocumentSnapshot doc) {
    return UserProfileItemDto.fromJson(doc.data() as Map<String, dynamic>).copyWith(uid: doc.id);
   }
-
-
 }
 
 

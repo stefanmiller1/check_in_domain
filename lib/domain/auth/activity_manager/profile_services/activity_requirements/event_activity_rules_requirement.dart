@@ -8,10 +8,6 @@ class EventActivityRulesRequirement with _$EventActivityRulesRequirement {
   factory EventActivityRulesRequirement({
 
     required bool isMerchantSupported,
-    int? merchantFee,
-    int? merchantLimit,
-    String? postMerchantApplicationLink,
-    required bool isMerchantInviteOnly,
 
     required bool isAlcoholForSale,
     required bool isFoodForSale,
@@ -27,7 +23,6 @@ class EventActivityRulesRequirement with _$EventActivityRulesRequirement {
 
   factory EventActivityRulesRequirement.empty() => EventActivityRulesRequirement(
       isMerchantSupported: false,
-      isMerchantInviteOnly: false,
       isAlcoholForSale: false,
       isFoodForSale: false,
       isAlcoholProvided: false,

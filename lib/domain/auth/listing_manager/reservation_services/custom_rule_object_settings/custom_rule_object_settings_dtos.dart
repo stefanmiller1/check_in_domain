@@ -19,7 +19,7 @@ class CustomRuleOptionDto with _$CustomRuleOptionDto {
 
   factory CustomRuleOptionDto.fromDomain(CustomRuleOption rule) {
     return CustomRuleOptionDto(
-        ruleId: rule.ruleId.toString(),
+        ruleId: rule.ruleId.getOrCrash(),
         customRuleTitleLabel: rule.customRuleTitleLabel,
         customRuleType: (rule.customRuleType != null) ? rule.customRuleType!.toString() : null,
         labelTextRuleOption: (rule.labelTextRuleOption != null) ? LabelTextRuleOptionDto.fromDomain(rule.labelTextRuleOption!).toJson() : null,

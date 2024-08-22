@@ -12489,11 +12489,14 @@ abstract class _ReservationItemDto extends ReservationItemDto {
 
 /// @nodoc
 mixin _$ReservationPreviewer {
+  UserProfileModel? get reservationOwnerProfile =>
+      throw _privateConstructorUsedError;
   ListingManagerForm? get listing => throw _privateConstructorUsedError;
   ReservationItem? get reservation => throw _privateConstructorUsedError;
   ActivityManagerForm? get activityManagerForm =>
       throw _privateConstructorUsedError;
   int get previewWeight => throw _privateConstructorUsedError;
+  bool? get lookingForVendors => throw _privateConstructorUsedError;
   int? get attendeesCount => throw _privateConstructorUsedError;
   int? get reservationCount => throw _privateConstructorUsedError;
   List<ReservationItem>? get reservations => throw _privateConstructorUsedError;
@@ -12512,16 +12515,19 @@ abstract class $ReservationPreviewerCopyWith<$Res> {
       _$ReservationPreviewerCopyWithImpl<$Res, ReservationPreviewer>;
   @useResult
   $Res call(
-      {ListingManagerForm? listing,
+      {UserProfileModel? reservationOwnerProfile,
+      ListingManagerForm? listing,
       ReservationItem? reservation,
       ActivityManagerForm? activityManagerForm,
       int previewWeight,
+      bool? lookingForVendors,
       int? attendeesCount,
       int? reservationCount,
       List<ReservationItem>? reservations,
       AttendeeItem? attendingItem,
       List<AttendeeItem>? attendees});
 
+  $UserProfileModelCopyWith<$Res>? get reservationOwnerProfile;
   $ListingManagerFormCopyWith<$Res>? get listing;
   $ReservationItemCopyWith<$Res>? get reservation;
   $ActivityManagerFormCopyWith<$Res>? get activityManagerForm;
@@ -12542,10 +12548,12 @@ class _$ReservationPreviewerCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? reservationOwnerProfile = freezed,
     Object? listing = freezed,
     Object? reservation = freezed,
     Object? activityManagerForm = freezed,
     Object? previewWeight = null,
+    Object? lookingForVendors = freezed,
     Object? attendeesCount = freezed,
     Object? reservationCount = freezed,
     Object? reservations = freezed,
@@ -12553,6 +12561,10 @@ class _$ReservationPreviewerCopyWithImpl<$Res,
     Object? attendees = freezed,
   }) {
     return _then(_value.copyWith(
+      reservationOwnerProfile: freezed == reservationOwnerProfile
+          ? _value.reservationOwnerProfile
+          : reservationOwnerProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileModel?,
       listing: freezed == listing
           ? _value.listing
           : listing // ignore: cast_nullable_to_non_nullable
@@ -12569,6 +12581,10 @@ class _$ReservationPreviewerCopyWithImpl<$Res,
           ? _value.previewWeight
           : previewWeight // ignore: cast_nullable_to_non_nullable
               as int,
+      lookingForVendors: freezed == lookingForVendors
+          ? _value.lookingForVendors
+          : lookingForVendors // ignore: cast_nullable_to_non_nullable
+              as bool?,
       attendeesCount: freezed == attendeesCount
           ? _value.attendeesCount
           : attendeesCount // ignore: cast_nullable_to_non_nullable
@@ -12590,6 +12606,19 @@ class _$ReservationPreviewerCopyWithImpl<$Res,
           : attendees // ignore: cast_nullable_to_non_nullable
               as List<AttendeeItem>?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserProfileModelCopyWith<$Res>? get reservationOwnerProfile {
+    if (_value.reservationOwnerProfile == null) {
+      return null;
+    }
+
+    return $UserProfileModelCopyWith<$Res>(_value.reservationOwnerProfile!,
+        (value) {
+      return _then(_value.copyWith(reservationOwnerProfile: value) as $Val);
+    });
   }
 
   @override
@@ -12651,16 +12680,20 @@ abstract class _$$ReservationPreviewerImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ListingManagerForm? listing,
+      {UserProfileModel? reservationOwnerProfile,
+      ListingManagerForm? listing,
       ReservationItem? reservation,
       ActivityManagerForm? activityManagerForm,
       int previewWeight,
+      bool? lookingForVendors,
       int? attendeesCount,
       int? reservationCount,
       List<ReservationItem>? reservations,
       AttendeeItem? attendingItem,
       List<AttendeeItem>? attendees});
 
+  @override
+  $UserProfileModelCopyWith<$Res>? get reservationOwnerProfile;
   @override
   $ListingManagerFormCopyWith<$Res>? get listing;
   @override
@@ -12682,10 +12715,12 @@ class __$$ReservationPreviewerImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? reservationOwnerProfile = freezed,
     Object? listing = freezed,
     Object? reservation = freezed,
     Object? activityManagerForm = freezed,
     Object? previewWeight = null,
+    Object? lookingForVendors = freezed,
     Object? attendeesCount = freezed,
     Object? reservationCount = freezed,
     Object? reservations = freezed,
@@ -12693,6 +12728,10 @@ class __$$ReservationPreviewerImplCopyWithImpl<$Res>
     Object? attendees = freezed,
   }) {
     return _then(_$ReservationPreviewerImpl(
+      reservationOwnerProfile: freezed == reservationOwnerProfile
+          ? _value.reservationOwnerProfile
+          : reservationOwnerProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileModel?,
       listing: freezed == listing
           ? _value.listing
           : listing // ignore: cast_nullable_to_non_nullable
@@ -12709,6 +12748,10 @@ class __$$ReservationPreviewerImplCopyWithImpl<$Res>
           ? _value.previewWeight
           : previewWeight // ignore: cast_nullable_to_non_nullable
               as int,
+      lookingForVendors: freezed == lookingForVendors
+          ? _value.lookingForVendors
+          : lookingForVendors // ignore: cast_nullable_to_non_nullable
+              as bool?,
       attendeesCount: freezed == attendeesCount
           ? _value.attendeesCount
           : attendeesCount // ignore: cast_nullable_to_non_nullable
@@ -12737,10 +12780,12 @@ class __$$ReservationPreviewerImplCopyWithImpl<$Res>
 
 class _$ReservationPreviewerImpl extends _ReservationPreviewer {
   const _$ReservationPreviewerImpl(
-      {this.listing,
+      {this.reservationOwnerProfile,
+      this.listing,
       this.reservation,
       this.activityManagerForm,
       required this.previewWeight,
+      this.lookingForVendors,
       this.attendeesCount,
       this.reservationCount,
       final List<ReservationItem>? reservations,
@@ -12751,6 +12796,8 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
         super._();
 
   @override
+  final UserProfileModel? reservationOwnerProfile;
+  @override
   final ListingManagerForm? listing;
   @override
   final ReservationItem? reservation;
@@ -12758,6 +12805,8 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
   final ActivityManagerForm? activityManagerForm;
   @override
   final int previewWeight;
+  @override
+  final bool? lookingForVendors;
   @override
   final int? attendeesCount;
   @override
@@ -12786,7 +12835,7 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
 
   @override
   String toString() {
-    return 'ReservationPreviewer(listing: $listing, reservation: $reservation, activityManagerForm: $activityManagerForm, previewWeight: $previewWeight, attendeesCount: $attendeesCount, reservationCount: $reservationCount, reservations: $reservations, attendingItem: $attendingItem, attendees: $attendees)';
+    return 'ReservationPreviewer(reservationOwnerProfile: $reservationOwnerProfile, listing: $listing, reservation: $reservation, activityManagerForm: $activityManagerForm, previewWeight: $previewWeight, lookingForVendors: $lookingForVendors, attendeesCount: $attendeesCount, reservationCount: $reservationCount, reservations: $reservations, attendingItem: $attendingItem, attendees: $attendees)';
   }
 
   @override
@@ -12794,6 +12843,9 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReservationPreviewerImpl &&
+            (identical(
+                    other.reservationOwnerProfile, reservationOwnerProfile) ||
+                other.reservationOwnerProfile == reservationOwnerProfile) &&
             (identical(other.listing, listing) || other.listing == listing) &&
             (identical(other.reservation, reservation) ||
                 other.reservation == reservation) &&
@@ -12801,6 +12853,8 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
                 other.activityManagerForm == activityManagerForm) &&
             (identical(other.previewWeight, previewWeight) ||
                 other.previewWeight == previewWeight) &&
+            (identical(other.lookingForVendors, lookingForVendors) ||
+                other.lookingForVendors == lookingForVendors) &&
             (identical(other.attendeesCount, attendeesCount) ||
                 other.attendeesCount == attendeesCount) &&
             (identical(other.reservationCount, reservationCount) ||
@@ -12816,10 +12870,12 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      reservationOwnerProfile,
       listing,
       reservation,
       activityManagerForm,
       previewWeight,
+      lookingForVendors,
       attendeesCount,
       reservationCount,
       const DeepCollectionEquality().hash(_reservations),
@@ -12837,10 +12893,12 @@ class _$ReservationPreviewerImpl extends _ReservationPreviewer {
 
 abstract class _ReservationPreviewer extends ReservationPreviewer {
   const factory _ReservationPreviewer(
-      {final ListingManagerForm? listing,
+      {final UserProfileModel? reservationOwnerProfile,
+      final ListingManagerForm? listing,
       final ReservationItem? reservation,
       final ActivityManagerForm? activityManagerForm,
       required final int previewWeight,
+      final bool? lookingForVendors,
       final int? attendeesCount,
       final int? reservationCount,
       final List<ReservationItem>? reservations,
@@ -12849,6 +12907,8 @@ abstract class _ReservationPreviewer extends ReservationPreviewer {
   const _ReservationPreviewer._() : super._();
 
   @override
+  UserProfileModel? get reservationOwnerProfile;
+  @override
   ListingManagerForm? get listing;
   @override
   ReservationItem? get reservation;
@@ -12856,6 +12916,8 @@ abstract class _ReservationPreviewer extends ReservationPreviewer {
   ActivityManagerForm? get activityManagerForm;
   @override
   int get previewWeight;
+  @override
+  bool? get lookingForVendors;
   @override
   int? get attendeesCount;
   @override
@@ -17141,7 +17203,6 @@ CardItemDto _$CardItemDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CardItemDto {
-  @JsonKey(ignore: true)
   String? get paymentId => throw _privateConstructorUsedError;
   Map<String, dynamic> get card => throw _privateConstructorUsedError;
 
@@ -17157,8 +17218,7 @@ abstract class $CardItemDtoCopyWith<$Res> {
           CardItemDto value, $Res Function(CardItemDto) then) =
       _$CardItemDtoCopyWithImpl<$Res, CardItemDto>;
   @useResult
-  $Res call(
-      {@JsonKey(ignore: true) String? paymentId, Map<String, dynamic> card});
+  $Res call({String? paymentId, Map<String, dynamic> card});
 }
 
 /// @nodoc
@@ -17198,8 +17258,7 @@ abstract class _$$CardItemDtoImplCopyWith<$Res>
       __$$CardItemDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(ignore: true) String? paymentId, Map<String, dynamic> card});
+  $Res call({String? paymentId, Map<String, dynamic> card});
 }
 
 /// @nodoc
@@ -17233,8 +17292,7 @@ class __$$CardItemDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CardItemDtoImpl extends _CardItemDto {
   const _$CardItemDtoImpl(
-      {@JsonKey(ignore: true) this.paymentId,
-      required final Map<String, dynamic> card})
+      {required this.paymentId, required final Map<String, dynamic> card})
       : _card = card,
         super._();
 
@@ -17242,7 +17300,6 @@ class _$CardItemDtoImpl extends _CardItemDto {
       _$$CardItemDtoImplFromJson(json);
 
   @override
-  @JsonKey(ignore: true)
   final String? paymentId;
   final Map<String, dynamic> _card;
   @override
@@ -17288,7 +17345,7 @@ class _$CardItemDtoImpl extends _CardItemDto {
 
 abstract class _CardItemDto extends CardItemDto {
   const factory _CardItemDto(
-      {@JsonKey(ignore: true) final String? paymentId,
+      {required final String? paymentId,
       required final Map<String, dynamic> card}) = _$CardItemDtoImpl;
   const _CardItemDto._() : super._();
 
@@ -17296,7 +17353,6 @@ abstract class _CardItemDto extends CardItemDto {
       _$CardItemDtoImpl.fromJson;
 
   @override
-  @JsonKey(ignore: true)
   String? get paymentId;
   @override
   Map<String, dynamic> get card;
@@ -17513,6 +17569,7 @@ mixin _$PaymentMethodValueFailure<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -17524,6 +17581,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -17535,6 +17593,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) =>
@@ -17549,6 +17608,8 @@ mixin _$PaymentMethodValueFailure<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -17562,6 +17623,7 @@ mixin _$PaymentMethodValueFailure<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -17574,6 +17636,7 @@ mixin _$PaymentMethodValueFailure<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) =>
@@ -17671,6 +17734,7 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return invalidCVV(failedValue);
@@ -17685,6 +17749,7 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return invalidCVV?.call(failedValue);
@@ -17699,6 +17764,7 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -17719,6 +17785,8 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return invalidCVV(this);
@@ -17735,6 +17803,7 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return invalidCVV?.call(this);
@@ -17750,6 +17819,7 @@ class _$InvalidCVVImpl<T> extends InvalidCVV<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -17843,6 +17913,7 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return invalidCreditDebit(failedValue);
@@ -17857,6 +17928,7 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return invalidCreditDebit?.call(failedValue);
@@ -17871,6 +17943,7 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -17891,6 +17964,8 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return invalidCreditDebit(this);
@@ -17907,6 +17982,7 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return invalidCreditDebit?.call(this);
@@ -17922,6 +17998,7 @@ class _$InvalidCreditDebitImpl<T> extends InvalidCreditDebit<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -17989,6 +18066,7 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return insufficientFunds();
@@ -18003,6 +18081,7 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return insufficientFunds?.call();
@@ -18017,6 +18096,7 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18037,6 +18117,8 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return insufficientFunds(this);
@@ -18053,6 +18135,7 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return insufficientFunds?.call(this);
@@ -18068,6 +18151,7 @@ class _$InsufficientFundsImpl<T> extends InsufficientFunds<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18156,6 +18240,7 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return requiresMoreAction(paymentIntent);
@@ -18170,6 +18255,7 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return requiresMoreAction?.call(paymentIntent);
@@ -18184,6 +18270,7 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18204,6 +18291,8 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return requiresMoreAction(this);
@@ -18220,6 +18309,7 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return requiresMoreAction?.call(this);
@@ -18235,6 +18325,7 @@ class _$RequiresMoreActionImpl<T> extends RequiresMoreAction<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18304,6 +18395,7 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return ownerDoesNotHaveAccount();
@@ -18318,6 +18410,7 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return ownerDoesNotHaveAccount?.call();
@@ -18332,6 +18425,7 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18352,6 +18446,8 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return ownerDoesNotHaveAccount(this);
@@ -18368,6 +18464,7 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return ownerDoesNotHaveAccount?.call(this);
@@ -18383,6 +18480,7 @@ class _$OwnerDoesNotHaveAccountImpl<T> extends OwnerDoesNotHaveAccount<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18447,6 +18545,7 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return couldNotRetrievePaymentMethod();
@@ -18461,6 +18560,7 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return couldNotRetrievePaymentMethod?.call();
@@ -18475,6 +18575,7 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18495,6 +18596,8 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return couldNotRetrievePaymentMethod(this);
@@ -18511,6 +18614,7 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return couldNotRetrievePaymentMethod?.call(this);
@@ -18526,6 +18630,7 @@ class _$CouldNotRetrievePaymentMethodImpl<T>
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18541,6 +18646,201 @@ abstract class CouldNotRetrievePaymentMethod<T>
   const factory CouldNotRetrievePaymentMethod() =
       _$CouldNotRetrievePaymentMethodImpl<T>;
   const CouldNotRetrievePaymentMethod._() : super._();
+}
+
+/// @nodoc
+abstract class _$$paymentCaptureFailureImplCopyWith<T, $Res> {
+  factory _$$paymentCaptureFailureImplCopyWith(
+          _$paymentCaptureFailureImpl<T> value,
+          $Res Function(_$paymentCaptureFailureImpl<T>) then) =
+      __$$paymentCaptureFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({PaymentIntent? failure});
+
+  $PaymentIntentCopyWith<$Res>? get failure;
+}
+
+/// @nodoc
+class __$$paymentCaptureFailureImplCopyWithImpl<T, $Res>
+    extends _$PaymentMethodValueFailureCopyWithImpl<T, $Res,
+        _$paymentCaptureFailureImpl<T>>
+    implements _$$paymentCaptureFailureImplCopyWith<T, $Res> {
+  __$$paymentCaptureFailureImplCopyWithImpl(
+      _$paymentCaptureFailureImpl<T> _value,
+      $Res Function(_$paymentCaptureFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$paymentCaptureFailureImpl<T>(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as PaymentIntent?,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PaymentIntentCopyWith<$Res>? get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+
+    return $PaymentIntentCopyWith<$Res>(_value.failure!, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$paymentCaptureFailureImpl<T> extends _paymentCaptureFailure<T> {
+  const _$paymentCaptureFailureImpl({this.failure}) : super._();
+
+  @override
+  final PaymentIntent? failure;
+
+  @override
+  String toString() {
+    return 'PaymentMethodValueFailure<$T>.paymentCaptureFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$paymentCaptureFailureImpl<T> &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$paymentCaptureFailureImplCopyWith<T, _$paymentCaptureFailureImpl<T>>
+      get copyWith => __$$paymentCaptureFailureImplCopyWithImpl<T,
+          _$paymentCaptureFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? failedValue) invalidCVV,
+    required TResult Function(String? failedValue) invalidCreditDebit,
+    required TResult Function() insufficientFunds,
+    required TResult Function(String? paymentIntent) requiresMoreAction,
+    required TResult Function() ownerDoesNotHaveAccount,
+    required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
+    required TResult Function(String? failedValue) paymentServerError,
+  }) {
+    return paymentCaptureFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? failedValue)? invalidCVV,
+    TResult? Function(String? failedValue)? invalidCreditDebit,
+    TResult? Function()? insufficientFunds,
+    TResult? Function(String? paymentIntent)? requiresMoreAction,
+    TResult? Function()? ownerDoesNotHaveAccount,
+    TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
+    TResult? Function(String? failedValue)? paymentServerError,
+  }) {
+    return paymentCaptureFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidCVV,
+    TResult Function(String? failedValue)? invalidCreditDebit,
+    TResult Function()? insufficientFunds,
+    TResult Function(String? paymentIntent)? requiresMoreAction,
+    TResult Function()? ownerDoesNotHaveAccount,
+    TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
+    TResult Function(String? failedValue)? paymentServerError,
+    required TResult orElse(),
+  }) {
+    if (paymentCaptureFailure != null) {
+      return paymentCaptureFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidCVV<T> value) invalidCVV,
+    required TResult Function(InvalidCreditDebit<T> value) invalidCreditDebit,
+    required TResult Function(InsufficientFunds<T> value) insufficientFunds,
+    required TResult Function(RequiresMoreAction<T> value) requiresMoreAction,
+    required TResult Function(OwnerDoesNotHaveAccount<T> value)
+        ownerDoesNotHaveAccount,
+    required TResult Function(CouldNotRetrievePaymentMethod<T> value)
+        couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
+    required TResult Function(_PaymentServerError<T> value) paymentServerError,
+  }) {
+    return paymentCaptureFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidCVV<T> value)? invalidCVV,
+    TResult? Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
+    TResult? Function(InsufficientFunds<T> value)? insufficientFunds,
+    TResult? Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult? Function(OwnerDoesNotHaveAccount<T> value)?
+        ownerDoesNotHaveAccount,
+    TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
+        couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
+    TResult? Function(_PaymentServerError<T> value)? paymentServerError,
+  }) {
+    return paymentCaptureFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidCVV<T> value)? invalidCVV,
+    TResult Function(InvalidCreditDebit<T> value)? invalidCreditDebit,
+    TResult Function(InsufficientFunds<T> value)? insufficientFunds,
+    TResult Function(RequiresMoreAction<T> value)? requiresMoreAction,
+    TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
+    TResult Function(CouldNotRetrievePaymentMethod<T> value)?
+        couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
+    TResult Function(_PaymentServerError<T> value)? paymentServerError,
+    required TResult orElse(),
+  }) {
+    if (paymentCaptureFailure != null) {
+      return paymentCaptureFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _paymentCaptureFailure<T> extends PaymentMethodValueFailure<T> {
+  const factory _paymentCaptureFailure({final PaymentIntent? failure}) =
+      _$paymentCaptureFailureImpl<T>;
+  const _paymentCaptureFailure._() : super._();
+
+  PaymentIntent? get failure;
+  @JsonKey(ignore: true)
+  _$$paymentCaptureFailureImplCopyWith<T, _$paymentCaptureFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -18616,6 +18916,7 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
     required TResult Function(String? paymentIntent) requiresMoreAction,
     required TResult Function() ownerDoesNotHaveAccount,
     required TResult Function() couldNotRetrievePaymentMethod,
+    required TResult Function(PaymentIntent? failure) paymentCaptureFailure,
     required TResult Function(String? failedValue) paymentServerError,
   }) {
     return paymentServerError(failedValue);
@@ -18630,6 +18931,7 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
     TResult? Function(String? paymentIntent)? requiresMoreAction,
     TResult? Function()? ownerDoesNotHaveAccount,
     TResult? Function()? couldNotRetrievePaymentMethod,
+    TResult? Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult? Function(String? failedValue)? paymentServerError,
   }) {
     return paymentServerError?.call(failedValue);
@@ -18644,6 +18946,7 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
     TResult Function(String? paymentIntent)? requiresMoreAction,
     TResult Function()? ownerDoesNotHaveAccount,
     TResult Function()? couldNotRetrievePaymentMethod,
+    TResult Function(PaymentIntent? failure)? paymentCaptureFailure,
     TResult Function(String? failedValue)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18664,6 +18967,8 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
         ownerDoesNotHaveAccount,
     required TResult Function(CouldNotRetrievePaymentMethod<T> value)
         couldNotRetrievePaymentMethod,
+    required TResult Function(_paymentCaptureFailure<T> value)
+        paymentCaptureFailure,
     required TResult Function(_PaymentServerError<T> value) paymentServerError,
   }) {
     return paymentServerError(this);
@@ -18680,6 +18985,7 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
         ownerDoesNotHaveAccount,
     TResult? Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult? Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult? Function(_PaymentServerError<T> value)? paymentServerError,
   }) {
     return paymentServerError?.call(this);
@@ -18695,6 +19001,7 @@ class _$PaymentServerErrorImpl<T> extends _PaymentServerError<T> {
     TResult Function(OwnerDoesNotHaveAccount<T> value)? ownerDoesNotHaveAccount,
     TResult Function(CouldNotRetrievePaymentMethod<T> value)?
         couldNotRetrievePaymentMethod,
+    TResult Function(_paymentCaptureFailure<T> value)? paymentCaptureFailure,
     TResult Function(_PaymentServerError<T> value)? paymentServerError,
     required TResult orElse(),
   }) {
@@ -18721,6 +19028,13 @@ mixin _$PaymentIntent {
   String? get id => throw _privateConstructorUsedError;
   String? get object => throw _privateConstructorUsedError;
   int? get amount => throw _privateConstructorUsedError;
+  int? get amount_taxed => throw _privateConstructorUsedError;
+  int? get seller_fee_amount => throw _privateConstructorUsedError;
+  int? get seller_fee_amount_taxed => throw _privateConstructorUsedError;
+  int? get buyer_fee_amount => throw _privateConstructorUsedError;
+  int? get buyer_fee_amount_taxed => throw _privateConstructorUsedError;
+  int? get created_at => throw _privateConstructorUsedError;
+  String? get client_secret => throw _privateConstructorUsedError;
   String? get currency => throw _privateConstructorUsedError;
   int? get canceled_at => throw _privateConstructorUsedError;
   String? get cancellation_reason => throw _privateConstructorUsedError;
@@ -18728,8 +19042,10 @@ mixin _$PaymentIntent {
   int? get created => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   String? get receipt_url => throw _privateConstructorUsedError;
-  String? get reservationId => throw _privateConstructorUsedError;
-  String? get listingId => throw _privateConstructorUsedError;
+  String? get itemId => throw _privateConstructorUsedError;
+  StripeTaxRateDetails? get stripe_tax_detail =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PaymentIntentCopyWith<PaymentIntent> get copyWith =>
@@ -18746,6 +19062,13 @@ abstract class $PaymentIntentCopyWith<$Res> {
       {String? id,
       String? object,
       int? amount,
+      int? amount_taxed,
+      int? seller_fee_amount,
+      int? seller_fee_amount_taxed,
+      int? buyer_fee_amount,
+      int? buyer_fee_amount_taxed,
+      int? created_at,
+      String? client_secret,
       String? currency,
       int? canceled_at,
       String? cancellation_reason,
@@ -18753,10 +19076,12 @@ abstract class $PaymentIntentCopyWith<$Res> {
       int? created,
       String? status,
       String? receipt_url,
-      String? reservationId,
-      String? listingId});
+      String? itemId,
+      StripeTaxRateDetails? stripe_tax_detail,
+      Map<String, dynamic>? metaData});
 
   $CardItemCopyWith<$Res>? get payment_method;
+  $StripeTaxRateDetailsCopyWith<$Res>? get stripe_tax_detail;
 }
 
 /// @nodoc
@@ -18775,6 +19100,13 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
     Object? id = freezed,
     Object? object = freezed,
     Object? amount = freezed,
+    Object? amount_taxed = freezed,
+    Object? seller_fee_amount = freezed,
+    Object? seller_fee_amount_taxed = freezed,
+    Object? buyer_fee_amount = freezed,
+    Object? buyer_fee_amount_taxed = freezed,
+    Object? created_at = freezed,
+    Object? client_secret = freezed,
     Object? currency = freezed,
     Object? canceled_at = freezed,
     Object? cancellation_reason = freezed,
@@ -18782,8 +19114,9 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
     Object? created = freezed,
     Object? status = freezed,
     Object? receipt_url = freezed,
-    Object? reservationId = freezed,
-    Object? listingId = freezed,
+    Object? itemId = freezed,
+    Object? stripe_tax_detail = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -18798,6 +19131,34 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
+      amount_taxed: freezed == amount_taxed
+          ? _value.amount_taxed
+          : amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount: freezed == seller_fee_amount
+          ? _value.seller_fee_amount
+          : seller_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount_taxed: freezed == seller_fee_amount_taxed
+          ? _value.seller_fee_amount_taxed
+          : seller_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount: freezed == buyer_fee_amount
+          ? _value.buyer_fee_amount
+          : buyer_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount_taxed: freezed == buyer_fee_amount_taxed
+          ? _value.buyer_fee_amount_taxed
+          : buyer_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      client_secret: freezed == client_secret
+          ? _value.client_secret
+          : client_secret // ignore: cast_nullable_to_non_nullable
+              as String?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -18826,14 +19187,18 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
           ? _value.receipt_url
           : receipt_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      reservationId: freezed == reservationId
-          ? _value.reservationId
-          : reservationId // ignore: cast_nullable_to_non_nullable
+      itemId: freezed == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-      listingId: freezed == listingId
-          ? _value.listingId
-          : listingId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      stripe_tax_detail: freezed == stripe_tax_detail
+          ? _value.stripe_tax_detail
+          : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
+              as StripeTaxRateDetails?,
+      metaData: freezed == metaData
+          ? _value.metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -18846,6 +19211,19 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
 
     return $CardItemCopyWith<$Res>(_value.payment_method!, (value) {
       return _then(_value.copyWith(payment_method: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StripeTaxRateDetailsCopyWith<$Res>? get stripe_tax_detail {
+    if (_value.stripe_tax_detail == null) {
+      return null;
+    }
+
+    return $StripeTaxRateDetailsCopyWith<$Res>(_value.stripe_tax_detail!,
+        (value) {
+      return _then(_value.copyWith(stripe_tax_detail: value) as $Val);
     });
   }
 }
@@ -18862,6 +19240,13 @@ abstract class _$$PaymentIntentImplCopyWith<$Res>
       {String? id,
       String? object,
       int? amount,
+      int? amount_taxed,
+      int? seller_fee_amount,
+      int? seller_fee_amount_taxed,
+      int? buyer_fee_amount,
+      int? buyer_fee_amount_taxed,
+      int? created_at,
+      String? client_secret,
       String? currency,
       int? canceled_at,
       String? cancellation_reason,
@@ -18869,11 +19254,14 @@ abstract class _$$PaymentIntentImplCopyWith<$Res>
       int? created,
       String? status,
       String? receipt_url,
-      String? reservationId,
-      String? listingId});
+      String? itemId,
+      StripeTaxRateDetails? stripe_tax_detail,
+      Map<String, dynamic>? metaData});
 
   @override
   $CardItemCopyWith<$Res>? get payment_method;
+  @override
+  $StripeTaxRateDetailsCopyWith<$Res>? get stripe_tax_detail;
 }
 
 /// @nodoc
@@ -18890,6 +19278,13 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? object = freezed,
     Object? amount = freezed,
+    Object? amount_taxed = freezed,
+    Object? seller_fee_amount = freezed,
+    Object? seller_fee_amount_taxed = freezed,
+    Object? buyer_fee_amount = freezed,
+    Object? buyer_fee_amount_taxed = freezed,
+    Object? created_at = freezed,
+    Object? client_secret = freezed,
     Object? currency = freezed,
     Object? canceled_at = freezed,
     Object? cancellation_reason = freezed,
@@ -18897,8 +19292,9 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
     Object? created = freezed,
     Object? status = freezed,
     Object? receipt_url = freezed,
-    Object? reservationId = freezed,
-    Object? listingId = freezed,
+    Object? itemId = freezed,
+    Object? stripe_tax_detail = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_$PaymentIntentImpl(
       id: freezed == id
@@ -18913,6 +19309,34 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
+      amount_taxed: freezed == amount_taxed
+          ? _value.amount_taxed
+          : amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount: freezed == seller_fee_amount
+          ? _value.seller_fee_amount
+          : seller_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount_taxed: freezed == seller_fee_amount_taxed
+          ? _value.seller_fee_amount_taxed
+          : seller_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount: freezed == buyer_fee_amount
+          ? _value.buyer_fee_amount
+          : buyer_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount_taxed: freezed == buyer_fee_amount_taxed
+          ? _value.buyer_fee_amount_taxed
+          : buyer_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      client_secret: freezed == client_secret
+          ? _value.client_secret
+          : client_secret // ignore: cast_nullable_to_non_nullable
+              as String?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -18941,14 +19365,18 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
           ? _value.receipt_url
           : receipt_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      reservationId: freezed == reservationId
-          ? _value.reservationId
-          : reservationId // ignore: cast_nullable_to_non_nullable
+      itemId: freezed == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-      listingId: freezed == listingId
-          ? _value.listingId
-          : listingId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      stripe_tax_detail: freezed == stripe_tax_detail
+          ? _value.stripe_tax_detail
+          : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
+              as StripeTaxRateDetails?,
+      metaData: freezed == metaData
+          ? _value._metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -18960,6 +19388,13 @@ class _$PaymentIntentImpl extends _PaymentIntent {
       {this.id,
       this.object,
       this.amount,
+      this.amount_taxed,
+      this.seller_fee_amount,
+      this.seller_fee_amount_taxed,
+      this.buyer_fee_amount,
+      this.buyer_fee_amount_taxed,
+      this.created_at,
+      this.client_secret,
       this.currency,
       this.canceled_at,
       this.cancellation_reason,
@@ -18967,9 +19402,11 @@ class _$PaymentIntentImpl extends _PaymentIntent {
       this.created,
       this.status,
       this.receipt_url,
-      this.reservationId,
-      this.listingId})
-      : super._();
+      this.itemId,
+      this.stripe_tax_detail,
+      final Map<String, dynamic>? metaData})
+      : _metaData = metaData,
+        super._();
 
   @override
   final String? id;
@@ -18977,6 +19414,20 @@ class _$PaymentIntentImpl extends _PaymentIntent {
   final String? object;
   @override
   final int? amount;
+  @override
+  final int? amount_taxed;
+  @override
+  final int? seller_fee_amount;
+  @override
+  final int? seller_fee_amount_taxed;
+  @override
+  final int? buyer_fee_amount;
+  @override
+  final int? buyer_fee_amount_taxed;
+  @override
+  final int? created_at;
+  @override
+  final String? client_secret;
   @override
   final String? currency;
   @override
@@ -18992,13 +19443,22 @@ class _$PaymentIntentImpl extends _PaymentIntent {
   @override
   final String? receipt_url;
   @override
-  final String? reservationId;
+  final String? itemId;
   @override
-  final String? listingId;
+  final StripeTaxRateDetails? stripe_tax_detail;
+  final Map<String, dynamic>? _metaData;
+  @override
+  Map<String, dynamic>? get metaData {
+    final value = _metaData;
+    if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'PaymentIntent(id: $id, object: $object, amount: $amount, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, receipt_url: $receipt_url, reservationId: $reservationId, listingId: $listingId)';
+    return 'PaymentIntent(id: $id, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, receipt_url: $receipt_url, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, metaData: $metaData)';
   }
 
   @override
@@ -19009,6 +19469,21 @@ class _$PaymentIntentImpl extends _PaymentIntent {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.object, object) || other.object == object) &&
             (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.amount_taxed, amount_taxed) ||
+                other.amount_taxed == amount_taxed) &&
+            (identical(other.seller_fee_amount, seller_fee_amount) ||
+                other.seller_fee_amount == seller_fee_amount) &&
+            (identical(
+                    other.seller_fee_amount_taxed, seller_fee_amount_taxed) ||
+                other.seller_fee_amount_taxed == seller_fee_amount_taxed) &&
+            (identical(other.buyer_fee_amount, buyer_fee_amount) ||
+                other.buyer_fee_amount == buyer_fee_amount) &&
+            (identical(other.buyer_fee_amount_taxed, buyer_fee_amount_taxed) ||
+                other.buyer_fee_amount_taxed == buyer_fee_amount_taxed) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.client_secret, client_secret) ||
+                other.client_secret == client_secret) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.canceled_at, canceled_at) ||
@@ -19021,27 +19496,36 @@ class _$PaymentIntentImpl extends _PaymentIntent {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.receipt_url, receipt_url) ||
                 other.receipt_url == receipt_url) &&
-            (identical(other.reservationId, reservationId) ||
-                other.reservationId == reservationId) &&
-            (identical(other.listingId, listingId) ||
-                other.listingId == listingId));
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.stripe_tax_detail, stripe_tax_detail) ||
+                other.stripe_tax_detail == stripe_tax_detail) &&
+            const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      object,
-      amount,
-      currency,
-      canceled_at,
-      cancellation_reason,
-      payment_method,
-      created,
-      status,
-      receipt_url,
-      reservationId,
-      listingId);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        object,
+        amount,
+        amount_taxed,
+        seller_fee_amount,
+        seller_fee_amount_taxed,
+        buyer_fee_amount,
+        buyer_fee_amount_taxed,
+        created_at,
+        client_secret,
+        currency,
+        canceled_at,
+        cancellation_reason,
+        payment_method,
+        created,
+        status,
+        receipt_url,
+        itemId,
+        stripe_tax_detail,
+        const DeepCollectionEquality().hash(_metaData)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -19055,6 +19539,13 @@ abstract class _PaymentIntent extends PaymentIntent {
       {final String? id,
       final String? object,
       final int? amount,
+      final int? amount_taxed,
+      final int? seller_fee_amount,
+      final int? seller_fee_amount_taxed,
+      final int? buyer_fee_amount,
+      final int? buyer_fee_amount_taxed,
+      final int? created_at,
+      final String? client_secret,
       final String? currency,
       final int? canceled_at,
       final String? cancellation_reason,
@@ -19062,8 +19553,9 @@ abstract class _PaymentIntent extends PaymentIntent {
       final int? created,
       final String? status,
       final String? receipt_url,
-      final String? reservationId,
-      final String? listingId}) = _$PaymentIntentImpl;
+      final String? itemId,
+      final StripeTaxRateDetails? stripe_tax_detail,
+      final Map<String, dynamic>? metaData}) = _$PaymentIntentImpl;
   const _PaymentIntent._() : super._();
 
   @override
@@ -19072,6 +19564,20 @@ abstract class _PaymentIntent extends PaymentIntent {
   String? get object;
   @override
   int? get amount;
+  @override
+  int? get amount_taxed;
+  @override
+  int? get seller_fee_amount;
+  @override
+  int? get seller_fee_amount_taxed;
+  @override
+  int? get buyer_fee_amount;
+  @override
+  int? get buyer_fee_amount_taxed;
+  @override
+  int? get created_at;
+  @override
+  String? get client_secret;
   @override
   String? get currency;
   @override
@@ -19087,9 +19593,11 @@ abstract class _PaymentIntent extends PaymentIntent {
   @override
   String? get receipt_url;
   @override
-  String? get reservationId;
+  String? get itemId;
   @override
-  String? get listingId;
+  StripeTaxRateDetails? get stripe_tax_detail;
+  @override
+  Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
   _$$PaymentIntentImplCopyWith<_$PaymentIntentImpl> get copyWith =>
@@ -19102,9 +19610,16 @@ PaymentIntentDto _$PaymentIntentDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaymentIntentDto {
-  String? get id => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
   String? get object => throw _privateConstructorUsedError;
   int? get amount => throw _privateConstructorUsedError;
+  int? get amount_taxed => throw _privateConstructorUsedError;
+  int? get seller_fee_amount => throw _privateConstructorUsedError;
+  int? get seller_fee_amount_taxed => throw _privateConstructorUsedError;
+  int? get buyer_fee_amount => throw _privateConstructorUsedError;
+  int? get buyer_fee_amount_taxed => throw _privateConstructorUsedError;
+  int? get created_at => throw _privateConstructorUsedError;
+  String? get client_secret => throw _privateConstructorUsedError;
   String? get currency => throw _privateConstructorUsedError;
   int? get canceled_at => throw _privateConstructorUsedError;
   String? get cancellation_reason => throw _privateConstructorUsedError;
@@ -19112,6 +19627,10 @@ mixin _$PaymentIntentDto {
       throw _privateConstructorUsedError;
   int? get created => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
+  String? get itemId => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get stripe_tax_detail =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -19126,15 +19645,25 @@ abstract class $PaymentIntentDtoCopyWith<$Res> {
       _$PaymentIntentDtoCopyWithImpl<$Res, PaymentIntentDto>;
   @useResult
   $Res call(
-      {String? id,
+      {String? uid,
       String? object,
       int? amount,
+      int? amount_taxed,
+      int? seller_fee_amount,
+      int? seller_fee_amount_taxed,
+      int? buyer_fee_amount,
+      int? buyer_fee_amount_taxed,
+      int? created_at,
+      String? client_secret,
       String? currency,
       int? canceled_at,
       String? cancellation_reason,
       Map<String, dynamic>? payment_method,
       int? created,
-      String? status});
+      String? status,
+      String? itemId,
+      Map<String, dynamic>? stripe_tax_detail,
+      Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
@@ -19150,20 +19679,30 @@ class _$PaymentIntentDtoCopyWithImpl<$Res, $Val extends PaymentIntentDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? uid = freezed,
     Object? object = freezed,
     Object? amount = freezed,
+    Object? amount_taxed = freezed,
+    Object? seller_fee_amount = freezed,
+    Object? seller_fee_amount_taxed = freezed,
+    Object? buyer_fee_amount = freezed,
+    Object? buyer_fee_amount_taxed = freezed,
+    Object? created_at = freezed,
+    Object? client_secret = freezed,
     Object? currency = freezed,
     Object? canceled_at = freezed,
     Object? cancellation_reason = freezed,
     Object? payment_method = freezed,
     Object? created = freezed,
     Object? status = freezed,
+    Object? itemId = freezed,
+    Object? stripe_tax_detail = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
               as String?,
       object: freezed == object
           ? _value.object
@@ -19173,6 +19712,34 @@ class _$PaymentIntentDtoCopyWithImpl<$Res, $Val extends PaymentIntentDto>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
+      amount_taxed: freezed == amount_taxed
+          ? _value.amount_taxed
+          : amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount: freezed == seller_fee_amount
+          ? _value.seller_fee_amount
+          : seller_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount_taxed: freezed == seller_fee_amount_taxed
+          ? _value.seller_fee_amount_taxed
+          : seller_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount: freezed == buyer_fee_amount
+          ? _value.buyer_fee_amount
+          : buyer_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount_taxed: freezed == buyer_fee_amount_taxed
+          ? _value.buyer_fee_amount_taxed
+          : buyer_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      client_secret: freezed == client_secret
+          ? _value.client_secret
+          : client_secret // ignore: cast_nullable_to_non_nullable
+              as String?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -19197,6 +19764,18 @@ class _$PaymentIntentDtoCopyWithImpl<$Res, $Val extends PaymentIntentDto>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      itemId: freezed == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripe_tax_detail: freezed == stripe_tax_detail
+          ? _value.stripe_tax_detail
+          : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metaData: freezed == metaData
+          ? _value.metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -19210,15 +19789,25 @@ abstract class _$$PaymentIntentDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
+      {String? uid,
       String? object,
       int? amount,
+      int? amount_taxed,
+      int? seller_fee_amount,
+      int? seller_fee_amount_taxed,
+      int? buyer_fee_amount,
+      int? buyer_fee_amount_taxed,
+      int? created_at,
+      String? client_secret,
       String? currency,
       int? canceled_at,
       String? cancellation_reason,
       Map<String, dynamic>? payment_method,
       int? created,
-      String? status});
+      String? status,
+      String? itemId,
+      Map<String, dynamic>? stripe_tax_detail,
+      Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
@@ -19232,20 +19821,30 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? uid = freezed,
     Object? object = freezed,
     Object? amount = freezed,
+    Object? amount_taxed = freezed,
+    Object? seller_fee_amount = freezed,
+    Object? seller_fee_amount_taxed = freezed,
+    Object? buyer_fee_amount = freezed,
+    Object? buyer_fee_amount_taxed = freezed,
+    Object? created_at = freezed,
+    Object? client_secret = freezed,
     Object? currency = freezed,
     Object? canceled_at = freezed,
     Object? cancellation_reason = freezed,
     Object? payment_method = freezed,
     Object? created = freezed,
     Object? status = freezed,
+    Object? itemId = freezed,
+    Object? stripe_tax_detail = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_$PaymentIntentDtoImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
               as String?,
       object: freezed == object
           ? _value.object
@@ -19255,6 +19854,34 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
+      amount_taxed: freezed == amount_taxed
+          ? _value.amount_taxed
+          : amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount: freezed == seller_fee_amount
+          ? _value.seller_fee_amount
+          : seller_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      seller_fee_amount_taxed: freezed == seller_fee_amount_taxed
+          ? _value.seller_fee_amount_taxed
+          : seller_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount: freezed == buyer_fee_amount
+          ? _value.buyer_fee_amount
+          : buyer_fee_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      buyer_fee_amount_taxed: freezed == buyer_fee_amount_taxed
+          ? _value.buyer_fee_amount_taxed
+          : buyer_fee_amount_taxed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      client_secret: freezed == client_secret
+          ? _value.client_secret
+          : client_secret // ignore: cast_nullable_to_non_nullable
+              as String?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -19279,6 +19906,18 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      itemId: freezed == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripe_tax_detail: freezed == stripe_tax_detail
+          ? _value._stripe_tax_detail
+          : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metaData: freezed == metaData
+          ? _value._metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -19287,27 +19926,53 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
   const _$PaymentIntentDtoImpl(
-      {this.id,
+      {this.uid,
       this.object,
       this.amount,
+      this.amount_taxed,
+      this.seller_fee_amount,
+      this.seller_fee_amount_taxed,
+      this.buyer_fee_amount,
+      this.buyer_fee_amount_taxed,
+      this.created_at,
+      this.client_secret,
       this.currency,
       this.canceled_at,
       this.cancellation_reason,
       final Map<String, dynamic>? payment_method,
       this.created,
-      this.status})
+      this.status,
+      this.itemId,
+      final Map<String, dynamic>? stripe_tax_detail,
+      final Map<String, dynamic>? metaData})
       : _payment_method = payment_method,
+        _stripe_tax_detail = stripe_tax_detail,
+        _metaData = metaData,
         super._();
 
   factory _$PaymentIntentDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$PaymentIntentDtoImplFromJson(json);
 
   @override
-  final String? id;
+  final String? uid;
   @override
   final String? object;
   @override
   final int? amount;
+  @override
+  final int? amount_taxed;
+  @override
+  final int? seller_fee_amount;
+  @override
+  final int? seller_fee_amount_taxed;
+  @override
+  final int? buyer_fee_amount;
+  @override
+  final int? buyer_fee_amount_taxed;
+  @override
+  final int? created_at;
+  @override
+  final String? client_secret;
   @override
   final String? currency;
   @override
@@ -19328,10 +19993,32 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
   final int? created;
   @override
   final String? status;
+  @override
+  final String? itemId;
+  final Map<String, dynamic>? _stripe_tax_detail;
+  @override
+  Map<String, dynamic>? get stripe_tax_detail {
+    final value = _stripe_tax_detail;
+    if (value == null) return null;
+    if (_stripe_tax_detail is EqualUnmodifiableMapView)
+      return _stripe_tax_detail;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _metaData;
+  @override
+  Map<String, dynamic>? get metaData {
+    final value = _metaData;
+    if (value == null) return null;
+    if (_metaData is EqualUnmodifiableMapView) return _metaData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'PaymentIntentDto(id: $id, object: $object, amount: $amount, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status)';
+    return 'PaymentIntentDto(uid: $uid, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, metaData: $metaData)';
   }
 
   @override
@@ -19339,9 +20026,24 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentIntentDtoImpl &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.object, object) || other.object == object) &&
             (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.amount_taxed, amount_taxed) ||
+                other.amount_taxed == amount_taxed) &&
+            (identical(other.seller_fee_amount, seller_fee_amount) ||
+                other.seller_fee_amount == seller_fee_amount) &&
+            (identical(
+                    other.seller_fee_amount_taxed, seller_fee_amount_taxed) ||
+                other.seller_fee_amount_taxed == seller_fee_amount_taxed) &&
+            (identical(other.buyer_fee_amount, buyer_fee_amount) ||
+                other.buyer_fee_amount == buyer_fee_amount) &&
+            (identical(other.buyer_fee_amount_taxed, buyer_fee_amount_taxed) ||
+                other.buyer_fee_amount_taxed == buyer_fee_amount_taxed) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.client_secret, client_secret) ||
+                other.client_secret == client_secret) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.canceled_at, canceled_at) ||
@@ -19351,22 +20053,37 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
             const DeepCollectionEquality()
                 .equals(other._payment_method, _payment_method) &&
             (identical(other.created, created) || other.created == created) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            const DeepCollectionEquality()
+                .equals(other._stripe_tax_detail, _stripe_tax_detail) &&
+            const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      object,
-      amount,
-      currency,
-      canceled_at,
-      cancellation_reason,
-      const DeepCollectionEquality().hash(_payment_method),
-      created,
-      status);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        uid,
+        object,
+        amount,
+        amount_taxed,
+        seller_fee_amount,
+        seller_fee_amount_taxed,
+        buyer_fee_amount,
+        buyer_fee_amount_taxed,
+        created_at,
+        client_secret,
+        currency,
+        canceled_at,
+        cancellation_reason,
+        const DeepCollectionEquality().hash(_payment_method),
+        created,
+        status,
+        itemId,
+        const DeepCollectionEquality().hash(_stripe_tax_detail),
+        const DeepCollectionEquality().hash(_metaData)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -19385,26 +20102,50 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
 
 abstract class _PaymentIntentDto extends PaymentIntentDto {
   const factory _PaymentIntentDto(
-      {final String? id,
+      {final String? uid,
       final String? object,
       final int? amount,
+      final int? amount_taxed,
+      final int? seller_fee_amount,
+      final int? seller_fee_amount_taxed,
+      final int? buyer_fee_amount,
+      final int? buyer_fee_amount_taxed,
+      final int? created_at,
+      final String? client_secret,
       final String? currency,
       final int? canceled_at,
       final String? cancellation_reason,
       final Map<String, dynamic>? payment_method,
       final int? created,
-      final String? status}) = _$PaymentIntentDtoImpl;
+      final String? status,
+      final String? itemId,
+      final Map<String, dynamic>? stripe_tax_detail,
+      final Map<String, dynamic>? metaData}) = _$PaymentIntentDtoImpl;
   const _PaymentIntentDto._() : super._();
 
   factory _PaymentIntentDto.fromJson(Map<String, dynamic> json) =
       _$PaymentIntentDtoImpl.fromJson;
 
   @override
-  String? get id;
+  String? get uid;
   @override
   String? get object;
   @override
   int? get amount;
+  @override
+  int? get amount_taxed;
+  @override
+  int? get seller_fee_amount;
+  @override
+  int? get seller_fee_amount_taxed;
+  @override
+  int? get buyer_fee_amount;
+  @override
+  int? get buyer_fee_amount_taxed;
+  @override
+  int? get created_at;
+  @override
+  String? get client_secret;
   @override
   String? get currency;
   @override
@@ -19417,6 +20158,12 @@ abstract class _PaymentIntentDto extends PaymentIntentDto {
   int? get created;
   @override
   String? get status;
+  @override
+  String? get itemId;
+  @override
+  Map<String, dynamic>? get stripe_tax_detail;
+  @override
+  Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
   _$$PaymentIntentDtoImplCopyWith<_$PaymentIntentDtoImpl> get copyWith =>
@@ -19848,6 +20595,707 @@ abstract class _PayoutModel extends PayoutModel {
   @JsonKey(ignore: true)
   _$$PayoutModelImplCopyWith<_$PayoutModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$StripeRefundModel {
+  String? get id => throw _privateConstructorUsedError;
+  String? get object => throw _privateConstructorUsedError;
+  int? get amount => throw _privateConstructorUsedError;
+  String? get balance_transaction => throw _privateConstructorUsedError;
+  String? get charge => throw _privateConstructorUsedError;
+  int? get created => throw _privateConstructorUsedError;
+  String? get currency => throw _privateConstructorUsedError;
+  String? get paymentIntent => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
+  String? get receipt_number => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $StripeRefundModelCopyWith<StripeRefundModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StripeRefundModelCopyWith<$Res> {
+  factory $StripeRefundModelCopyWith(
+          StripeRefundModel value, $Res Function(StripeRefundModel) then) =
+      _$StripeRefundModelCopyWithImpl<$Res, StripeRefundModel>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? object,
+      int? amount,
+      String? balance_transaction,
+      String? charge,
+      int? created,
+      String? currency,
+      String? paymentIntent,
+      String? reason,
+      String? receipt_number,
+      String? status});
+}
+
+/// @nodoc
+class _$StripeRefundModelCopyWithImpl<$Res, $Val extends StripeRefundModel>
+    implements $StripeRefundModelCopyWith<$Res> {
+  _$StripeRefundModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? object = freezed,
+    Object? amount = freezed,
+    Object? balance_transaction = freezed,
+    Object? charge = freezed,
+    Object? created = freezed,
+    Object? currency = freezed,
+    Object? paymentIntent = freezed,
+    Object? reason = freezed,
+    Object? receipt_number = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      object: freezed == object
+          ? _value.object
+          : object // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      balance_transaction: freezed == balance_transaction
+          ? _value.balance_transaction
+          : balance_transaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      charge: freezed == charge
+          ? _value.charge
+          : charge // ignore: cast_nullable_to_non_nullable
+              as String?,
+      created: freezed == created
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as int?,
+      currency: freezed == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentIntent: freezed == paymentIntent
+          ? _value.paymentIntent
+          : paymentIntent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipt_number: freezed == receipt_number
+          ? _value.receipt_number
+          : receipt_number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StripeRefundModelImplCopyWith<$Res>
+    implements $StripeRefundModelCopyWith<$Res> {
+  factory _$$StripeRefundModelImplCopyWith(_$StripeRefundModelImpl value,
+          $Res Function(_$StripeRefundModelImpl) then) =
+      __$$StripeRefundModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? object,
+      int? amount,
+      String? balance_transaction,
+      String? charge,
+      int? created,
+      String? currency,
+      String? paymentIntent,
+      String? reason,
+      String? receipt_number,
+      String? status});
+}
+
+/// @nodoc
+class __$$StripeRefundModelImplCopyWithImpl<$Res>
+    extends _$StripeRefundModelCopyWithImpl<$Res, _$StripeRefundModelImpl>
+    implements _$$StripeRefundModelImplCopyWith<$Res> {
+  __$$StripeRefundModelImplCopyWithImpl(_$StripeRefundModelImpl _value,
+      $Res Function(_$StripeRefundModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? object = freezed,
+    Object? amount = freezed,
+    Object? balance_transaction = freezed,
+    Object? charge = freezed,
+    Object? created = freezed,
+    Object? currency = freezed,
+    Object? paymentIntent = freezed,
+    Object? reason = freezed,
+    Object? receipt_number = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_$StripeRefundModelImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      object: freezed == object
+          ? _value.object
+          : object // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      balance_transaction: freezed == balance_transaction
+          ? _value.balance_transaction
+          : balance_transaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      charge: freezed == charge
+          ? _value.charge
+          : charge // ignore: cast_nullable_to_non_nullable
+              as String?,
+      created: freezed == created
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as int?,
+      currency: freezed == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentIntent: freezed == paymentIntent
+          ? _value.paymentIntent
+          : paymentIntent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipt_number: freezed == receipt_number
+          ? _value.receipt_number
+          : receipt_number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StripeRefundModelImpl extends _StripeRefundModel {
+  const _$StripeRefundModelImpl(
+      {this.id,
+      this.object,
+      this.amount,
+      this.balance_transaction,
+      this.charge,
+      this.created,
+      this.currency,
+      this.paymentIntent,
+      this.reason,
+      this.receipt_number,
+      this.status})
+      : super._();
+
+  @override
+  final String? id;
+  @override
+  final String? object;
+  @override
+  final int? amount;
+  @override
+  final String? balance_transaction;
+  @override
+  final String? charge;
+  @override
+  final int? created;
+  @override
+  final String? currency;
+  @override
+  final String? paymentIntent;
+  @override
+  final String? reason;
+  @override
+  final String? receipt_number;
+  @override
+  final String? status;
+
+  @override
+  String toString() {
+    return 'StripeRefundModel(id: $id, object: $object, amount: $amount, balance_transaction: $balance_transaction, charge: $charge, created: $created, currency: $currency, paymentIntent: $paymentIntent, reason: $reason, receipt_number: $receipt_number, status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StripeRefundModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.object, object) || other.object == object) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.balance_transaction, balance_transaction) ||
+                other.balance_transaction == balance_transaction) &&
+            (identical(other.charge, charge) || other.charge == charge) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.paymentIntent, paymentIntent) ||
+                other.paymentIntent == paymentIntent) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.receipt_number, receipt_number) ||
+                other.receipt_number == receipt_number) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      object,
+      amount,
+      balance_transaction,
+      charge,
+      created,
+      currency,
+      paymentIntent,
+      reason,
+      receipt_number,
+      status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StripeRefundModelImplCopyWith<_$StripeRefundModelImpl> get copyWith =>
+      __$$StripeRefundModelImplCopyWithImpl<_$StripeRefundModelImpl>(
+          this, _$identity);
+}
+
+abstract class _StripeRefundModel extends StripeRefundModel {
+  const factory _StripeRefundModel(
+      {final String? id,
+      final String? object,
+      final int? amount,
+      final String? balance_transaction,
+      final String? charge,
+      final int? created,
+      final String? currency,
+      final String? paymentIntent,
+      final String? reason,
+      final String? receipt_number,
+      final String? status}) = _$StripeRefundModelImpl;
+  const _StripeRefundModel._() : super._();
+
+  @override
+  String? get id;
+  @override
+  String? get object;
+  @override
+  int? get amount;
+  @override
+  String? get balance_transaction;
+  @override
+  String? get charge;
+  @override
+  int? get created;
+  @override
+  String? get currency;
+  @override
+  String? get paymentIntent;
+  @override
+  String? get reason;
+  @override
+  String? get receipt_number;
+  @override
+  String? get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$StripeRefundModelImplCopyWith<_$StripeRefundModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StripeRefundModelDto _$StripeRefundModelDtoFromJson(Map<String, dynamic> json) {
+  return _StripeRefundModelDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StripeRefundModelDto {
+  String? get uid => throw _privateConstructorUsedError;
+  String? get object => throw _privateConstructorUsedError;
+  int? get amount => throw _privateConstructorUsedError;
+  String? get balance_transaction => throw _privateConstructorUsedError;
+  String? get charge => throw _privateConstructorUsedError;
+  int? get created => throw _privateConstructorUsedError;
+  String? get currency => throw _privateConstructorUsedError;
+  String? get paymentIntent => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
+  String? get receipt_number => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StripeRefundModelDtoCopyWith<StripeRefundModelDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StripeRefundModelDtoCopyWith<$Res> {
+  factory $StripeRefundModelDtoCopyWith(StripeRefundModelDto value,
+          $Res Function(StripeRefundModelDto) then) =
+      _$StripeRefundModelDtoCopyWithImpl<$Res, StripeRefundModelDto>;
+  @useResult
+  $Res call(
+      {String? uid,
+      String? object,
+      int? amount,
+      String? balance_transaction,
+      String? charge,
+      int? created,
+      String? currency,
+      String? paymentIntent,
+      String? reason,
+      String? receipt_number,
+      String? status});
+}
+
+/// @nodoc
+class _$StripeRefundModelDtoCopyWithImpl<$Res,
+        $Val extends StripeRefundModelDto>
+    implements $StripeRefundModelDtoCopyWith<$Res> {
+  _$StripeRefundModelDtoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = freezed,
+    Object? object = freezed,
+    Object? amount = freezed,
+    Object? balance_transaction = freezed,
+    Object? charge = freezed,
+    Object? created = freezed,
+    Object? currency = freezed,
+    Object? paymentIntent = freezed,
+    Object? reason = freezed,
+    Object? receipt_number = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_value.copyWith(
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      object: freezed == object
+          ? _value.object
+          : object // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      balance_transaction: freezed == balance_transaction
+          ? _value.balance_transaction
+          : balance_transaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      charge: freezed == charge
+          ? _value.charge
+          : charge // ignore: cast_nullable_to_non_nullable
+              as String?,
+      created: freezed == created
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as int?,
+      currency: freezed == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentIntent: freezed == paymentIntent
+          ? _value.paymentIntent
+          : paymentIntent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipt_number: freezed == receipt_number
+          ? _value.receipt_number
+          : receipt_number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StripeRefundModelDtoImplCopyWith<$Res>
+    implements $StripeRefundModelDtoCopyWith<$Res> {
+  factory _$$StripeRefundModelDtoImplCopyWith(_$StripeRefundModelDtoImpl value,
+          $Res Function(_$StripeRefundModelDtoImpl) then) =
+      __$$StripeRefundModelDtoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? uid,
+      String? object,
+      int? amount,
+      String? balance_transaction,
+      String? charge,
+      int? created,
+      String? currency,
+      String? paymentIntent,
+      String? reason,
+      String? receipt_number,
+      String? status});
+}
+
+/// @nodoc
+class __$$StripeRefundModelDtoImplCopyWithImpl<$Res>
+    extends _$StripeRefundModelDtoCopyWithImpl<$Res, _$StripeRefundModelDtoImpl>
+    implements _$$StripeRefundModelDtoImplCopyWith<$Res> {
+  __$$StripeRefundModelDtoImplCopyWithImpl(_$StripeRefundModelDtoImpl _value,
+      $Res Function(_$StripeRefundModelDtoImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = freezed,
+    Object? object = freezed,
+    Object? amount = freezed,
+    Object? balance_transaction = freezed,
+    Object? charge = freezed,
+    Object? created = freezed,
+    Object? currency = freezed,
+    Object? paymentIntent = freezed,
+    Object? reason = freezed,
+    Object? receipt_number = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_$StripeRefundModelDtoImpl(
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      object: freezed == object
+          ? _value.object
+          : object // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      balance_transaction: freezed == balance_transaction
+          ? _value.balance_transaction
+          : balance_transaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      charge: freezed == charge
+          ? _value.charge
+          : charge // ignore: cast_nullable_to_non_nullable
+              as String?,
+      created: freezed == created
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as int?,
+      currency: freezed == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentIntent: freezed == paymentIntent
+          ? _value.paymentIntent
+          : paymentIntent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipt_number: freezed == receipt_number
+          ? _value.receipt_number
+          : receipt_number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StripeRefundModelDtoImpl extends _StripeRefundModelDto {
+  const _$StripeRefundModelDtoImpl(
+      {this.uid,
+      this.object,
+      this.amount,
+      this.balance_transaction,
+      this.charge,
+      this.created,
+      this.currency,
+      this.paymentIntent,
+      this.reason,
+      this.receipt_number,
+      this.status})
+      : super._();
+
+  factory _$StripeRefundModelDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StripeRefundModelDtoImplFromJson(json);
+
+  @override
+  final String? uid;
+  @override
+  final String? object;
+  @override
+  final int? amount;
+  @override
+  final String? balance_transaction;
+  @override
+  final String? charge;
+  @override
+  final int? created;
+  @override
+  final String? currency;
+  @override
+  final String? paymentIntent;
+  @override
+  final String? reason;
+  @override
+  final String? receipt_number;
+  @override
+  final String? status;
+
+  @override
+  String toString() {
+    return 'StripeRefundModelDto(uid: $uid, object: $object, amount: $amount, balance_transaction: $balance_transaction, charge: $charge, created: $created, currency: $currency, paymentIntent: $paymentIntent, reason: $reason, receipt_number: $receipt_number, status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StripeRefundModelDtoImpl &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.object, object) || other.object == object) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.balance_transaction, balance_transaction) ||
+                other.balance_transaction == balance_transaction) &&
+            (identical(other.charge, charge) || other.charge == charge) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.paymentIntent, paymentIntent) ||
+                other.paymentIntent == paymentIntent) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.receipt_number, receipt_number) ||
+                other.receipt_number == receipt_number) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      uid,
+      object,
+      amount,
+      balance_transaction,
+      charge,
+      created,
+      currency,
+      paymentIntent,
+      reason,
+      receipt_number,
+      status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StripeRefundModelDtoImplCopyWith<_$StripeRefundModelDtoImpl>
+      get copyWith =>
+          __$$StripeRefundModelDtoImplCopyWithImpl<_$StripeRefundModelDtoImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StripeRefundModelDtoImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StripeRefundModelDto extends StripeRefundModelDto {
+  const factory _StripeRefundModelDto(
+      {final String? uid,
+      final String? object,
+      final int? amount,
+      final String? balance_transaction,
+      final String? charge,
+      final int? created,
+      final String? currency,
+      final String? paymentIntent,
+      final String? reason,
+      final String? receipt_number,
+      final String? status}) = _$StripeRefundModelDtoImpl;
+  const _StripeRefundModelDto._() : super._();
+
+  factory _StripeRefundModelDto.fromJson(Map<String, dynamic> json) =
+      _$StripeRefundModelDtoImpl.fromJson;
+
+  @override
+  String? get uid;
+  @override
+  String? get object;
+  @override
+  int? get amount;
+  @override
+  String? get balance_transaction;
+  @override
+  String? get charge;
+  @override
+  int? get created;
+  @override
+  String? get currency;
+  @override
+  String? get paymentIntent;
+  @override
+  String? get reason;
+  @override
+  String? get receipt_number;
+  @override
+  String? get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$StripeRefundModelDtoImplCopyWith<_$StripeRefundModelDtoImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -24095,6 +25543,11 @@ mixin _$EventMerchantVendorProfile {
       throw _privateConstructorUsedError;
   int get createdAt => throw _privateConstructorUsedError;
   ImageUpload? get uriImage => throw _privateConstructorUsedError;
+  String? get stripeBusinessID => throw _privateConstructorUsedError;
+  String? get stripeHSTRegistrationNumber => throw _privateConstructorUsedError;
+  StripeBusinessAddress? get stripeBusinessAddress =>
+      throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
   String? get instagramLink => throw _privateConstructorUsedError;
   String? get websiteLink => throw _privateConstructorUsedError;
   List<MerchantVendorTypes>? get type => throw _privateConstructorUsedError;
@@ -24120,11 +25573,17 @@ abstract class $EventMerchantVendorProfileCopyWith<$Res> {
       BackgroundInfoDescription backgroundInfo,
       int createdAt,
       ImageUpload? uriImage,
+      String? stripeBusinessID,
+      String? stripeHSTRegistrationNumber,
+      StripeBusinessAddress? stripeBusinessAddress,
+      String? phoneNumber,
       String? instagramLink,
       String? websiteLink,
       List<MerchantVendorTypes>? type,
       bool? isLookingForWork,
       bool? isPrivate});
+
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress;
 }
 
 /// @nodoc
@@ -24147,6 +25606,10 @@ class _$EventMerchantVendorProfileCopyWithImpl<$Res,
     Object? backgroundInfo = null,
     Object? createdAt = null,
     Object? uriImage = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
+    Object? stripeBusinessAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? instagramLink = freezed,
     Object? websiteLink = freezed,
     Object? type = freezed,
@@ -24178,6 +25641,22 @@ class _$EventMerchantVendorProfileCopyWithImpl<$Res,
           ? _value.uriImage
           : uriImage // ignore: cast_nullable_to_non_nullable
               as ImageUpload?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value.stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as StripeBusinessAddress?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
       instagramLink: freezed == instagramLink
           ? _value.instagramLink
           : instagramLink // ignore: cast_nullable_to_non_nullable
@@ -24200,6 +25679,19 @@ class _$EventMerchantVendorProfileCopyWithImpl<$Res,
               as bool?,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress {
+    if (_value.stripeBusinessAddress == null) {
+      return null;
+    }
+
+    return $StripeBusinessAddressCopyWith<$Res>(_value.stripeBusinessAddress!,
+        (value) {
+      return _then(_value.copyWith(stripeBusinessAddress: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -24218,11 +25710,18 @@ abstract class _$$EventMerchantVendorProfileImplCopyWith<$Res>
       BackgroundInfoDescription backgroundInfo,
       int createdAt,
       ImageUpload? uriImage,
+      String? stripeBusinessID,
+      String? stripeHSTRegistrationNumber,
+      StripeBusinessAddress? stripeBusinessAddress,
+      String? phoneNumber,
       String? instagramLink,
       String? websiteLink,
       List<MerchantVendorTypes>? type,
       bool? isLookingForWork,
       bool? isPrivate});
+
+  @override
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress;
 }
 
 /// @nodoc
@@ -24244,6 +25743,10 @@ class __$$EventMerchantVendorProfileImplCopyWithImpl<$Res>
     Object? backgroundInfo = null,
     Object? createdAt = null,
     Object? uriImage = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
+    Object? stripeBusinessAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? instagramLink = freezed,
     Object? websiteLink = freezed,
     Object? type = freezed,
@@ -24275,6 +25778,22 @@ class __$$EventMerchantVendorProfileImplCopyWithImpl<$Res>
           ? _value.uriImage
           : uriImage // ignore: cast_nullable_to_non_nullable
               as ImageUpload?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value.stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as StripeBusinessAddress?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
       instagramLink: freezed == instagramLink
           ? _value.instagramLink
           : instagramLink // ignore: cast_nullable_to_non_nullable
@@ -24309,6 +25828,10 @@ class _$EventMerchantVendorProfileImpl extends _EventMerchantVendorProfile {
       required this.backgroundInfo,
       required this.createdAt,
       this.uriImage,
+      this.stripeBusinessID,
+      this.stripeHSTRegistrationNumber,
+      this.stripeBusinessAddress,
+      this.phoneNumber,
       this.instagramLink,
       this.websiteLink,
       final List<MerchantVendorTypes>? type,
@@ -24330,6 +25853,14 @@ class _$EventMerchantVendorProfileImpl extends _EventMerchantVendorProfile {
   @override
   final ImageUpload? uriImage;
   @override
+  final String? stripeBusinessID;
+  @override
+  final String? stripeHSTRegistrationNumber;
+  @override
+  final StripeBusinessAddress? stripeBusinessAddress;
+  @override
+  final String? phoneNumber;
+  @override
   final String? instagramLink;
   @override
   final String? websiteLink;
@@ -24350,7 +25881,7 @@ class _$EventMerchantVendorProfileImpl extends _EventMerchantVendorProfile {
 
   @override
   String toString() {
-    return 'EventMerchantVendorProfile(profileId: $profileId, profileOwner: $profileOwner, brandName: $brandName, backgroundInfo: $backgroundInfo, createdAt: $createdAt, uriImage: $uriImage, instagramLink: $instagramLink, websiteLink: $websiteLink, type: $type, isLookingForWork: $isLookingForWork, isPrivate: $isPrivate)';
+    return 'EventMerchantVendorProfile(profileId: $profileId, profileOwner: $profileOwner, brandName: $brandName, backgroundInfo: $backgroundInfo, createdAt: $createdAt, uriImage: $uriImage, stripeBusinessID: $stripeBusinessID, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, stripeBusinessAddress: $stripeBusinessAddress, phoneNumber: $phoneNumber, instagramLink: $instagramLink, websiteLink: $websiteLink, type: $type, isLookingForWork: $isLookingForWork, isPrivate: $isPrivate)';
   }
 
   @override
@@ -24370,6 +25901,16 @@ class _$EventMerchantVendorProfileImpl extends _EventMerchantVendorProfile {
                 other.createdAt == createdAt) &&
             (identical(other.uriImage, uriImage) ||
                 other.uriImage == uriImage) &&
+            (identical(other.stripeBusinessID, stripeBusinessID) ||
+                other.stripeBusinessID == stripeBusinessID) &&
+            (identical(other.stripeHSTRegistrationNumber,
+                    stripeHSTRegistrationNumber) ||
+                other.stripeHSTRegistrationNumber ==
+                    stripeHSTRegistrationNumber) &&
+            (identical(other.stripeBusinessAddress, stripeBusinessAddress) ||
+                other.stripeBusinessAddress == stripeBusinessAddress) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
             (identical(other.instagramLink, instagramLink) ||
                 other.instagramLink == instagramLink) &&
             (identical(other.websiteLink, websiteLink) ||
@@ -24390,6 +25931,10 @@ class _$EventMerchantVendorProfileImpl extends _EventMerchantVendorProfile {
       backgroundInfo,
       createdAt,
       uriImage,
+      stripeBusinessID,
+      stripeHSTRegistrationNumber,
+      stripeBusinessAddress,
+      phoneNumber,
       instagramLink,
       websiteLink,
       const DeepCollectionEquality().hash(_type),
@@ -24412,6 +25957,10 @@ abstract class _EventMerchantVendorProfile extends EventMerchantVendorProfile {
       required final BackgroundInfoDescription backgroundInfo,
       required final int createdAt,
       final ImageUpload? uriImage,
+      final String? stripeBusinessID,
+      final String? stripeHSTRegistrationNumber,
+      final StripeBusinessAddress? stripeBusinessAddress,
+      final String? phoneNumber,
       final String? instagramLink,
       final String? websiteLink,
       final List<MerchantVendorTypes>? type,
@@ -24431,6 +25980,14 @@ abstract class _EventMerchantVendorProfile extends EventMerchantVendorProfile {
   int get createdAt;
   @override
   ImageUpload? get uriImage;
+  @override
+  String? get stripeBusinessID;
+  @override
+  String? get stripeHSTRegistrationNumber;
+  @override
+  StripeBusinessAddress? get stripeBusinessAddress;
+  @override
+  String? get phoneNumber;
   @override
   String? get instagramLink;
   @override
@@ -24462,6 +26019,8 @@ mixin _$EventMerchantVendorProfileDto {
   String? get uriImage => throw _privateConstructorUsedError;
   String? get instagramLink => throw _privateConstructorUsedError;
   String? get websiteLink => throw _privateConstructorUsedError;
+  String? get stripeBusinessID => throw _privateConstructorUsedError;
+  String? get stripeHSTRegistrationNumber => throw _privateConstructorUsedError;
   List<String>? get type => throw _privateConstructorUsedError;
   bool? get isLookingForWork => throw _privateConstructorUsedError;
   bool? get isPrivate => throw _privateConstructorUsedError;
@@ -24491,6 +26050,8 @@ abstract class $EventMerchantVendorProfileDtoCopyWith<$Res> {
       String? uriImage,
       String? instagramLink,
       String? websiteLink,
+      String? stripeBusinessID,
+      String? stripeHSTRegistrationNumber,
       List<String>? type,
       bool? isLookingForWork,
       bool? isPrivate,
@@ -24519,6 +26080,8 @@ class _$EventMerchantVendorProfileDtoCopyWithImpl<$Res,
     Object? uriImage = freezed,
     Object? instagramLink = freezed,
     Object? websiteLink = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
     Object? type = freezed,
     Object? isLookingForWork = freezed,
     Object? isPrivate = freezed,
@@ -24556,6 +26119,14 @@ class _$EventMerchantVendorProfileDtoCopyWithImpl<$Res,
       websiteLink: freezed == websiteLink
           ? _value.websiteLink
           : websiteLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
           ? _value.type
@@ -24595,6 +26166,8 @@ abstract class _$$EventMerchantVendorProfileDtoImplCopyWith<$Res>
       String? uriImage,
       String? instagramLink,
       String? websiteLink,
+      String? stripeBusinessID,
+      String? stripeHSTRegistrationNumber,
       List<String>? type,
       bool? isLookingForWork,
       bool? isPrivate,
@@ -24622,6 +26195,8 @@ class __$$EventMerchantVendorProfileDtoImplCopyWithImpl<$Res>
     Object? uriImage = freezed,
     Object? instagramLink = freezed,
     Object? websiteLink = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
     Object? type = freezed,
     Object? isLookingForWork = freezed,
     Object? isPrivate = freezed,
@@ -24660,6 +26235,14 @@ class __$$EventMerchantVendorProfileDtoImplCopyWithImpl<$Res>
           ? _value.websiteLink
           : websiteLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: freezed == type
           ? _value._type
           : type // ignore: cast_nullable_to_non_nullable
@@ -24693,6 +26276,8 @@ class _$EventMerchantVendorProfileDtoImpl
       this.uriImage,
       this.instagramLink,
       this.websiteLink,
+      this.stripeBusinessID,
+      this.stripeHSTRegistrationNumber,
       final List<String>? type,
       this.isLookingForWork,
       this.isPrivate,
@@ -24720,6 +26305,10 @@ class _$EventMerchantVendorProfileDtoImpl
   final String? instagramLink;
   @override
   final String? websiteLink;
+  @override
+  final String? stripeBusinessID;
+  @override
+  final String? stripeHSTRegistrationNumber;
   final List<String>? _type;
   @override
   List<String>? get type {
@@ -24740,7 +26329,7 @@ class _$EventMerchantVendorProfileDtoImpl
 
   @override
   String toString() {
-    return 'EventMerchantVendorProfileDto(profileId: $profileId, profileOwner: $profileOwner, brandName: $brandName, backgroundInfo: $backgroundInfo, createdAt: $createdAt, uriImage: $uriImage, instagramLink: $instagramLink, websiteLink: $websiteLink, type: $type, isLookingForWork: $isLookingForWork, isPrivate: $isPrivate, createdAtSTC: $createdAtSTC)';
+    return 'EventMerchantVendorProfileDto(profileId: $profileId, profileOwner: $profileOwner, brandName: $brandName, backgroundInfo: $backgroundInfo, createdAt: $createdAt, uriImage: $uriImage, instagramLink: $instagramLink, websiteLink: $websiteLink, stripeBusinessID: $stripeBusinessID, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, type: $type, isLookingForWork: $isLookingForWork, isPrivate: $isPrivate, createdAtSTC: $createdAtSTC)';
   }
 
   @override
@@ -24764,6 +26353,12 @@ class _$EventMerchantVendorProfileDtoImpl
                 other.instagramLink == instagramLink) &&
             (identical(other.websiteLink, websiteLink) ||
                 other.websiteLink == websiteLink) &&
+            (identical(other.stripeBusinessID, stripeBusinessID) ||
+                other.stripeBusinessID == stripeBusinessID) &&
+            (identical(other.stripeHSTRegistrationNumber,
+                    stripeHSTRegistrationNumber) ||
+                other.stripeHSTRegistrationNumber ==
+                    stripeHSTRegistrationNumber) &&
             const DeepCollectionEquality().equals(other._type, _type) &&
             (identical(other.isLookingForWork, isLookingForWork) ||
                 other.isLookingForWork == isLookingForWork) &&
@@ -24785,6 +26380,8 @@ class _$EventMerchantVendorProfileDtoImpl
       uriImage,
       instagramLink,
       websiteLink,
+      stripeBusinessID,
+      stripeHSTRegistrationNumber,
       const DeepCollectionEquality().hash(_type),
       isLookingForWork,
       isPrivate,
@@ -24817,6 +26414,8 @@ abstract class _EventMerchantVendorProfileDto
           final String? uriImage,
           final String? instagramLink,
           final String? websiteLink,
+          final String? stripeBusinessID,
+          final String? stripeHSTRegistrationNumber,
           final List<String>? type,
           final bool? isLookingForWork,
           final bool? isPrivate,
@@ -24843,6 +26442,10 @@ abstract class _EventMerchantVendorProfileDto
   String? get instagramLink;
   @override
   String? get websiteLink;
+  @override
+  String? get stripeBusinessID;
+  @override
+  String? get stripeHSTRegistrationNumber;
   @override
   List<String>? get type;
   @override
@@ -35033,10 +36636,6 @@ EventActivityRulesRequirementDto _$EventActivityRulesRequirementDtoFromJson(
 /// @nodoc
 mixin _$EventActivityRulesRequirementDto {
   bool get isMerchantSupported => throw _privateConstructorUsedError;
-  bool get isMerchantInviteOnly => throw _privateConstructorUsedError;
-  int? get merchantFee => throw _privateConstructorUsedError;
-  int? get merchantLimit => throw _privateConstructorUsedError;
-  String? get postMerchantApplicationLink => throw _privateConstructorUsedError;
   bool get isAlcoholForSale => throw _privateConstructorUsedError;
   bool get isFoodForSale => throw _privateConstructorUsedError;
   bool get isAlcoholProvided => throw _privateConstructorUsedError;
@@ -35062,10 +36661,6 @@ abstract class $EventActivityRulesRequirementDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isMerchantSupported,
-      bool isMerchantInviteOnly,
-      int? merchantFee,
-      int? merchantLimit,
-      String? postMerchantApplicationLink,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -35091,10 +36686,6 @@ class _$EventActivityRulesRequirementDtoCopyWithImpl<$Res,
   @override
   $Res call({
     Object? isMerchantSupported = null,
-    Object? isMerchantInviteOnly = null,
-    Object? merchantFee = freezed,
-    Object? merchantLimit = freezed,
-    Object? postMerchantApplicationLink = freezed,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -35109,22 +36700,6 @@ class _$EventActivityRulesRequirementDtoCopyWithImpl<$Res,
           ? _value.isMerchantSupported
           : isMerchantSupported // ignore: cast_nullable_to_non_nullable
               as bool,
-      isMerchantInviteOnly: null == isMerchantInviteOnly
-          ? _value.isMerchantInviteOnly
-          : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
-              as bool,
-      merchantFee: freezed == merchantFee
-          ? _value.merchantFee
-          : merchantFee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      merchantLimit: freezed == merchantLimit
-          ? _value.merchantLimit
-          : merchantLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      postMerchantApplicationLink: freezed == postMerchantApplicationLink
-          ? _value.postMerchantApplicationLink
-          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
-              as String?,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
           : isAlcoholForSale // ignore: cast_nullable_to_non_nullable
@@ -35172,10 +36747,6 @@ abstract class _$$EventActivityRulesRequirementDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool isMerchantSupported,
-      bool isMerchantInviteOnly,
-      int? merchantFee,
-      int? merchantLimit,
-      String? postMerchantApplicationLink,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -35200,10 +36771,6 @@ class __$$EventActivityRulesRequirementDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isMerchantSupported = null,
-    Object? isMerchantInviteOnly = null,
-    Object? merchantFee = freezed,
-    Object? merchantLimit = freezed,
-    Object? postMerchantApplicationLink = freezed,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -35218,22 +36785,6 @@ class __$$EventActivityRulesRequirementDtoImplCopyWithImpl<$Res>
           ? _value.isMerchantSupported
           : isMerchantSupported // ignore: cast_nullable_to_non_nullable
               as bool,
-      isMerchantInviteOnly: null == isMerchantInviteOnly
-          ? _value.isMerchantInviteOnly
-          : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
-              as bool,
-      merchantFee: freezed == merchantFee
-          ? _value.merchantFee
-          : merchantFee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      merchantLimit: freezed == merchantLimit
-          ? _value.merchantLimit
-          : merchantLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      postMerchantApplicationLink: freezed == postMerchantApplicationLink
-          ? _value.postMerchantApplicationLink
-          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
-              as String?,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
           : isAlcoholForSale // ignore: cast_nullable_to_non_nullable
@@ -35276,10 +36827,6 @@ class _$EventActivityRulesRequirementDtoImpl
     extends _EventActivityRulesRequirementDto {
   _$EventActivityRulesRequirementDtoImpl(
       {required this.isMerchantSupported,
-      required this.isMerchantInviteOnly,
-      this.merchantFee,
-      this.merchantLimit,
-      this.postMerchantApplicationLink,
       required this.isAlcoholForSale,
       required this.isFoodForSale,
       required this.isAlcoholProvided,
@@ -35296,14 +36843,6 @@ class _$EventActivityRulesRequirementDtoImpl
 
   @override
   final bool isMerchantSupported;
-  @override
-  final bool isMerchantInviteOnly;
-  @override
-  final int? merchantFee;
-  @override
-  final int? merchantLimit;
-  @override
-  final String? postMerchantApplicationLink;
   @override
   final bool isAlcoholForSale;
   @override
@@ -35323,7 +36862,7 @@ class _$EventActivityRulesRequirementDtoImpl
 
   @override
   String toString() {
-    return 'EventActivityRulesRequirementDto(isMerchantSupported: $isMerchantSupported, isMerchantInviteOnly: $isMerchantInviteOnly, merchantFee: $merchantFee, merchantLimit: $merchantLimit, postMerchantApplicationLink: $postMerchantApplicationLink, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
+    return 'EventActivityRulesRequirementDto(isMerchantSupported: $isMerchantSupported, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
   }
 
   @override
@@ -35333,16 +36872,6 @@ class _$EventActivityRulesRequirementDtoImpl
             other is _$EventActivityRulesRequirementDtoImpl &&
             (identical(other.isMerchantSupported, isMerchantSupported) ||
                 other.isMerchantSupported == isMerchantSupported) &&
-            (identical(other.isMerchantInviteOnly, isMerchantInviteOnly) ||
-                other.isMerchantInviteOnly == isMerchantInviteOnly) &&
-            (identical(other.merchantFee, merchantFee) ||
-                other.merchantFee == merchantFee) &&
-            (identical(other.merchantLimit, merchantLimit) ||
-                other.merchantLimit == merchantLimit) &&
-            (identical(other.postMerchantApplicationLink,
-                    postMerchantApplicationLink) ||
-                other.postMerchantApplicationLink ==
-                    postMerchantApplicationLink) &&
             (identical(other.isAlcoholForSale, isAlcoholForSale) ||
                 other.isAlcoholForSale == isAlcoholForSale) &&
             (identical(other.isFoodForSale, isFoodForSale) ||
@@ -35369,10 +36898,6 @@ class _$EventActivityRulesRequirementDtoImpl
   int get hashCode => Object.hash(
       runtimeType,
       isMerchantSupported,
-      isMerchantInviteOnly,
-      merchantFee,
-      merchantLimit,
-      postMerchantApplicationLink,
       isAlcoholForSale,
       isFoodForSale,
       isAlcoholProvided,
@@ -35402,10 +36927,6 @@ abstract class _EventActivityRulesRequirementDto
     extends EventActivityRulesRequirementDto {
   factory _EventActivityRulesRequirementDto(
           {required final bool isMerchantSupported,
-          required final bool isMerchantInviteOnly,
-          final int? merchantFee,
-          final int? merchantLimit,
-          final String? postMerchantApplicationLink,
           required final bool isAlcoholForSale,
           required final bool isFoodForSale,
           required final bool isAlcoholProvided,
@@ -35423,14 +36944,6 @@ abstract class _EventActivityRulesRequirementDto
 
   @override
   bool get isMerchantSupported;
-  @override
-  bool get isMerchantInviteOnly;
-  @override
-  int? get merchantFee;
-  @override
-  int? get merchantLimit;
-  @override
-  String? get postMerchantApplicationLink;
   @override
   bool get isAlcoholForSale;
   @override
@@ -36420,10 +37933,6 @@ abstract class _ActivityRequirementDto extends ActivityRequirementDto {
 /// @nodoc
 mixin _$EventActivityRulesRequirement {
   bool get isMerchantSupported => throw _privateConstructorUsedError;
-  int? get merchantFee => throw _privateConstructorUsedError;
-  int? get merchantLimit => throw _privateConstructorUsedError;
-  String? get postMerchantApplicationLink => throw _privateConstructorUsedError;
-  bool get isMerchantInviteOnly => throw _privateConstructorUsedError;
   bool get isAlcoholForSale => throw _privateConstructorUsedError;
   bool get isFoodForSale => throw _privateConstructorUsedError;
   bool get isAlcoholProvided => throw _privateConstructorUsedError;
@@ -36448,10 +37957,6 @@ abstract class $EventActivityRulesRequirementCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isMerchantSupported,
-      int? merchantFee,
-      int? merchantLimit,
-      String? postMerchantApplicationLink,
-      bool isMerchantInviteOnly,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -36477,10 +37982,6 @@ class _$EventActivityRulesRequirementCopyWithImpl<$Res,
   @override
   $Res call({
     Object? isMerchantSupported = null,
-    Object? merchantFee = freezed,
-    Object? merchantLimit = freezed,
-    Object? postMerchantApplicationLink = freezed,
-    Object? isMerchantInviteOnly = null,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -36494,22 +37995,6 @@ class _$EventActivityRulesRequirementCopyWithImpl<$Res,
       isMerchantSupported: null == isMerchantSupported
           ? _value.isMerchantSupported
           : isMerchantSupported // ignore: cast_nullable_to_non_nullable
-              as bool,
-      merchantFee: freezed == merchantFee
-          ? _value.merchantFee
-          : merchantFee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      merchantLimit: freezed == merchantLimit
-          ? _value.merchantLimit
-          : merchantLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      postMerchantApplicationLink: freezed == postMerchantApplicationLink
-          ? _value.postMerchantApplicationLink
-          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isMerchantInviteOnly: null == isMerchantInviteOnly
-          ? _value.isMerchantInviteOnly
-          : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
               as bool,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
@@ -36558,10 +38043,6 @@ abstract class _$$EventActivityRulesRequirementImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool isMerchantSupported,
-      int? merchantFee,
-      int? merchantLimit,
-      String? postMerchantApplicationLink,
-      bool isMerchantInviteOnly,
       bool isAlcoholForSale,
       bool isFoodForSale,
       bool isAlcoholProvided,
@@ -36586,10 +38067,6 @@ class __$$EventActivityRulesRequirementImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isMerchantSupported = null,
-    Object? merchantFee = freezed,
-    Object? merchantLimit = freezed,
-    Object? postMerchantApplicationLink = freezed,
-    Object? isMerchantInviteOnly = null,
     Object? isAlcoholForSale = null,
     Object? isFoodForSale = null,
     Object? isAlcoholProvided = null,
@@ -36603,22 +38080,6 @@ class __$$EventActivityRulesRequirementImplCopyWithImpl<$Res>
       isMerchantSupported: null == isMerchantSupported
           ? _value.isMerchantSupported
           : isMerchantSupported // ignore: cast_nullable_to_non_nullable
-              as bool,
-      merchantFee: freezed == merchantFee
-          ? _value.merchantFee
-          : merchantFee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      merchantLimit: freezed == merchantLimit
-          ? _value.merchantLimit
-          : merchantLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      postMerchantApplicationLink: freezed == postMerchantApplicationLink
-          ? _value.postMerchantApplicationLink
-          : postMerchantApplicationLink // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isMerchantInviteOnly: null == isMerchantInviteOnly
-          ? _value.isMerchantInviteOnly
-          : isMerchantInviteOnly // ignore: cast_nullable_to_non_nullable
               as bool,
       isAlcoholForSale: null == isAlcoholForSale
           ? _value.isAlcoholForSale
@@ -36662,10 +38123,6 @@ class _$EventActivityRulesRequirementImpl
     extends _EventActivityRulesRequirement {
   _$EventActivityRulesRequirementImpl(
       {required this.isMerchantSupported,
-      this.merchantFee,
-      this.merchantLimit,
-      this.postMerchantApplicationLink,
-      required this.isMerchantInviteOnly,
       required this.isAlcoholForSale,
       required this.isFoodForSale,
       required this.isAlcoholProvided,
@@ -36678,14 +38135,6 @@ class _$EventActivityRulesRequirementImpl
 
   @override
   final bool isMerchantSupported;
-  @override
-  final int? merchantFee;
-  @override
-  final int? merchantLimit;
-  @override
-  final String? postMerchantApplicationLink;
-  @override
-  final bool isMerchantInviteOnly;
   @override
   final bool isAlcoholForSale;
   @override
@@ -36705,7 +38154,7 @@ class _$EventActivityRulesRequirementImpl
 
   @override
   String toString() {
-    return 'EventActivityRulesRequirement(isMerchantSupported: $isMerchantSupported, merchantFee: $merchantFee, merchantLimit: $merchantLimit, postMerchantApplicationLink: $postMerchantApplicationLink, isMerchantInviteOnly: $isMerchantInviteOnly, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
+    return 'EventActivityRulesRequirement(isMerchantSupported: $isMerchantSupported, isAlcoholForSale: $isAlcoholForSale, isFoodForSale: $isFoodForSale, isAlcoholProvided: $isAlcoholProvided, isFacilityProvidedAlcohol: $isFacilityProvidedAlcohol, isFoodProvided: $isFoodProvided, isFacilityProvidedFood: $isFacilityProvidedFood, isSecurityProvided: $isSecurityProvided, isFacilityProvidedSecurity: $isFacilityProvidedSecurity)';
   }
 
   @override
@@ -36715,16 +38164,6 @@ class _$EventActivityRulesRequirementImpl
             other is _$EventActivityRulesRequirementImpl &&
             (identical(other.isMerchantSupported, isMerchantSupported) ||
                 other.isMerchantSupported == isMerchantSupported) &&
-            (identical(other.merchantFee, merchantFee) ||
-                other.merchantFee == merchantFee) &&
-            (identical(other.merchantLimit, merchantLimit) ||
-                other.merchantLimit == merchantLimit) &&
-            (identical(other.postMerchantApplicationLink,
-                    postMerchantApplicationLink) ||
-                other.postMerchantApplicationLink ==
-                    postMerchantApplicationLink) &&
-            (identical(other.isMerchantInviteOnly, isMerchantInviteOnly) ||
-                other.isMerchantInviteOnly == isMerchantInviteOnly) &&
             (identical(other.isAlcoholForSale, isAlcoholForSale) ||
                 other.isAlcoholForSale == isAlcoholForSale) &&
             (identical(other.isFoodForSale, isFoodForSale) ||
@@ -36750,10 +38189,6 @@ class _$EventActivityRulesRequirementImpl
   int get hashCode => Object.hash(
       runtimeType,
       isMerchantSupported,
-      merchantFee,
-      merchantLimit,
-      postMerchantApplicationLink,
-      isMerchantInviteOnly,
       isAlcoholForSale,
       isFoodForSale,
       isAlcoholProvided,
@@ -36776,10 +38211,6 @@ abstract class _EventActivityRulesRequirement
     extends EventActivityRulesRequirement {
   factory _EventActivityRulesRequirement(
           {required final bool isMerchantSupported,
-          final int? merchantFee,
-          final int? merchantLimit,
-          final String? postMerchantApplicationLink,
-          required final bool isMerchantInviteOnly,
           required final bool isAlcoholForSale,
           required final bool isFoodForSale,
           required final bool isAlcoholProvided,
@@ -36793,14 +38224,6 @@ abstract class _EventActivityRulesRequirement
 
   @override
   bool get isMerchantSupported;
-  @override
-  int? get merchantFee;
-  @override
-  int? get merchantLimit;
-  @override
-  String? get postMerchantApplicationLink;
-  @override
-  bool get isMerchantInviteOnly;
   @override
   bool get isAlcoholForSale;
   @override
@@ -67972,11 +69395,16 @@ mixin _$UserProfileModel {
   bool get isEmailAuth => throw _privateConstructorUsedError;
   bool get isPhoneAuth => throw _privateConstructorUsedError;
   bool? get isVerified => throw _privateConstructorUsedError;
+  bool? get hasSignedIn => throw _privateConstructorUsedError;
   PhotoIdentificationState? get identificationState =>
       throw _privateConstructorUsedError;
   DateTime get joinedDate => throw _privateConstructorUsedError;
   String? get stripeAccountId => throw _privateConstructorUsedError;
   String? get stripeCustomerId => throw _privateConstructorUsedError;
+  String? get stripeBusinessID => throw _privateConstructorUsedError;
+  StripeBusinessAddress? get stripeBusinessAddress =>
+      throw _privateConstructorUsedError;
+  String? get stripeHSTRegistrationNumber => throw _privateConstructorUsedError;
   String? get defaultPaymentMethod => throw _privateConstructorUsedError;
   bool? get stripeAccountDetailsSubmitted => throw _privateConstructorUsedError;
 
@@ -68009,12 +69437,18 @@ abstract class $UserProfileModelCopyWith<$Res> {
       bool isEmailAuth,
       bool isPhoneAuth,
       bool? isVerified,
+      bool? hasSignedIn,
       PhotoIdentificationState? identificationState,
       DateTime joinedDate,
       String? stripeAccountId,
       String? stripeCustomerId,
+      String? stripeBusinessID,
+      StripeBusinessAddress? stripeBusinessAddress,
+      String? stripeHSTRegistrationNumber,
       String? defaultPaymentMethod,
       bool? stripeAccountDetailsSubmitted});
+
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress;
 }
 
 /// @nodoc
@@ -68047,10 +69481,14 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
     Object? isEmailAuth = null,
     Object? isPhoneAuth = null,
     Object? isVerified = freezed,
+    Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? joinedDate = null,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeBusinessAddress = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
     Object? defaultPaymentMethod = freezed,
     Object? stripeAccountDetailsSubmitted = freezed,
   }) {
@@ -68123,6 +69561,10 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hasSignedIn: freezed == hasSignedIn
+          ? _value.hasSignedIn
+          : hasSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool?,
       identificationState: freezed == identificationState
           ? _value.identificationState
           : identificationState // ignore: cast_nullable_to_non_nullable
@@ -68139,6 +69581,18 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
           ? _value.stripeCustomerId
           : stripeCustomerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value.stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as StripeBusinessAddress?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
       defaultPaymentMethod: freezed == defaultPaymentMethod
           ? _value.defaultPaymentMethod
           : defaultPaymentMethod // ignore: cast_nullable_to_non_nullable
@@ -68148,6 +69602,19 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
           : stripeAccountDetailsSubmitted // ignore: cast_nullable_to_non_nullable
               as bool?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress {
+    if (_value.stripeBusinessAddress == null) {
+      return null;
+    }
+
+    return $StripeBusinessAddressCopyWith<$Res>(_value.stripeBusinessAddress!,
+        (value) {
+      return _then(_value.copyWith(stripeBusinessAddress: value) as $Val);
+    });
   }
 }
 
@@ -68177,12 +69644,19 @@ abstract class _$$UserProfileModelImplCopyWith<$Res>
       bool isEmailAuth,
       bool isPhoneAuth,
       bool? isVerified,
+      bool? hasSignedIn,
       PhotoIdentificationState? identificationState,
       DateTime joinedDate,
       String? stripeAccountId,
       String? stripeCustomerId,
+      String? stripeBusinessID,
+      StripeBusinessAddress? stripeBusinessAddress,
+      String? stripeHSTRegistrationNumber,
       String? defaultPaymentMethod,
       bool? stripeAccountDetailsSubmitted});
+
+  @override
+  $StripeBusinessAddressCopyWith<$Res>? get stripeBusinessAddress;
 }
 
 /// @nodoc
@@ -68213,10 +69687,14 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
     Object? isEmailAuth = null,
     Object? isPhoneAuth = null,
     Object? isVerified = freezed,
+    Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? joinedDate = null,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeBusinessAddress = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
     Object? defaultPaymentMethod = freezed,
     Object? stripeAccountDetailsSubmitted = freezed,
   }) {
@@ -68289,6 +69767,10 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hasSignedIn: freezed == hasSignedIn
+          ? _value.hasSignedIn
+          : hasSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool?,
       identificationState: freezed == identificationState
           ? _value.identificationState
           : identificationState // ignore: cast_nullable_to_non_nullable
@@ -68304,6 +69786,18 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
       stripeCustomerId: freezed == stripeCustomerId
           ? _value.stripeCustomerId
           : stripeCustomerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value.stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as StripeBusinessAddress?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       defaultPaymentMethod: freezed == defaultPaymentMethod
           ? _value.defaultPaymentMethod
@@ -68338,10 +69832,14 @@ class _$UserProfileModelImpl extends _UserProfileModel {
       required this.isEmailAuth,
       required this.isPhoneAuth,
       this.isVerified,
+      this.hasSignedIn,
       this.identificationState,
       required this.joinedDate,
       this.stripeAccountId,
       this.stripeCustomerId,
+      this.stripeBusinessID,
+      this.stripeBusinessAddress,
+      this.stripeHSTRegistrationNumber,
       this.defaultPaymentMethod,
       this.stripeAccountDetailsSubmitted})
       : super._();
@@ -68381,6 +69879,8 @@ class _$UserProfileModelImpl extends _UserProfileModel {
   @override
   final bool? isVerified;
   @override
+  final bool? hasSignedIn;
+  @override
   final PhotoIdentificationState? identificationState;
   @override
   final DateTime joinedDate;
@@ -68389,13 +69889,19 @@ class _$UserProfileModelImpl extends _UserProfileModel {
   @override
   final String? stripeCustomerId;
   @override
+  final String? stripeBusinessID;
+  @override
+  final StripeBusinessAddress? stripeBusinessAddress;
+  @override
+  final String? stripeHSTRegistrationNumber;
+  @override
   final String? defaultPaymentMethod;
   @override
   final bool? stripeAccountDetailsSubmitted;
 
   @override
   String toString() {
-    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, profileImage: $profileImage, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, identificationState: $identificationState, joinedDate: $joinedDate, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
+    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, profileImage: $profileImage, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, joinedDate: $joinedDate, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeBusinessAddress: $stripeBusinessAddress, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
   }
 
   @override
@@ -68434,6 +69940,8 @@ class _$UserProfileModelImpl extends _UserProfileModel {
                 other.isPhoneAuth == isPhoneAuth) &&
             (identical(other.isVerified, isVerified) ||
                 other.isVerified == isVerified) &&
+            (identical(other.hasSignedIn, hasSignedIn) ||
+                other.hasSignedIn == hasSignedIn) &&
             (identical(other.identificationState, identificationState) ||
                 other.identificationState == identificationState) &&
             (identical(other.joinedDate, joinedDate) ||
@@ -68442,6 +69950,14 @@ class _$UserProfileModelImpl extends _UserProfileModel {
                 other.stripeAccountId == stripeAccountId) &&
             (identical(other.stripeCustomerId, stripeCustomerId) ||
                 other.stripeCustomerId == stripeCustomerId) &&
+            (identical(other.stripeBusinessID, stripeBusinessID) ||
+                other.stripeBusinessID == stripeBusinessID) &&
+            (identical(other.stripeBusinessAddress, stripeBusinessAddress) ||
+                other.stripeBusinessAddress == stripeBusinessAddress) &&
+            (identical(other.stripeHSTRegistrationNumber,
+                    stripeHSTRegistrationNumber) ||
+                other.stripeHSTRegistrationNumber ==
+                    stripeHSTRegistrationNumber) &&
             (identical(other.defaultPaymentMethod, defaultPaymentMethod) ||
                 other.defaultPaymentMethod == defaultPaymentMethod) &&
             (identical(other.stripeAccountDetailsSubmitted,
@@ -68470,10 +69986,14 @@ class _$UserProfileModelImpl extends _UserProfileModel {
         isEmailAuth,
         isPhoneAuth,
         isVerified,
+        hasSignedIn,
         identificationState,
         joinedDate,
         stripeAccountId,
         stripeCustomerId,
+        stripeBusinessID,
+        stripeBusinessAddress,
+        stripeHSTRegistrationNumber,
         defaultPaymentMethod,
         stripeAccountDetailsSubmitted
       ]);
@@ -68505,10 +70025,14 @@ abstract class _UserProfileModel extends UserProfileModel {
       required final bool isEmailAuth,
       required final bool isPhoneAuth,
       final bool? isVerified,
+      final bool? hasSignedIn,
       final PhotoIdentificationState? identificationState,
       required final DateTime joinedDate,
       final String? stripeAccountId,
       final String? stripeCustomerId,
+      final String? stripeBusinessID,
+      final StripeBusinessAddress? stripeBusinessAddress,
+      final String? stripeHSTRegistrationNumber,
       final String? defaultPaymentMethod,
       final bool? stripeAccountDetailsSubmitted}) = _$UserProfileModelImpl;
   const _UserProfileModel._() : super._();
@@ -68548,6 +70072,8 @@ abstract class _UserProfileModel extends UserProfileModel {
   @override
   bool? get isVerified;
   @override
+  bool? get hasSignedIn;
+  @override
   PhotoIdentificationState? get identificationState;
   @override
   DateTime get joinedDate;
@@ -68555,6 +70081,12 @@ abstract class _UserProfileModel extends UserProfileModel {
   String? get stripeAccountId;
   @override
   String? get stripeCustomerId;
+  @override
+  String? get stripeBusinessID;
+  @override
+  StripeBusinessAddress? get stripeBusinessAddress;
+  @override
+  String? get stripeHSTRegistrationNumber;
   @override
   String? get defaultPaymentMethod;
   @override
@@ -68588,6 +70120,7 @@ mixin _$UserProfileItemDto {
   bool get isPhoneAuth => throw _privateConstructorUsedError;
   String get joinedDate => throw _privateConstructorUsedError;
   bool? get isVerified => throw _privateConstructorUsedError;
+  bool? get hasSignedIn => throw _privateConstructorUsedError;
   String? get identificationState => throw _privateConstructorUsedError;
   String? get photoIdUri => throw _privateConstructorUsedError;
   String? get photoSelfieUri => throw _privateConstructorUsedError;
@@ -68632,6 +70165,7 @@ abstract class $UserProfileItemDtoCopyWith<$Res> {
       bool isPhoneAuth,
       String joinedDate,
       bool? isVerified,
+      bool? hasSignedIn,
       String? identificationState,
       String? photoIdUri,
       String? photoSelfieUri,
@@ -68673,6 +70207,7 @@ class _$UserProfileItemDtoCopyWithImpl<$Res, $Val extends UserProfileItemDto>
     Object? isPhoneAuth = null,
     Object? joinedDate = null,
     Object? isVerified = freezed,
+    Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? photoIdUri = freezed,
     Object? photoSelfieUri = freezed,
@@ -68745,6 +70280,10 @@ class _$UserProfileItemDtoCopyWithImpl<$Res, $Val extends UserProfileItemDto>
       isVerified: freezed == isVerified
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasSignedIn: freezed == hasSignedIn
+          ? _value.hasSignedIn
+          : hasSignedIn // ignore: cast_nullable_to_non_nullable
               as bool?,
       identificationState: freezed == identificationState
           ? _value.identificationState
@@ -68818,6 +70357,7 @@ abstract class _$$UserProfileItemDtoImplCopyWith<$Res>
       bool isPhoneAuth,
       String joinedDate,
       bool? isVerified,
+      bool? hasSignedIn,
       String? identificationState,
       String? photoIdUri,
       String? photoSelfieUri,
@@ -68857,6 +70397,7 @@ class __$$UserProfileItemDtoImplCopyWithImpl<$Res>
     Object? isPhoneAuth = null,
     Object? joinedDate = null,
     Object? isVerified = freezed,
+    Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? photoIdUri = freezed,
     Object? photoSelfieUri = freezed,
@@ -68930,6 +70471,10 @@ class __$$UserProfileItemDtoImplCopyWithImpl<$Res>
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hasSignedIn: freezed == hasSignedIn
+          ? _value.hasSignedIn
+          : hasSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool?,
       identificationState: freezed == identificationState
           ? _value.identificationState
           : identificationState // ignore: cast_nullable_to_non_nullable
@@ -68997,6 +70542,7 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
       required this.isPhoneAuth,
       required this.joinedDate,
       this.isVerified,
+      this.hasSignedIn,
       this.identificationState,
       this.photoIdUri,
       this.photoSelfieUri,
@@ -69063,6 +70609,8 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
   @override
   final bool? isVerified;
   @override
+  final bool? hasSignedIn;
+  @override
   final String? identificationState;
   @override
   final String? photoIdUri;
@@ -69091,7 +70639,7 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
 
   @override
   String toString() {
-    return 'UserProfileItemDto(uid: $uid, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, joinedDate: $joinedDate, isVerified: $isVerified, identificationState: $identificationState, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted, createdAt: $createdAt, updatedAt: $updatedAt, lastSeen: $lastSeen, serverTimeStamp: $serverTimeStamp)';
+    return 'UserProfileItemDto(uid: $uid, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, joinedDate: $joinedDate, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted, createdAt: $createdAt, updatedAt: $updatedAt, lastSeen: $lastSeen, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -69126,6 +70674,8 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
                 other.joinedDate == joinedDate) &&
             (identical(other.isVerified, isVerified) ||
                 other.isVerified == isVerified) &&
+            (identical(other.hasSignedIn, hasSignedIn) ||
+                other.hasSignedIn == hasSignedIn) &&
             (identical(other.identificationState, identificationState) ||
                 other.identificationState == identificationState) &&
             (identical(other.photoIdUri, photoIdUri) ||
@@ -69171,6 +70721,7 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
         isPhoneAuth,
         joinedDate,
         isVerified,
+        hasSignedIn,
         identificationState,
         photoIdUri,
         photoSelfieUri,
@@ -69216,6 +70767,7 @@ abstract class _UserProfileItemDto extends UserProfileItemDto {
           required final bool isPhoneAuth,
           required final String joinedDate,
           final bool? isVerified,
+          final bool? hasSignedIn,
           final String? identificationState,
           final String? photoIdUri,
           final String? photoSelfieUri,
@@ -69264,6 +70816,8 @@ abstract class _UserProfileItemDto extends UserProfileItemDto {
   String get joinedDate;
   @override
   bool? get isVerified;
+  @override
+  bool? get hasSignedIn;
   @override
   String? get identificationState;
   @override

@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MVBoothPayments {
   UniqueId get uid => throw _privateConstructorUsedError;
+  UniqueId? get selectedId => throw _privateConstructorUsedError;
   UniqueId? get availabilityId => throw _privateConstructorUsedError;
   String? get boothTitle => throw _privateConstructorUsedError;
   List<MCCustomAvailability>? get unavailableBoothDates =>
@@ -27,6 +28,8 @@ mixin _$MVBoothPayments {
   int? get fee => throw _privateConstructorUsedError;
   bool? get refundAvailable => throw _privateConstructorUsedError;
   AvailabilityStatus? get status => throw _privateConstructorUsedError;
+  PaymentIntent? get stripePaymentIntent => throw _privateConstructorUsedError;
+  StripeRefundModel? get stripeRefund => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MVBoothPaymentsCopyWith<MVBoothPayments> get copyWith =>
@@ -41,6 +44,7 @@ abstract class $MVBoothPaymentsCopyWith<$Res> {
   @useResult
   $Res call(
       {UniqueId uid,
+      UniqueId? selectedId,
       UniqueId? availabilityId,
       String? boothTitle,
       List<MCCustomAvailability>? unavailableBoothDates,
@@ -49,7 +53,12 @@ abstract class $MVBoothPaymentsCopyWith<$Res> {
       bool? waitListOffered,
       int? fee,
       bool? refundAvailable,
-      AvailabilityStatus? status});
+      AvailabilityStatus? status,
+      PaymentIntent? stripePaymentIntent,
+      StripeRefundModel? stripeRefund});
+
+  $PaymentIntentCopyWith<$Res>? get stripePaymentIntent;
+  $StripeRefundModelCopyWith<$Res>? get stripeRefund;
 }
 
 /// @nodoc
@@ -66,6 +75,7 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
   @override
   $Res call({
     Object? uid = null,
+    Object? selectedId = freezed,
     Object? availabilityId = freezed,
     Object? boothTitle = freezed,
     Object? unavailableBoothDates = freezed,
@@ -75,12 +85,18 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
     Object? fee = freezed,
     Object? refundAvailable = freezed,
     Object? status = freezed,
+    Object? stripePaymentIntent = freezed,
+    Object? stripeRefund = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      selectedId: freezed == selectedId
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
       availabilityId: freezed == availabilityId
           ? _value.availabilityId
           : availabilityId // ignore: cast_nullable_to_non_nullable
@@ -117,7 +133,39 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AvailabilityStatus?,
+      stripePaymentIntent: freezed == stripePaymentIntent
+          ? _value.stripePaymentIntent
+          : stripePaymentIntent // ignore: cast_nullable_to_non_nullable
+              as PaymentIntent?,
+      stripeRefund: freezed == stripeRefund
+          ? _value.stripeRefund
+          : stripeRefund // ignore: cast_nullable_to_non_nullable
+              as StripeRefundModel?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PaymentIntentCopyWith<$Res>? get stripePaymentIntent {
+    if (_value.stripePaymentIntent == null) {
+      return null;
+    }
+
+    return $PaymentIntentCopyWith<$Res>(_value.stripePaymentIntent!, (value) {
+      return _then(_value.copyWith(stripePaymentIntent: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StripeRefundModelCopyWith<$Res>? get stripeRefund {
+    if (_value.stripeRefund == null) {
+      return null;
+    }
+
+    return $StripeRefundModelCopyWith<$Res>(_value.stripeRefund!, (value) {
+      return _then(_value.copyWith(stripeRefund: value) as $Val);
+    });
   }
 }
 
@@ -131,6 +179,7 @@ abstract class _$$MVBoothPaymentsImplCopyWith<$Res>
   @useResult
   $Res call(
       {UniqueId uid,
+      UniqueId? selectedId,
       UniqueId? availabilityId,
       String? boothTitle,
       List<MCCustomAvailability>? unavailableBoothDates,
@@ -139,7 +188,14 @@ abstract class _$$MVBoothPaymentsImplCopyWith<$Res>
       bool? waitListOffered,
       int? fee,
       bool? refundAvailable,
-      AvailabilityStatus? status});
+      AvailabilityStatus? status,
+      PaymentIntent? stripePaymentIntent,
+      StripeRefundModel? stripeRefund});
+
+  @override
+  $PaymentIntentCopyWith<$Res>? get stripePaymentIntent;
+  @override
+  $StripeRefundModelCopyWith<$Res>? get stripeRefund;
 }
 
 /// @nodoc
@@ -154,6 +210,7 @@ class __$$MVBoothPaymentsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = null,
+    Object? selectedId = freezed,
     Object? availabilityId = freezed,
     Object? boothTitle = freezed,
     Object? unavailableBoothDates = freezed,
@@ -163,12 +220,18 @@ class __$$MVBoothPaymentsImplCopyWithImpl<$Res>
     Object? fee = freezed,
     Object? refundAvailable = freezed,
     Object? status = freezed,
+    Object? stripePaymentIntent = freezed,
+    Object? stripeRefund = freezed,
   }) {
     return _then(_$MVBoothPaymentsImpl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      selectedId: freezed == selectedId
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
       availabilityId: freezed == availabilityId
           ? _value.availabilityId
           : availabilityId // ignore: cast_nullable_to_non_nullable
@@ -205,6 +268,14 @@ class __$$MVBoothPaymentsImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AvailabilityStatus?,
+      stripePaymentIntent: freezed == stripePaymentIntent
+          ? _value.stripePaymentIntent
+          : stripePaymentIntent // ignore: cast_nullable_to_non_nullable
+              as PaymentIntent?,
+      stripeRefund: freezed == stripeRefund
+          ? _value.stripeRefund
+          : stripeRefund // ignore: cast_nullable_to_non_nullable
+              as StripeRefundModel?,
     ));
   }
 }
@@ -214,6 +285,7 @@ class __$$MVBoothPaymentsImplCopyWithImpl<$Res>
 class _$MVBoothPaymentsImpl extends _MVBoothPayments {
   const _$MVBoothPaymentsImpl(
       {required this.uid,
+      this.selectedId,
       this.availabilityId,
       this.boothTitle,
       final List<MCCustomAvailability>? unavailableBoothDates,
@@ -222,12 +294,16 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
       this.waitListOffered,
       this.fee,
       this.refundAvailable,
-      this.status})
+      this.status,
+      this.stripePaymentIntent,
+      this.stripeRefund})
       : _unavailableBoothDates = unavailableBoothDates,
         super._();
 
   @override
   final UniqueId uid;
+  @override
+  final UniqueId? selectedId;
   @override
   final UniqueId? availabilityId;
   @override
@@ -255,10 +331,14 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
   final bool? refundAvailable;
   @override
   final AvailabilityStatus? status;
+  @override
+  final PaymentIntent? stripePaymentIntent;
+  @override
+  final StripeRefundModel? stripeRefund;
 
   @override
   String toString() {
-    return 'MVBoothPayments(uid: $uid, availabilityId: $availabilityId, boothTitle: $boothTitle, unavailableBoothDates: $unavailableBoothDates, isLimited: $isLimited, boothLimit: $boothLimit, waitListOffered: $waitListOffered, fee: $fee, refundAvailable: $refundAvailable, status: $status)';
+    return 'MVBoothPayments(uid: $uid, selectedId: $selectedId, availabilityId: $availabilityId, boothTitle: $boothTitle, unavailableBoothDates: $unavailableBoothDates, isLimited: $isLimited, boothLimit: $boothLimit, waitListOffered: $waitListOffered, fee: $fee, refundAvailable: $refundAvailable, status: $status, stripePaymentIntent: $stripePaymentIntent, stripeRefund: $stripeRefund)';
   }
 
   @override
@@ -267,6 +347,8 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
         (other.runtimeType == runtimeType &&
             other is _$MVBoothPaymentsImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.selectedId, selectedId) ||
+                other.selectedId == selectedId) &&
             (identical(other.availabilityId, availabilityId) ||
                 other.availabilityId == availabilityId) &&
             (identical(other.boothTitle, boothTitle) ||
@@ -282,13 +364,18 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.refundAvailable, refundAvailable) ||
                 other.refundAvailable == refundAvailable) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.stripePaymentIntent, stripePaymentIntent) ||
+                other.stripePaymentIntent == stripePaymentIntent) &&
+            (identical(other.stripeRefund, stripeRefund) ||
+                other.stripeRefund == stripeRefund));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       uid,
+      selectedId,
       availabilityId,
       boothTitle,
       const DeepCollectionEquality().hash(_unavailableBoothDates),
@@ -297,7 +384,9 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
       waitListOffered,
       fee,
       refundAvailable,
-      status);
+      status,
+      stripePaymentIntent,
+      stripeRefund);
 
   @JsonKey(ignore: true)
   @override
@@ -310,6 +399,7 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
 abstract class _MVBoothPayments extends MVBoothPayments {
   const factory _MVBoothPayments(
       {required final UniqueId uid,
+      final UniqueId? selectedId,
       final UniqueId? availabilityId,
       final String? boothTitle,
       final List<MCCustomAvailability>? unavailableBoothDates,
@@ -318,11 +408,15 @@ abstract class _MVBoothPayments extends MVBoothPayments {
       final bool? waitListOffered,
       final int? fee,
       final bool? refundAvailable,
-      final AvailabilityStatus? status}) = _$MVBoothPaymentsImpl;
+      final AvailabilityStatus? status,
+      final PaymentIntent? stripePaymentIntent,
+      final StripeRefundModel? stripeRefund}) = _$MVBoothPaymentsImpl;
   const _MVBoothPayments._() : super._();
 
   @override
   UniqueId get uid;
+  @override
+  UniqueId? get selectedId;
   @override
   UniqueId? get availabilityId;
   @override
@@ -341,6 +435,10 @@ abstract class _MVBoothPayments extends MVBoothPayments {
   bool? get refundAvailable;
   @override
   AvailabilityStatus? get status;
+  @override
+  PaymentIntent? get stripePaymentIntent;
+  @override
+  StripeRefundModel? get stripeRefund;
   @override
   @JsonKey(ignore: true)
   _$$MVBoothPaymentsImplCopyWith<_$MVBoothPaymentsImpl> get copyWith =>

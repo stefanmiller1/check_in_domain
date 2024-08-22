@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum AccountNotificationType {reservation, resSlot, listing, activity, activityPost, message, request, invite, joined, review}
+enum AccountNotificationType {reservation, resSlot, listing, activity, activityPost, activityAttendee, message, request, invite, joined, review}
 
 
 AccountNotificationType getAccountNotificationType(String type) {

@@ -530,11 +530,13 @@ Map<String, dynamic> _$$ReservationSlotItemDtoImplToJson(
 
 _$CardItemDtoImpl _$$CardItemDtoImplFromJson(Map<String, dynamic> json) =>
     _$CardItemDtoImpl(
+      paymentId: json['paymentId'] as String?,
       card: json['card'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$$CardItemDtoImplToJson(_$CardItemDtoImpl instance) =>
     <String, dynamic>{
+      'paymentId': instance.paymentId,
       'card': instance.card,
     };
 
@@ -557,28 +559,80 @@ Map<String, dynamic> _$$CardDetailDtoImplToJson(_$CardDetailDtoImpl instance) =>
 _$PaymentIntentDtoImpl _$$PaymentIntentDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentIntentDtoImpl(
-      id: json['id'] as String?,
+      uid: json['uid'] as String?,
       object: json['object'] as String?,
       amount: json['amount'] as int?,
+      amount_taxed: json['amount_taxed'] as int?,
+      seller_fee_amount: json['seller_fee_amount'] as int?,
+      seller_fee_amount_taxed: json['seller_fee_amount_taxed'] as int?,
+      buyer_fee_amount: json['buyer_fee_amount'] as int?,
+      buyer_fee_amount_taxed: json['buyer_fee_amount_taxed'] as int?,
+      created_at: json['created_at'] as int?,
+      client_secret: json['client_secret'] as String?,
       currency: json['currency'] as String?,
       canceled_at: json['canceled_at'] as int?,
       cancellation_reason: json['cancellation_reason'] as String?,
       payment_method: json['payment_method'] as Map<String, dynamic>?,
       created: json['created'] as int?,
       status: json['status'] as String?,
+      itemId: json['itemId'] as String?,
+      stripe_tax_detail: json['stripe_tax_detail'] as Map<String, dynamic>?,
+      metaData: json['metaData'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$PaymentIntentDtoImplToJson(
         _$PaymentIntentDtoImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'uid': instance.uid,
       'object': instance.object,
       'amount': instance.amount,
+      'amount_taxed': instance.amount_taxed,
+      'seller_fee_amount': instance.seller_fee_amount,
+      'seller_fee_amount_taxed': instance.seller_fee_amount_taxed,
+      'buyer_fee_amount': instance.buyer_fee_amount,
+      'buyer_fee_amount_taxed': instance.buyer_fee_amount_taxed,
+      'created_at': instance.created_at,
+      'client_secret': instance.client_secret,
       'currency': instance.currency,
       'canceled_at': instance.canceled_at,
       'cancellation_reason': instance.cancellation_reason,
       'payment_method': instance.payment_method,
       'created': instance.created,
+      'status': instance.status,
+      'itemId': instance.itemId,
+      'stripe_tax_detail': instance.stripe_tax_detail,
+      'metaData': instance.metaData,
+    };
+
+_$StripeRefundModelDtoImpl _$$StripeRefundModelDtoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StripeRefundModelDtoImpl(
+      uid: json['uid'] as String?,
+      object: json['object'] as String?,
+      amount: json['amount'] as int?,
+      balance_transaction: json['balance_transaction'] as String?,
+      charge: json['charge'] as String?,
+      created: json['created'] as int?,
+      currency: json['currency'] as String?,
+      paymentIntent: json['paymentIntent'] as String?,
+      reason: json['reason'] as String?,
+      receipt_number: json['receipt_number'] as String?,
+      status: json['status'] as String?,
+    );
+
+Map<String, dynamic> _$$StripeRefundModelDtoImplToJson(
+        _$StripeRefundModelDtoImpl instance) =>
+    <String, dynamic>{
+      'uid': instance.uid,
+      'object': instance.object,
+      'amount': instance.amount,
+      'balance_transaction': instance.balance_transaction,
+      'charge': instance.charge,
+      'created': instance.created,
+      'currency': instance.currency,
+      'paymentIntent': instance.paymentIntent,
+      'reason': instance.reason,
+      'receipt_number': instance.receipt_number,
       'status': instance.status,
     };
 
@@ -775,6 +829,9 @@ _$EventMerchantVendorProfileDtoImpl
           uriImage: json['uriImage'] as String?,
           instagramLink: json['instagramLink'] as String?,
           websiteLink: json['websiteLink'] as String?,
+          stripeBusinessID: json['stripeBusinessID'] as String?,
+          stripeHSTRegistrationNumber:
+              json['stripeHSTRegistrationNumber'] as String?,
           type: (json['type'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
@@ -795,6 +852,8 @@ Map<String, dynamic> _$$EventMerchantVendorProfileDtoImplToJson(
       'uriImage': instance.uriImage,
       'instagramLink': instance.instagramLink,
       'websiteLink': instance.websiteLink,
+      'stripeBusinessID': instance.stripeBusinessID,
+      'stripeHSTRegistrationNumber': instance.stripeHSTRegistrationNumber,
       'type': instance.type,
       'isLookingForWork': instance.isLookingForWork,
       'isPrivate': instance.isPrivate,
@@ -1102,11 +1161,6 @@ _$EventActivityRulesRequirementDtoImpl
             Map<String, dynamic> json) =>
         _$EventActivityRulesRequirementDtoImpl(
           isMerchantSupported: json['isMerchantSupported'] as bool,
-          isMerchantInviteOnly: json['isMerchantInviteOnly'] as bool,
-          merchantFee: json['merchantFee'] as int?,
-          merchantLimit: json['merchantLimit'] as int?,
-          postMerchantApplicationLink:
-              json['postMerchantApplicationLink'] as String?,
           isAlcoholForSale: json['isAlcoholForSale'] as bool,
           isFoodForSale: json['isFoodForSale'] as bool,
           isAlcoholProvided: json['isAlcoholProvided'] as bool,
@@ -1122,10 +1176,6 @@ Map<String, dynamic> _$$EventActivityRulesRequirementDtoImplToJson(
         _$EventActivityRulesRequirementDtoImpl instance) =>
     <String, dynamic>{
       'isMerchantSupported': instance.isMerchantSupported,
-      'isMerchantInviteOnly': instance.isMerchantInviteOnly,
-      'merchantFee': instance.merchantFee,
-      'merchantLimit': instance.merchantLimit,
-      'postMerchantApplicationLink': instance.postMerchantApplicationLink,
       'isAlcoholForSale': instance.isAlcoholForSale,
       'isFoodForSale': instance.isFoodForSale,
       'isAlcoholProvided': instance.isAlcoholProvided,
@@ -2492,6 +2542,7 @@ _$UserProfileItemDtoImpl _$$UserProfileItemDtoImplFromJson(
       isPhoneAuth: json['isPhoneAuth'] as bool,
       joinedDate: json['joinedDate'] as String,
       isVerified: json['isVerified'] as bool?,
+      hasSignedIn: json['hasSignedIn'] as bool?,
       identificationState: json['identificationState'] as String?,
       photoIdUri: json['photoIdUri'] as String?,
       photoSelfieUri: json['photoSelfieUri'] as String?,
@@ -2524,6 +2575,7 @@ Map<String, dynamic> _$$UserProfileItemDtoImplToJson(
       'isPhoneAuth': instance.isPhoneAuth,
       'joinedDate': instance.joinedDate,
       'isVerified': instance.isVerified,
+      'hasSignedIn': instance.hasSignedIn,
       'identificationState': instance.identificationState,
       'photoIdUri': instance.photoIdUri,
       'photoSelfieUri': instance.photoSelfieUri,

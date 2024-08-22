@@ -1,5 +1,20 @@
 part of check_in_domain;
 
+
+enum ResOverViewTabs {activity, reservation, discussion}
+enum SettingSectionMarker {profile, type, requirements, reservation, attendees, rules}
+enum SettingNavMarker {backgroundInfo, requirementsInfo, locationInfo, spaces, reservations, reservation, reports, spaceOption, activity, hoursAndAvailability, accessAndVisibility, cancellations, customFields, spaceRules, activityRules, payments, checkIns, guides, vendorForm, uploads, reservationConditions, pricingRules, quotas, attendanceType, ticketBased, passesBased}
+
+
+ResOverViewTabs getReservationTab(String? tab) {
+  for (ResOverViewTabs item in ResOverViewTabs.values) {
+    if (tab == item.name) {
+      return item;
+    }
+  }
+  return ResOverViewTabs.reservation;
+}
+
 bool isReservationBooked({required ReservationSlotItem currentRes, required List<ReservationSlotItem> reservations, required ReservationTimeFeeSlotItem currentSlot, required List<ReservationTimeFeeSlotItem> reservationTimeSlots}) {
 
   // return (cancelledRes.map((e) => e.selectedActivityType).contains(currentRes.selectedActivityType) &&
@@ -279,4 +294,111 @@ List<ReservationTimeFeeSlotItem> groupConsecutiveSlots(List<ReservationTimeFeeSl
   ));
 
   return groupedSlots;
+}
+
+List<String> formatReservationSlotItems(List<ReservationSlotItem> reservationSlotItems, int limitTo) {
+  List<ReservationSlotItem> newReservationList = List.from(reservationSlotItems);
+
+  if (newReservationList.isEmpty) {
+    return [];
+  }
+
+  // Sort reservationSlotItems by selectedDate in ascending order
+  newReservationList.sort((a, b) => a.selectedDate.compareTo(b.selectedDate));
+
+  DateFormat dateFormatter = DateFormat('EEE, MMM d');
+  DateFormat timeFormatter = DateFormat('h:mma');
+
+  List<String> result = [];
+  ReservationSlotItem? previousItem;
+
+  for (var item in newReservationList) {
+    if (result.length >= limitTo) {
+      break;
+    }
+
+    bool isAllDay = item.selectedSlots.any((slot) =>
+        slot.slotRange.duration.inHours >= 23
+    );
+
+    if (isAllDay) {
+      result.add('${dateFormatter.format(item.selectedDate)} - All Day');
+    } else {
+      if (previousItem != null) {
+        // Checking if the current item is consecutive and within the same hour as the previous item
+        if (item.selectedDate.difference(previousItem.selectedDate).inDays == 1 &&
+            item.selectedSlots.first.slotRange.start.hour == previousItem.selectedSlots.last.slotRange.end.hour) {
+          result.add('${dateFormatter.format(item.selectedDate)} - ${item.selectedSlots.first.slotRange.start.hour}-${item.selectedSlots.last.slotRange.end.hour}');
+        } else {
+          result.add('${dateFormatter.format(previousItem.selectedDate)} - '
+              '${timeFormatter.format(previousItem.selectedSlots.first.slotRange.start)} - '
+              '${timeFormatter.format(previousItem.selectedSlots.last.slotRange.end)}');
+        }
+      }
+      previousItem = item;
+    }
+  }
+
+  // Adding the last item in the list
+  if (previousItem != null && result.length < limitTo) {
+
+    bool isAllDay = previousItem.selectedSlots.any((slot) =>
+      slot.slotRange.duration.inHours >= 23
+    );
+
+    if (isAllDay) {
+      result.add('${dateFormatter.format(previousItem.selectedDate)} - All Day');
+    } else {
+      result.add('${dateFormatter.format(previousItem.selectedDate)} - '
+          '${timeFormatter.format(previousItem.selectedSlots.first.slotRange.start)} - '
+          '${timeFormatter.format(previousItem.selectedSlots.last.slotRange.end)}');
+    }
+  }
+
+  return result;
+}
+
+String formatNextOrLastReservationSlotItem(List<ReservationSlotItem> reservationSlotItems) {
+  if (reservationSlotItems.isEmpty) {
+    return '';
+  }
+
+  late List<ReservationSlotItem> newReservationList = [];
+  newReservationList.addAll(reservationSlotItems);
+
+  DateFormat dateFormatter = DateFormat('EEE, MMM d');
+  DateFormat timeFormatter = DateFormat('h:mma');
+
+  // Get the current date and time
+  DateTime currentDate = DateTime.now();
+
+  // Sort reservationSlotItems by selectedDate in ascending order (earliest date first)
+  newReservationList.sort((a, b) => a.selectedDate.compareTo(b.selectedDate));
+
+  // Find the next occurring ReservationSlotItem or the last one if all are in the past
+  ReservationSlotItem? nextOrLastItem;
+  for (var item in newReservationList) {
+    if (item.selectedDate.isAfter(currentDate)) {
+      nextOrLastItem = item;
+      break; // Found the next item, stop searching
+    }
+  }
+
+  // If no future item found, set nextOrLastItem to the last item in the list
+  if (nextOrLastItem == null) {
+    nextOrLastItem = newReservationList.last;
+  }
+
+  // Determine the prefix based on whether the date is in the future or past
+  String prefix = nextOrLastItem.selectedDate.isAfter(currentDate) ? 'Next:' : 'Ended:';
+  bool isAllDay = nextOrLastItem.selectedSlots.any((slot) =>
+    slot.slotRange.duration.inHours >= 23
+  );
+  print(isAllDay);
+
+  // Format the selected slots of the next or last item
+  String formattedDate = dateFormatter.format(nextOrLastItem.selectedDate);
+  String formattedTimeRange = (isAllDay) ? 'All Day' : '${timeFormatter.format(nextOrLastItem.selectedSlots.first.slotRange.start)} - ${timeFormatter.format(nextOrLastItem.selectedSlots.last.slotRange.end)}';
+
+  return '$prefix \n $formattedDate - $formattedTimeRange';
 }

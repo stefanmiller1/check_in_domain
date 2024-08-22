@@ -21,6 +21,7 @@ MVBoothPaymentsDto _$MVBoothPaymentsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MVBoothPaymentsDto {
   String get uid => throw _privateConstructorUsedError;
+  String? get selectedId => throw _privateConstructorUsedError;
   String? get availabilityId => throw _privateConstructorUsedError;
   String? get boothTitle => throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get unavailableBoothDates =>
@@ -31,6 +32,9 @@ mixin _$MVBoothPaymentsDto {
   int? get fee => throw _privateConstructorUsedError;
   bool? get refundAvailable => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get stripePaymentIntent =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get stripeRefund => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,6 +50,7 @@ abstract class $MVBoothPaymentsDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String uid,
+      String? selectedId,
       String? availabilityId,
       String? boothTitle,
       List<Map<String, dynamic>>? unavailableBoothDates,
@@ -54,7 +59,9 @@ abstract class $MVBoothPaymentsDtoCopyWith<$Res> {
       bool? waitListOffered,
       int? fee,
       bool? refundAvailable,
-      String? status});
+      String? status,
+      Map<String, dynamic>? stripePaymentIntent,
+      Map<String, dynamic>? stripeRefund});
 }
 
 /// @nodoc
@@ -71,6 +78,7 @@ class _$MVBoothPaymentsDtoCopyWithImpl<$Res, $Val extends MVBoothPaymentsDto>
   @override
   $Res call({
     Object? uid = null,
+    Object? selectedId = freezed,
     Object? availabilityId = freezed,
     Object? boothTitle = freezed,
     Object? unavailableBoothDates = freezed,
@@ -80,12 +88,18 @@ class _$MVBoothPaymentsDtoCopyWithImpl<$Res, $Val extends MVBoothPaymentsDto>
     Object? fee = freezed,
     Object? refundAvailable = freezed,
     Object? status = freezed,
+    Object? stripePaymentIntent = freezed,
+    Object? stripeRefund = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      selectedId: freezed == selectedId
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String?,
       availabilityId: freezed == availabilityId
           ? _value.availabilityId
           : availabilityId // ignore: cast_nullable_to_non_nullable
@@ -122,6 +136,14 @@ class _$MVBoothPaymentsDtoCopyWithImpl<$Res, $Val extends MVBoothPaymentsDto>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripePaymentIntent: freezed == stripePaymentIntent
+          ? _value.stripePaymentIntent
+          : stripePaymentIntent // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      stripeRefund: freezed == stripeRefund
+          ? _value.stripeRefund
+          : stripeRefund // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -136,6 +158,7 @@ abstract class _$$MVBoothPaymentsDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String uid,
+      String? selectedId,
       String? availabilityId,
       String? boothTitle,
       List<Map<String, dynamic>>? unavailableBoothDates,
@@ -144,7 +167,9 @@ abstract class _$$MVBoothPaymentsDtoImplCopyWith<$Res>
       bool? waitListOffered,
       int? fee,
       bool? refundAvailable,
-      String? status});
+      String? status,
+      Map<String, dynamic>? stripePaymentIntent,
+      Map<String, dynamic>? stripeRefund});
 }
 
 /// @nodoc
@@ -159,6 +184,7 @@ class __$$MVBoothPaymentsDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = null,
+    Object? selectedId = freezed,
     Object? availabilityId = freezed,
     Object? boothTitle = freezed,
     Object? unavailableBoothDates = freezed,
@@ -168,12 +194,18 @@ class __$$MVBoothPaymentsDtoImplCopyWithImpl<$Res>
     Object? fee = freezed,
     Object? refundAvailable = freezed,
     Object? status = freezed,
+    Object? stripePaymentIntent = freezed,
+    Object? stripeRefund = freezed,
   }) {
     return _then(_$MVBoothPaymentsDtoImpl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      selectedId: freezed == selectedId
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String?,
       availabilityId: freezed == availabilityId
           ? _value.availabilityId
           : availabilityId // ignore: cast_nullable_to_non_nullable
@@ -210,6 +242,14 @@ class __$$MVBoothPaymentsDtoImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripePaymentIntent: freezed == stripePaymentIntent
+          ? _value._stripePaymentIntent
+          : stripePaymentIntent // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      stripeRefund: freezed == stripeRefund
+          ? _value._stripeRefund
+          : stripeRefund // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -219,6 +259,7 @@ class __$$MVBoothPaymentsDtoImplCopyWithImpl<$Res>
 class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
   const _$MVBoothPaymentsDtoImpl(
       {required this.uid,
+      this.selectedId,
       this.availabilityId,
       this.boothTitle,
       final List<Map<String, dynamic>>? unavailableBoothDates,
@@ -227,8 +268,12 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
       this.waitListOffered,
       this.fee,
       this.refundAvailable,
-      this.status})
+      this.status,
+      final Map<String, dynamic>? stripePaymentIntent,
+      final Map<String, dynamic>? stripeRefund})
       : _unavailableBoothDates = unavailableBoothDates,
+        _stripePaymentIntent = stripePaymentIntent,
+        _stripeRefund = stripeRefund,
         super._();
 
   factory _$MVBoothPaymentsDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -236,6 +281,8 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
 
   @override
   final String uid;
+  @override
+  final String? selectedId;
   @override
   final String? availabilityId;
   @override
@@ -263,10 +310,30 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
   final bool? refundAvailable;
   @override
   final String? status;
+  final Map<String, dynamic>? _stripePaymentIntent;
+  @override
+  Map<String, dynamic>? get stripePaymentIntent {
+    final value = _stripePaymentIntent;
+    if (value == null) return null;
+    if (_stripePaymentIntent is EqualUnmodifiableMapView)
+      return _stripePaymentIntent;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _stripeRefund;
+  @override
+  Map<String, dynamic>? get stripeRefund {
+    final value = _stripeRefund;
+    if (value == null) return null;
+    if (_stripeRefund is EqualUnmodifiableMapView) return _stripeRefund;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'MVBoothPaymentsDto(uid: $uid, availabilityId: $availabilityId, boothTitle: $boothTitle, unavailableBoothDates: $unavailableBoothDates, isLimited: $isLimited, boothLimit: $boothLimit, waitListOffered: $waitListOffered, fee: $fee, refundAvailable: $refundAvailable, status: $status)';
+    return 'MVBoothPaymentsDto(uid: $uid, selectedId: $selectedId, availabilityId: $availabilityId, boothTitle: $boothTitle, unavailableBoothDates: $unavailableBoothDates, isLimited: $isLimited, boothLimit: $boothLimit, waitListOffered: $waitListOffered, fee: $fee, refundAvailable: $refundAvailable, status: $status, stripePaymentIntent: $stripePaymentIntent, stripeRefund: $stripeRefund)';
   }
 
   @override
@@ -275,6 +342,8 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
         (other.runtimeType == runtimeType &&
             other is _$MVBoothPaymentsDtoImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.selectedId, selectedId) ||
+                other.selectedId == selectedId) &&
             (identical(other.availabilityId, availabilityId) ||
                 other.availabilityId == availabilityId) &&
             (identical(other.boothTitle, boothTitle) ||
@@ -290,7 +359,11 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.refundAvailable, refundAvailable) ||
                 other.refundAvailable == refundAvailable) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other._stripePaymentIntent, _stripePaymentIntent) &&
+            const DeepCollectionEquality()
+                .equals(other._stripeRefund, _stripeRefund));
   }
 
   @JsonKey(ignore: true)
@@ -298,6 +371,7 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
   int get hashCode => Object.hash(
       runtimeType,
       uid,
+      selectedId,
       availabilityId,
       boothTitle,
       const DeepCollectionEquality().hash(_unavailableBoothDates),
@@ -306,7 +380,9 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
       waitListOffered,
       fee,
       refundAvailable,
-      status);
+      status,
+      const DeepCollectionEquality().hash(_stripePaymentIntent),
+      const DeepCollectionEquality().hash(_stripeRefund));
 
   @JsonKey(ignore: true)
   @override
@@ -326,6 +402,7 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
 abstract class _MVBoothPaymentsDto extends MVBoothPaymentsDto {
   const factory _MVBoothPaymentsDto(
       {required final String uid,
+      final String? selectedId,
       final String? availabilityId,
       final String? boothTitle,
       final List<Map<String, dynamic>>? unavailableBoothDates,
@@ -334,7 +411,9 @@ abstract class _MVBoothPaymentsDto extends MVBoothPaymentsDto {
       final bool? waitListOffered,
       final int? fee,
       final bool? refundAvailable,
-      final String? status}) = _$MVBoothPaymentsDtoImpl;
+      final String? status,
+      final Map<String, dynamic>? stripePaymentIntent,
+      final Map<String, dynamic>? stripeRefund}) = _$MVBoothPaymentsDtoImpl;
   const _MVBoothPaymentsDto._() : super._();
 
   factory _MVBoothPaymentsDto.fromJson(Map<String, dynamic> json) =
@@ -342,6 +421,8 @@ abstract class _MVBoothPaymentsDto extends MVBoothPaymentsDto {
 
   @override
   String get uid;
+  @override
+  String? get selectedId;
   @override
   String? get availabilityId;
   @override
@@ -360,6 +441,10 @@ abstract class _MVBoothPaymentsDto extends MVBoothPaymentsDto {
   bool? get refundAvailable;
   @override
   String? get status;
+  @override
+  Map<String, dynamic>? get stripePaymentIntent;
+  @override
+  Map<String, dynamic>? get stripeRefund;
   @override
   @JsonKey(ignore: true)
   _$$MVBoothPaymentsDtoImplCopyWith<_$MVBoothPaymentsDtoImpl> get copyWith =>

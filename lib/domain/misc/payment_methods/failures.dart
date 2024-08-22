@@ -18,7 +18,7 @@ class PaymentMethodValueFailure<T> with _$PaymentMethodValueFailure<T> {
   const factory PaymentMethodValueFailure.ownerDoesNotHaveAccount() = OwnerDoesNotHaveAccount;
 
   const factory PaymentMethodValueFailure.couldNotRetrievePaymentMethod() = CouldNotRetrievePaymentMethod;
-
+  const factory PaymentMethodValueFailure.paymentCaptureFailure({PaymentIntent? failure}) = _paymentCaptureFailure;
   const factory PaymentMethodValueFailure.paymentServerError({
     String? failedValue
   }) = _PaymentServerError<T>;

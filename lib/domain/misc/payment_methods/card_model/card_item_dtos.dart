@@ -5,7 +5,7 @@ class CardItemDto with _$CardItemDto {
   const CardItemDto._();
 
   const factory CardItemDto({
-    @JsonKey(ignore: true) String? paymentId,
+    required String? paymentId,
     required Map<String, dynamic> card,
 }) = _CardItemDto;
 
@@ -18,7 +18,7 @@ class CardItemDto with _$CardItemDto {
 
   CardItem toDomain() {
     return CardItem(
-        paymentId: paymentId!,
+        paymentId: (paymentId != null) ? paymentId! : '',
         cardDetails: CardDetailDto.fromJson(card).toDomain()
     );
   }

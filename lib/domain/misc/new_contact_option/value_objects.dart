@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum ContactStatus {invited, joined, pending, requested}
+enum ContactStatus {invited, joined, pending, requested, denied}
 
 ContactStatus contactStatusType(String type) {
   for (ContactStatus  item in ContactStatus.values) {
@@ -21,5 +21,7 @@ String getContactStatusName(ContactStatus type) {
       return 'Pending';
     case ContactStatus.requested:
       return 'Requested';
+    case ContactStatus.denied:
+      return 'Denied';
   }
 }

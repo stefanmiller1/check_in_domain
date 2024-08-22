@@ -33,12 +33,12 @@ String getFacilityStatusName(ManagerListingStatusType type, BuildContext context
 }
 
 
-List<SpaceOptionSizeDetail> getSpacesFromSelectedReservationSlot(BuildContext context, ListingManagerForm listingForm, ReservationItem reservation) {
+List<SpaceOptionSizeDetail> getSpacesFromSelectedReservationSlot(BuildContext context, ListingManagerForm listingForm, List<ReservationSlotItem> reservation) {
   final List<SpaceOptionSizeDetail> currentSpaceDetail = [];
 
   for (SpaceOption spaces in listingForm.listingProfileService.spaceSetting.spaceTypes.getOrCrash()) {
     for (MapEntry spaceDetail in spaces.quantity.asMap().entries) {
-      if (reservation.reservationSlotItem.map((e) => e.selectedSpaceId).contains(spaces.uid)) {
+      if (reservation.map((e) => e.selectedSpaceId).contains(spaces.uid)) {
         if (!(currentSpaceDetail.map((e) => e.spaceId).contains(spaceDetail.value.spaceId))) {
         final details = SpaceOptionSizeDetail(
             spaceId: spaceDetail.value.spaceId,

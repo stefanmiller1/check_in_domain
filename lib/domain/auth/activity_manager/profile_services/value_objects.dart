@@ -31,3 +31,5 @@ String getCertificateName(BuildContext context, CertificateType type) {
 }
 
 bool activitySetupComplete(ActivityManagerForm activityForm) => (activityForm.profileService.activityBackground.activityProfileImages != null && activityForm.profileService.activityBackground.activityProfileImages?.isNotEmpty == true && activityForm.profileService.activityBackground.activityTitle.isValid() && activityForm.profileService.activityBackground.activityDescription1.isValid());
+
+bool activityIsPublic(ActivityManagerForm activityForm) => (activityForm.rulesService.accessVisibilitySetting.isPrivateOnly != true || activityForm.rulesService.accessVisibilitySetting.isInviteOnly != true);
