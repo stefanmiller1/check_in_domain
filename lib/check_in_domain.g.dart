@@ -228,9 +228,9 @@ _$AccountNotificationItemDtoImpl _$$AccountNotificationItemDtoImplFromJson(
     _$AccountNotificationItemDtoImpl(
       notificationId: json['notificationId'] as String,
       isRead: json['isRead'] as bool,
-      receivedAtTimeStamp: json['receivedAtTimeStamp'] as int,
+      receivedAtTimeStamp: (json['receivedAtTimeStamp'] as num).toInt(),
       notificationType: json['notificationType'] as String,
-      openedAtTimeStamp: json['openedAtTimeStamp'] as int?,
+      openedAtTimeStamp: (json['openedAtTimeStamp'] as num?)?.toInt(),
       sentFromId: json['sentFromId'] as String?,
       postId: json['postId'] as String?,
       reservationId: json['reservationId'] as String?,
@@ -289,9 +289,9 @@ Map<String, dynamic> _$$AvailabilityHoursSettingOptionDtoImplToJson(
 _$DayOptionItemDtoImpl _$$DayOptionItemDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$DayOptionItemDtoImpl(
-      month: json['month'] as int,
-      week: json['week'] as int,
-      dayOfWeek: json['dayOfWeek'] as int,
+      month: (json['month'] as num).toInt(),
+      week: (json['week'] as num).toInt(),
+      dayOfWeek: (json['dayOfWeek'] as num).toInt(),
       isClosed: json['isClosed'] as bool,
       isTwentyFourHour: json['isTwentyFourHour'] as bool,
       hoursOpen: (json['hoursOpen'] as List<dynamic>)
@@ -313,7 +313,7 @@ Map<String, dynamic> _$$DayOptionItemDtoImplToJson(
 _$CostPerHourSettingOptionDtoImpl _$$CostPerHourSettingOptionDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$CostPerHourSettingOptionDtoImpl(
-      dayOfWeek: json['dayOfWeek'] as int,
+      dayOfWeek: (json['dayOfWeek'] as num).toInt(),
       feeDuringHourRange: (json['feeDuringHourRange'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -349,7 +349,7 @@ Map<String, dynamic> _$$FeeRangeItemDtoImplToJson(
 _$CostPerMultiDaySettingOptionDtoImpl
     _$$CostPerMultiDaySettingOptionDtoImplFromJson(Map<String, dynamic> json) =>
         _$CostPerMultiDaySettingOptionDtoImpl(
-          daysBeforeStartDate: json['daysBeforeStartDate'] as int,
+          daysBeforeStartDate: (json['daysBeforeStartDate'] as num).toInt(),
           feeBasedOnPass: json['feeBasedOnPass'] as String,
           isSinglePass: json['isSinglePass'] as bool,
           isGroupPass: json['isGroupPass'] as bool,
@@ -411,9 +411,9 @@ _$ReservationItemDtoImpl _$$ReservationItemDtoImplFromJson(
       cancelledSlotItem: (json['cancelledSlotItem'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
-      firstSlotTimestamp: json['firstSlotTimestamp'] as int?,
-      lastSlotTimestamp: json['lastSlotTimestamp'] as int?,
-      reservationReview: json['reservationReview'] as int?,
+      firstSlotTimestamp: (json['firstSlotTimestamp'] as num?)?.toInt(),
+      lastSlotTimestamp: (json['lastSlotTimestamp'] as num?)?.toInt(),
+      reservationReview: (json['reservationReview'] as num?)?.toInt(),
       isPublic: json['isPublic'] as bool?,
       refundId: json['refundId'] as String?,
       receipt_link: json['receipt_link'] as String?,
@@ -544,8 +544,8 @@ _$CardDetailDtoImpl _$$CardDetailDtoImplFromJson(Map<String, dynamic> json) =>
     _$CardDetailDtoImpl(
       brand: json['brand'] as String,
       last4: json['last4'] as String,
-      exp_month: json['exp_month'] as int,
-      exp_year: json['exp_year'] as int,
+      exp_month: (json['exp_month'] as num).toInt(),
+      exp_year: (json['exp_year'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$CardDetailDtoImplToJson(_$CardDetailDtoImpl instance) =>
@@ -561,22 +561,24 @@ _$PaymentIntentDtoImpl _$$PaymentIntentDtoImplFromJson(
     _$PaymentIntentDtoImpl(
       uid: json['uid'] as String?,
       object: json['object'] as String?,
-      amount: json['amount'] as int?,
-      amount_taxed: json['amount_taxed'] as int?,
-      seller_fee_amount: json['seller_fee_amount'] as int?,
-      seller_fee_amount_taxed: json['seller_fee_amount_taxed'] as int?,
-      buyer_fee_amount: json['buyer_fee_amount'] as int?,
-      buyer_fee_amount_taxed: json['buyer_fee_amount_taxed'] as int?,
-      created_at: json['created_at'] as int?,
+      amount: (json['amount'] as num?)?.toInt(),
+      amount_taxed: (json['amount_taxed'] as num?)?.toInt(),
+      seller_fee_amount: (json['seller_fee_amount'] as num?)?.toInt(),
+      seller_fee_amount_taxed:
+          (json['seller_fee_amount_taxed'] as num?)?.toInt(),
+      buyer_fee_amount: (json['buyer_fee_amount'] as num?)?.toInt(),
+      buyer_fee_amount_taxed: (json['buyer_fee_amount_taxed'] as num?)?.toInt(),
+      created_at: (json['created_at'] as num?)?.toInt(),
       client_secret: json['client_secret'] as String?,
       currency: json['currency'] as String?,
-      canceled_at: json['canceled_at'] as int?,
+      canceled_at: (json['canceled_at'] as num?)?.toInt(),
       cancellation_reason: json['cancellation_reason'] as String?,
       payment_method: json['payment_method'] as Map<String, dynamic>?,
-      created: json['created'] as int?,
+      created: (json['created'] as num?)?.toInt(),
       status: json['status'] as String?,
       itemId: json['itemId'] as String?,
       stripe_tax_detail: json['stripe_tax_detail'] as Map<String, dynamic>?,
+      discountCode: json['discountCode'] as Map<String, dynamic>?,
       metaData: json['metaData'] as Map<String, dynamic>?,
     );
 
@@ -601,6 +603,7 @@ Map<String, dynamic> _$$PaymentIntentDtoImplToJson(
       'status': instance.status,
       'itemId': instance.itemId,
       'stripe_tax_detail': instance.stripe_tax_detail,
+      'discountCode': instance.discountCode,
       'metaData': instance.metaData,
     };
 
@@ -609,10 +612,10 @@ _$StripeRefundModelDtoImpl _$$StripeRefundModelDtoImplFromJson(
     _$StripeRefundModelDtoImpl(
       uid: json['uid'] as String?,
       object: json['object'] as String?,
-      amount: json['amount'] as int?,
+      amount: (json['amount'] as num?)?.toInt(),
       balance_transaction: json['balance_transaction'] as String?,
       charge: json['charge'] as String?,
-      created: json['created'] as int?,
+      created: (json['created'] as num?)?.toInt(),
       currency: json['currency'] as String?,
       paymentIntent: json['paymentIntent'] as String?,
       reason: json['reason'] as String?,
@@ -662,7 +665,7 @@ _$InsuranceDocumentItemDtoImpl _$$InsuranceDocumentItemDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$InsuranceDocumentItemDtoImpl(
       formLink: json['formLink'] as String,
-      insuranceAmount: json['insuranceAmount'] as int,
+      insuranceAmount: (json['insuranceAmount'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$InsuranceDocumentItemDtoImplToJson(
@@ -733,7 +736,7 @@ _$ActivityAttendanceDtoImpl _$$ActivityAttendanceDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ActivityAttendanceDtoImpl(
       isLimitedAttendance: json['isLimitedAttendance'] as bool?,
-      attendanceLimit: json['attendanceLimit'] as int?,
+      attendanceLimit: (json['attendanceLimit'] as num?)?.toInt(),
       isTicketBased: json['isTicketBased'] as bool?,
       isPassBased: json['isPassBased'] as bool?,
       isTicketFixed: json['isTicketFixed'] as bool?,
@@ -770,12 +773,13 @@ _$ActivityPassesOptionDtoImpl _$$ActivityPassesOptionDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ActivityPassesOptionDtoImpl(
       isAllowedGroupAttendance: json['isAllowedGroupAttendance'] as bool,
-      minimumGroupQuantity: json['minimumGroupQuantity'] as int,
-      maximumGroupQuantity: json['maximumGroupQuantity'] as int,
-      passQuantity: json['passQuantity'] as int,
-      passesPrice: json['passesPrice'] as int?,
+      minimumGroupQuantity: (json['minimumGroupQuantity'] as num).toInt(),
+      maximumGroupQuantity: (json['maximumGroupQuantity'] as num).toInt(),
+      passQuantity: (json['passQuantity'] as num).toInt(),
+      passesPrice: (json['passesPrice'] as num?)?.toInt(),
       recurringPassAllSession: json['recurringPassAllSession'] as bool?,
-      recurringNumberOfSessions: json['recurringNumberOfSessions'] as int?,
+      recurringNumberOfSessions:
+          (json['recurringNumberOfSessions'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ActivityPassesOptionDtoImplToJson(
@@ -795,10 +799,10 @@ _$ActivityTicketOptionDtoImpl _$$ActivityTicketOptionDtoImplFromJson(
     _$ActivityTicketOptionDtoImpl(
       ticketId: json['ticketId'] as String,
       isAllowedGroupAttendance: json['isAllowedGroupAttendance'] as bool,
-      minimumGroupQuantity: json['minimumGroupQuantity'] as int,
-      maximumGroupQuantity: json['maximumGroupQuantity'] as int,
-      ticketQuantity: json['ticketQuantity'] as int,
-      ticketFee: json['ticketFee'] as int?,
+      minimumGroupQuantity: (json['minimumGroupQuantity'] as num).toInt(),
+      maximumGroupQuantity: (json['maximumGroupQuantity'] as num).toInt(),
+      ticketQuantity: (json['ticketQuantity'] as num).toInt(),
+      ticketFee: (json['ticketFee'] as num?)?.toInt(),
       ticketTitle: json['ticketTitle'] as String?,
       reservationSlot: json['reservationSlot'] as Map<String, dynamic>?,
       reservationTimeSlot: json['reservationTimeSlot'] as Map<String, dynamic>?,
@@ -825,7 +829,7 @@ _$EventMerchantVendorProfileDtoImpl
           profileOwner: json['profileOwner'] as String,
           brandName: json['brandName'] as String,
           backgroundInfo: json['backgroundInfo'] as String,
-          createdAt: json['createdAt'] as int,
+          createdAt: (json['createdAt'] as num).toInt(),
           uriImage: json['uriImage'] as String?,
           instagramLink: json['instagramLink'] as String?,
           websiteLink: json['websiteLink'] as String?,
@@ -870,7 +874,8 @@ _$ClassesInstructorProfileDtoImpl _$$ClassesInstructorProfileDtoImplFromJson(
       certificates: (json['certificates'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
-      numberOfYearsInExperience: json['numberOfYearsInExperience'] as int,
+      numberOfYearsInExperience:
+          (json['numberOfYearsInExperience'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$ClassesInstructorProfileDtoImplToJson(
@@ -886,10 +891,10 @@ _$TicketItemDtoImpl _$$TicketItemDtoImplFromJson(Map<String, dynamic> json) =>
       ticketId: json['ticketId'] as String,
       selectedTicketId: json['selectedTicketId'] as String,
       ticketOwner: json['ticketOwner'] as String,
-      selectedTicketFee: json['selectedTicketFee'] as int,
+      selectedTicketFee: (json['selectedTicketFee'] as num).toInt(),
       isOnHold: json['isOnHold'] as bool,
       createdAt: json['createdAt'] as String,
-      expiresAt: json['expiresAt'] as int,
+      expiresAt: (json['expiresAt'] as num).toInt(),
       redeemed: json['redeemed'] as bool?,
       redeemedAt: json['redeemedAt'] as String?,
       selectedTicketTitle: json['selectedTicketTitle'] as String?,
@@ -919,7 +924,7 @@ _$VendorMerchantFormDtoImpl _$$VendorMerchantFormDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$VendorMerchantFormDtoImpl(
       formId: json['formId'] as String,
-      lastOpenedAt: json['lastOpenedAt'] as int,
+      lastOpenedAt: (json['lastOpenedAt'] as num).toInt(),
       formTitle: json['formTitle'] as String?,
       welcomeMessage: json['welcomeMessage'] as String?,
       openCloseStart: json['openCloseStart'] as String?,
@@ -934,6 +939,9 @@ _$VendorMerchantFormDtoImpl _$$VendorMerchantFormDtoImplFromJson(
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
       disclaimerOptions: (json['disclaimerOptions'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+      discountOptions: (json['discountOptions'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
       formStatus: json['formStatus'] as String,
@@ -952,6 +960,7 @@ Map<String, dynamic> _$$VendorMerchantFormDtoImplToJson(
       'boothPaymentOptions': instance.boothPaymentOptions,
       'customOptions': instance.customOptions,
       'disclaimerOptions': instance.disclaimerOptions,
+      'discountOptions': instance.discountOptions,
       'formStatus': instance.formStatus,
     };
 
@@ -970,7 +979,7 @@ _$ActivityAvailabilityPeriodDtoImpl
           bookableBeforeInDays: json['bookableBeforeInDays'] as bool?,
           datesBeforeBookable: json['datesBeforeBookable'] as String?,
           numberOfDaysBeforeBookable:
-              json['numberOfDaysBeforeBookable'] as int?,
+              (json['numberOfDaysBeforeBookable'] as num?)?.toInt(),
           sessionDetails: (json['sessionDetails'] as List<dynamic>?)
               ?.map((e) => e as Map<String, dynamic>)
               .toList(),
@@ -1030,7 +1039,8 @@ _$ClassesActivityAvailabilityDtoImpl
           coachNewTeam: json['coachNewTeam'] as bool?,
           coachExistingTeam: json['coachExistingTeam'] as bool?,
           isOpenToMorePlayers: json['isOpenToMorePlayers'] as bool?,
-          additionalPlayerLimit: json['additionalPlayerLimit'] as int?,
+          additionalPlayerLimit:
+              (json['additionalPlayerLimit'] as num?)?.toInt(),
           playerRoster: (json['playerRoster'] as List<dynamic>?)
               ?.map((e) => e as Map<String, dynamic>)
               .toList(),
@@ -1041,7 +1051,7 @@ _$ClassesActivityAvailabilityDtoImpl
               .toList(),
           isOpenToUnlimitedAttendees:
               json['isOpenToUnlimitedAttendees'] as bool,
-          attendeeLimit: json['attendeeLimit'] as int,
+          attendeeLimit: (json['attendeeLimit'] as num).toInt(),
         );
 
 Map<String, dynamic> _$$ClassesActivityAvailabilityDtoImplToJson(
@@ -1062,7 +1072,8 @@ Map<String, dynamic> _$$ClassesActivityAvailabilityDtoImplToJson(
 _$GameActivityAvailabilityDtoImpl _$$GameActivityAvailabilityDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$GameActivityAvailabilityDtoImpl(
-      tournamentNumberOfTeams: json['tournamentNumberOfTeams'] as int?,
+      tournamentNumberOfTeams:
+          (json['tournamentNumberOfTeams'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GameActivityAvailabilityDtoImplToJson(
@@ -1190,7 +1201,7 @@ _$ActivityRequirementDtoImpl _$$ActivityRequirementDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ActivityRequirementDtoImpl(
       isSeventeenAndUnder: json['isSeventeenAndUnder'] as bool,
-      minimumAgeRequirement: json['minimumAgeRequirement'] as int,
+      minimumAgeRequirement: (json['minimumAgeRequirement'] as num).toInt(),
       isMensOnly: json['isMensOnly'] as bool?,
       isWomenOnly: json['isWomenOnly'] as bool?,
       isCoEdOnly: json['isCoEdOnly'] as bool?,
@@ -1201,7 +1212,8 @@ _$ActivityRequirementDtoImpl _$$ActivityRequirementDtoImplFromJson(
           (json['customRequirementOption'] as List<dynamic>?)
               ?.map((e) => e as Map<String, dynamic>)
               .toList(),
-      suggestedYearsOfExperience: json['suggestedYearsOfExperience'] as int?,
+      suggestedYearsOfExperience:
+          (json['suggestedYearsOfExperience'] as num?)?.toInt(),
       isEquipmentProvided: json['isEquipmentProvided'] as bool?,
       isFacilityEquipment: json['isFacilityEquipment'] as bool?,
       isGearProvided: json['isGearProvided'] as bool?,
@@ -1438,7 +1450,7 @@ _$ActivitySkillsRequirementDtoImpl _$$ActivitySkillsRequirementDtoImplFromJson(
     _$ActivitySkillsRequirementDtoImpl(
       isRequiredCertificate: json['isRequiredCertificate'] as bool,
       isRequiredMinimumExperience: json['isRequiredMinimumExperience'] as bool,
-      experienceInYears: json['experienceInYears'] as int,
+      experienceInYears: (json['experienceInYears'] as num).toInt(),
       isRequiredMinimumSkillLevel: json['isRequiredMinimumSkillLevel'] as bool,
       minimumSkillLevel: json['minimumSkillLevel'] as String,
       isPermittedPersonalTraining: json['isPermittedPersonalTraining'] as bool?,
@@ -1534,7 +1546,7 @@ _$CampFacilityActivityOptionDtoImpl
           isRequiredContactDetails: json['isRequiredContactDetails'] as bool,
           isAllowedLongTerm: json['isAllowedLongTerm'] as bool,
           isAllowedUnderAge: json['isAllowedUnderAge'] as bool,
-          quantityLimit: json['quantityLimit'] as int,
+          quantityLimit: (json['quantityLimit'] as num).toInt(),
           isProvidedPartnership: json['isProvidedPartnership'] as bool,
           partnershipProvision:
               json['partnershipProvision'] as Map<String, dynamic>,
@@ -1580,7 +1592,7 @@ _$EventFacilityActivityOptionDtoImpl
           isProvidedEquipmentAndStorage:
               json['isProvidedEquipmentAndStorage'] as bool,
           equipmentAndStorageFee: json['equipmentAndStorageFee'] as String,
-          quantityLimit: json['quantityLimit'] as int,
+          quantityLimit: (json['quantityLimit'] as num).toInt(),
           isAllowedUnderAge: json['isAllowedUnderAge'] as bool,
           isProvidedPartnership: json['isProvidedPartnership'] as bool,
           partnershipProvision:
@@ -1727,9 +1739,9 @@ _$TournamentFacilityActivityOptionDtoImpl
                   .map((e) => e as Map<String, dynamic>)
                   .toList(),
           isAllowedAudiences: json['isAllowedAudiences'] as bool,
-          maxAudienceSize: json['maxAudienceSize'] as int,
+          maxAudienceSize: (json['maxAudienceSize'] as num).toInt(),
           isRequiredMinimumTeams: json['isRequiredMinimumTeams'] as bool,
-          minimumTeamsAmount: json['minimumTeamsAmount'] as int,
+          minimumTeamsAmount: (json['minimumTeamsAmount'] as num).toInt(),
           isAllowedMultiFacilityPartnership:
               json['isAllowedMultiFacilityPartnership'] as bool,
           isProvidedPartnership: json['isProvidedPartnership'] as bool,
@@ -1817,7 +1829,7 @@ _$SpaceOptionSizeDetailDtoImpl _$$SpaceOptionSizeDetailDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$SpaceOptionSizeDetailDtoImpl(
       spaceId: json['spaceId'] as String,
-      durationType: json['durationType'] as int?,
+      durationType: (json['durationType'] as num?)?.toInt(),
       spaceTitle: json['spaceTitle'] as String?,
       spaceDescription: json['spaceDescription'] as String?,
       photoUri: json['photoUri'] as String?,
@@ -1900,7 +1912,7 @@ _$SportSpaceOptionDtoImpl _$$SportSpaceOptionDtoImplFromJson(
       isHalfSizeOnly: json['isHalfSizeOnly'] as bool,
       isBothFullHalf: json['isBothFullHalf'] as bool,
       isUnlimited: json['isUnlimited'] as bool,
-      maxLimit: json['maxLimit'] as int,
+      maxLimit: (json['maxLimit'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$SportSpaceOptionDtoImplToJson(
@@ -1985,7 +1997,7 @@ _$AvailabilityHoursSettingsDtoImpl _$$AvailabilityHoursSettingsDtoImplFromJson(
     _$AvailabilityHoursSettingsDtoImpl(
       availabilityPeriod: json['availabilityPeriod'] as Map<String, dynamic>,
       hideCalendarDays: (json['hideCalendarDays'] as List<dynamic>)
-          .map((e) => e as int)
+          .map((e) => (e as num).toInt())
           .toList(),
       startHour: (json['startHour'] as num).toDouble(),
       endHour: (json['endHour'] as num).toDouble(),
@@ -2004,15 +2016,15 @@ _$BackgroundInfoSettingsDtoImpl _$$BackgroundInfoSettingsDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$BackgroundInfoSettingsDtoImpl(
       listingOwner: json['listingOwner'] as String,
-      startDate: json['startDate'] as int,
-      endDate: json['endDate'] as int,
+      startDate: (json['startDate'] as num).toInt(),
+      endDate: (json['endDate'] as num).toInt(),
       listingName: json['listingName'] as String,
       listingDescription: json['listingDescription'] as String,
       listingEmail: json['listingEmail'] as String,
       listingPhone: json['listingPhone'] as Map<String, dynamic>?,
       listingStatus: json['listingStatus'] as String,
       listingWebsite: json['listingWebsite'] as String,
-      countryCodeId: json['countryCodeId'] as int,
+      countryCodeId: (json['countryCodeId'] as num).toInt(),
       countryCode: json['countryCode'] as String,
       countryName: json['countryName'] as String,
       timeZoneRegion: json['timeZoneRegion'] as String,
@@ -2128,8 +2140,8 @@ _$TimeBasedCancellationDtoImpl _$$TimeBasedCancellationDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$TimeBasedCancellationDtoImpl(
       spaceId: json['spaceId'] as String?,
-      intervalType: json['intervalType'] as int?,
-      intervalDuration: json['intervalDuration'] as int?,
+      intervalType: (json['intervalType'] as num?)?.toInt(),
+      intervalDuration: (json['intervalDuration'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$TimeBasedCancellationDtoImplToJson(
@@ -2143,8 +2155,8 @@ Map<String, dynamic> _$$TimeBasedCancellationDtoImplToJson(
 _$FeeBasedCancellationDtoImpl _$$FeeBasedCancellationDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$FeeBasedCancellationDtoImpl(
-      percentage: json['percentage'] as int,
-      daysBeforeStart: json['daysBeforeStart'] as int,
+      percentage: (json['percentage'] as num).toInt(),
+      daysBeforeStart: (json['daysBeforeStart'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$FeeBasedCancellationDtoImplToJson(
@@ -2157,12 +2169,12 @@ Map<String, dynamic> _$$FeeBasedCancellationDtoImplToJson(
 _$CheckInSettingsDtoImpl _$$CheckInSettingsDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$CheckInSettingsDtoImpl(
-      hoursBefore: json['hoursBefore'] as int,
-      minutesBefore: json['minutesBefore'] as int,
+      hoursBefore: (json['hoursBefore'] as num).toInt(),
+      minutesBefore: (json['minutesBefore'] as num).toInt(),
       isBeforeResStart: json['isBeforeResStart'] as bool,
       isAfterResStart: json['isAfterResStart'] as bool,
-      hoursUntil: json['hoursUntil'] as int,
-      minutesUntil: json['minutesUntil'] as int,
+      hoursUntil: (json['hoursUntil'] as num).toInt(),
+      minutesUntil: (json['minutesUntil'] as num).toInt(),
       listOfSpaceIds: (json['listOfSpaceIds'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -2281,7 +2293,7 @@ Map<String, dynamic> _$$SelectionLabelOptionDtoImplToJson(
 _$NumberLimitRuleDtoImpl _$$NumberLimitRuleDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$NumberLimitRuleDtoImpl(
-      numberToLimit: json['numberToLimit'] as int,
+      numberToLimit: (json['numberToLimit'] as num).toInt(),
       labelForNumberLimit: json['labelForNumberLimit'] as String,
     );
 
@@ -2351,7 +2363,7 @@ _$PricingRuleSettingsDtoImpl _$$PricingRuleSettingsDtoImplFromJson(
       bothTicketPassBased: json['bothTicketPassBased'] as bool?,
       ticketsBasedOnly: json['ticketsBasedOnly'] as bool?,
       passBasedOnly: json['passBasedOnly'] as bool?,
-      defaultPricingRate: json['defaultPricingRate'] as int?,
+      defaultPricingRate: (json['defaultPricingRate'] as num?)?.toInt(),
       pricingPerHourRule: (json['pricingPerHourRule'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -2379,8 +2391,8 @@ _$QuotaRuleSettingDtoImpl _$$QuotaRuleSettingDtoImplFromJson(
     _$QuotaRuleSettingDtoImpl(
       spaceId: json['spaceId'] as String,
       periodType: json['periodType'] as String,
-      quotaHourTimeFrame: json['quotaHourTimeFrame'] as int,
-      quotaMinuteTimeFrame: json['quotaMinuteTimeFrame'] as int,
+      quotaHourTimeFrame: (json['quotaHourTimeFrame'] as num).toInt(),
+      quotaMinuteTimeFrame: (json['quotaMinuteTimeFrame'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$QuotaRuleSettingDtoImplToJson(
@@ -2396,9 +2408,10 @@ _$ConditionsServicesDtoImpl _$$ConditionsServicesDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ConditionsServicesDtoImpl(
       spaceId: json['spaceId'] as String,
-      limitForEachReservationSlot: json['limitForEachReservationSlot'] as int?,
-      limitForEachTicket: json['limitForEachTicket'] as int?,
-      limitForEachPass: json['limitForEachPass'] as int?,
+      limitForEachReservationSlot:
+          (json['limitForEachReservationSlot'] as num?)?.toInt(),
+      limitForEachTicket: (json['limitForEachTicket'] as num?)?.toInt(),
+      limitForEachPass: (json['limitForEachPass'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ConditionsServicesDtoImplToJson(
@@ -2548,6 +2561,12 @@ _$UserProfileItemDtoImpl _$$UserProfileItemDtoImplFromJson(
       photoSelfieUri: json['photoSelfieUri'] as String?,
       stripeAccountId: json['stripeAccountId'] as String?,
       stripeCustomerId: json['stripeCustomerId'] as String?,
+      stripeBusinessID: json['stripeBusinessID'] as String?,
+      stripeCompanyName: json['stripeCompanyName'] as String?,
+      stripeHSTRegistrationNumber:
+          json['stripeHSTRegistrationNumber'] as String?,
+      stripeBusinessAddress:
+          json['stripeBusinessAddress'] as Map<String, dynamic>?,
       defaultPaymentMethod: json['defaultPaymentMethod'] as String?,
       stripeAccountDetailsSubmitted:
           json['stripeAccountDetailsSubmitted'] as bool?,
@@ -2581,6 +2600,10 @@ Map<String, dynamic> _$$UserProfileItemDtoImplToJson(
       'photoSelfieUri': instance.photoSelfieUri,
       'stripeAccountId': instance.stripeAccountId,
       'stripeCustomerId': instance.stripeCustomerId,
+      'stripeBusinessID': instance.stripeBusinessID,
+      'stripeCompanyName': instance.stripeCompanyName,
+      'stripeHSTRegistrationNumber': instance.stripeHSTRegistrationNumber,
+      'stripeBusinessAddress': instance.stripeBusinessAddress,
       'defaultPaymentMethod': instance.defaultPaymentMethod,
       'stripeAccountDetailsSubmitted': instance.stripeAccountDetailsSubmitted,
       'createdAt': const ServerTimestampConverter().toJson(instance.createdAt),
@@ -2621,7 +2644,7 @@ _$CircleProfileItemDtoImpl _$$CircleProfileItemDtoImplFromJson(
     _$CircleProfileItemDtoImpl(
       profileId: json['profileId'] as String,
       circleName: json['circleName'] as String,
-      createdAt: json['createdAt'] as int,
+      createdAt: (json['createdAt'] as num).toInt(),
       profileImage: json['profileImage'] as String?,
       instagram: json['instagram'] as String?,
       website: json['website'] as String?,

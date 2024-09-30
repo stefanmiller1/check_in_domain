@@ -1,7 +1,7 @@
 part of check_in_domain;
 
 @freezed
-class UserProfileModel with _$UserProfileModel {
+class  UserProfileModel with _$UserProfileModel {
   const UserProfileModel._();
 
   const factory UserProfileModel({
@@ -25,6 +25,7 @@ class UserProfileModel with _$UserProfileModel {
     bool? hasSignedIn,
     PhotoIdentificationState? identificationState,
     required DateTime joinedDate,
+    String? stripeCompanyName,
     String? stripeAccountId,
     String? stripeCustomerId,
     String? stripeBusinessID,

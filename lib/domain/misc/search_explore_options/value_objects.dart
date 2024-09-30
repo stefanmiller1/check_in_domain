@@ -1,6 +1,6 @@
 part of check_in_domain;
 
-enum DashboardMarker {home, reservations, chat, profile, settings, resCurrent, resProfile, resAttendees, resTicket, resVendorForms, resAttendeeTicket, resSettings}
+enum DashboardMarker {search, reservations, chat, profile, settings, resCurrent, resProfile, resAttendees, resTicket, resVendorForms, resAttendeeTicket, resSettings}
 enum SearchListingType {facilities, activities}
 enum SearchOption {exploreNew, yourCommunities}
 
@@ -47,12 +47,12 @@ DashboardMarker getDashboardMarker(String? type) {
       return item;
     }
   }
-  return DashboardMarker.home;
+  return DashboardMarker.search;
 }
 
 String getDashboardMarkerTitle(DashboardMarker marker) {
   switch (marker) {
-    case DashboardMarker.home:
+    case DashboardMarker.search:
       return 'Home';
     case DashboardMarker.reservations:
       return 'Reservations';

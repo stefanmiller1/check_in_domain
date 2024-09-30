@@ -41,6 +41,8 @@ List<MVCustomOption> predefinedDisclaimers(BuildContext context) {
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-iub9898h98hh'), customRuleTitleLabel: 'Cleaning', checkBoxRuleOption: [CheckBoxRuleOption(labelForRequirement: StringBoolItem(stringItem: 'you are responsible for cleaning & maintaining your booth for your neighbours and customers', boolItem: false))]), isActive: true),
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-gyug787gjhbh'), customRuleTitleLabel: 'No Dropouts', checkBoxRuleOption: [CheckBoxRuleOption(labelForRequirement: StringBoolItem(stringItem: 'Dropping out from the event upon being selected as a vendor may result in a permanent ban from future events', boolItem: false))]), isActive: true),
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-uhiuh9898hhu'), customRuleTitleLabel: 'Media & Content Use', selectionLabelOption: [SelectionLabelOption(selectionLabelOptions: [StringBoolItem(stringItem: 'By checking this box you confirm once accepted, The Toronto Flea can use images of your products that are on your owned social channels. From time to time The Toronto Flea may DM to confirm image usage but we expect vendors to keep their social channels and websites up to date.', boolItem: false)], isMultiSelection: false)]), isActive: true),
+    MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-udbisud909d9'), customRuleTitleLabel: 'Food Vendors', checkBoxRuleOption: [CheckBoxRuleOption(labelForRequirement: StringBoolItem(stringItem: 'Dropping out from the event upon being selected as a vendor may result in a permanent ban from future events', boolItem: false))]), isActive: true),
+
     // MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-jhbjhviy787g'), customRuleTitleLabel: 'Custom Disclaimer', checkBoxRuleOption: CheckBoxRuleOption(labelForRequirement: StringBoolItem(stringItem: '', boolItem: false))), isActive: false),
   ];
 }
@@ -188,9 +190,19 @@ bool isDisclaimerOptionValid(VendorMerchantForm form) {
   return true;
 }
 
-bool isVendorFormValid(VendorMerchantForm? form, ReservationItem? resReference) {
+bool isVoucherOptionsValid(VendorMerchantForm form) {
 
-  if (form != null && isWelcomeValid(form) && isAvailabilityValid(form, resReference) && isDisclaimerOptionValid(form) && form.formStatus != FormStatus.closed) {
+  // Return false if any discountAmount is 0 or greater than 99
+  if (form.discountOptions != null && form.discountOptions!.isNotEmpty && form.discountOptions!.any((discountCode) => discountCode.discountAmount == 0 || discountCode.discountAmount > 99)) {
+    return false;
+  }
+
+  // Return true if all discountAmounts are valid
+  return true;
+}
+
+bool isVendorFormValid(VendorMerchantForm? form, ReservationItem? resReference) {
+  if (form != null && isWelcomeValid(form) && isAvailabilityValid(form, resReference) && isDisclaimerOptionValid(form) && isVoucherOptionsValid(form) && form.formStatus != FormStatus.closed) {
     return true;
   }
   return false;

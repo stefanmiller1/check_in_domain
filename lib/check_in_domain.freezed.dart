@@ -19045,6 +19045,7 @@ mixin _$PaymentIntent {
   String? get itemId => throw _privateConstructorUsedError;
   StripeTaxRateDetails? get stripe_tax_detail =>
       throw _privateConstructorUsedError;
+  DiscountCode? get discountCode => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -19078,10 +19079,12 @@ abstract class $PaymentIntentCopyWith<$Res> {
       String? receipt_url,
       String? itemId,
       StripeTaxRateDetails? stripe_tax_detail,
+      DiscountCode? discountCode,
       Map<String, dynamic>? metaData});
 
   $CardItemCopyWith<$Res>? get payment_method;
   $StripeTaxRateDetailsCopyWith<$Res>? get stripe_tax_detail;
+  $DiscountCodeCopyWith<$Res>? get discountCode;
 }
 
 /// @nodoc
@@ -19116,6 +19119,7 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
     Object? receipt_url = freezed,
     Object? itemId = freezed,
     Object? stripe_tax_detail = freezed,
+    Object? discountCode = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
@@ -19195,6 +19199,10 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
           ? _value.stripe_tax_detail
           : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
               as StripeTaxRateDetails?,
+      discountCode: freezed == discountCode
+          ? _value.discountCode
+          : discountCode // ignore: cast_nullable_to_non_nullable
+              as DiscountCode?,
       metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -19224,6 +19232,18 @@ class _$PaymentIntentCopyWithImpl<$Res, $Val extends PaymentIntent>
     return $StripeTaxRateDetailsCopyWith<$Res>(_value.stripe_tax_detail!,
         (value) {
       return _then(_value.copyWith(stripe_tax_detail: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DiscountCodeCopyWith<$Res>? get discountCode {
+    if (_value.discountCode == null) {
+      return null;
+    }
+
+    return $DiscountCodeCopyWith<$Res>(_value.discountCode!, (value) {
+      return _then(_value.copyWith(discountCode: value) as $Val);
     });
   }
 }
@@ -19256,12 +19276,15 @@ abstract class _$$PaymentIntentImplCopyWith<$Res>
       String? receipt_url,
       String? itemId,
       StripeTaxRateDetails? stripe_tax_detail,
+      DiscountCode? discountCode,
       Map<String, dynamic>? metaData});
 
   @override
   $CardItemCopyWith<$Res>? get payment_method;
   @override
   $StripeTaxRateDetailsCopyWith<$Res>? get stripe_tax_detail;
+  @override
+  $DiscountCodeCopyWith<$Res>? get discountCode;
 }
 
 /// @nodoc
@@ -19294,6 +19317,7 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
     Object? receipt_url = freezed,
     Object? itemId = freezed,
     Object? stripe_tax_detail = freezed,
+    Object? discountCode = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_$PaymentIntentImpl(
@@ -19373,6 +19397,10 @@ class __$$PaymentIntentImplCopyWithImpl<$Res>
           ? _value.stripe_tax_detail
           : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
               as StripeTaxRateDetails?,
+      discountCode: freezed == discountCode
+          ? _value.discountCode
+          : discountCode // ignore: cast_nullable_to_non_nullable
+              as DiscountCode?,
       metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -19404,6 +19432,7 @@ class _$PaymentIntentImpl extends _PaymentIntent {
       this.receipt_url,
       this.itemId,
       this.stripe_tax_detail,
+      this.discountCode,
       final Map<String, dynamic>? metaData})
       : _metaData = metaData,
         super._();
@@ -19446,6 +19475,8 @@ class _$PaymentIntentImpl extends _PaymentIntent {
   final String? itemId;
   @override
   final StripeTaxRateDetails? stripe_tax_detail;
+  @override
+  final DiscountCode? discountCode;
   final Map<String, dynamic>? _metaData;
   @override
   Map<String, dynamic>? get metaData {
@@ -19458,7 +19489,7 @@ class _$PaymentIntentImpl extends _PaymentIntent {
 
   @override
   String toString() {
-    return 'PaymentIntent(id: $id, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, receipt_url: $receipt_url, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, metaData: $metaData)';
+    return 'PaymentIntent(id: $id, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, receipt_url: $receipt_url, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, discountCode: $discountCode, metaData: $metaData)';
   }
 
   @override
@@ -19499,6 +19530,8 @@ class _$PaymentIntentImpl extends _PaymentIntent {
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.stripe_tax_detail, stripe_tax_detail) ||
                 other.stripe_tax_detail == stripe_tax_detail) &&
+            (identical(other.discountCode, discountCode) ||
+                other.discountCode == discountCode) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
@@ -19524,6 +19557,7 @@ class _$PaymentIntentImpl extends _PaymentIntent {
         receipt_url,
         itemId,
         stripe_tax_detail,
+        discountCode,
         const DeepCollectionEquality().hash(_metaData)
       ]);
 
@@ -19555,6 +19589,7 @@ abstract class _PaymentIntent extends PaymentIntent {
       final String? receipt_url,
       final String? itemId,
       final StripeTaxRateDetails? stripe_tax_detail,
+      final DiscountCode? discountCode,
       final Map<String, dynamic>? metaData}) = _$PaymentIntentImpl;
   const _PaymentIntent._() : super._();
 
@@ -19597,6 +19632,8 @@ abstract class _PaymentIntent extends PaymentIntent {
   @override
   StripeTaxRateDetails? get stripe_tax_detail;
   @override
+  DiscountCode? get discountCode;
+  @override
   Map<String, dynamic>? get metaData;
   @override
   @JsonKey(ignore: true)
@@ -19630,6 +19667,7 @@ mixin _$PaymentIntentDto {
   String? get itemId => throw _privateConstructorUsedError;
   Map<String, dynamic>? get stripe_tax_detail =>
       throw _privateConstructorUsedError;
+  Map<String, dynamic>? get discountCode => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -19663,6 +19701,7 @@ abstract class $PaymentIntentDtoCopyWith<$Res> {
       String? status,
       String? itemId,
       Map<String, dynamic>? stripe_tax_detail,
+      Map<String, dynamic>? discountCode,
       Map<String, dynamic>? metaData});
 }
 
@@ -19697,6 +19736,7 @@ class _$PaymentIntentDtoCopyWithImpl<$Res, $Val extends PaymentIntentDto>
     Object? status = freezed,
     Object? itemId = freezed,
     Object? stripe_tax_detail = freezed,
+    Object? discountCode = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
@@ -19772,6 +19812,10 @@ class _$PaymentIntentDtoCopyWithImpl<$Res, $Val extends PaymentIntentDto>
           ? _value.stripe_tax_detail
           : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      discountCode: freezed == discountCode
+          ? _value.discountCode
+          : discountCode // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       metaData: freezed == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -19807,6 +19851,7 @@ abstract class _$$PaymentIntentDtoImplCopyWith<$Res>
       String? status,
       String? itemId,
       Map<String, dynamic>? stripe_tax_detail,
+      Map<String, dynamic>? discountCode,
       Map<String, dynamic>? metaData});
 }
 
@@ -19839,6 +19884,7 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
     Object? status = freezed,
     Object? itemId = freezed,
     Object? stripe_tax_detail = freezed,
+    Object? discountCode = freezed,
     Object? metaData = freezed,
   }) {
     return _then(_$PaymentIntentDtoImpl(
@@ -19914,6 +19960,10 @@ class __$$PaymentIntentDtoImplCopyWithImpl<$Res>
           ? _value._stripe_tax_detail
           : stripe_tax_detail // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      discountCode: freezed == discountCode
+          ? _value._discountCode
+          : discountCode // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       metaData: freezed == metaData
           ? _value._metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -19944,9 +19994,11 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
       this.status,
       this.itemId,
       final Map<String, dynamic>? stripe_tax_detail,
+      final Map<String, dynamic>? discountCode,
       final Map<String, dynamic>? metaData})
       : _payment_method = payment_method,
         _stripe_tax_detail = stripe_tax_detail,
+        _discountCode = discountCode,
         _metaData = metaData,
         super._();
 
@@ -20006,6 +20058,16 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
     return EqualUnmodifiableMapView(value);
   }
 
+  final Map<String, dynamic>? _discountCode;
+  @override
+  Map<String, dynamic>? get discountCode {
+    final value = _discountCode;
+    if (value == null) return null;
+    if (_discountCode is EqualUnmodifiableMapView) return _discountCode;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   final Map<String, dynamic>? _metaData;
   @override
   Map<String, dynamic>? get metaData {
@@ -20018,7 +20080,7 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
 
   @override
   String toString() {
-    return 'PaymentIntentDto(uid: $uid, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, metaData: $metaData)';
+    return 'PaymentIntentDto(uid: $uid, object: $object, amount: $amount, amount_taxed: $amount_taxed, seller_fee_amount: $seller_fee_amount, seller_fee_amount_taxed: $seller_fee_amount_taxed, buyer_fee_amount: $buyer_fee_amount, buyer_fee_amount_taxed: $buyer_fee_amount_taxed, created_at: $created_at, client_secret: $client_secret, currency: $currency, canceled_at: $canceled_at, cancellation_reason: $cancellation_reason, payment_method: $payment_method, created: $created, status: $status, itemId: $itemId, stripe_tax_detail: $stripe_tax_detail, discountCode: $discountCode, metaData: $metaData)';
   }
 
   @override
@@ -20057,6 +20119,8 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             const DeepCollectionEquality()
                 .equals(other._stripe_tax_detail, _stripe_tax_detail) &&
+            const DeepCollectionEquality()
+                .equals(other._discountCode, _discountCode) &&
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
@@ -20082,6 +20146,7 @@ class _$PaymentIntentDtoImpl extends _PaymentIntentDto {
         status,
         itemId,
         const DeepCollectionEquality().hash(_stripe_tax_detail),
+        const DeepCollectionEquality().hash(_discountCode),
         const DeepCollectionEquality().hash(_metaData)
       ]);
 
@@ -20120,6 +20185,7 @@ abstract class _PaymentIntentDto extends PaymentIntentDto {
       final String? status,
       final String? itemId,
       final Map<String, dynamic>? stripe_tax_detail,
+      final Map<String, dynamic>? discountCode,
       final Map<String, dynamic>? metaData}) = _$PaymentIntentDtoImpl;
   const _PaymentIntentDto._() : super._();
 
@@ -20162,6 +20228,8 @@ abstract class _PaymentIntentDto extends PaymentIntentDto {
   String? get itemId;
   @override
   Map<String, dynamic>? get stripe_tax_detail;
+  @override
+  Map<String, dynamic>? get discountCode;
   @override
   Map<String, dynamic>? get metaData;
   @override
@@ -31390,6 +31458,7 @@ mixin _$VendorMerchantForm {
   List<MVCustomOption>? get customOptions => throw _privateConstructorUsedError;
   List<MVCustomOption>? get disclaimerOptions =>
       throw _privateConstructorUsedError;
+  List<DiscountCode>? get discountOptions => throw _privateConstructorUsedError;
   FormStatus get formStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31413,6 +31482,7 @@ abstract class $VendorMerchantFormCopyWith<$Res> {
       List<MVBoothPayments>? boothPaymentOptions,
       List<MVCustomOption>? customOptions,
       List<MVCustomOption>? disclaimerOptions,
+      List<DiscountCode>? discountOptions,
       FormStatus formStatus});
 }
 
@@ -31438,6 +31508,7 @@ class _$VendorMerchantFormCopyWithImpl<$Res, $Val extends VendorMerchantForm>
     Object? boothPaymentOptions = freezed,
     Object? customOptions = freezed,
     Object? disclaimerOptions = freezed,
+    Object? discountOptions = freezed,
     Object? formStatus = null,
   }) {
     return _then(_value.copyWith(
@@ -31477,6 +31548,10 @@ class _$VendorMerchantFormCopyWithImpl<$Res, $Val extends VendorMerchantForm>
           ? _value.disclaimerOptions
           : disclaimerOptions // ignore: cast_nullable_to_non_nullable
               as List<MVCustomOption>?,
+      discountOptions: freezed == discountOptions
+          ? _value.discountOptions
+          : discountOptions // ignore: cast_nullable_to_non_nullable
+              as List<DiscountCode>?,
       formStatus: null == formStatus
           ? _value.formStatus
           : formStatus // ignore: cast_nullable_to_non_nullable
@@ -31503,6 +31578,7 @@ abstract class _$$VendorMerchantFormImplCopyWith<$Res>
       List<MVBoothPayments>? boothPaymentOptions,
       List<MVCustomOption>? customOptions,
       List<MVCustomOption>? disclaimerOptions,
+      List<DiscountCode>? discountOptions,
       FormStatus formStatus});
 }
 
@@ -31526,6 +31602,7 @@ class __$$VendorMerchantFormImplCopyWithImpl<$Res>
     Object? boothPaymentOptions = freezed,
     Object? customOptions = freezed,
     Object? disclaimerOptions = freezed,
+    Object? discountOptions = freezed,
     Object? formStatus = null,
   }) {
     return _then(_$VendorMerchantFormImpl(
@@ -31565,6 +31642,10 @@ class __$$VendorMerchantFormImplCopyWithImpl<$Res>
           ? _value._disclaimerOptions
           : disclaimerOptions // ignore: cast_nullable_to_non_nullable
               as List<MVCustomOption>?,
+      discountOptions: freezed == discountOptions
+          ? _value._discountOptions
+          : discountOptions // ignore: cast_nullable_to_non_nullable
+              as List<DiscountCode>?,
       formStatus: null == formStatus
           ? _value.formStatus
           : formStatus // ignore: cast_nullable_to_non_nullable
@@ -31586,11 +31667,13 @@ class _$VendorMerchantFormImpl extends _VendorMerchantForm {
       final List<MVBoothPayments>? boothPaymentOptions,
       final List<MVCustomOption>? customOptions,
       final List<MVCustomOption>? disclaimerOptions,
+      final List<DiscountCode>? discountOptions,
       required this.formStatus})
       : _availableTimeSlots = availableTimeSlots,
         _boothPaymentOptions = boothPaymentOptions,
         _customOptions = customOptions,
         _disclaimerOptions = disclaimerOptions,
+        _discountOptions = discountOptions,
         super._();
 
   @override
@@ -31646,12 +31729,22 @@ class _$VendorMerchantFormImpl extends _VendorMerchantForm {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<DiscountCode>? _discountOptions;
+  @override
+  List<DiscountCode>? get discountOptions {
+    final value = _discountOptions;
+    if (value == null) return null;
+    if (_discountOptions is EqualUnmodifiableListView) return _discountOptions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final FormStatus formStatus;
 
   @override
   String toString() {
-    return 'VendorMerchantForm(formId: $formId, lastOpenedAt: $lastOpenedAt, formTitle: $formTitle, welcomeMessage: $welcomeMessage, openCloseDates: $openCloseDates, availableTimeSlots: $availableTimeSlots, boothPaymentOptions: $boothPaymentOptions, customOptions: $customOptions, disclaimerOptions: $disclaimerOptions, formStatus: $formStatus)';
+    return 'VendorMerchantForm(formId: $formId, lastOpenedAt: $lastOpenedAt, formTitle: $formTitle, welcomeMessage: $welcomeMessage, openCloseDates: $openCloseDates, availableTimeSlots: $availableTimeSlots, boothPaymentOptions: $boothPaymentOptions, customOptions: $customOptions, disclaimerOptions: $disclaimerOptions, discountOptions: $discountOptions, formStatus: $formStatus)';
   }
 
   @override
@@ -31676,6 +31769,8 @@ class _$VendorMerchantFormImpl extends _VendorMerchantForm {
                 .equals(other._customOptions, _customOptions) &&
             const DeepCollectionEquality()
                 .equals(other._disclaimerOptions, _disclaimerOptions) &&
+            const DeepCollectionEquality()
+                .equals(other._discountOptions, _discountOptions) &&
             (identical(other.formStatus, formStatus) ||
                 other.formStatus == formStatus));
   }
@@ -31692,6 +31787,7 @@ class _$VendorMerchantFormImpl extends _VendorMerchantForm {
       const DeepCollectionEquality().hash(_boothPaymentOptions),
       const DeepCollectionEquality().hash(_customOptions),
       const DeepCollectionEquality().hash(_disclaimerOptions),
+      const DeepCollectionEquality().hash(_discountOptions),
       formStatus);
 
   @JsonKey(ignore: true)
@@ -31713,6 +31809,7 @@ abstract class _VendorMerchantForm extends VendorMerchantForm {
       final List<MVBoothPayments>? boothPaymentOptions,
       final List<MVCustomOption>? customOptions,
       final List<MVCustomOption>? disclaimerOptions,
+      final List<DiscountCode>? discountOptions,
       required final FormStatus formStatus}) = _$VendorMerchantFormImpl;
   const _VendorMerchantForm._() : super._();
 
@@ -31734,6 +31831,8 @@ abstract class _VendorMerchantForm extends VendorMerchantForm {
   List<MVCustomOption>? get customOptions;
   @override
   List<MVCustomOption>? get disclaimerOptions;
+  @override
+  List<DiscountCode>? get discountOptions;
   @override
   FormStatus get formStatus;
   @override
@@ -31763,6 +31862,8 @@ mixin _$VendorMerchantFormDto {
       throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get disclaimerOptions =>
       throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get discountOptions =>
+      throw _privateConstructorUsedError;
   String get formStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -31788,6 +31889,7 @@ abstract class $VendorMerchantFormDtoCopyWith<$Res> {
       List<Map<String, dynamic>>? boothPaymentOptions,
       List<Map<String, dynamic>>? customOptions,
       List<Map<String, dynamic>>? disclaimerOptions,
+      List<Map<String, dynamic>>? discountOptions,
       String formStatus});
 }
 
@@ -31815,6 +31917,7 @@ class _$VendorMerchantFormDtoCopyWithImpl<$Res,
     Object? boothPaymentOptions = freezed,
     Object? customOptions = freezed,
     Object? disclaimerOptions = freezed,
+    Object? discountOptions = freezed,
     Object? formStatus = null,
   }) {
     return _then(_value.copyWith(
@@ -31858,6 +31961,10 @@ class _$VendorMerchantFormDtoCopyWithImpl<$Res,
           ? _value.disclaimerOptions
           : disclaimerOptions // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
+      discountOptions: freezed == discountOptions
+          ? _value.discountOptions
+          : discountOptions // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       formStatus: null == formStatus
           ? _value.formStatus
           : formStatus // ignore: cast_nullable_to_non_nullable
@@ -31886,6 +31993,7 @@ abstract class _$$VendorMerchantFormDtoImplCopyWith<$Res>
       List<Map<String, dynamic>>? boothPaymentOptions,
       List<Map<String, dynamic>>? customOptions,
       List<Map<String, dynamic>>? disclaimerOptions,
+      List<Map<String, dynamic>>? discountOptions,
       String formStatus});
 }
 
@@ -31911,6 +32019,7 @@ class __$$VendorMerchantFormDtoImplCopyWithImpl<$Res>
     Object? boothPaymentOptions = freezed,
     Object? customOptions = freezed,
     Object? disclaimerOptions = freezed,
+    Object? discountOptions = freezed,
     Object? formStatus = null,
   }) {
     return _then(_$VendorMerchantFormDtoImpl(
@@ -31954,6 +32063,10 @@ class __$$VendorMerchantFormDtoImplCopyWithImpl<$Res>
           ? _value._disclaimerOptions
           : disclaimerOptions // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
+      discountOptions: freezed == discountOptions
+          ? _value._discountOptions
+          : discountOptions // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       formStatus: null == formStatus
           ? _value.formStatus
           : formStatus // ignore: cast_nullable_to_non_nullable
@@ -31976,11 +32089,13 @@ class _$VendorMerchantFormDtoImpl extends _VendorMerchantFormDto {
       final List<Map<String, dynamic>>? boothPaymentOptions,
       final List<Map<String, dynamic>>? customOptions,
       final List<Map<String, dynamic>>? disclaimerOptions,
+      final List<Map<String, dynamic>>? discountOptions,
       required this.formStatus})
       : _availableTimeSlots = availableTimeSlots,
         _boothPaymentOptions = boothPaymentOptions,
         _customOptions = customOptions,
         _disclaimerOptions = disclaimerOptions,
+        _discountOptions = discountOptions,
         super._();
 
   factory _$VendorMerchantFormDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -32041,12 +32156,22 @@ class _$VendorMerchantFormDtoImpl extends _VendorMerchantFormDto {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<Map<String, dynamic>>? _discountOptions;
+  @override
+  List<Map<String, dynamic>>? get discountOptions {
+    final value = _discountOptions;
+    if (value == null) return null;
+    if (_discountOptions is EqualUnmodifiableListView) return _discountOptions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String formStatus;
 
   @override
   String toString() {
-    return 'VendorMerchantFormDto(formId: $formId, lastOpenedAt: $lastOpenedAt, formTitle: $formTitle, welcomeMessage: $welcomeMessage, openCloseStart: $openCloseStart, openCloseEnd: $openCloseEnd, availableTimeSlots: $availableTimeSlots, boothPaymentOptions: $boothPaymentOptions, customOptions: $customOptions, disclaimerOptions: $disclaimerOptions, formStatus: $formStatus)';
+    return 'VendorMerchantFormDto(formId: $formId, lastOpenedAt: $lastOpenedAt, formTitle: $formTitle, welcomeMessage: $welcomeMessage, openCloseStart: $openCloseStart, openCloseEnd: $openCloseEnd, availableTimeSlots: $availableTimeSlots, boothPaymentOptions: $boothPaymentOptions, customOptions: $customOptions, disclaimerOptions: $disclaimerOptions, discountOptions: $discountOptions, formStatus: $formStatus)';
   }
 
   @override
@@ -32073,6 +32198,8 @@ class _$VendorMerchantFormDtoImpl extends _VendorMerchantFormDto {
                 .equals(other._customOptions, _customOptions) &&
             const DeepCollectionEquality()
                 .equals(other._disclaimerOptions, _disclaimerOptions) &&
+            const DeepCollectionEquality()
+                .equals(other._discountOptions, _discountOptions) &&
             (identical(other.formStatus, formStatus) ||
                 other.formStatus == formStatus));
   }
@@ -32091,6 +32218,7 @@ class _$VendorMerchantFormDtoImpl extends _VendorMerchantFormDto {
       const DeepCollectionEquality().hash(_boothPaymentOptions),
       const DeepCollectionEquality().hash(_customOptions),
       const DeepCollectionEquality().hash(_disclaimerOptions),
+      const DeepCollectionEquality().hash(_discountOptions),
       formStatus);
 
   @JsonKey(ignore: true)
@@ -32120,6 +32248,7 @@ abstract class _VendorMerchantFormDto extends VendorMerchantFormDto {
       final List<Map<String, dynamic>>? boothPaymentOptions,
       final List<Map<String, dynamic>>? customOptions,
       final List<Map<String, dynamic>>? disclaimerOptions,
+      final List<Map<String, dynamic>>? discountOptions,
       required final String formStatus}) = _$VendorMerchantFormDtoImpl;
   const _VendorMerchantFormDto._() : super._();
 
@@ -32146,6 +32275,8 @@ abstract class _VendorMerchantFormDto extends VendorMerchantFormDto {
   List<Map<String, dynamic>>? get customOptions;
   @override
   List<Map<String, dynamic>>? get disclaimerOptions;
+  @override
+  List<Map<String, dynamic>>? get discountOptions;
   @override
   String get formStatus;
   @override
@@ -69399,6 +69530,7 @@ mixin _$UserProfileModel {
   PhotoIdentificationState? get identificationState =>
       throw _privateConstructorUsedError;
   DateTime get joinedDate => throw _privateConstructorUsedError;
+  String? get stripeCompanyName => throw _privateConstructorUsedError;
   String? get stripeAccountId => throw _privateConstructorUsedError;
   String? get stripeCustomerId => throw _privateConstructorUsedError;
   String? get stripeBusinessID => throw _privateConstructorUsedError;
@@ -69440,6 +69572,7 @@ abstract class $UserProfileModelCopyWith<$Res> {
       bool? hasSignedIn,
       PhotoIdentificationState? identificationState,
       DateTime joinedDate,
+      String? stripeCompanyName,
       String? stripeAccountId,
       String? stripeCustomerId,
       String? stripeBusinessID,
@@ -69484,6 +69617,7 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
     Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? joinedDate = null,
+    Object? stripeCompanyName = freezed,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
     Object? stripeBusinessID = freezed,
@@ -69573,6 +69707,10 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
           ? _value.joinedDate
           : joinedDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      stripeCompanyName: freezed == stripeCompanyName
+          ? _value.stripeCompanyName
+          : stripeCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
       stripeAccountId: freezed == stripeAccountId
           ? _value.stripeAccountId
           : stripeAccountId // ignore: cast_nullable_to_non_nullable
@@ -69647,6 +69785,7 @@ abstract class _$$UserProfileModelImplCopyWith<$Res>
       bool? hasSignedIn,
       PhotoIdentificationState? identificationState,
       DateTime joinedDate,
+      String? stripeCompanyName,
       String? stripeAccountId,
       String? stripeCustomerId,
       String? stripeBusinessID,
@@ -69690,6 +69829,7 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
     Object? hasSignedIn = freezed,
     Object? identificationState = freezed,
     Object? joinedDate = null,
+    Object? stripeCompanyName = freezed,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
     Object? stripeBusinessID = freezed,
@@ -69779,6 +69919,10 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
           ? _value.joinedDate
           : joinedDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      stripeCompanyName: freezed == stripeCompanyName
+          ? _value.stripeCompanyName
+          : stripeCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
       stripeAccountId: freezed == stripeAccountId
           ? _value.stripeAccountId
           : stripeAccountId // ignore: cast_nullable_to_non_nullable
@@ -69835,6 +69979,7 @@ class _$UserProfileModelImpl extends _UserProfileModel {
       this.hasSignedIn,
       this.identificationState,
       required this.joinedDate,
+      this.stripeCompanyName,
       this.stripeAccountId,
       this.stripeCustomerId,
       this.stripeBusinessID,
@@ -69885,6 +70030,8 @@ class _$UserProfileModelImpl extends _UserProfileModel {
   @override
   final DateTime joinedDate;
   @override
+  final String? stripeCompanyName;
+  @override
   final String? stripeAccountId;
   @override
   final String? stripeCustomerId;
@@ -69901,7 +70048,7 @@ class _$UserProfileModelImpl extends _UserProfileModel {
 
   @override
   String toString() {
-    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, profileImage: $profileImage, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, joinedDate: $joinedDate, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeBusinessAddress: $stripeBusinessAddress, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
+    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, profileImage: $profileImage, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, joinedDate: $joinedDate, stripeCompanyName: $stripeCompanyName, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeBusinessAddress: $stripeBusinessAddress, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
   }
 
   @override
@@ -69946,6 +70093,8 @@ class _$UserProfileModelImpl extends _UserProfileModel {
                 other.identificationState == identificationState) &&
             (identical(other.joinedDate, joinedDate) ||
                 other.joinedDate == joinedDate) &&
+            (identical(other.stripeCompanyName, stripeCompanyName) ||
+                other.stripeCompanyName == stripeCompanyName) &&
             (identical(other.stripeAccountId, stripeAccountId) ||
                 other.stripeAccountId == stripeAccountId) &&
             (identical(other.stripeCustomerId, stripeCustomerId) ||
@@ -69989,6 +70138,7 @@ class _$UserProfileModelImpl extends _UserProfileModel {
         hasSignedIn,
         identificationState,
         joinedDate,
+        stripeCompanyName,
         stripeAccountId,
         stripeCustomerId,
         stripeBusinessID,
@@ -70028,6 +70178,7 @@ abstract class _UserProfileModel extends UserProfileModel {
       final bool? hasSignedIn,
       final PhotoIdentificationState? identificationState,
       required final DateTime joinedDate,
+      final String? stripeCompanyName,
       final String? stripeAccountId,
       final String? stripeCustomerId,
       final String? stripeBusinessID,
@@ -70078,6 +70229,8 @@ abstract class _UserProfileModel extends UserProfileModel {
   @override
   DateTime get joinedDate;
   @override
+  String? get stripeCompanyName;
+  @override
   String? get stripeAccountId;
   @override
   String? get stripeCustomerId;
@@ -70126,6 +70279,11 @@ mixin _$UserProfileItemDto {
   String? get photoSelfieUri => throw _privateConstructorUsedError;
   String? get stripeAccountId => throw _privateConstructorUsedError;
   String? get stripeCustomerId => throw _privateConstructorUsedError;
+  String? get stripeBusinessID => throw _privateConstructorUsedError;
+  String? get stripeCompanyName => throw _privateConstructorUsedError;
+  String? get stripeHSTRegistrationNumber => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get stripeBusinessAddress =>
+      throw _privateConstructorUsedError;
   String? get defaultPaymentMethod => throw _privateConstructorUsedError;
   bool? get stripeAccountDetailsSubmitted => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -70171,6 +70329,10 @@ abstract class $UserProfileItemDtoCopyWith<$Res> {
       String? photoSelfieUri,
       String? stripeAccountId,
       String? stripeCustomerId,
+      String? stripeBusinessID,
+      String? stripeCompanyName,
+      String? stripeHSTRegistrationNumber,
+      Map<String, dynamic>? stripeBusinessAddress,
       String? defaultPaymentMethod,
       bool? stripeAccountDetailsSubmitted,
       @ServerTimestampConverter() FieldValue? createdAt,
@@ -70213,6 +70375,10 @@ class _$UserProfileItemDtoCopyWithImpl<$Res, $Val extends UserProfileItemDto>
     Object? photoSelfieUri = freezed,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeCompanyName = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
+    Object? stripeBusinessAddress = freezed,
     Object? defaultPaymentMethod = freezed,
     Object? stripeAccountDetailsSubmitted = freezed,
     Object? createdAt = freezed,
@@ -70305,6 +70471,22 @@ class _$UserProfileItemDtoCopyWithImpl<$Res, $Val extends UserProfileItemDto>
           ? _value.stripeCustomerId
           : stripeCustomerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeCompanyName: freezed == stripeCompanyName
+          ? _value.stripeCompanyName
+          : stripeCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value.stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       defaultPaymentMethod: freezed == defaultPaymentMethod
           ? _value.defaultPaymentMethod
           : defaultPaymentMethod // ignore: cast_nullable_to_non_nullable
@@ -70363,6 +70545,10 @@ abstract class _$$UserProfileItemDtoImplCopyWith<$Res>
       String? photoSelfieUri,
       String? stripeAccountId,
       String? stripeCustomerId,
+      String? stripeBusinessID,
+      String? stripeCompanyName,
+      String? stripeHSTRegistrationNumber,
+      Map<String, dynamic>? stripeBusinessAddress,
       String? defaultPaymentMethod,
       bool? stripeAccountDetailsSubmitted,
       @ServerTimestampConverter() FieldValue? createdAt,
@@ -70403,6 +70589,10 @@ class __$$UserProfileItemDtoImplCopyWithImpl<$Res>
     Object? photoSelfieUri = freezed,
     Object? stripeAccountId = freezed,
     Object? stripeCustomerId = freezed,
+    Object? stripeBusinessID = freezed,
+    Object? stripeCompanyName = freezed,
+    Object? stripeHSTRegistrationNumber = freezed,
+    Object? stripeBusinessAddress = freezed,
     Object? defaultPaymentMethod = freezed,
     Object? stripeAccountDetailsSubmitted = freezed,
     Object? createdAt = freezed,
@@ -70495,6 +70685,22 @@ class __$$UserProfileItemDtoImplCopyWithImpl<$Res>
           ? _value.stripeCustomerId
           : stripeCustomerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      stripeBusinessID: freezed == stripeBusinessID
+          ? _value.stripeBusinessID
+          : stripeBusinessID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeCompanyName: freezed == stripeCompanyName
+          ? _value.stripeCompanyName
+          : stripeCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeHSTRegistrationNumber: freezed == stripeHSTRegistrationNumber
+          ? _value.stripeHSTRegistrationNumber
+          : stripeHSTRegistrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stripeBusinessAddress: freezed == stripeBusinessAddress
+          ? _value._stripeBusinessAddress
+          : stripeBusinessAddress // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       defaultPaymentMethod: freezed == defaultPaymentMethod
           ? _value.defaultPaymentMethod
           : defaultPaymentMethod // ignore: cast_nullable_to_non_nullable
@@ -70548,6 +70754,10 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
       this.photoSelfieUri,
       this.stripeAccountId,
       this.stripeCustomerId,
+      this.stripeBusinessID,
+      this.stripeCompanyName,
+      this.stripeHSTRegistrationNumber,
+      final Map<String, dynamic>? stripeBusinessAddress,
       this.defaultPaymentMethod,
       this.stripeAccountDetailsSubmitted,
       @ServerTimestampConverter() this.createdAt,
@@ -70556,6 +70766,7 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
       @ServerTimestampConverter() this.serverTimeStamp})
       : _contactPhones = contactPhones,
         _emergencyContact = emergencyContact,
+        _stripeBusinessAddress = stripeBusinessAddress,
         super._();
 
   factory _$UserProfileItemDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -70621,6 +70832,23 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
   @override
   final String? stripeCustomerId;
   @override
+  final String? stripeBusinessID;
+  @override
+  final String? stripeCompanyName;
+  @override
+  final String? stripeHSTRegistrationNumber;
+  final Map<String, dynamic>? _stripeBusinessAddress;
+  @override
+  Map<String, dynamic>? get stripeBusinessAddress {
+    final value = _stripeBusinessAddress;
+    if (value == null) return null;
+    if (_stripeBusinessAddress is EqualUnmodifiableMapView)
+      return _stripeBusinessAddress;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
   final String? defaultPaymentMethod;
   @override
   final bool? stripeAccountDetailsSubmitted;
@@ -70639,7 +70867,7 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
 
   @override
   String toString() {
-    return 'UserProfileItemDto(uid: $uid, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, joinedDate: $joinedDate, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted, createdAt: $createdAt, updatedAt: $updatedAt, lastSeen: $lastSeen, serverTimeStamp: $serverTimeStamp)';
+    return 'UserProfileItemDto(uid: $uid, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, joinedDate: $joinedDate, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeCompanyName: $stripeCompanyName, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, stripeBusinessAddress: $stripeBusinessAddress, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted, createdAt: $createdAt, updatedAt: $updatedAt, lastSeen: $lastSeen, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -70686,6 +70914,16 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
                 other.stripeAccountId == stripeAccountId) &&
             (identical(other.stripeCustomerId, stripeCustomerId) ||
                 other.stripeCustomerId == stripeCustomerId) &&
+            (identical(other.stripeBusinessID, stripeBusinessID) ||
+                other.stripeBusinessID == stripeBusinessID) &&
+            (identical(other.stripeCompanyName, stripeCompanyName) ||
+                other.stripeCompanyName == stripeCompanyName) &&
+            (identical(other.stripeHSTRegistrationNumber,
+                    stripeHSTRegistrationNumber) ||
+                other.stripeHSTRegistrationNumber ==
+                    stripeHSTRegistrationNumber) &&
+            const DeepCollectionEquality()
+                .equals(other._stripeBusinessAddress, _stripeBusinessAddress) &&
             (identical(other.defaultPaymentMethod, defaultPaymentMethod) ||
                 other.defaultPaymentMethod == defaultPaymentMethod) &&
             (identical(other.stripeAccountDetailsSubmitted,
@@ -70727,6 +70965,10 @@ class _$UserProfileItemDtoImpl extends _UserProfileItemDto {
         photoSelfieUri,
         stripeAccountId,
         stripeCustomerId,
+        stripeBusinessID,
+        stripeCompanyName,
+        stripeHSTRegistrationNumber,
+        const DeepCollectionEquality().hash(_stripeBusinessAddress),
         defaultPaymentMethod,
         stripeAccountDetailsSubmitted,
         createdAt,
@@ -70773,6 +71015,10 @@ abstract class _UserProfileItemDto extends UserProfileItemDto {
           final String? photoSelfieUri,
           final String? stripeAccountId,
           final String? stripeCustomerId,
+          final String? stripeBusinessID,
+          final String? stripeCompanyName,
+          final String? stripeHSTRegistrationNumber,
+          final Map<String, dynamic>? stripeBusinessAddress,
           final String? defaultPaymentMethod,
           final bool? stripeAccountDetailsSubmitted,
           @ServerTimestampConverter() final FieldValue? createdAt,
@@ -70828,6 +71074,14 @@ abstract class _UserProfileItemDto extends UserProfileItemDto {
   String? get stripeAccountId;
   @override
   String? get stripeCustomerId;
+  @override
+  String? get stripeBusinessID;
+  @override
+  String? get stripeCompanyName;
+  @override
+  String? get stripeHSTRegistrationNumber;
+  @override
+  Map<String, dynamic>? get stripeBusinessAddress;
   @override
   String? get defaultPaymentMethod;
   @override

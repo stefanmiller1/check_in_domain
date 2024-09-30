@@ -7,12 +7,14 @@ String? encodeQueryParameters(Map<String, String> params) {
       .join('&');
 }
 
+
+String homeTabRoute(DashboardMarker marker) => '/home/${marker.name.toString()}';
 /// /:mainId/:searchType (search & explore link)
-String searchExploreRoute() => '/${DashboardMarker.home.name.toString()}/${SearchExploreHelperMarker.map.name}/search';
+String searchExploreRoute() => '/${DashboardMarker.search.name.toString()}/${SearchExploreHelperMarker.map.name}/browse';
 /// /:mainId/:searchType/listing/:listingId' (public listing link)
-String searchedListingRoute(String listingId) => '/${DashboardMarker.home.name.toString()}/${SearchExploreHelperMarker.map.name}/listing/$listingId';
+String searchedListingRoute(String listingId) => '/${DashboardMarker.search.name.toString()}/${SearchExploreHelperMarker.map.name}/listing/$listingId';
 /// /:mainId/:searchType/listing/:listingId/reservation/:reservationId (public reservation link)
-String searchedReservationRoute(String listingId, String reservationId) => '/${DashboardMarker.home.name.toString()}/${SearchExploreHelperMarker.map.name}/listing/$listingId/reservation/$reservationId';
+String searchedReservationRoute(String listingId, String reservationId) => '/${DashboardMarker.search.name.toString()}/${SearchExploreHelperMarker.map.name}/listing/$listingId/reservation/$reservationId';
 
 String reservationRoute(String reservationId) => '/${DashboardMarker.reservations.name.toString()}/reservation/$reservationId';
 

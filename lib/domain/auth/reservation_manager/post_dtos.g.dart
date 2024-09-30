@@ -20,7 +20,7 @@ _$PostDtoImpl _$$PostDtoImplFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String?,
       type: json['type'] as String,
       updatedAt: json['updatedAt'] as String?,
-      likesCount: json['likesCount'] as int?,
+      likesCount: (json['likesCount'] as num?)?.toInt(),
       previewData: json['previewData'] as Map<String, dynamic>?,
       audioPost: json['audioPost'] as Map<String, dynamic>?,
       imagePost: (json['imagePost'] as List<dynamic>?)

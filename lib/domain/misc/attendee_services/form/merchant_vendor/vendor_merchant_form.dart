@@ -15,6 +15,7 @@ class VendorMerchantForm with _$VendorMerchantForm {
     List<MVBoothPayments>? boothPaymentOptions,
     List<MVCustomOption>? customOptions,
     List<MVCustomOption>? disclaimerOptions,
+    List<DiscountCode>? discountOptions,
     required FormStatus formStatus,
  }) = _VendorMerchantForm;
 

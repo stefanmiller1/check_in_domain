@@ -138,18 +138,22 @@ Future<Uint8List> generateReceiptPdf(ActivityManagerForm activity, UserProfileMo
                         activity.profileService.postContactWebsite!,
                         style: pw.TextStyle(fontSize: fontSize),
                       ),
-                      // pw.Text(
-                      //   '65 Songbird Drive, Markham',
-                      //   style: pw.TextStyle(fontSize: fontSize),
-                      // ),
-                      // pw.Text(
-                      //   'Ontario, L3S 3T9, Canada',
-                      //   style: pw.TextStyle(fontSize: fontSize),
-                      // ),
-                      // pw.Text(
-                      //   '+1 647-389-9063',
-                      //   style: pw.TextStyle(fontSize: fontSize),
-                      // ),
+                      if (activityOwner.stripeCompanyName != null) pw.Text(
+                        activityOwner.stripeCompanyName!,
+                        style: pw.TextStyle(fontSize: fontSize),
+                      ),
+                      if (activityOwner.stripeBusinessID != null) pw.Text(
+                        activityOwner.stripeBusinessID!,
+                        style: pw.TextStyle(fontSize: fontSize),
+                      ),
+                      if (activityOwner.stripeHSTRegistrationNumber != null) pw.Text(
+                        activityOwner.stripeHSTRegistrationNumber!,
+                        style: pw.TextStyle(fontSize: fontSize),
+                      ),
+                      if (activityOwner.stripeBusinessAddress != null) pw.Text(
+                        '${activityOwner.stripeBusinessAddress!.city}, ${activityOwner.stripeBusinessAddress!.state}, ${activityOwner.stripeBusinessAddress!.country}',
+                        style: pw.TextStyle(fontSize: fontSize),
+                      ),
                     ],
                   ),
                   pw.Column(
@@ -212,7 +216,7 @@ Future<Uint8List> generateReceiptPdf(ActivityManagerForm activity, UserProfileMo
                     unitPrice: i.value['unitFee'],
                     amount: i.value['amount'],
                     fontSize: fontSize,
-                  )
+                    )
                   ),
                 ],
               ),

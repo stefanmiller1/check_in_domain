@@ -16,6 +16,7 @@ class VendorMerchantFormDto with _$VendorMerchantFormDto {
     List<Map<String, dynamic>>? boothPaymentOptions,
     List<Map<String, dynamic>>? customOptions,
     List<Map<String, dynamic>>? disclaimerOptions,
+    List<Map<String, dynamic>>? discountOptions,
     required String formStatus,
     // @ServerTimestampConverter() FieldValue? createdAtSTC,
 }) = _VendorMerchantFormDto;
@@ -32,6 +33,7 @@ class VendorMerchantFormDto with _$VendorMerchantFormDto {
         boothPaymentOptions: (form.boothPaymentOptions != null) ? form.boothPaymentOptions!.map((e) => MVBoothPaymentsDto.fromDomain(e).toJson()).toList() : null,
         customOptions: (form.customOptions != null) ? form.customOptions!.map((e) => MVCustomOptionDto.fromDomain(e).toJson()).toList() : null,
         disclaimerOptions: (form.disclaimerOptions != null) ? form.disclaimerOptions!.map((e) => MVCustomOptionDto.fromDomain(e).toJson()).toList() : null,
+        discountOptions: (form.discountOptions != null) ? form.discountOptions!.map((e) => DiscountCodeDto.fromDomain(e).toJson()).toList() : null,
         formStatus: form.formStatus.toString()
     );
   }
@@ -47,6 +49,7 @@ class VendorMerchantFormDto with _$VendorMerchantFormDto {
       boothPaymentOptions: (boothPaymentOptions != null) ? boothPaymentOptions!.map((e) => MVBoothPaymentsDto.fromJson(e).toDomain()).toList() : null,
       customOptions: (customOptions != null) ? customOptions!.map((e) => MVCustomOptionDto.fromJson(e).toDomain()).toList() : null,
       disclaimerOptions: (disclaimerOptions != null) ? disclaimerOptions!.map((e) => MVCustomOptionDto.fromJson(e).toDomain()).toList() : null,
+      discountOptions: (discountOptions != null) ? discountOptions!.map((e) => DiscountCodeDto.fromJson(e).toDomain()).toList() : null,
       formStatus: getFormStatus(formStatus),
     );
   }

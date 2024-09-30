@@ -13,7 +13,7 @@ _$VideoPostDtoImpl _$$VideoPostDtoImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       size: json['size'] as num,
       uri: json['uri'] as String,
-      numberOfViews: json['numberOfViews'] as int?,
+      numberOfViews: (json['numberOfViews'] as num?)?.toInt(),
       metaData: json['metaData'] as Map<String, dynamic>?,
     );
 

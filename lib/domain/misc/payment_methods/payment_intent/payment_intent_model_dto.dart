@@ -23,6 +23,7 @@ class PaymentIntentDto with _$PaymentIntentDto {
     String? status,
     String? itemId,
     Map<String, dynamic>? stripe_tax_detail,
+    Map<String, dynamic>? discountCode,
     Map<String, dynamic>? metaData,
   }) = _PaymentIntentDto;
 
@@ -46,6 +47,7 @@ class PaymentIntentDto with _$PaymentIntentDto {
       status: payment.status,
       itemId: payment.itemId,
       stripe_tax_detail: (payment.stripe_tax_detail != null) ? StripeTaxRateDetailsDto.fromDomain(payment.stripe_tax_detail!).toJson() : null,
+      discountCode: (payment.discountCode != null) ? DiscountCodeDto.fromDomain(payment.discountCode!).toJson() : null,
       metaData: payment.metaData
     );
   }
@@ -70,6 +72,7 @@ class PaymentIntentDto with _$PaymentIntentDto {
       status: status,
       itemId: itemId,
       stripe_tax_detail: (stripe_tax_detail != null) ? StripeTaxRateDetailsDto.fromJson(stripe_tax_detail!).toDomain() : null,
+      discountCode: (discountCode != null) ? DiscountCodeDto.fromJson(discountCode!).toDomain() : null,
       metaData: metaData
     );
   }

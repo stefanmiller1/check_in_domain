@@ -24,6 +24,7 @@ class PaymentIntent with _$PaymentIntent {
     String? receipt_url,
     String? itemId,
     StripeTaxRateDetails? stripe_tax_detail,
+    DiscountCode? discountCode,
     Map<String, dynamic>? metaData,
   }) = _PaymentIntent;
   

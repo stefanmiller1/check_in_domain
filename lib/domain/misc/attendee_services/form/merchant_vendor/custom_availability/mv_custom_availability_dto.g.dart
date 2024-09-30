@@ -16,7 +16,7 @@ _$MCCustomAvailabilityDtoImpl _$$MCCustomAvailabilityDtoImplFromJson(
       dateTitle: json['dateTitle'] as String?,
       slotDescription: json['slotDescription'] as String?,
       isLimited: json['isLimited'] as bool?,
-      slotLimit: json['slotLimit'] as int?,
+      slotLimit: (json['slotLimit'] as num?)?.toInt(),
       waitListOffered: json['waitListOffered'] as bool?,
       isConfirmed: json['isConfirmed'] as bool?,
       vendorType: (json['vendorType'] as List<dynamic>?)

@@ -16,4 +16,13 @@ class StripeBusinessAddress with _$StripeBusinessAddress {
     required String state,
   }) = _StripeBusinessAddress;
 
+  factory StripeBusinessAddress.empty() => const StripeBusinessAddress(
+    country: '',
+    city: '',
+    line1: '',
+    line2: null,
+    postal_code: '',
+    state: ''
+  );
+
 }
