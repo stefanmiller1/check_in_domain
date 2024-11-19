@@ -1,5 +1,6 @@
 library check_in_domain;
 
+import 'package:check_in_domain/domain/misc/stripe/receipt_services/receipt/receipt_pdf_generator.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -137,6 +138,7 @@ part 'domain/auth/activity_manager/attendance_services/activity_ticket_option.da
 part 'domain/auth/activity_manager/attendance_services/activity_ticket_option_dtos.dart';
 part 'domain/misc/attendee_services/profile/merchant_vendor/event_merchant_vendor_profile.dart';
 part 'domain/misc/attendee_services/profile/merchant_vendor/event_merchant_vendor_profile_dtos.dart';
+part 'domain/misc/attendee_services/profile/merchant_vendor/previewer/event_merchant_vendor_preview.dart';
 part 'domain/misc/attendee_services/form/failure.dart';
 part 'domain/misc/attendee_services/profile/merchant_vendor/value_objects.dart';
 part 'domain/misc/attendee_services/profile/classes/classes_instructor_profile.dart';

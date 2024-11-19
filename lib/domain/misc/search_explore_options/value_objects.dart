@@ -5,7 +5,7 @@ enum SearchListingType {facilities, activities}
 enum SearchOption {exploreNew, yourCommunities}
 
 enum SearchExploreType {facility, activity, post, profile, community, ad}
-enum SearchExploreHelperMarker {map, list, profile}
+enum SearchExploreHelperMarker {map, list, listing, activity, search, profile}
 
 SearchExploreHelperMarker getSearchExploreMarker(String? type) {
   for (SearchExploreHelperMarker item in SearchExploreHelperMarker.values) {
@@ -27,6 +27,9 @@ String getTitleForExploreType(SearchExploreHelperMarker type) {
     case SearchExploreHelperMarker.profile:
       return 'Show Profile';
       break;
+
+    default:
+      return '';
   }
 }
 
@@ -37,6 +40,8 @@ IconData getIconForExploreType(SearchExploreHelperMarker type) {
     case SearchExploreHelperMarker.list:
       return Icons.map_outlined;
     case SearchExploreHelperMarker.profile:
+      return Icons.person_outlined;
+    default:
       return Icons.person_outlined;
   }
 }

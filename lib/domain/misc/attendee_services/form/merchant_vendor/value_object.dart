@@ -32,6 +32,7 @@ List<MVCustomOption> predefinedCustomOptions(BuildContext context) {
 /// suggestions or custom disclaimers
 List<MVCustomOption> predefinedDisclaimers(BuildContext context) {
   return [
+    MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-uygkuyg80j00'), customRuleTitleLabel: 'Weather Dependent', labelTextRuleOption: LabelTextRuleOption(titleLabel: 'full refunds on the condition of poor weather', isLinkLabel: false)), isActive: true),
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-7gi7g78gjgky'), customRuleTitleLabel: 'Includes Parking Space'), isActive: true),
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-uliuhi898hli'), customRuleTitleLabel: 'Electrical Outlets'), isActive: true),
     MVCustomOption(customRuleOption: CustomRuleOption(ruleId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-weifunbi938b'), customRuleTitleLabel: 'Furniture', labelTextRuleOption: LabelTextRuleOption(titleLabel: 'tables...chairs..', isLinkLabel: false)), isActive: true),
@@ -75,6 +76,8 @@ IconData getIconForCustomOptions(String customId) {
     return Icons.assignment_returned_outlined;
   } else if (customId == '6e24dae0-96dd-11eb-babc-uhiuh9898hhu') {
     return Icons.camera_alt_outlined;
+  } else if (customId == '6e24dae0-96dd-11eb-babc-uygkuyg80j00') {
+    return Icons.cloud_off_rounded;
   }
   return Icons.add;
 }
@@ -104,13 +107,27 @@ double getTotalBasedOnListOfDouble(List<double> amounts) {
 
 int totalFeeFromAllApplicants(List<VendorMerchantForm?> forms) {
   int total = 0;
-  for (var form in forms) {
-    for (MVBoothPayments payment in form?.boothPaymentOptions?.where((element) => element.status == AvailabilityStatus.confirmed).toList() ?? []) {
-        if (payment.fee != null) {
-          total += payment.fee!;
+  forms.forEach((form) {
+    form?.boothPaymentOptions
+        ?.where((payment) => payment.status == AvailabilityStatus.confirmed)
+        .forEach((payment) {
+      if (payment.fee != null) {
+        // Calculate discount if a discount code is applied
+        double fee = payment.fee!.toDouble();
+
+        if (payment.stripePaymentIntent?.discountCode != null) {
+          // Assuming we apply the first valid discount from discountOptions
+          final discount = payment.stripePaymentIntent!.discountCode;
+          if (discount != null) {
+            fee = fee * (1 - (discount.discountAmount / 100)); // Apply percentage discount
+          }
+        }
+
+        total += fee.toInt(); // Add discounted fee to the total
       }
-    }
-  }
+    });
+  });
+
   return total;
 }
 

@@ -93,7 +93,7 @@ class UserProfileItemDto with _$UserProfileItemDto {
       isVerified: isVerified,
       hasSignedIn: hasSignedIn,
       identificationState: (identificationState != null) ? getPhotoIdentificationType(identificationState!) : PhotoIdentificationState.noRequest,
-      profileImage: (photoUri != null) ? Image.network(photoUri!) : null,
+      // profileImage: (photoUri != null) ? Image.network(photoUri!) : null,
       stripeAccountId: stripeAccountId,
       stripeCustomerId: stripeCustomerId,
       stripeBusinessID: stripeBusinessID,

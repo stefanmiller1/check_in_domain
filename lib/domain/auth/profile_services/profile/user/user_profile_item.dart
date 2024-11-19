@@ -16,7 +16,7 @@ class  UserProfileModel with _$UserProfileModel {
     String? photoUri,
     String? photoIdUri,
     String? photoSelfieUri,
-    Image? profileImage,
+    // Image? profileImage,
     PhoneNumber? contactPhones,
     PhoneNumber? emergencyContact,
     required bool isEmailAuth,

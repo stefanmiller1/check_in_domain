@@ -68,7 +68,7 @@ class SpaceOptionSizeDetailDto with _$SpaceOptionSizeDetailDto {
           spaceTitle: spaceTitle,
           spaceDescription: spaceDescription,
           photoUri: photoUri,
-          spacePhoto: (photoUri != null) ? Image.network(photoUri!) : null,
+          // spacePhoto: (photoUri != null) ? Image.network(photoUri!) : null,
           activitySettings: (activitySettings != null) ? ActivitySettingsDto.fromJson(activitySettings!).toDomain() : null,
           availabilityHoursSettings: (availabilityHoursSettings != null) ? AvailabilityHoursSettingsDto.fromJson(availabilityHoursSettings!).toDomain() : null,
           unavailableDates: (unavailableDates['dates'].isNotEmpty) ? UnavailableDateItemListDto.fromJson(unavailableDates).toDomain() : [],

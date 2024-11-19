@@ -26531,6 +26531,291 @@ abstract class _EventMerchantVendorProfileDto
 }
 
 /// @nodoc
+mixin _$EventMerchVendorPreview {
+  UserProfileModel? get vendorOwnerProfile =>
+      throw _privateConstructorUsedError;
+  List<UserProfileModel>? get partnerProfile =>
+      throw _privateConstructorUsedError;
+  EventMerchantVendorProfile? get vendorToPreview =>
+      throw _privateConstructorUsedError;
+  int? get rating => throw _privateConstructorUsedError;
+  int? get attendedCount => throw _privateConstructorUsedError;
+  int get previewWeight => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $EventMerchVendorPreviewCopyWith<EventMerchVendorPreview> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EventMerchVendorPreviewCopyWith<$Res> {
+  factory $EventMerchVendorPreviewCopyWith(EventMerchVendorPreview value,
+          $Res Function(EventMerchVendorPreview) then) =
+      _$EventMerchVendorPreviewCopyWithImpl<$Res, EventMerchVendorPreview>;
+  @useResult
+  $Res call(
+      {UserProfileModel? vendorOwnerProfile,
+      List<UserProfileModel>? partnerProfile,
+      EventMerchantVendorProfile? vendorToPreview,
+      int? rating,
+      int? attendedCount,
+      int previewWeight});
+
+  $UserProfileModelCopyWith<$Res>? get vendorOwnerProfile;
+  $EventMerchantVendorProfileCopyWith<$Res>? get vendorToPreview;
+}
+
+/// @nodoc
+class _$EventMerchVendorPreviewCopyWithImpl<$Res,
+        $Val extends EventMerchVendorPreview>
+    implements $EventMerchVendorPreviewCopyWith<$Res> {
+  _$EventMerchVendorPreviewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vendorOwnerProfile = freezed,
+    Object? partnerProfile = freezed,
+    Object? vendorToPreview = freezed,
+    Object? rating = freezed,
+    Object? attendedCount = freezed,
+    Object? previewWeight = null,
+  }) {
+    return _then(_value.copyWith(
+      vendorOwnerProfile: freezed == vendorOwnerProfile
+          ? _value.vendorOwnerProfile
+          : vendorOwnerProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileModel?,
+      partnerProfile: freezed == partnerProfile
+          ? _value.partnerProfile
+          : partnerProfile // ignore: cast_nullable_to_non_nullable
+              as List<UserProfileModel>?,
+      vendorToPreview: freezed == vendorToPreview
+          ? _value.vendorToPreview
+          : vendorToPreview // ignore: cast_nullable_to_non_nullable
+              as EventMerchantVendorProfile?,
+      rating: freezed == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as int?,
+      attendedCount: freezed == attendedCount
+          ? _value.attendedCount
+          : attendedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      previewWeight: null == previewWeight
+          ? _value.previewWeight
+          : previewWeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserProfileModelCopyWith<$Res>? get vendorOwnerProfile {
+    if (_value.vendorOwnerProfile == null) {
+      return null;
+    }
+
+    return $UserProfileModelCopyWith<$Res>(_value.vendorOwnerProfile!, (value) {
+      return _then(_value.copyWith(vendorOwnerProfile: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EventMerchantVendorProfileCopyWith<$Res>? get vendorToPreview {
+    if (_value.vendorToPreview == null) {
+      return null;
+    }
+
+    return $EventMerchantVendorProfileCopyWith<$Res>(_value.vendorToPreview!,
+        (value) {
+      return _then(_value.copyWith(vendorToPreview: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$EventMerchVendorPreviewImplCopyWith<$Res>
+    implements $EventMerchVendorPreviewCopyWith<$Res> {
+  factory _$$EventMerchVendorPreviewImplCopyWith(
+          _$EventMerchVendorPreviewImpl value,
+          $Res Function(_$EventMerchVendorPreviewImpl) then) =
+      __$$EventMerchVendorPreviewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {UserProfileModel? vendorOwnerProfile,
+      List<UserProfileModel>? partnerProfile,
+      EventMerchantVendorProfile? vendorToPreview,
+      int? rating,
+      int? attendedCount,
+      int previewWeight});
+
+  @override
+  $UserProfileModelCopyWith<$Res>? get vendorOwnerProfile;
+  @override
+  $EventMerchantVendorProfileCopyWith<$Res>? get vendorToPreview;
+}
+
+/// @nodoc
+class __$$EventMerchVendorPreviewImplCopyWithImpl<$Res>
+    extends _$EventMerchVendorPreviewCopyWithImpl<$Res,
+        _$EventMerchVendorPreviewImpl>
+    implements _$$EventMerchVendorPreviewImplCopyWith<$Res> {
+  __$$EventMerchVendorPreviewImplCopyWithImpl(
+      _$EventMerchVendorPreviewImpl _value,
+      $Res Function(_$EventMerchVendorPreviewImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vendorOwnerProfile = freezed,
+    Object? partnerProfile = freezed,
+    Object? vendorToPreview = freezed,
+    Object? rating = freezed,
+    Object? attendedCount = freezed,
+    Object? previewWeight = null,
+  }) {
+    return _then(_$EventMerchVendorPreviewImpl(
+      vendorOwnerProfile: freezed == vendorOwnerProfile
+          ? _value.vendorOwnerProfile
+          : vendorOwnerProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileModel?,
+      partnerProfile: freezed == partnerProfile
+          ? _value._partnerProfile
+          : partnerProfile // ignore: cast_nullable_to_non_nullable
+              as List<UserProfileModel>?,
+      vendorToPreview: freezed == vendorToPreview
+          ? _value.vendorToPreview
+          : vendorToPreview // ignore: cast_nullable_to_non_nullable
+              as EventMerchantVendorProfile?,
+      rating: freezed == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as int?,
+      attendedCount: freezed == attendedCount
+          ? _value.attendedCount
+          : attendedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      previewWeight: null == previewWeight
+          ? _value.previewWeight
+          : previewWeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EventMerchVendorPreviewImpl extends _EventMerchVendorPreview {
+  _$EventMerchVendorPreviewImpl(
+      {this.vendorOwnerProfile,
+      final List<UserProfileModel>? partnerProfile,
+      this.vendorToPreview,
+      this.rating,
+      this.attendedCount,
+      required this.previewWeight})
+      : _partnerProfile = partnerProfile,
+        super._();
+
+  @override
+  final UserProfileModel? vendorOwnerProfile;
+  final List<UserProfileModel>? _partnerProfile;
+  @override
+  List<UserProfileModel>? get partnerProfile {
+    final value = _partnerProfile;
+    if (value == null) return null;
+    if (_partnerProfile is EqualUnmodifiableListView) return _partnerProfile;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final EventMerchantVendorProfile? vendorToPreview;
+  @override
+  final int? rating;
+  @override
+  final int? attendedCount;
+  @override
+  final int previewWeight;
+
+  @override
+  String toString() {
+    return 'EventMerchVendorPreview(vendorOwnerProfile: $vendorOwnerProfile, partnerProfile: $partnerProfile, vendorToPreview: $vendorToPreview, rating: $rating, attendedCount: $attendedCount, previewWeight: $previewWeight)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EventMerchVendorPreviewImpl &&
+            (identical(other.vendorOwnerProfile, vendorOwnerProfile) ||
+                other.vendorOwnerProfile == vendorOwnerProfile) &&
+            const DeepCollectionEquality()
+                .equals(other._partnerProfile, _partnerProfile) &&
+            (identical(other.vendorToPreview, vendorToPreview) ||
+                other.vendorToPreview == vendorToPreview) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.attendedCount, attendedCount) ||
+                other.attendedCount == attendedCount) &&
+            (identical(other.previewWeight, previewWeight) ||
+                other.previewWeight == previewWeight));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      vendorOwnerProfile,
+      const DeepCollectionEquality().hash(_partnerProfile),
+      vendorToPreview,
+      rating,
+      attendedCount,
+      previewWeight);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EventMerchVendorPreviewImplCopyWith<_$EventMerchVendorPreviewImpl>
+      get copyWith => __$$EventMerchVendorPreviewImplCopyWithImpl<
+          _$EventMerchVendorPreviewImpl>(this, _$identity);
+}
+
+abstract class _EventMerchVendorPreview extends EventMerchVendorPreview {
+  factory _EventMerchVendorPreview(
+      {final UserProfileModel? vendorOwnerProfile,
+      final List<UserProfileModel>? partnerProfile,
+      final EventMerchantVendorProfile? vendorToPreview,
+      final int? rating,
+      final int? attendedCount,
+      required final int previewWeight}) = _$EventMerchVendorPreviewImpl;
+  _EventMerchVendorPreview._() : super._();
+
+  @override
+  UserProfileModel? get vendorOwnerProfile;
+  @override
+  List<UserProfileModel>? get partnerProfile;
+  @override
+  EventMerchantVendorProfile? get vendorToPreview;
+  @override
+  int? get rating;
+  @override
+  int? get attendedCount;
+  @override
+  int get previewWeight;
+  @override
+  @JsonKey(ignore: true)
+  _$$EventMerchVendorPreviewImplCopyWith<_$EventMerchVendorPreviewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$VendorFormFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -51600,8 +51885,8 @@ mixin _$SpaceOptionSizeDetail {
   List<DateTime> get unavailableDates => throw _privateConstructorUsedError;
   String? get spaceTitle => throw _privateConstructorUsedError;
   String? get spaceDescription => throw _privateConstructorUsedError;
-  String? get photoUri => throw _privateConstructorUsedError;
-  Image? get spacePhoto => throw _privateConstructorUsedError;
+  String? get photoUri =>
+      throw _privateConstructorUsedError; // Image? spacePhoto,
   ActivitySettings? get activitySettings => throw _privateConstructorUsedError;
   AvailabilityHoursSettings? get availabilityHoursSettings =>
       throw _privateConstructorUsedError;
@@ -51624,7 +51909,6 @@ abstract class $SpaceOptionSizeDetailCopyWith<$Res> {
       String? spaceTitle,
       String? spaceDescription,
       String? photoUri,
-      Image? spacePhoto,
       ActivitySettings? activitySettings,
       AvailabilityHoursSettings? availabilityHoursSettings});
 
@@ -51652,7 +51936,6 @@ class _$SpaceOptionSizeDetailCopyWithImpl<$Res,
     Object? spaceTitle = freezed,
     Object? spaceDescription = freezed,
     Object? photoUri = freezed,
-    Object? spacePhoto = freezed,
     Object? activitySettings = freezed,
     Object? availabilityHoursSettings = freezed,
   }) {
@@ -51681,10 +51964,6 @@ class _$SpaceOptionSizeDetailCopyWithImpl<$Res,
           ? _value.photoUri
           : photoUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      spacePhoto: freezed == spacePhoto
-          ? _value.spacePhoto
-          : spacePhoto // ignore: cast_nullable_to_non_nullable
-              as Image?,
       activitySettings: freezed == activitySettings
           ? _value.activitySettings
           : activitySettings // ignore: cast_nullable_to_non_nullable
@@ -51738,7 +52017,6 @@ abstract class _$$SpaceOptionSizeDetailImplCopyWith<$Res>
       String? spaceTitle,
       String? spaceDescription,
       String? photoUri,
-      Image? spacePhoto,
       ActivitySettings? activitySettings,
       AvailabilityHoursSettings? availabilityHoursSettings});
 
@@ -51766,7 +52044,6 @@ class __$$SpaceOptionSizeDetailImplCopyWithImpl<$Res>
     Object? spaceTitle = freezed,
     Object? spaceDescription = freezed,
     Object? photoUri = freezed,
-    Object? spacePhoto = freezed,
     Object? activitySettings = freezed,
     Object? availabilityHoursSettings = freezed,
   }) {
@@ -51795,10 +52072,6 @@ class __$$SpaceOptionSizeDetailImplCopyWithImpl<$Res>
           ? _value.photoUri
           : photoUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      spacePhoto: freezed == spacePhoto
-          ? _value.spacePhoto
-          : spacePhoto // ignore: cast_nullable_to_non_nullable
-              as Image?,
       activitySettings: freezed == activitySettings
           ? _value.activitySettings
           : activitySettings // ignore: cast_nullable_to_non_nullable
@@ -51821,7 +52094,6 @@ class _$SpaceOptionSizeDetailImpl extends _SpaceOptionSizeDetail {
       this.spaceTitle,
       this.spaceDescription,
       this.photoUri,
-      this.spacePhoto,
       this.activitySettings,
       this.availabilityHoursSettings})
       : _unavailableDates = unavailableDates,
@@ -51846,8 +52118,7 @@ class _$SpaceOptionSizeDetailImpl extends _SpaceOptionSizeDetail {
   final String? spaceDescription;
   @override
   final String? photoUri;
-  @override
-  final Image? spacePhoto;
+// Image? spacePhoto,
   @override
   final ActivitySettings? activitySettings;
   @override
@@ -51855,7 +52126,7 @@ class _$SpaceOptionSizeDetailImpl extends _SpaceOptionSizeDetail {
 
   @override
   String toString() {
-    return 'SpaceOptionSizeDetail(spaceId: $spaceId, durationType: $durationType, unavailableDates: $unavailableDates, spaceTitle: $spaceTitle, spaceDescription: $spaceDescription, photoUri: $photoUri, spacePhoto: $spacePhoto, activitySettings: $activitySettings, availabilityHoursSettings: $availabilityHoursSettings)';
+    return 'SpaceOptionSizeDetail(spaceId: $spaceId, durationType: $durationType, unavailableDates: $unavailableDates, spaceTitle: $spaceTitle, spaceDescription: $spaceDescription, photoUri: $photoUri, activitySettings: $activitySettings, availabilityHoursSettings: $availabilityHoursSettings)';
   }
 
   @override
@@ -51874,8 +52145,6 @@ class _$SpaceOptionSizeDetailImpl extends _SpaceOptionSizeDetail {
                 other.spaceDescription == spaceDescription) &&
             (identical(other.photoUri, photoUri) ||
                 other.photoUri == photoUri) &&
-            (identical(other.spacePhoto, spacePhoto) ||
-                other.spacePhoto == spacePhoto) &&
             (identical(other.activitySettings, activitySettings) ||
                 other.activitySettings == activitySettings) &&
             (identical(other.availabilityHoursSettings,
@@ -51892,7 +52161,6 @@ class _$SpaceOptionSizeDetailImpl extends _SpaceOptionSizeDetail {
       spaceTitle,
       spaceDescription,
       photoUri,
-      spacePhoto,
       activitySettings,
       availabilityHoursSettings);
 
@@ -51912,7 +52180,6 @@ abstract class _SpaceOptionSizeDetail extends SpaceOptionSizeDetail {
           final String? spaceTitle,
           final String? spaceDescription,
           final String? photoUri,
-          final Image? spacePhoto,
           final ActivitySettings? activitySettings,
           final AvailabilityHoursSettings? availabilityHoursSettings}) =
       _$SpaceOptionSizeDetailImpl;
@@ -51930,9 +52197,7 @@ abstract class _SpaceOptionSizeDetail extends SpaceOptionSizeDetail {
   String? get spaceDescription;
   @override
   String? get photoUri;
-  @override
-  Image? get spacePhoto;
-  @override
+  @override // Image? spacePhoto,
   ActivitySettings? get activitySettings;
   @override
   AvailabilityHoursSettings? get availabilityHoursSettings;
@@ -69519,8 +69784,8 @@ mixin _$UserProfileModel {
   ProfileAddress? get userAddress => throw _privateConstructorUsedError;
   String? get photoUri => throw _privateConstructorUsedError;
   String? get photoIdUri => throw _privateConstructorUsedError;
-  String? get photoSelfieUri => throw _privateConstructorUsedError;
-  Image? get profileImage => throw _privateConstructorUsedError;
+  String? get photoSelfieUri =>
+      throw _privateConstructorUsedError; // Image? profileImage,
   PhoneNumber? get contactPhones => throw _privateConstructorUsedError;
   PhoneNumber? get emergencyContact => throw _privateConstructorUsedError;
   bool get isEmailAuth => throw _privateConstructorUsedError;
@@ -69563,7 +69828,6 @@ abstract class $UserProfileModelCopyWith<$Res> {
       String? photoUri,
       String? photoIdUri,
       String? photoSelfieUri,
-      Image? profileImage,
       PhoneNumber? contactPhones,
       PhoneNumber? emergencyContact,
       bool isEmailAuth,
@@ -69608,7 +69872,6 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
     Object? photoUri = freezed,
     Object? photoIdUri = freezed,
     Object? photoSelfieUri = freezed,
-    Object? profileImage = freezed,
     Object? contactPhones = freezed,
     Object? emergencyContact = freezed,
     Object? isEmailAuth = null,
@@ -69671,10 +69934,6 @@ class _$UserProfileModelCopyWithImpl<$Res, $Val extends UserProfileModel>
           ? _value.photoSelfieUri
           : photoSelfieUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      profileImage: freezed == profileImage
-          ? _value.profileImage
-          : profileImage // ignore: cast_nullable_to_non_nullable
-              as Image?,
       contactPhones: freezed == contactPhones
           ? _value.contactPhones
           : contactPhones // ignore: cast_nullable_to_non_nullable
@@ -69776,7 +70035,6 @@ abstract class _$$UserProfileModelImplCopyWith<$Res>
       String? photoUri,
       String? photoIdUri,
       String? photoSelfieUri,
-      Image? profileImage,
       PhoneNumber? contactPhones,
       PhoneNumber? emergencyContact,
       bool isEmailAuth,
@@ -69820,7 +70078,6 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
     Object? photoUri = freezed,
     Object? photoIdUri = freezed,
     Object? photoSelfieUri = freezed,
-    Object? profileImage = freezed,
     Object? contactPhones = freezed,
     Object? emergencyContact = freezed,
     Object? isEmailAuth = null,
@@ -69883,10 +70140,6 @@ class __$$UserProfileModelImplCopyWithImpl<$Res>
           ? _value.photoSelfieUri
           : photoSelfieUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      profileImage: freezed == profileImage
-          ? _value.profileImage
-          : profileImage // ignore: cast_nullable_to_non_nullable
-              as Image?,
       contactPhones: freezed == contactPhones
           ? _value.contactPhones
           : contactPhones // ignore: cast_nullable_to_non_nullable
@@ -69970,7 +70223,6 @@ class _$UserProfileModelImpl extends _UserProfileModel {
       this.photoUri,
       this.photoIdUri,
       this.photoSelfieUri,
-      this.profileImage,
       this.contactPhones,
       this.emergencyContact,
       required this.isEmailAuth,
@@ -70011,8 +70263,7 @@ class _$UserProfileModelImpl extends _UserProfileModel {
   final String? photoIdUri;
   @override
   final String? photoSelfieUri;
-  @override
-  final Image? profileImage;
+// Image? profileImage,
   @override
   final PhoneNumber? contactPhones;
   @override
@@ -70048,7 +70299,7 @@ class _$UserProfileModelImpl extends _UserProfileModel {
 
   @override
   String toString() {
-    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, profileImage: $profileImage, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, joinedDate: $joinedDate, stripeCompanyName: $stripeCompanyName, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeBusinessAddress: $stripeBusinessAddress, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
+    return 'UserProfileModel(userId: $userId, legalName: $legalName, legalSurname: $legalSurname, age: $age, gender: $gender, dateOfBirth: $dateOfBirth, emailAddress: $emailAddress, userAddress: $userAddress, photoUri: $photoUri, photoIdUri: $photoIdUri, photoSelfieUri: $photoSelfieUri, contactPhones: $contactPhones, emergencyContact: $emergencyContact, isEmailAuth: $isEmailAuth, isPhoneAuth: $isPhoneAuth, isVerified: $isVerified, hasSignedIn: $hasSignedIn, identificationState: $identificationState, joinedDate: $joinedDate, stripeCompanyName: $stripeCompanyName, stripeAccountId: $stripeAccountId, stripeCustomerId: $stripeCustomerId, stripeBusinessID: $stripeBusinessID, stripeBusinessAddress: $stripeBusinessAddress, stripeHSTRegistrationNumber: $stripeHSTRegistrationNumber, defaultPaymentMethod: $defaultPaymentMethod, stripeAccountDetailsSubmitted: $stripeAccountDetailsSubmitted)';
   }
 
   @override
@@ -70075,8 +70326,6 @@ class _$UserProfileModelImpl extends _UserProfileModel {
                 other.photoIdUri == photoIdUri) &&
             (identical(other.photoSelfieUri, photoSelfieUri) ||
                 other.photoSelfieUri == photoSelfieUri) &&
-            (identical(other.profileImage, profileImage) ||
-                other.profileImage == profileImage) &&
             (identical(other.contactPhones, contactPhones) ||
                 other.contactPhones == contactPhones) &&
             (identical(other.emergencyContact, emergencyContact) ||
@@ -70129,7 +70378,6 @@ class _$UserProfileModelImpl extends _UserProfileModel {
         photoUri,
         photoIdUri,
         photoSelfieUri,
-        profileImage,
         contactPhones,
         emergencyContact,
         isEmailAuth,
@@ -70169,7 +70417,6 @@ abstract class _UserProfileModel extends UserProfileModel {
       final String? photoUri,
       final String? photoIdUri,
       final String? photoSelfieUri,
-      final Image? profileImage,
       final PhoneNumber? contactPhones,
       final PhoneNumber? emergencyContact,
       required final bool isEmailAuth,
@@ -70210,9 +70457,7 @@ abstract class _UserProfileModel extends UserProfileModel {
   String? get photoIdUri;
   @override
   String? get photoSelfieUri;
-  @override
-  Image? get profileImage;
-  @override
+  @override // Image? profileImage,
   PhoneNumber? get contactPhones;
   @override
   PhoneNumber? get emergencyContact;

@@ -50,7 +50,7 @@ List<SpaceOptionSizeDetail> getSpacesFromSelectedReservationSlot(BuildContext co
                 .spaceTitle} ${spaceDetail.value.spaceTitle ?? ''} ${spaceDetail.key + 1}',
             spaceDescription: spaceDetail.value.spaceDescription,
             photoUri: spaceDetail.value.photoUri,
-            spacePhoto: spaceDetail.value.spacePhoto,
+            // spacePhoto: spaceDetail.value.spacePhoto,
             activitySettings: spaceDetail.value.activitySettings,
             availabilityHoursSettings: spaceDetail.value.availabilityHoursSettings
         );

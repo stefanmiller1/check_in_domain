@@ -49,7 +49,7 @@ class SpaceOptionSizeDetail with _$SpaceOptionSizeDetail {
         String? spaceTitle,
         String? spaceDescription,
         String? photoUri,
-        Image? spacePhoto,
+        // Image? spacePhoto,
         ActivitySettings? activitySettings,
         AvailabilityHoursSettings? availabilityHoursSettings,
   }) = _SpaceOptionSizeDetail;
