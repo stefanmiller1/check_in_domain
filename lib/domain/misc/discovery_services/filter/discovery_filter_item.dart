@@ -17,7 +17,7 @@ class DiscoveryFilterObject with _$DiscoveryFilterObject {
     required List<MerchantVendorTypes> vendorTypeFilter,
     required DiscoveryFilterType? filterType,
     /// circles in circles
-    // required
+    required UniqueId? selectedActivityType,
 
     /// add activity oriented filters
     required CalendarFilterType filterByDateType,
