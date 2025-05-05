@@ -28,8 +28,12 @@ mixin _$StripeBusinessAddressDto {
   String get postal_code => throw _privateConstructorUsedError;
   String get state => throw _privateConstructorUsedError;
 
+  /// Serializes this StripeBusinessAddressDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StripeBusinessAddressDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeBusinessAddressDtoCopyWith<StripeBusinessAddressDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$StripeBusinessAddressDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeBusinessAddressDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class __$$StripeBusinessAddressDtoImplCopyWithImpl<$Res>
       $Res Function(_$StripeBusinessAddressDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeBusinessAddressDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -213,12 +221,14 @@ class _$StripeBusinessAddressDtoImpl extends _StripeBusinessAddressDto {
             (identical(other.state, state) || other.state == state));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, city, country, line1, line2, postal_code, state);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeBusinessAddressDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeBusinessAddressDtoImplCopyWith<_$StripeBusinessAddressDtoImpl>
@@ -258,8 +268,11 @@ abstract class _StripeBusinessAddressDto extends StripeBusinessAddressDto {
   String get postal_code;
   @override
   String get state;
+
+  /// Create a copy of StripeBusinessAddressDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeBusinessAddressDtoImplCopyWith<_$StripeBusinessAddressDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -19,8 +19,11 @@ class EventMerchantVendorProfile with _$EventMerchantVendorProfile {
     String? instagramLink,
     String? websiteLink,
     List<MerchantVendorTypes>? type,
+    WorkAvailabilityStatus? workStatus,
     bool? isLookingForWork,
     bool? isPrivate,
+    int? responseTime,
+    bool? isDeactivated,
 }) = _EventMerchantVendorProfile;
 
   factory EventMerchantVendorProfile.empty() {
@@ -32,5 +35,4 @@ class EventMerchantVendorProfile with _$EventMerchantVendorProfile {
         createdAt: DateTime.now().millisecondsSinceEpoch,
     );
   }
-
 }

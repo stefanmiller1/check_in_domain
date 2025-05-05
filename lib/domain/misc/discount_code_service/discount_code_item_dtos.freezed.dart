@@ -33,8 +33,12 @@ mixin _$DiscountCodeDto {
   List<Map<String, dynamic>>? get privateList =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this DiscountCodeDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DiscountCodeDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DiscountCodeDtoCopyWith<DiscountCodeDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$DiscountCodeDtoCopyWithImpl<$Res, $Val extends DiscountCodeDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DiscountCodeDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,6 +169,8 @@ class __$$DiscountCodeDtoImplCopyWithImpl<$Res>
       _$DiscountCodeDtoImpl _value, $Res Function(_$DiscountCodeDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DiscountCodeDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -311,7 +319,7 @@ class _$DiscountCodeDtoImpl extends _DiscountCodeDto {
                 .equals(other._privateList, _privateList));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -327,7 +335,9 @@ class _$DiscountCodeDtoImpl extends _DiscountCodeDto {
       isPrivate,
       const DeepCollectionEquality().hash(_privateList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DiscountCodeDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DiscountCodeDtoImplCopyWith<_$DiscountCodeDtoImpl> get copyWith =>
@@ -382,8 +392,11 @@ abstract class _DiscountCodeDto extends DiscountCodeDto {
   bool? get isPrivate;
   @override
   List<Map<String, dynamic>>? get privateList;
+
+  /// Create a copy of DiscountCodeDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DiscountCodeDtoImplCopyWith<_$DiscountCodeDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

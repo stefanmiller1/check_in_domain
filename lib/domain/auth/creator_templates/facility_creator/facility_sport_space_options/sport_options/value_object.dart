@@ -101,6 +101,7 @@ class SpaceTypeList extends ValueObject<SpaceOption> {
 List<SpaceOptions> getSpaceTypeOptions(BuildContext context) {
   return [
     // SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-1763160641f9'), spaceTitle: AppLocalizations.of(context)!.spaceCourse),
+    SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-0947859237f2'), spaceTitle: AppLocalizations.of(context)!.spaceOther),
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-2342342342d2'), spaceTitle: AppLocalizations.of(context)!.spaceField),
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-2030984239s2'), spaceTitle: AppLocalizations.of(context)!.spaceCourt),
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-2309482094b9'), spaceTitle: AppLocalizations.of(context)!.spaceGym),
@@ -109,6 +110,5 @@ List<SpaceOptions> getSpaceTypeOptions(BuildContext context) {
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-2395985947o4'), spaceTitle: AppLocalizations.of(context)!.spaceYardLot),
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-6895837934i4'), spaceTitle: AppLocalizations.of(context)!.spaceStudio),
     SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-4589304929n3'), spaceTitle: AppLocalizations.of(context)!.spacePool),
-    SpaceOptions(uid: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-babc-0947859237f2'), spaceTitle: AppLocalizations.of(context)!.spaceOther),
   ];
 }

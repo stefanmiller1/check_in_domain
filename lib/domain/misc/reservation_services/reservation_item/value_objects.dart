@@ -1,6 +1,7 @@
 part of check_in_domain;
 
 enum ReservationSlotState {requested, confirmed, refunded, current, completed, cancelled}
+enum ReservationTypeFilter {comingUp, completed, hosting, posted, draft, attending}
 
 
 ReservationSlotState getBookingSlotState(String type) {

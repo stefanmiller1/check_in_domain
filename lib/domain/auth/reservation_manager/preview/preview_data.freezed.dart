@@ -21,7 +21,9 @@ mixin _$PreviewData {
   String? get link => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PreviewDataCopyWith<PreviewData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +53,8 @@ class _$PreviewDataCopyWithImpl<$Res, $Val extends PreviewData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -79,6 +83,8 @@ class _$PreviewDataCopyWithImpl<$Res, $Val extends PreviewData>
     ) as $Val);
   }
 
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PreviewDataImageCopyWith<$Res>? get image {
@@ -118,6 +124,8 @@ class __$$PreviewDataImplCopyWithImpl<$Res>
       _$PreviewDataImpl _value, $Res Function(_$PreviewDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,7 +190,9 @@ class _$PreviewDataImpl extends _PreviewData {
   @override
   int get hashCode => Object.hash(runtimeType, description, image, link, title);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PreviewDataImplCopyWith<_$PreviewDataImpl> get copyWith =>
@@ -205,8 +215,11 @@ abstract class _PreviewData extends PreviewData {
   String? get link;
   @override
   String? get title;
+
+  /// Create a copy of PreviewData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PreviewDataImplCopyWith<_$PreviewDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -217,7 +230,9 @@ mixin _$PreviewDataImage {
   double get height => throw _privateConstructorUsedError;
   double get width => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewDataImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PreviewDataImageCopyWith<PreviewDataImage> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -241,6 +256,8 @@ class _$PreviewDataImageCopyWithImpl<$Res, $Val extends PreviewDataImage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PreviewDataImage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,6 +301,8 @@ class __$$PreviewDataImageImplCopyWithImpl<$Res>
       $Res Function(_$PreviewDataImageImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PreviewDataImage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -340,7 +359,9 @@ class _$PreviewDataImageImpl extends _PreviewDataImage {
   @override
   int get hashCode => Object.hash(runtimeType, url, height, width);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewDataImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PreviewDataImageImplCopyWith<_$PreviewDataImageImpl> get copyWith =>
@@ -361,8 +382,11 @@ abstract class _PreviewDataImage extends PreviewDataImage {
   double get height;
   @override
   double get width;
+
+  /// Create a copy of PreviewDataImage
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PreviewDataImageImplCopyWith<_$PreviewDataImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

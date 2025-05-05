@@ -8,27 +8,26 @@ class ReservationItem with _$ReservationItem {
   /// facilities have reservation holders
   /// activities have attendees
   const factory ReservationItem({
-    required UniqueId reservationId,
-    required UniqueId reservationOwnerId,
-    required UniqueId instanceId,
-    required String reservationCost,
-    required PaymentStatusType paymentStatus,
-    required String paymentIntentId,
-    required ReservationSlotState reservationState,
-    bool? isPublic,
-    List<ContactDetails>? reservationAffiliates,
-    List<CheckInSetting>? checkInSetting,
-    List<CustomRuleOption>? customFieldRuleSetting,
-    required List<ReservationSlotItem> reservationSlotItem,
-    List<ReservationSlotItem>? cancelledSlotItem,
-    int? reservationReview,
-    String? refundId,
-    String? receipt_link,
-    bool? isInternalProgram,
-    bool? isActivity,
-    required DateTime dateCreated,
+      required UniqueId reservationId,
+      required UniqueId reservationOwnerId,
+      required UniqueId instanceId,
+      required String reservationCost,
+      required PaymentStatusType paymentStatus,
+      required String paymentIntentId,
+      required ReservationSlotState reservationState,
+      FormStatus? formStatus,
+      bool? isPrivate,
+      List<ContactDetails>? reservationAffiliates,
+      List<CheckInSetting>? checkInSetting,
+      List<CustomRuleOption>? customFieldRuleSetting,
+      required List<ReservationSlotItem> reservationSlotItem,
+      List<ReservationSlotItem>? cancelledSlotItem,
+      String? refundId,
+      String? receipt_link,
+      List<String>? linkedCircles,
+      ReservationMetadata? reservationMetadata,
+      required DateTime dateCreated,
 }) = _ReservationItem;
-
 
   factory ReservationItem.empty() => ReservationItem(
       reservationId: UniqueId(),
@@ -36,15 +35,16 @@ class ReservationItem with _$ReservationItem {
       instanceId: UniqueId(),
       reservationCost: '',
       reservationSlotItem: [],
-      cancelledSlotItem: [],
+      cancelledSlotItem: [], 
       dateCreated: DateTime.now(),
       reservationState: ReservationSlotState.requested,
       paymentStatus: PaymentStatusType.noStatus,
       paymentIntentId: '',
-      reservationAffiliates: []
+      reservationAffiliates: [],
+      formStatus: FormStatus.inProgress
   );
-
-
 }
+
+
 
 

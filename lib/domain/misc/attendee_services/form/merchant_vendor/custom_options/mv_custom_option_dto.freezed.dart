@@ -24,8 +24,12 @@ mixin _$MVCustomOptionDto {
       throw _privateConstructorUsedError;
   bool? get isActive => throw _privateConstructorUsedError;
 
+  /// Serializes this MVCustomOptionDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MVCustomOptionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MVCustomOptionDtoCopyWith<MVCustomOptionDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$MVCustomOptionDtoCopyWithImpl<$Res, $Val extends MVCustomOptionDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MVCustomOptionDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$MVCustomOptionDtoImplCopyWithImpl<$Res>
       $Res Function(_$MVCustomOptionDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MVCustomOptionDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,12 +154,14 @@ class _$MVCustomOptionDtoImpl extends _MVCustomOptionDto {
                 other.isActive == isActive));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_customRuleOption), isActive);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MVCustomOptionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MVCustomOptionDtoImplCopyWith<_$MVCustomOptionDtoImpl> get copyWith =>
@@ -179,8 +189,11 @@ abstract class _MVCustomOptionDto extends MVCustomOptionDto {
   Map<String, dynamic>? get customRuleOption;
   @override
   bool? get isActive;
+
+  /// Create a copy of MVCustomOptionDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MVCustomOptionDtoImplCopyWith<_$MVCustomOptionDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

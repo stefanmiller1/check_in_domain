@@ -33,10 +33,10 @@ class UserProfileItemDto with _$UserProfileItemDto {
     Map<String, dynamic>? stripeBusinessAddress,
     String? defaultPaymentMethod,
     bool? stripeAccountDetailsSubmitted,
-    @ServerTimestampConverter() FieldValue? createdAt,
-    @ServerTimestampConverter() FieldValue? updatedAt,
-    @ServerTimestampConverter() FieldValue? lastSeen,
-    @ServerTimestampConverter() FieldValue? serverTimeStamp
+    @ServerTimestampConverter() Object? createdAt,
+    @ServerTimestampConverter() Object? updatedAt,
+    @ServerTimestampConverter() Object? lastSeen,
+    @ServerTimestampConverter() Object? serverTimeStamp
 }) = _UserProfileItemDto;
 
   factory UserProfileItemDto.fromDomain(UserProfileModel profile) =>
@@ -74,7 +74,9 @@ class UserProfileItemDto with _$UserProfileItemDto {
           lastSeen: FieldValue.serverTimestamp(),
       );
 
-  UserProfileModel toDomain() => UserProfileModel(
+  UserProfileModel toDomain() {
+    
+    return UserProfileModel(
       userId: (uid == null) ? UniqueId() : UniqueId.fromUniqueString(uid!),
       legalName: FirstLastName(legalName),
       legalSurname: FirstLastName(legalSurname),
@@ -102,9 +104,23 @@ class UserProfileItemDto with _$UserProfileItemDto {
       stripeBusinessAddress: (stripeBusinessAddress != null) ? StripeBusinessAddressDto.fromJson(stripeBusinessAddress!).toDomain() : null,
       defaultPaymentMethod: defaultPaymentMethod,
       stripeAccountDetailsSubmitted: stripeAccountDetailsSubmitted ?? false,
-      joinedDate: DateTime.parse(joinedDate)
-  );
+      joinedDate: DateTime.parse(joinedDate),
+      lastSeen: _resolveTimestamp(lastSeen),
+    );
+  }
 
+  /// Helper to resolve `FieldValue` into a `DateTime`
+  DateTime? _resolveTimestamp(Object? fieldValue) {
+    if (fieldValue == null) return null;
+
+    if (fieldValue is Timestamp) {
+      // Convert Firestore's Timestamp to DateTime
+      return fieldValue.toDate();
+    } else {
+      print('Unexpected type for timestamp: ${fieldValue.runtimeType}');
+      return null;
+    }
+  }
 
   factory UserProfileItemDto.fromJson(Map<String, dynamic> json) => _$UserProfileItemDtoFromJson(json);
 

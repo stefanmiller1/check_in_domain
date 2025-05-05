@@ -13,7 +13,7 @@ class CircleProfileItemDto with _$CircleProfileItemDto {
     String? instagram,
     String? website,
     bool? isPrivate,
-    @ServerTimestampConverter() FieldValue? createdAtSTC,
+    @ServerTimestampConverter() Object? createdAtSTC,
   }) = _CircleProfileItemDto;
 
   factory CircleProfileItemDto.fromDomain(CircleProfileItem profile) {

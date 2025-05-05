@@ -8,6 +8,7 @@ class ActivityRequirementDto with _$ActivityRequirementDto {
   factory ActivityRequirementDto({
     required bool isSeventeenAndUnder,
     required int minimumAgeRequirement,
+    bool? isAgeRestricted,
 
     bool? isMensOnly,
     bool? isWomenOnly,
@@ -33,6 +34,7 @@ class ActivityRequirementDto with _$ActivityRequirementDto {
     return ActivityRequirementDto(
         isSeventeenAndUnder: requirement.isSeventeenAndUnder,
         minimumAgeRequirement: requirement.minimumAgeRequirement,
+        isAgeRestricted: requirement.isAgeRestricted,
         isMensOnly: requirement.isMensOnly,
         isWomenOnly: requirement.isWomenOnly,
         isCoEdOnly: requirement.isCoEdOnly,
@@ -57,6 +59,7 @@ class ActivityRequirementDto with _$ActivityRequirementDto {
     return ActivityRequirement(
         isSeventeenAndUnder: isSeventeenAndUnder,
         minimumAgeRequirement: minimumAgeRequirement,
+        isAgeRestricted: isAgeRestricted,
         isMensOnly: isMensOnly,
         isWomenOnly: isWomenOnly,
         isCoEdOnly: isCoEdOnly,

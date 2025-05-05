@@ -8,6 +8,7 @@ class ActivityRequirement with _$ActivityRequirement {
   factory ActivityRequirement({
 
     required bool isSeventeenAndUnder,
+    bool? isAgeRestricted,
     required int minimumAgeRequirement,
 
     /// classes & or game based activity

@@ -29,8 +29,12 @@ mixin _$StripeTaxCalculationDto {
   int get taxAmountInclusive => throw _privateConstructorUsedError;
   int get taxAmountExclusive => throw _privateConstructorUsedError;
 
+  /// Serializes this StripeTaxCalculationDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StripeTaxCalculationDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxCalculationDtoCopyWith<StripeTaxCalculationDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +65,8 @@ class _$StripeTaxCalculationDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxCalculationDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,6 +134,8 @@ class __$$StripeTaxCalculationDtoImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxCalculationDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxCalculationDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -225,7 +233,7 @@ class _$StripeTaxCalculationDtoImpl extends _StripeTaxCalculationDto {
                 other.taxAmountExclusive == taxAmountExclusive));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -236,7 +244,9 @@ class _$StripeTaxCalculationDtoImpl extends _StripeTaxCalculationDto {
       taxAmountInclusive,
       taxAmountExclusive);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxCalculationDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxCalculationDtoImplCopyWith<_$StripeTaxCalculationDtoImpl>
@@ -276,8 +286,11 @@ abstract class _StripeTaxCalculationDto extends StripeTaxCalculationDto {
   int get taxAmountInclusive;
   @override
   int get taxAmountExclusive;
+
+  /// Create a copy of StripeTaxCalculationDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxCalculationDtoImplCopyWith<_$StripeTaxCalculationDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -296,8 +309,12 @@ mixin _$StripeTaxBreakdownDto {
   String get taxAbilityReason => throw _privateConstructorUsedError;
   int get taxableAmount => throw _privateConstructorUsedError;
 
+  /// Serializes this StripeTaxBreakdownDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StripeTaxBreakdownDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxBreakdownDtoCopyWith<StripeTaxBreakdownDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -327,6 +344,8 @@ class _$StripeTaxBreakdownDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxBreakdownDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -387,6 +406,8 @@ class __$$StripeTaxBreakdownDtoImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxBreakdownDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxBreakdownDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -475,7 +496,7 @@ class _$StripeTaxBreakdownDtoImpl extends _StripeTaxBreakdownDto {
                 other.taxableAmount == taxableAmount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -485,7 +506,9 @@ class _$StripeTaxBreakdownDtoImpl extends _StripeTaxBreakdownDto {
       taxAbilityReason,
       taxableAmount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxBreakdownDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxBreakdownDtoImplCopyWith<_$StripeTaxBreakdownDtoImpl>
@@ -522,8 +545,11 @@ abstract class _StripeTaxBreakdownDto extends StripeTaxBreakdownDto {
   String get taxAbilityReason;
   @override
   int get taxableAmount;
+
+  /// Create a copy of StripeTaxBreakdownDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxBreakdownDtoImplCopyWith<_$StripeTaxBreakdownDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -540,8 +566,12 @@ mixin _$StripeTaxRateDetailsDto {
   String get state => throw _privateConstructorUsedError;
   String get taxType => throw _privateConstructorUsedError;
 
+  /// Serializes this StripeTaxRateDetailsDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StripeTaxRateDetailsDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxRateDetailsDtoCopyWith<StripeTaxRateDetailsDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -567,6 +597,8 @@ class _$StripeTaxRateDetailsDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxRateDetailsDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -619,6 +651,8 @@ class __$$StripeTaxRateDetailsDtoImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxRateDetailsDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxRateDetailsDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -687,12 +721,14 @@ class _$StripeTaxRateDetailsDtoImpl extends _StripeTaxRateDetailsDto {
             (identical(other.taxType, taxType) || other.taxType == taxType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, country, percentageDecimal, state, taxType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxRateDetailsDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxRateDetailsDtoImplCopyWith<_$StripeTaxRateDetailsDtoImpl>
@@ -726,8 +762,11 @@ abstract class _StripeTaxRateDetailsDto extends StripeTaxRateDetailsDto {
   String get state;
   @override
   String get taxType;
+
+  /// Create a copy of StripeTaxRateDetailsDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxRateDetailsDtoImplCopyWith<_$StripeTaxRateDetailsDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

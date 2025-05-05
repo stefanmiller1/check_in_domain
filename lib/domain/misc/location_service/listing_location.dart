@@ -19,8 +19,20 @@ class LocationModel with _$LocationModel {
     required bool isVerified,
     required bool isVerifiedAlready,
     required bool isCompleted,
+    String? locationName,
+    bool? isPrivate,
     GeoFirePoint? locationPosition,
-    String? aptUnitNumber
+    String? aptUnitNumber,
+    List<ImageUpload>? imageUploads,
+    int? estimatedSquareFootage,
+    bool? isParkingAvailable,
+    bool? isNearTransit,
+    bool? isBarrierFreeAccessible,
+    bool? overnightStorageProvision,
+    List<LocationBarrierFreeTypes>? barrierFreeProvisions,
+    List<LocationAmenities>? amenityProvisions,
+    List<LocationEquipment>? equipmentProvisions,
+    LocationRentalOptions? rentalOptions, 
   }) = _LocationModel;
 
 

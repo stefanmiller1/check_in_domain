@@ -24,7 +24,9 @@ mixin _$VendorContactFilterModel {
   List<MerchantVendorTypes> get vendorTypeFilter =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VendorContactFilterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VendorContactFilterModelCopyWith<VendorContactFilterModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +55,8 @@ class _$VendorContactFilterModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VendorContactFilterModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +112,8 @@ class __$$VendorContactFilterModelImplCopyWithImpl<$Res>
       $Res Function(_$VendorContactFilterModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VendorContactFilterModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -214,7 +220,9 @@ class _$VendorContactFilterModelImpl extends _VendorContactFilterModel {
       const DeepCollectionEquality().hash(_boothStatusFilter),
       const DeepCollectionEquality().hash(_vendorTypeFilter));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VendorContactFilterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VendorContactFilterModelImplCopyWith<_$VendorContactFilterModelImpl>
@@ -239,8 +247,11 @@ abstract class _VendorContactFilterModel extends VendorContactFilterModel {
   List<AvailabilityStatus> get boothStatusFilter;
   @override
   List<MerchantVendorTypes> get vendorTypeFilter;
+
+  /// Create a copy of VendorContactFilterModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VendorContactFilterModelImplCopyWith<_$VendorContactFilterModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -254,7 +265,9 @@ mixin _$VendorContactDetail {
   EventMerchantVendorProfile get vendorProfile =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VendorContactDetailCopyWith<VendorContactDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -288,6 +301,8 @@ class _$VendorContactDetailCopyWithImpl<$Res, $Val extends VendorContactDetail>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -321,6 +336,8 @@ class _$VendorContactDetailCopyWithImpl<$Res, $Val extends VendorContactDetail>
     ) as $Val);
   }
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AttendeeItemCopyWith<$Res> get attendee {
@@ -329,6 +346,8 @@ class _$VendorContactDetailCopyWithImpl<$Res, $Val extends VendorContactDetail>
     });
   }
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserProfileModelCopyWith<$Res> get userProfile {
@@ -337,6 +356,8 @@ class _$VendorContactDetailCopyWithImpl<$Res, $Val extends VendorContactDetail>
     });
   }
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MVBoothPaymentsCopyWith<$Res> get boothItem {
@@ -345,6 +366,8 @@ class _$VendorContactDetailCopyWithImpl<$Res, $Val extends VendorContactDetail>
     });
   }
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EventMerchantVendorProfileCopyWith<$Res> get vendorProfile {
@@ -388,6 +411,8 @@ class __$$VendorContactDetailImplCopyWithImpl<$Res>
       $Res Function(_$VendorContactDetailImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -469,7 +494,9 @@ class _$VendorContactDetailImpl extends _VendorContactDetail {
   int get hashCode => Object.hash(
       runtimeType, uid, attendee, userProfile, boothItem, vendorProfile);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VendorContactDetailImplCopyWith<_$VendorContactDetailImpl> get copyWith =>
@@ -497,8 +524,11 @@ abstract class _VendorContactDetail extends VendorContactDetail {
   MVBoothPayments get boothItem;
   @override
   EventMerchantVendorProfile get vendorProfile;
+
+  /// Create a copy of VendorContactDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VendorContactDetailImplCopyWith<_$VendorContactDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

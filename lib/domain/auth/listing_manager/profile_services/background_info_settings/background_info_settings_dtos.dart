@@ -12,6 +12,7 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
     required String listingName,
     required String listingDescription,
     required String listingEmail,
+    bool? isPostedByTrueOwner,
     required Map<String, dynamic>? listingPhone,
     required String listingStatus,
     required String listingWebsite,
@@ -39,6 +40,7 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
         countryName: settings.countryRegionLanguage.name,
         timeZoneRegion: settings.timeZoneRegion,
         currency: settings.currency,
+        isPostedByTrueOwner: settings.isPostedByTrueOwner,
         profileSocials: SocialsItemDto.fromDomain(settings.profileSocials).toJson(),
     );
   }
@@ -56,6 +58,7 @@ class BackgroundInfoSettingsDto with _$BackgroundInfoSettingsDto {
         countryRegionLanguage: Language(countryCodeId, countryName, countryCode),
         timeZoneRegion: timeZoneRegion,
         currency: currency,
+        isPostedByTrueOwner: isPostedByTrueOwner,
         profileSocials: SocialsItemDto.fromJson(profileSocials).toDomain()
     );
   }

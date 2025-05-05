@@ -25,8 +25,12 @@ mixin _$PreviewDataDto {
   String? get link => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
+  /// Serializes this PreviewDataDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PreviewDataDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PreviewDataDtoCopyWith<PreviewDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$PreviewDataDtoCopyWithImpl<$Res, $Val extends PreviewDataDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PreviewDataDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$PreviewDataDtoImplCopyWithImpl<$Res>
       _$PreviewDataDtoImpl _value, $Res Function(_$PreviewDataDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PreviewDataDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -183,12 +191,14 @@ class _$PreviewDataDtoImpl extends _PreviewDataDto {
             (identical(other.title, title) || other.title == title));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description,
       const DeepCollectionEquality().hash(_image), link, title);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewDataDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PreviewDataDtoImplCopyWith<_$PreviewDataDtoImpl> get copyWith =>
@@ -222,8 +232,11 @@ abstract class _PreviewDataDto extends PreviewDataDto {
   String? get link;
   @override
   String? get title;
+
+  /// Create a copy of PreviewDataDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PreviewDataDtoImplCopyWith<_$PreviewDataDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -238,8 +251,12 @@ mixin _$PreviewDataImageDto {
   double get height => throw _privateConstructorUsedError;
   double get width => throw _privateConstructorUsedError;
 
+  /// Serializes this PreviewDataImageDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PreviewDataImageDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PreviewDataImageDtoCopyWith<PreviewDataImageDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -263,6 +280,8 @@ class _$PreviewDataImageDtoCopyWithImpl<$Res, $Val extends PreviewDataImageDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PreviewDataImageDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -306,6 +325,8 @@ class __$$PreviewDataImageDtoImplCopyWithImpl<$Res>
       $Res Function(_$PreviewDataImageDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PreviewDataImageDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -362,11 +383,13 @@ class _$PreviewDataImageDtoImpl extends _PreviewDataImageDto {
             (identical(other.width, width) || other.width == width));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, url, height, width);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PreviewDataImageDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PreviewDataImageDtoImplCopyWith<_$PreviewDataImageDtoImpl> get copyWith =>
@@ -397,8 +420,11 @@ abstract class _PreviewDataImageDto extends PreviewDataImageDto {
   double get height;
   @override
   double get width;
+
+  /// Create a copy of PreviewDataImageDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PreviewDataImageDtoImplCopyWith<_$PreviewDataImageDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -11,6 +11,7 @@ class BackgroundInfoSettings with _$BackgroundInfoSettings {
     required FirstLastName listingName,
     required BackgroundInfoDescription listingDescription,
     required EmailAddress listingEmail,
+    bool? isPostedByTrueOwner,
     PhoneNumber? listingPhone,
     required ManagerListingStatusType listingStatus,
     required String listingWebsite,

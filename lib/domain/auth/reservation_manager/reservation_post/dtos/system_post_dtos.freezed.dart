@@ -23,8 +23,12 @@ mixin _$SystemPostDto {
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
 
+  /// Serializes this SystemPostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SystemPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SystemPostDtoCopyWith<SystemPostDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$SystemPostDtoCopyWithImpl<$Res, $Val extends SystemPostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SystemPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$SystemPostDtoImplCopyWithImpl<$Res>
       _$SystemPostDtoImpl _value, $Res Function(_$SystemPostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SystemPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,12 +151,14 @@ class _$SystemPostDtoImpl extends _SystemPostDto {
             (identical(other.text, text) || other.text == text));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_metaData), text);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SystemPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SystemPostDtoImplCopyWith<_$SystemPostDtoImpl> get copyWith =>
@@ -175,8 +185,11 @@ abstract class _SystemPostDto extends SystemPostDto {
   Map<String, dynamic>? get metaData;
   @override
   String get text;
+
+  /// Create a copy of SystemPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SystemPostDtoImplCopyWith<_$SystemPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

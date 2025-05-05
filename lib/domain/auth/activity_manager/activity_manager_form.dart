@@ -10,7 +10,7 @@ class ActivityManagerForm with _$ActivityManagerForm {
     required UniqueId activityFormId,
     required ActivityProfileService profileService,
     required ActivityRulesService rulesService,
-    required ActivityOption activityType,
+    List<ActivityOption>? activityTypes,
     required ActivityAttendance activityAttendance,
 
 }) = _ActivityManagerForm;
@@ -18,11 +18,9 @@ class ActivityManagerForm with _$ActivityManagerForm {
   factory ActivityManagerForm.empty() {
     return ActivityManagerForm(
         activityFormId: UniqueId(),
-        activityType: getActivityOptions()[0],
         profileService: ActivityProfileService.empty(),
         rulesService: ActivityRulesService.empty(),
         activityAttendance: ActivityAttendance.empty(),
-        // activityCost: ActivityCost.empty(),
     );
   }
 }

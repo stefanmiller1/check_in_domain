@@ -24,7 +24,9 @@ mixin _$StripeTaxCalculation {
   int get taxAmountInclusive => throw _privateConstructorUsedError;
   int get taxAmountExclusive => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxCalculation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxCalculationCopyWith<StripeTaxCalculation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +57,8 @@ class _$StripeTaxCalculationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxCalculation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +123,8 @@ class __$$StripeTaxCalculationImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxCalculationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxCalculation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -223,7 +229,9 @@ class _$StripeTaxCalculationImpl extends _StripeTaxCalculation {
       taxAmountInclusive,
       taxAmountExclusive);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxCalculation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxCalculationImplCopyWith<_$StripeTaxCalculationImpl>
@@ -254,8 +262,11 @@ abstract class _StripeTaxCalculation extends StripeTaxCalculation {
   int get taxAmountInclusive;
   @override
   int get taxAmountExclusive;
+
+  /// Create a copy of StripeTaxCalculation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxCalculationImplCopyWith<_$StripeTaxCalculationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -269,7 +280,9 @@ mixin _$StripeTaxBreakdown {
   String get taxAbilityReason => throw _privateConstructorUsedError;
   int get taxableAmount => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxBreakdownCopyWith<StripeTaxBreakdown> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -300,6 +313,8 @@ class _$StripeTaxBreakdownCopyWithImpl<$Res, $Val extends StripeTaxBreakdown>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -333,6 +348,8 @@ class _$StripeTaxBreakdownCopyWithImpl<$Res, $Val extends StripeTaxBreakdown>
     ) as $Val);
   }
 
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StripeTaxRateDetailsCopyWith<$Res> get stripeTaxRateDetails {
@@ -370,6 +387,8 @@ class __$$StripeTaxBreakdownImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxBreakdownImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -451,7 +470,9 @@ class _$StripeTaxBreakdownImpl extends _StripeTaxBreakdown {
   int get hashCode => Object.hash(runtimeType, amount, inclusive,
       stripeTaxRateDetails, taxAbilityReason, taxableAmount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxBreakdownImplCopyWith<_$StripeTaxBreakdownImpl> get copyWith =>
@@ -478,8 +499,11 @@ abstract class _StripeTaxBreakdown extends StripeTaxBreakdown {
   String get taxAbilityReason;
   @override
   int get taxableAmount;
+
+  /// Create a copy of StripeTaxBreakdown
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxBreakdownImplCopyWith<_$StripeTaxBreakdownImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -491,7 +515,9 @@ mixin _$StripeTaxRateDetails {
   String get state => throw _privateConstructorUsedError;
   String get taxType => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxRateDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeTaxRateDetailsCopyWith<StripeTaxRateDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -517,6 +543,8 @@ class _$StripeTaxRateDetailsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeTaxRateDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -566,6 +594,8 @@ class __$$StripeTaxRateDetailsImplCopyWithImpl<$Res>
       $Res Function(_$StripeTaxRateDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeTaxRateDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -635,7 +665,9 @@ class _$StripeTaxRateDetailsImpl extends _StripeTaxRateDetails {
   int get hashCode =>
       Object.hash(runtimeType, country, percentageDecimal, state, taxType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeTaxRateDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeTaxRateDetailsImplCopyWith<_$StripeTaxRateDetailsImpl>
@@ -660,8 +692,11 @@ abstract class _StripeTaxRateDetails extends StripeTaxRateDetails {
   String get state;
   @override
   String get taxType;
+
+  /// Create a copy of StripeTaxRateDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeTaxRateDetailsImplCopyWith<_$StripeTaxRateDetailsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

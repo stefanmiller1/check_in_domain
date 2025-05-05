@@ -8,6 +8,7 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
   factory ActivityProfileServiceDto({
     /// post only - hosted by
     bool? isActivityPost,
+    bool? isTrueOwner,
     String? postContactWebsite,
     String? postContactEmail,
     String? postContactSocialInstagram,
@@ -20,6 +21,7 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
   factory ActivityProfileServiceDto.fromDomain(ActivityProfileService profile) {
     return ActivityProfileServiceDto(
         isActivityPost: (profile.isActivityPost != null) ? profile.isActivityPost : null,
+        isTrueOwner: profile.isTrueOwner,
         postContactWebsite: (profile.postContactWebsite != null) ? profile.postContactWebsite : null,
         postContactEmail: (profile.postContactEmail != null) ? profile.postContactEmail : null,
         postContactSocialInstagram: (profile.postContactSocialInstagram != null) ? profile.postContactSocialInstagram : null,
@@ -31,6 +33,7 @@ class ActivityProfileServiceDto with _$ActivityProfileServiceDto {
   ActivityProfileService toDomain() {
     return ActivityProfileService(
         isActivityPost: (isActivityPost != null) ? isActivityPost : null,
+        isTrueOwner: isTrueOwner,
         postContactWebsite: (postContactWebsite != null) ? postContactWebsite : null,
         postContactEmail: (postContactEmail != null) ? postContactEmail : null,
         postContactSocialInstagram: (postContactSocialInstagram != null) ? postContactSocialInstagram : null,

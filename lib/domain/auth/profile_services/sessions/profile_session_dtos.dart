@@ -12,7 +12,7 @@ class ProfileSessionDto with _$ProfileSessionDto {
     required bool isFacility,
     required bool isActivity,
     required bool isSession,
-    @ServerTimestampConverter() FieldValue? serverTimeStamp
+    @ServerTimestampConverter() Object? serverTimeStamp
 }) = _ProfileSessionDto;
 
   factory ProfileSessionDto.fromDomain(ProfileSession sessionItem) {

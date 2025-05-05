@@ -7,25 +7,28 @@ pw.Widget buildTableRow({
   required String unitPrice,
   required String amount,
   required double fontSize,
+  required pw.Font font, // Add font parameter
 }) {
   return pw.Column(
     children: [
       pw.Row(
         children: [
-          pw.Text(
-            description,
-            style: pw.TextStyle(fontSize: fontSize),
+          pw.Expanded(
+            child: pw.Text(
+              description,
+              style: pw.TextStyle(font: font, fontSize: fontSize),
+            ),
           ),
         ],
       ),
       pw.Row(
         mainAxisAlignment: pw.MainAxisAlignment.end, // Align all items to the right
         children: [
-          pw.Text(quantity, style: pw.TextStyle(fontSize: fontSize)),
+          pw.Text(quantity, style: pw.TextStyle(font: font, fontSize: fontSize)),
           pw.SizedBox(width: 20), // Add spacing between items
-          pw.Text(unitPrice, style: pw.TextStyle(fontSize: fontSize)),
+          pw.Text(unitPrice, style: pw.TextStyle(font: font, fontSize: fontSize)),
           pw.SizedBox(width: 20), // Add spacing between items
-          pw.Text(amount, style: pw.TextStyle(fontSize: fontSize)),
+          pw.Text(amount, style: pw.TextStyle(font: font, fontSize: fontSize)),
         ],
       ),
     ],
@@ -33,17 +36,31 @@ pw.Widget buildTableRow({
 }
 
 // Helper method to create summary rows (Subtotal, Service Fee, HST, Total)
-pw.Widget buildSummaryRow(String label, String amount, double fontSize, {bool isBold = false}) {
+pw.Widget buildSummaryRow(
+  String label,
+  String amount,
+  double fontSize, {
+  bool isBold = false,
+  required pw.Font font, // Added font parameter
+}) {
   return pw.Row(
     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
     children: [
       pw.Text(
         label,
-        style: pw.TextStyle(fontSize: fontSize, fontWeight: isBold ? pw.FontWeight.bold : pw.FontWeight.normal),
+        style: pw.TextStyle(
+          font: font,
+          fontSize: fontSize,
+          fontWeight: isBold ? pw.FontWeight.bold : pw.FontWeight.normal,
+        ),
       ),
       pw.Text(
         amount,
-        style: pw.TextStyle(fontSize: fontSize, fontWeight: isBold ? pw.FontWeight.bold : pw.FontWeight.normal),
+        style: pw.TextStyle(
+          font: font,
+          fontSize: fontSize,
+          fontWeight: isBold ? pw.FontWeight.bold : pw.FontWeight.normal,
+        ),
       ),
     ],
   );
@@ -56,6 +73,7 @@ pw.Widget buildPaymentRow({
   required String dateTime,
   required String amount,
   required double fontSize,
+  required pw.Font font, // Added font parameter
   bool isRefund = false, // Default is not a refund
 }) {
   return pw.Row(
@@ -67,11 +85,11 @@ pw.Widget buildPaymentRow({
         children: [
           pw.Text(
             paymentMethod,
-            style: pw.TextStyle(fontSize: fontSize),
+            style: pw.TextStyle(font: font, fontSize: fontSize),
           ),
           pw.Text(
             dateTime,
-            style: pw.TextStyle(fontSize: fontSize * 0.9, color: PdfColors.grey), // Slightly smaller font for the date/time
+            style: pw.TextStyle(font: font, fontSize: fontSize * 0.9, color: PdfColors.grey),
           ),
         ],
       ),
@@ -83,18 +101,18 @@ pw.Widget buildPaymentRow({
               if (isRefund)
                 pw.Padding(
                   padding: pw.EdgeInsets.only(right: 3),
-                  child: pw.Text('⮐', style: pw.TextStyle(fontSize: fontSize)), // Basic refund icon
+                  child: pw.Text('⮐', style: pw.TextStyle(font: font, fontSize: fontSize)), // Basic refund icon
                 ),
               pw.Text(
-                (isRefund) ? '- $amount' : amount,
-                style: pw.TextStyle(fontSize: fontSize),
+                isRefund ? '- $amount' : amount,
+                style: pw.TextStyle(font: font, fontSize: fontSize),
               ),
             ],
           ),
           if (isRefund)
             pw.Text(
               'Refund',
-              style: pw.TextStyle(fontSize: fontSize * 0.9, color: PdfColors.grey),
+              style: pw.TextStyle(font: font, fontSize: fontSize * 0.9, color: PdfColors.grey),
             ),
         ],
       ),

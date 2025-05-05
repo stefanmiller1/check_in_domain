@@ -33,7 +33,7 @@ class AttendeeItemDto with _$AttendeeItemDto {
     String? receipt_link,
     bool? isInterested,
     required String dateCreated,
-    @ServerTimestampConverter() FieldValue? createdAtSTC,
+    @ServerTimestampConverter() Object? createdAtSTC,
 }) = _AttendeeItemDto;
 
   factory AttendeeItemDto.fromDomain(AttendeeItem attendeeItem) {

@@ -83,18 +83,42 @@ class ListK<T> extends ValueObject<List<T>> {
 
 }
 
-/// generate timestamp
-class ServerTimestampConverter implements JsonConverter<FieldValue?, Object?> {
+class ServerTimestampConverter implements JsonConverter<Timestamp?, Object?> {
   const ServerTimestampConverter();
 
-
   @override
-  FieldValue fromJson(Object? json) {
-    return FieldValue.serverTimestamp();
+  Timestamp? fromJson(Object? json) {
+    if (json == null) {
+      return null; // No timestamp present
+    }
+    if (json is Timestamp) {
+      return json; // Already a Firestore Timestamp
+    }
+    throw FormatException('Unexpected type for timestamp: ${json.runtimeType}');
   }
 
   @override
-  Object? toJson(FieldValue? fieldValue) => fieldValue;
-
-
+  Object? toJson(Timestamp? fieldValue) {
+    return fieldValue ?? FieldValue.serverTimestamp(); // Write a new server timestamp if null
+  }
 }
+
+// /// generate timestamp
+// class ServerTimestampConverter implements JsonConverter<FieldValue?, Object?> {
+//   const ServerTimestampConverter();
+
+
+//   @override
+//   FieldValue? fromJson(Object? json) {
+//     if (json is Timestamp) {
+//       return FieldValue.serverTimestamp();
+//     }
+//     return json as FieldValue?;
+//   }
+
+//   @override
+//   Object? toJson(FieldValue? fieldValue) {
+//     return fieldValue;
+//   }
+  
+// }

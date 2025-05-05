@@ -23,7 +23,9 @@ mixin _$StripeBusinessAddress {
   String get postal_code => throw _privateConstructorUsedError;
   String get state => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeBusinessAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StripeBusinessAddressCopyWith<StripeBusinessAddress> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +56,8 @@ class _$StripeBusinessAddressCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StripeBusinessAddress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,6 +124,8 @@ class __$$StripeBusinessAddressImplCopyWithImpl<$Res>
       $Res Function(_$StripeBusinessAddressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StripeBusinessAddress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,7 +213,9 @@ class _$StripeBusinessAddressImpl extends _StripeBusinessAddress {
   int get hashCode =>
       Object.hash(runtimeType, city, country, line1, line2, postal_code, state);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StripeBusinessAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StripeBusinessAddressImplCopyWith<_$StripeBusinessAddressImpl>
@@ -237,8 +245,11 @@ abstract class _StripeBusinessAddress extends StripeBusinessAddress {
   String get postal_code;
   @override
   String get state;
+
+  /// Create a copy of StripeBusinessAddress
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StripeBusinessAddressImplCopyWith<_$StripeBusinessAddressImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

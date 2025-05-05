@@ -38,7 +38,9 @@ mixin _$Post {
   List<UniqueId>? get postLikes => throw _privateConstructorUsedError;
   List<UniqueId>? get postBookmarks => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PostCopyWith<Post> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -87,6 +89,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -200,6 +204,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     ) as $Val);
   }
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PostCopyWith<$Res>? get repliedPost {
@@ -212,6 +218,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     });
   }
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PreviewDataCopyWith<$Res>? get previewData {
@@ -224,6 +232,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     });
   }
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AudioPostCopyWith<$Res>? get audioPost {
@@ -236,6 +246,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     });
   }
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SystemPostCopyWith<$Res>? get systemPost {
@@ -248,6 +260,8 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     });
   }
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TextPostCopyWith<$Res>? get textPost {
@@ -310,6 +324,8 @@ class __$$PostImplCopyWithImpl<$Res>
   __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -614,7 +630,9 @@ class _$PostImpl extends _Post {
         const DeepCollectionEquality().hash(_postBookmarks)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PostImplCopyWith<_$PostImpl> get copyWith =>
@@ -688,8 +706,11 @@ abstract class _Post extends Post {
   List<UniqueId>? get postLikes;
   @override
   List<UniqueId>? get postBookmarks;
+
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PostImplCopyWith<_$PostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

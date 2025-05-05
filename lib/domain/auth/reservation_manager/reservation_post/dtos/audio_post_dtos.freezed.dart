@@ -24,8 +24,12 @@ mixin _$AudioPostDto {
   String get uri => throw _privateConstructorUsedError;
   List<double>? get waveForm => throw _privateConstructorUsedError;
 
+  /// Serializes this AudioPostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AudioPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AudioPostDtoCopyWith<AudioPostDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$AudioPostDtoCopyWithImpl<$Res, $Val extends AudioPostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AudioPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$AudioPostDtoImplCopyWithImpl<$Res>
       _$AudioPostDtoImpl _value, $Res Function(_$AudioPostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AudioPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,12 +164,14 @@ class _$AudioPostDtoImpl extends _AudioPostDto {
             const DeepCollectionEquality().equals(other._waveForm, _waveForm));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, size, uri, const DeepCollectionEquality().hash(_waveForm));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudioPostDtoImplCopyWith<_$AudioPostDtoImpl> get copyWith =>
@@ -191,8 +201,11 @@ abstract class _AudioPostDto extends AudioPostDto {
   String get uri;
   @override
   List<double>? get waveForm;
+
+  /// Create a copy of AudioPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudioPostDtoImplCopyWith<_$AudioPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -31,7 +31,9 @@ mixin _$MVBoothPayments {
   PaymentIntent? get stripePaymentIntent => throw _privateConstructorUsedError;
   StripeRefundModel? get stripeRefund => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MVBoothPaymentsCopyWith<MVBoothPayments> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -71,6 +73,8 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,6 +148,8 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
     ) as $Val);
   }
 
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PaymentIntentCopyWith<$Res>? get stripePaymentIntent {
@@ -156,6 +162,8 @@ class _$MVBoothPaymentsCopyWithImpl<$Res, $Val extends MVBoothPayments>
     });
   }
 
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StripeRefundModelCopyWith<$Res>? get stripeRefund {
@@ -206,6 +214,8 @@ class __$$MVBoothPaymentsImplCopyWithImpl<$Res>
       _$MVBoothPaymentsImpl _value, $Res Function(_$MVBoothPaymentsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -388,7 +398,9 @@ class _$MVBoothPaymentsImpl extends _MVBoothPayments {
       stripePaymentIntent,
       stripeRefund);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MVBoothPaymentsImplCopyWith<_$MVBoothPaymentsImpl> get copyWith =>
@@ -439,8 +451,11 @@ abstract class _MVBoothPayments extends MVBoothPayments {
   PaymentIntent? get stripePaymentIntent;
   @override
   StripeRefundModel? get stripeRefund;
+
+  /// Create a copy of MVBoothPayments
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MVBoothPaymentsImplCopyWith<_$MVBoothPaymentsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

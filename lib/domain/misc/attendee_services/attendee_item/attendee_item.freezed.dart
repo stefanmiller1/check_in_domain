@@ -41,7 +41,9 @@ mixin _$AttendeeItem {
       throw _privateConstructorUsedError;
   DateTime get dateCreated => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AttendeeItemCopyWith<AttendeeItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -89,6 +91,8 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -202,6 +206,8 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
     ) as $Val);
   }
 
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ContactDetailsCopyWith<$Res>? get attendeeDetails {
@@ -214,6 +220,8 @@ class _$AttendeeItemCopyWithImpl<$Res, $Val extends AttendeeItem>
     });
   }
 
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VendorMerchantFormCopyWith<$Res>? get vendorForm {
@@ -272,6 +280,8 @@ class __$$AttendeeItemImplCopyWithImpl<$Res>
       _$AttendeeItemImpl _value, $Res Function(_$AttendeeItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -566,7 +576,9 @@ class _$AttendeeItemImpl extends _AttendeeItem {
         dateCreated
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AttendeeItemImplCopyWith<_$AttendeeItemImpl> get copyWith =>
@@ -640,8 +652,11 @@ abstract class _AttendeeItem extends AttendeeItem {
   UniqueId? get eventMerchantVendorProfile;
   @override
   DateTime get dateCreated;
+
+  /// Create a copy of AttendeeItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AttendeeItemImplCopyWith<_$AttendeeItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

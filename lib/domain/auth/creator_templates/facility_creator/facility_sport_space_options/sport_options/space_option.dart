@@ -58,7 +58,7 @@ class SpaceOptionSizeDetail with _$SpaceOptionSizeDetail {
       SpaceOptionSizeDetail(
           spaceId: UniqueId(),
           unavailableDates: [],
-          durationType: 30,
+          durationType: 60,
           activitySettings: ActivitySettings.empty(),
           availabilityHoursSettings: AvailabilityHoursSettings.empty(),
       );

@@ -22,7 +22,9 @@ mixin _$SearchExploreItem {
   SearchExploreType get exploreType => throw _privateConstructorUsedError;
   double? get searchWeight => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchExploreItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchExploreItemCopyWith<SearchExploreItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +53,8 @@ class _$SearchExploreItemCopyWithImpl<$Res, $Val extends SearchExploreItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchExploreItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -109,6 +113,8 @@ class __$$SearchExploreItemImplCopyWithImpl<$Res>
       $Res Function(_$SearchExploreItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchExploreItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -190,7 +196,9 @@ class _$SearchExploreItemImpl extends _SearchExploreItem {
   int get hashCode => Object.hash(runtimeType, exploreItemId, exploreItemSubId,
       userId, exploreType, searchWeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchExploreItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchExploreItemImplCopyWith<_$SearchExploreItemImpl> get copyWith =>
@@ -217,8 +225,11 @@ abstract class _SearchExploreItem extends SearchExploreItem {
   SearchExploreType get exploreType;
   @override
   double? get searchWeight;
+
+  /// Create a copy of SearchExploreItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchExploreItemImplCopyWith<_$SearchExploreItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

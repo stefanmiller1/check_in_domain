@@ -7,5 +7,5 @@ class NotificationValueFailure<T> with _$NotificationValueFailure<T> {
 
   const factory NotificationValueFailure.notificationServerError({
     String? failedValue
-}) = _NotificationServerError;
+  }) = _NotificationServerError;
 }

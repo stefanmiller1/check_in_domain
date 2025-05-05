@@ -17,12 +17,13 @@ Either<ValueFailure<String>, String> validateCityName(String city) {
 
 Either<ValueFailure<String>, String> validateAddressName(String address) {
 
-  if (address.isNotEmpty) {
+  if (address.isEmpty || !address.contains(RegExp(r'[a-zA-Z]')))  {
+    return left(ValueFailure.location(LocationValueFailure.isEmpty(failedValue: address)));
+  } else if (address.contains(RegExp(r'[a-zA-Z]'))) {
     return right(address);
   } else {
-    return left(ValueFailure.location(LocationValueFailure.isEmpty(failedValue: address)));
+    return left(ValueFailure.location(LocationValueFailure.invalidAddress(failedValue: address)));
   }
-
 }
 
 
@@ -50,6 +51,8 @@ Either<ValueFailure<String>, String> validateStateProvince(String input, String 
 
   const us = r"^(?:A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])*$";
   const ca = r"^(?:AB|BC|MB|N[BLTSU]|ON|PE|QC|SK|YT)*$";
+  const fullUs = r"^(Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming)$";
+  const fullCa = r"^(Alberta|British Columbia|Manitoba|New Brunswick|Newfoundland and Labrador|Nova Scotia|Ontario|Prince Edward Island|Quebec|Saskatchewan|Yukon|Northwest Territories|Nunavut)$";
 
 
   if (input.isEmpty) {
@@ -62,7 +65,10 @@ Either<ValueFailure<String>, String> validateStateProvince(String input, String 
 
 
   if (country.contains('Canada')) {
-    if (RegExp(ca, caseSensitive: false, multiLine: false).hasMatch(input)) {
+
+    if (RegExp(fullCa, caseSensitive: false, multiLine: false).hasMatch(input)) {
+      return right(input);
+    } else if (RegExp(ca, caseSensitive: false, multiLine: false).hasMatch(input)) {
       return right(input);
     } else {
       return left(ValueFailure.location(LocationValueFailure.invalidStateProvince(failedValue:input)));
@@ -70,7 +76,9 @@ Either<ValueFailure<String>, String> validateStateProvince(String input, String 
   }
 
   if (country.contains('USA') || country.contains('United States') || country.contains('America')) {
-    if (RegExp(us, caseSensitive: false, multiLine: false).hasMatch(input)) {
+    if (RegExp(fullUs, caseSensitive: false, multiLine: false).hasMatch(input)) {
+      return right(input);
+    } else if (RegExp(us, caseSensitive: false, multiLine: false).hasMatch(input)) {
       return right(input);
     } else {
       return left(ValueFailure.location(LocationValueFailure.invalidStateProvince(failedValue:input)));

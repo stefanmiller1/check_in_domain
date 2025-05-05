@@ -1,7 +1,7 @@
 part of check_in_domain;
 
 enum ProfileActivityTypeOption {toRent, gameMatches, classesLessons, experiences, misc}
-enum ProfileActivityOption {league, teamsRuns, equipment, tournament, camp, coaching, teaching, training, events, informalGame, oneOnOne, toRent, popUps, toProtest, toShelter, toWorship, marketplace, toWork, toConvene, none, }
+enum ProfileActivityOption {league, charity, teamsRuns, equipment, tournament, camp, coaching, teaching, training, performance, exhibition, party, fundRaiser, workshop, informalGame, oneOnOne, toRent, popUps, toProtest, toShelter, toWorship, farmersMarket, toWork, toConvene, none, }
 
 ProfileActivityTypeOption getActivityType(String type) {
   for (ProfileActivityTypeOption item in ProfileActivityTypeOption.values) {
@@ -45,13 +45,13 @@ String? getDescriptionForActivityOption(
   }
 }
 
+
+
 String? getTitleForActivityOption(
-BuildContext context,
-UniqueId activityId) {
+  BuildContext context,
+  ProfileActivityOption activityOption) {
 
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.none;
-
-  switch (type) {
+  switch (activityOption) {
     case ProfileActivityOption.league:
       return AppLocalizations.of(context)?.activityTypeLeagues ?? 'league';
     case ProfileActivityOption.teamsRuns:
@@ -68,8 +68,6 @@ UniqueId activityId) {
       return AppLocalizations.of(context)?.activityTypeTeaching ?? 'teaching';
     case ProfileActivityOption.training:
       return AppLocalizations.of(context)?.activityTypeTrainingState ?? 'training';
-    case ProfileActivityOption.events:
-      return AppLocalizations.of(context)?.activityTypeEvent ?? 'events';
     case ProfileActivityOption.informalGame:
       return AppLocalizations.of(context)?.activityTypeInformalGame ?? 'informalGame';
     case ProfileActivityOption.oneOnOne:
@@ -78,10 +76,20 @@ UniqueId activityId) {
       return AppLocalizations.of(context)?.activityTypeRent ?? 'to Rent';
     case ProfileActivityOption.toProtest:
       return 'to protest';
+    case ProfileActivityOption.exhibition: 
+      return 'Exhibition';
+    case ProfileActivityOption.party: 
+      return 'Party';
+    case ProfileActivityOption.performance: 
+      return 'Performance';
+    case ProfileActivityOption.fundRaiser:
+      return 'Fund Raiser';
+    case ProfileActivityOption.workshop:
+      return 'Workshop';
     case ProfileActivityOption.toWorship:
       return 'to worship';
-    case ProfileActivityOption.marketplace:
-      return 'marketplace';
+    case ProfileActivityOption.farmersMarket:
+      return 'Farmers Market';
     case ProfileActivityOption.toWork:
       return 'to work';
     case ProfileActivityOption.popUps:
@@ -89,14 +97,77 @@ UniqueId activityId) {
     case ProfileActivityOption.none:
       // TODO: Handle this case.
       break;
+    case ProfileActivityOption.charity: 
+      return 'Charity';
     case ProfileActivityOption.toShelter:
       // TODO: Handle this case.
       break;
     case ProfileActivityOption.toConvene:
+    return 'Meet Up';
       // TODO: Handle this case.
       break;
   }
+  return null;
 }
+
+String getDescriptionForActivityTypeOption(
+  BuildContext context,
+  ProfileActivityOption activityOption) {
+
+    switch (activityOption) {
+      case ProfileActivityOption.league:
+        return 'Organized sports leagues for teams or individuals.';
+      case ProfileActivityOption.charity:
+        return 'Fundraising and charitable events to support a cause.';
+      case ProfileActivityOption.teamsRuns:
+        return 'Group or team-based running and fitness events.';
+      case ProfileActivityOption.equipment:
+        return 'Rental or purchase of sports and activity-related equipment.';
+      case ProfileActivityOption.tournament:
+        return 'Competitive events for teams or individuals to compete.';
+      case ProfileActivityOption.camp:
+        return 'Organized camps for education, sports, or recreational activities.';
+      case ProfileActivityOption.coaching:
+        return 'Professional coaching sessions for various activities.';
+      case ProfileActivityOption.teaching:
+        return 'Structured learning sessions led by instructors.';
+      case ProfileActivityOption.training:
+        return 'Skill-building and practice sessions for improvement.';
+      case ProfileActivityOption.performance:
+        return 'Live performances, showcases, and artistic events.';
+      case ProfileActivityOption.exhibition:
+        return 'Displays and presentations of art, skills, or products.';
+      case ProfileActivityOption.party:
+        return 'Social gatherings, celebrations, and themed parties.';
+      case ProfileActivityOption.fundRaiser:
+        return 'Events organized to raise funds for a specific cause.';
+      case ProfileActivityOption.workshop:
+        return 'Interactive sessions for learning and hands-on experience.';
+      case ProfileActivityOption.informalGame:
+        return 'Casual and non-competitive games for fun and engagement.';
+      case ProfileActivityOption.oneOnOne:
+        return 'Private sessions for personalized coaching or mentoring.';
+      case ProfileActivityOption.toRent:
+        return 'Space or equipment available for rent.';
+      case ProfileActivityOption.popUps:
+        return 'Temporary events or markets set up for a limited time.';
+      case ProfileActivityOption.toProtest:
+        return 'Public gatherings to advocate for social or political causes.';
+      case ProfileActivityOption.toShelter:
+        return 'Spaces dedicated to providing temporary housing or refuge.';
+      case ProfileActivityOption.toWorship:
+        return 'Religious gatherings, services, or places of worship.';
+      case ProfileActivityOption.farmersMarket:
+        return 'Marketplaces for fresh produce, local goods, and artisans.';
+      case ProfileActivityOption.toWork:
+        return 'Coworking spaces or events focused on productivity and networking.';
+      case ProfileActivityOption.toConvene:
+        return 'Community Meetups, gatherings, or networking events for a community looking to hangout together.';
+      case ProfileActivityOption.none:
+        return 'No specific activity selected.';
+    }
+  }
+  
 
 // List<ActivityOption> getActivityTypeOptions(BuildContext context) {
 //   return [
@@ -110,12 +181,8 @@ UniqueId activityId) {
 
 
 String getIconPathForActivity(
-  BuildContext context,
-  UniqueId activityId
+  ProfileActivityOption type
 ) {
-
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.league;
-
 
   switch (type) {
     case ProfileActivityOption.league:
@@ -133,8 +200,6 @@ String getIconPathForActivity(
     case ProfileActivityOption.teaching:
       return 'assets/icons_svg/search_explore/noun-health-course-1926488.svg';
     case ProfileActivityOption.training:
-      return 'assets/icons_svg/search_explore/noun-children-martial-arts-class-2764614.svg';
-    case ProfileActivityOption.events:
       return 'assets/icons_svg/search_explore/noun-head-student-1926818.svg';
     case ProfileActivityOption.informalGame:
       return 'assets/icons_svg/search_explore/noun-table-tennis-double-2744044.svg';
@@ -150,7 +215,7 @@ String getIconPathForActivity(
       return '';
     case ProfileActivityOption.popUps:
       return 'assets/icons_svg/search_explore/noun-event-planner-977765.svg';
-    case ProfileActivityOption.marketplace:
+    case ProfileActivityOption.farmersMarket:
       return 'assets/icons_svg/search_explore/noun-hawker-977700.svg';
     case ProfileActivityOption.toWork:
       return '';
@@ -166,10 +231,8 @@ String getIconPathForActivity(
 
 IconData getIconDataForActivity(
     BuildContext context,
-    UniqueId activityId
+    ProfileActivityOption type
     ) {
-
-  final type = getActivityOptions().where((element) => element.activityId == activityId).isNotEmpty ? getActivityOptions().firstWhere((element) => element.activityId == activityId).activity : ProfileActivityOption.league;
 
   switch (type) {
     case ProfileActivityOption.league:
@@ -188,16 +251,30 @@ IconData getIconDataForActivity(
       return Icons.campaign_outlined;
     case ProfileActivityOption.training:
       return Icons.timer;
-    case ProfileActivityOption.events:
-      return Icons.connect_without_contact_rounded;
+    case ProfileActivityOption.workshop:
+      return Icons.work;
+    case ProfileActivityOption.toWorship:
+      return Icons.church;
+    case ProfileActivityOption.exhibition:
+      return Icons.art_track;
+    case ProfileActivityOption.party:
+      return Icons.celebration;
     case ProfileActivityOption.informalGame:
       return Icons.sports_tennis_outlined;
     case ProfileActivityOption.oneOnOne:
       return Icons.sports_kabaddi_rounded;
     case ProfileActivityOption.toRent:
       return Icons.vpn_key_rounded;
-    case ProfileActivityOption.marketplace:
-      return Icons.shopping_cart_rounded;
+    case ProfileActivityOption.farmersMarket:
+      return Icons.local_grocery_store;
+    case ProfileActivityOption.fundRaiser: 
+      return Icons.volunteer_activism;
+    case ProfileActivityOption.popUps:
+      return Icons.celebration;
+    case ProfileActivityOption.performance:
+      return Icons.music_note;
+    case ProfileActivityOption.toConvene:
+      return Icons.group;
     default:
       return Icons.vpn_key_rounded;
   }
@@ -205,12 +282,15 @@ IconData getIconDataForActivity(
 
 List<ActivityOption> getActivityOptions() {
   return [
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-986gkuy968f3'), activity: ProfileActivityOption.toRent, activityType: ProfileActivityTypeOption.toRent),
-    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.camp, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-1289fnm049j0'), activity: ProfileActivityOption.events, activityType: ProfileActivityTypeOption.experiences),
-    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.league, activityType: ProfileActivityTypeOption.experiences),
+    // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-986gkuy968f3'), activity: ProfileActivityOption.toRent, activityType: ProfileActivityTypeOption.toRent),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-foinf23909jf'), activity: ProfileActivityOption.party, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-748ng849joi4'), activity: ProfileActivityOption.performance, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-1289fnm049j0'), activity: ProfileActivityOption.workshop, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-098598gnei89'), activity: ProfileActivityOption.fundRaiser, activityType: ProfileActivityTypeOption.experiences),
     ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-23f54joi3j9d'), activity: ProfileActivityOption.popUps, activityType: ProfileActivityTypeOption.experiences),
-    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fj9f834hhfh8'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fnio3nf94034'), activity: ProfileActivityOption.exhibition, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fj9f834hhfh8'), activity: ProfileActivityOption.farmersMarket, activityType: ProfileActivityTypeOption.experiences),
+    ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fweifoin3289'), activity: ProfileActivityOption.toConvene, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.marketplace, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWork, activityType: ProfileActivityTypeOption.experiences),
     // ActivityOption(activityId: UniqueId.fromUniqueString('6e24dae0-96dd-11eb-gfku-fhui9389h382'), activity: ProfileActivityOption.toWorship, activityType: ProfileActivityTypeOption.experiences),

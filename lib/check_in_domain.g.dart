@@ -162,6 +162,26 @@ _$LocationModelDtoImpl _$$LocationModelDtoImplFromJson(
       postalCode: json['postalCode'] as String,
       isLocationConfirmed: json['isLocationConfirmed'] as bool,
       isVerified: json['isVerified'] as bool,
+      locationName: json['locationName'] as String?,
+      imageUploads: (json['imageUploads'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      estimatedSquareFootage: (json['estimatedSquareFootage'] as num?)?.toInt(),
+      isParkingAvailable: json['isParkingAvailable'] as bool?,
+      isNearTransit: json['isNearTransit'] as bool?,
+      isBarrierFreeAccessible: json['isBarrierFreeAccessible'] as bool?,
+      overnightStorageProvision: json['overnightStorageProvision'] as bool?,
+      barrierFreeProvisions: (json['barrierFreeProvisions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      amenityProvisions: (json['amenityProvisions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      equipmentProvisions: (json['equipmentProvisions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      rentalOptions: json['rentalOptions'] as String?,
+      isPrivate: json['isPrivate'] as bool?,
     );
 
 Map<String, dynamic> _$$LocationModelDtoImplToJson(
@@ -180,6 +200,18 @@ Map<String, dynamic> _$$LocationModelDtoImplToJson(
       'postalCode': instance.postalCode,
       'isLocationConfirmed': instance.isLocationConfirmed,
       'isVerified': instance.isVerified,
+      'locationName': instance.locationName,
+      'imageUploads': instance.imageUploads,
+      'estimatedSquareFootage': instance.estimatedSquareFootage,
+      'isParkingAvailable': instance.isParkingAvailable,
+      'isNearTransit': instance.isNearTransit,
+      'isBarrierFreeAccessible': instance.isBarrierFreeAccessible,
+      'overnightStorageProvision': instance.overnightStorageProvision,
+      'barrierFreeProvisions': instance.barrierFreeProvisions,
+      'amenityProvisions': instance.amenityProvisions,
+      'equipmentProvisions': instance.equipmentProvisions,
+      'rentalOptions': instance.rentalOptions,
+      'isPrivate': instance.isPrivate,
     };
 
 _$SocialsItemDtoImpl _$$SocialsItemDtoImplFromJson(Map<String, dynamic> json) =>
@@ -235,6 +267,8 @@ _$AccountNotificationItemDtoImpl _$$AccountNotificationItemDtoImplFromJson(
       postId: json['postId'] as String?,
       reservationId: json['reservationId'] as String?,
       listingId: json['listingId'] as String?,
+      title: json['title'] as String?,
+      body: json['body'] as String?,
     );
 
 Map<String, dynamic> _$$AccountNotificationItemDtoImplToJson(
@@ -249,6 +283,8 @@ Map<String, dynamic> _$$AccountNotificationItemDtoImplToJson(
       'postId': instance.postId,
       'reservationId': instance.reservationId,
       'listingId': instance.listingId,
+      'title': instance.title,
+      'body': instance.body,
     };
 
 _$AffiliationOptionDtoImpl _$$AffiliationOptionDtoImplFromJson(
@@ -396,6 +432,7 @@ _$ReservationItemDtoImpl _$$ReservationItemDtoImplFromJson(
       reservationState: json['reservationState'] as String,
       paymentStatus: json['paymentStatus'] as String,
       paymentIntentId: json['paymentIntentId'] as String,
+      formStatus: json['formStatus'] as String?,
       customRuleOptions: (json['customRuleOptions'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -414,14 +451,15 @@ _$ReservationItemDtoImpl _$$ReservationItemDtoImplFromJson(
       firstSlotTimestamp: (json['firstSlotTimestamp'] as num?)?.toInt(),
       lastSlotTimestamp: (json['lastSlotTimestamp'] as num?)?.toInt(),
       reservationReview: (json['reservationReview'] as num?)?.toInt(),
-      isPublic: json['isPublic'] as bool?,
+      isPrivate: json['isPrivate'] as bool?,
       refundId: json['refundId'] as String?,
       receipt_link: json['receipt_link'] as String?,
-      isInternalProgram: json['isInternalProgram'] as bool?,
-      isActivity: json['isActivity'] as bool?,
+      linkedCircles: (json['linkedCircles'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      reservationMetadata: json['reservationMetadata'] as Map<String, dynamic>?,
       dateCreated: json['dateCreated'] as String,
-      createdAtSTC:
-          const ServerTimestampConverter().fromJson(json['createdAtSTC']),
+      createdAtSTC: json['createdAtSTC'],
     );
 
 Map<String, dynamic> _$$ReservationItemDtoImplToJson(
@@ -434,6 +472,7 @@ Map<String, dynamic> _$$ReservationItemDtoImplToJson(
       'reservationState': instance.reservationState,
       'paymentStatus': instance.paymentStatus,
       'paymentIntentId': instance.paymentIntentId,
+      'formStatus': instance.formStatus,
       'customRuleOptions': instance.customRuleOptions,
       'reservationAffiliates': instance.reservationAffiliates,
       'checkInSettings': instance.checkInSettings,
@@ -442,14 +481,13 @@ Map<String, dynamic> _$$ReservationItemDtoImplToJson(
       'firstSlotTimestamp': instance.firstSlotTimestamp,
       'lastSlotTimestamp': instance.lastSlotTimestamp,
       'reservationReview': instance.reservationReview,
-      'isPublic': instance.isPublic,
+      'isPrivate': instance.isPrivate,
       'refundId': instance.refundId,
       'receipt_link': instance.receipt_link,
-      'isInternalProgram': instance.isInternalProgram,
-      'isActivity': instance.isActivity,
+      'linkedCircles': instance.linkedCircles,
+      'reservationMetadata': instance.reservationMetadata,
       'dateCreated': instance.dateCreated,
-      'createdAtSTC':
-          const ServerTimestampConverter().toJson(instance.createdAtSTC),
+      'createdAtSTC': instance.createdAtSTC,
     };
 
 _$ReservationCancellationDtoImpl _$$ReservationCancellationDtoImplFromJson(
@@ -836,13 +874,14 @@ _$EventMerchantVendorProfileDtoImpl
           stripeBusinessID: json['stripeBusinessID'] as String?,
           stripeHSTRegistrationNumber:
               json['stripeHSTRegistrationNumber'] as String?,
+          workStatus: json['workStatus'] as String?,
           type: (json['type'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
           isLookingForWork: json['isLookingForWork'] as bool?,
           isPrivate: json['isPrivate'] as bool?,
-          createdAtSTC:
-              const ServerTimestampConverter().fromJson(json['createdAtSTC']),
+          isDeactivated: json['isDeactivated'] as bool?,
+          createdAtSTC: json['createdAtSTC'],
         );
 
 Map<String, dynamic> _$$EventMerchantVendorProfileDtoImplToJson(
@@ -858,11 +897,12 @@ Map<String, dynamic> _$$EventMerchantVendorProfileDtoImplToJson(
       'websiteLink': instance.websiteLink,
       'stripeBusinessID': instance.stripeBusinessID,
       'stripeHSTRegistrationNumber': instance.stripeHSTRegistrationNumber,
+      'workStatus': instance.workStatus,
       'type': instance.type,
       'isLookingForWork': instance.isLookingForWork,
       'isPrivate': instance.isPrivate,
-      'createdAtSTC':
-          const ServerTimestampConverter().toJson(instance.createdAtSTC),
+      'isDeactivated': instance.isDeactivated,
+      'createdAtSTC': instance.createdAtSTC,
     };
 
 _$ClassesInstructorProfileDtoImpl _$$ClassesInstructorProfileDtoImplFromJson(
@@ -1116,6 +1156,7 @@ _$ActivityProfileServiceDtoImpl _$$ActivityProfileServiceDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ActivityProfileServiceDtoImpl(
       isActivityPost: json['isActivityPost'] as bool?,
+      isTrueOwner: json['isTrueOwner'] as bool?,
       postContactWebsite: json['postContactWebsite'] as String?,
       postContactEmail: json['postContactEmail'] as String?,
       postContactSocialInstagram: json['postContactSocialInstagram'] as String?,
@@ -1128,6 +1169,7 @@ Map<String, dynamic> _$$ActivityProfileServiceDtoImplToJson(
         _$ActivityProfileServiceDtoImpl instance) =>
     <String, dynamic>{
       'isActivityPost': instance.isActivityPost,
+      'isTrueOwner': instance.isTrueOwner,
       'postContactWebsite': instance.postContactWebsite,
       'postContactEmail': instance.postContactEmail,
       'postContactSocialInstagram': instance.postContactSocialInstagram,
@@ -1202,6 +1244,7 @@ _$ActivityRequirementDtoImpl _$$ActivityRequirementDtoImplFromJson(
     _$ActivityRequirementDtoImpl(
       isSeventeenAndUnder: json['isSeventeenAndUnder'] as bool,
       minimumAgeRequirement: (json['minimumAgeRequirement'] as num).toInt(),
+      isAgeRestricted: json['isAgeRestricted'] as bool?,
       isMensOnly: json['isMensOnly'] as bool?,
       isWomenOnly: json['isWomenOnly'] as bool?,
       isCoEdOnly: json['isCoEdOnly'] as bool?,
@@ -1229,6 +1272,7 @@ Map<String, dynamic> _$$ActivityRequirementDtoImplToJson(
     <String, dynamic>{
       'isSeventeenAndUnder': instance.isSeventeenAndUnder,
       'minimumAgeRequirement': instance.minimumAgeRequirement,
+      'isAgeRestricted': instance.isAgeRestricted,
       'isMensOnly': instance.isMensOnly,
       'isWomenOnly': instance.isWomenOnly,
       'isCoEdOnly': instance.isCoEdOnly,
@@ -1383,7 +1427,9 @@ _$ActivityManagerFormDtoImpl _$$ActivityManagerFormDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ActivityManagerFormDtoImpl(
       activityFormId: json['activityFormId'] as String,
-      activityType: json['activityType'] as Map<String, dynamic>,
+      activityTypes: (json['activityTypes'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
       profileService: json['profileService'] as Map<String, dynamic>,
       rulesService: json['rulesService'] as Map<String, dynamic>,
       activityAttendance: json['activityAttendance'] as Map<String, dynamic>,
@@ -1393,7 +1439,7 @@ Map<String, dynamic> _$$ActivityManagerFormDtoImplToJson(
         _$ActivityManagerFormDtoImpl instance) =>
     <String, dynamic>{
       'activityFormId': instance.activityFormId,
-      'activityType': instance.activityType,
+      'activityTypes': instance.activityTypes,
       'profileService': instance.profileService,
       'rulesService': instance.rulesService,
       'activityAttendance': instance.activityAttendance,
@@ -2021,6 +2067,7 @@ _$BackgroundInfoSettingsDtoImpl _$$BackgroundInfoSettingsDtoImplFromJson(
       listingName: json['listingName'] as String,
       listingDescription: json['listingDescription'] as String,
       listingEmail: json['listingEmail'] as String,
+      isPostedByTrueOwner: json['isPostedByTrueOwner'] as bool?,
       listingPhone: json['listingPhone'] as Map<String, dynamic>?,
       listingStatus: json['listingStatus'] as String,
       listingWebsite: json['listingWebsite'] as String,
@@ -2041,6 +2088,7 @@ Map<String, dynamic> _$$BackgroundInfoSettingsDtoImplToJson(
       'listingName': instance.listingName,
       'listingDescription': instance.listingDescription,
       'listingEmail': instance.listingEmail,
+      'isPostedByTrueOwner': instance.isPostedByTrueOwner,
       'listingPhone': instance.listingPhone,
       'listingStatus': instance.listingStatus,
       'listingWebsite': instance.listingWebsite,
@@ -2570,11 +2618,10 @@ _$UserProfileItemDtoImpl _$$UserProfileItemDtoImplFromJson(
       defaultPaymentMethod: json['defaultPaymentMethod'] as String?,
       stripeAccountDetailsSubmitted:
           json['stripeAccountDetailsSubmitted'] as bool?,
-      createdAt: const ServerTimestampConverter().fromJson(json['createdAt']),
-      updatedAt: const ServerTimestampConverter().fromJson(json['updatedAt']),
-      lastSeen: const ServerTimestampConverter().fromJson(json['lastSeen']),
-      serverTimeStamp:
-          const ServerTimestampConverter().fromJson(json['serverTimeStamp']),
+      createdAt: json['createdAt'],
+      updatedAt: json['updatedAt'],
+      lastSeen: json['lastSeen'],
+      serverTimeStamp: json['serverTimeStamp'],
     );
 
 Map<String, dynamic> _$$UserProfileItemDtoImplToJson(
@@ -2606,11 +2653,10 @@ Map<String, dynamic> _$$UserProfileItemDtoImplToJson(
       'stripeBusinessAddress': instance.stripeBusinessAddress,
       'defaultPaymentMethod': instance.defaultPaymentMethod,
       'stripeAccountDetailsSubmitted': instance.stripeAccountDetailsSubmitted,
-      'createdAt': const ServerTimestampConverter().toJson(instance.createdAt),
-      'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),
-      'lastSeen': const ServerTimestampConverter().toJson(instance.lastSeen),
-      'serverTimeStamp':
-          const ServerTimestampConverter().toJson(instance.serverTimeStamp),
+      'createdAt': instance.createdAt,
+      'updatedAt': instance.updatedAt,
+      'lastSeen': instance.lastSeen,
+      'serverTimeStamp': instance.serverTimeStamp,
     };
 
 _$ProfileSessionDtoImpl _$$ProfileSessionDtoImplFromJson(
@@ -2622,8 +2668,7 @@ _$ProfileSessionDtoImpl _$$ProfileSessionDtoImplFromJson(
       isFacility: json['isFacility'] as bool,
       isActivity: json['isActivity'] as bool,
       isSession: json['isSession'] as bool,
-      serverTimeStamp:
-          const ServerTimestampConverter().fromJson(json['serverTimeStamp']),
+      serverTimeStamp: json['serverTimeStamp'],
     );
 
 Map<String, dynamic> _$$ProfileSessionDtoImplToJson(
@@ -2635,8 +2680,7 @@ Map<String, dynamic> _$$ProfileSessionDtoImplToJson(
       'isFacility': instance.isFacility,
       'isActivity': instance.isActivity,
       'isSession': instance.isSession,
-      'serverTimeStamp':
-          const ServerTimestampConverter().toJson(instance.serverTimeStamp),
+      'serverTimeStamp': instance.serverTimeStamp,
     };
 
 _$CircleProfileItemDtoImpl _$$CircleProfileItemDtoImplFromJson(
@@ -2649,8 +2693,7 @@ _$CircleProfileItemDtoImpl _$$CircleProfileItemDtoImplFromJson(
       instagram: json['instagram'] as String?,
       website: json['website'] as String?,
       isPrivate: json['isPrivate'] as bool?,
-      createdAtSTC:
-          const ServerTimestampConverter().fromJson(json['createdAtSTC']),
+      createdAtSTC: json['createdAtSTC'],
     );
 
 Map<String, dynamic> _$$CircleProfileItemDtoImplToJson(
@@ -2663,6 +2706,5 @@ Map<String, dynamic> _$$CircleProfileItemDtoImplToJson(
       'instagram': instance.instagram,
       'website': instance.website,
       'isPrivate': instance.isPrivate,
-      'createdAtSTC':
-          const ServerTimestampConverter().toJson(instance.createdAtSTC),
+      'createdAtSTC': instance.createdAtSTC,
     };

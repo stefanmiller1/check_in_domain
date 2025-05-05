@@ -46,10 +46,14 @@ mixin _$AttendeeItemDto {
   bool? get isInterested => throw _privateConstructorUsedError;
   String get dateCreated => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue? get createdAtSTC => throw _privateConstructorUsedError;
+  Object? get createdAtSTC => throw _privateConstructorUsedError;
 
+  /// Serializes this AttendeeItemDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AttendeeItemDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AttendeeItemDtoCopyWith<AttendeeItemDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,7 +86,7 @@ abstract class $AttendeeItemDtoCopyWith<$Res> {
       String? receipt_link,
       bool? isInterested,
       String dateCreated,
-      @ServerTimestampConverter() FieldValue? createdAtSTC});
+      @ServerTimestampConverter() Object? createdAtSTC});
 }
 
 /// @nodoc
@@ -95,6 +99,8 @@ class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AttendeeItemDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -206,10 +212,8 @@ class _$AttendeeItemDtoCopyWithImpl<$Res, $Val extends AttendeeItemDto>
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAtSTC: freezed == createdAtSTC
-          ? _value.createdAtSTC
-          : createdAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
+      createdAtSTC:
+          freezed == createdAtSTC ? _value.createdAtSTC : createdAtSTC,
     ) as $Val);
   }
 }
@@ -244,7 +248,7 @@ abstract class _$$AttendeeItemDtoImplCopyWith<$Res>
       String? receipt_link,
       bool? isInterested,
       String dateCreated,
-      @ServerTimestampConverter() FieldValue? createdAtSTC});
+      @ServerTimestampConverter() Object? createdAtSTC});
 }
 
 /// @nodoc
@@ -255,6 +259,8 @@ class __$$AttendeeItemDtoImplCopyWithImpl<$Res>
       _$AttendeeItemDtoImpl _value, $Res Function(_$AttendeeItemDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AttendeeItemDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -366,10 +372,8 @@ class __$$AttendeeItemDtoImplCopyWithImpl<$Res>
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAtSTC: freezed == createdAtSTC
-          ? _value.createdAtSTC
-          : createdAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
+      createdAtSTC:
+          freezed == createdAtSTC ? _value.createdAtSTC : createdAtSTC,
     ));
   }
 }
@@ -495,7 +499,7 @@ class _$AttendeeItemDtoImpl extends _AttendeeItemDto {
   final String dateCreated;
   @override
   @ServerTimestampConverter()
-  final FieldValue? createdAtSTC;
+  final Object? createdAtSTC;
 
   @override
   String toString() {
@@ -551,11 +555,11 @@ class _$AttendeeItemDtoImpl extends _AttendeeItemDto {
                 other.isInterested == isInterested) &&
             (identical(other.dateCreated, dateCreated) ||
                 other.dateCreated == dateCreated) &&
-            (identical(other.createdAtSTC, createdAtSTC) ||
-                other.createdAtSTC == createdAtSTC));
+            const DeepCollectionEquality()
+                .equals(other.createdAtSTC, createdAtSTC));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -580,10 +584,12 @@ class _$AttendeeItemDtoImpl extends _AttendeeItemDto {
         receipt_link,
         isInterested,
         dateCreated,
-        createdAtSTC
+        const DeepCollectionEquality().hash(createdAtSTC)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AttendeeItemDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AttendeeItemDtoImplCopyWith<_$AttendeeItemDtoImpl> get copyWith =>
@@ -621,7 +627,7 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
           final String? receipt_link,
           final bool? isInterested,
           required final String dateCreated,
-          @ServerTimestampConverter() final FieldValue? createdAtSTC}) =
+          @ServerTimestampConverter() final Object? createdAtSTC}) =
       _$AttendeeItemDtoImpl;
   _AttendeeItemDto._() : super._();
 
@@ -672,9 +678,12 @@ abstract class _AttendeeItemDto extends AttendeeItemDto {
   String get dateCreated;
   @override
   @ServerTimestampConverter()
-  FieldValue? get createdAtSTC;
+  Object? get createdAtSTC;
+
+  /// Create a copy of AttendeeItemDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AttendeeItemDtoImplCopyWith<_$AttendeeItemDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

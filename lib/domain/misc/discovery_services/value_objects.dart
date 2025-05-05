@@ -1,1 +1,0 @@
-enum DiscoveryFilterType {vendors, activities, circles}

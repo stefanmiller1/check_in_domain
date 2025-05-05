@@ -39,8 +39,8 @@ class PostDto with _$PostDto {
     List<Map<String, dynamic>>? videoPost,
     List<Map<String, dynamic>>? postLikes,
     List<Map<String, dynamic>>? postBookmarks,
-    @ServerTimestampConverter() FieldValue? createdAtSTC,
-    @ServerTimestampConverter() FieldValue? updatedAtSTC,
+    @ServerTimestampConverter() Object? createdAtSTC,
+    @ServerTimestampConverter() Object? updatedAtSTC,
   }) = _PostDto;
 
   factory PostDto.fromDomain(Post post) {

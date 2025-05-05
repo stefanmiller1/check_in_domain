@@ -27,8 +27,12 @@ mixin _$ImagePostDto {
   String get uri => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
+  /// Serializes this ImagePostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ImagePostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ImagePostDtoCopyWith<ImagePostDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$ImagePostDtoCopyWithImpl<$Res, $Val extends ImagePostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ImagePostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,6 +128,8 @@ class __$$ImagePostDtoImplCopyWithImpl<$Res>
       _$ImagePostDtoImpl _value, $Res Function(_$ImagePostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ImagePostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -215,12 +223,14 @@ class _$ImagePostDtoImpl extends _ImagePostDto {
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
       const DeepCollectionEquality().hash(_metaData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ImagePostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ImagePostDtoImplCopyWith<_$ImagePostDtoImpl> get copyWith =>
@@ -259,8 +269,11 @@ abstract class _ImagePostDto extends ImagePostDto {
   String get uri;
   @override
   Map<String, dynamic>? get metaData;
+
+  /// Create a copy of ImagePostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ImagePostDtoImplCopyWith<_$ImagePostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

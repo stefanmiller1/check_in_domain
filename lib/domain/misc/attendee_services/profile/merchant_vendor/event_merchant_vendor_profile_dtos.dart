@@ -16,10 +16,12 @@ class EventMerchantVendorProfileDto with _$EventMerchantVendorProfileDto {
     String? websiteLink,
     String? stripeBusinessID,
     String? stripeHSTRegistrationNumber,
+    String? workStatus,
     List<String>? type,
     bool? isLookingForWork,
     bool? isPrivate,
-    @ServerTimestampConverter() FieldValue? createdAtSTC,
+    bool? isDeactivated,
+    @ServerTimestampConverter() Object? createdAtSTC,
 }) = _EventMerchantVendorProfileDto;
 
   factory EventMerchantVendorProfileDto.fromDomain(EventMerchantVendorProfile profile) {
@@ -34,9 +36,11 @@ class EventMerchantVendorProfileDto with _$EventMerchantVendorProfileDto {
         websiteLink: profile.websiteLink,
         stripeBusinessID: profile.stripeBusinessID,
         stripeHSTRegistrationNumber: profile.stripeHSTRegistrationNumber,
+        workStatus: (profile.workStatus != null) ? profile.workStatus!.toString() : null,
         type: (profile.type != null) ? profile.type!.map((e) => e.toString()).toList() : null,
         isLookingForWork: profile.isLookingForWork,
         isPrivate: profile.isPrivate,
+        isDeactivated: profile.isDeactivated,
         createdAtSTC: FieldValue.serverTimestamp()
     );
   }
@@ -53,9 +57,11 @@ class EventMerchantVendorProfileDto with _$EventMerchantVendorProfileDto {
       stripeHSTRegistrationNumber: stripeHSTRegistrationNumber,
       instagramLink: instagramLink,
       websiteLink: websiteLink,
+      workStatus: (workStatus != null) ? getWorkAvailabilityStatus(workStatus!) : null,
       type: (type != null) ? type!.map((e) => getMerchVendorType(e)).toList() : null,
       isLookingForWork: isLookingForWork,
-      isPrivate: isPrivate
+      isPrivate: isPrivate,
+      isDeactivated: isDeactivated
     );
   }
 

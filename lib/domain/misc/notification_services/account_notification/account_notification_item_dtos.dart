@@ -14,6 +14,8 @@ class AccountNotificationItemDto with _$AccountNotificationItemDto {
     String? postId,
     String? reservationId,
     String? listingId,
+    String? title,
+    String? body,
 }) = _AccountNotificationItemDto;
 
   factory AccountNotificationItemDto.fromDomain(AccountNotificationItem notification) {
@@ -23,10 +25,12 @@ class AccountNotificationItemDto with _$AccountNotificationItemDto {
         receivedAtTimeStamp: notification.receivedAtTimeStamp,
         notificationType: notification.notificationType.toString(),
         openedAtTimeStamp: (notification.openedAtTimeStamp != null) ? notification.openedAtTimeStamp! : null,
-        sentFromId: (notification.sentFromId != null) ? notification.sentFromId!.getOrCrash() : null,
-        postId: (notification.postId != null) ? notification.postId!.getOrCrash() : null,
-        reservationId: (notification.reservationId != null) ? notification.reservationId!.getOrCrash() : null,
-        listingId: (notification.listingId != null) ? notification.listingId!.getOrCrash() : null,
+        sentFromId: (notification.sentFromId != null) ? notification.sentFromId : null,
+        postId: (notification.postId != null) ? notification.postId : null,
+        reservationId: (notification.reservationId != null) ? notification.reservationId : null,
+        listingId: (notification.listingId != null) ? notification.listingId : null,
+        title: notification.title,
+        body: notification.body
     );
   }
 
@@ -37,10 +41,12 @@ class AccountNotificationItemDto with _$AccountNotificationItemDto {
       receivedAtTimeStamp: receivedAtTimeStamp,
       notificationType: getAccountNotificationType(notificationType),
       openedAtTimeStamp: (openedAtTimeStamp != null) ? openedAtTimeStamp! : null,
-      sentFromId: (sentFromId != null) ? UniqueId.fromUniqueString(sentFromId!) : null,
-      postId: (postId != null) ? UniqueId.fromUniqueString(postId!) : null,
-      reservationId: (reservationId != null) ? UniqueId.fromUniqueString(reservationId!) : null,
-      listingId: (listingId != null) ? UniqueId.fromUniqueString(listingId!) : null,
+      sentFromId: (sentFromId != null) ? sentFromId : null,
+      postId: (postId != null) ? postId : null,
+      reservationId: (reservationId != null) ? reservationId : null,
+      listingId: (listingId != null) ? listingId : null,
+      title: title,
+      body: body
     );
   }
 

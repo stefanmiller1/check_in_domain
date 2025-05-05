@@ -2,6 +2,182 @@ part of check_in_domain;
 
 enum LocationType {tempPrivateIndoor, tempPrivateOutdoor, tempPublicIndoor, tempPublicOutdoor, tempRoute, tempMobile, permPrivateIndoor, permPrivateOutdoor, permPublicIndoor, permPublicOutdoor, permRoute, permMobile,  other, none}
 enum LocationVerificationType {unverified, verified, existingVerification}
+enum LocationBarrierFreeTypes {elevator, wheelChairAccessible, ramps, automaticDoors, wideHallways}
+enum LocationAmenities {kitchen, bar, cafe, restaurant, lounge, onSiteParking}
+enum LocationEquipment {wifi, tables, chairs, oven, fridge, securityCameras, television, pegs, tents, signage, aFrames}
+enum LocationRentalOptions {free, fee, both}
+
+
+LocationVerificationType getLocationVerificationTypeFromString(String type) {
+  for (var item in LocationVerificationType.values) {
+    if (type == item.toString()) {
+      return item;
+    }
+  }
+  return LocationVerificationType.unverified;
+}
+
+LocationBarrierFreeTypes getLocationBarrierFreeTypesFromString(String type) {
+  for (var item in LocationBarrierFreeTypes.values) {
+    if (type == item.toString()) {
+      return item;
+    }
+  }
+  return LocationBarrierFreeTypes.elevator;
+}
+
+LocationAmenities getLocationAmenitiesFromString(String type) {
+  for (var item in LocationAmenities.values) {
+    if (type == item.toString()) {
+      return item;
+    }
+  }
+  return LocationAmenities.kitchen;
+}
+
+LocationEquipment getLocationEquipmentFromString(String type) {
+  for (var item in LocationEquipment.values) {
+    if (type == item.toString()) {
+      return item;
+    }
+  }
+  return LocationEquipment.wifi;
+}
+
+LocationRentalOptions getLocationRentalOptionsFromString(String type) {
+  for (var item in LocationRentalOptions.values) {
+    if (type == item.toString()) {
+      return item;
+    }
+  }
+  return LocationRentalOptions.free;
+}
+
+String getLocationVerificationTypeName(LocationVerificationType type) {
+  switch (type) {
+    case LocationVerificationType.unverified:
+      return 'Unverified';
+    case LocationVerificationType.verified:
+      return 'Verified';
+    case LocationVerificationType.existingVerification:
+      return 'Existing Verification';
+    default:
+      return 'Unknown';
+  }
+}
+
+String getLocationBarrierFreeTypesName(LocationBarrierFreeTypes type) {
+  switch (type) {
+    case LocationBarrierFreeTypes.elevator:
+      return 'Elevator';
+    case LocationBarrierFreeTypes.wheelChairAccessible:
+      return 'Wheelchair Accessible';
+    case LocationBarrierFreeTypes.ramps:
+      return 'Ramps';
+    case LocationBarrierFreeTypes.automaticDoors:
+      return 'Automatic Doors';
+    case LocationBarrierFreeTypes.wideHallways:
+      return 'Wide Hallways';
+    default:
+      return 'Unknown';
+  }
+}
+
+String getLocationAmenitiesName(LocationAmenities type) {
+  switch (type) {
+    case LocationAmenities.kitchen:
+      return 'Kitchen';
+    case LocationAmenities.bar:
+      return 'Bar';
+    case LocationAmenities.cafe:
+      return 'Cafe';
+    case LocationAmenities.restaurant:
+      return 'Restaurant';
+    case LocationAmenities.lounge:
+      return 'Lounge';
+    case LocationAmenities.onSiteParking:
+      return 'On-site Parking';
+    default:
+      return 'Unknown';
+  }
+}
+
+String getLocationEquipmentName(LocationEquipment type) {
+  switch (type) {
+    case LocationEquipment.wifi:
+      return 'Wi-Fi';
+    case LocationEquipment.tables:
+      return 'Tables';
+    case LocationEquipment.chairs:
+      return 'Chairs';
+    case LocationEquipment.oven:
+      return 'Oven';
+    case LocationEquipment.fridge:
+      return 'Fridge';
+    case LocationEquipment.securityCameras:
+      return 'Security Cameras';
+    case LocationEquipment.television:
+      return 'Television';
+    case LocationEquipment.pegs:
+      return 'Pegs';
+    case LocationEquipment.tents:
+      return 'Tents';
+    case LocationEquipment.signage:
+      return 'Signage';
+    case LocationEquipment.aFrames:
+      return 'A-Frames';
+    default:
+      return 'Unknown';
+  }
+}
+
+String getLocationRentalOptionsName(LocationRentalOptions type) {
+  switch (type) {
+    case LocationRentalOptions.free:
+      return 'Free';
+    case LocationRentalOptions.fee:
+      return 'Fee';
+    case LocationRentalOptions.both:
+      return 'Both';
+    default:
+      return 'Unknown';
+  }
+}
+
+String getLocationTypeName(LocationType type) {
+  switch (type) {
+    case LocationType.tempPrivateIndoor:
+      return 'Temporary Private Indoor';
+    case LocationType.tempPrivateOutdoor:
+      return 'Temporary Private Outdoor';
+    case LocationType.tempPublicIndoor:
+      return 'Temporary Public Indoor';
+    case LocationType.tempPublicOutdoor:
+      return 'Temporary Public Outdoor';
+    case LocationType.tempRoute:
+      return 'Temporary Route';
+    case LocationType.tempMobile:
+      return 'Temporary Mobile';
+    case LocationType.permPrivateIndoor:
+      return 'Permanent Private Indoor';
+    case LocationType.permPrivateOutdoor:
+      return 'Permanent Private Outdoor';
+    case LocationType.permPublicIndoor:
+      return 'Permanent Public Indoor';
+    case LocationType.permPublicOutdoor:
+      return 'Permanent Public Outdoor';
+    case LocationType.permRoute:
+      return 'Permanent Route';
+    case LocationType.permMobile:
+      return 'Permanent Mobile';
+    case LocationType.other:
+      return 'Other';
+    case LocationType.none:
+      return 'None';
+    default:
+      return 'Unknown';
+  }
+}
 
 /// check street number and street name validation
 class FacilityLocationStreet extends ValueObject<String> {

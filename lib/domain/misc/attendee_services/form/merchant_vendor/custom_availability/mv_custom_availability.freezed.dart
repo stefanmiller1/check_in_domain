@@ -28,7 +28,9 @@ mixin _$MCCustomAvailability {
   List<MerchantVendorTypes>? get vendorType =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MCCustomAvailability
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MCCustomAvailabilityCopyWith<MCCustomAvailability> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +64,8 @@ class _$MCCustomAvailabilityCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MCCustomAvailability
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,6 +148,8 @@ class __$$MCCustomAvailabilityImplCopyWithImpl<$Res>
       $Res Function(_$MCCustomAvailabilityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MCCustomAvailability
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -290,7 +296,9 @@ class _$MCCustomAvailabilityImpl extends _MCCustomAvailability {
       isConfirmed,
       const DeepCollectionEquality().hash(_vendorType));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MCCustomAvailability
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MCCustomAvailabilityImplCopyWith<_$MCCustomAvailabilityImpl>
@@ -331,8 +339,11 @@ abstract class _MCCustomAvailability extends MCCustomAvailability {
   bool? get isConfirmed;
   @override
   List<MerchantVendorTypes>? get vendorType;
+
+  /// Create a copy of MCCustomAvailability
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MCCustomAvailabilityImplCopyWith<_$MCCustomAvailabilityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

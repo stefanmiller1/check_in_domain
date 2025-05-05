@@ -28,8 +28,12 @@ mixin _$VideoPostDto {
   int? get numberOfViews => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
+  /// Serializes this VideoPostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VideoPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VideoPostDtoCopyWith<VideoPostDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$VideoPostDtoCopyWithImpl<$Res, $Val extends VideoPostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VideoPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +136,8 @@ class __$$VideoPostDtoImplCopyWithImpl<$Res>
       _$VideoPostDtoImpl _value, $Res Function(_$VideoPostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VideoPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -233,12 +241,14 @@ class _$VideoPostDtoImpl extends _VideoPostDto {
             const DeepCollectionEquality().equals(other._metaData, _metaData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
       numberOfViews, const DeepCollectionEquality().hash(_metaData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VideoPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VideoPostDtoImplCopyWith<_$VideoPostDtoImpl> get copyWith =>
@@ -280,8 +290,11 @@ abstract class _VideoPostDto extends VideoPostDto {
   int? get numberOfViews;
   @override
   Map<String, dynamic>? get metaData;
+
+  /// Create a copy of VideoPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VideoPostDtoImplCopyWith<_$VideoPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

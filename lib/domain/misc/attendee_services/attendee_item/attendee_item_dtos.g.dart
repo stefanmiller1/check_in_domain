@@ -36,8 +36,7 @@ _$AttendeeItemDtoImpl _$$AttendeeItemDtoImplFromJson(
       receipt_link: json['receipt_link'] as String?,
       isInterested: json['isInterested'] as bool?,
       dateCreated: json['dateCreated'] as String,
-      createdAtSTC:
-          const ServerTimestampConverter().fromJson(json['createdAtSTC']),
+      createdAtSTC: json['createdAtSTC'],
     );
 
 Map<String, dynamic> _$$AttendeeItemDtoImplToJson(
@@ -64,6 +63,5 @@ Map<String, dynamic> _$$AttendeeItemDtoImplToJson(
       'receipt_link': instance.receipt_link,
       'isInterested': instance.isInterested,
       'dateCreated': instance.dateCreated,
-      'createdAtSTC':
-          const ServerTimestampConverter().toJson(instance.createdAtSTC),
+      'createdAtSTC': instance.createdAtSTC,
     };

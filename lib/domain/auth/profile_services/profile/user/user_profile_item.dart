@@ -33,6 +33,7 @@ class  UserProfileModel with _$UserProfileModel {
     String? stripeHSTRegistrationNumber,
     String? defaultPaymentMethod,
     bool? stripeAccountDetailsSubmitted,
+    DateTime? lastSeen,
 }) = _UserProfileModel;
 
   factory UserProfileModel.empty() =>

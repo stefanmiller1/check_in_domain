@@ -3,11 +3,11 @@ part of check_in_domain;
 Either<ValueFailure<String>, String> validateName(String input) {
 
   const nameRegex = r'[!@#<>?":_`~;[\]\\|=+)(*&^%]';
+  
   if (!RegExp(nameRegex).hasMatch(input)) {
     return right(input.capitalize());
   } else {
-    return left(
-        ValueFailure.userProfile(ProfileValueFailure.invalidLegalName(failedValue: input)));
+    return left(ValueFailure.userProfile(ProfileValueFailure.invalidLegalName(failedValue: input)));
   }
 }
 

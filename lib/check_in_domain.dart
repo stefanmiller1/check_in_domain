@@ -25,6 +25,10 @@ import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_cus
 import 'domain/misc/attendee_services/form/merchant_vendor/custom_options/mv_custom_options.dart';
 import 'domain/misc/discount_code_service/discount_code_item_dtos.dart';
 import 'domain/misc/discount_code_service/discount_code_item.dart';
+import 'domain/misc/explore_services/value_objects.dart';
+import 'domain/misc/reservation_services/reservation_item/reservation_metadata.dart';
+import 'domain/misc/reservation_services/reservation_item/reservation_metadata_dtos.dart';
+
 import 'domain/misc/stripe/business_address_service/stripe_business_address_dto.dart';
 import 'domain/misc/stripe/business_address_service/stripe_business_address.dart';
 import 'domain/misc/stripe/tax_calculation/stripe_tax_calculation.dart';
@@ -193,6 +197,7 @@ part 'domain/auth/creator_templates/activity_creator/activity_form_nav/value_obj
 part 'domain/auth/activity_manager/activity_manager_form.dart';
 part 'domain/auth/activity_manager/activity_manager_form_dtos.dart';
 
+part 'domain/misc/messages_services/value_object.dart';
 
 /// auth domain listing manager
 part 'domain/auth/creator_templates/facility_activity_creator/activity_availability/reserved_activity_availability.dart';

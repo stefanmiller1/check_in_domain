@@ -18,6 +18,18 @@ class LocationModelDto with _$LocationModelDto {
     required String postalCode,
     required bool isLocationConfirmed,
     required bool isVerified,
+    String? locationName,
+    List<String>? imageUploads,
+    int? estimatedSquareFootage,
+    bool? isParkingAvailable,
+    bool? isNearTransit,
+    bool? isBarrierFreeAccessible,
+    bool? overnightStorageProvision,
+    List<String>? barrierFreeProvisions,
+    List<String>? amenityProvisions,
+    List<String>? equipmentProvisions,
+    String? rentalOptions, 
+    bool? isPrivate,
   }) = _LocationModelDto;
 
 
@@ -29,6 +41,7 @@ class LocationModelDto with _$LocationModelDto {
         longLat: listingLocation.longLat,
         locationPosition: (listingLocation.locationPosition != null) ? listingLocation.locationPosition?.data : null,
         countryRegion: listingLocation.countryRegion,
+        isPrivate: listingLocation.isPrivate,
         city: listingLocation.city.value.fold((l) => l.maybeMap(location: (e) => e.f?.maybeMap(invalidCity: (e) => e.failedValue, isEmpty: (e) => e.failedValue, orElse: () => '') ?? '', orElse: () => ''),
                 (r) => r),
         provinceState: listingLocation.provinceState.value.fold(
@@ -41,7 +54,19 @@ class LocationModelDto with _$LocationModelDto {
                 (l) => l.maybeMap(location: (e) => e.f?.maybeMap(missingCountry: (e) => e.failedValue, invalidPostalCode: (e) => e.failedValue, isEmpty: (e) => e.failedValue, orElse: () => '') ?? '', orElse: () => ''),
                 (r) => r),
         isLocationConfirmed: listingLocation.isLocationConfirmed,
-        isVerified: listingLocation.isVerified
+        isVerified: listingLocation.isVerified,
+        aptUnitNumber: listingLocation.aptUnitNumber,
+        locationName: listingLocation.locationName,
+        imageUploads: (listingLocation.imageUploads != null) ? listingLocation.imageUploads!.map((e) => e.uriPath ?? '').toList() : null,
+        estimatedSquareFootage: listingLocation.estimatedSquareFootage,
+        isParkingAvailable: listingLocation.isParkingAvailable,
+        isNearTransit: listingLocation.isNearTransit,
+        isBarrierFreeAccessible: listingLocation.isBarrierFreeAccessible,
+        overnightStorageProvision: listingLocation.overnightStorageProvision,
+        barrierFreeProvisions: (listingLocation.barrierFreeProvisions != null) ? listingLocation.barrierFreeProvisions!.map((e) => e.toString()).toList() : null,
+        amenityProvisions: (listingLocation.amenityProvisions != null) ? listingLocation.amenityProvisions!.map((e) => e.toString()).toList() : null,
+        equipmentProvisions: (listingLocation.equipmentProvisions != null) ? listingLocation.equipmentProvisions!.map((e) => e.toString()).toList() : null,
+        rentalOptions: (listingLocation.rentalOptions != null) ? listingLocation.rentalOptions!.toString() : null,
     );
   }
 
@@ -59,11 +84,24 @@ class LocationModelDto with _$LocationModelDto {
       provinceState: FacilityLocationStateProvince(provinceState, countryRegion),
       street: FacilityLocationStreet(street),
       postalCode: FacilityLocationPostalCode(postalCode, countryRegion),
+      isPrivate: isPrivate,
       isLocationConfirmed: isLocationConfirmed,
       isVerified: isVerified,
       isVerifiedAlready: false,
       isUnverified: false,
       isCompleted: false,
+      aptUnitNumber: aptUnitNumber,
+      locationName: locationName,
+      imageUploads: imageUploads?.map((e) => ImageUpload(uriPath: e, key: e)).toList(),
+      estimatedSquareFootage: estimatedSquareFootage,
+      isParkingAvailable: isParkingAvailable,
+      isNearTransit: isNearTransit,
+      isBarrierFreeAccessible: isBarrierFreeAccessible,
+      overnightStorageProvision: overnightStorageProvision,
+      barrierFreeProvisions: barrierFreeProvisions?.map((e) => getLocationBarrierFreeTypesFromString(e)).toList(),
+      amenityProvisions: amenityProvisions?.map((e) => getLocationAmenitiesFromString(e)).toList(),
+      equipmentProvisions: equipmentProvisions?.map((e) => getLocationEquipmentFromString(e)).toList(),
+      rentalOptions: rentalOptions != null ? getLocationRentalOptionsFromString(rentalOptions!) : null,
     );
   }
 

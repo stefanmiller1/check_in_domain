@@ -37,10 +37,8 @@ _$PostDtoImpl _$$PostDtoImplFromJson(Map<String, dynamic> json) =>
       postBookmarks: (json['postBookmarks'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
-      createdAtSTC:
-          const ServerTimestampConverter().fromJson(json['createdAtSTC']),
-      updatedAtSTC:
-          const ServerTimestampConverter().fromJson(json['updatedAtSTC']),
+      createdAtSTC: json['createdAtSTC'],
+      updatedAtSTC: json['updatedAtSTC'],
     );
 
 Map<String, dynamic> _$$PostDtoImplToJson(_$PostDtoImpl instance) =>
@@ -66,8 +64,6 @@ Map<String, dynamic> _$$PostDtoImplToJson(_$PostDtoImpl instance) =>
       'videoPost': instance.videoPost,
       'postLikes': instance.postLikes,
       'postBookmarks': instance.postBookmarks,
-      'createdAtSTC':
-          const ServerTimestampConverter().toJson(instance.createdAtSTC),
-      'updatedAtSTC':
-          const ServerTimestampConverter().toJson(instance.updatedAtSTC),
+      'createdAtSTC': instance.createdAtSTC,
+      'updatedAtSTC': instance.updatedAtSTC,
     };

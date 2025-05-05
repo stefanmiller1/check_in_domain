@@ -23,8 +23,12 @@ mixin _$TextPostDto {
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
 
+  /// Serializes this TextPostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TextPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TextPostDtoCopyWith<TextPostDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$TextPostDtoCopyWithImpl<$Res, $Val extends TextPostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TextPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$TextPostDtoImplCopyWithImpl<$Res>
       _$TextPostDtoImpl _value, $Res Function(_$TextPostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TextPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,12 +150,14 @@ class _$TextPostDtoImpl extends _TextPostDto {
             (identical(other.text, text) || other.text == text));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_metaData), text);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TextPostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TextPostDtoImplCopyWith<_$TextPostDtoImpl> get copyWith =>
@@ -174,8 +184,11 @@ abstract class _TextPostDto extends TextPostDto {
   Map<String, dynamic>? get metaData;
   @override
   String get text;
+
+  /// Create a copy of TextPostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TextPostDtoImplCopyWith<_$TextPostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

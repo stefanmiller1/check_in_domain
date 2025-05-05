@@ -33,8 +33,12 @@ mixin _$MCCustomAvailabilityDto {
   List<String>? get vendorType => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
 
+  /// Serializes this MCCustomAvailabilityDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MCCustomAvailabilityDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MCCustomAvailabilityDtoCopyWith<MCCustomAvailabilityDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$MCCustomAvailabilityDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MCCustomAvailabilityDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -160,6 +166,8 @@ class __$$MCCustomAvailabilityDtoImplCopyWithImpl<$Res>
       $Res Function(_$MCCustomAvailabilityDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MCCustomAvailabilityDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -306,7 +314,7 @@ class _$MCCustomAvailabilityDtoImpl extends _MCCustomAvailabilityDto {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -321,7 +329,9 @@ class _$MCCustomAvailabilityDtoImpl extends _MCCustomAvailabilityDto {
       const DeepCollectionEquality().hash(_vendorType),
       status);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MCCustomAvailabilityDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MCCustomAvailabilityDtoImplCopyWith<_$MCCustomAvailabilityDtoImpl>
@@ -373,8 +383,11 @@ abstract class _MCCustomAvailabilityDto extends MCCustomAvailabilityDto {
   List<String>? get vendorType;
   @override
   String? get status;
+
+  /// Create a copy of MCCustomAvailabilityDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MCCustomAvailabilityDtoImplCopyWith<_$MCCustomAvailabilityDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

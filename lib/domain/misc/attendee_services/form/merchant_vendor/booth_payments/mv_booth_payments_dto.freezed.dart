@@ -36,8 +36,12 @@ mixin _$MVBoothPaymentsDto {
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get stripeRefund => throw _privateConstructorUsedError;
 
+  /// Serializes this MVBoothPaymentsDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MVBoothPaymentsDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MVBoothPaymentsDtoCopyWith<MVBoothPaymentsDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +78,8 @@ class _$MVBoothPaymentsDtoCopyWithImpl<$Res, $Val extends MVBoothPaymentsDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MVBoothPaymentsDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,6 +186,8 @@ class __$$MVBoothPaymentsDtoImplCopyWithImpl<$Res>
       $Res Function(_$MVBoothPaymentsDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MVBoothPaymentsDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -366,7 +374,7 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
                 .equals(other._stripeRefund, _stripeRefund));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -384,7 +392,9 @@ class _$MVBoothPaymentsDtoImpl extends _MVBoothPaymentsDto {
       const DeepCollectionEquality().hash(_stripePaymentIntent),
       const DeepCollectionEquality().hash(_stripeRefund));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MVBoothPaymentsDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MVBoothPaymentsDtoImplCopyWith<_$MVBoothPaymentsDtoImpl> get copyWith =>
@@ -445,8 +455,11 @@ abstract class _MVBoothPaymentsDto extends MVBoothPaymentsDto {
   Map<String, dynamic>? get stripePaymentIntent;
   @override
   Map<String, dynamic>? get stripeRefund;
+
+  /// Create a copy of MVBoothPaymentsDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MVBoothPaymentsDtoImplCopyWith<_$MVBoothPaymentsDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -46,12 +46,16 @@ mixin _$PostDto {
   List<Map<String, dynamic>>? get postBookmarks =>
       throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue? get createdAtSTC => throw _privateConstructorUsedError;
+  Object? get createdAtSTC => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue? get updatedAtSTC => throw _privateConstructorUsedError;
+  Object? get updatedAtSTC => throw _privateConstructorUsedError;
 
+  /// Serializes this PostDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PostDtoCopyWith<PostDto> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -82,8 +86,8 @@ abstract class $PostDtoCopyWith<$Res> {
       List<Map<String, dynamic>>? videoPost,
       List<Map<String, dynamic>>? postLikes,
       List<Map<String, dynamic>>? postBookmarks,
-      @ServerTimestampConverter() FieldValue? createdAtSTC,
-      @ServerTimestampConverter() FieldValue? updatedAtSTC});
+      @ServerTimestampConverter() Object? createdAtSTC,
+      @ServerTimestampConverter() Object? updatedAtSTC});
 }
 
 /// @nodoc
@@ -96,6 +100,8 @@ class _$PostDtoCopyWithImpl<$Res, $Val extends PostDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -208,14 +214,10 @@ class _$PostDtoCopyWithImpl<$Res, $Val extends PostDto>
           ? _value.postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      createdAtSTC: freezed == createdAtSTC
-          ? _value.createdAtSTC
-          : createdAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
-      updatedAtSTC: freezed == updatedAtSTC
-          ? _value.updatedAtSTC
-          : updatedAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
+      createdAtSTC:
+          freezed == createdAtSTC ? _value.createdAtSTC : createdAtSTC,
+      updatedAtSTC:
+          freezed == updatedAtSTC ? _value.updatedAtSTC : updatedAtSTC,
     ) as $Val);
   }
 }
@@ -249,8 +251,8 @@ abstract class _$$PostDtoImplCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
       List<Map<String, dynamic>>? videoPost,
       List<Map<String, dynamic>>? postLikes,
       List<Map<String, dynamic>>? postBookmarks,
-      @ServerTimestampConverter() FieldValue? createdAtSTC,
-      @ServerTimestampConverter() FieldValue? updatedAtSTC});
+      @ServerTimestampConverter() Object? createdAtSTC,
+      @ServerTimestampConverter() Object? updatedAtSTC});
 }
 
 /// @nodoc
@@ -261,6 +263,8 @@ class __$$PostDtoImplCopyWithImpl<$Res>
       _$PostDtoImpl _value, $Res Function(_$PostDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PostDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -373,14 +377,10 @@ class __$$PostDtoImplCopyWithImpl<$Res>
           ? _value._postBookmarks
           : postBookmarks // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
-      createdAtSTC: freezed == createdAtSTC
-          ? _value.createdAtSTC
-          : createdAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
-      updatedAtSTC: freezed == updatedAtSTC
-          ? _value.updatedAtSTC
-          : updatedAtSTC // ignore: cast_nullable_to_non_nullable
-              as FieldValue?,
+      createdAtSTC:
+          freezed == createdAtSTC ? _value.createdAtSTC : createdAtSTC,
+      updatedAtSTC:
+          freezed == updatedAtSTC ? _value.updatedAtSTC : updatedAtSTC,
     ));
   }
 }
@@ -551,10 +551,10 @@ class _$PostDtoImpl extends _PostDto {
 
   @override
   @ServerTimestampConverter()
-  final FieldValue? createdAtSTC;
+  final Object? createdAtSTC;
   @override
   @ServerTimestampConverter()
-  final FieldValue? updatedAtSTC;
+  final Object? updatedAtSTC;
 
   @override
   String toString() {
@@ -603,13 +603,13 @@ class _$PostDtoImpl extends _PostDto {
                 .equals(other._postLikes, _postLikes) &&
             const DeepCollectionEquality()
                 .equals(other._postBookmarks, _postBookmarks) &&
-            (identical(other.createdAtSTC, createdAtSTC) ||
-                other.createdAtSTC == createdAtSTC) &&
-            (identical(other.updatedAtSTC, updatedAtSTC) ||
-                other.updatedAtSTC == updatedAtSTC));
+            const DeepCollectionEquality()
+                .equals(other.createdAtSTC, createdAtSTC) &&
+            const DeepCollectionEquality()
+                .equals(other.updatedAtSTC, updatedAtSTC));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -634,11 +634,13 @@ class _$PostDtoImpl extends _PostDto {
         const DeepCollectionEquality().hash(_videoPost),
         const DeepCollectionEquality().hash(_postLikes),
         const DeepCollectionEquality().hash(_postBookmarks),
-        createdAtSTC,
-        updatedAtSTC
+        const DeepCollectionEquality().hash(createdAtSTC),
+        const DeepCollectionEquality().hash(updatedAtSTC)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PostDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PostDtoImplCopyWith<_$PostDtoImpl> get copyWith =>
@@ -654,30 +656,29 @@ class _$PostDtoImpl extends _PostDto {
 
 abstract class _PostDto extends PostDto {
   factory _PostDto(
-          {required final String authorId,
-          final String? createdAt,
-          required final String id,
-          final Map<String, dynamic>? metadata,
-          final String? remoteId,
-          final Map<String, dynamic>? repliedPost,
-          final String? reservationId,
-          final bool? showStatus,
-          final bool? isReported,
-          final String? status,
-          required final String type,
-          final String? updatedAt,
-          final int? likesCount,
-          final Map<String, dynamic>? previewData,
-          final Map<String, dynamic>? audioPost,
-          final List<Map<String, dynamic>>? imagePost,
-          final Map<String, dynamic>? systemPost,
-          final Map<String, dynamic>? textPost,
-          final List<Map<String, dynamic>>? videoPost,
-          final List<Map<String, dynamic>>? postLikes,
-          final List<Map<String, dynamic>>? postBookmarks,
-          @ServerTimestampConverter() final FieldValue? createdAtSTC,
-          @ServerTimestampConverter() final FieldValue? updatedAtSTC}) =
-      _$PostDtoImpl;
+      {required final String authorId,
+      final String? createdAt,
+      required final String id,
+      final Map<String, dynamic>? metadata,
+      final String? remoteId,
+      final Map<String, dynamic>? repliedPost,
+      final String? reservationId,
+      final bool? showStatus,
+      final bool? isReported,
+      final String? status,
+      required final String type,
+      final String? updatedAt,
+      final int? likesCount,
+      final Map<String, dynamic>? previewData,
+      final Map<String, dynamic>? audioPost,
+      final List<Map<String, dynamic>>? imagePost,
+      final Map<String, dynamic>? systemPost,
+      final Map<String, dynamic>? textPost,
+      final List<Map<String, dynamic>>? videoPost,
+      final List<Map<String, dynamic>>? postLikes,
+      final List<Map<String, dynamic>>? postBookmarks,
+      @ServerTimestampConverter() final Object? createdAtSTC,
+      @ServerTimestampConverter() final Object? updatedAtSTC}) = _$PostDtoImpl;
   _PostDto._() : super._();
 
   factory _PostDto.fromJson(Map<String, dynamic> json) = _$PostDtoImpl.fromJson;
@@ -726,12 +727,15 @@ abstract class _PostDto extends PostDto {
   List<Map<String, dynamic>>? get postBookmarks;
   @override
   @ServerTimestampConverter()
-  FieldValue? get createdAtSTC;
+  Object? get createdAtSTC;
   @override
   @ServerTimestampConverter()
-  FieldValue? get updatedAtSTC;
+  Object? get updatedAtSTC;
+
+  /// Create a copy of PostDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PostDtoImplCopyWith<_$PostDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

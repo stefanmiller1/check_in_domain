@@ -23,7 +23,9 @@ mixin _$ImagePost {
   String get uri => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ImagePost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ImagePostCopyWith<ImagePost> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +54,8 @@ class _$ImagePostCopyWithImpl<$Res, $Val extends ImagePost>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ImagePost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,6 +120,8 @@ class __$$ImagePostImplCopyWithImpl<$Res>
       _$ImagePostImpl _value, $Res Function(_$ImagePostImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ImagePost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -210,7 +216,9 @@ class _$ImagePostImpl extends _ImagePost {
   int get hashCode => Object.hash(runtimeType, height, width, name, size, uri,
       const DeepCollectionEquality().hash(_metaData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ImagePost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ImagePostImplCopyWith<_$ImagePostImpl> get copyWith =>
@@ -239,8 +247,11 @@ abstract class _ImagePost extends ImagePost {
   String get uri;
   @override
   Map<String, dynamic>? get metaData;
+
+  /// Create a copy of ImagePost
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ImagePostImplCopyWith<_$ImagePostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

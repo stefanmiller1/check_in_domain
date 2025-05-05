@@ -8,6 +8,7 @@ class ActivityProfileService with _$ActivityProfileService {
   factory ActivityProfileService({
     /// post only - hosted by
     bool? isActivityPost,
+    bool? isTrueOwner,
     String? postContactWebsite,
     String? postContactEmail,
     String? postContactSocialInstagram,

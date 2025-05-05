@@ -20,7 +20,9 @@ mixin _$AudioPost {
   String get uri => throw _privateConstructorUsedError;
   List<double>? get waveForm => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AudioPostCopyWith<AudioPost> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$AudioPostCopyWithImpl<$Res, $Val extends AudioPost>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AudioPost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +90,8 @@ class __$$AudioPostImplCopyWithImpl<$Res>
       _$AudioPostImpl _value, $Res Function(_$AudioPostImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AudioPost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,7 +157,9 @@ class _$AudioPostImpl extends _AudioPost {
   int get hashCode => Object.hash(
       runtimeType, size, uri, const DeepCollectionEquality().hash(_waveForm));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudioPostImplCopyWith<_$AudioPostImpl> get copyWith =>
@@ -171,8 +179,11 @@ abstract class _AudioPost extends AudioPost {
   String get uri;
   @override
   List<double>? get waveForm;
+
+  /// Create a copy of AudioPost
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudioPostImplCopyWith<_$AudioPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

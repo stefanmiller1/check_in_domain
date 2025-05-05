@@ -10,10 +10,14 @@ class AccountNotificationItem with _$AccountNotificationItem {
     required int receivedAtTimeStamp,
     required AccountNotificationType notificationType,
     int? openedAtTimeStamp,
-    UniqueId? sentFromId,
-    UniqueId? postId,
-    UniqueId? reservationId,
-    UniqueId? listingId,
+    String? sentFromId,
+    String? recipientId,
+    String? postId,
+    String? reservationId,
+    String? listingId,
+    String? title,
+    String? body,
+    String? imageUrl,
   }) = _AccountNotificationItem;
 
 }

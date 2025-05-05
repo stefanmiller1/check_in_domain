@@ -19,7 +19,9 @@ mixin _$SystemPost {
   String get text => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SystemPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SystemPostCopyWith<SystemPost> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$SystemPostCopyWithImpl<$Res, $Val extends SystemPost>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SystemPost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$SystemPostImplCopyWithImpl<$Res>
       _$SystemPostImpl _value, $Res Function(_$SystemPostImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SystemPost
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,7 +143,9 @@ class _$SystemPostImpl extends _SystemPost {
   int get hashCode => Object.hash(
       runtimeType, text, const DeepCollectionEquality().hash(_metaData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SystemPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SystemPostImplCopyWith<_$SystemPostImpl> get copyWith =>
@@ -154,8 +162,11 @@ abstract class _SystemPost extends SystemPost {
   String get text;
   @override
   Map<String, dynamic>? get metaData;
+
+  /// Create a copy of SystemPost
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SystemPostImplCopyWith<_$SystemPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
