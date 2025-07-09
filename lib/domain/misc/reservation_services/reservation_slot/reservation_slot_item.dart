@@ -37,5 +37,4 @@ class ReservationTimeFeeSlotItem with _$ReservationTimeFeeSlotItem {
     required DateTimeRange slotRange,
     String? description,
   }) = _ReservationTimeFeeSlotItem;
-
 }

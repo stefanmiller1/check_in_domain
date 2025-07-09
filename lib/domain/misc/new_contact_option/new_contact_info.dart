@@ -21,5 +21,4 @@ class ContactDetails with _$ContactDetails {
         emailAddress: EmailAddress('')
     );
   }
-
 }
